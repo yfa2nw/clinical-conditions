@@ -17,6 +17,7 @@
     <script src="script.js" defer></script>
     <script src="questions.js" defer></script>
     <script src="quiz.js" defer></script>
+    <script src="map.js" defer></script>
 </head>
 
 <body>
@@ -43,30 +44,28 @@
             </div>
             <p class="search-hint" id="search-hint" aria-live="polite"></p>
 
-            <nav class="condition-list" aria-label="GI conditions">
+            <nav class="condition-list gi-map-nav" aria-label="GI conditions">
+                <!-- The GI tract string is drawn here by map.js, lined up with the stations below -->
+                <svg class="gi-map" aria-hidden="true" focusable="false"></svg>
+
+                <div class="station" data-organ="esophagus">
                 <p class="group-label" id="group-esophagus">Esophagus</p>
                 <div class="condition-group" role="group" aria-labelledby="group-esophagus">
                     <button type="button" class="condition-item active" data-condition="esophagitis" aria-current="true">Esophagitis</button>
                     <button type="button" class="condition-item" data-condition="esophageal-motility">Esophageal motility disorders</button>
                     <button type="button" class="condition-item" data-condition="gerd">GERD <span class="condition-sub">Gastroesophageal reflux</span></button>
                 </div>
+                </div>
 
+                <div class="station" data-organ="stomach">
                 <p class="group-label" id="group-stomach">Stomach</p>
                 <div class="condition-group" role="group" aria-labelledby="group-stomach">
                     <button type="button" class="condition-item" data-condition="gastritis">Gastritis</button>
                     <button type="button" class="condition-item" data-condition="pud">PUD <span class="condition-sub">Peptic ulcer disease</span></button>
                 </div>
-
-                <p class="group-label" id="group-intestines">Intestines</p>
-                <div class="condition-group" role="group" aria-labelledby="group-intestines">
-                    <button type="button" class="condition-item" data-condition="malabsorption">Malabsorption</button>
-                    <button type="button" class="condition-item" data-condition="diverticular-diseases">Diverticular diseases</button>
-                    <button type="button" class="condition-item" data-condition="ibd">IBD <span class="condition-sub">Inflammatory bowel disease</span></button>
-                    <button type="button" class="condition-item" data-condition="ibs">IBS <span class="condition-sub">Irritable bowel syndrome</span></button>
-                    <button type="button" class="condition-item" data-condition="diarrhea">Diarrhea</button>
-                    <button type="button" class="condition-item" data-condition="intestinal-ischemia">Intestinal ischemia</button>
                 </div>
 
+                <div class="station" data-organ="liver">
                 <p class="group-label" id="group-liver">Liver</p>
                 <div class="condition-group" role="group" aria-labelledby="group-liver">
                     <button type="button" class="condition-item" data-condition="hepatic-vascular">Vascular liver injury <span class="condition-sub">Hepatocellular injury · V</span></button>
@@ -79,7 +78,9 @@
                     <button type="button" class="condition-item" data-condition="hepatic-other">AFLP <span class="condition-sub">Acute fatty liver of pregnancy · other</span></button>
                     <button type="button" class="condition-item" data-condition="liver-failure">Acute liver failure and cirrhosis <span class="condition-sub">Complications, Child-Pugh</span></button>
                 </div>
+                </div>
 
+                <div class="station" data-organ="biliary">
                 <p class="group-label" id="group-biliary">Gallbladder and biliary tree</p>
                 <div class="condition-group" role="group" aria-labelledby="group-biliary">
                     <button type="button" class="condition-item" data-condition="biliary-stones">Cholelithiasis <span class="condition-sub">Gallstones, biliary colic</span></button>
@@ -88,6 +89,39 @@
                     <button type="button" class="condition-item" data-condition="cholangitis">Ascending cholangitis</button>
                     <button type="button" class="condition-item" data-condition="biliary-fistula">Biliary fistulas</button>
                     <button type="button" class="condition-item" data-condition="biliary-cancer">Biliary malignancies <span class="condition-sub">Periampullary, Courvoisier's law</span></button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="pancreas">
+                <p class="group-label" id="group-pancreas">Pancreas</p>
+                <div class="condition-group" role="group" aria-labelledby="group-pancreas">
+                    <button type="button" class="condition-item" data-condition="pancreatitis">Acute pancreatitis <span class="condition-sub">I GET SMASHED</span></button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="small-intestine">
+                <p class="group-label" id="group-small-intestine">Small intestine</p>
+                <div class="condition-group" role="group" aria-labelledby="group-small-intestine">
+                    <button type="button" class="condition-item" data-condition="malabsorption">Malabsorption</button>
+                    <button type="button" class="condition-item" data-condition="diarrhea">Diarrhea</button>
+                    <button type="button" class="condition-item" data-condition="intestinal-ischemia">Intestinal ischemia</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="colon">
+                <p class="group-label" id="group-colon">Colon and rectum</p>
+                <div class="condition-group" role="group" aria-labelledby="group-colon">
+                    <button type="button" class="condition-item" data-condition="diverticular-diseases">Diverticular diseases</button>
+                    <button type="button" class="condition-item" data-condition="ibd">IBD <span class="condition-sub">Inflammatory bowel disease</span></button>
+                    <button type="button" class="condition-item" data-condition="ibs">IBS <span class="condition-sub">Irritable bowel syndrome</span></button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="appendix">
+                <p class="group-label" id="group-appendix">Appendix</p>
+                <div class="condition-group" role="group" aria-labelledby="group-appendix">
+                    <button type="button" class="condition-item" data-condition="appendicitis">Appendicitis</button>
+                </div>
                 </div>
 
                 <p class="no-results" id="no-results" hidden>No matches</p>
@@ -8490,7 +8524,9 @@
                                 <span class="complication-detail">infection behind the blockage</span>
                             </li>
                             <li>
-                                <span class="complication-name">Gallstone pancreatitis</span>
+                                <span class="complication-name">
+                                    <button type="button" class="link-button" data-goto="pancreatitis">Gallstone pancreatitis</button>
+                                </span>
                             </li>
                             <li>
                                 <span class="complication-name">Secondary biliary cirrhosis</span>
@@ -9190,6 +9226,756 @@
                                 <tr>
                                     <th scope="row">Unresectable disease</th>
                                     <td>Biliary stent to relieve jaundice; chemotherapy</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </article>
+
+            <!-- Pancreas: Acute pancreatitis -->
+            <article class="condition-content" id="pancreatitis">
+                <h2>Acute Pancreatitis</h2>
+
+                <!-- Pathophysiology -->
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p>
+                        Trypsinogen is activated to trypsin too early, inside the pancreas instead of the
+                        duodenum. Trypsin activates the other pancreatic enzymes (lipase, phospholipase A2,
+                        elastase), which digest the pancreas itself (autodigestion). The damaged tissue
+                        releases cytokines that cause local injury and, in severe cases, a body-wide
+                        inflammatory response.
+                    </p>
+                </section>
+
+                <!-- Etiology -->
+                <section class="content-section">
+                    <h3>Etiology</h3>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">I GET SMASHED</h4>
+
+                        <div class="table-wrap">
+                            <table class="data-table compare-table mnemonic-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Letter</th>
+                                        <th scope="col">Cause</th>
+                                        <th scope="col">Notes</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">I</th>
+                                        <td>Idiopathic</td>
+                                        <td>No cause found in about 10–20%</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">G</th>
+                                        <td>
+                                            <button type="button" class="link-button" data-goto="choledocholithiasis">Gallstones</button>
+                                            <span class="badge">Most common</span>
+                                        </td>
+                                        <td>Stone blocks the ampulla</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">E</th>
+                                        <td>Ethanol <span class="badge">2nd most common</span></td>
+                                        <td>Direct acinar toxicity, protein plugs in ducts</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">T</th>
+                                        <td>Trauma</td>
+                                        <td>Blunt abdominal trauma, e.g. bicycle handlebar injury</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">S</th>
+                                        <td>Steroids</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">M</th>
+                                        <td>Mumps</td>
+                                        <td>Also other infections, e.g. coxsackievirus, CMV</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">A</th>
+                                        <td>Autoimmune</td>
+                                        <td>IgG4-related autoimmune pancreatitis, SLE, polyarteritis nodosa</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">S</th>
+                                        <td>Scorpion sting</td>
+                                        <td><em>Tityus trinitatis</em> (Trinidad)</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">H</th>
+                                        <td>Hypercalcemia, hypertriglyceridemia, hypothermia</td>
+                                        <td>Triglycerides usually over 1000 mg/dL</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">E</th>
+                                        <td>
+                                            <abbr class="term" tabindex="0" data-definition="Endoscopic retrograde cholangiopancreatography">ERCP</abbr>
+                                        </td>
+                                        <td>Most common complication of ERCP</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">D</th>
+                                        <td>Drugs</td>
+                                        <td>Azathioprine, valproate, thiazides, furosemide, sulfonamides, didanosine</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Symptoms and complications -->
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">Symptoms</h4>
+                        <ul class="chip-list">
+                            <li>Severe epigastric pain <span class="node-label">radiates to the back; eased by leaning forward</span></li>
+                            <li>Nausea and vomiting</li>
+                            <li>Fever, tachycardia</li>
+                            <li>Epigastric tenderness, guarding</li>
+                        </ul>
+                    </div>
+
+                    <!-- Acute -->
+                    <div class="subsection">
+                        <h4 class="sc-heading">Acute process</h4>
+
+                        <div class="lane-list">
+                            <div class="chain-lane">
+                                <div class="chain">
+                                    <div class="chain-stage chain-start">
+                                        <div class="chain-node start">Trypsin activated inside the pancreas</div>
+                                    </div>
+
+                                    <div class="chain-arrow" aria-hidden="true"></div>
+
+                                    <div class="chain-stage">
+                                        <div class="chain-node">Pancreatic autodigestion</div>
+                                    </div>
+
+                                    <div class="chain-arrow" aria-hidden="true"></div>
+
+                                    <div class="chain-stage">
+                                        <div class="chain-node">Epigastric pain</div>
+                                        <div class="chain-node">
+                                            <span class="change up">Increased</span> IL-1, IL-6, TNF-α
+                                        </div>
+                                    </div>
+
+                                    <div class="chain-arrow" aria-hidden="true"></div>
+
+                                    <div class="chain-stage">
+                                        <div class="chain-node">
+                                            <abbr class="term" tabindex="0" data-definition="Systemic inflammatory response syndrome">SIRS</abbr>
+                                        </div>
+                                        <div class="chain-node">Local pancreatic complications</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- SIRS -->
+                    <div class="subsection">
+                        <h4 class="sc-heading">Systemic complications (SIRS)</h4>
+
+                        <div class="lane-list">
+                            <p class="lane-title">Leaky capillaries</p>
+                            <div class="chain-lane">
+                                <div class="chain">
+                                    <div class="chain-stage chain-start">
+                                        <div class="chain-node">
+                                            <span class="change up">Increased</span> capillary permeability
+                                        </div>
+                                    </div>
+
+                                    <div class="chain-arrow" aria-hidden="true"></div>
+
+                                    <div class="chain-stage">
+                                        <div class="chain-node">Third spacing <span class="node-label">fluid leaks out of the blood vessels</span></div>
+                                    </div>
+
+                                    <div class="chain-arrow" aria-hidden="true"></div>
+
+                                    <div class="chain-stage">
+                                        <div class="chain-node">Hypovolemia</div>
+                                        <div class="chain-node">Fluid in the lungs</div>
+                                        <div class="chain-node">Fluid in the abdomen</div>
+                                    </div>
+
+                                    <div class="chain-arrow" aria-hidden="true"></div>
+
+                                    <div class="chain-stage">
+                                        <div class="chain-node">
+                                            Shock,
+                                            <abbr class="term" tabindex="0" data-definition="Acute kidney injury">AKI</abbr>
+                                        </div>
+                                        <div class="chain-node">
+                                            <abbr class="term" tabindex="0" data-definition="Acute respiratory distress syndrome">ARDS</abbr>
+                                        </div>
+                                        <div class="chain-node">Exudative ascites, abdominal compartment syndrome</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="lane-title">Clotting</p>
+                            <div class="chain-lane">
+                                <div class="chain">
+                                    <div class="chain-stage chain-start">
+                                        <div class="chain-node">
+                                            <span class="change up">Increased</span> tissue factor
+                                        </div>
+                                    </div>
+
+                                    <div class="chain-arrow" aria-hidden="true"></div>
+
+                                    <div class="chain-stage">
+                                        <div class="chain-node">
+                                            <span class="change up">Increased</span> clotting throughout small vessels
+                                        </div>
+                                    </div>
+
+                                    <div class="chain-arrow" aria-hidden="true"></div>
+
+                                    <div class="chain-stage">
+                                        <div class="chain-node">Platelets and clotting factors used up</div>
+                                        <div class="chain-node">
+                                            Red cells sheared
+                                            <span class="node-label">schistocytes</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="chain-arrow" aria-hidden="true"></div>
+
+                                    <div class="chain-stage">
+                                        <div class="chain-node">
+                                            <abbr class="term" tabindex="0" data-definition="Disseminated intravascular coagulation">DIC</abbr>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="lane-title">Metabolic</p>
+                            <div class="chain-lane">
+                                <div class="chain">
+                                    <div class="chain-stage chain-start">
+                                        <div class="chain-node">Lipase digests surrounding fat</div>
+                                    </div>
+
+                                    <div class="chain-arrow" aria-hidden="true"></div>
+
+                                    <div class="chain-stage">
+                                        <div class="chain-node">
+                                            Fatty acids bind calcium
+                                            <span class="node-label">fat saponification</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="chain-arrow" aria-hidden="true"></div>
+
+                                    <div class="chain-stage">
+                                        <div class="chain-node">Hypocalcemia</div>
+                                        <div class="chain-node">
+                                            Hyperglycemia
+                                            <span class="node-label">islet damage</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Local -->
+                    <div class="subsection">
+                        <h4 class="sc-heading">Local pancreatic complications</h4>
+
+                        <div class="lane-list">
+                            <p class="lane-title">Interstitial edematous pancreatitis</p>
+                            <div class="chain-lane">
+                                <div class="chain">
+                                    <div class="chain-stage chain-start">
+                                        <div class="chain-node">Pancreatic edema</div>
+                                    </div>
+
+                                    <div class="chain-arrow" aria-hidden="true"></div>
+
+                                    <div class="chain-stage">
+                                        <div class="chain-node">Fluid collects around the pancreas</div>
+                                    </div>
+
+                                    <div class="chain-arrow" aria-hidden="true"></div>
+
+                                    <div class="chain-stage">
+                                        <div class="chain-node">
+                                            <strong>Pseudocyst</strong>
+                                            <span class="node-label">after 4 weeks; fibrous wall with no epithelium</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="chain-arrow" aria-hidden="true"></div>
+
+                                    <div class="chain-stage">
+                                        <div class="chain-node">Infection</div>
+                                        <div class="chain-node">Rupture</div>
+                                        <div class="chain-node">
+                                            Compression: small bowel or gastric outlet obstruction
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="lane-title">Necrotizing pancreatitis</p>
+                            <div class="chain-lane">
+                                <div class="chain">
+                                    <div class="chain-stage chain-start">
+                                        <div class="chain-node">Tissue necrosis</div>
+                                    </div>
+
+                                    <div class="chain-arrow" aria-hidden="true"></div>
+
+                                    <div class="chain-stage">
+                                        <div class="chain-node">Acute necrotic collection</div>
+                                        <div class="chain-node">Enzymes erode blood vessels</div>
+                                    </div>
+
+                                    <div class="chain-arrow" aria-hidden="true"></div>
+
+                                    <div class="chain-stage">
+                                        <div class="chain-node">
+                                            <strong>Walled-off necrosis</strong>
+                                            <span class="node-label">after 4 weeks; can become infected</span>
+                                        </div>
+                                        <div class="chain-node">
+                                            Retroperitoneal bleeding
+                                            <span class="node-label">Cullen's sign: periumbilical bruising; Grey Turner's sign: flank bruising</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="note">
+                            <strong>Repeated attacks</strong> can lead to chronic pancreatitis, with exocrine
+                            insufficiency (steatorrhea) and diabetes.
+                        </p>
+                    </div>
+                </section>
+
+                <!-- Diagnosis -->
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">Any 2 of 3 criteria</h4>
+
+                        <div class="etiology-grid-3">
+                            <div class="etiology-column">
+                                <h4>Pain</h4>
+                                <ul class="step">
+                                    <li>Acute, severe epigastric pain, often radiating to the back</li>
+                                </ul>
+                            </div>
+
+                            <div class="etiology-column">
+                                <h4>Enzymes</h4>
+                                <ul class="step">
+                                    <li>
+                                        Lipase (or amylase) at least <strong>3 times</strong> the upper limit of normal
+                                        <span class="node-label">lipase is more specific and stays raised longer</span>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="etiology-column">
+                                <h4>Imaging</h4>
+                                <ul class="step">
+                                    <li>Typical findings on contrast CT abdomen (or MRI, ultrasound)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">Find the cause and judge severity</h4>
+
+                        <div class="table-wrap">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">For</th>
+                                        <th scope="col">Obtain</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Cause</th>
+                                        <td>
+                                            <ul class="bullet-list">
+                                                <li>RUQ ultrasound for gallstones <span class="node-label">in every patient</span></li>
+                                                <li>LFTs <span class="node-label">ALT over 150 U/L suggests gallstones</span></li>
+                                                <li>Triglycerides, calcium, alcohol history, medications</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Complications</th>
+                                        <td>
+                                            Contrast CT if the diagnosis is unclear, or after 48–72 hours if the
+                                            patient is not improving
+                                            <span class="node-label">CT too early can miss necrosis</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Severity</th>
+                                        <td>FBC, creatinine, BUN, oxygen saturation, scores such as BISAP</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">Severity (revised Atlanta classification)</h4>
+
+                        <div class="table-wrap">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Severity</th>
+                                        <th scope="col">Features</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Mild</th>
+                                        <td>No organ failure and no local complications</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Moderately severe</th>
+                                        <td>Organ failure lasting under 48 hours, or local complications</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Severe</th>
+                                        <td>Organ failure lasting over 48 hours</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Treatment -->
+                <section class="content-section">
+                    <h3>Treatment</h3>
+
+                    <div class="table-wrap">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Goal</th>
+                                    <th scope="col">Treatment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Supportive care</th>
+                                    <td>
+                                        <ul class="bullet-list">
+                                            <li>IV fluids <span class="node-label">goal-directed, e.g. lactated Ringer's</span></li>
+                                            <li>Pain relief</li>
+                                            <li>Early oral feeding as tolerated; tube feeding if severe (not TPN)</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Treat the cause</th>
+                                    <td>
+                                        <ul class="bullet-list">
+                                            <li>Gallstones: cholecystectomy during the same admission; ERCP only if cholangitis</li>
+                                            <li>Alcohol: stop drinking</li>
+                                            <li>Hypertriglyceridemia: insulin infusion</li>
+                                            <li>Drugs: stop the offending drug</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Infected necrosis</th>
+                                    <td>
+                                        Antibiotics (e.g. carbapenem); delayed drainage or necrosectomy, ideally after 4 weeks
+                                        <span class="node-label">antibiotics are not given to prevent infection</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Pseudocyst</th>
+                                    <td>Observe; drain only if symptomatic or complicated</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <p class="see-also">
+                    Related:
+                    <button type="button" class="link-button" data-goto="choledocholithiasis">Gallstone pancreatitis</button>
+                    <button type="button" class="link-button" data-goto="biliary-cancer">Periampullary tumors</button>
+                </p>
+            </article>
+
+            <!-- Appendix: Appendicitis -->
+            <article class="condition-content" id="appendicitis">
+                <h2>Appendicitis</h2>
+
+                <!-- Pathophysiology -->
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p>
+                        The appendix is a narrow, blind-ended tube. When its opening is blocked, mucus and
+                        bacteria build up behind the blockage, pressure rises, and the wall becomes inflamed,
+                        ischemic and eventually perforates.
+                    </p>
+                </section>
+
+                <!-- Etiology -->
+                <section class="content-section">
+                    <h3>Etiology</h3>
+
+                    <div class="lane-list">
+                        <div class="chain-lane">
+                            <div class="chain">
+                                <div class="chain-stage chain-start">
+                                    <div class="chain-node">
+                                        Fecalith
+                                        <span class="node-label">most common in adults</span>
+                                    </div>
+                                    <div class="chain-node">
+                                        Lymphoid hyperplasia
+                                        <span class="node-label">children; often after a viral infection</span>
+                                    </div>
+                                    <div class="chain-node">
+                                        Neoplasm
+                                        <span class="node-label">e.g. carcinoid; older adults</span>
+                                    </div>
+                                </div>
+
+                                <div class="chain-arrow" aria-hidden="true"></div>
+
+                                <div class="chain-stage">
+                                    <div class="chain-node">
+                                        <span class="change up">Increased</span> intraluminal pressure
+                                    </div>
+                                </div>
+
+                                <div class="chain-arrow" aria-hidden="true"></div>
+
+                                <div class="chain-stage">
+                                    <div class="chain-node">Distention</div>
+                                    <div class="chain-node">Infection</div>
+                                </div>
+
+                                <div class="chain-arrow" aria-hidden="true"></div>
+
+                                <div class="chain-stage">
+                                    <div class="chain-node">Ischemia</div>
+                                    <div class="chain-node">Infarction</div>
+                                </div>
+
+                                <div class="chain-arrow" aria-hidden="true"></div>
+
+                                <div class="chain-stage">
+                                    <div class="chain-node">Perforation</div>
+                                    <div class="chain-node">Abscess</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Symptoms and complications -->
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">Migrating pain</h4>
+
+                        <div class="lane-list">
+                            <div class="chain-lane">
+                                <div class="chain">
+                                    <div class="chain-stage chain-start">
+                                        <div class="chain-node start">
+                                            Periumbilical pain
+                                            <span class="node-label">distended appendix; vague visceral pain (T10)</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="chain-arrow" aria-hidden="true"></div>
+
+                                    <div class="chain-stage">
+                                        <div class="chain-node">
+                                            Inflammation reaches the parietal peritoneum
+                                            <span class="node-label">over 12–24 hours</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="chain-arrow" aria-hidden="true"></div>
+
+                                    <div class="chain-stage">
+                                        <div class="chain-node">
+                                            <strong>Sharp, localized
+                                                <abbr class="term" tabindex="0" data-definition="Right lower quadrant">RLQ</abbr>
+                                                pain</strong>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="sc-note">Also: anorexia (very common), nausea and vomiting after the pain starts, low-grade fever.</p>
+                    </div>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">Examination signs</h4>
+
+                        <div class="table-wrap">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Sign</th>
+                                        <th scope="col">How it is elicited</th>
+                                        <th scope="col">Suggests</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">McBurney's point</th>
+                                        <td>Tenderness one-third of the way from the right ASIS to the umbilicus</td>
+                                        <td>Typical appendix position</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Rovsing's sign</th>
+                                        <td>Pressing on the LLQ causes pain in the RLQ</td>
+                                        <td>Peritoneal irritation in the RLQ</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Psoas sign</th>
+                                        <td>Pain on extending the right hip (patient lying on the left side)</td>
+                                        <td>Retrocecal appendix irritating the iliopsoas</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Obturator sign</th>
+                                        <td>Pain on internally rotating the flexed right hip</td>
+                                        <td>Pelvic appendix irritating the obturator internus</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Rebound tenderness, guarding</th>
+                                        <td>Pain when pressure is released; tense abdominal wall</td>
+                                        <td>Peritonitis</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">Complications</h4>
+                        <ul class="complication-list">
+                            <li>
+                                <span class="complication-name">Perforation</span>
+                                <span class="complication-detail">more likely after 48–72 hours, and in young children and older adults</span>
+                            </li>
+                            <li>
+                                <span class="complication-name">Abscess or phlegmon</span>
+                            </li>
+                            <li>
+                                <span class="complication-name">Generalized peritonitis, sepsis</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
+
+                <!-- Diagnosis -->
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+
+                    <div class="table-wrap">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">For</th>
+                                    <th scope="col">Obtain</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Labs</th>
+                                    <td>
+                                        <ul class="bullet-list">
+                                            <li>Leukocytosis with left shift, CRP</li>
+                                            <li>β-hCG in anyone who could be pregnant <span class="node-label">rule out ectopic pregnancy</span></li>
+                                            <li>Urinalysis</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Adults</th>
+                                    <td>
+                                        CT abdomen and pelvis with contrast
+                                        <span class="node-label">enlarged appendix (over 6 mm), wall thickening, fat stranding, appendicolith</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Children, pregnancy</th>
+                                    <td>
+                                        Ultrasound first to avoid radiation
+                                        <span class="node-label">MRI in pregnancy if ultrasound is unclear</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <p class="note">
+                        <strong>Diagnosis is often clinical.</strong> Scores such as the Alvarado score
+                        combine symptoms, signs and labs to estimate the likelihood.
+                    </p>
+                </section>
+
+                <!-- Treatment -->
+                <section class="content-section">
+                    <h3>Treatment</h3>
+
+                    <div class="table-wrap">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">If</th>
+                                    <th scope="col">Then</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">Uncomplicated appendicitis</th>
+                                    <td>
+                                        Laparoscopic appendectomy with perioperative antibiotics
+                                        <span class="node-label">antibiotics alone is an option in selected patients</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Perforated with generalized peritonitis</th>
+                                    <td>Emergency appendectomy with IV antibiotics</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Perforated with a contained abscess</th>
+                                    <td>IV antibiotics and percutaneous drainage; appendectomy later if needed</td>
                                 </tr>
                             </tbody>
                         </table>

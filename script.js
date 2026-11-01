@@ -243,6 +243,12 @@ function currentQuery() {
     return searchInput.value.trim().toLowerCase();
 }
 
+// Non-matching conditions are dimmed on the map (and hidden in the phone layout) rather
+// than removed, so the drawing keeps its shape while searching
+function isListed(button) {
+    return !button.classList.contains("filtered-out");
+}
+
 function filterConditions() {
     const query = currentQuery();
     let matchCount = 0;
@@ -252,15 +258,14 @@ function filterConditions() {
         const textMatch = !nameMatch && query.length > 1 && text.includes(query);
         const visible = !query || nameMatch || textMatch;
 
-        button.hidden = !visible;
+        button.classList.toggle("filtered-out", !visible);
         button.classList.toggle("text-match", Boolean(query) && textMatch);
         if (visible) matchCount += 1;
     });
 
-    document.querySelectorAll(".condition-group").forEach((group) => {
-        const hasVisible = [...group.children].some((button) => !button.hidden);
-        group.hidden = !hasVisible;
-        group.previousElementSibling.hidden = !hasVisible;
+    document.querySelectorAll(".station").forEach((station) => {
+        const hasListed = [...station.querySelectorAll(".condition-item")].some(isListed);
+        station.classList.toggle("filtered-out", !hasListed);
     });
 
     noResults.hidden = matchCount > 0;
@@ -275,7 +280,7 @@ searchInput.addEventListener("input", filterConditions);
 
 searchInput.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
-        const first = conditionButtons.find((button) => !button.hidden);
+        const first = conditionButtons.find(isListed);
         if (first) first.click();
     } else if (event.key === "Escape" && searchInput.value) {
         event.stopPropagation();
@@ -283,7 +288,7 @@ searchInput.addEventListener("keydown", (event) => {
         filterConditions();
     } else if (event.key === "ArrowDown") {
         event.preventDefault();
-        const first = conditionButtons.find((button) => !button.hidden);
+        const first = conditionButtons.find(isListed);
         if (first) first.focus();
     }
 });
@@ -337,7 +342,7 @@ function scrollToFirstMatch() {
 
 // Arrow keys move between conditions in the sidebar
 document.querySelector(".condition-list").addEventListener("keydown", (event) => {
-    const visible = conditionButtons.filter((button) => !button.hidden);
+    const visible = conditionButtons.filter(isListed);
     const index = visible.indexOf(document.activeElement);
     if (index === -1) return;
 

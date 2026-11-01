@@ -10,9 +10,10 @@ There is nothing to install or build. Open `index.html` in any modern browser.
 
 ## Conditions covered
 
+Grouped by organ, in the same top-to-bottom order as the sidebar map:
+
 - **Esophagus:** esophagitis, esophageal motility disorders, GERD
 - **Stomach:** gastritis, peptic ulcer disease (PUD)
-- **Intestines:** malabsorption, diverticular diseases, IBD, IBS, diarrhea, intestinal ischemia
 - **Liver:**
   - Causes of hepatocellular injury, organized by the **VITAMIN + other** mnemonic:
     - **V**ascular: ischemic hepatitis, congestive hepatopathy, Budd-Chiari syndrome
@@ -25,6 +26,10 @@ There is nothing to install or build. Open `index.html` in any modern browser.
     - **Other:** acute fatty liver of pregnancy (AFLP)
   - Acute liver failure and cirrhosis: complications, diagnosis, and an interactive Child-Pugh calculator
 - **Gallbladder and biliary tree:** cholelithiasis and biliary colic, cholecystitis (including Mirizzi syndrome, acalculous cholecystitis and gallstone ileus), choledocholithiasis and gallstone pancreatitis, ascending cholangitis, biliary fistulas, biliary and periampullary malignancies
+- **Pancreas:** acute pancreatitis
+- **Small intestine:** malabsorption, diarrhea, intestinal ischemia
+- **Colon and rectum:** diverticular diseases, IBD, IBS
+- **Appendix:** appendicitis
 
 Each hepatocellular injury page starts with a letter strip linking to the others. The biliary pages have a numbered strip instead, and the cholelithiasis page has a labelled diagram of the biliary tree showing where each stone problem happens.
 
@@ -32,7 +37,8 @@ Each hepatocellular injury page starts with a letter strip linking to the others
 
 ### Reference pages
 
-- **Search** matches condition names and the text inside each page, and highlights matches on the open page.
+- **GI tract map**: the sidebar draws the GI tract as one continuous line from mouth to rectum, with the liver, biliary tree, gallbladder, pancreas and appendix attached. Each organ points to its list of conditions. Hovering over or opening a condition lights up its organ.
+- **Search** matches condition names and the text inside each page, and highlights matches on the open page. On the map, organs with matches light up and the rest dim.
 - **Section jump bar**: the title and section links stay at the top of the page while you scroll, and highlight the section you're reading.
 - **Abbreviation tooltips**: hover over or focus any dotted-underlined term to see its definition.
 - **Increased/Decreased labels** use both colour and an arrow shape.
@@ -40,13 +46,13 @@ Each hepatocellular injury page starts with a letter strip linking to the others
 - **Shareable links**: each condition has its own address, e.g. `index.html#gerd`.
 - **Light and dark themes**: the page follows your system setting, or you can switch with the toggle in the sidebar.
 - **Child-Pugh calculator**: select one option per row to get the score and class.
-- **Phone layout**: the sidebar becomes a compact top bar.
+- **Phone layout**: the map is hidden, and the sidebar becomes a compact top bar with a scrolling row of conditions.
 
 ### Practice quiz
 
 Open it from the **Practice quiz** button in the sidebar, the **Quiz me** button on any condition page, or `index.html#quiz`.
 
-- 112 clinical-vignette questions:
+- 119 clinical-vignette questions:
   - **Step 1** questions test mechanisms, microbiology and pathology.
   - **Step 2 CK** questions test diagnosis and the next step in management.
 - Filter by topic, exam, and whether you've answered or missed a question before. Choose 5, 10, 20 or all questions.
@@ -81,6 +87,7 @@ style.css      Styles, including light and dark theme colours
 script.js      Navigation, search, section jump bar, tooltips, theme toggle
 questions.js   Quiz question bank
 quiz.js        Quiz screens and logic
+map.js         Draws the GI tract map in the sidebar
 ```
 
 ## Editing content
@@ -89,7 +96,7 @@ quiz.js        Quiz screens and logic
 
 All condition content lives in `index.html`.
 
-1. Add a button to the right group in the sidebar (`.condition-group`):
+1. Add a button to the right organ's group in the sidebar (the `.condition-group` inside each `.station`). Adding a new organ group also needs a matching drawing in `map.js`.
 
    ```html
    <button type="button" class="condition-item" data-condition="my-condition">My condition</button>

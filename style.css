@@ -537,6 +537,207 @@ body {
 }
 
 /* =========================
+   GI tract map (sidebar)
+   The tract is drawn in the left column by map.js; each .station holds one organ's
+   conditions to the right, joined by a bracket that its leader line points into.
+========================= */
+
+.sidebar {
+    flex-basis: 340px;
+}
+
+.gi-map-nav {
+    --map-width: 104px;
+    position: relative;
+    padding: 0 4px 12px 0;
+}
+
+.gi-map {
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: visible;
+    pointer-events: none;
+}
+
+.station {
+    position: relative;
+    flex-shrink: 0; /* the list scrolls; stations must not squeeze to fit */
+    padding: 12px 0 10px calc(var(--map-width) + 8px);
+}
+
+/* Extra room so each organ's drawing fits beside its list */
+.station[data-organ="esophagus"] {
+    min-height: 120px;
+    padding-top: 34px;
+}
+
+.station[data-organ="stomach"] {
+    min-height: 150px;
+    padding-top: 30px;
+}
+
+.station[data-organ="biliary"] {
+    min-height: 220px;
+    padding-top: 40px;
+}
+
+.station[data-organ="pancreas"] {
+    min-height: 120px;
+    padding-top: 30px;
+}
+
+.station[data-organ="appendix"] {
+    min-height: 90px;
+    padding-top: 22px;
+}
+
+.station[data-organ="small-intestine"] {
+    min-height: 200px;
+    padding-top: 34px;
+}
+
+.station[data-organ="colon"] {
+    min-height: 230px;
+    padding-top: 24px;
+}
+
+.station .group-label {
+    position: relative;
+    margin: 0 0 6px;
+    padding-left: 8px;
+}
+
+/* Bracket that gathers the conditions; the leader line meets it at the label */
+.station .condition-group {
+    margin-left: -8px;
+    padding-left: 8px;
+    border-left: 1.5px solid var(--color-border);
+    transition: border-color 0.2s ease;
+}
+
+.station.is-active .condition-group,
+.station.is-hover .condition-group {
+    border-color: var(--color-accent-line);
+}
+
+.station.is-active .group-label,
+.station.is-hover .group-label {
+    color: var(--color-accent-hover);
+}
+
+.condition-item.filtered-out {
+    opacity: 0.32;
+}
+
+.station.is-dim .group-label {
+    opacity: 0.45;
+}
+
+/* ----- The drawing ----- */
+
+.gi-part {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-width: 4.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    transition: stroke 0.25s ease, stroke-width 0.25s ease, opacity 0.25s ease;
+}
+
+.gi-part.gi-thick {
+    stroke-width: 6;
+}
+
+.gi-part.gi-thin {
+    stroke-width: 3;
+}
+
+.gi-part.gi-hair {
+    stroke-width: 1.5;
+    opacity: 0.8;
+}
+
+.gi-organ,
+.gi-mouth {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 2.5;
+    transition: fill 0.25s ease, stroke 0.25s ease, opacity 0.25s ease;
+}
+
+.gi-organ.gi-pancreas {
+    fill: var(--color-up-soft);
+}
+
+.gi-note {
+    fill: var(--color-text-muted);
+    font-size: 9.5px;
+    font-style: italic;
+    opacity: 0.85;
+}
+
+.gi-leader {
+    fill: none;
+    stroke: var(--color-border-strong);
+    stroke-width: 1.25;
+    stroke-dasharray: 2 3;
+    transition: stroke 0.25s ease;
+}
+
+.gi-dot {
+    fill: var(--color-surface);
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+    transition: fill 0.25s ease, stroke 0.25s ease;
+}
+
+.gi-dot-end {
+    fill: var(--color-border-strong);
+    stroke: none;
+}
+
+/* Hovered, open or matching organ lights up */
+.gi-part:is(.is-active, .is-hover, .is-match) {
+    stroke: var(--color-accent);
+    stroke-width: 6.5;
+}
+
+.gi-part.gi-thin:is(.is-active, .is-hover, .is-match) {
+    stroke-width: 4;
+}
+
+.gi-organ:is(.is-active, .is-hover, .is-match),
+.gi-mouth:is(.is-active, .is-hover, .is-match) {
+    fill: var(--color-accent-line);
+    stroke: var(--color-accent);
+}
+
+.gi-leader:is(.is-active, .is-hover, .is-match) {
+    stroke: var(--color-accent);
+    stroke-dasharray: none;
+}
+
+.gi-dot:is(.is-active, .is-hover, .is-match) {
+    fill: var(--color-accent);
+    stroke: var(--color-surface);
+}
+
+.is-dim:is(.gi-part, .gi-organ, .gi-mouth, .gi-leader, .gi-dot) {
+    opacity: 0.3;
+}
+
+@media (max-width: 1100px) {
+    .sidebar {
+        flex-basis: 300px;
+    }
+
+    .gi-map-nav {
+        --map-width: 96px;
+    }
+}
+
+/* =========================
    Right content panel
 ========================= */
 
@@ -2320,6 +2521,18 @@ button.mnemonic-item:hover:not(:disabled) {
     line-height: 1.5;
 }
 
+/* Mnemonic tables (e.g. I GET SMASHED): the letter column reads down as the word */
+.data-table.mnemonic-table tbody th {
+    width: 56px;
+    min-width: 0;
+    color: var(--color-accent);
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    vertical-align: middle;
+}
+
 /* =========================
    Child-Pugh calculator
 ========================= */
@@ -3564,7 +3777,22 @@ button.breakdown-name {
         gap: 6px;
     }
 
-    .condition-group[hidden] {
+    /* No room for the drawing: stations dissolve into the pill row */
+    .gi-map {
+        display: none;
+    }
+
+    .station {
+        display: contents;
+    }
+
+    .station .condition-group {
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+
+    .condition-item.filtered-out {
         display: none;
     }
 
