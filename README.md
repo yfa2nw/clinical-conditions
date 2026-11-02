@@ -52,7 +52,7 @@ Each hepatocellular injury page starts with a letter strip linking to the others
 
 Open it from the **Practice quiz** button in the sidebar, the **Quiz me** button on any condition page, or `index.html#quiz`.
 
-- 119 clinical-vignette questions:
+- 238 clinical-vignette questions:
   - **Step 1** questions test mechanisms, microbiology and pathology.
   - **Step 2 CK** questions test diagnosis and the next step in management.
 - Filter by topic, exam, and whether you've answered or missed a question before. Choose 5, 10, 20 or all questions.
