@@ -1,3 +1,5 @@
+const SITE_NAME = "Clinical Conditions";
+
 const conditionButtons = [...document.querySelectorAll(".condition-item")];
 const conditionContents = [...document.querySelectorAll(".condition-content")];
 const contentPanel = document.getElementById("content-panel");
@@ -128,7 +130,7 @@ function showCondition(id, { updateHistory = true, focusTitle = false } = {}) {
         history.pushState({ condition: id }, "", `#${id}`);
     }
 
-    document.title = `${labelFor(id)} · GI Symptoms Reference`;
+    document.title = `${labelFor(id)} · ${SITE_NAME}`;
     viewStatus.textContent = `Showing ${selectedContent.querySelector("h2").textContent}`;
 
     if (focusTitle) {
@@ -389,7 +391,7 @@ themeToggle.addEventListener("click", () => {
     const next = effectiveTheme() === "dark" ? "light" : "dark";
     document.documentElement.dataset.theme = next;
     try {
-        localStorage.setItem("gi-theme", next);
+        localStorage.setItem("clinical-theme", next);
     } catch (error) {}
     syncThemeToggle();
 });

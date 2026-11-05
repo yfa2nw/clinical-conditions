@@ -1,10 +1,11 @@
 /* =========================
    Practice quiz
    (uses conditionButtons, conditionContents, contentPanel, quizView, quizButton,
-   viewStatus and labelFor from script.js)
+   viewStatus, labelFor and SITE_NAME from app.js)
 ========================= */
 
-const QUIZ_HISTORY_KEY = "gi-quiz-history";
+// Each specialty keeps its own results (e.g. "gi-quiz-history")
+const QUIZ_HISTORY_KEY = `${document.body.dataset.specialty}-quiz-history`;
 const LETTERS = ["A", "B", "C", "D", "E"];
 const STEP_NAMES = { 1: "Step 1", 2: "Step 2 CK" };
 
@@ -135,7 +136,7 @@ function openQuiz({ updateHistory = true, condition = null } = {}) {
     if (updateHistory && location.hash !== "#quiz") {
         history.pushState({ quiz: true }, "", "#quiz");
     }
-    document.title = "Practice quiz · GI Symptoms Reference";
+    document.title = `Practice quiz · ${SITE_NAME}`;
     viewStatus.textContent = "Showing practice quiz";
 
     if (condition) {

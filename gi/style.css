@@ -1,0 +1,173 @@
+/* GI-only styles; shared styles are in shared/style.css */
+
+/* =========================
+   Body map: room for each organ's drawing
+========================= */
+
+.station[data-organ="esophagus"] {
+    min-height: 120px;
+    padding-top: 34px;
+}
+
+.station[data-organ="stomach"] {
+    min-height: 150px;
+    padding-top: 30px;
+}
+
+.station[data-organ="biliary"] {
+    min-height: 220px;
+    padding-top: 40px;
+}
+
+.station[data-organ="pancreas"] {
+    min-height: 120px;
+    padding-top: 30px;
+}
+
+.station[data-organ="appendix"] {
+    min-height: 90px;
+    padding-top: 22px;
+}
+
+.station[data-organ="small-intestine"] {
+    min-height: 200px;
+    padding-top: 34px;
+}
+
+.station[data-organ="colon"] {
+    min-height: 230px;
+    padding-top: 24px;
+}
+
+.map-organ.gi-pancreas {
+    fill: var(--color-up-soft);
+}
+
+/* =========================
+   Biliary tree diagram
+========================= */
+
+.biliary-diagram {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 24px;
+    margin: 20px 0 0;
+    padding: 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface-muted);
+}
+
+.biliary-diagram svg {
+    display: block;
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    margin: 0 auto;
+}
+
+.bt-duct {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 7;
+    stroke-linecap: round;
+}
+
+.bt-pancreatic {
+    stroke: var(--color-up);
+    stroke-width: 5;
+}
+
+.bt-gallbladder {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent);
+    stroke-width: 3;
+}
+
+.bt-duodenum {
+    fill: none;
+    stroke: var(--color-border);
+    stroke-width: 30;
+    stroke-linecap: round;
+}
+
+.bt-pancreas {
+    fill: var(--color-up-soft);
+    stroke: var(--color-border-strong);
+    stroke-width: 1.5;
+}
+
+.bt-label {
+    fill: var(--color-text-muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.bt-marker circle {
+    fill: var(--color-wrong);
+    stroke: var(--color-surface);
+    stroke-width: 2.5;
+}
+
+.bt-marker text {
+    fill: var(--color-surface);
+    font-size: 12px;
+    font-weight: 800;
+    text-anchor: middle;
+}
+
+.bt-legend {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    counter-reset: bt;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.bt-legend li {
+    position: relative;
+    padding-left: 34px;
+    counter-increment: bt;
+}
+
+.bt-legend li + li {
+    margin-top: 10px;
+}
+
+/* Matches the numbered markers on the diagram */
+.bt-legend li::before {
+    content: counter(bt);
+    position: absolute;
+    top: 1px;
+    left: 0;
+    display: grid;
+    place-items: center;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: var(--color-wrong);
+    color: var(--color-surface);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+@media (max-width: 760px) {
+    .biliary-diagram {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .mnemonic {
+        padding: 12px;
+    }
+
+    .mnemonic-item {
+        padding: 8px 2px;
+        font-size: 10.5px;
+        overflow-wrap: normal;
+        hyphens: auto;
+    }
+}

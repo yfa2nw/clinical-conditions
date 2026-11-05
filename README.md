@@ -1,14 +1,18 @@
-# GI Conditions Reference
+# Clinical Conditions
 
-An interactive study reference for common gastrointestinal conditions. Each condition covers its pathophysiology, etiology, symptoms and complications, diagnosis, and treatment. A built-in practice quiz has USMLE-style multiple-choice questions.
+An interactive study reference for clinical conditions, organized by organ system. Each condition covers its pathophysiology, etiology, symptoms and complications, diagnosis, and treatment. A built-in practice quiz has USMLE-style multiple-choice questions.
 
 > **For educational use only.** This is a study aid, not a clinical reference. Do not use it for patient care.
 
 ## Getting started
 
-There is nothing to install or build. Open `index.html` in any modern browser.
+There is nothing to install or build. Open `index.html` in any modern browser and choose an organ system.
 
 ## Conditions covered
+
+Gastrointestinal is the first organ system, with more to follow.
+
+### Gastrointestinal
 
 Grouped by organ, in the same top-to-bottom order as the sidebar map:
 
@@ -43,14 +47,14 @@ Each hepatocellular injury page starts with a letter strip linking to the others
 - **Abbreviation tooltips**: hover over or focus any dotted-underlined term to see its definition.
 - **Increased/Decreased labels** use both colour and an arrow shape.
 - **Cross-links, plus Previous and Next buttons**, connect related conditions.
-- **Shareable links**: each condition has its own address, e.g. `index.html#gerd`.
+- **Shareable links**: each condition has its own address, e.g. `gi/index.html#gerd`.
 - **Light and dark themes**: the page follows your system setting, or you can switch with the toggle in the sidebar.
 - **Child-Pugh calculator**: select one option per row to get the score and class.
 - **Phone layout**: the map is hidden, and the sidebar becomes a compact top bar with a scrolling row of conditions.
 
 ### Practice quiz
 
-Open it from the **Practice quiz** button in the sidebar, the **Quiz me** button on any condition page, or `index.html#quiz`.
+Open it from the **Practice quiz** button in the sidebar, the **Quiz me** button on any condition page, or `gi/index.html#quiz`.
 
 - 238 clinical-vignette questions:
   - **Step 1** questions test mechanisms, microbiology and pathology.
@@ -82,21 +86,29 @@ Open it from the **Practice quiz** button in the sidebar, the **Quiz me** button
 ## Project structure
 
 ```text
-index.html     Page layout and all condition content
-style.css      Styles, including light and dark theme colours
-script.js      Navigation, search, section jump bar, tooltips, theme toggle
-questions.js   Quiz question bank
-quiz.js        Quiz screens and logic
-map.js         Draws the GI tract map in the sidebar
+index.html          Landing page: choose an organ system
+shared/
+  style.css         Styles, including light and dark theme colours
+  theme.js          Applies the saved theme before the page appears
+  app.js            Navigation, search, section jump bar, tooltips, theme toggle
+  quiz.js           Quiz screens and logic
+  map.js            Lines the sidebar drawing up with its stations; highlighting
+gi/
+  index.html        Page layout and all GI condition content
+  style.css         GI-only styles (map spacing, biliary tree diagram)
+  questions.js      GI quiz question bank
+  map.js            Draws the GI tract
 ```
 
 ## Editing content
 
+The steps below use the GI pages as the example; other organ systems work the same way.
+
 ### Adding or editing a condition
 
-All condition content lives in `index.html`.
+All GI condition content lives in `gi/index.html`.
 
-1. Add a button to the right organ's group in the sidebar (the `.condition-group` inside each `.station`). Adding a new organ group also needs a matching drawing in `map.js`.
+1. Add a button to the right organ's group in the sidebar (the `.condition-group` inside each `.station`). Adding a new organ group also needs a matching drawing in `gi/map.js`.
 
    ```html
    <button type="button" class="condition-item" data-condition="my-condition">My condition</button>
@@ -149,7 +161,7 @@ In each copy, the current page's letter is a `<span ... aria-current="page">` an
 
 ### Adding a quiz question
 
-Add an entry to `QUIZ_QUESTIONS` in `questions.js`:
+Add an entry to `QUIZ_QUESTIONS` in `gi/questions.js`:
 
 ```js
 {
@@ -168,10 +180,17 @@ Add an entry to `QUIZ_QUESTIONS` in `questions.js`:
 
 Options are shuffled when shown, so you can list them in any order.
 
+### Adding an organ system
+
+1. Copy the `gi` folder (e.g. to `neuro`), then replace its conditions, questions and drawing.
+2. In the new `index.html`, set `data-specialty` on `<body>`. Quiz progress is saved separately for each value.
+3. In the new `map.js`, write a `drawTract()` that returns the point each `.station`'s leader line starts from. The last `.station` in the sidebar sets the height of the drawing.
+4. Add a card for it to the landing page (`index.html`).
+
 ## Browser support
 
 The page works in current versions of Chrome, Edge, Firefox and Safari. Highlighting search matches on a page needs the CSS Custom Highlight API. Browsers without it still filter the sidebar but don't highlight matches.
 
 ## Saved data
 
-The theme choice (`gi-theme`) and quiz progress (`gi-quiz-history`) are saved in the browser's `localStorage` and never leave your device. To clear quiz progress, use **Reset progress** on the quiz setup screen.
+The theme choice (`clinical-theme`) and each organ system's quiz progress (e.g. `gi-quiz-history`) are saved in the browser's `localStorage` and never leave your device. To clear quiz progress, use **Reset progress** on the quiz setup screen.

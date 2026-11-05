@@ -323,6 +323,20 @@ body {
     }
 }
 
+.home-link {
+    display: inline-block;
+    margin: 0 4px 10px;
+    color: var(--color-text-muted);
+    font-size: 13px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.home-link:hover {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+}
+
 /* Search */
 
 .search {
@@ -537,8 +551,8 @@ body {
 }
 
 /* =========================
-   GI tract map (sidebar)
-   The tract is drawn in the left column by map.js; each .station holds one organ's
+   Body map (sidebar)
+   The drawing sits in the left column (shared/map.js and each specialty's map.js); each .station holds one organ's
    conditions to the right, joined by a bracket that its leader line points into.
 ========================= */
 
@@ -546,13 +560,13 @@ body {
     flex-basis: 340px;
 }
 
-.gi-map-nav {
+.map-nav {
     --map-width: 104px;
     position: relative;
     padding: 0 4px 12px 0;
 }
 
-.gi-map {
+.map-svg {
     position: absolute;
     top: 0;
     left: 0;
@@ -564,42 +578,6 @@ body {
     position: relative;
     flex-shrink: 0; /* the list scrolls; stations must not squeeze to fit */
     padding: 12px 0 10px calc(var(--map-width) + 8px);
-}
-
-/* Extra room so each organ's drawing fits beside its list */
-.station[data-organ="esophagus"] {
-    min-height: 120px;
-    padding-top: 34px;
-}
-
-.station[data-organ="stomach"] {
-    min-height: 150px;
-    padding-top: 30px;
-}
-
-.station[data-organ="biliary"] {
-    min-height: 220px;
-    padding-top: 40px;
-}
-
-.station[data-organ="pancreas"] {
-    min-height: 120px;
-    padding-top: 30px;
-}
-
-.station[data-organ="appendix"] {
-    min-height: 90px;
-    padding-top: 22px;
-}
-
-.station[data-organ="small-intestine"] {
-    min-height: 200px;
-    padding-top: 34px;
-}
-
-.station[data-organ="colon"] {
-    min-height: 230px;
-    padding-top: 24px;
 }
 
 .station .group-label {
@@ -636,7 +614,7 @@ body {
 
 /* ----- The drawing ----- */
 
-.gi-part {
+.map-part {
     fill: none;
     stroke: var(--color-accent-line);
     stroke-width: 4.5;
@@ -645,39 +623,34 @@ body {
     transition: stroke 0.25s ease, stroke-width 0.25s ease, opacity 0.25s ease;
 }
 
-.gi-part.gi-thick {
+.map-part.map-thick {
     stroke-width: 6;
 }
 
-.gi-part.gi-thin {
+.map-part.map-thin {
     stroke-width: 3;
 }
 
-.gi-part.gi-hair {
+.map-part.map-hair {
     stroke-width: 1.5;
     opacity: 0.8;
 }
 
-.gi-organ,
-.gi-mouth {
+.map-organ {
     fill: var(--color-accent-soft);
     stroke: var(--color-accent-line);
     stroke-width: 2.5;
     transition: fill 0.25s ease, stroke 0.25s ease, opacity 0.25s ease;
 }
 
-.gi-organ.gi-pancreas {
-    fill: var(--color-up-soft);
-}
-
-.gi-note {
+.map-note {
     fill: var(--color-text-muted);
     font-size: 9.5px;
     font-style: italic;
     opacity: 0.85;
 }
 
-.gi-leader {
+.map-leader {
     fill: none;
     stroke: var(--color-border-strong);
     stroke-width: 1.25;
@@ -685,45 +658,44 @@ body {
     transition: stroke 0.25s ease;
 }
 
-.gi-dot {
+.map-dot {
     fill: var(--color-surface);
     stroke: var(--color-accent-line);
     stroke-width: 2;
     transition: fill 0.25s ease, stroke 0.25s ease;
 }
 
-.gi-dot-end {
+.map-dot-end {
     fill: var(--color-border-strong);
     stroke: none;
 }
 
 /* Hovered, open or matching organ lights up */
-.gi-part:is(.is-active, .is-hover, .is-match) {
+.map-part:is(.is-active, .is-hover, .is-match) {
     stroke: var(--color-accent);
     stroke-width: 6.5;
 }
 
-.gi-part.gi-thin:is(.is-active, .is-hover, .is-match) {
+.map-part.map-thin:is(.is-active, .is-hover, .is-match) {
     stroke-width: 4;
 }
 
-.gi-organ:is(.is-active, .is-hover, .is-match),
-.gi-mouth:is(.is-active, .is-hover, .is-match) {
+.map-organ:is(.is-active, .is-hover, .is-match) {
     fill: var(--color-accent-line);
     stroke: var(--color-accent);
 }
 
-.gi-leader:is(.is-active, .is-hover, .is-match) {
+.map-leader:is(.is-active, .is-hover, .is-match) {
     stroke: var(--color-accent);
     stroke-dasharray: none;
 }
 
-.gi-dot:is(.is-active, .is-hover, .is-match) {
+.map-dot:is(.is-active, .is-hover, .is-match) {
     fill: var(--color-accent);
     stroke: var(--color-surface);
 }
 
-.is-dim:is(.gi-part, .gi-organ, .gi-mouth, .gi-leader, .gi-dot) {
+.is-dim:is(.map-part, .map-organ, .map-leader, .map-dot) {
     opacity: 0.3;
 }
 
@@ -732,7 +704,7 @@ body {
         flex-basis: 300px;
     }
 
-    .gi-map-nav {
+    .map-nav {
         --map-width: 96px;
     }
 }
@@ -2216,135 +2188,6 @@ button.mnemonic-item:hover:not(:disabled) {
 }
 
 /* =========================
-   Biliary tree diagram
-========================= */
-
-.biliary-diagram {
-    display: grid;
-    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
-    align-items: center;
-    gap: 24px;
-    margin: 20px 0 0;
-    padding: 16px;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    background-color: var(--color-surface-muted);
-}
-
-.biliary-diagram svg {
-    display: block;
-    width: 100%;
-    max-width: 440px;
-    height: auto;
-    margin: 0 auto;
-}
-
-.bt-duct {
-    fill: none;
-    stroke: var(--color-accent);
-    stroke-width: 7;
-    stroke-linecap: round;
-}
-
-.bt-pancreatic {
-    stroke: var(--color-up);
-    stroke-width: 5;
-}
-
-.bt-gallbladder {
-    fill: var(--color-accent-soft);
-    stroke: var(--color-accent);
-    stroke-width: 3;
-}
-
-.bt-duodenum {
-    fill: none;
-    stroke: var(--color-border);
-    stroke-width: 30;
-    stroke-linecap: round;
-}
-
-.bt-pancreas {
-    fill: var(--color-up-soft);
-    stroke: var(--color-border-strong);
-    stroke-width: 1.5;
-}
-
-.bt-label {
-    fill: var(--color-text-muted);
-    font-size: 12px;
-    font-weight: 600;
-}
-
-.bt-marker circle {
-    fill: var(--color-wrong);
-    stroke: var(--color-surface);
-    stroke-width: 2.5;
-}
-
-.bt-marker text {
-    fill: var(--color-surface);
-    font-size: 12px;
-    font-weight: 800;
-    text-anchor: middle;
-}
-
-.bt-legend {
-    margin: 0;
-    padding-left: 0;
-    list-style: none;
-    counter-reset: bt;
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-.bt-legend li {
-    position: relative;
-    padding-left: 34px;
-    counter-increment: bt;
-}
-
-.bt-legend li + li {
-    margin-top: 10px;
-}
-
-/* Matches the numbered markers on the diagram */
-.bt-legend li::before {
-    content: counter(bt);
-    position: absolute;
-    top: 1px;
-    left: 0;
-    display: grid;
-    place-items: center;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background-color: var(--color-wrong);
-    color: var(--color-surface);
-    font-size: 12px;
-    font-weight: 800;
-}
-
-@media (max-width: 760px) {
-    .biliary-diagram {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .mnemonic {
-        padding: 12px;
-    }
-
-    .mnemonic-item {
-        padding: 8px 2px;
-        font-size: 10.5px;
-        overflow-wrap: normal;
-        hyphens: auto;
-    }
-}
-
-/* =========================
    Wide comparison tables (hepatitis viruses, HBV serology)
 ========================= */
 
@@ -3617,7 +3460,7 @@ button.breakdown-name {
 
     .quiz-button {
         position: absolute;
-        top: 14px;
+        top: 38px;
         right: 58px;
         width: auto;
         margin: 0;
@@ -3778,7 +3621,7 @@ button.breakdown-name {
     }
 
     /* No room for the drawing: stations dissolve into the pill row */
-    .gi-map {
+    .map-svg {
         display: none;
     }
 
@@ -3921,6 +3764,121 @@ button.breakdown-name {
 
     .triangle-diagram {
         width: 180px;
+    }
+}
+
+/* =========================
+   Landing page
+========================= */
+
+.landing {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: 880px;
+    min-height: calc(100vh - 48px);
+    min-height: calc(100dvh - 48px);
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.landing-header h1 {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 10px;
+    font-family: var(--font-display);
+    font-size: 38px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.15;
+}
+
+.landing-header .brand-mark {
+    width: 36px;
+    height: 36px;
+    border-radius: 10px;
+}
+
+.landing-header .brand-mark::after {
+    inset: 10px 12px;
+}
+
+.landing-header p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.specialty-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.specialty-card {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    height: 100%;
+    padding: 22px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-panel);
+    color: var(--color-text);
+    text-decoration: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s var(--ease);
+}
+
+a.specialty-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-raised);
+    transform: translateY(-2px);
+}
+
+.specialty-name {
+    font-family: var(--font-display);
+    font-size: 21px;
+    font-weight: 700;
+}
+
+.specialty-detail {
+    color: var(--color-text-muted);
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.specialty-meta {
+    margin-top: 10px;
+    color: var(--color-accent-hover);
+    font-size: 14px;
+    font-weight: 650;
+}
+
+.specialty-card.is-soon {
+    border-style: dashed;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+.specialty-card.is-soon .specialty-meta {
+    color: var(--color-text-muted);
+}
+
+.landing-footer {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    .landing-header h1 {
+        font-size: 30px;
     }
 }
 
