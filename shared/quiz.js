@@ -25,6 +25,49 @@ const quiz = {
     index: 0,
 };
 
+/* ---------- Abbreviations ---------- */
+
+// Quiz text is plain strings, so it borrows the definitions already on the pages
+const quizTerms = new Map();
+document.querySelectorAll("abbr.term").forEach((term) => {
+    const text = term.textContent.trim();
+    const isAbbreviation = /[A-Z].*[A-Z0-9]|^[a-z]+[A-Z]|^(bd|A-fib)$/.test(text);
+    if (isAbbreviation && !quizTerms.has(text)) quizTerms.set(text, term.dataset.definition);
+});
+
+const quizTermPattern = quizTerms.size
+    ? new RegExp(`(?<![\\w+-]|type )(${[...quizTerms.keys()]
+        .sort((a, b) => b.length - a.length)
+        .map((text) => text.replace(/[.*+?^${}()|[\]\\/]/g, "\\$&"))
+        .join("|")})(?!\\w)`, "g")
+    : null;
+
+function addQuizTerms(root) {
+    if (!quizTermPattern) return;
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+    const nodes = [];
+    while (walker.nextNode()) nodes.push(walker.currentNode);
+
+    nodes.forEach((node) => {
+        const parent = node.parentElement;
+        if (parent.closest("button, .tag, .eyebrow, .visually-hidden, .option-letter, .term, .review-meta, .breakdown-name")) return;
+
+        const pieces = node.textContent.split(quizTermPattern);
+        if (pieces.length === 1) return;
+
+        node.replaceWith(...pieces.map((piece, index) => {
+            if (index % 2 === 0) return piece;
+            const inLabel = parent.closest("label");
+            return el("abbr", {
+                class: "term",
+                tabindex: inLabel ? null : "0",
+                "data-definition": quizTerms.get(piece),
+                text: piece,
+            });
+        }));
+    });
+}
+
 /* ---------- Small helpers ---------- */
 
 function el(tag, props = {}, ...children) {
@@ -149,6 +192,9 @@ function openQuiz({ updateHistory = true, condition = null } = {}) {
     contentPanel.scrollTop = 0;
 }
 
+// An organ system with no questions yet has no quiz to offer
+quizButton.hidden = QUIZ_QUESTIONS.length === 0;
+
 quizButton.addEventListener("click", () => {
     openQuiz();
     focusQuizTitle();
@@ -158,6 +204,7 @@ function renderQuiz() {
     if (quiz.phase === "question") quizView.replaceChildren(renderQuestion());
     else if (quiz.phase === "results") quizView.replaceChildren(renderResults());
     else quizView.replaceChildren(renderSetup());
+    if (quiz.phase !== "setup") addQuizTerms(quizView);
 }
 
 /* =========================

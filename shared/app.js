@@ -238,7 +238,9 @@ contentPanel.addEventListener("scroll", () => {
 const searchIndex = conditionButtons.map((button) => ({
     button,
     name: button.textContent.toLowerCase(),
-    text: document.getElementById(button.dataset.condition).textContent.toLowerCase(),
+    // Sections only: the Previous/Next buttons would match the neighbouring conditions
+    text: [...document.getElementById(button.dataset.condition).querySelectorAll(".content-section")]
+        .map((section) => section.textContent).join(" ").toLowerCase(),
 }));
 
 function currentQuery() {

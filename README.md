@@ -10,7 +10,7 @@ There is nothing to install or build. Open `index.html` in any modern browser an
 
 ## Conditions covered
 
-Gastrointestinal is the first organ system, with more to follow.
+Gastrointestinal is complete. Neurology is in progress: stroke symptoms, acute ischemic stroke, and intracerebral hemorrhage are written, and the other pages are still to be added.
 
 ### Gastrointestinal
 
@@ -98,6 +98,12 @@ gi/
   style.css         GI-only styles (map spacing, biliary tree diagram)
   questions.js      GI quiz question bank
   map.js            Draws the GI tract
+neuro/
+  index.html        Page layout and all neurology condition content
+  style.css         Neurology theme
+  questions.js      Neurology quiz question bank
+  map.js            Draws the neuron chain
+  concepts.js       Shared concepts panel linking conditions
 ```
 
 ## Editing content
@@ -186,6 +192,16 @@ Options are shuffled when shown, so you can list them in any order.
 2. In the new `index.html`, set `data-specialty` on `<body>`. Quiz progress is saved separately for each value.
 3. In the new `map.js`, write a `drawTract()` that returns the point each `.station`'s leader line starts from. The last `.station` in the sidebar sets the height of the drawing.
 4. Add a card for it to the landing page (`index.html`).
+
+### Shared concepts (neurology)
+
+Mark a term that recurs across conditions:
+
+```html
+<span class="concept" data-concept="dopamine">dopamine</span>
+```
+
+The mark is invisible. If the same `data-concept` appears in another condition, a "Shared concepts" panel linking the two is added automatically.
 
 ## Browser support
 

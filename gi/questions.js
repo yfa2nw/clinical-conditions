@@ -33,7 +33,7 @@ const QUIZ_QUESTIONS = [
         answer: 0,
         explanation: "Candida is the most common cause of infectious esophagitis. In an immunocompromised patient with odynophagia and oral thrush, empiric systemic fluconazole is appropriate. Endoscopy is reserved for patients who do not improve within about 72 hours.",
         notes: {
-            1: "Acyclovir treats HSV esophagitis (small 'punched-out' ulcers); oral thrush points to Candida.",
+            1: "Acyclovir treats HSV esophagitis (small \"punched-out\" ulcers); oral thrush points to Candida.",
             2: "Ganciclovir treats CMV esophagitis (large, shallow linear ulcers).",
             4: "EGD is indicated only if empiric antifungal therapy fails.",
         },
@@ -52,7 +52,7 @@ const QUIZ_QUESTIONS = [
             "Take the tablet with a glass of milk",
         ],
         answer: 2,
-        explanation: "Bisphosphonates, doxycycline, KCl and NSAIDs cause pill-induced esophagitis when the tablet lodges in the esophagus and injures the mucosa directly. A full glass of water and staying upright clear the pill into the stomach. Treatment is stopping or changing the offending medication.",
+        explanation: "Bisphosphonates, doxycycline, KCl, and NSAIDs cause pill-induced esophagitis when the tablet lodges in the esophagus and injures the mucosa directly. A full glass of water and staying upright clear the pill into the stomach. Treatment is stopping or changing the offending medication.",
         notes: {
             0: "Food (and calcium or milk) markedly reduces bisphosphonate absorption; it should be taken fasting.",
             1: "Calcium binds alendronate and blocks its absorption.",
@@ -73,10 +73,10 @@ const QUIZ_QUESTIONS = [
             "Schatzki ring",
         ],
         answer: 1,
-        explanation: "Eosinophilic esophagitis occurs in atopic patients (asthma, allergic rhinitis, atopic dermatitis) and is driven by food allergens. Classic findings are food impaction, 'trachealized' rings and furrows, and at least 15 eosinophils/hpf. Management includes eliminating food allergens, PPIs and swallowed topical steroids.",
+        explanation: "Eosinophilic esophagitis occurs in atopic patients (asthma, allergic rhinitis, atopic dermatitis) and is driven by food allergens. Classic findings are food impaction, \"trachealized\" rings and furrows, and at least 15 eosinophils/hpf. Management includes eliminating food allergens, PPIs, and swallowed topical steroids.",
         notes: {
             4: "A Schatzki ring is a single distal mucosal ring and does not explain dense eosinophilic infiltration.",
-            0: "GERD can cause some eosinophils, but rings, furrows, atopy and food impaction point to EoE.",
+            0: "GERD can cause some eosinophils, but rings, furrows, atopy, and food impaction point to EoE.",
         },
     },
     {
@@ -109,7 +109,7 @@ const QUIZ_QUESTIONS = [
             "Sucralfate",
         ],
         answer: 2,
-        explanation: "Large, shallow, linear ulcers with 'owl's eye' inclusions in endothelial and stromal cells at the ulcer base are typical of CMV esophagitis, treated with ganciclovir (or valganciclovir). HSV causes small 'volcano' ulcers with multinucleated giant cells at the ulcer edge and is treated with acyclovir.",
+        explanation: "Large, shallow, linear ulcers with \"owl's eye\" inclusions in endothelial and stromal cells at the ulcer base are typical of CMV esophagitis, treated with ganciclovir (or valganciclovir). HSV causes small \"volcano\" ulcers with multinucleated giant cells at the ulcer edge and is treated with acyclovir.",
         notes: {
             0: "Acyclovir is for HSV; CMV lacks the viral thymidine kinase that activates acyclovir.",
         },
@@ -120,7 +120,7 @@ const QUIZ_QUESTIONS = [
         id: "mot-achalasia-mech",
         condition: "esophageal-motility",
         step: 1,
-        stem: "A 42-year-old woman has 1 year of progressive dysphagia to both solids and liquids, regurgitation of undigested food, and a 6-kg weight loss. Barium swallow shows a dilated esophagus that tapers to a narrow 'bird's beak' at the gastroesophageal junction.",
+        stem: "A 42-year-old woman has 1 year of progressive dysphagia to both solids and liquids, regurgitation of undigested food, and a 6-kg weight loss. Barium swallow shows a dilated esophagus that tapers to a narrow \"bird's beak\" at the gastroesophageal junction.",
         leadIn: "Which of the following best explains this condition?",
         options: [
             "Loss of inhibitory nitric oxide- and VIP-producing neurons in the myenteric plexus",
@@ -140,7 +140,7 @@ const QUIZ_QUESTIONS = [
         id: "mot-chagas",
         condition: "esophageal-motility",
         step: 1,
-        stem: "A 50-year-old man who emigrated from rural Bolivia has dysphagia to solids and liquids. Barium swallow shows a 'bird's beak' appearance. Echocardiography shows a dilated left ventricle with an apical aneurysm.",
+        stem: "A 50-year-old man who emigrated from rural Bolivia has dysphagia to solids and liquids. Barium swallow shows a \"bird's beak\" appearance. Echocardiography shows a dilated left ventricle with an apical aneurysm.",
         leadIn: "Which organism is the most likely cause?",
         options: [
             "Trypanosoma brucei",
@@ -150,7 +150,7 @@ const QUIZ_QUESTIONS = [
             "Trichinella spiralis",
         ],
         answer: 1,
-        explanation: "Chagas disease (T. cruzi, spread by the reduviid 'kissing' bug in Latin America) destroys myenteric neurons. This causes secondary achalasia, megacolon and dilated cardiomyopathy.",
+        explanation: "Chagas disease (T. cruzi, spread by the reduviid \"kissing\" bug in Latin America) destroys myenteric neurons. This causes secondary achalasia, megacolon, and dilated cardiomyopathy.",
         notes: {
             0: "T. brucei causes African sleeping sickness.",
         },
@@ -165,17 +165,17 @@ const QUIZ_QUESTIONS = [
             "Repeat barium swallow",
             "24-hour esophageal pH monitoring",
             "Esophageal manometry",
-            "CT scan of the chest",
+            "CT chest",
             "Endoscopic ultrasound",
         ],
         answer: 2,
-        explanation: "Esophageal manometry is the gold standard. In achalasia it shows incomplete LES relaxation, raised LES pressure and absent distal peristalsis. Endoscopy is done first to exclude malignancy at the GE junction (pseudoachalasia).",
+        explanation: "Esophageal manometry is the gold standard. In achalasia it shows incomplete LES relaxation, raised LES pressure, and absent distal peristalsis. Endoscopy is done first to exclude malignancy at the GE junction (pseudoachalasia).",
     },
     {
         id: "mot-scleroderma",
         condition: "esophageal-motility",
         step: 1,
-        stem: "A 46-year-old woman with Raynaud phenomenon, sclerodactyly and telangiectasias reports worsening heartburn and difficulty swallowing solids.",
+        stem: "A 46-year-old woman with Raynaud phenomenon, sclerodactyly, and telangiectasias reports worsening heartburn and difficulty swallowing solids.",
         leadIn: "Which pair of manometry findings is most likely?",
         options: [
             "Increased LES pressure; absent distal peristalsis",
@@ -195,17 +195,17 @@ const QUIZ_QUESTIONS = [
         id: "mot-des",
         condition: "esophageal-motility",
         step: 1,
-        stem: "A 55-year-old woman has intermittent episodes of severe chest pain and dysphagia, often triggered by very hot or cold drinks. A cardiac work-up is negative. Manometry shows frequent simultaneous, uncoordinated contractions in the distal esophagus with normal LES relaxation.",
+        stem: "A 55-year-old woman has intermittent episodes of severe chest pain and dysphagia, often triggered by very hot or cold drinks. A cardiac workup is negative. Manometry shows frequent simultaneous, uncoordinated contractions in the distal esophagus with normal LES relaxation.",
         leadIn: "Which barium swallow finding is most likely?",
         options: [
-            "'Bird's beak' narrowing at the GE junction",
-            "'Corkscrew' esophagus",
-            "'Apple core' lesion",
-            "Concentric rings ('feline' esophagus)",
+            "\"Bird's beak\" narrowing at the GE junction",
+            "\"Corkscrew\" esophagus",
+            "\"Apple core\" lesion",
+            "Concentric rings (\"feline\" esophagus)",
             "Outpouching above the upper esophageal sphincter",
         ],
         answer: 1,
-        explanation: "Diffuse esophageal spasm causes disorganized contractions that give a 'corkscrew' or 'rosary bead' appearance. It may respond to calcium channel blockers or nitrates; dilation or botulinum toxin are other options.",
+        explanation: "Diffuse esophageal spasm causes disorganized contractions that give a \"corkscrew\" or \"rosary bead\" appearance. It may respond to calcium channel blockers or nitrates; dilation or botulinum toxin are other options.",
         notes: {
             4: "An outpouching above the UES is a Zenker diverticulum.",
         },
@@ -216,7 +216,7 @@ const QUIZ_QUESTIONS = [
         id: "gerd-ppi-trial",
         condition: "gerd",
         step: 2,
-        stem: "A 41-year-old man has had burning retrosternal discomfort after large meals and when lying down for 3 months. He has no dysphagia, weight loss, vomiting, anemia or GI bleeding. An ECG done for the discomfort was normal.",
+        stem: "A 41-year-old man has had burning retrosternal discomfort after large meals and when lying down for 3 months. He has no dysphagia, weight loss, vomiting, anemia, or GI bleeding. An ECG done for the discomfort was normal.",
         leadIn: "Which of the following is the most appropriate next step?",
         options: [
             "Upper endoscopy with biopsy",
@@ -232,7 +232,7 @@ const QUIZ_QUESTIONS = [
         id: "gerd-ecg-first",
         condition: "gerd",
         step: 2,
-        stem: "A 58-year-old man with hypertension, type 2 diabetes and a 30-pack-year smoking history reports 2 days of burning substernal chest pain that he attributes to 'heartburn'.",
+        stem: "A 58-year-old man with hypertension, type 2 diabetes, and a 30-pack-year smoking history reports 2 days of burning substernal chest pain that he attributes to \"heartburn\".",
         leadIn: "Which of the following is the most appropriate initial step?",
         options: [
             "Start a proton pump inhibitor",
@@ -267,7 +267,7 @@ const QUIZ_QUESTIONS = [
         id: "gerd-nissen",
         condition: "gerd",
         step: 2,
-        stem: "A 47-year-old woman has persistent regurgitation despite twice-daily PPI therapy and weight loss. pH monitoring confirms pathologic acid reflux, and manometry shows normal peristalsis. She wishes to stop long-term medication.",
+        stem: "A 47-year-old woman has persistent regurgitation despite bd PPI therapy and weight loss. pH monitoring confirms pathologic acid reflux, and manometry shows normal peristalsis. She wishes to stop long-term medication.",
         leadIn: "Which of the following is the most appropriate treatment?",
         options: [
             "Heller myotomy",
@@ -298,7 +298,7 @@ const QUIZ_QUESTIONS = [
             "Eosinophilic infiltration of the esophagus",
         ],
         answer: 1,
-        explanation: "Progesterone relaxes smooth muscle and lowers LES tone, and the enlarging uterus raises intragastric pressure. Obesity and gastroparesis also raise intragastric pressure. Smoking, alcohol and caffeine lower LES tone.",
+        explanation: "Progesterone relaxes smooth muscle and lowers LES tone, and the enlarging uterus raises intragastric pressure. Obesity and gastroparesis also raise intragastric pressure. Smoking, alcohol, and caffeine lower LES tone.",
     },
 
     /* ===== Gastritis ===== */
@@ -351,7 +351,7 @@ const QUIZ_QUESTIONS = [
             "Urease-mediated mucosal injury",
         ],
         answer: 1,
-        explanation: "Curling ulcers follow severe burns. Massive fluid loss causes hypovolemia and gastric mucosal ischemia, which leads to erosions. Burn = Curling ('cooking'); brain = Cushing.",
+        explanation: "Curling ulcers follow severe burns. Massive fluid loss causes hypovolemia and gastric mucosal ischemia, which leads to erosions. Burn = Curling (\"cooking\"); brain = Cushing.",
         notes: {
             0: "Increased vagal stimulation explains Cushing ulcers after brain injury or raised ICP.",
         },
@@ -429,7 +429,7 @@ const QUIZ_QUESTIONS = [
         id: "pud-triple",
         condition: "pud",
         step: 2,
-        stem: "A 45-year-old woman with dyspepsia has a positive urea breath test. She has no drug allergies and has never taken macrolide antibiotics. Local clarithromycin resistance is low.",
+        stem: "A 45-year-old woman with dyspepsia has a positive urea breath test. She has no drug allergies and has never taken macrolide ABX. Local clarithromycin resistance is low.",
         leadIn: "Which regimen is most appropriate?",
         options: [
             "PPI + amoxicillin + clarithromycin",
@@ -439,7 +439,7 @@ const QUIZ_QUESTIONS = [
             "H2-receptor antagonist + metronidazole",
         ],
         answer: 0,
-        explanation: "First-line H. pylori eradication is triple therapy: PPI + amoxicillin + clarithromycin, twice daily for 7–14 days. Metronidazole replaces amoxicillin in penicillin allergy.",
+        explanation: "First-line H. pylori eradication is triple therapy: PPI + amoxicillin + clarithromycin, bd for 7–14 days. Metronidazole replaces amoxicillin in penicillin allergy.",
         info: "Some guidelines (e.g. the 2024 ACG guideline in the US) prefer bismuth quadruple therapy (PPI + bismuth + metronidazole + tetracycline) as first line where clarithromycin resistance is high or after previous macrolide exposure.",
     },
     {
@@ -451,12 +451,12 @@ const QUIZ_QUESTIONS = [
         options: [
             "H. pylori IgG serology now",
             "Urea breath test tomorrow while continuing omeprazole",
-            "Stop omeprazole for 2 weeks, then perform a urea breath test at least 4 weeks after finishing antibiotics",
+            "Stop omeprazole for 2 weeks, then perform a urea breath test at least 4 weeks after finishing ABX",
             "No testing is needed after a full course of therapy",
             "Urea breath test after adding bismuth for 4 weeks",
         ],
         answer: 2,
-        explanation: "PPIs, antibiotics and bismuth suppress H. pylori and cause false-negative breath, stool antigen and rapid urease tests. Stop PPIs 2 weeks before testing, and wait at least 4 weeks after antibiotics and bismuth.",
+        explanation: "PPIs, ABX, and bismuth suppress H. pylori and cause false-negative breath, stool antigen, and rapid urease tests. Stop PPIs 2 weeks before testing, and wait at least 4 weeks after ABX and bismuth.",
         notes: {
             0: "Serology stays positive after eradication, so it cannot confirm cure.",
             4: "Bismuth suppresses H. pylori and would cause a false-negative result.",
@@ -467,7 +467,7 @@ const QUIZ_QUESTIONS = [
         condition: "pud",
         step: 2,
         stem: "A 63-year-old woman who takes naproxen daily develops sudden, severe epigastric pain that spreads across the abdomen. She is tachycardic, and the abdomen is rigid with rebound tenderness. An upright chest x-ray shows air under the right hemidiaphragm.",
-        leadIn: "In addition to IV fluids, IV PPI and antibiotics, which is the most appropriate next step?",
+        leadIn: "In addition to IV fluids, IV PPI, and ABX, which is the most appropriate next step?",
         options: [
             "Urgent upper endoscopy",
             "Emergency surgical repair",
@@ -476,7 +476,7 @@ const QUIZ_QUESTIONS = [
             "Nasogastric tube and serial abdominal examinations only",
         ],
         answer: 1,
-        explanation: "Free air with peritonitis means a perforated ulcer, which is a surgical emergency. Resuscitate with IV fluids, IV PPI and broad-spectrum antibiotics, then proceed to surgery.",
+        explanation: "Free air with peritonitis means a perforated ulcer, which is a surgical emergency. Resuscitate with IV fluids, IV PPI, and broad-spectrum ABX, then proceed to surgery.",
         notes: {
             0: "Endoscopy insufflates air and can worsen a known perforation.",
             2: "Barium leaking into the peritoneum causes severe peritonitis; water-soluble contrast is used if contrast is needed at all.",
@@ -539,7 +539,7 @@ const QUIZ_QUESTIONS = [
         id: "mal-celiac-hla",
         condition: "malabsorption",
         step: 1,
-        stem: "A 26-year-old woman has bloating, foul-smelling stools, iron-deficiency anemia, and an itchy vesicular rash on her elbows and knees. Duodenal biopsy shows villous atrophy, crypt hyperplasia and intraepithelial lymphocytes.",
+        stem: "A 26-year-old woman has bloating, foul-smelling stools, iron-deficiency anemia, and an itchy vesicular rash on her elbows and knees. Duodenal biopsy shows villous atrophy, crypt hyperplasia, and intraepithelial lymphocytes.",
         leadIn: "This condition is most strongly associated with which HLA types?",
         options: [
             "HLA-B27",
@@ -549,7 +549,7 @@ const QUIZ_QUESTIONS = [
             "HLA-DR5",
         ],
         answer: 2,
-        explanation: "Celiac disease is associated with HLA-DQ2 and DQ8. Gliadin (from wheat, rye and barley) is deamidated by tissue transglutaminase and presented on these HLA molecules, driving a T-cell response that damages the mucosa. The rash is dermatitis herpetiformis. Iron deficiency reflects duodenal involvement.",
+        explanation: "Celiac disease is associated with HLA-DQ2 and DQ8. Gliadin (from wheat, rye, and barley) is deamidated by tissue transglutaminase and presented on these HLA molecules, driving a T-cell response that damages the mucosa. The rash is dermatitis herpetiformis. Iron deficiency reflects duodenal involvement.",
         notes: {
             0: "HLA-B27 is linked to the seronegative spondyloarthropathies.",
             1: "HLA-DR3/DR4 is classically linked to type 1 diabetes.",
@@ -559,7 +559,7 @@ const QUIZ_QUESTIONS = [
         id: "mal-celiac-test",
         condition: "malabsorption",
         step: 2,
-        stem: "A 31-year-old man has chronic diarrhea, bloating and weight loss. He eats a regular diet that includes bread and pasta.",
+        stem: "A 31-year-old man has chronic diarrhea, bloating, and weight loss. He eats a regular diet that includes bread and pasta.",
         leadIn: "Which is the best initial test for the most likely diagnosis?",
         options: [
             "IgA anti-tissue transglutaminase antibodies with total serum IgA",
@@ -578,7 +578,7 @@ const QUIZ_QUESTIONS = [
         id: "mal-whipple",
         condition: "malabsorption",
         step: 1,
-        stem: "A 54-year-old man has months of diarrhea, weight loss, migratory arthralgias and recent memory problems. Small-bowel biopsy shows the lamina propria packed with foamy macrophages containing PAS-positive material.",
+        stem: "A 54-year-old man has months of diarrhea, weight loss, migratory arthralgias, and recent memory problems. Small-bowel biopsy shows the lamina propria packed with foamy macrophages containing PAS-positive material.",
         leadIn: "Which organism is the most likely cause?",
         options: [
             "Mycobacterium avium complex",
@@ -588,7 +588,7 @@ const QUIZ_QUESTIONS = [
             "Cryptosporidium parvum",
         ],
         answer: 1,
-        explanation: "Whipple disease is caused by Tropheryma whipplei and classically affects middle-aged men. Features include arthralgias, cardiac and neurologic symptoms, diarrhea and weight loss, with PAS-positive foamy macrophages on biopsy. It is treated with long-term antibiotics.",
+        explanation: "Whipple disease is caused by Tropheryma whipplei and classically affects middle-aged men. Features include arthralgias, cardiac and neurologic symptoms, diarrhea, and weight loss, with PAS-positive foamy macrophages on biopsy. It is treated with long-term ABX.",
         notes: {
             0: "MAC can also produce foamy macrophages in AIDS, but it is acid-fast positive and the patient here is not immunocompromised.",
         },
@@ -613,7 +613,7 @@ const QUIZ_QUESTIONS = [
         id: "mal-lactose",
         condition: "malabsorption",
         step: 1,
-        stem: "A 22-year-old woman has bloating, flatulence and loose stools within a few hours of drinking milk. A hydrogen breath test after a lactose load is positive.",
+        stem: "A 22-year-old woman has bloating, flatulence, and loose stools within a few hours of drinking milk. A hydrogen breath test after a lactose load is positive.",
         leadIn: "Which stool finding is most likely during symptoms?",
         options: [
             "Increased stool osmotic gap",
@@ -642,7 +642,7 @@ const QUIZ_QUESTIONS = [
             "Normal PT and PTT; low fibrinogen",
         ],
         answer: 0,
-        explanation: "Fat malabsorption reduces absorption of fat-soluble vitamins (A, D, E, K). Vitamin K deficiency impairs gamma-carboxylation of factors II, VII, IX and X. Factor VII has the shortest half-life, so PT prolongs first. Platelets are unaffected.",
+        explanation: "Fat malabsorption reduces absorption of fat-soluble vitamins (A, D, E, K). Vitamin K deficiency impairs gamma-carboxylation of factors II, VII, IX, and X. Factor VII has the shortest half-life, so PT prolongs first. Platelets are unaffected.",
     },
 
     /* ===== Diverticular diseases ===== */
@@ -654,7 +654,7 @@ const QUIZ_QUESTIONS = [
         leadIn: "Which is the most appropriate diagnostic test?",
         options: [
             "Colonoscopy",
-            "CT of the abdomen and pelvis with contrast",
+            "CT AP with contrast",
             "Barium enema",
             "Abdominal ultrasound",
             "Flexible sigmoidoscopy",
@@ -680,7 +680,7 @@ const QUIZ_QUESTIONS = [
             "Full-thickness herniation through the linea alba",
         ],
         answer: 1,
-        explanation: "Colonic diverticula are false (pulsion) diverticula. Mucosa and submucosa herniate through weak points in the muscularis externa where the vasa recta enter. High intraluminal pressure in the sigmoid, from low fiber, constipation and aging, drives their formation.",
+        explanation: "Colonic diverticula are false (pulsion) diverticula. Mucosa and submucosa herniate through weak points in the muscularis externa where the vasa recta enter. High intraluminal pressure in the sigmoid, from low fiber, constipation, and aging, drives their formation.",
         notes: {
             2: "A vitelline duct remnant is a Meckel diverticulum, which is a true diverticulum.",
             3: "An outpouching above the cricopharyngeus is a Zenker diverticulum.",
@@ -700,7 +700,7 @@ const QUIZ_QUESTIONS = [
             "Benign prostatic hyperplasia",
         ],
         answer: 1,
-        explanation: "Pneumaturia, fecaluria and recurrent polymicrobial UTIs suggest a colovesical (enterovesical) fistula, most often from diverticulitis. CT is the usual first test (air in the bladder), and treatment is surgical.",
+        explanation: "Pneumaturia, fecaluria, and recurrent polymicrobial UTIs suggest a colovesical (enterovesical) fistula, most often from diverticulitis. CT is the usual first test (air in the bladder), and treatment is surgical.",
     },
     {
         id: "div-bleed",
@@ -716,7 +716,7 @@ const QUIZ_QUESTIONS = [
             "Anal fissure",
         ],
         answer: 1,
-        explanation: "Diverticulosis is the most common cause of major lower GI bleeding in older adults. It is typically painless, sudden and large in volume because a vasa recta artery ruptures. Most bleeds stop on their own; colonoscopy finds and treats the source.",
+        explanation: "Diverticulosis is the most common cause of major lower GI bleeding in older adults. It is typically painless, sudden, and large in volume because a vasa recta artery ruptures. Most bleeds stop on their own; colonoscopy finds and treats the source.",
         notes: {
             0: "Ischemic colitis causes pain with bleeding.",
             4: "An anal fissure causes painful, small-volume bleeding.",
@@ -726,17 +726,17 @@ const QUIZ_QUESTIONS = [
         id: "div-abscess",
         condition: "diverticular-diseases",
         step: 2,
-        stem: "A 59-year-old woman being treated for diverticulitis has persistent fever and pain after 3 days of IV antibiotics. CT shows a 6-cm pericolic fluid collection with an enhancing rim and no free air.",
+        stem: "A 59-year-old woman being treated for diverticulitis has persistent fever and pain after 3 days of IV ABX. CT shows a 6-cm pericolic fluid collection with an enhancing rim and no free air.",
         leadIn: "Which is the most appropriate next step?",
         options: [
-            "Continue IV antibiotics alone",
-            "CT-guided percutaneous drainage plus antibiotics",
+            "Continue IV ABX alone",
+            "CT-guided percutaneous drainage plus ABX",
             "Emergency colectomy",
             "Colonoscopy",
             "Increase dietary fiber",
         ],
         answer: 1,
-        explanation: "Diverticular abscesses larger than about 3–4 cm are drained percutaneously alongside antibiotics. Surgery is reserved for failed drainage, perforation with peritonitis, or recurrent complicated disease.",
+        explanation: "Diverticular abscesses larger than about 3–4 cm are drained percutaneously alongside ABX. Surgery is reserved for failed drainage, perforation with peritonitis, or recurrent complicated disease.",
     },
 
     /* ===== IBD ===== */
@@ -744,7 +744,7 @@ const QUIZ_QUESTIONS = [
         id: "ibd-crohn-biopsy",
         condition: "ibd",
         step: 1,
-        stem: "A 23-year-old woman who smokes has crampy right lower quadrant pain, non-bloody diarrhea and weight loss. She also has a perianal fistula. Colonoscopy shows patchy ulcers in the terminal ileum and ascending colon separated by normal mucosa, and the rectum is spared.",
+        stem: "A 23-year-old woman who smokes has crampy right lower quadrant pain, non-bloody diarrhea, and weight loss. She also has a perianal fistula. Colonoscopy shows patchy ulcers in the terminal ileum and ascending colon separated by normal mucosa, and the rectum is spared.",
         leadIn: "Which biopsy finding is most likely?",
         options: [
             "Crypt abscesses limited to the mucosa",
@@ -764,7 +764,7 @@ const QUIZ_QUESTIONS = [
         id: "ibd-psc",
         condition: "ibd",
         step: 1,
-        stem: "A 30-year-old man has bloody diarrhea with tenesmus. Colonoscopy shows continuous inflammation from the rectum to the splenic flexure. His alkaline phosphatase is elevated, and MRCP shows multifocal strictures and dilations ('beading') of the intra- and extrahepatic bile ducts.",
+        stem: "A 30-year-old man has bloody diarrhea with tenesmus. Colonoscopy shows continuous inflammation from the rectum to the splenic flexure. His alkaline phosphatase is elevated, and MRCP shows multifocal strictures and dilations (\"beading\") of the intra- and extrahepatic bile ducts.",
         leadIn: "Besides colorectal cancer, this patient is at greatest risk for which malignancy?",
         options: [
             "Hepatocellular carcinoma",
@@ -790,7 +790,7 @@ const QUIZ_QUESTIONS = [
             "Calcium phosphate",
         ],
         answer: 1,
-        explanation: "With ileal disease or resection, bile acid and fat malabsorption leave fat in the lumen, where it binds calcium. Oxalate that would normally bind calcium is left free, is absorbed in the colon, and forms calcium oxalate stones (enteric hyperoxaluria). Loss of bile acid recycling also predisposes to cholesterol gallstones.",
+        explanation: "With ileal disease or resection, bile salt and fat malabsorption leave fat in the lumen, where it binds calcium. Oxalate that would normally bind calcium is left free, is absorbed in the colon, and forms calcium oxalate stones (enteric hyperoxaluria). Loss of bile salt recycling also predisposes to cholesterol gallstones.",
     },
     {
         id: "ibd-smoking",
@@ -803,7 +803,7 @@ const QUIZ_QUESTIONS = [
             "Western diet",
             "Cigarette smoking",
             "Northern European ancestry",
-            "Recent antibiotic use",
+            "Recent ABX use",
         ],
         answer: 2,
         explanation: "Smoking increases the risk and severity of Crohn disease but is associated with a lower risk of ulcerative colitis. Family history and a Western diet raise the risk of both. NOD2 mutations are linked to Crohn disease, and HLA-DRB1 to UC.",
@@ -817,12 +817,12 @@ const QUIZ_QUESTIONS = [
         options: [
             "IV methylprednisolone",
             "IV fluids",
-            "Broad-spectrum IV antibiotics",
+            "Broad-spectrum IV ABX",
             "Loperamide",
             "Subcutaneous heparin for DVT prophylaxis",
         ],
         answer: 3,
-        explanation: "This is toxic megacolon. Antimotility agents (loperamide) and opioids worsen colonic dilation and can precipitate perforation. Management is bowel rest, IV fluids, IV steroids, antibiotics and early surgical consultation. VTE prophylaxis is still needed because IBD is hypercoagulable.",
+        explanation: "This is toxic megacolon. Antimotility agents (loperamide) and opioids worsen colonic dilation and can precipitate perforation. Management is bowel rest, IV fluids, IV steroids, ABX, and early surgical consultation. VTE prophylaxis is still needed because IBD is hypercoagulable.",
     },
     {
         id: "ibd-infliximab",
@@ -849,17 +849,17 @@ const QUIZ_QUESTIONS = [
         id: "ibs-initial",
         condition: "ibs",
         step: 2,
-        stem: "A 27-year-old woman has 8 months of recurrent lower abdominal cramping that improves after bowel movements, with alternating loose and hard stools. She has no weight loss, bleeding or nocturnal symptoms. CBC, CRP, fecal calprotectin and celiac serology are normal.",
+        stem: "A 27-year-old woman has 8 months of recurrent lower abdominal cramping that improves after bowel movements, with alternating loose and hard stools. She has no weight loss, bleeding, or nocturnal symptoms. FBC, CRP, fecal calprotectin, and celiac serology are normal.",
         leadIn: "Which is the most appropriate next step?",
         options: [
             "Colonoscopy",
-            "CT of the abdomen and pelvis",
+            "CT AP",
             "Reassurance and a trial of a low-FODMAP diet",
             "Empiric metronidazole",
             "Start oral prednisone",
         ],
         answer: 2,
-        explanation: "IBS is a disorder of gut-brain interaction diagnosed clinically (Rome V criteria) once alarm features are absent and basic tests are normal. First-line management is reassurance, education and a low-FODMAP diet, with symptom-directed drugs as needed.",
+        explanation: "IBS is a disorder of gut-brain interaction diagnosed clinically (Rome V criteria) once alarm features are absent and basic tests are normal. First-line management is reassurance, education, and a low-FODMAP diet, with symptom-directed drugs as needed.",
         notes: {
             0: "Colonoscopy is not needed without alarm features in a patient under 45.",
         },
@@ -894,7 +894,7 @@ const QUIZ_QUESTIONS = [
             "Hyperkalemia and gynecomastia",
         ],
         answer: 1,
-        explanation: "TCAs block muscarinic receptors, causing dry mouth, constipation, urinary retention and blurred vision. They also cause sedation (via H1) and orthostasis (via α1). The constipating effect can be useful in IBS-D, and TCAs reduce visceral hypersensitivity.",
+        explanation: "TCAs block muscarinic receptors, causing dry mouth, constipation, urinary retention, and blurred vision. They also cause sedation (via H1) and orthostasis (via α1). The constipating effect can be useful in IBS-D, and TCAs reduce visceral hypersensitivity.",
     },
 
     /* ===== Diarrhea ===== */
@@ -902,7 +902,7 @@ const QUIZ_QUESTIONS = [
         id: "dia-bcereus",
         condition: "diarrhea",
         step: 1,
-        stem: "Two hours after eating leftover fried rice from a takeout restaurant, a 25-year-old man develops nausea and repeated vomiting. His symptoms resolve within 24 hours.",
+        stem: "Two hours after eating leftover fried rice from a takeaway shop, a 25-year-old man develops nausea and repeated vomiting. His symptoms resolve within 24 hours.",
         leadIn: "Which organism is most likely responsible?",
         options: [
             "Staphylococcus aureus",
@@ -912,16 +912,16 @@ const QUIZ_QUESTIONS = [
             "Salmonella enteritidis",
         ],
         answer: 1,
-        explanation: "B. cereus spores survive cooking. In rice left at room temperature they germinate and form a preformed, heat-stable emetic toxin (cereulide), causing vomiting within 1–6 hours. The phrase is 'reheated rice syndrome'.",
+        explanation: "B. cereus spores survive cooking. In rice left at room temperature they germinate and form a preformed, heat-stable emetic toxin (cereulide), causing vomiting within 1–6 hours. This is called \"reheated rice syndrome\".",
         notes: {
-            0: "S. aureus also causes rapid vomiting from a preformed toxin, but the classic sources are mayonnaise, potato salad and custards.",
+            0: "S. aureus also causes rapid vomiting from a preformed toxin, but the classic sources are mayonnaise, potato salad, and custards.",
         },
     },
     {
         id: "dia-saureus",
         condition: "diarrhea",
         step: 1,
-        stem: "Several guests at a summer picnic develop abrupt nausea, vomiting and abdominal cramps about 3 hours after eating potato salad. None have fever, and all recover within a day.",
+        stem: "Several guests at a summer picnic develop abrupt nausea, vomiting, and abdominal cramps about 3 hours after eating potato salad. None have fever, and all recover within a day.",
         leadIn: "Which mechanism best explains the rapid onset?",
         options: [
             "Invasion of colonic mucosa",
@@ -940,7 +940,7 @@ const QUIZ_QUESTIONS = [
         id: "dia-cholera",
         condition: "diarrhea",
         step: 1,
-        stem: "A relief worker returning from an area hit by flooding develops profuse, painless 'rice-water' diarrhea and becomes severely dehydrated within hours. Stool culture grows comma-shaped gram-negative rods.",
+        stem: "A relief worker returning from an area hit by flooding develops profuse, painless \"rice-water\" diarrhea and becomes severely dehydrated within hours. Stool culture grows comma-shaped gram-negative rods.",
         leadIn: "Which mechanism is responsible for the diarrhea?",
         options: [
             "Toxin-mediated ADP-ribosylation of Gs, increasing cAMP",
@@ -959,23 +959,23 @@ const QUIZ_QUESTIONS = [
         id: "dia-hus",
         condition: "diarrhea",
         step: 2,
-        stem: "A 5-year-old boy had bloody diarrhea for 4 days after eating an undercooked hamburger. He is now pale with petechiae and decreased urine output. Labs show hemoglobin 7.8 g/dL, platelets 42,000/µL, creatinine 2.1 mg/dL and schistocytes on the blood smear.",
+        stem: "A 5-year-old boy had bloody diarrhea for 4 days after eating an undercooked hamburger. He is now pale with petechiae and decreased urine output. Bloods show hemoglobin 7.8 g/dL, platelets 42000/µL, creatinine 2.1 mg/dL and schistocytes on the blood smear.",
         leadIn: "Which intervention should be avoided?",
         options: [
             "Careful IV fluid management",
-            "Antibiotic therapy",
+            "ABX therapy",
             "Red blood cell transfusion if symptomatic",
             "Dialysis if indicated",
             "Monitoring electrolytes and urine output",
         ],
         answer: 1,
-        explanation: "This is hemolytic uremic syndrome from Shiga toxin-producing E. coli (O157:H7). Antibiotics, and antimotility agents such as loperamide, may increase toxin release and the risk of HUS, so they are avoided. Care is supportive: fluids, transfusion and dialysis as needed.",
+        explanation: "This is hemolytic uremic syndrome from Shiga toxin-producing E. coli (O157:H7). ABX, and antimotility agents such as loperamide, may increase toxin release and the risk of HUS, so they are avoided. Care is supportive: fluids, transfusion, and dialysis as needed.",
     },
     {
         id: "dia-cdiff",
         condition: "diarrhea",
         step: 2,
-        stem: "A 71-year-old woman develops watery diarrhea 10 days after clindamycin for a dental abscess. She has 7 stools per day, a WBC of 13,000/µL and normal creatinine. A stool test for C. difficile toxin is positive.",
+        stem: "A 71-year-old woman develops watery diarrhea 10 days after clindamycin for a dental abscess. She has 7 stools per day, a WBC of 13000/µL and normal creatinine. A stool test for C. difficile toxin is positive.",
         leadIn: "Which is the most appropriate treatment?",
         options: [
             "Oral vancomycin",
@@ -985,7 +985,7 @@ const QUIZ_QUESTIONS = [
             "Observation only",
         ],
         answer: 0,
-        explanation: "For an initial non-fulminant episode of C. difficile infection, oral fidaxomicin or oral vancomycin is first-line. Stop the inciting antibiotic if possible.",
+        explanation: "For an initial non-fulminant episode of C. difficile infection, oral fidaxomicin or oral vancomycin is first-line. Stop the inciting ABX if possible.",
         notes: {
             1: "IV vancomycin does not reach the colonic lumen, so it is ineffective for C. difficile.",
             2: "Antimotility agents are avoided because they may precipitate toxic megacolon.",
@@ -995,7 +995,7 @@ const QUIZ_QUESTIONS = [
         id: "dia-giardia",
         condition: "diarrhea",
         step: 1,
-        stem: "A 30-year-old man develops bloating, foul-smelling greasy stools and flatulence 10 days after a backpacking trip during which he drank untreated stream water. He has no fever or blood in the stool.",
+        stem: "A 30-year-old man develops bloating, foul-smelling greasy stools, and flatulence 10 days after a backpacking trip during which he drank untreated stream water. He has no fever or blood in the stool.",
         leadIn: "Which organism is the most likely cause?",
         options: [
             "Entamoeba histolytica",
@@ -1014,17 +1014,17 @@ const QUIZ_QUESTIONS = [
         id: "dia-vipoma",
         condition: "diarrhea",
         step: 1,
-        stem: "A 48-year-old woman has 3 liters per day of watery diarrhea that continues while she fasts. Labs show hypokalemia and low gastric acid. The stool osmotic gap is 20 mOsm/kg.",
+        stem: "A 48-year-old woman has 3 liters per day of watery diarrhea that continues while she fasts. Bloods show hypokalemia and low gastric acid. The stool osmotic gap is 20 mOsm/kg.",
         leadIn: "Which is the most likely cause?",
         options: [
             "Lactose intolerance",
-            "VIPoma",
+            "Vipoma",
             "Polyethylene glycol use",
             "Exocrine pancreatic insufficiency",
             "Ulcerative colitis",
         ],
         answer: 1,
-        explanation: "A low osmotic gap (under 50) and diarrhea that persists with fasting indicate secretory diarrhea. A VIPoma causes WDHA syndrome: watery diarrhea, hypokalemia and achlorhydria. Other hormonal causes are gastrinoma and carcinoid syndrome.",
+        explanation: "A low osmotic gap (under 50) and diarrhea that persists with fasting indicate secretory diarrhea. A vipoma causes WDHA syndrome: watery diarrhea, hypokalemia, and achlorhydria. Other hormonal causes are gastrinoma and carcinoid syndrome.",
         notes: {
             0: "Lactose intolerance is osmotic: high gap, and it stops with fasting.",
             2: "PEG is an osmotic laxative and produces a high osmotic gap.",
@@ -1055,7 +1055,7 @@ const QUIZ_QUESTIONS = [
         id: "isch-cta",
         condition: "intestinal-ischemia",
         step: 2,
-        stem: "A 74-year-old woman with atrial fibrillation who is not anticoagulated has sudden, severe periumbilical pain that began 3 hours ago. She is writhing in pain, but her abdomen is soft with only mild tenderness. Serum lactate is elevated.",
+        stem: "A 74-year-old woman with A-fib who is not anticoagulated has sudden, severe periumbilical pain that began 3 hours ago. She is writhing in pain, but her abdomen is soft with only mild tenderness. Serum lactate is elevated.",
         leadIn: "Which is the most appropriate diagnostic test?",
         options: [
             "CT angiography of the abdomen",
@@ -1071,7 +1071,7 @@ const QUIZ_QUESTIONS = [
         id: "isch-sma",
         condition: "intestinal-ischemia",
         step: 1,
-        stem: "A 70-year-old man with atrial fibrillation develops acute mesenteric ischemia from an embolus.",
+        stem: "A 70-year-old man with A-fib develops acute mesenteric ischemia from an embolus.",
         leadIn: "Which artery is the embolus most likely to have occluded?",
         options: [
             "Celiac trunk",
@@ -1097,7 +1097,7 @@ const QUIZ_QUESTIONS = [
             "Peptic ulcer disease",
         ],
         answer: 1,
-        explanation: "Chronic mesenteric ischemia ('intestinal angina') results from atherosclerosis of at least 2 of the celiac trunk, SMA and IMA. Blood flow is adequate at rest but cannot meet the higher demand after eating, causing postprandial pain, fear of eating and weight loss. CT angiography confirms the diagnosis.",
+        explanation: "Chronic mesenteric ischemia (\"intestinal angina\") results from atherosclerosis of at least 2 of the celiac trunk, SMA, and IMA. Blood flow is adequate at rest but cannot meet the higher demand after eating, causing postprandial pain, fear of eating, and weight loss. CT angiography confirms the diagnosis.",
     },
     {
         id: "isch-watershed",
@@ -1140,7 +1140,7 @@ const QUIZ_QUESTIONS = [
         id: "hv-zone3",
         condition: "hepatic-vascular",
         step: 1,
-        stem: "A 67-year-old man is resuscitated from cardiogenic shock after a large anterior myocardial infarction. Thirty-six hours later, AST is 4,200 U/L, ALT is 3,800 U/L and LDH is 5,100 U/L. He has no history of liver disease, alcohol use or acetaminophen ingestion.",
+        stem: "A 67-year-old man is resuscitated from cardiogenic shock after a large anterior myocardial infarction. Thirty-six hours later, AST is 4200 U/L, ALT is 3800 U/L and LDH is 5100 U/L. He has no history of liver disease, alcohol use, or paracetamol ingestion.",
         leadIn: "A liver biopsy would most likely show necrosis in which region?",
         options: [
             "Periportal hepatocytes (zone 1)",
@@ -1160,10 +1160,10 @@ const QUIZ_QUESTIONS = [
         id: "hv-shock-mgmt",
         condition: "hepatic-vascular",
         step: 2,
-        stem: "A 59-year-old woman with septic shock from pyelonephritis becomes normotensive after IV fluids, norepinephrine and antibiotics. On day 2, AST is 3,100 U/L and ALT is 2,700 U/L; INR is 1.4 and she is alert. Viral hepatitis serologies and the acetaminophen level are negative.",
+        stem: "A 59-year-old woman with septic shock from pyelonephritis becomes normotensive after IV fluids, noradrenaline, and ABX. On day 2, AST is 3100 U/L and ALT is 2700 U/L; INR is 1.4 and she is alert. Viral hepatitis serologies and the paracetamol level are negative.",
         leadIn: "Which is the most appropriate next step in managing her liver injury?",
         options: [
-            "Maintain perfusion, treat the infection and trend LFTs",
+            "Maintain perfusion, treat the infection, and trend LFTs",
             "Percutaneous liver biopsy",
             "Urgent referral for liver transplantation",
             "IV methylprednisolone",
@@ -1179,7 +1179,7 @@ const QUIZ_QUESTIONS = [
         id: "hv-nutmeg",
         condition: "hepatic-vascular",
         step: 1,
-        stem: "A 72-year-old woman with long-standing pulmonary hypertension and severe tricuspid regurgitation has jugular venous distention, bilateral leg edema and a tender, enlarged liver. Pressing on the liver increases her jugular venous pulsation. At autopsy, the cut surface of the liver shows dark red centrilobular areas alternating with pale tan areas.",
+        stem: "A 72-year-old woman with long-standing pulmonary hypertension and severe tricuspid regurgitation has jugular venous distention, bilateral leg edema, and a tender, enlarged liver. Pressing on the liver increases her jugular venous pulsation. At autopsy, the cut surface of the liver shows dark red centrilobular areas alternating with pale tan areas.",
         leadIn: "Which mechanism best explains the liver findings?",
         options: [
             "Thrombosis of the hepatic veins",
@@ -1189,7 +1189,7 @@ const QUIZ_QUESTIONS = [
             "Fatty infiltration of hepatocytes",
         ],
         answer: 1,
-        explanation: "Right heart failure raises central venous pressure, which backs up into the hepatic veins and sinusoids. Zone 3 congestion and atrophy produce the mottled 'nutmeg liver'. Chronic congestion can lead to cardiac cirrhosis.",
+        explanation: "Right heart failure raises central venous pressure, which backs up into the hepatic veins and sinusoids. Zone 3 congestion and atrophy produce the mottled \"nutmeg liver\". Chronic congestion can lead to cardiac cirrhosis.",
         notes: {
             0: "Budd-Chiari syndrome also causes a nutmeg pattern, but JVD and hepatojugular reflux point to a cardiac cause.",
             3: "Portal vein thrombosis causes portal hypertension without centrilobular congestion.",
@@ -1209,7 +1209,7 @@ const QUIZ_QUESTIONS = [
             "Upper endoscopy",
         ],
         answer: 0,
-        explanation: "RUQ pain, hepatomegaly and ascites in a patient with a myeloproliferative neoplasm suggest Budd-Chiari syndrome (hepatic vein thrombosis). Doppler ultrasound of the hepatic veins is the first-line test; CT or MR venography confirms it. A normal JVP argues against a cardiac cause.",
+        explanation: "RUQ pain, hepatomegaly, and ascites in a patient with a myeloproliferative neoplasm suggest Budd-Chiari syndrome (hepatic vein thrombosis). Doppler ultrasound of the hepatic veins is the first-line test; CT or MR venography confirms it. A normal JVP argues against a cardiac cause.",
         notes: {
             1: "Echocardiography evaluates congestive hepatopathy, but her normal JVP and lack of edema argue against heart failure.",
             3: "A HIDA scan evaluates acute cholecystitis.",
@@ -1276,7 +1276,7 @@ const QUIZ_QUESTIONS = [
         id: "hi-hev-pregnancy",
         condition: "hepatic-infectious",
         step: 1,
-        stem: "A 26-year-old woman at 30 weeks' gestation develops fever, nausea and jaundice 5 weeks after returning from a trip where she drank untreated water. Within days she becomes confused, with an INR of 2.8.",
+        stem: "A 26-year-old woman at 30 weeks' gestation develops fever, nausea, and jaundice 5 weeks after returning from a trip where she drank untreated water. Within days she becomes confused, with an INR of 2.8.",
         leadIn: "Which virus most likely caused her illness?",
         options: [
             "Hepatitis A virus",
@@ -1345,7 +1345,7 @@ const QUIZ_QUESTIONS = [
             "Reassure her that she is immune",
         ],
         answer: 0,
-        explanation: "A positive anti-HCV antibody shows exposure but not whether the infection is current; the antibody stays positive for life, even after cure. HCV RNA confirms active infection. If positive, assess fibrosis (e.g. APRI, FIB-4 or elastography) before treatment.",
+        explanation: "A positive anti-HCV antibody shows exposure but not whether the infection is current; the antibody stays positive for life, even after cure. HCV RNA confirms active infection. If positive, assess fibrosis (e.g. APRI, FIB-4, or elastography) before treatment.",
         notes: {
             4: "Anti-HCV antibodies are not protective; reinfection is possible.",
         },
@@ -1354,7 +1354,7 @@ const QUIZ_QUESTIONS = [
         id: "hi-cryo",
         condition: "hepatic-infectious",
         step: 1,
-        stem: "A 58-year-old man with a history of injection drug use has palpable purpura on his legs, joint pain and hematuria. Serum complement levels are low and cryoglobulins are present. Kidney biopsy shows membranoproliferative glomerulonephritis.",
+        stem: "A 58-year-old man with a history of injection drug use has palpable purpura on his legs, joint pain, and hematuria. Serum complement levels are low and cryoglobulins are present. Kidney biopsy shows membranoproliferative glomerulonephritis.",
         leadIn: "Which chronic infection is most likely responsible?",
         options: [
             "Hepatitis A",
@@ -1375,7 +1375,7 @@ const QUIZ_QUESTIONS = [
         stem: "A 31-year-old man is brought in after a motorcycle collision. He has right upper quadrant tenderness and abrasions over the right lower ribs. Blood pressure is 128/76 mm Hg and heart rate 88/min, and they remain stable after 1 L of crystalloid.",
         leadIn: "Which is the most appropriate next step?",
         options: [
-            "CT of the abdomen with IV contrast",
+            "CT abdomen with IV contrast",
             "Emergency laparotomy",
             "Diagnostic peritoneal lavage",
             "Discharge with outpatient follow-up",
@@ -1391,10 +1391,10 @@ const QUIZ_QUESTIONS = [
         id: "ht-unstable",
         condition: "hepatic-traumatic",
         step: 2,
-        stem: "A 24-year-old woman is stabbed in the right upper abdomen. Her blood pressure is 78/40 mm Hg and heart rate 136/min despite 2 units of blood. A FAST exam shows free fluid in Morison's pouch.",
+        stem: "A 24-year-old woman is stabbed in the right upper abdomen. Her blood pressure is 78/40 mm Hg and heart rate 136/min despite 2 units of blood. A FAST exam shows free fluid in Morison pouch.",
         leadIn: "Which is the most appropriate next step?",
         options: [
-            "CT of the abdomen with IV contrast",
+            "CT abdomen with IV contrast",
             "Emergency laparotomy",
             "Angioembolization",
             "Serial abdominal examinations",
@@ -1419,7 +1419,7 @@ const QUIZ_QUESTIONS = [
             "Anti-liver/kidney microsomal antibody type 1",
         ],
         answer: 0,
-        explanation: "Primary biliary cholangitis typically affects middle-aged women with other autoimmune diseases (Hashimoto, scleroderma, rheumatoid arthritis, Sjögren). Pruritus, fatigue, xanthelasma and a cholestatic pattern with non-dilated ducts are classic. More than 90% are AMA-positive.",
+        explanation: "Primary biliary cholangitis typically affects middle-aged women with other autoimmune diseases (Hashimoto, scleroderma, rheumatoid arthritis, Sjögren). Pruritus, fatigue, xanthelasma, and a cholestatic pattern with non-dilated ducts are classic. More than 90% are AMA-positive.",
         notes: {
             1: "p-ANCA is associated with PSC, which typically affects men with ulcerative colitis.",
             2: "Anti-smooth muscle antibody points to autoimmune hepatitis type 1, which has a hepatocellular (AST/ALT-predominant) pattern.",
@@ -1429,7 +1429,7 @@ const QUIZ_QUESTIONS = [
         id: "ha-psc",
         condition: "hepatic-autoimmune",
         step: 2,
-        stem: "A 34-year-old man with ulcerative colitis has an elevated ALP of 480 U/L on routine labs, with normal bilirubin. Ultrasound shows no gallstones. He is p-ANCA positive and AMA negative.",
+        stem: "A 34-year-old man with ulcerative colitis has an elevated ALP of 480 U/L on routine bloods, with normal bilirubin. Ultrasound shows no gallstones. He is p-ANCA positive and AMA negative.",
         leadIn: "Which test is most appropriate to confirm the diagnosis?",
         options: [
             "MRCP",
@@ -1439,7 +1439,7 @@ const QUIZ_QUESTIONS = [
             "Repeat ultrasound in 6 months",
         ],
         answer: 0,
-        explanation: "Primary sclerosing cholangitis affects intra- and extrahepatic bile ducts, so it is diagnosed by cholangiography: MRCP shows multifocal strictures and dilations ('beading'). Liver biopsy is reserved for suspected small-duct PSC with a normal MRCP.",
+        explanation: "Primary sclerosing cholangitis affects intra- and extrahepatic bile ducts, so it is diagnosed by cholangiography: MRCP shows multifocal strictures and dilations (\"beading\"). Liver biopsy is reserved for suspected small-duct PSC with a normal MRCP.",
         notes: {
             2: "A HIDA scan evaluates acute cholecystitis.",
         },
@@ -1448,7 +1448,7 @@ const QUIZ_QUESTIONS = [
         id: "ha-psc-cancer",
         condition: "hepatic-autoimmune",
         step: 1,
-        stem: "A 46-year-old man with long-standing primary sclerosing cholangitis and ulcerative colitis develops worsening jaundice, weight loss and a new dominant stricture at the hepatic duct bifurcation. CA 19-9 is markedly elevated.",
+        stem: "A 46-year-old man with long-standing primary sclerosing cholangitis and ulcerative colitis develops worsening jaundice, weight loss, and a new dominant stricture at the hepatic duct bifurcation. CA 19-9 is markedly elevated.",
         leadIn: "Which is the most likely diagnosis?",
         options: [
             "Cholangiocarcinoma",
@@ -1458,13 +1458,13 @@ const QUIZ_QUESTIONS = [
             "Pancreatic pseudocyst",
         ],
         answer: 0,
-        explanation: "PSC carries a high lifetime risk of cholangiocarcinoma, often presenting as a new dominant stricture with rising CA 19-9, jaundice and weight loss. This cancer risk is specific to PSC, not PBC. PSC also raises the risk of gallbladder and colorectal cancer.",
+        explanation: "PSC carries a high lifetime risk of cholangiocarcinoma, often presenting as a new dominant stricture with rising CA 19-9, jaundice, and weight loss. This cancer risk is specific to PSC, not PBC. PSC also raises the risk of gallbladder and colorectal cancer.",
     },
     {
         id: "ha-udca",
         condition: "hepatic-autoimmune",
         step: 2,
-        stem: "A 49-year-old woman is diagnosed with primary biliary cholangitis. She has a markedly elevated ALP, positive AMA and no cirrhosis.",
+        stem: "A 49-year-old woman is diagnosed with primary biliary cholangitis. She has a markedly elevated ALP, positive AMA, and no cirrhosis.",
         leadIn: "Which is the most appropriate first-line treatment to slow disease progression?",
         options: [
             "Ursodeoxycholic acid",
@@ -1474,16 +1474,16 @@ const QUIZ_QUESTIONS = [
             "Liver transplant",
         ],
         answer: 0,
-        explanation: "Ursodeoxycholic acid is a hydrophilic bile acid that reduces bile acid toxicity, improves LFTs and slows progression in PBC. Cholestyramine is used for pruritus. Transplant is for end-stage disease.",
+        explanation: "Ursodeoxycholic acid is a hydrophilic bile acid that reduces bile salt toxicity, improves LFTs, and slows progression in PBC. Cholestyramine is used for pruritus. Transplant is for end-stage disease.",
         notes: {
-            2: "Cholestyramine relieves pruritus by binding bile acids in the gut; it does not slow disease progression.",
+            2: "Cholestyramine relieves pruritus by binding bile salts in the gut; it does not slow disease progression.",
         },
     },
     {
         id: "ha-pruritus",
         condition: "hepatic-autoimmune",
         step: 1,
-        stem: "A 55-year-old woman with primary biliary cholangitis on ursodeoxycholic acid has severe itching that keeps her awake. She is started on a drug that binds bile acids in the intestine and prevents their reabsorption.",
+        stem: "A 55-year-old woman with primary biliary cholangitis on ursodeoxycholic acid has severe itching that keeps her awake. She is started on a drug that binds bile salts in the intestine and prevents their reabsorption.",
         leadIn: "Which drug was started?",
         options: [
             "Cholestyramine",
@@ -1493,7 +1493,7 @@ const QUIZ_QUESTIONS = [
             "Octreotide",
         ],
         answer: 0,
-        explanation: "Cholestyramine is a bile acid sequestrant. It interrupts enterohepatic circulation, lowering bile acids that build up in cholestasis and cause pruritus. Give it apart from other drugs (including UDCA), because it binds them too.",
+        explanation: "Cholestyramine is a bile acid sequestrant. It interrupts enterohepatic circulation, lowering bile salts that build up in cholestasis and cause pruritus. Give it apart from other drugs (including UDCA), because it binds them too.",
         notes: {
             1: "Ezetimibe blocks cholesterol absorption (NPC1L1) and is not used for pruritus.",
         },
@@ -1504,7 +1504,7 @@ const QUIZ_QUESTIONS = [
         id: "hm-hh-mech",
         condition: "hepatic-metabolic",
         step: 1,
-        stem: "A 54-year-old man has fatigue, joint pain in his hands and new-onset diabetes. His skin is diffusely tanned and his liver is enlarged. Transferrin saturation is 82% and ferritin is 2,400 ng/mL. He is homozygous for the HFE C282Y mutation.",
+        stem: "A 54-year-old man has fatigue, joint pain in his hands, and new-onset diabetes. His skin is diffusely tanned and his liver is enlarged. Transferrin saturation is 82% and ferritin is 2400 ng/mL. He is homozygous for the HFE C282Y mutation.",
         leadIn: "Which mechanism best explains his iron overload?",
         options: [
             "Decreased hepcidin, leading to increased ferroportin activity",
@@ -1514,7 +1514,7 @@ const QUIZ_QUESTIONS = [
             "Decreased ceruloplasmin activity",
         ],
         answer: 0,
-        explanation: "HFE mutations reduce hepcidin production. Hepcidin normally binds ferroportin and causes it to be degraded; without it, ferroportin keeps exporting iron from duodenal cells and macrophages, so iron absorption rises unchecked. Iron deposits in the liver, pancreas, heart, skin and joints.",
+        explanation: "HFE mutations reduce hepcidin production. Hepcidin normally binds ferroportin and causes it to be degraded; without it, ferroportin keeps exporting iron from duodenal cells and macrophages, so iron absorption rises unchecked. Iron deposits in the liver, pancreas, heart, skin, and joints.",
         notes: {
             1: "High hepcidin blocks iron export; this is the mechanism of anemia of chronic disease.",
             3: "Transfusions cause secondary iron overload, but this patient has a genetic cause.",
@@ -1524,7 +1524,7 @@ const QUIZ_QUESTIONS = [
         id: "hm-hh-tx",
         condition: "hepatic-metabolic",
         step: 2,
-        stem: "A 48-year-old man is diagnosed with HFE hereditary hemochromatosis. His hemoglobin is 15.2 g/dL, ferritin is 1,600 ng/mL, and he has no cardiac disease.",
+        stem: "A 48-year-old man is diagnosed with HFE hereditary hemochromatosis. His hemoglobin is 15.2 g/dL, ferritin is 1600 ng/mL, and he has no cardiac disease.",
         leadIn: "Which is the most appropriate treatment?",
         options: [
             "Therapeutic phlebotomy",
@@ -1543,7 +1543,7 @@ const QUIZ_QUESTIONS = [
         id: "hm-wilson",
         condition: "hepatic-metabolic",
         step: 1,
-        stem: "A 19-year-old man has a 6-month history of hand tremor, slurred speech and new irritability. His AST and ALT are mildly elevated. Slit-lamp examination shows a golden-brown ring at the edge of each cornea. Serum ceruloplasmin is low.",
+        stem: "A 19-year-old man has a 6-month history of hand tremor, slurred speech, and new irritability. His AST and ALT are mildly elevated. Slit-lamp examination shows a golden-brown ring at the edge of each cornea. Serum ceruloplasmin is low.",
         leadIn: "A defect in which process best explains his condition?",
         options: [
             "Hepatocyte copper excretion into bile",
@@ -1607,7 +1607,7 @@ const QUIZ_QUESTIONS = [
             "Hepatic encephalopathy",
         ],
         answer: 0,
-        explanation: "This is MASLD (formerly NAFLD), driven by metabolic syndrome. Although it can progress to MASH, cirrhosis and HCC, cardiovascular disease is the leading cause of death. MASLD also raises the risk of type 2 diabetes, chronic kidney disease and extrahepatic cancers.",
+        explanation: "This is MASLD (formerly NAFLD), driven by metabolic syndrome. Although it can progress to MASH, cirrhosis, and HCC, cardiovascular disease is the leading cause of death. MASLD also raises the risk of type 2 diabetes, chronic kidney disease, and extrahepatic cancers.",
     },
     {
         id: "hm-masld-tx",
@@ -1623,7 +1623,7 @@ const QUIZ_QUESTIONS = [
             "Referral for liver transplant evaluation",
         ],
         answer: 0,
-        explanation: "Weight loss through diet and exercise is the mainstay of MASLD treatment: 7–10% weight loss can reduce steatosis, inflammation and even fibrosis. Metabolic risk factors should also be treated. Drug therapy (e.g. GLP-1 receptor agonists or resmetirom) is considered for MASH with significant fibrosis.",
+        explanation: "Weight loss through diet and exercise is the mainstay of MASLD treatment: 7–10% weight loss can reduce steatosis, inflammation, and even fibrosis. Metabolic risk factors should also be treated. Drug therapy (e.g. GLP-1 receptor agonists or resmetirom) is considered for MASH with significant fibrosis.",
     },
 
     /* ===== Hepatocellular injury: iatrogenic and toxic ===== */
@@ -1650,7 +1650,7 @@ const QUIZ_QUESTIONS = [
         id: "hio-alcohol-ratio",
         condition: "hepatic-iatrogenic",
         step: 2,
-        stem: "A 47-year-old man who drinks a bottle of vodka daily has fever, jaundice and tender hepatomegaly after a week of heavy drinking. AST is 240 U/L, ALT is 95 U/L, GGT is elevated and MCV is 104 fL.",
+        stem: "A 47-year-old man who drinks a bottle of vodka daily has fever, jaundice, and tender hepatomegaly after a week of heavy drinking. AST is 240 U/L, ALT is 95 U/L, GGT is elevated, and MCV is 104 fL.",
         leadIn: "Which is the most likely diagnosis?",
         options: [
             "Alcoholic hepatitis",
@@ -1660,7 +1660,7 @@ const QUIZ_QUESTIONS = [
             "MASLD",
         ],
         answer: 0,
-        explanation: "Alcoholic hepatitis typically shows an AST:ALT ratio above 2:1 with AST rarely above 300 U/L, raised GGT and macrocytosis. ALT stays relatively low partly because it needs pyridoxal phosphate (vitamin B6), which is often deficient in heavy drinkers.",
+        explanation: "Alcoholic hepatitis typically shows an AST:ALT ratio above 2:1 with AST rarely above 300 U/L, raised GGT, and macrocytosis. ALT stays relatively low partly because it needs pyridoxal phosphate (vitamin B6), which is often deficient in heavy drinkers.",
         notes: {
             1: "Viral hepatitis usually causes ALT-predominant rises, often well above 1000 U/L.",
             4: "MASLD typically has ALT higher than AST.",
@@ -1670,7 +1670,7 @@ const QUIZ_QUESTIONS = [
         id: "hio-nadh",
         condition: "hepatic-iatrogenic",
         step: 1,
-        stem: "A biochemistry lecture explains why chronic alcohol use leads to fat accumulation in hepatocytes, regardless of whether alcohol is broken down by alcohol dehydrogenase, CYP2E1 or catalase.",
+        stem: "A biochemistry lecture explains why chronic alcohol use leads to fat accumulation in hepatocytes, regardless of whether alcohol is broken down by alcohol dehydrogenase, CYP2E1, or catalase.",
         leadIn: "Which change most directly promotes fatty liver?",
         options: [
             "Increased NADH:NAD+ ratio",
@@ -1725,7 +1725,7 @@ const QUIZ_QUESTIONS = [
         id: "hot-aflp",
         condition: "hepatic-other",
         step: 2,
-        stem: "A 26-year-old woman in her first pregnancy, at 35 weeks, has 3 days of nausea, vomiting and malaise, and is now jaundiced and confused. Glucose is 2.4 mmol/L (43 mg/dL), INR is 2.1, AST is 480 U/L, platelets are 160,000/µL and blood pressure is 134/86 mm Hg.",
+        stem: "A 26-year-old woman in her first pregnancy, at 35 weeks, has 3 days of nausea, vomiting, and malaise, and is now jaundiced and confused. Glucose is 2.4 mmol/L (43 mg/dL), INR is 2.1, AST is 480 U/L, platelets are 160000/µL and blood pressure is 134/86 mm Hg.",
         leadIn: "Which is the most appropriate definitive management?",
         options: [
             "Prompt delivery",
@@ -1735,7 +1735,7 @@ const QUIZ_QUESTIONS = [
             "Corticosteroids for fetal lung maturity, then deliver at 37 weeks",
         ],
         answer: 0,
-        explanation: "Hypoglycemia, coagulopathy and encephalopathy in the third trimester point to acute fatty liver of pregnancy. The only cure is prompt delivery, with supportive care (glucose, blood products, ICU). The newborn should be tested for LCHAD deficiency.",
+        explanation: "Hypoglycemia, coagulopathy, and encephalopathy in the third trimester point to acute fatty liver of pregnancy. The only cure is prompt delivery, with supportive care (glucose, blood products, ICU). The newborn should be tested for LCHAD deficiency.",
         notes: {
             2: "Ursodeoxycholic acid treats intrahepatic cholestasis of pregnancy, which causes itching but not liver failure.",
         },
@@ -1762,7 +1762,7 @@ const QUIZ_QUESTIONS = [
         id: "lf-sbp",
         condition: "liver-failure",
         step: 2,
-        stem: "A 58-year-old man with alcohol-related cirrhosis and ascites has fever, diffuse abdominal tenderness and new confusion. Diagnostic paracentesis shows an ascitic neutrophil count of 520/µL.",
+        stem: "A 58-year-old man with alcohol-related cirrhosis and ascites has fever, diffuse abdominal tenderness, and new confusion. Diagnostic paracentesis shows an ascitic neutrophil count of 520/µL.",
         leadIn: "Which is the most appropriate treatment?",
         options: [
             "IV third-generation cephalosporin plus IV albumin",
@@ -1772,7 +1772,7 @@ const QUIZ_QUESTIONS = [
             "Increase the diuretic dose",
         ],
         answer: 0,
-        explanation: "An ascitic neutrophil count of 250/µL or more diagnoses spontaneous bacterial peritonitis. Treat with a third-generation cephalosporin (e.g. ceftriaxone or cefotaxime). IV albumin reduces the risk of hepatorenal syndrome. Long-term antibiotic prophylaxis follows.",
+        explanation: "An ascitic neutrophil count of 250/µL or more diagnoses spontaneous bacterial peritonitis. Treat with a third-generation cephalosporin (e.g. ceftriaxone or cefotaxime). IV albumin reduces the risk of hepatorenal syndrome. Long-term ABX prophylaxis follows.",
         notes: {
             1: "SBP has no surgical source; laparotomy is for secondary peritonitis such as a perforation.",
         },
@@ -1807,7 +1807,7 @@ const QUIZ_QUESTIONS = [
             "Furosemide",
         ],
         answer: 0,
-        explanation: "This is hepatic encephalopathy, often triggered by constipation, infection, bleeding or sedatives. Lactulose acidifies the colon, trapping ammonia as ammonium for excretion, and also relieves constipation. Rifaximin is added for recurrent episodes.",
+        explanation: "This is hepatic encephalopathy, often triggered by constipation, infection, bleeding, or sedatives. Lactulose acidifies the colon, trapping ammonia as ammonium for excretion, and also relieves constipation. Rifaximin is added for recurrent episodes.",
         notes: {
             2: "Benzodiazepines worsen hepatic encephalopathy.",
             3: "Strict protein restriction is no longer recommended; it worsens malnutrition.",
@@ -1817,7 +1817,7 @@ const QUIZ_QUESTIONS = [
         id: "lf-child-pugh",
         condition: "liver-failure",
         step: 2,
-        stem: "A patient with cirrhosis has bilirubin 2.5 mg/dL, albumin 3.0 g/dL, INR 1.5, mild ascites controlled with diuretics and no encephalopathy.",
+        stem: "A patient with cirrhosis has bilirubin 2.5 mg/dL, albumin 3.0 g/dL, INR 1.5, mild ascites controlled with diuretics, and no encephalopathy.",
         leadIn: "Which Child-Pugh class is this?",
         options: [
             "Class A",
@@ -1830,7 +1830,7 @@ const QUIZ_QUESTIONS = [
         explanation: "Bilirubin 2–3 (2 points), albumin 2.8–3.5 (2 points), INR under 1.7 (1 point), mild ascites (2 points) and no encephalopathy (1 point) give 8 points: Class B (7–9). Creatinine is part of the MELD score, not Child-Pugh.",
         notes: {
             3: "Creatinine is used in MELD, not Child-Pugh.",
-            4: "There are only three Child-Pugh classes: A, B and C.",
+            4: "There are only three Child-Pugh classes: A, B, and C.",
         },
     },
     {
@@ -1847,7 +1847,7 @@ const QUIZ_QUESTIONS = [
             "Ceruloplasmin",
         ],
         answer: 0,
-        explanation: "Hypoglycemia is one of the 'big 4' complications of acute liver failure, alongside encephalopathy, coagulopathy and infection. The failing liver cannot make glucose or release it from glycogen. A sudden drop in consciousness needs an immediate glucose check.",
+        explanation: "Hypoglycemia is one of the \"big 4\" complications of acute liver failure, alongside encephalopathy, coagulopathy, and infection. The failing liver cannot make glucose or release it from glycogen. A sudden drop in consciousness needs an immediate glucose check.",
     },
     {
         id: "lf-varices",
@@ -1856,14 +1856,14 @@ const QUIZ_QUESTIONS = [
         stem: "A 52-year-old man with cirrhosis vomits a large amount of bright red blood. His blood pressure is 88/54 mm Hg. Two large-bore IV lines are placed and transfusion has started.",
         leadIn: "In addition to resuscitation, which drug combination should be started before endoscopy?",
         options: [
-            "IV octreotide and IV antibiotics",
+            "IV octreotide and IV ABX",
             "Oral propranolol and lactulose",
             "IV vitamin K alone",
             "IV pantoprazole alone",
             "IV furosemide and spironolactone",
         ],
         answer: 0,
-        explanation: "For suspected variceal bleeding, start octreotide (a splanchnic vasoconstrictor that lowers portal pressure) and prophylactic antibiotics (e.g. ceftriaxone, which reduce infection and mortality), then perform urgent endoscopic band ligation. Beta-blockers are for prevention, not an acute bleed.",
+        explanation: "For suspected variceal bleeding, start octreotide (a splanchnic vasoconstrictor that lowers portal pressure) and prophylactic ABX (e.g. ceftriaxone, which reduce infection and mortality), then perform urgent endoscopic band ligation. Beta-blockers are for prevention, not an acute bleed.",
         notes: {
             1: "Non-selective beta-blockers prevent variceal bleeding but are not used in acute hemorrhage with hypotension.",
         },
@@ -1879,7 +1879,7 @@ const QUIZ_QUESTIONS = [
         options: [
             "Elective laparoscopic cholecystectomy",
             "ERCP with sphincterotomy",
-            "IV antibiotics and admission",
+            "IV ABX and admission",
             "No treatment; reassure",
             "HIDA scan",
         ],
@@ -1915,17 +1915,17 @@ const QUIZ_QUESTIONS = [
         id: "bc-acute",
         condition: "cholecystitis",
         step: 2,
-        stem: "A 48-year-old woman has 18 hours of constant right upper quadrant pain radiating to her right shoulder, with nausea. Temperature is 38.4°C. She stops breathing in when the right upper quadrant is palpated. WBC is 15,800/µL; bilirubin, ALP and lipase are normal. Ultrasound shows gallstones, a 5-mm gallbladder wall and fluid around the gallbladder.",
+        stem: "A 48-year-old woman has 18 hours of constant right upper quadrant pain radiating to her right shoulder, with nausea. Temperature is 38.4°C. She stops breathing in when the right upper quadrant is palpated. WBC is 15800/µL; bilirubin, ALP, and lipase are normal. Ultrasound shows gallstones, a 5-mm gallbladder wall, and fluid around the gallbladder.",
         leadIn: "Which is the most appropriate definitive management?",
         options: [
-            "IV antibiotics and laparoscopic cholecystectomy during this admission",
+            "IV ABX and laparoscopic cholecystectomy during this admission",
             "ERCP",
             "Oral ursodeoxycholic acid",
             "Outpatient follow-up in 6 weeks",
             "Percutaneous cholecystostomy as first-line in all patients",
         ],
         answer: 0,
-        explanation: "This is acute calculous cholecystitis: prolonged RUQ pain, fever, Murphy's sign, leukocytosis, typical ultrasound findings and normal LFTs. Treat with supportive care and antibiotics, followed by early laparoscopic cholecystectomy, ideally within 72 hours.",
+        explanation: "This is acute calculous cholecystitis: prolonged RUQ pain, fever, Murphy sign, leukocytosis, typical ultrasound findings, and normal LFTs. Treat with supportive care and ABX, followed by early laparoscopic cholecystectomy, ideally within 72 hours.",
         notes: {
             1: "ERCP is for common bile duct stones; normal bilirubin and ALP make this unlikely.",
             4: "Cholecystostomy is reserved for patients too unwell for surgery or with acalculous cholecystitis.",
@@ -1935,7 +1935,7 @@ const QUIZ_QUESTIONS = [
         id: "bc-ileus",
         condition: "cholecystitis",
         step: 1,
-        stem: "A 78-year-old woman with a history of gallstones has 3 days of colicky abdominal pain, distention, vomiting and no passage of stool or gas. CT shows air in the biliary tree, dilated small bowel loops and a 3-cm calcified stone in the right lower quadrant.",
+        stem: "A 78-year-old woman with a history of gallstones has 3 days of colicky abdominal pain, distention, vomiting, and no passage of stool or gas. CT shows air in the biliary tree, dilated small bowel loops, and a 3-cm calcified stone in the right lower quadrant.",
         leadIn: "Where is the stone most likely lodged?",
         options: [
             "Ileocecal valve",
@@ -1945,7 +1945,7 @@ const QUIZ_QUESTIONS = [
             "Duodenojejunal flexure",
         ],
         answer: 0,
-        explanation: "Gallstone ileus: a large stone erodes through a cholecystoenteric fistula (usually cholecystoduodenal) and obstructs the narrowest part of the small bowel, the ileocecal valve. Rigler's triad on imaging is pneumobilia, small bowel obstruction and an ectopic gallstone.",
+        explanation: "Gallstone ileus: a large stone erodes through a cholecystoenteric fistula (usually cholecystoduodenal) and obstructs the narrowest part of the small bowel, the ileocecal valve. Rigler triad on imaging is pneumobilia, small bowel obstruction, and an ectopic gallstone.",
         notes: {
             1: "A stone obstructing the pylorus or duodenum causes Bouveret syndrome (gastric outlet obstruction), not distal small bowel obstruction.",
         },
@@ -1956,7 +1956,7 @@ const QUIZ_QUESTIONS = [
         id: "bd-ercp",
         condition: "choledocholithiasis",
         step: 2,
-        stem: "A 56-year-old man has 2 days of right upper quadrant pain, jaundice, dark urine and itching. He is afebrile. Bilirubin is 5.8 mg/dL and ALP is 410 U/L, with mildly raised AST/ALT and normal lipase. Ultrasound shows gallstones and a common bile duct dilated to 10 mm.",
+        stem: "A 56-year-old man has 2 days of right upper quadrant pain, jaundice, dark urine, and itching. He is afebrile. Bilirubin is 5.8 mg/dL and ALP is 410 U/L, with mildly raised AST/ALT and normal lipase. Ultrasound shows gallstones and a common bile duct dilated to 10 mm.",
         leadIn: "Which is the most appropriate next step?",
         options: [
             "ERCP with stone extraction",
@@ -1975,7 +1975,7 @@ const QUIZ_QUESTIONS = [
         id: "bd-pancreatitis",
         condition: "choledocholithiasis",
         step: 1,
-        stem: "A 50-year-old woman has sudden severe epigastric pain radiating to her back with vomiting. Lipase is 9 times the upper limit of normal, ALT is 320 U/L and ALP is raised. She drinks alcohol rarely. Ultrasound shows gallstones.",
+        stem: "A 50-year-old woman has sudden severe epigastric pain radiating to her back with vomiting. Lipase is 9 times the upper limit of normal, ALT is 320 U/L, and ALP is raised. She drinks alcohol rarely. Ultrasound shows gallstones.",
         leadIn: "Where is the obstructing stone most likely located?",
         options: [
             "Hepatopancreatic ampulla (of Vater)",
@@ -1996,36 +1996,36 @@ const QUIZ_QUESTIONS = [
         id: "bch-reynolds",
         condition: "cholangitis",
         step: 2,
-        stem: "A 71-year-old woman has fever of 39.2°C, right upper quadrant pain and jaundice. Over several hours she becomes confused, and her blood pressure falls to 82/48 mm Hg despite IV fluids. Ultrasound shows a dilated common bile duct with a stone.",
-        leadIn: "Which is the most important definitive step after starting IV antibiotics and resuscitation?",
+        stem: "A 71-year-old woman has fever of 39.2°C, right upper quadrant pain, and jaundice. Over several hours she becomes confused, and her blood pressure falls to 82/48 mm Hg despite IV fluids. Ultrasound shows a dilated common bile duct with a stone.",
+        leadIn: "Which is the most important definitive step after starting IV ABX and resuscitation?",
         options: [
             "Urgent ERCP for biliary drainage",
             "Elective cholecystectomy in 6 weeks",
-            "Oral antibiotics and outpatient follow-up",
+            "Oral ABX and outpatient follow-up",
             "HIDA scan",
             "Ursodeoxycholic acid",
         ],
         answer: 0,
-        explanation: "Charcot's triad (fever, RUQ pain, jaundice) plus hypotension and confusion is Reynolds' pentad: severe ascending cholangitis with septic shock. Antibiotics alone are not enough; the infected, obstructed bile must be drained urgently, usually by ERCP.",
+        explanation: "Charcot triad (fever, RUQ pain, jaundice) plus hypotension and confusion is Reynolds pentad: severe ascending cholangitis with septic shock. ABX alone are not enough; the infected, obstructed bile must be drained urgently, usually by ERCP.",
     },
     {
         id: "bch-charcot",
         condition: "cholangitis",
         step: 1,
         stem: "A patient has a stone in the common bile duct and develops an infection of the obstructed bile.",
-        leadIn: "Which combination of findings makes up Charcot's triad?",
+        leadIn: "Which combination of findings makes up Charcot triad?",
         options: [
             "Fever, right upper quadrant pain, jaundice",
             "Fever, hypotension, confusion",
             "Jaundice, pruritus, pale stools",
-            "Right upper quadrant pain, Murphy's sign, fever",
+            "Right upper quadrant pain, Murphy sign, fever",
             "Painless jaundice, palpable gallbladder, weight loss",
         ],
         answer: 0,
-        explanation: "Charcot's triad is fever, right upper quadrant pain and jaundice. Adding hypotension and altered mental status gives Reynolds' pentad, which signals septic shock.",
+        explanation: "Charcot triad is fever, right upper quadrant pain, and jaundice. Adding hypotension and altered mental status gives Reynolds pentad, which signals septic shock.",
         notes: {
-            3: "RUQ pain, Murphy's sign and fever without jaundice suggest acute cholecystitis.",
-            4: "Painless jaundice with a palpable gallbladder suggests malignancy (Courvoisier's law).",
+            3: "RUQ pain, Murphy sign, and fever without jaundice suggest acute cholecystitis.",
+            4: "Painless jaundice with a palpable gallbladder suggests malignancy (Courvoisier law).",
         },
     },
 
@@ -2050,7 +2050,7 @@ const QUIZ_QUESTIONS = [
         id: "bf-bouveret",
         condition: "biliary-fistula",
         step: 2,
-        stem: "An 80-year-old man with untreated gallstones has 2 days of repeated vomiting and epigastric fullness. CT shows air in the biliary tree, a distended stomach and a large gallstone impacted in the duodenal bulb.",
+        stem: "An 80-year-old man with untreated gallstones has 2 days of repeated vomiting and epigastric fullness. CT shows air in the biliary tree, a distended stomach, and a large gallstone impacted in the duodenal bulb.",
         leadIn: "Which is the most likely diagnosis?",
         options: [
             "Bouveret syndrome",
@@ -2071,7 +2071,7 @@ const QUIZ_QUESTIONS = [
         id: "bm-courvoisier",
         condition: "biliary-cancer",
         step: 2,
-        stem: "A 68-year-old man who smokes has 6 weeks of progressive jaundice, itching and a 7-kg weight loss, with no abdominal pain. On examination, he has a smooth, nontender mass below the right costal margin that moves with respiration. ALP and conjugated bilirubin are markedly raised.",
+        stem: "A 68-year-old man who smokes has 6 weeks of progressive jaundice, itching, and a 7-kg weight loss, with no abdominal pain. On examination, he has a smooth, nontender mass below the right costal margin that moves with respiration. ALP and conjugated bilirubin are markedly raised.",
         leadIn: "Which is the most likely cause?",
         options: [
             "Pancreatic head or other periampullary malignancy",
@@ -2081,7 +2081,7 @@ const QUIZ_QUESTIONS = [
             "Mirizzi syndrome",
         ],
         answer: 0,
-        explanation: "Courvoisier's law: painless jaundice with a palpable, nontender gallbladder is unlikely to be caused by gallstones. A slowly growing tumor below the cystic duct lets a healthy gallbladder distend. Gallstones usually scar the gallbladder, so it cannot enlarge, and they cause pain.",
+        explanation: "Courvoisier law: painless jaundice with a palpable, nontender gallbladder is unlikely to be caused by gallstones. A slowly growing tumor below the cystic duct lets a healthy gallbladder distend. Gallstones usually scar the gallbladder, so it cannot enlarge, and they cause pain.",
         notes: {
             1: "CBD stones usually cause painful jaundice, and the gallbladder is typically shrunken from chronic inflammation.",
         },
@@ -2115,7 +2115,7 @@ const QUIZ_QUESTIONS = [
         leadIn: "Which is the most appropriate next step to confirm the diagnosis?",
         options: [
             "No further test is needed to diagnose acute pancreatitis",
-            "Contrast CT of the abdomen immediately",
+            "Contrast CT abdomen immediately",
             "MRCP",
             "Endoscopic ultrasound",
             "Repeat lipase in 24 hours",
@@ -2133,7 +2133,7 @@ const QUIZ_QUESTIONS = [
         stem: "A 38-year-old woman with poorly controlled type 2 diabetes develops severe epigastric pain radiating to her back. Her blood sample looks milky, and lipase is markedly raised. She does not drink alcohol, and ultrasound shows no gallstones.",
         leadIn: "Which laboratory finding most likely explains her pancreatitis?",
         options: [
-            "Serum triglycerides of 2,400 mg/dL",
+            "Serum triglycerides of 2400 mg/dL",
             "Serum calcium of 8.0 mg/dL",
             "Elevated serum IgG4",
             "Positive anti-mitochondrial antibody",
@@ -2159,7 +2159,7 @@ const QUIZ_QUESTIONS = [
             "Upper GI bleeding from a peptic ulcer",
         ],
         answer: 0,
-        explanation: "In necrotizing pancreatitis, enzymes erode blood vessels and blood tracks through the retroperitoneum. Flank bruising is Grey Turner's sign and periumbilical bruising is Cullen's sign. Both suggest severe disease.",
+        explanation: "In necrotizing pancreatitis, enzymes erode blood vessels and blood tracks through the retroperitoneum. Flank bruising is Grey Turner sign and periumbilical bruising is Cullen sign. Both suggest severe disease.",
     },
     {
         id: "pa-hypocalcemia",
@@ -2188,7 +2188,7 @@ const QUIZ_QUESTIONS = [
         options: [
             "Retrocecal, against the iliopsoas muscle",
             "Pelvic, against the obturator internus",
-            "Anterior, just under McBurney's point",
+            "Anterior, just under McBurney point",
             "Left lower quadrant",
             "Subhepatic",
         ],
@@ -2202,11 +2202,11 @@ const QUIZ_QUESTIONS = [
         id: "ap-imaging",
         condition: "appendicitis",
         step: 2,
-        stem: "A 9-year-old girl has 1 day of periumbilical pain that has moved to the right lower quadrant, with vomiting and a temperature of 38.1°C. She is tender at McBurney's point. WBC is 14,500/µL.",
+        stem: "A 9-year-old girl has 1 day of periumbilical pain that has moved to the right lower quadrant, with vomiting and a temperature of 38.1°C. She is tender at McBurney point. WBC is 14500/µL.",
         leadIn: "Which is the most appropriate initial imaging test?",
         options: [
             "Ultrasound of the right lower quadrant",
-            "CT abdomen and pelvis with contrast",
+            "CT AP with contrast",
             "Abdominal x-ray",
             "Barium enema",
             "Colonoscopy",
@@ -2221,14 +2221,14 @@ const QUIZ_QUESTIONS = [
         stem: "A 34-year-old man has 6 days of right lower quadrant pain and fever. He is hemodynamically stable, without generalized peritonitis. CT shows a perforated appendix with a 5-cm well-defined abscess.",
         leadIn: "Which is the most appropriate management?",
         options: [
-            "IV antibiotics and percutaneous drainage of the abscess",
+            "IV ABX and percutaneous drainage of the abscess",
             "Immediate open appendectomy",
-            "Oral antibiotics and discharge",
-            "Observation without antibiotics",
+            "Oral ABX and discharge",
+            "Observation without ABX",
             "Colonoscopy to exclude malignancy before any treatment",
         ],
         answer: 0,
-        explanation: "A contained appendiceal abscess in a stable patient is treated with IV antibiotics and percutaneous drainage; operating on the inflamed tissue early carries a higher risk of complications. Appendectomy may follow later. Generalized peritonitis, by contrast, needs emergency surgery.",
+        explanation: "A contained appendiceal abscess in a stable patient is treated with IV ABX and percutaneous drainage; operating on the inflamed tissue early carries a higher risk of complications. Appendectomy may follow later. Generalized peritonitis, by contrast, needs emergency surgery.",
     },
 
     /* ======================================================
@@ -2240,7 +2240,7 @@ const QUIZ_QUESTIONS = [
         id: "eso-hsv",
         condition: "esophagitis",
         step: 1,
-        stem: "A 40-year-old woman receiving chemotherapy for lymphoma develops severe odynophagia. Endoscopy shows multiple small, sharply demarcated 'punched-out' ulcers in the mid esophagus. Biopsy from the ulcer edge shows multinucleated giant cells with intranuclear inclusions.",
+        stem: "A 40-year-old woman receiving chemotherapy for lymphoma develops severe odynophagia. Endoscopy shows multiple small, sharply demarcated \"punched-out\" ulcers in the mid esophagus. Biopsy from the ulcer edge shows multinucleated giant cells with intranuclear inclusions.",
         leadIn: "Which organism is the most likely cause?",
         options: [
             "Herpes simplex virus",
@@ -2250,7 +2250,7 @@ const QUIZ_QUESTIONS = [
             "Helicobacter pylori",
         ],
         answer: 0,
-        explanation: "HSV esophagitis causes small, punched-out ('volcano') ulcers, with multinucleated giant cells and Cowdry A inclusions in squamous cells at the ulcer edge. It is treated with acyclovir.",
+        explanation: "HSV esophagitis causes small, punched-out (\"volcano\") ulcers, with multinucleated giant cells and Cowdry A inclusions in squamous cells at the ulcer edge. It is treated with acyclovir.",
         notes: {
             1: "CMV causes large, shallow, linear ulcers, with inclusions in endothelial and stromal cells at the ulcer base.",
             2: "Candida causes white plaques, not punched-out ulcers.",
@@ -2305,7 +2305,7 @@ const QUIZ_QUESTIONS = [
             "24-hour pH monitoring",
         ],
         answer: 0,
-        explanation: "Chest pain, crepitus and pneumomediastinum suggest esophageal perforation. A contrast esophagram with water-soluble contrast (with CXR or CT) confirms the leak; treatment is usually surgical, with antibiotics.",
+        explanation: "Chest pain, crepitus, and pneumomediastinum suggest esophageal perforation. A contrast esophagram with water-soluble contrast (with CXR or CT) confirms the leak; treatment is usually surgical, with ABX.",
         notes: {
             1: "Barium leaking into the mediastinum causes severe mediastinitis, so water-soluble contrast is used first.",
             3: "Endoscopy can enlarge a perforation.",
@@ -2315,7 +2315,7 @@ const QUIZ_QUESTIONS = [
         id: "eso-candida-path",
         condition: "esophagitis",
         step: 1,
-        stem: "A 61-year-old man using an inhaled corticosteroid for COPD and recently treated with broad-spectrum antibiotics has painful swallowing. Endoscopy shows adherent white plaques along the esophagus.",
+        stem: "A 61-year-old man using an inhaled corticosteroid for COPD and recently treated with broad-spectrum ABX has painful swallowing. Endoscopy shows adherent white plaques along the esophagus.",
         leadIn: "Which finding would most likely be seen on a biopsy of the plaques?",
         options: [
             "Pseudohyphae and budding yeast",
@@ -2325,7 +2325,7 @@ const QUIZ_QUESTIONS = [
             "Goblet cells in columnar epithelium",
         ],
         answer: 0,
-        explanation: "Candida esophagitis, the most common infectious esophagitis, shows pseudohyphae and budding yeast. Inhaled steroids, antibiotics, diabetes and immunosuppression are risk factors.",
+        explanation: "Candida esophagitis, the most common infectious esophagitis, shows pseudohyphae and budding yeast. Inhaled steroids, ABX, diabetes, and immunosuppression are risk factors.",
         notes: {
             1: "Multinucleated giant cells suggest HSV.",
             2: "Owl's eye inclusions suggest CMV.",
@@ -2348,7 +2348,7 @@ const QUIZ_QUESTIONS = [
             "Esophageal stent",
         ],
         answer: 0,
-        explanation: "Definitive options for achalasia disrupt the LES: pneumatic dilation, or surgical myotomy (Heller or POEM). Calcium channel blockers, nitrates and botulinum toxin are less durable and suit patients unfit for these procedures.",
+        explanation: "Definitive options for achalasia disrupt the LES: pneumatic dilation, or surgical myotomy (Heller or POEM). Calcium channel blockers, nitrates, and botulinum toxin are less durable and suit patients unfit for these procedures.",
         notes: {
             1: "Nissen fundoplication tightens the LES and is used for GERD.",
         },
@@ -2376,7 +2376,7 @@ const QUIZ_QUESTIONS = [
         id: "mot-pseudo",
         condition: "esophageal-motility",
         step: 2,
-        stem: "A 71-year-old man who smokes has 3 months of progressive dysphagia to solids and liquids and has lost 11 kg. Barium swallow shows a 'bird's beak' narrowing at the gastroesophageal junction.",
+        stem: "A 71-year-old man who smokes has 3 months of progressive dysphagia to solids and liquids and has lost 11 kg. Barium swallow shows a \"bird's beak\" narrowing at the gastroesophageal junction.",
         leadIn: "Which is the most appropriate next step?",
         options: [
             "Upper endoscopy",
@@ -2386,7 +2386,7 @@ const QUIZ_QUESTIONS = [
             "Trial of a calcium channel blocker",
         ],
         answer: 0,
-        explanation: "Older age, a short history and marked weight loss suggest pseudoachalasia from a tumor at the gastroesophageal junction. Endoscopy must exclude malignancy before achalasia is diagnosed or treated.",
+        explanation: "Older age, a short history, and marked weight loss suggest pseudoachalasia from a tumor at the gastroesophageal junction. Endoscopy must exclude malignancy before achalasia is diagnosed or treated.",
     },
     {
         id: "mot-scc",
@@ -2421,7 +2421,7 @@ const QUIZ_QUESTIONS = [
         explanation: "Esophageal involvement in scleroderma lowers LES tone and causes severe reflux, so PPIs are the mainstay of treatment.",
         notes: {
             1: "Calcium channel blockers (often used for Raynaud phenomenon) lower LES tone further and can worsen reflux.",
-            2: "Dilation, botulinum toxin and myotomy lower LES pressure and are used in achalasia.",
+            2: "Dilation, botulinum toxin, and myotomy lower LES pressure and are used in achalasia.",
         },
     },
 
@@ -2440,7 +2440,7 @@ const QUIZ_QUESTIONS = [
             "H. pylori stool antigen test",
         ],
         answer: 0,
-        explanation: "Dysphagia, weight loss and iron-deficiency anemia are alarm features that require endoscopy with biopsy to exclude malignancy, rather than an empiric PPI trial.",
+        explanation: "Dysphagia, weight loss, and iron-deficiency anemia are alarm features that require endoscopy with biopsy to exclude malignancy, rather than an empiric PPI trial.",
     },
     {
         id: "gerd-surveillance",
@@ -2508,7 +2508,7 @@ const QUIZ_QUESTIONS = [
             "Irreversibly blocking the proton pump",
             "Blocking muscarinic M3 receptors",
             "Activating prostaglandin E1 receptors",
-            "Binding bile acids",
+            "Binding bile salts",
         ],
         answer: 0,
         explanation: "H2-receptor antagonists competitively block histamine H2 receptors on parietal cells, reducing cAMP and acid secretion. They are less potent than PPIs and suit milder symptoms.",
@@ -2535,7 +2535,7 @@ const QUIZ_QUESTIONS = [
         id: "gas-b12-tx",
         condition: "gastritis",
         step: 2,
-        stem: "A 64-year-old woman with autoimmune gastritis has megaloblastic anemia, low serum B12 and reduced vibration sense in her feet.",
+        stem: "A 64-year-old woman with autoimmune gastritis has megaloblastic anemia, low serum B12, and reduced vibration sense in her feet.",
         leadIn: "Which is the most appropriate treatment?",
         options: [
             "Intramuscular vitamin B12",
@@ -2570,7 +2570,7 @@ const QUIZ_QUESTIONS = [
         id: "gas-stress-ppx",
         condition: "gastritis",
         step: 2,
-        stem: "A 66-year-old man is in the ICU on mechanical ventilation for 4 days after a severe head injury. His platelet count is 48,000/µL.",
+        stem: "A 66-year-old man is in the ICU on mechanical ventilation for 4 days after a severe head injury. His platelet count is 48000/µL.",
         leadIn: "Which intervention best reduces his risk of stress-related gastric bleeding?",
         options: [
             "Prophylactic PPI or H2 blocker",
@@ -2580,7 +2580,7 @@ const QUIZ_QUESTIONS = [
             "No intervention is needed",
         ],
         answer: 0,
-        explanation: "Critically ill patients, especially those on mechanical ventilation, with coagulopathy, burns or head injury (Cushing ulcers), are at risk of stress ulcer bleeding. Acid suppression with a PPI or H2 blocker is used as prophylaxis.",
+        explanation: "Critically ill patients, especially those on mechanical ventilation, with coagulopathy, burns, or head injury (Cushing ulcers), are at risk of stress ulcer bleeding. Acid suppression with a PPI or H2 blocker is used as prophylaxis.",
     },
     {
         id: "gas-nsaid-ppx",
@@ -2613,7 +2613,7 @@ const QUIZ_QUESTIONS = [
         options: [
             "Biopsy the ulcer margins",
             "No biopsy; start a PPI only",
-            "Inject the ulcer with epinephrine",
+            "Inject the ulcer with adrenaline",
             "Refer for partial gastrectomy",
             "Place a gastric stent",
         ],
@@ -2760,7 +2760,7 @@ const QUIZ_QUESTIONS = [
             "Annual colonoscopy",
         ],
         answer: 0,
-        explanation: "Treatment is a lifelong gluten-free diet (avoiding wheat, rye and barley). Celiac antibodies such as IgA anti-tTG fall with good adherence, and persistently raised levels suggest ongoing gluten exposure.",
+        explanation: "Treatment is a lifelong gluten-free diet (avoiding wheat, rye, and barley). Celiac antibodies such as IgA anti-tTG fall with good adherence, and persistently raised levels suggest ongoing gluten exposure.",
         notes: {
             1: "HLA type does not change; HLA-DQ2/DQ8 testing helps rule celiac disease out, not monitor it.",
         },
@@ -2769,7 +2769,7 @@ const QUIZ_QUESTIONS = [
         id: "mal-eatl",
         condition: "malabsorption",
         step: 1,
-        stem: "A 58-year-old man with celiac disease who has not followed a gluten-free diet presents with weight loss, abdominal pain and a small bowel perforation. Pathology of the resected segment shows a T-cell malignancy.",
+        stem: "A 58-year-old man with celiac disease who has not followed a gluten-free diet presents with weight loss, abdominal pain, and a small bowel perforation. Pathology of the resected segment shows a T-cell malignancy.",
         leadIn: "Which is the most likely diagnosis?",
         options: [
             "Enteropathy-associated T-cell lymphoma",
@@ -2801,7 +2801,7 @@ const QUIZ_QUESTIONS = [
         id: "mal-sprue",
         condition: "malabsorption",
         step: 2,
-        stem: "A 36-year-old aid worker returns after 8 months in the Caribbean with chronic diarrhea, weight loss and megaloblastic anemia. Infectious stool studies are negative. Duodenal biopsy shows villous blunting. Celiac serology is negative.",
+        stem: "A 36-year-old aid worker returns after 8 months in the Caribbean with chronic diarrhea, weight loss, and megaloblastic anemia. Infectious stool studies are negative. Duodenal biopsy shows villous blunting. Celiac serology is negative.",
         leadIn: "Which is the most appropriate treatment?",
         options: [
             "Tetracycline and folic acid",
@@ -2811,7 +2811,7 @@ const QUIZ_QUESTIONS = [
             "Lactose-free diet",
         ],
         answer: 0,
-        explanation: "Tropical sprue follows prolonged stay in the tropics and causes mucosal injury with malabsorption, often with folate (and B12) deficiency. It is treated with antibiotics (tetracycline) plus folic acid.",
+        explanation: "Tropical sprue follows prolonged stay in the tropics and causes mucosal injury with malabsorption, often with folate (and B12) deficiency. It is treated with ABX (tetracycline) plus folic acid.",
     },
     {
         id: "mal-cf",
@@ -2833,7 +2833,7 @@ const QUIZ_QUESTIONS = [
         id: "mal-ileum",
         condition: "malabsorption",
         step: 1,
-        stem: "A 42-year-old woman had 100 cm of terminal ileum resected for Crohn disease. Several years later she has fatigue, glossitis and a macrocytic anemia.",
+        stem: "A 42-year-old woman had 100 cm of terminal ileum resected for Crohn disease. Several years later she has fatigue, glossitis, and a macrocytic anemia.",
         leadIn: "Deficiency of which nutrient is most likely?",
         options: [
             "Vitamin B12",
@@ -2843,7 +2843,7 @@ const QUIZ_QUESTIONS = [
             "Zinc",
         ],
         answer: 0,
-        explanation: "The terminal ileum absorbs vitamin B12 (bound to intrinsic factor) and bile acids. Resection causes B12 deficiency (megaloblastic anemia) and bile acid malabsorption, which can lead to fat malabsorption and diarrhea.",
+        explanation: "The terminal ileum absorbs vitamin B12 (bound to intrinsic factor) and bile salts. Resection causes B12 deficiency (megaloblastic anemia) and bile salt malabsorption, which can lead to fat malabsorption and diarrhea.",
         notes: {
             1: "Iron is absorbed in the duodenum.",
             2: "Folate is absorbed in the jejunum.",
@@ -2855,17 +2855,17 @@ const QUIZ_QUESTIONS = [
         id: "div-outpatient",
         condition: "diverticular-diseases",
         step: 2,
-        stem: "A 52-year-old man has 2 days of left lower quadrant pain and a temperature of 37.9°C. He is tolerating fluids, has no peritoneal signs and has no significant comorbidities. CT shows uncomplicated sigmoid diverticulitis without abscess or free air.",
+        stem: "A 52-year-old man has 2 days of left lower quadrant pain and a temperature of 37.9°C. He is tolerating fluids, has no peritoneal signs, and has no significant comorbidities. CT shows uncomplicated sigmoid diverticulitis without abscess or free air.",
         leadIn: "Which is the most appropriate management?",
         options: [
-            "Outpatient management with a clear liquid diet and close follow-up (antibiotics if needed)",
+            "Outpatient management with a clear liquid diet and close follow-up (ABX if needed)",
             "Emergency sigmoid colectomy",
             "Colonoscopy this week",
             "CT-guided drainage",
-            "Admission for IV antibiotics and TPN",
+            "Admission for IV ABX and TPN",
         ],
         answer: 0,
-        explanation: "Uncomplicated diverticulitis in a stable patient who can take oral fluids can be managed as an outpatient with diet modification, pain relief and close follow-up. Oral antibiotics (e.g. amoxicillin-clavulanate) are given selectively.",
+        explanation: "Uncomplicated diverticulitis in a stable patient who can take oral fluids can be managed as an outpatient with diet modification, pain relief, and close follow-up. Oral ABX (e.g. amoxicillin-clavulanate) are given selectively.",
         notes: {
             2: "Colonoscopy is avoided during acute inflammation and is done 6–8 weeks after recovery.",
         },
@@ -2890,17 +2890,17 @@ const QUIZ_QUESTIONS = [
         id: "div-peritonitis",
         condition: "diverticular-diseases",
         step: 2,
-        stem: "A 74-year-old man has sudden worsening of left lower quadrant pain, now diffuse, with a rigid abdomen, fever and hypotension. CT shows free air and fecal contamination of the peritoneal cavity.",
+        stem: "A 74-year-old man has sudden worsening of left lower quadrant pain, now diffuse, with a rigid abdomen, fever, and hypotension. CT shows free air and fecal contamination of the peritoneal cavity.",
         leadIn: "Which is the most appropriate management?",
         options: [
-            "IV antibiotics, resuscitation and emergency laparotomy",
+            "IV ABX, resuscitation, and emergency laparotomy",
             "Percutaneous drainage only",
-            "Outpatient oral antibiotics",
+            "Outpatient oral ABX",
             "Urgent colonoscopy",
             "High-fiber diet",
         ],
         answer: 0,
-        explanation: "Perforated diverticulitis with generalized (fecal) peritonitis requires resuscitation, broad-spectrum IV antibiotics and emergency laparotomy, often a sigmoid resection with an end colostomy (Hartmann procedure).",
+        explanation: "Perforated diverticulitis with generalized (fecal) peritonitis requires resuscitation, broad-spectrum IV ABX, and emergency laparotomy, often a sigmoid resection with an end colostomy (Hartmann procedure).",
     },
     {
         id: "div-fiber",
@@ -2912,7 +2912,7 @@ const QUIZ_QUESTIONS = [
             "Increase dietary fiber",
             "Avoid all nuts and seeds",
             "Elective sigmoid colectomy",
-            "Long-term prophylactic antibiotics",
+            "Long-term prophylactic ABX",
             "Repeat colonoscopy every year",
         ],
         answer: 0,
@@ -2943,14 +2943,14 @@ const QUIZ_QUESTIONS = [
         stem: "A 31-year-old woman with mild-to-moderate ulcerative colitis limited to the left colon has achieved remission with a short course of corticosteroids.",
         leadIn: "Which drug is most appropriate for maintaining remission?",
         options: [
-            "Mesalamine (5-ASA)",
+            "Mesalazine (5-ASA)",
             "Long-term prednisone",
             "Ciprofloxacin",
             "Loperamide",
             "Octreotide",
         ],
         answer: 0,
-        explanation: "5-ASA drugs (mesalamine, sulfasalazine) are first-line for inducing and maintaining remission in mild-to-moderate ulcerative colitis. Corticosteroids are for flares and are not used for maintenance.",
+        explanation: "5-ASA drugs (mesalazine, sulfasalazine) are first-line for inducing and maintaining remission in mild-to-moderate ulcerative colitis. Corticosteroids are for flares and are not used for maintenance.",
         notes: {
             1: "Long-term steroids cause serious adverse effects and do not maintain remission.",
         },
@@ -2975,7 +2975,7 @@ const QUIZ_QUESTIONS = [
         id: "ibd-string",
         condition: "ibd",
         step: 1,
-        stem: "A 26-year-old man with chronic RLQ pain, diarrhea and weight loss has a small bowel follow-through showing a long, narrowed segment of the terminal ileum.",
+        stem: "A 26-year-old man with chronic RLQ pain, diarrhea, and weight loss has a small bowel follow-through showing a long, narrowed segment of the terminal ileum.",
         leadIn: "What is this radiologic finding called, and which disease does it suggest?",
         options: [
             "String sign; Crohn disease",
@@ -2985,13 +2985,13 @@ const QUIZ_QUESTIONS = [
             "Coffee bean sign; sigmoid volvulus",
         ],
         answer: 0,
-        explanation: "The 'string sign' is a narrowed terminal ileum from transmural inflammation and fibrosis in Crohn disease. 'Lead pipe' colon (loss of haustra) is typical of chronic ulcerative colitis.",
+        explanation: "The \"string sign\" is a narrowed terminal ileum from transmural inflammation and fibrosis in Crohn disease. \"Lead pipe\" colon (loss of haustra) is typical of chronic ulcerative colitis.",
     },
     {
         id: "ibd-surveillance",
         condition: "ibd",
         step: 2,
-        stem: "A 34-year-old woman has had pancolonic ulcerative colitis for 8 years. She feels well on mesalamine.",
+        stem: "A 34-year-old woman has had pancolonic ulcerative colitis for 8 years. She feels well on mesalazine.",
         leadIn: "Which is the most appropriate cancer screening plan?",
         options: [
             "Surveillance colonoscopy with biopsies every 1–3 years starting now",
@@ -3026,14 +3026,14 @@ const QUIZ_QUESTIONS = [
         stem: "A 38-year-old woman with long-standing ileal Crohn disease develops recurrent right upper quadrant pain after fatty meals. Ultrasound shows gallstones.",
         leadIn: "Which mechanism best explains her gallstones?",
         options: [
-            "Decreased bile acid reabsorption in the ileum, making bile supersaturated with cholesterol",
+            "Decreased bile salt reabsorption in the ileum, making bile supersaturated with cholesterol",
             "Increased bilirubin production from hemolysis",
             "Infection of the bile ducts",
             "Autoimmune destruction of bile ducts",
             "Increased gallbladder motility",
         ],
         answer: 0,
-        explanation: "Ileal disease or resection disrupts enterohepatic circulation of bile acids. The smaller bile acid pool leaves bile supersaturated with cholesterol, so cholesterol gallstones form.",
+        explanation: "Ileal disease or resection disrupts enterohepatic circulation of bile salts. The smaller bile salt pool leaves bile supersaturated with cholesterol, so cholesterol gallstones form.",
     },
 
     /* ===== IBS ===== */
@@ -3086,7 +3086,7 @@ const QUIZ_QUESTIONS = [
             "Hemochromatosis",
         ],
         answer: 0,
-        explanation: "IBS is a disorder of gut-brain interaction driven by visceral hypersensitivity, altered microbiome and abnormal motility. It commonly coexists with fibromyalgia, anxiety and depression.",
+        explanation: "IBS is a disorder of gut-brain interaction driven by visceral hypersensitivity, altered microbiome, and abnormal motility. It commonly coexists with fibromyalgia, anxiety, and depression.",
     },
 
     /* ===== Diarrhea ===== */
@@ -3110,7 +3110,7 @@ const QUIZ_QUESTIONS = [
         id: "dia-shigella",
         condition: "diarrhea",
         step: 1,
-        stem: "Several children at a daycare develop fever, abdominal cramps and small-volume bloody, mucoid stools. The outbreak spreads person to person despite no shared food source. Stool culture grows a non-motile, lactose-nonfermenting gram-negative rod that does not produce H2S.",
+        stem: "Several children at a childcare center develop fever, abdominal cramps, and small-volume bloody, mucoid stools. The outbreak spreads person to person despite no shared food source. Stool culture grows a non-motile, lactose-nonfermenting gram-negative rod that does not produce H2S.",
         leadIn: "Which organism is most likely responsible?",
         options: [
             "Shigella",
@@ -3122,7 +3122,7 @@ const QUIZ_QUESTIONS = [
         answer: 0,
         explanation: "Shigella has a very low infectious dose (as few as 10 organisms), so it spreads easily person to person. It invades colonic mucosa, causing dysentery, and is non-motile and does not produce H2S.",
         notes: {
-            1: "Salmonella is motile, produces H2S and usually comes from poultry or eggs.",
+            1: "Salmonella is motile, produces H2S, and usually comes from poultry or eggs.",
         },
     },
     {
@@ -3145,7 +3145,7 @@ const QUIZ_QUESTIONS = [
         id: "dia-rota",
         condition: "diarrhea",
         step: 1,
-        stem: "A 14-month-old unvaccinated child who attends daycare has 3 days of vomiting, fever and profuse watery diarrhea, and is moderately dehydrated.",
+        stem: "A 14-month-old unvaccinated child who attends childcare has 3 days of vomiting, fever, and profuse watery diarrhea, and is moderately dehydrated.",
         leadIn: "Which organism is the most likely cause?",
         options: [
             "Rotavirus",
@@ -3155,7 +3155,7 @@ const QUIZ_QUESTIONS = [
             "Vibrio cholerae",
         ],
         answer: 0,
-        explanation: "Rotavirus is the classic cause of severe watery diarrhea in unvaccinated infants and young children, especially in daycare settings. It damages villi, causing malabsorption. A live oral vaccine prevents it.",
+        explanation: "Rotavirus is the classic cause of severe watery diarrhea in unvaccinated infants and young children, especially in childcare settings. It damages villi, causing malabsorption. A live oral vaccine prevents it.",
     },
     {
         id: "dia-travel",
@@ -3171,7 +3171,7 @@ const QUIZ_QUESTIONS = [
             "Oral vancomycin",
         ],
         answer: 0,
-        explanation: "Mild traveler's diarrhea, most often from enterotoxigenic E. coli, is self-limited. Oral rehydration is the mainstay, with loperamide for symptom control if there is no fever or blood. Antibiotics are reserved for moderate to severe cases.",
+        explanation: "Mild traveler's diarrhea, most often from enterotoxigenic E. coli, is self-limited. Oral rehydration is the mainstay, with loperamide for symptom control if there is no fever or blood. ABX are reserved for moderate to severe cases.",
     },
     {
         id: "dia-amebic",
@@ -3216,7 +3216,7 @@ const QUIZ_QUESTIONS = [
             "Lactose intolerance",
             "Polyethylene glycol use",
             "Celiac disease",
-            "VIPoma",
+            "Vipoma",
         ],
         answer: 0,
         explanation: "Melanosis coli (brown-black pigmentation from lipofuscin in macrophages) is caused by long-term anthraquinone laxatives such as senna. Stimulant laxatives cause secretory diarrhea, so the osmotic gap is low.",
@@ -3230,7 +3230,7 @@ const QUIZ_QUESTIONS = [
         id: "isch-ami-tx",
         condition: "intestinal-ischemia",
         step: 2,
-        stem: "A 76-year-old woman with atrial fibrillation has acute mesenteric ischemia from an SMA embolus on CT angiography. She is tachycardic with rising lactate but no peritonitis yet.",
+        stem: "A 76-year-old woman with A-fib has acute mesenteric ischemia from an SMA embolus on CT angiography. She is tachycardic with rising lactate but no peritonitis yet.",
         leadIn: "Which is the most appropriate management?",
         options: [
             "IV heparin and emergency revascularization",
@@ -3240,7 +3240,7 @@ const QUIZ_QUESTIONS = [
             "Bowel rest and TPN only",
         ],
         answer: 0,
-        explanation: "Acute mesenteric ischemia needs immediate anticoagulation with heparin, fluid resuscitation and urgent revascularization (embolectomy or endovascular therapy). Laparotomy is used to assess bowel viability and resect necrotic segments.",
+        explanation: "Acute mesenteric ischemia needs immediate anticoagulation with heparin, fluid resuscitation, and urgent revascularization (embolectomy or endovascular therapy). Laparotomy is used to assess bowel viability and resect necrotic segments.",
     },
     {
         id: "isch-venous",
@@ -3265,20 +3265,20 @@ const QUIZ_QUESTIONS = [
         stem: "A 70-year-old man has crampy left-sided abdominal pain followed by bloody diarrhea 1 day after an episode of hypotension during dialysis. He is hemodynamically stable without peritonitis. CT shows thickening of the splenic flexure.",
         leadIn: "Which is the most appropriate initial management?",
         options: [
-            "Supportive care: bowel rest, IV fluids and correcting hypotension",
+            "Supportive care: bowel rest, IV fluids, and correcting hypotension",
             "Emergency subtotal colectomy",
             "IV heparin and catheter thrombolysis",
             "High-dose IV corticosteroids",
             "Oral vancomycin",
         ],
         answer: 0,
-        explanation: "Most ischemic colitis is non-gangrenous and resolves with supportive care: bowel rest, IV fluids, improving perfusion (avoiding vasoconstrictors) and antibiotics in moderate to severe cases. Colonoscopy confirms the diagnosis. Surgery is for gangrene, perforation or deterioration.",
+        explanation: "Most ischemic colitis is non-gangrenous and resolves with supportive care: bowel rest, IV fluids, improving perfusion (avoiding vasoconstrictors) and ABX in moderate to severe cases. Colonoscopy confirms the diagnosis. Surgery is for gangrene, perforation, or deterioration.",
     },
     {
         id: "isch-nomi",
         condition: "intestinal-ischemia",
         step: 1,
-        stem: "A 69-year-old man in the ICU with cardiogenic shock is receiving high-dose norepinephrine. He develops abdominal distention and rising lactate. CT angiography shows diffuse narrowing of the mesenteric arteries without an embolus or thrombus.",
+        stem: "A 69-year-old man in the ICU with cardiogenic shock is receiving high-dose noradrenaline. He develops abdominal distention and rising lactate. CT angiography shows diffuse narrowing of the mesenteric arteries without an embolus or thrombus.",
         leadIn: "Which is the most likely diagnosis?",
         options: [
             "Non-occlusive mesenteric ischemia",
@@ -3294,7 +3294,7 @@ const QUIZ_QUESTIONS = [
         id: "isch-cmi-tx",
         condition: "intestinal-ischemia",
         step: 2,
-        stem: "A 67-year-old woman with postprandial abdominal pain, fear of eating and a 10-kg weight loss has severe atherosclerotic stenosis of the SMA and celiac trunk on CT angiography.",
+        stem: "A 67-year-old woman with postprandial abdominal pain, fear of eating, and a 10-kg weight loss has severe atherosclerotic stenosis of the SMA and celiac trunk on CT angiography.",
         leadIn: "Which is the most appropriate treatment?",
         options: [
             "Endovascular revascularization (angioplasty and stenting)",
@@ -3312,7 +3312,7 @@ const QUIZ_QUESTIONS = [
         id: "hv-bcs-cause",
         condition: "hepatic-vascular",
         step: 1,
-        stem: "A 41-year-old man has abdominal distension and RUQ pain. Doppler ultrasound shows thrombosis of the hepatic veins. His hemoglobin is 19.2 g/dL, and he complains of itching after hot showers.",
+        stem: "A 41-year-old man has abdominal distention and RUQ pain. Doppler ultrasound shows thrombosis of the hepatic veins. His hemoglobin is 19.2 g/dL, and he complains of itching after hot showers.",
         leadIn: "Which test is most likely to reveal the underlying cause?",
         options: [
             "JAK2 V617F mutation testing",
@@ -3328,7 +3328,7 @@ const QUIZ_QUESTIONS = [
         id: "hv-ldh",
         condition: "hepatic-vascular",
         step: 1,
-        stem: "Two patients have AST and ALT above 3,000 U/L. One has acute viral hepatitis; the other had a cardiac arrest 24 hours ago.",
+        stem: "Two patients have AST and ALT above 3000 U/L. One has acute viral hepatitis; the other had a cardiac arrest 24 hours ago.",
         leadIn: "Which finding most favors ischemic hepatitis?",
         options: [
             "Very high LDH, with aminotransferases that fall rapidly over days",
@@ -3347,7 +3347,7 @@ const QUIZ_QUESTIONS = [
         id: "hv-congestive",
         condition: "hepatic-vascular",
         step: 2,
-        stem: "A 68-year-old man has tender hepatomegaly, ascites, bilateral leg edema and distended neck veins that rise further with pressure over the liver. Bilirubin and AST/ALT are mildly raised.",
+        stem: "A 68-year-old man has tender hepatomegaly, ascites, bilateral leg edema, and distended neck veins that rise further with pressure over the liver. Bilirubin and AST/ALT are mildly raised.",
         leadIn: "Which is the most appropriate next test?",
         options: [
             "Echocardiography",
@@ -3397,7 +3397,7 @@ const QUIZ_QUESTIONS = [
         id: "hi-hav",
         condition: "hepatic-infectious",
         step: 2,
-        stem: "A 27-year-old man develops fever, nausea, dark urine and jaundice 4 weeks after a backpacking trip through Central America, where he ate street food. ALT is 2,100 U/L.",
+        stem: "A 27-year-old man develops fever, nausea, dark urine, and jaundice 4 weeks after a backpacking trip through Central America, where he ate street food. ALT is 2100 U/L.",
         leadIn: "Which test best confirms the most likely diagnosis?",
         options: [
             "IgM anti-HAV",
@@ -3407,7 +3407,7 @@ const QUIZ_QUESTIONS = [
             "Heterophile antibody test",
         ],
         answer: 0,
-        explanation: "Hepatitis A spreads by the fecal-oral route, has an incubation of 2–6 weeks and causes acute hepatitis only. IgM anti-HAV indicates acute infection; IgG indicates past infection or vaccination.",
+        explanation: "Hepatitis A spreads by the fecal-oral route, has an incubation of 2–6 weeks, and causes acute hepatitis only. IgM anti-HAV indicates acute infection; IgG indicates past infection or vaccination.",
         notes: {
             1: "IgG anti-HAV is positive after past infection or vaccination, so it cannot confirm acute infection.",
         },
@@ -3416,7 +3416,7 @@ const QUIZ_QUESTIONS = [
         id: "hi-hbeag",
         condition: "hepatic-infectious",
         step: 1,
-        stem: "A 33-year-old woman found to have hepatitis B during prenatal screening has these results: HBsAg positive, HBeAg positive, anti-HBe negative, IgG anti-HBc positive, HBV DNA very high. HBsAg has been positive for over a year.",
+        stem: "A 33-year-old woman found to have hepatitis B during antenatal screening has these results: HBsAg positive, HBeAg positive, anti-HBe negative, IgG anti-HBc positive, HBV DNA very high. HBsAg has been positive for over a year.",
         leadIn: "Which best describes her infection?",
         options: [
             "Chronic infection with active replication and high infectivity",
@@ -3428,14 +3428,14 @@ const QUIZ_QUESTIONS = [
         answer: 0,
         explanation: "HBsAg for more than 6 months means chronic infection. Positive HBeAg and high HBV DNA show active viral replication and high infectivity, so her baby needs HBV vaccine and HBIG at birth.",
         notes: {
-            1: "Low replication would show negative HBeAg, positive anti-HBe and low HBV DNA.",
+            1: "Low replication would show negative HBeAg, positive anti-HBe, and low HBV DNA.",
         },
     },
     {
         id: "hi-pan",
         condition: "hepatic-infectious",
         step: 1,
-        stem: "A 47-year-old man with chronic hepatitis B develops fever, weight loss, painful skin nodules, foot drop and new hypertension. Angiography shows microaneurysms of the renal and mesenteric arteries.",
+        stem: "A 47-year-old man with chronic hepatitis B develops fever, weight loss, painful skin nodules, foot drop, and new hypertension. Angiography shows microaneurysms of the renal and mesenteric arteries.",
         leadIn: "Which is the most likely diagnosis?",
         options: [
             "Polyarteritis nodosa",
@@ -3445,7 +3445,7 @@ const QUIZ_QUESTIONS = [
             "IgA vasculitis",
         ],
         answer: 0,
-        explanation: "Polyarteritis nodosa is a medium-vessel vasculitis classically associated with hepatitis B. Immune complexes damage medium arteries, causing microaneurysms, renal hypertension, mononeuritis multiplex and skin nodules. Lungs are spared.",
+        explanation: "Polyarteritis nodosa is a medium-vessel vasculitis classically associated with hepatitis B. Immune complexes damage medium arteries, causing microaneurysms, renal hypertension, mononeuritis multiplex, and skin nodules. Lungs are spared.",
         notes: {
             1: "Mixed cryoglobulinemia is mainly associated with hepatitis C.",
         },
@@ -3454,7 +3454,7 @@ const QUIZ_QUESTIONS = [
         id: "hi-newborn",
         condition: "hepatic-infectious",
         step: 2,
-        stem: "A baby is born to a mother who is HBsAg positive. The baby is healthy, at term and weighs 3.4 kg.",
+        stem: "A baby is born to a mother who is HBsAg positive. The baby is healthy, at term, and weighs 3.4 kg.",
         leadIn: "Which is the most appropriate management for the newborn?",
         options: [
             "Hepatitis B vaccine plus hepatitis B immune globulin within 12 hours of birth",
@@ -3509,7 +3509,7 @@ const QUIZ_QUESTIONS = [
         id: "hi-hsv",
         condition: "hepatic-infectious",
         step: 2,
-        stem: "A 29-year-old woman at 34 weeks' gestation has fever, malaise and RUQ pain. AST is 4,800 U/L and ALT 4,200 U/L, but bilirubin is only mildly raised. Viral hepatitis A–E serologies are negative.",
+        stem: "A 29-year-old woman at 34 weeks' gestation has fever, malaise, and RUQ pain. AST is 4800 U/L and ALT 4200 U/L, but bilirubin is only mildly raised. Viral hepatitis A–E serologies are negative.",
         leadIn: "Which is the most appropriate next step while confirmatory testing is sent?",
         options: [
             "Start empiric IV acyclovir",
@@ -3527,7 +3527,7 @@ const QUIZ_QUESTIONS = [
         id: "ht-shoulder",
         condition: "hepatic-traumatic",
         step: 1,
-        stem: "A 19-year-old man is tackled during a football game and develops right upper quadrant pain. He also complains of pain at the tip of his right shoulder.",
+        stem: "A 19-year-old man is tackled during a football match and develops right upper quadrant pain. He also complains of pain at the tip of his right shoulder.",
         leadIn: "The shoulder pain is referred through which nerve?",
         options: [
             "Phrenic nerve",
@@ -3543,7 +3543,7 @@ const QUIZ_QUESTIONS = [
         id: "ht-hemobilia",
         condition: "hepatic-traumatic",
         step: 2,
-        stem: "Three weeks after nonoperative management of a liver laceration from a car crash, a 36-year-old woman has colicky RUQ pain, jaundice and melena.",
+        stem: "Three weeks after nonoperative management of a liver laceration from a car crash, a 36-year-old woman has colicky RUQ pain, jaundice, and melena.",
         leadIn: "Which is the most likely diagnosis?",
         options: [
             "Hemobilia",
@@ -3553,7 +3553,7 @@ const QUIZ_QUESTIONS = [
             "Esophageal varices",
         ],
         answer: 0,
-        explanation: "Hemobilia is bleeding into the biliary tree, often from a post-traumatic arterial pseudoaneurysm. The classic triad is RUQ pain, jaundice and GI bleeding. It is usually treated by angioembolization.",
+        explanation: "Hemobilia is bleeding into the biliary tree, often from a post-traumatic arterial pseudoaneurysm. The classic triad is RUQ pain, jaundice, and GI bleeding. It is usually treated by angioembolization.",
     },
 
     /* ===== Autoimmune liver injury ===== */
@@ -3612,14 +3612,14 @@ const QUIZ_QUESTIONS = [
         id: "ha-igg4",
         condition: "hepatic-autoimmune",
         step: 2,
-        stem: "A 63-year-old man has painless jaundice. Imaging shows strictures of the bile ducts and a diffusely enlarged, 'sausage-shaped' pancreas. Serum IgG4 is markedly elevated, and no mass is seen.",
+        stem: "A 63-year-old man has painless jaundice. Imaging shows strictures of the bile ducts and a diffusely enlarged, \"sausage-shaped\" pancreas. Serum IgG4 is markedly elevated, and no mass is seen.",
         leadIn: "Which is the most appropriate treatment?",
         options: [
             "Corticosteroids",
             "Pancreaticoduodenectomy",
             "Ursodeoxycholic acid alone",
             "Liver transplant",
-            "Broad-spectrum antibiotics",
+            "Broad-spectrum ABX",
         ],
         answer: 0,
         explanation: "IgG4-related sclerosing cholangitis often occurs with autoimmune pancreatitis and can mimic PSC or cancer. Unlike PSC, it responds well to corticosteroids.",
@@ -3662,7 +3662,7 @@ const QUIZ_QUESTIONS = [
         id: "hm-vibrio",
         condition: "hepatic-metabolic",
         step: 1,
-        stem: "A 57-year-old man with untreated hereditary hemochromatosis develops fever, hypotension and hemorrhagic bullae on his legs 1 day after eating raw oysters.",
+        stem: "A 57-year-old man with untreated hereditary hemochromatosis develops fever, hypotension, and hemorrhagic bullae on his legs 1 day after eating raw oysters.",
         leadIn: "Which organism is most likely responsible?",
         options: [
             "Vibrio vulnificus",
@@ -3672,13 +3672,13 @@ const QUIZ_QUESTIONS = [
             "Bacillus cereus",
         ],
         answer: 0,
-        explanation: "Iron overload favors iron-loving (siderophilic) bacteria such as Vibrio vulnificus, Yersinia and Listeria. Vibrio vulnificus from raw shellfish can cause fulminant sepsis with hemorrhagic bullae, so patients are told to avoid raw shellfish.",
+        explanation: "Iron overload favors iron-loving (siderophilic) bacteria such as Vibrio vulnificus, Yersinia, and Listeria. Vibrio vulnificus from raw shellfish can cause fulminant sepsis with hemorrhagic bullae, so patients are told to avoid raw shellfish.",
     },
     {
         id: "hm-hh-heart",
         condition: "hepatic-metabolic",
         step: 1,
-        stem: "A 52-year-old man with diabetes, bronze skin and cirrhosis develops dyspnea and peripheral edema. Echocardiography shows thickened ventricular walls with impaired diastolic filling and normal ejection fraction.",
+        stem: "A 52-year-old man with diabetes, bronze skin, and cirrhosis develops dyspnea and peripheral edema. Echocardiography shows thickened ventricular walls with impaired diastolic filling and normal ejection fraction.",
         leadIn: "Which type of cardiomyopathy is most likely?",
         options: [
             "Restrictive cardiomyopathy from iron deposition",
@@ -3763,7 +3763,7 @@ const QUIZ_QUESTIONS = [
         id: "hio-early",
         condition: "hepatic-iatrogenic",
         step: 2,
-        stem: "A 22-year-old woman presents 1 hour after swallowing 40 tablets of 500 mg paracetamol in a suicide attempt. She weighs 60 kg, is alert and has no symptoms.",
+        stem: "A 22-year-old woman presents 1 hour after swallowing 40 tablets of 500 mg paracetamol in a suicide attempt. She weighs 60 kg, is alert, and has no symptoms.",
         leadIn: "Which is the most appropriate next step?",
         options: [
             "Activated charcoal, and measure a paracetamol level 4 hours after ingestion",
@@ -3779,7 +3779,7 @@ const QUIZ_QUESTIONS = [
         id: "hio-maddrey",
         condition: "hepatic-iatrogenic",
         step: 2,
-        stem: "A 44-year-old man with heavy alcohol use has fever, jaundice and tender hepatomegaly. Bilirubin is 14 mg/dL and his Maddrey discriminant function is 48. There is no infection or GI bleeding.",
+        stem: "A 44-year-old man with heavy alcohol use has fever, jaundice, and tender hepatomegaly. Bilirubin is 14 mg/dL and his Maddrey discriminant function is 48. There is no infection or GI bleeding.",
         leadIn: "Which treatment is most appropriate in addition to abstinence and nutrition?",
         options: [
             "Prednisolone",
@@ -3789,13 +3789,13 @@ const QUIZ_QUESTIONS = [
             "Phlebotomy",
         ],
         answer: 0,
-        explanation: "Severe alcoholic hepatitis (Maddrey discriminant function of 32 or more) is treated with prednisolone if there is no infection or active bleeding. Abstinence, nutrition and thiamine are essential for all patients.",
+        explanation: "Severe alcoholic hepatitis (Maddrey discriminant function of 32 or more) is treated with prednisolone if there is no infection or active bleeding. Abstinence, nutrition, and thiamine are essential for all patients.",
     },
     {
         id: "hio-halothane",
         condition: "hepatic-iatrogenic",
         step: 1,
-        stem: "A 50-year-old woman develops fever, eosinophilia and severe hepatitis 1 week after her second general anesthetic in 3 months. Both used a halogenated inhaled anesthetic.",
+        stem: "A 50-year-old woman develops fever, eosinophilia, and severe hepatitis 1 week after her second general anesthetic in 3 months. Both used a halogenated inhaled anesthetic.",
         leadIn: "Which mechanism best explains her liver injury?",
         options: [
             "Immune reaction to drug-modified liver proteins after repeat exposure",
@@ -3851,17 +3851,17 @@ const QUIZ_QUESTIONS = [
         id: "hot-vs-hellp",
         condition: "hepatic-other",
         step: 2,
-        stem: "A 31-year-old woman at 36 weeks' gestation has nausea, abdominal pain and jaundice. Blood pressure is 128/80 mm Hg. Two possible diagnoses are being considered: acute fatty liver of pregnancy and HELLP syndrome.",
+        stem: "A 31-year-old woman at 36 weeks' gestation has nausea, abdominal pain, and jaundice. Blood pressure is 128/80 mm Hg. Two possible diagnoses are being considered: acute fatty liver of pregnancy and HELLP syndrome.",
         leadIn: "Which finding most favors acute fatty liver of pregnancy?",
         options: [
             "Hypoglycemia with prolonged INR",
-            "Platelet count of 60,000/µL with schistocytes",
+            "Platelet count of 60000/µL with schistocytes",
             "Blood pressure over 160/110 mm Hg",
             "Proteinuria",
             "Raised LDH",
         ],
         answer: 0,
-        explanation: "AFLP causes true liver failure, so hypoglycemia and coagulopathy (raised INR, low fibrinogen) are common. HELLP is defined by hemolysis, raised liver enzymes and low platelets, usually with hypertension, and rarely causes hypoglycemia. Both are treated with delivery.",
+        explanation: "AFLP causes true liver failure, so hypoglycemia and coagulopathy (raised INR, low fibrinogen) are common. HELLP is defined by hemolysis, raised liver enzymes, and low platelets, usually with hypertension, and rarely causes hypoglycemia. Both are treated with delivery.",
     },
     {
         id: "hot-micro",
@@ -3874,7 +3874,7 @@ const QUIZ_QUESTIONS = [
             "Macrovesicular steatosis with Mallory-Denk bodies",
             "Periportal fibrin deposits and hemorrhage",
             "PAS-positive globules in periportal hepatocytes",
-            "Non-caseating granulomas",
+            "Noncaseating granulomas",
         ],
         answer: 0,
         explanation: "AFLP shows microvesicular steatosis: tiny fat droplets fill hepatocytes without displacing the nucleus, reflecting mitochondrial failure of fatty acid oxidation.",
@@ -3893,7 +3893,7 @@ const QUIZ_QUESTIONS = [
         leadIn: "Which combination of features defines acute liver failure?",
         options: [
             "Encephalopathy and INR of 1.5 or more, within 26 weeks, with no prior liver disease",
-            "Jaundice and AST above 1,000 U/L",
+            "Jaundice and AST above 1000 U/L",
             "Ascites and splenomegaly",
             "Bilirubin above 10 mg/dL alone",
             "Encephalopathy with known cirrhosis",
@@ -3938,7 +3938,7 @@ const QUIZ_QUESTIONS = [
             "Pancreatic ascites",
         ],
         answer: 0,
-        explanation: "The serum-ascites albumin gradient (SAAG) is 3.0 − 1.1 = 1.9 g/dL. A SAAG of 1.1 or more indicates portal hypertension (cirrhosis, heart failure, Budd-Chiari). Below 1.1 suggests peritoneal causes such as cancer, TB or pancreatitis. Neutrophils under 250/µL argue against SBP.",
+        explanation: "The serum-ascites albumin gradient (SAAG) is 3.0 − 1.1 = 1.9 g/dL. A SAAG of 1.1 or more indicates portal hypertension (cirrhosis, heart failure, Budd-Chiari). Below 1.1 suggests peritoneal causes such as cancer, TB, or pancreatitis. Neutrophils under 250/µL argue against SBP.",
     },
     {
         id: "lf-ascites-tx",
@@ -3954,13 +3954,13 @@ const QUIZ_QUESTIONS = [
             "Immediate TIPS",
         ],
         answer: 0,
-        explanation: "First-line ascites treatment is dietary sodium restriction plus spironolactone (blocking secondary hyperaldosteronism), often with furosemide. Large-volume paracentesis with albumin, TIPS or transplant are used for tense or refractory ascites.",
+        explanation: "First-line ascites treatment is dietary sodium restriction plus spironolactone (blocking secondary hyperaldosteronism), often with furosemide. Large-volume paracentesis with albumin, TIPS, or transplant are used for tense or refractory ascites.",
     },
     {
         id: "lf-estrogen",
         condition: "liver-failure",
         step: 1,
-        stem: "A 58-year-old man with cirrhosis has breast enlargement, small testes, reddened palms and many small, spider-like blood vessels on his chest.",
+        stem: "A 58-year-old man with cirrhosis has breast enlargement, small testes, reddened palms, and many small, spider-like blood vessels on his chest.",
         leadIn: "Which mechanism best explains these findings?",
         options: [
             "Increased estrogen from reduced hepatic metabolism and more conversion of androgens",
@@ -3970,7 +3970,7 @@ const QUIZ_QUESTIONS = [
             "Vitamin K deficiency",
         ],
         answer: 0,
-        explanation: "The cirrhotic liver clears estrogen poorly, and more androgen is converted to estrogen peripherally. The excess estrogen causes gynecomastia, testicular atrophy, palmar erythema and spider angiomas.",
+        explanation: "The cirrhotic liver clears estrogen poorly, and more androgen is converted to estrogen peripherally. The excess estrogen causes gynecomastia, testicular atrophy, palmar erythema, and spider angiomas.",
     },
     {
         id: "lf-rifaximin",
@@ -3986,7 +3986,7 @@ const QUIZ_QUESTIONS = [
             "Metronidazole for life",
         ],
         answer: 0,
-        explanation: "Rifaximin, a poorly absorbed antibiotic, reduces ammonia-producing gut bacteria and is added to lactulose to prevent recurrent hepatic encephalopathy.",
+        explanation: "Rifaximin, a poorly absorbed ABX, reduces ammonia-producing gut bacteria and is added to lactulose to prevent recurrent hepatic encephalopathy.",
         notes: {
             1: "Benzodiazepines can precipitate or worsen encephalopathy.",
         },
@@ -4007,7 +4007,7 @@ const QUIZ_QUESTIONS = [
             "It deconjugates bilirubin",
         ],
         answer: 0,
-        explanation: "Estrogen increases hepatic cholesterol uptake and synthesis (upregulating HMG-CoA reductase), so more cholesterol enters bile. Progesterone in pregnancy also slows gallbladder emptying. Both help explain the 'female' and 'fertile' Fs.",
+        explanation: "Estrogen increases hepatic cholesterol uptake and synthesis (upregulating HMG-CoA reductase), so more cholesterol enters bile. Progesterone in pregnancy also slows gallbladder emptying. Both help explain the \"female\" and \"fertile\" Fs.",
     },
     {
         id: "bs-asymptomatic",
@@ -4034,14 +4034,14 @@ const QUIZ_QUESTIONS = [
         stem: "A 66-year-old man in the ICU after major burns, on TPN and vasopressors, develops fever and leukocytosis. Ultrasound shows a distended gallbladder with a thickened wall and fluid around it, but no gallstones. He is too unstable for surgery.",
         leadIn: "Which is the most appropriate management?",
         options: [
-            "IV antibiotics and percutaneous cholecystostomy",
+            "IV ABX and percutaneous cholecystostomy",
             "Oral ursodeoxycholic acid",
             "ERCP with sphincterotomy",
             "Observation only",
             "Elective cholecystectomy in 6 weeks",
         ],
         answer: 0,
-        explanation: "Acalculous cholecystitis occurs in critically ill patients from gallbladder stasis and ischemia, and carries a high risk of gangrene and perforation. Unstable patients are treated with antibiotics and percutaneous drainage (cholecystostomy).",
+        explanation: "Acalculous cholecystitis occurs in critically ill patients from gallbladder stasis and ischemia, and carries a high risk of gangrene and perforation. Unstable patients are treated with ABX and percutaneous drainage (cholecystostomy).",
     },
     {
         id: "bc-hida",
@@ -4102,7 +4102,7 @@ const QUIZ_QUESTIONS = [
         id: "bch-organism",
         condition: "cholangitis",
         step: 1,
-        stem: "A 75-year-old man with a common bile duct stone has fever, RUQ pain and jaundice. Blood cultures are drawn before antibiotics are started.",
+        stem: "A 75-year-old man with a common bile duct stone has fever, RUQ pain, and jaundice. Blood cultures are drawn before ABX are started.",
         leadIn: "Which organism is most likely to grow?",
         options: [
             "Escherichia coli",
@@ -4112,7 +4112,7 @@ const QUIZ_QUESTIONS = [
             "Pseudomonas aeruginosa",
         ],
         answer: 0,
-        explanation: "Ascending cholangitis is caused by gut organisms climbing into obstructed bile, most often E. coli, followed by Klebsiella, Enterococcus and anaerobes. Empiric antibiotics (e.g. piperacillin-tazobactam) cover these.",
+        explanation: "Ascending cholangitis is caused by gut organisms climbing into obstructed bile, most often E. coli, followed by Klebsiella, Enterococcus, and anaerobes. Empiric ABX (e.g. piperacillin-tazobactam) cover these.",
     },
     {
         id: "bch-recurrence",
@@ -4122,7 +4122,7 @@ const QUIZ_QUESTIONS = [
         leadIn: "Which is the most appropriate step to prevent recurrence?",
         options: [
             "Cholecystectomy",
-            "Long-term oral antibiotics",
+            "Long-term oral ABX",
             "Repeat ERCP every 6 months",
             "Ursodeoxycholic acid only",
             "No further treatment",
@@ -4139,20 +4139,20 @@ const QUIZ_QUESTIONS = [
         stem: "An 81-year-old woman with long-standing gallstones has chronic watery diarrhea and weight loss. Imaging shows air in the biliary tree and an abnormal connection between the gallbladder and the hepatic flexure of the colon.",
         leadIn: "Which best explains her diarrhea?",
         options: [
-            "Bile acids entering the colon directly",
+            "Bile salts entering the colon directly",
             "Bacterial overgrowth in the stomach",
             "Pancreatic enzyme deficiency",
             "Small bowel obstruction",
             "Lactose intolerance",
         ],
         answer: 0,
-        explanation: "A cholecystocolic fistula lets bile bypass the small intestine, where bile acids are normally reabsorbed. Bile acids reaching the colon stimulate water secretion, causing bile acid diarrhea; bile also fails to reach the small bowel, so fat absorption suffers.",
+        explanation: "A cholecystocolic fistula lets bile bypass the small intestine, where bile salts are normally reabsorbed. Bile salts reaching the colon stimulate water secretion, causing bile acid diarrhea; bile also fails to reach the small bowel, so fat absorption suffers.",
     },
     {
         id: "bf-ileus-tx",
         condition: "biliary-fistula",
         step: 2,
-        stem: "A 79-year-old woman has small bowel obstruction. CT shows air in the biliary tree, dilated small bowel and a 3.5-cm gallstone in the distal ileum. She is resuscitated.",
+        stem: "A 79-year-old woman has small bowel obstruction. CT shows air in the biliary tree, dilated small bowel, and a 3.5-cm gallstone in the distal ileum. She is resuscitated.",
         leadIn: "Which is the most appropriate surgical procedure?",
         options: [
             "Enterolithotomy to remove the stone from the bowel",
@@ -4180,7 +4180,7 @@ const QUIZ_QUESTIONS = [
             "Hepatic angiosarcoma",
         ],
         answer: 0,
-        explanation: "A porcelain gallbladder (calcified wall from chronic inflammation) is associated with gallbladder carcinoma, as are large gallstones, polyps over 1 cm and PSC. Cholecystectomy is often recommended.",
+        explanation: "A porcelain gallbladder (calcified wall from chronic inflammation) is associated with gallbladder carcinoma, as are large gallstones, polyps over 1 cm, and PSC. Cholecystectomy is often recommended.",
     },
     {
         id: "bm-whipple",
@@ -4196,7 +4196,7 @@ const QUIZ_QUESTIONS = [
             "Observation with repeat CT in 3 months",
         ],
         answer: 0,
-        explanation: "A resectable tumor in the pancreatic head or periampullary region (the 'double duct sign' shows both ducts blocked) is treated with pancreaticoduodenectomy (Whipple procedure), usually with chemotherapy. Stenting relieves jaundice but does not treat the cancer.",
+        explanation: "A resectable tumor in the pancreatic head or periampullary region (the \"double duct sign\" shows both ducts blocked) is treated with pancreaticoduodenectomy (Whipple procedure), usually with chemotherapy. Stenting relieves jaundice but does not treat the cancer.",
         notes: {
             2: "Distal pancreatectomy is used for tumors of the pancreatic body and tail.",
         },
@@ -4217,7 +4217,7 @@ const QUIZ_QUESTIONS = [
             "It can become infected",
         ],
         answer: 0,
-        explanation: "A pancreatic pseudocyst is a collection of fluid rich in pancreatic enzymes enclosed by fibrous and granulation tissue, without an epithelial lining, forming 4 or more weeks after pancreatitis. It can cause compression, infection, rupture or bleeding; symptomatic pseudocysts are drained.",
+        explanation: "A pancreatic pseudocyst is a collection of fluid rich in pancreatic enzymes enclosed by fibrous and granulation tissue, without an epithelial lining, forming 4 or more weeks after pancreatitis. It can cause compression, infection, rupture, or bleeding; symptomatic pseudocysts are drained.",
     },
     {
         id: "pa-chole",
@@ -4239,19 +4239,19 @@ const QUIZ_QUESTIONS = [
         id: "pa-fluids",
         condition: "pancreatitis",
         step: 2,
-        stem: "A 52-year-old man is admitted with acute pancreatitis. Heart rate is 112/min, BUN is rising and urine output is low.",
+        stem: "A 52-year-old man is admitted with acute pancreatitis. Heart rate is 112/min, BUN is rising, and urine output is low.",
         leadIn: "Which is the most important initial treatment?",
         options: [
-            "Goal-directed IV fluids such as lactated Ringer's",
+            "Goal-directed IV fluids such as Hartmann solution",
             "Prophylactic IV carbapenem",
             "Total parenteral nutrition",
             "Urgent contrast CT",
             "Emergency necrosectomy",
         ],
         answer: 0,
-        explanation: "Third spacing causes hypovolemia in pancreatitis. Early goal-directed IV fluids (lactated Ringer's is commonly used), pain control and early feeding are the core of treatment. Antibiotics are only for proven infection, and enteral feeding is preferred over TPN.",
+        explanation: "Third spacing causes hypovolemia in pancreatitis. Early goal-directed IV fluids (Hartmann solution is commonly used), pain control and early feeding are the core of treatment. ABX are only for proven infection, and enteral feeding is preferred over TPN.",
         notes: {
-            1: "Prophylactic antibiotics do not improve outcomes; they are reserved for infected necrosis.",
+            1: "Prophylactic ABX do not improve outcomes; they are reserved for infected necrosis.",
         },
     },
     {
@@ -4268,7 +4268,7 @@ const QUIZ_QUESTIONS = [
             "Vitamin D",
         ],
         answer: 0,
-        explanation: "Drugs are the 'D' in I GET SMASHED. Azathioprine is a classic cause of acute pancreatitis, usually within the first weeks of therapy. Others include valproate, thiazides, furosemide, sulfonamides and didanosine.",
+        explanation: "Drugs are the \"D\" in I GET SMASHED. Azathioprine is a classic cause of acute pancreatitis, usually within the first weeks of therapy. Others include valproate, thiazides, furosemide, sulfonamides, and didanosine.",
     },
 
     /* ===== Appendicitis ===== */
@@ -4279,28 +4279,28 @@ const QUIZ_QUESTIONS = [
         stem: "A 20-year-old woman has RLQ pain. When the examiner presses deeply on her left lower quadrant, she feels pain in the right lower quadrant.",
         leadIn: "What is this finding called?",
         options: [
-            "Rovsing's sign",
+            "Rovsing sign",
             "Psoas sign",
             "Obturator sign",
-            "Murphy's sign",
-            "Cullen's sign",
+            "Murphy sign",
+            "Cullen sign",
         ],
         answer: 0,
-        explanation: "Rovsing's sign is RLQ pain on palpation of the LLQ, from displacing bowel contents and stretching the inflamed peritoneum. It supports the diagnosis of appendicitis.",
+        explanation: "Rovsing sign is RLQ pain on palpation of the LLQ, from displacing bowel contents and stretching the inflamed peritoneum. It supports the diagnosis of appendicitis.",
         notes: {
-            3: "Murphy's sign is inspiratory arrest on RUQ palpation in cholecystitis.",
-            4: "Cullen's sign is periumbilical bruising from retroperitoneal bleeding.",
+            3: "Murphy sign is inspiratory arrest on RUQ palpation in cholecystitis.",
+            4: "Cullen sign is periumbilical bruising from retroperitoneal bleeding.",
         },
     },
     {
         id: "ap-pregnancy",
         condition: "appendicitis",
         step: 2,
-        stem: "A 28-year-old woman at 20 weeks' gestation has 1 day of abdominal pain, now worst in the right side of the abdomen, with nausea and a temperature of 38.0°C. WBC is 15,000/µL.",
+        stem: "A 28-year-old woman at 20 weeks' gestation has 1 day of abdominal pain, now worst in the right side of the abdomen, with nausea and a temperature of 38.0°C. WBC is 15000/µL.",
         leadIn: "Which is the most appropriate initial imaging?",
         options: [
             "Graded-compression ultrasound, followed by MRI if inconclusive",
-            "CT abdomen and pelvis with contrast",
+            "CT AP with contrast",
             "Abdominal x-ray",
             "Barium enema",
             "No imaging; observe for 48 hours",

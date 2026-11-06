@@ -1,0 +1,54 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## What this is
+
+Clinical Conditions: a static study reference for medical conditions, organized by organ system, with a USMLE-style quiz. Plain HTML, CSS and JavaScript with no dependencies, framework or build step.
+
+## Commands
+
+There is nothing to install, build or lint, and there is no test suite. Open `index.html` in a browser. Everything must keep working from `file://`, so do not load content with `fetch` or ES modules.
+
+- Syntax-check a script: `node --check shared/app.js`
+- Load a question bank in Node to validate it (it is a plain script, so use `vm`): `vm.runInNewContext(fs.readFileSync("gi/questions.js", "utf8") + ";QUIZ_QUESTIONS")`. Check for unique `id`s, exactly five distinct `options`, `answer` from 0 to 4, `step` of 1 or 2, a `condition` matching an article `id`, and no `notes` entry on the correct answer.
+- Browser checks: headless Edge is available at `C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe`. Headless windows have a 500px minimum width, so test phone layouts with the DevTools protocol's `Emulation.setDeviceMetricsOverride`, and emulate `prefers-reduced-motion: reduce` so screenshots are not caught mid-animation.
+
+## Architecture
+
+Each organ system is a folder (`gi/`, `neuro/`) with its own `index.html`, `style.css`, `questions.js` and `map.js`, sharing the engine in `shared/`. The root `index.html` is the landing page; it also redirects old hash links such as `index.html#gerd` to `gi/`.
+
+Scripts are classic `defer` scripts sharing one global scope, so load order matters: `shared/app.js`, `questions.js`, `shared/quiz.js`, the organ system's `map.js`, then `shared/map.js`. Top-level `const`s in `app.js` (`conditionButtons`, `contentPanel`, `quizView`, `SITE_NAME` and others) are used directly by later scripts, and redeclaring one is a SyntaxError that stops that script.
+
+- **Pages are generated from markup.** `app.js` builds each article's sticky header, jump bar (from `.content-section > h3`) and Previous/Next (from sidebar button order). `quiz.js` adds "Quiz me" buttons and builds its topic groups from `.condition-group` and the `.group-label` directly before it, so keep that adjacency.
+- **Routing** is by hash, using article `id`s; `#quiz` opens the quiz. A `data-goto` link to a missing article is shown disabled as "not added yet" and activates by itself once that `id` exists.
+- **Sidebar map.** Conditions sit in `.station[data-organ]` groups. `shared/map.js` measures the stations, calls the organ system's `drawTract({ stations, width, add, part, note })`, and draws a dot and leader line for each `[x, y]` point it returns. Every `data-organ` value needs a returned point; the last station sets the drawing height. Redraws follow station size changes, so the drawing must be derived from measured positions, never fixed coordinates.
+- **Search** dims non-matches with `.filtered-out` rather than hiding them, so the map keeps its shape (they are hidden only in the phone layout). Keyboard navigation goes through `isListed()`.
+- **Phone layout (768px and below):** the map is hidden, `.station` becomes `display: contents`, and conditions form a scrolling pill row.
+- **Saved data:** theme in `clinical-theme` (falling back to the older `gi-theme`); quiz results in `<specialty>-quiz-history`, from `<body data-specialty>`. Question `id`s are stored there, so do not rename them.
+
+## Visual style per organ system
+
+Every organ system has its own aesthetic. `shared/style.css` holds structure and the default tokens; an organ system restyles itself in its own `style.css` by overriding tokens and restyling the shared components, keeping the same markup. Token overrides must cover all three selectors the shared file uses: `:root`, `:root:not([data-theme="light"])` inside `@media (prefers-color-scheme: dark)`, and `:root[data-theme="dark"]`. Anything specific to one organ system stays out of `shared/`.
+
+Neurology's look is "connected": the sidebar is a chain of neurons, each article has one axon running through its section headings, flowchart arrows are axons with boutons, and `neuro/concepts.js` adds a "Shared concepts" panel. Tie conditions together by marking recurring terms with `<span class="concept" data-concept="key">`; the mark is invisible, and a key used across conditions adds the panel to those pages. Lines drawn between mentions, then hover highlighting and click-to-jump between them, were tried and removed.
+
+## Writing content
+
+Match the GI pages Esophagitis, Esophageal motility disorders, GERD, PUD and IBD:
+
+- **Sections, in order:** Pathophysiology, Etiology, Symptoms and complications, Diagnosis, Treatment.
+  Exception: the stroke types share one "Stroke symptoms and complications" page in the sidebar, organized by lesion location, so their own pages omit that section and link to it. Its syndrome diagrams use the slice outlines and lesion shapes from the neighboring `neuro-tracts` project.
+- **Pathophysiology:** one sentence, cause → mechanism → result, or a comparison table.
+- **Notes (`.note`):** at most one per section, one sentence, starting `<strong>Note:</strong>` or a bold rule.
+- **`.node-label`:** a short qualifier of a few words, never a sentence.
+- **Flowchart steps:** short noun phrases. `.change.up` and `.change.down` mark Increased and Decreased.
+- **Table headers:** Diagnosis uses `If there is | Obtain` or `For | Obtain`. Treatment uses `Cause | Treatment`, `If there is | Treat with`, `If | Then`, `Goal | Treatment` or `To | Use`.
+- **Abbreviations:** prefer the abbreviation (ABX, bd, CT AP) and wrap every use in `<abbr class="term" tabindex="0" data-definition="...">`, except in page titles, buttons, and table header rows. The quiz stores plain strings, and `quiz.js` adds hover definitions by reusing the ones on the page, so an abbreviation needs to appear on a page to get one there.
+- **Language:** Australian words with American spelling: paracetamol, FBC, bloods, adrenaline, mesalazine, Hartmann solution, but hemorrhage, tumor, and center.
+- **Terms:** bile salt (keeping "bile acid sequestrant" and "bile acid diarrhea"), vipoma, A-fib, x-ray, workup. Eponyms take no possessive: Crohn disease, Murphy sign, Cushing triad.
+- **Punctuation:** Oxford commas, double quotes, no commas in numbers (3000), en dashes in ranges, and a capital after "Note:". Links at the end of a page start "Related:" and use the target page's title.
+
+The site owner's coursework sets the expected answers, including where it differs from other sources: IBS uses Rome V, and first-line H. pylori treatment is triple therapy. Guideline differences go in a question's `info` field, shown as "Additional information", and are not presented as the answer.
+
+Quiz questions are clinical vignettes with an optional `notes` map of `{ optionIndex: "why it is wrong" }`. Options are shuffled when shown, so never refer to an option by its letter or position.

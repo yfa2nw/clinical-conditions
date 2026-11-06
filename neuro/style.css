@@ -1,0 +1,455 @@
+/* Neurology theme: a "connected" look built from somas, axons and synapses.
+   Restyles the shared components in shared/style.css; the markup is unchanged. */
+
+/* =========================
+   Tokens
+========================= */
+
+:root {
+    --color-text: #1b1e33;
+    --color-text-muted: #565b7a;
+    --color-page: #eef0f8;
+    --color-surface: #ffffff;
+    --color-surface-muted: #f5f6fc;
+    --color-surface-sunken: #e9ebf6;
+    --color-border: #dcdfef;
+    --color-border-strong: #c3c8e2;
+    --color-divider: #e6e8f4;
+
+    --color-accent: #4f46c8;
+    --color-accent-hover: #3d35a8;
+    --color-accent-soft: #e9e8fb;
+    --color-accent-line: #b1adec;
+    --color-on-accent: #ffffff;
+    --color-focus: #4f46c8;
+
+    --color-note: #f1effc;
+    --color-note-line: #8b7fe0;
+
+    --radius-sm: 10px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+
+    --font-display: Bahnschrift, "DIN Alternate", "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+
+    --axon-width: 3px;
+    --spine-left: 11px;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --color-text: #e7e8f5;
+        --color-text-muted: #a4a8c9;
+        --color-page: #0b0d1c;
+        --color-surface: #13162b;
+        --color-surface-muted: #191d36;
+        --color-surface-sunken: #0f1225;
+        --color-border: #2a2f52;
+        --color-border-strong: #3b4170;
+        --color-divider: #222745;
+
+        --color-accent: #8f8aff;
+        --color-accent-hover: #b0acff;
+        --color-accent-soft: #232350;
+        --color-accent-line: #4c4a9c;
+        --color-on-accent: #0c0c2a;
+        --color-focus: #b0acff;
+
+        --color-note: #201f45;
+        --color-note-line: #6d67d1;
+    }
+}
+
+:root[data-theme="dark"] {
+    --color-text: #e7e8f5;
+    --color-text-muted: #a4a8c9;
+    --color-page: #0b0d1c;
+    --color-surface: #13162b;
+    --color-surface-muted: #191d36;
+    --color-surface-sunken: #0f1225;
+    --color-border: #2a2f52;
+    --color-border-strong: #3b4170;
+    --color-divider: #222745;
+
+    --color-accent: #8f8aff;
+    --color-accent-hover: #b0acff;
+    --color-accent-soft: #232350;
+    --color-accent-line: #4c4a9c;
+    --color-on-accent: #0c0c2a;
+    --color-focus: #b0acff;
+
+    --color-note: #201f45;
+    --color-note-line: #6d67d1;
+}
+
+/* =========================
+   Page and brand
+========================= */
+
+body {
+    background-image:
+        radial-gradient(circle at 12% 8%, var(--color-accent-soft), transparent 42%),
+        radial-gradient(circle at 92% 96%, var(--color-accent-soft), transparent 38%);
+    background-attachment: fixed;
+}
+
+/* A soma with three small processes */
+.brand-mark {
+    border-radius: 50%;
+}
+
+.brand-mark::after {
+    inset: 9px;
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--color-on-accent);
+    box-shadow:
+        9px -7px 0 -2px var(--color-on-accent),
+        -8px 7px 0 -2px var(--color-on-accent),
+        8px 8px 0 -3px var(--color-on-accent);
+}
+
+/* =========================
+   Sidebar
+========================= */
+
+.station {
+    min-height: 124px;
+    padding-top: 22px;
+}
+
+.station:first-of-type {
+    padding-top: 40px;
+}
+
+.condition-item::before {
+    top: 50%;
+    bottom: auto;
+    left: 3px;
+    width: 8px;
+    height: 8px;
+    margin-top: -4px;
+    border-radius: 50%;
+    transform: none;
+}
+
+.map-axon {
+    stroke-dasharray: 11 3;
+    stroke-linecap: butt;
+}
+
+.map-bouton {
+    fill: var(--color-accent-line);
+    transition: fill 0.25s ease;
+}
+
+.map-bouton:is(.is-active, .is-hover, .is-match) {
+    fill: var(--color-accent);
+}
+
+.is-dim.map-bouton {
+    opacity: 0.3;
+}
+
+/* Action potential travelling into the open group */
+.map-pulse {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-dasharray: 6 100;
+    opacity: 0;
+}
+
+.map-pulse.is-active {
+    opacity: 1;
+    animation: action-potential 2.2s linear infinite;
+}
+
+@keyframes action-potential {
+    from {
+        stroke-dashoffset: 106;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* =========================
+   Article: one axon down the page, with a soma at each section
+========================= */
+
+.section-nav {
+    gap: 14px;
+}
+
+.section-link {
+    position: relative;
+}
+
+.section-link + .section-link::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -14px;
+    width: 14px;
+    border-top: 2px dotted var(--color-accent-line);
+}
+
+.content-section {
+    position: relative;
+    padding-left: 44px;
+    scroll-margin-top: 130px;
+}
+
+.content-section::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    bottom: -10px;
+    left: var(--spine-left);
+    width: var(--axon-width);
+    background: repeating-linear-gradient(180deg, var(--color-accent-line) 0 18px, transparent 18px 22px);
+}
+
+.content-section + .content-section {
+    margin-top: 0;
+    padding-top: 40px;
+    border-top: 0;
+}
+
+.content-section + .content-section::before {
+    top: 0;
+}
+
+/* The axon ends in a terminal bouton */
+.content-section:last-of-type::before {
+    bottom: 6px;
+}
+
+.content-section:last-of-type::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: calc(var(--spine-left) - 4px);
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+}
+
+.content-section > h3 {
+    position: relative;
+    z-index: 1;
+}
+
+.content-section > h3::before {
+    position: absolute;
+    top: -3px;
+    left: -44px;
+    display: grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    box-shadow: 0 0 0 5px var(--color-accent-soft);
+    color: var(--color-on-accent);
+    font-size: 11px;
+}
+
+/* =========================
+   Flowcharts: axons with terminal boutons
+========================= */
+
+.chain-arrow {
+    height: var(--axon-width);
+    background: repeating-linear-gradient(90deg, var(--color-accent-line) 0 7px, transparent 7px 10px);
+}
+
+.chain-arrow::after {
+    right: -2px;
+    width: 9px;
+    height: 9px;
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    transform: translateY(-50%);
+}
+
+.arrow-down {
+    width: var(--axon-width);
+    background: repeating-linear-gradient(180deg, var(--color-accent-line) 0 7px, transparent 7px 10px);
+}
+
+.arrow-down::after {
+    bottom: -2px;
+    width: 9px;
+    height: 9px;
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    color: inherit;
+    transform: translateX(-50%);
+}
+
+.chain-node.start {
+    border-radius: var(--radius-lg);
+    box-shadow: 0 0 0 4px var(--color-surface-muted), 0 0 0 5px var(--color-accent-line);
+}
+
+/* =========================
+   Shared concepts (neuro/concepts.js)
+========================= */
+
+.shared-concepts {
+    margin-top: 40px;
+    padding: 16px 18px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface-muted);
+}
+
+.shared-concepts h3 {
+    margin: 0 0 10px;
+    font-family: var(--font-display);
+    font-size: 16px;
+}
+
+.shared-concepts ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 15px;
+}
+
+/* =========================
+   Stroke syndrome cards
+========================= */
+
+.syndrome-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.syndrome-card {
+    min-width: 0;
+    padding: 14px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface-muted);
+}
+
+.syndrome-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.syndrome-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.lesion-map {
+    flex: 0 0 74px;
+    margin: 0;
+    text-align: center;
+}
+
+.lesion-map.is-lateral {
+    flex-basis: 110px;
+}
+
+.lesion-map svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.lesion-map figcaption {
+    color: var(--color-text-muted);
+    font-size: 10.5px;
+    line-height: 1.3;
+}
+
+.lesion-outline {
+    fill: var(--color-surface);
+    stroke: var(--color-border-strong);
+    stroke-width: 4;
+}
+
+.lesion-shade {
+    fill: var(--color-wrong);
+    opacity: 0.6;
+}
+
+.syndrome-facts {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 5px 12px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.syndrome-facts dt {
+    color: var(--color-text-muted);
+    font-size: 12.5px;
+    font-weight: 650;
+    line-height: 1.6;
+}
+
+.syndrome-facts dd {
+    margin: 0;
+}
+
+@media (max-width: 1000px) {
+    .syndrome-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Page section waiting for its content */
+.pending-content {
+    color: var(--color-text-muted);
+    font-style: italic;
+}
+
+/* =========================
+   Small screens
+========================= */
+
+@media (max-width: 768px) {
+    .content-section {
+        padding-left: 36px;
+    }
+
+    .content-section > h3::before {
+        left: -36px;
+    }
+}
+
+@media (max-width: 700px) {
+    .chain-arrow {
+        width: var(--axon-width);
+        background: repeating-linear-gradient(180deg, var(--color-accent-line) 0 7px, transparent 7px 10px);
+    }
+
+    .chain-arrow::after {
+        top: auto;
+        right: auto;
+        bottom: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}

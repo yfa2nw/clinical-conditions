@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neurology · Clinical Conditions</title>
+
+    <script src="../shared/theme.js"></script>
+
+    <link rel="stylesheet" href="../shared/style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared/app.js" defer></script>
+    <script src="questions.js" defer></script>
+    <script src="../shared/quiz.js" defer></script>
+    <script src="map.js" defer></script>
+    <script src="../shared/map.js" defer></script>
+    <script src="concepts.js" defer></script>
+</head>
+
+<body data-specialty="neuro">
+    <a class="skip-link" href="#content-panel">Skip to content</a>
+
+    <main class="app-container">
+
+        <!-- Left sidebar -->
+        <aside class="sidebar">
+            <a class="home-link" href="../index.html">← Clinical Conditions</a>
+
+            <div class="sidebar-header">
+                <h1>
+                    <span class="brand-mark" aria-hidden="true"></span>
+                    Neurology
+                </h1>
+                <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme">
+                    <span class="theme-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <div class="search" role="search">
+                <label class="visually-hidden" for="condition-search">Search conditions and content</label>
+                <input type="search" id="condition-search" class="search-input" placeholder="Search…" autocomplete="off" aria-describedby="search-hint">
+                <kbd class="search-key" aria-hidden="true">/</kbd>
+            </div>
+            <p class="search-hint" id="search-hint" aria-live="polite"></p>
+
+            <nav class="condition-list map-nav" aria-label="Neurological conditions">
+                <!-- The neuron chain is drawn here by map.js and shared/map.js, lined up with the stations below -->
+                <svg class="map-svg" aria-hidden="true" focusable="false"></svg>
+
+                <div class="station" data-organ="vascular">
+                <p class="group-label" id="group-vascular">Strokes and lesions</p>
+                <div class="condition-group" role="group" aria-labelledby="group-vascular">
+                    <button type="button" class="condition-item active" data-condition="stroke-symptoms" aria-current="true">Stroke symptoms and complications</button>
+                    <button type="button" class="condition-item" data-condition="ischemic-stroke">Acute ischemic stroke</button>
+                    <button type="button" class="condition-item" data-condition="intracerebral-hemorrhage">Intracerebral hemorrhage</button>
+                    <button type="button" class="condition-item" data-condition="subarachnoid-hemorrhage">Subarachnoid hemorrhage</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="epilepsy">
+                <p class="group-label" id="group-epilepsy">Epilepsy</p>
+                <div class="condition-group" role="group" aria-labelledby="group-epilepsy">
+                    <button type="button" class="condition-item" data-condition="seizures">Seizures</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="demyelinating">
+                <p class="group-label" id="group-demyelinating">Demyelinating</p>
+                <div class="condition-group" role="group" aria-labelledby="group-demyelinating">
+                    <button type="button" class="condition-item" data-condition="multiple-sclerosis">Multiple sclerosis</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="dementia">
+                <p class="group-label" id="group-dementia">Dementia</p>
+                <div class="condition-group" role="group" aria-labelledby="group-dementia">
+                    <button type="button" class="condition-item" data-condition="alzheimers">Alzheimer disease</button>
+                    <button type="button" class="condition-item" data-condition="lewy-body">Dementia with Lewy bodies</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="parkinsonism">
+                <p class="group-label" id="group-parkinsonism">Parkinsonism</p>
+                <div class="condition-group" role="group" aria-labelledby="group-parkinsonism">
+                    <button type="button" class="condition-item" data-condition="parkinsons">Parkinson disease</button>
+                    <button type="button" class="condition-item" data-condition="psp">Progressive supranuclear palsy</button>
+                    <button type="button" class="condition-item" data-condition="msa">Multiple system atrophy</button>
+                    <button type="button" class="condition-item" data-condition="cbd">Corticobasal degeneration</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="movement">
+                <p class="group-label" id="group-movement">Movement disorders</p>
+                <div class="condition-group" role="group" aria-labelledby="group-movement">
+                    <button type="button" class="condition-item" data-condition="movement-disorders">Other movement disorders</button>
+                </div>
+                </div>
+
+                <p class="no-results" id="no-results" hidden>No matches</p>
+            </nav>
+
+            <button type="button" class="quiz-button" id="quiz-button">
+                <span class="quiz-button-icon" aria-hidden="true">?</span>
+                <span class="quiz-button-text">
+                    Practice quiz
+                    <span class="quiz-button-sub">USMLE-style questions</span>
+                </span>
+            </button>
+        </aside>
+
+        <!-- Announces the newly opened condition to screen readers -->
+        <p class="visually-hidden" id="view-status" role="status"></p>
+
+        <!-- Right content panel -->
+        <section class="content-panel" id="content-panel" tabindex="0" aria-label="Condition details">
+
+            <article class="condition-content active" id="stroke-symptoms">
+                <h2>Stroke Symptoms and Complications</h2>
+
+                <section class="content-section">
+                    <h3>Cerebral ischemic syndromes</h3>
+
+                    <div class="syndrome-grid">
+                        <article class="syndrome-card">
+                            <div class="syndrome-head">
+                                <div>
+                                    <h4 class="syndrome-title"><abbr class="term" tabindex="0" data-definition="Anterior cerebral artery">ACA</abbr> syndrome</h4>
+                                    
+                                </div>
+                                <figure class="lesion-map is-lateral">
+                                <svg viewBox="0 0 400 200" role="img" aria-label="ACA syndrome: shaded area on lateral view">
+                                    <clipPath id="lesion-clip-aca"><path d="M22,118 C12,76 48,28 114,14 C172,4 252,4 312,24 C368,44 390,88 380,126 C368,156 332,168 292,158 L262,178 C236,188 206,174 186,158 C148,164 112,160 88,144 C56,144 30,136 22,118 Z"/></clipPath>
+                                    <path class="lesion-outline" d="M22,118 C12,76 48,28 114,14 C172,4 252,4 312,24 C368,44 390,88 380,126 C368,156 332,168 292,158 L262,178 C236,188 206,174 186,158 C148,164 112,160 88,144 C56,144 30,136 22,118 Z"/>
+                                    <g class="lesion-shade" clip-path="url(#lesion-clip-aca)"><path d="M40,70 C60,40 90,22 114,14 C172,4 252,4 300,20 L292,34 C250,22 176,22 120,30 C92,38 66,56 52,78 Z"/></g>
+                                </svg>
+                                <figcaption>Lateral view</figcaption>
+                            </figure>
+                            </div>
+                            <dl class="syndrome-facts">
+                                <dt>Artery</dt><dd>Anterior cerebral artery</dd>
+                                <dt>Motor</dt><dd>Contralateral leg weakness, greater than arm</dd>
+                                <dt>Sensory</dt><dd>Contralateral leg loss</dd>
+                                <dt>Other</dt><dd>Urinary incontinence, abulia, grasp reflex</dd>
+                            </dl>
+                        </article>
+                        <article class="syndrome-card">
+                            <div class="syndrome-head">
+                                <div>
+                                    <h4 class="syndrome-title"><abbr class="term" tabindex="0" data-definition="Middle cerebral artery">MCA</abbr> syndrome</h4>
+                                    <span class="node-label">dominant hemisphere</span>
+                                </div>
+                                <figure class="lesion-map is-lateral">
+                                <svg viewBox="0 0 400 200" role="img" aria-label="MCA syndrome: shaded area on lateral view">
+                                    <clipPath id="lesion-clip-mcad"><path d="M22,118 C12,76 48,28 114,14 C172,4 252,4 312,24 C368,44 390,88 380,126 C368,156 332,168 292,158 L262,178 C236,188 206,174 186,158 C148,164 112,160 88,144 C56,144 30,136 22,118 Z"/></clipPath>
+                                    <path class="lesion-outline" d="M22,118 C12,76 48,28 114,14 C172,4 252,4 312,24 C368,44 390,88 380,126 C368,156 332,168 292,158 L262,178 C236,188 206,174 186,158 C148,164 112,160 88,144 C56,144 30,136 22,118 Z"/>
+                                    <g class="lesion-shade" clip-path="url(#lesion-clip-mcad)"><path d="M30,120 C24,98 36,82 52,80 C70,58 94,40 122,32 C176,24 250,24 292,36 C312,46 326,62 330,84 C334,104 330,126 322,142 L300,154 L262,170 C236,180 206,168 188,152 C150,158 114,154 90,140 C60,140 36,134 30,120 Z"/></g>
+                                </svg>
+                                <figcaption>Lateral view</figcaption>
+                            </figure>
+                            </div>
+                            <dl class="syndrome-facts">
+                                <dt>Artery</dt><dd>Middle cerebral artery</dd>
+                                <dt>Motor</dt><dd>Contralateral face and arm weakness, greater than leg; gaze toward the lesion</dd>
+                                <dt>Sensory</dt><dd>Contralateral face and arm loss</dd>
+                                <dt>Other</dt><dd>Aphasia, contralateral homonymous hemianopia, Gerstmann syndrome</dd>
+                            </dl>
+                        </article>
+                        <article class="syndrome-card">
+                            <div class="syndrome-head">
+                                <div>
+                                    <h4 class="syndrome-title"><abbr class="term" tabindex="0" data-definition="Middle cerebral artery">MCA</abbr> syndrome</h4>
+                                    <span class="node-label">non-dominant hemisphere</span>
+                                </div>
+                                <figure class="lesion-map is-lateral">
+                                <svg viewBox="0 0 400 200" role="img" aria-label="MCA syndrome: shaded area on lateral view">
+                                    <clipPath id="lesion-clip-mcan"><path d="M22,118 C12,76 48,28 114,14 C172,4 252,4 312,24 C368,44 390,88 380,126 C368,156 332,168 292,158 L262,178 C236,188 206,174 186,158 C148,164 112,160 88,144 C56,144 30,136 22,118 Z"/></clipPath>
+                                    <path class="lesion-outline" d="M22,118 C12,76 48,28 114,14 C172,4 252,4 312,24 C368,44 390,88 380,126 C368,156 332,168 292,158 L262,178 C236,188 206,174 186,158 C148,164 112,160 88,144 C56,144 30,136 22,118 Z"/>
+                                    <g class="lesion-shade" clip-path="url(#lesion-clip-mcan)"><path d="M30,120 C24,98 36,82 52,80 C70,58 94,40 122,32 C176,24 250,24 292,36 C312,46 326,62 330,84 C334,104 330,126 322,142 L300,154 L262,170 C236,180 206,168 188,152 C150,158 114,154 90,140 C60,140 36,134 30,120 Z"/></g>
+                                </svg>
+                                <figcaption>Lateral view</figcaption>
+                            </figure>
+                            </div>
+                            <dl class="syndrome-facts">
+                                <dt>Artery</dt><dd>Middle cerebral artery</dd>
+                                <dt>Motor</dt><dd>Contralateral face and arm weakness, greater than leg; gaze toward the lesion</dd>
+                                <dt>Sensory</dt><dd>Contralateral face and arm loss; extinction</dd>
+                                <dt>Other</dt><dd>Hemispatial neglect, anosognosia, contralateral homonymous hemianopia</dd>
+                            </dl>
+                        </article>
+                        <article class="syndrome-card">
+                            <div class="syndrome-head">
+                                <div>
+                                    <h4 class="syndrome-title"><abbr class="term" tabindex="0" data-definition="Posterior cerebral artery">PCA</abbr> syndrome</h4>
+                                    
+                                </div>
+                                <figure class="lesion-map is-lateral">
+                                <svg viewBox="0 0 400 200" role="img" aria-label="PCA syndrome: shaded area on lateral view">
+                                    <clipPath id="lesion-clip-pca"><path d="M22,118 C12,76 48,28 114,14 C172,4 252,4 312,24 C368,44 390,88 380,126 C368,156 332,168 292,158 L262,178 C236,188 206,174 186,158 C148,164 112,160 88,144 C56,144 30,136 22,118 Z"/></clipPath>
+                                    <path class="lesion-outline" d="M22,118 C12,76 48,28 114,14 C172,4 252,4 312,24 C368,44 390,88 380,126 C368,156 332,168 292,158 L262,178 C236,188 206,174 186,158 C148,164 112,160 88,144 C56,144 30,136 22,118 Z"/>
+                                    <g class="lesion-shade" clip-path="url(#lesion-clip-pca)"><path d="M326,30 C364,52 390,90 380,126 C368,156 332,168 292,158 L262,178 C250,182 238,182 228,180 L236,166 C262,162 290,150 312,132 C322,108 326,72 326,30 Z"/></g>
+                                </svg>
+                                <figcaption>Lateral view</figcaption>
+                            </figure>
+                            </div>
+                            <dl class="syndrome-facts">
+                                <dt>Artery</dt><dd>Posterior cerebral artery</dd>
+                                <dt>Motor</dt><dd>Usually none</dd>
+                                <dt>Sensory</dt><dd>Contralateral loss if the thalamus is involved</dd>
+                                <dt>Other</dt><dd>Contralateral homonymous hemianopia with macular sparing; alexia without agraphia (dominant); prosopagnosia (non-dominant)</dd>
+                            </dl>
+                        </article>
+                        <article class="syndrome-card">
+                            <div class="syndrome-head">
+                                <div>
+                                    <h4 class="syndrome-title"><abbr class="term" tabindex="0" data-definition="Middle cerebral artery">MCA</abbr>/<abbr class="term" tabindex="0" data-definition="Anterior cerebral artery">ACA</abbr> watershed syndrome</h4>
+                                    <span class="node-label">"man in a barrel" if bilateral</span>
+                                </div>
+                                <figure class="lesion-map is-lateral">
+                                <svg viewBox="0 0 400 200" role="img" aria-label="MCA/ACA watershed syndrome: shaded area on lateral view">
+                                    <clipPath id="lesion-clip-wsa"><path d="M22,118 C12,76 48,28 114,14 C172,4 252,4 312,24 C368,44 390,88 380,126 C368,156 332,168 292,158 L262,178 C236,188 206,174 186,158 C148,164 112,160 88,144 C56,144 30,136 22,118 Z"/></clipPath>
+                                    <path class="lesion-outline" d="M22,118 C12,76 48,28 114,14 C172,4 252,4 312,24 C368,44 390,88 380,126 C368,156 332,168 292,158 L262,178 C236,188 206,174 186,158 C148,164 112,160 88,144 C56,144 30,136 22,118 Z"/>
+                                    <g class="lesion-shade" clip-path="url(#lesion-clip-wsa)"><path d="M56,84 C70,62 94,44 122,36 C176,28 250,28 292,40 L286,54 C248,42 178,42 126,50 C100,58 80,74 68,94 Z"/></g>
+                                </svg>
+                                <figcaption>Lateral view</figcaption>
+                            </figure>
+                            </div>
+                            <dl class="syndrome-facts">
+                                <dt>Cause</dt><dd><span class="concept" data-concept="watershed">Watershed</span> infarct from low perfusion or <span class="concept" data-concept="ica-stenosis"><abbr class="term" tabindex="0" data-definition="Internal carotid artery">ICA</abbr> stenosis</span></dd>
+                                <dt>Motor</dt><dd>Proximal arm and shoulder weakness; hand and face spared</dd>
+                                <dt>Sensory</dt><dd>Mild proximal arm loss</dd>
+                                <dt>Other</dt><dd>Transcortical motor aphasia (dominant)</dd>
+                            </dl>
+                        </article>
+                        <article class="syndrome-card">
+                            <div class="syndrome-head">
+                                <div>
+                                    <h4 class="syndrome-title"><abbr class="term" tabindex="0" data-definition="Middle cerebral artery">MCA</abbr>/<abbr class="term" tabindex="0" data-definition="Posterior cerebral artery">PCA</abbr> watershed syndrome</h4>
+                                    
+                                </div>
+                                <figure class="lesion-map is-lateral">
+                                <svg viewBox="0 0 400 200" role="img" aria-label="MCA/PCA watershed syndrome: shaded area on lateral view">
+                                    <clipPath id="lesion-clip-wsp"><path d="M22,118 C12,76 48,28 114,14 C172,4 252,4 312,24 C368,44 390,88 380,126 C368,156 332,168 292,158 L262,178 C236,188 206,174 186,158 C148,164 112,160 88,144 C56,144 30,136 22,118 Z"/></clipPath>
+                                    <path class="lesion-outline" d="M22,118 C12,76 48,28 114,14 C172,4 252,4 312,24 C368,44 390,88 380,126 C368,156 332,168 292,158 L262,178 C236,188 206,174 186,158 C148,164 112,160 88,144 C56,144 30,136 22,118 Z"/>
+                                    <g class="lesion-shade" clip-path="url(#lesion-clip-wsp)"><path d="M292,34 C314,44 330,62 336,86 C340,110 334,132 322,148 L296,156 C308,134 312,110 306,88 C300,68 288,54 274,46 Z"/></g>
+                                </svg>
+                                <figcaption>Lateral view</figcaption>
+                            </figure>
+                            </div>
+                            <dl class="syndrome-facts">
+                                <dt>Cause</dt><dd><span class="concept" data-concept="watershed">Watershed</span> infarct from low perfusion or <span class="concept" data-concept="ica-stenosis"><abbr class="term" tabindex="0" data-definition="Internal carotid artery">ICA</abbr> stenosis</span></dd>
+                                <dt>Motor</dt><dd>Usually none</dd>
+                                <dt>Sensory</dt><dd>Usually mild</dd>
+                                <dt>Other</dt><dd>Visual field loss; transcortical sensory aphasia (dominant); neglect (non-dominant); Balint syndrome if bilateral</dd>
+                            </dl>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Brainstem strokes</h3>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">Midbrain</h4>
+                        <div class="syndrome-grid">
+                        <article class="syndrome-card">
+                            <div class="syndrome-head">
+                                <div>
+                                    <h5 class="syndrome-title">Ventromedial midbrain syndrome</h5>
+                                    <span class="node-label">Weber syndrome</span>
+                                </div>
+                                <figure class="lesion-map">
+                                <svg viewBox="0 0 200 200" role="img" aria-label="Ventromedial midbrain syndrome: shaded area on rostral midbrain">
+                                    <clipPath id="lesion-clip-web"><path d="M62,32 C74,22 90,24 98,32 L100,34 L102,32 C110,24 126,22 138,32 C160,40 178,64 176,94 C182,126 172,160 148,174 C132,182 116,170 108,154 C104,146 96,146 92,154 C84,170 68,182 52,174 C28,160 18,126 24,94 C22,64 40,40 62,32 Z"/></clipPath>
+                                    <path class="lesion-outline" d="M62,32 C74,22 90,24 98,32 L100,34 L102,32 C110,24 126,22 138,32 C160,40 178,64 176,94 C182,126 172,160 148,174 C132,182 116,170 108,154 C104,146 96,146 92,154 C84,170 68,182 52,174 C28,160 18,126 24,94 C22,64 40,40 62,32 Z"/>
+                                    <g class="lesion-shade" clip-path="url(#lesion-clip-web)"><path d="M104,146 L106,120 L116,118 C136,122 158,124 178,118 L186,128 C184,150 170,168 150,176 C134,182 118,172 108,154 Z"/></g>
+                                </svg>
+                                <figcaption>Rostral midbrain</figcaption>
+                            </figure>
+                            </div>
+                            <dl class="syndrome-facts">
+                                <dt>Artery</dt><dd>P1 paramedian branches, top of the basilar</dd>
+                                <dt>Motor</dt><dd>Ipsilateral <span class="concept" data-concept="cn3-palsy"><abbr class="term" tabindex="0" data-definition="Cranial nerve III (oculomotor)">CN III</abbr> palsy</span>; contralateral hemiparesis</dd>
+                                <dt>Sensory</dt><dd>Usually normal</dd>
+                                <dt>Other</dt><dd>Ipsilateral dilated pupil</dd>
+                            </dl>
+                        </article>
+                        <article class="syndrome-card">
+                            <div class="syndrome-head">
+                                <div>
+                                    <h5 class="syndrome-title">Paramedian midbrain syndrome</h5>
+                                    <span class="node-label">Benedikt syndrome</span>
+                                </div>
+                                <figure class="lesion-map">
+                                <svg viewBox="0 0 200 200" role="img" aria-label="Paramedian midbrain syndrome: shaded area on rostral midbrain">
+                                    <clipPath id="lesion-clip-ben"><path d="M62,32 C74,22 90,24 98,32 L100,34 L102,32 C110,24 126,22 138,32 C160,40 178,64 176,94 C182,126 172,160 148,174 C132,182 116,170 108,154 C104,146 96,146 92,154 C84,170 68,182 52,174 C28,160 18,126 24,94 C22,64 40,40 62,32 Z"/></clipPath>
+                                    <path class="lesion-outline" d="M62,32 C74,22 90,24 98,32 L100,34 L102,32 C110,24 126,22 138,32 C160,40 178,64 176,94 C182,126 172,160 148,174 C132,182 116,170 108,154 C104,146 96,146 92,154 C84,170 68,182 52,174 C28,160 18,126 24,94 C22,64 40,40 62,32 Z"/>
+                                    <g class="lesion-shade" clip-path="url(#lesion-clip-ben)"><path d="M102,96 L120,88 C138,88 152,94 164,102 L164,116 C150,122 132,122 116,122 L112,150 L102,150 Z"/></g>
+                                </svg>
+                                <figcaption>Rostral midbrain</figcaption>
+                            </figure>
+                            </div>
+                            <dl class="syndrome-facts">
+                                <dt>Artery</dt><dd>P1 paramedian branches, top of the basilar</dd>
+                                <dt>Motor</dt><dd>Ipsilateral <span class="concept" data-concept="cn3-palsy"><abbr class="term" tabindex="0" data-definition="Cranial nerve III (oculomotor)">CN III</abbr> palsy</span>; contralateral tremor and ataxia</dd>
+                                <dt>Sensory</dt><dd>Contralateral vibration and proprioception loss</dd>
+                                <dt>Other</dt><dd>Combines Weber and Claude features</dd>
+                            </dl>
+                        </article>
+                        <article class="syndrome-card">
+                            <div class="syndrome-head">
+                                <div>
+                                    <h5 class="syndrome-title">Claude syndrome</h5>
+                                    
+                                </div>
+                                <figure class="lesion-map">
+                                <svg viewBox="0 0 200 200" role="img" aria-label="Claude syndrome: shaded area on rostral midbrain">
+                                    <clipPath id="lesion-clip-cla"><path d="M62,32 C74,22 90,24 98,32 L100,34 L102,32 C110,24 126,22 138,32 C160,40 178,64 176,94 C182,126 172,160 148,174 C132,182 116,170 108,154 C104,146 96,146 92,154 C84,170 68,182 52,174 C28,160 18,126 24,94 C22,64 40,40 62,32 Z"/></clipPath>
+                                    <path class="lesion-outline" d="M62,32 C74,22 90,24 98,32 L100,34 L102,32 C110,24 126,22 138,32 C160,40 178,64 176,94 C182,126 172,160 148,174 C132,182 116,170 108,154 C104,146 96,146 92,154 C84,170 68,182 52,174 C28,160 18,126 24,94 C22,64 40,40 62,32 Z"/>
+                                    <g class="lesion-shade" clip-path="url(#lesion-clip-cla)"><path d="M102,84 L114,84 C126,90 138,94 142,104 C144,114 138,120 128,120 L112,124 L110,140 L102,140 Z"/></g>
+                                </svg>
+                                <figcaption>Rostral midbrain</figcaption>
+                            </figure>
+                            </div>
+                            <dl class="syndrome-facts">
+                                <dt>Artery</dt><dd>P1 paramedian branches, top of the basilar</dd>
+                                <dt>Motor</dt><dd>Ipsilateral <span class="concept" data-concept="cn3-palsy"><abbr class="term" tabindex="0" data-definition="Cranial nerve III (oculomotor)">CN III</abbr> palsy</span>; contralateral ataxia</dd>
+                                <dt>Sensory</dt><dd>Normal</dd>
+                                <dt>Other</dt><dd>No weakness</dd>
+                            </dl>
+                        </article>
+                    </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">Pons</h4>
+                        <div class="syndrome-grid">
+                        <article class="syndrome-card">
+                            <div class="syndrome-head">
+                                <div>
+                                    <h5 class="syndrome-title">Ventromedial pontine syndrome</h5>
+                                    <span class="node-label">Raymond syndrome (caudal form)</span>
+                                </div>
+                                <figure class="lesion-map">
+                                <svg viewBox="0 0 200 200" role="img" aria-label="Ventromedial pontine syndrome: shaded area on rostral pons">
+                                    <clipPath id="lesion-clip-vmp"><path d="M64,32 C42,40 20,64 18,96 C14,124 22,154 46,170 C66,182 88,182 100,180 C112,182 134,182 154,170 C178,154 186,124 182,96 C180,64 158,40 136,32 L120,42 C110,36 90,36 80,42 Z"/></clipPath>
+                                    <path class="lesion-outline" d="M64,32 C42,40 20,64 18,96 C14,124 22,154 46,170 C66,182 88,182 100,180 C112,182 134,182 154,170 C178,154 186,124 182,96 C180,64 158,40 136,32 L120,42 C110,36 90,36 80,42 Z"/>
+                                    <g class="lesion-shade" clip-path="url(#lesion-clip-vmp)"><path d="M100,110 L114,108 C126,112 134,124 138,140 C140,156 138,168 136,182 L100,182 Z"/></g>
+                                </svg>
+                                <figcaption>Rostral pons</figcaption>
+                            </figure>
+                            </div>
+                            <dl class="syndrome-facts">
+                                <dt>Artery</dt><dd>Basilar paramedian branches</dd>
+                                <dt>Motor</dt><dd>Contralateral hemiparesis; dysarthria; ataxic hemiparesis</dd>
+                                <dt>Sensory</dt><dd>Usually normal</dd>
+                                <dt>Other</dt><dd>Caudal form adds ipsilateral <abbr class="term" tabindex="0" data-definition="Cranial nerve VI (abducens)">CN VI</abbr> palsy</dd>
+                            </dl>
+                        </article>
+                        <article class="syndrome-card">
+                            <div class="syndrome-head">
+                                <div>
+                                    <h5 class="syndrome-title">Ventral pontine syndrome</h5>
+                                    <span class="node-label">Millard-Gubler syndrome</span>
+                                </div>
+                                <figure class="lesion-map">
+                                <svg viewBox="0 0 200 200" role="img" aria-label="Ventral pontine syndrome: shaded area on caudal pons">
+                                    <clipPath id="lesion-clip-vp"><path d="M56,36 C36,42 18,64 16,92 C14,116 20,146 44,166 C64,180 86,180 100,178 C114,180 136,180 156,166 C180,146 186,116 184,92 C182,64 164,42 144,36 L124,46 C114,50 106,48 100,50 C94,48 86,50 76,46 Z"/></clipPath>
+                                    <path class="lesion-outline" d="M56,36 C36,42 18,64 16,92 C14,116 20,146 44,166 C64,180 86,180 100,178 C114,180 136,180 156,166 C180,146 186,116 184,92 C182,64 164,42 144,36 L124,46 C114,50 106,48 100,50 C94,48 86,50 76,46 Z"/>
+                                    <g class="lesion-shade" clip-path="url(#lesion-clip-vp)"><path d="M100,104 L114,104 L114,92 L126,92 L128,84 L140,84 C152,96 162,116 166,138 L162,180 L100,180 Z"/></g>
+                                </svg>
+                                <figcaption>Caudal pons</figcaption>
+                            </figure>
+                            </div>
+                            <dl class="syndrome-facts">
+                                <dt>Artery</dt><dd>Basilar paramedian and short circumferential branches</dd>
+                                <dt>Motor</dt><dd>Contralateral hemiplegia; ipsilateral <abbr class="term" tabindex="0" data-definition="Cranial nerve VI (abducens)">CN VI</abbr> and <abbr class="term" tabindex="0" data-definition="Cranial nerve VII (facial)">CN VII</abbr> palsy (forehead included)</dd>
+                                <dt>Sensory</dt><dd>Usually normal</dd>
+                                <dt>Other</dt><dd>Horizontal diplopia</dd>
+                            </dl>
+                        </article>
+                        <article class="syndrome-card">
+                            <div class="syndrome-head">
+                                <div>
+                                    <h5 class="syndrome-title">Inferior medial pontine syndrome</h5>
+                                    <span class="node-label">Foville syndrome</span>
+                                </div>
+                                <figure class="lesion-map">
+                                <svg viewBox="0 0 200 200" role="img" aria-label="Inferior medial pontine syndrome: shaded area on caudal pons">
+                                    <clipPath id="lesion-clip-fov"><path d="M56,36 C36,42 18,64 16,92 C14,116 20,146 44,166 C64,180 86,180 100,178 C114,180 136,180 156,166 C180,146 186,116 184,92 C182,64 164,42 144,36 L124,46 C114,50 106,48 100,50 C94,48 86,50 76,46 Z"/></clipPath>
+                                    <path class="lesion-outline" d="M56,36 C36,42 18,64 16,92 C14,116 20,146 44,166 C64,180 86,180 100,178 C114,180 136,180 156,166 C180,146 186,116 184,92 C182,64 164,42 144,36 L124,46 C114,50 106,48 100,50 C94,48 86,50 76,46 Z"/>
+                                    <g class="lesion-shade" clip-path="url(#lesion-clip-fov)"><path d="M100,50 C108,49 116,48 124,47 L136,48 L142,64 L142,94 L134,108 L134,152 L100,154 Z"/></g>
+                                </svg>
+                                <figcaption>Caudal pons</figcaption>
+                            </figure>
+                            </div>
+                            <dl class="syndrome-facts">
+                                <dt>Artery</dt><dd>Basilar paramedian and short circumferential branches</dd>
+                                <dt>Motor</dt><dd>Ipsilateral horizontal gaze palsy and <abbr class="term" tabindex="0" data-definition="Cranial nerve VII (facial)">CN VII</abbr> palsy (forehead included); contralateral hemiparesis</dd>
+                                <dt>Sensory</dt><dd>Contralateral vibration and proprioception loss</dd>
+                                <dt>Other</dt><dd>Eyes deviate toward the weak side</dd>
+                            </dl>
+                        </article>
+                        <article class="syndrome-card">
+                            <div class="syndrome-head">
+                                <div>
+                                    <h5 class="syndrome-title">Lateral pontine syndrome</h5>
+                                    <span class="node-label"><abbr class="term" tabindex="0" data-definition="Anterior inferior cerebellar artery">AICA</abbr> syndrome</span>
+                                </div>
+                                <figure class="lesion-map">
+                                <svg viewBox="0 0 200 200" role="img" aria-label="Lateral pontine syndrome: shaded area on caudal pons">
+                                    <clipPath id="lesion-clip-lp"><path d="M56,36 C36,42 18,64 16,92 C14,116 20,146 44,166 C64,180 86,180 100,178 C114,180 136,180 156,166 C180,146 186,116 184,92 C182,64 164,42 144,36 L124,46 C114,50 106,48 100,50 C94,48 86,50 76,46 Z"/></clipPath>
+                                    <path class="lesion-outline" d="M56,36 C36,42 18,64 16,92 C14,116 20,146 44,166 C64,180 86,180 100,178 C114,180 136,180 156,166 C180,146 186,116 184,92 C182,64 164,42 144,36 L124,46 C114,50 106,48 100,50 C94,48 86,50 76,46 Z"/>
+                                    <g class="lesion-shade" clip-path="url(#lesion-clip-lp)"><path d="M126,46 L144,36 C164,42 182,64 184,92 C186,112 182,128 176,140 L158,134 C152,118 142,106 128,100 C124,80 122,60 126,46 Z"/></g>
+                                </svg>
+                                <figcaption>Caudal pons</figcaption>
+                            </figure>
+                            </div>
+                            <dl class="syndrome-facts">
+                                <dt>Artery</dt><dd>Anterior inferior cerebellar artery</dd>
+                                <dt>Motor</dt><dd>Ipsilateral <abbr class="term" tabindex="0" data-definition="Cranial nerve VII (facial)">CN VII</abbr> palsy (forehead included) and ataxia; strength preserved</dd>
+                                <dt>Sensory</dt><dd>Crossed: <span class="concept" data-concept="crossed-sensory">ipsilateral face and contralateral body pain and temperature loss</span></dd>
+                                <dt>Other</dt><dd>Ipsilateral hearing loss, vertigo, <span class="concept" data-concept="horner"><abbr class="term" tabindex="0" data-definition="Ptosis, miosis and anhidrosis from loss of sympathetic supply">Horner syndrome</abbr></span></dd>
+                            </dl>
+                        </article>
+                        <article class="syndrome-card">
+                            <div class="syndrome-head">
+                                <div>
+                                    <h5 class="syndrome-title">Locked-in syndrome</h5>
+                                    <span class="node-label">bilateral ventral pons</span>
+                                </div>
+                                <figure class="lesion-map">
+                                <svg viewBox="0 0 200 200" role="img" aria-label="Locked-in syndrome: shaded area on caudal pons">
+                                    <clipPath id="lesion-clip-lis"><path d="M56,36 C36,42 18,64 16,92 C14,116 20,146 44,166 C64,180 86,180 100,178 C114,180 136,180 156,166 C180,146 186,116 184,92 C182,64 164,42 144,36 L124,46 C114,50 106,48 100,50 C94,48 86,50 76,46 Z"/></clipPath>
+                                    <path class="lesion-outline" d="M56,36 C36,42 18,64 16,92 C14,116 20,146 44,166 C64,180 86,180 100,178 C114,180 136,180 156,166 C180,146 186,116 184,92 C182,64 164,42 144,36 L124,46 C114,50 106,48 100,50 C94,48 86,50 76,46 Z"/>
+                                    <g class="lesion-shade" clip-path="url(#lesion-clip-lis)"><path d="M100,100 L116,100 L118,92 L136,94 C152,104 164,122 166,144 L162,180 L100,180 Z"/><g transform="translate(200,0) scale(-1,1)"><path d="M100,100 L116,100 L118,92 L136,94 C152,104 164,122 166,144 L162,180 L100,180 Z"/></g></g>
+                                </svg>
+                                <figcaption>Caudal pons</figcaption>
+                            </figure>
+                            </div>
+                            <dl class="syndrome-facts">
+                                <dt>Artery</dt><dd>Basilar artery</dd>
+                                <dt>Motor</dt><dd>Quadriplegia and anarthria</dd>
+                                <dt>Sensory</dt><dd>Usually preserved</dd>
+                                <dt>Other</dt><dd>Conscious; vertical eye movements and blinking spared</dd>
+                            </dl>
+                        </article>
+                    </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">Medulla</h4>
+                        <div class="syndrome-grid">
+                        <article class="syndrome-card">
+                            <div class="syndrome-head">
+                                <div>
+                                    <h5 class="syndrome-title">Lateral medullary syndrome</h5>
+                                    <span class="node-label">Wallenberg syndrome</span>
+                                </div>
+                                <figure class="lesion-map">
+                                <svg viewBox="0 0 200 200" role="img" aria-label="Lateral medullary syndrome: shaded area on rostral medulla">
+                                    <clipPath id="lesion-clip-lm"><path d="M58,36 C40,34 22,48 18,72 C14,98 22,126 36,146 C48,160 66,174 96,174 L100,154 L104,174 C134,174 152,160 164,146 C178,126 186,98 182,72 C178,48 160,34 142,36 L124,48 C114,54 106,56 100,58 C94,56 86,54 76,48 Z"/></clipPath>
+                                    <path class="lesion-outline" d="M58,36 C40,34 22,48 18,72 C14,98 22,126 36,146 C48,160 66,174 96,174 L100,154 L104,174 C134,174 152,160 164,146 C178,126 186,98 182,72 C178,48 160,34 142,36 L124,48 C114,54 106,56 100,58 C94,56 86,54 76,48 Z"/>
+                                    <g class="lesion-shade" clip-path="url(#lesion-clip-lm)"><path d="M126,36 L200,36 L200,134 L164,134 L164,110 L138,110 L136,84 L128,64 Z"/></g>
+                                </svg>
+                                <figcaption>Rostral medulla</figcaption>
+                            </figure>
+                            </div>
+                            <dl class="syndrome-facts">
+                                <dt>Artery</dt><dd>Vertebral artery or <abbr class="term" tabindex="0" data-definition="Posterior inferior cerebellar artery">PICA</abbr></dd>
+                                <dt>Motor</dt><dd>Ipsilateral palate, pharynx, and vocal cord weakness; ipsilateral ataxia; strength preserved</dd>
+                                <dt>Sensory</dt><dd>Crossed: <span class="concept" data-concept="crossed-sensory">ipsilateral face and contralateral body pain and temperature loss</span></dd>
+                                <dt>Other</dt><dd>Ipsilateral <span class="concept" data-concept="horner"><abbr class="term" tabindex="0" data-definition="Ptosis, miosis and anhidrosis from loss of sympathetic supply">Horner syndrome</abbr></span>, vertigo, dysphagia, hiccups</dd>
+                            </dl>
+                        </article>
+                        <article class="syndrome-card">
+                            <div class="syndrome-head">
+                                <div>
+                                    <h5 class="syndrome-title">Medial medullary syndrome</h5>
+                                    <span class="node-label">Dejerine syndrome</span>
+                                </div>
+                                <figure class="lesion-map">
+                                <svg viewBox="0 0 200 200" role="img" aria-label="Medial medullary syndrome: shaded area on rostral medulla">
+                                    <clipPath id="lesion-clip-mm"><path d="M58,36 C40,34 22,48 18,72 C14,98 22,126 36,146 C48,160 66,174 96,174 L100,154 L104,174 C134,174 152,160 164,146 C178,126 186,98 182,72 C178,48 160,34 142,36 L124,48 C114,54 106,56 100,58 C94,56 86,54 76,48 Z"/></clipPath>
+                                    <path class="lesion-outline" d="M58,36 C40,34 22,48 18,72 C14,98 22,126 36,146 C48,160 66,174 96,174 L100,154 L104,174 C134,174 152,160 164,146 C178,126 186,98 182,72 C178,48 160,34 142,36 L124,48 C114,54 106,56 100,58 C94,56 86,54 76,48 Z"/>
+                                    <g class="lesion-shade" clip-path="url(#lesion-clip-mm)"><path d="M100,66 L120,66 L120,150 L134,150 L134,176 L100,176 Z"/></g>
+                                </svg>
+                                <figcaption>Rostral medulla</figcaption>
+                            </figure>
+                            </div>
+                            <dl class="syndrome-facts">
+                                <dt>Artery</dt><dd>Anterior spinal artery</dd>
+                                <dt>Motor</dt><dd>Contralateral hemiparesis, face spared; ipsilateral tongue weakness</dd>
+                                <dt>Sensory</dt><dd>Contralateral vibration and proprioception loss</dd>
+                                <dt>Other</dt><dd>Tongue deviates toward the lesion</dd>
+                            </dl>
+                        </article>
+                    </div>
+                    </div>
+
+                    <p class="note">
+                        <strong>Brainstem strokes are crossed:</strong> cranial nerve signs are ipsilateral, and limb signs are contralateral.
+                    </p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Spinal cord lesions</h3>
+
+                    <div class="syndrome-grid">
+                        <article class="syndrome-card">
+                            <div class="syndrome-head">
+                                <div>
+                                    <h4 class="syndrome-title">Central cord syndrome</h4>
+                                    
+                                </div>
+                                <figure class="lesion-map">
+                                <svg viewBox="0 0 200 200" role="img" aria-label="Central cord syndrome: shaded area on cervical cord">
+                                    <clipPath id="lesion-clip-cc"><path d="M99,36 C82,34 56,38 34,54 C14,68 6,84 8,102 C10,124 22,144 44,156 C64,166 84,166 97,160 L98,136 L100,136 L102,160 C116,166 136,166 156,156 C178,144 190,124 192,102 C194,84 186,68 166,54 C144,38 118,34 101,36 L100,58 Z"/></clipPath>
+                                    <path class="lesion-outline" d="M99,36 C82,34 56,38 34,54 C14,68 6,84 8,102 C10,124 22,144 44,156 C64,166 84,166 97,160 L98,136 L100,136 L102,160 C116,166 136,166 156,156 C178,144 190,124 192,102 C194,84 186,68 166,54 C144,38 118,34 101,36 L100,58 Z"/>
+                                    <g class="lesion-shade" clip-path="url(#lesion-clip-cc)"><ellipse cx="100" cy="102" rx="52" ry="32"/><g transform="translate(200,0) scale(-1,1)"><ellipse cx="100" cy="102" rx="52" ry="32"/></g></g>
+                                </svg>
+                                <figcaption>Cervical cord</figcaption>
+                            </figure>
+                            </div>
+                            <dl class="syndrome-facts">
+                                <dt>Cause</dt><dd>Hyperextension injury, syringomyelia</dd>
+                                <dt>Motor</dt><dd>Arms weaker than legs, hands worst</dd>
+                                <dt>Sensory</dt><dd>Cape-like pain and temperature loss</dd>
+                                <dt>Other</dt><dd>Sacral sparing</dd>
+                            </dl>
+                        </article>
+                        <article class="syndrome-card">
+                            <div class="syndrome-head">
+                                <div>
+                                    <h4 class="syndrome-title">Anterior cord syndrome</h4>
+                                    
+                                </div>
+                                <figure class="lesion-map">
+                                <svg viewBox="0 0 200 200" role="img" aria-label="Anterior cord syndrome: shaded area on cervical cord">
+                                    <clipPath id="lesion-clip-ac"><path d="M99,36 C82,34 56,38 34,54 C14,68 6,84 8,102 C10,124 22,144 44,156 C64,166 84,166 97,160 L98,136 L100,136 L102,160 C116,166 136,166 156,156 C178,144 190,124 192,102 C194,84 186,68 166,54 C144,38 118,34 101,36 L100,58 Z"/></clipPath>
+                                    <path class="lesion-outline" d="M99,36 C82,34 56,38 34,54 C14,68 6,84 8,102 C10,124 22,144 44,156 C64,166 84,166 97,160 L98,136 L100,136 L102,160 C116,166 136,166 156,156 C178,144 190,124 192,102 C194,84 186,68 166,54 C144,38 118,34 101,36 L100,58 Z"/>
+                                    <g class="lesion-shade" clip-path="url(#lesion-clip-ac)"><path d="M100,64 L172,64 L174,78 L174,112 L205,112 L205,178 L100,178 Z"/><g transform="translate(200,0) scale(-1,1)"><path d="M100,64 L172,64 L174,78 L174,112 L205,112 L205,178 L100,178 Z"/></g></g>
+                                </svg>
+                                <figcaption>Cervical cord</figcaption>
+                            </figure>
+                            </div>
+                            <dl class="syndrome-facts">
+                                <dt>Artery</dt><dd>Anterior spinal artery</dd>
+                                <dt>Motor</dt><dd>Bilateral weakness below the lesion</dd>
+                                <dt>Sensory</dt><dd>Bilateral pain and temperature loss; vibration and proprioception preserved</dd>
+                                <dt>Other</dt><dd>Bladder and bowel dysfunction</dd>
+                            </dl>
+                        </article>
+                        <article class="syndrome-card">
+                            <div class="syndrome-head">
+                                <div>
+                                    <h4 class="syndrome-title">Posterior cord syndrome</h4>
+                                    
+                                </div>
+                                <figure class="lesion-map">
+                                <svg viewBox="0 0 200 200" role="img" aria-label="Posterior cord syndrome: shaded area on cervical cord">
+                                    <clipPath id="lesion-clip-pc"><path d="M99,36 C82,34 56,38 34,54 C14,68 6,84 8,102 C10,124 22,144 44,156 C64,166 84,166 97,160 L98,136 L100,136 L102,160 C116,166 136,166 156,156 C178,144 190,124 192,102 C194,84 186,68 166,54 C144,38 118,34 101,36 L100,58 Z"/></clipPath>
+                                    <path class="lesion-outline" d="M99,36 C82,34 56,38 34,54 C14,68 6,84 8,102 C10,124 22,144 44,156 C64,166 84,166 97,160 L98,136 L100,136 L102,160 C116,166 136,166 156,156 C178,144 190,124 192,102 C194,84 186,68 166,54 C144,38 118,34 101,36 L100,58 Z"/>
+                                    <g class="lesion-shade" clip-path="url(#lesion-clip-pc)"><path d="M100,28 L146,28 L146,76 L100,76 Z"/><g transform="translate(200,0) scale(-1,1)"><path d="M100,28 L146,28 L146,76 L100,76 Z"/></g></g>
+                                </svg>
+                                <figcaption>Cervical cord</figcaption>
+                            </figure>
+                            </div>
+                            <dl class="syndrome-facts">
+                                <dt>Cause</dt><dd>Posterior spinal artery, tabes dorsalis, B12 deficiency</dd>
+                                <dt>Motor</dt><dd>Strength preserved; sensory ataxia</dd>
+                                <dt>Sensory</dt><dd>Bilateral vibration and proprioception loss</dd>
+                                <dt>Other</dt><dd>Positive Romberg sign</dd>
+                            </dl>
+                        </article>
+                        <article class="syndrome-card">
+                            <div class="syndrome-head">
+                                <div>
+                                    <h4 class="syndrome-title">Brown-Séquard syndrome</h4>
+                                    <span class="node-label">cord hemisection</span>
+                                </div>
+                                <figure class="lesion-map">
+                                <svg viewBox="0 0 200 200" role="img" aria-label="Brown-Séquard syndrome: shaded area on cervical cord">
+                                    <clipPath id="lesion-clip-bs"><path d="M99,36 C82,34 56,38 34,54 C14,68 6,84 8,102 C10,124 22,144 44,156 C64,166 84,166 97,160 L98,136 L100,136 L102,160 C116,166 136,166 156,156 C178,144 190,124 192,102 C194,84 186,68 166,54 C144,38 118,34 101,36 L100,58 Z"/></clipPath>
+                                    <path class="lesion-outline" d="M99,36 C82,34 56,38 34,54 C14,68 6,84 8,102 C10,124 22,144 44,156 C64,166 84,166 97,160 L98,136 L100,136 L102,160 C116,166 136,166 156,156 C178,144 190,124 192,102 C194,84 186,68 166,54 C144,38 118,34 101,36 L100,58 Z"/>
+                                    <g class="lesion-shade" clip-path="url(#lesion-clip-bs)"><path d="M100,20 L205,20 L205,180 L100,180 Z"/></g>
+                                </svg>
+                                <figcaption>Cervical cord</figcaption>
+                            </figure>
+                            </div>
+                            <dl class="syndrome-facts">
+                                <dt>Cause</dt><dd>Penetrating trauma, compression</dd>
+                                <dt>Motor</dt><dd>Ipsilateral weakness below the lesion</dd>
+                                <dt>Sensory</dt><dd>Ipsilateral vibration and proprioception loss; contralateral pain and temperature loss</dd>
+                                <dt>Other</dt><dd>Ipsilateral <span class="concept" data-concept="horner"><abbr class="term" tabindex="0" data-definition="Ptosis, miosis and anhidrosis from loss of sympathetic supply">Horner syndrome</abbr></span> if at or above T1</dd>
+                            </dl>
+                        </article>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Intracerebral hemorrhage</h3>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">Features</h4>
+                        <ul class="chip-list">
+                            <li>Headache</li>
+                            <li>Cortical focal neurologic deficits</li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">Raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr></h4>
+                        <ul class="chip-list">
+                            <li>Nausea and vomiting</li>
+                            <li>Loss of consciousness</li>
+                            <li>Posturing</li>
+                            <li><abbr class="term" tabindex="0" data-definition="Hypertension, bradycardia and irregular respirations">Cushing triad</abbr></li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Complications</h3>
+
+                    <ul class="complication-list">
+                        <li>
+                            <span class="complication-name">Cerebral edema</span>
+                            <span class="complication-detail">malignant <abbr class="term" tabindex="0" data-definition="Middle cerebral artery">MCA</abbr> infarct, herniation within 2–5 days</span>
+                        </li>
+                        <li>
+                            <span class="complication-name"><span class="concept" data-concept="hemorrhagic-transformation">Hemorrhagic transformation</span></span>
+                        </li>
+                        <li>
+                            <span class="complication-name">Aspiration pneumonia</span>
+                            <span class="complication-detail">dysphagia</span>
+                        </li>
+                        <li>
+                            <span class="complication-name">Seizures</span>
+                        </li>
+                        <li>
+                            <span class="complication-name"><abbr class="term" tabindex="0" data-definition="Deep vein thrombosis">DVT</abbr> and <abbr class="term" tabindex="0" data-definition="Pulmonary embolism">PE</abbr></span>
+                            <span class="complication-detail">immobility</span>
+                        </li>
+                        <li>
+                            <span class="complication-name">Spasticity and contractures</span>
+                        </li>
+                        <li>
+                            <span class="complication-name">Post-stroke depression</span>
+                        </li>
+                        <li>
+                            <span class="complication-name">Central post-stroke pain</span>
+                            <span class="complication-detail">thalamic infarct</span>
+                        </li>
+                    </ul>
+                </section>
+
+                <p class="see-also">
+                    Related:
+                    <button type="button" class="link-button" data-goto="ischemic-stroke">Acute Ischemic Stroke</button>
+                    <button type="button" class="link-button" data-goto="intracerebral-hemorrhage">Intracerebral Hemorrhage</button>
+                    <button type="button" class="link-button" data-goto="subarachnoid-hemorrhage">Subarachnoid Hemorrhage</button>
+                </p>
+            </article>
+
+            <article class="condition-content" id="ischemic-stroke">
+                <h2>Acute Ischemic Stroke</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p>
+                        Blocked or inadequate arterial blood flow leads to cerebral ischemia, causing an infarct core surrounded by a salvageable <span class="concept" data-concept="penumbra"><abbr class="term" tabindex="0" data-definition="Ischemic but still salvageable brain tissue around the infarct core">penumbra</abbr></span>.
+                    </p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <div class="subsection">
+                        <h4 class="sc-heading">Embolus <span class="badge">Most common</span></h4>
+                        <div class="lane-list">
+                            <p class="lane-title">Cardiac embolus <span class="badge">Important</span></p>
+                            <div class="chain-lane"><div class="chain"><div class="chain-stage chain-start"><div class="chain-node"><span class="concept" data-concept="A-fib"><abbr class="term" tabindex="0" data-definition="Atrial fibrillation">A-fib</abbr></span> or flutter</div><div class="chain-node">Mechanical valve</div><div class="chain-node"><abbr class="term" tabindex="0" data-definition="Rheumatic heart disease">RHD</abbr></div><div class="chain-node"><span class="concept" data-concept="endocarditis">Infective endocarditis</span></div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Left atrial thrombus</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Cardiac embolus</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Cerebral artery occlusion</div></div></div></div>
+                            <div class="chain-lane"><div class="chain"><div class="chain-stage chain-start"><div class="chain-node"><abbr class="term" tabindex="0" data-definition="Left ventricular">LV</abbr> aneurysm <span class="node-label">from <abbr class="term" tabindex="0" data-definition="Myocardial infarction">MI</abbr></span></div><div class="chain-node">Anterior or lateral <abbr class="term" tabindex="0" data-definition="Myocardial infarction">MI</abbr></div><div class="chain-node"><abbr class="term" tabindex="0" data-definition="Heart failure with reduced ejection fraction">HFrEF</abbr></div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Left ventricular thrombus</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Cardiac embolus</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Cerebral artery occlusion</div></div></div></div>
+                            <p class="lane-title">Paradoxical embolus</p>
+                            <div class="chain-lane"><div class="chain"><div class="chain-stage chain-start"><div class="chain-node"><abbr class="term" tabindex="0" data-definition="Atrial septal defect">ASD</abbr></div><div class="chain-node"><span class="concept" data-concept="pfo">Patent foramen ovale</span></div><div class="chain-node">Atrial septal aneurysm</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Right-to-left shunt</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Venous thrombus reaches arterial circulation</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Cerebral artery occlusion</div></div></div></div>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">Global hypoperfusion</h4>
+                        <div class="lane-list">
+                            <div class="chain-lane"><div class="chain"><div class="chain-stage chain-start"><div class="chain-node">Cardiac arrest</div><div class="chain-node">Acute respiratory failure</div><div class="chain-node"><span class="concept" data-concept="ica-stenosis"><abbr class="term" tabindex="0" data-definition="Internal carotid artery">ICA</abbr> stenosis</span> with low <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr></div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node"><span class="change down">Decreased</span> cerebral oxygen delivery</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node"><span class="concept" data-concept="watershed">Watershed</span> infarcts</div></div></div></div>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">Thrombus</h4>
+                        <div class="etiology-grid-2">
+                            <div class="etiology-column">
+                                <h4>Large vessel</h4>
+                                <ul class="step"><li><span class="concept" data-concept="ica-stenosis"><abbr class="term" tabindex="0" data-definition="Internal carotid artery">ICA</abbr></span></li><li><abbr class="term" tabindex="0" data-definition="Middle cerebral artery">MCA</abbr></li><li>Vertebrobasilar arteries</li></ul>
+                                <div class="arrow-down" aria-hidden="true"></div>
+                                <ul class="step"><li>Atherosclerotic thrombus</li></ul>
+                            </div>
+                            <div class="etiology-column">
+                                <h4>Small vessel</h4>
+                                <ul class="step"><li>Lenticulostriate arteries</li><li>Small pontine branches</li></ul>
+                                <div class="arrow-down" aria-hidden="true"></div>
+                                <ul class="step"><li>Lacunar infarct</li></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="etiology-grid-2">
+                            <div class="etiology-column">
+                                <h4>Vasculitis</h4>
+                                <ul class="step"><li>Autoimmune</li><li>Infections</li><li>Primary <abbr class="term" tabindex="0" data-definition="Central nervous system">CNS</abbr> vasculitis</li></ul>
+                                <div class="arrow-down" aria-hidden="true"></div>
+                                <ul class="step"><li>Arterial wall inflammation</li></ul>
+                            </div>
+                            <div class="etiology-column">
+                                <h4>Dissection</h4>
+                                <ul class="step"><li>Trauma</li><li>Iatrogenic</li><li>Connective tissue diseases</li></ul>
+                                <div class="arrow-down" aria-hidden="true"></div>
+                                <ul class="step"><li>Intimal tear</li><li>Thrombus and embolus</li></ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <div class="subsection">
+                        <div class="flow">
+                            <div class="flow-step">
+                                <span class="flow-condition">First</span>
+                                <span class="flow-action">Glucose and non-contrast <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> head</span>
+                                <span class="flow-condition">rule out hypoglycemia and hemorrhage</span>
+                            </div>
+
+                            <div class="branch-grid flow-branches">
+                                <div class="branch">
+                                    <div class="arrow-down" aria-hidden="true"></div>
+                                    <span class="branch-label">Hemorrhage</span>
+                                    <div class="flow-step">
+                                        <span class="flow-action"><button type="button" class="link-button" data-goto="intracerebral-hemorrhage">Intracerebral hemorrhage</button></span>
+                                    </div>
+                                </div>
+
+                                <div class="branch">
+                                    <div class="arrow-down" aria-hidden="true"></div>
+                                    <span class="branch-label">No hemorrhage</span>
+                                    <div class="flow-step">
+                                        <span class="flow-condition">Look for <span class="concept" data-concept="lvo">large vessel occlusion</span></span>
+                                        <span class="flow-action"><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> angiogram of the head and neck</span>
+                                    </div>
+                                    <div class="arrow-down" aria-hidden="true"></div>
+                                    <div class="flow-step">
+                                        <span class="flow-condition">If over 6 hours or onset unknown</span>
+                                        <span class="flow-action"><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> perfusion or <abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr></span>
+                                        <span class="flow-condition">look for <span class="concept" data-concept="penumbra"><abbr class="term" tabindex="0" data-definition="Ischemic but still salvageable brain tissue around the infarct core">penumbra</abbr></span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">Find the cause</h4>
+                        <div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">For</th><th scope="col">Obtain</th></tr></thead><tbody><tr><th scope="row">Cardiac embolus</th><td><abbr class="term" tabindex="0" data-definition="Electrocardiogram">ECG</abbr>, telemetry, echocardiogram <span class="node-label">looking for <span class="concept" data-concept="A-fib"><abbr class="term" tabindex="0" data-definition="Atrial fibrillation">A-fib</abbr></span>, thrombus</span></td></tr><tr><th scope="row">Paradoxical embolus</th><td>Bubble echocardiogram <span class="node-label">looking for <span class="concept" data-concept="pfo"><abbr class="term" tabindex="0" data-definition="Patent foramen ovale">PFO</abbr></span></span></td></tr><tr><th scope="row">Large vessel thrombus</th><td><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> angiogram or carotid duplex <span class="node-label"><span class="concept" data-concept="ica-stenosis"><abbr class="term" tabindex="0" data-definition="Internal carotid artery">ICA</abbr> stenosis</span></span></td></tr><tr><th scope="row">Small vessel thrombus</th><td><abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr> <span class="node-label">lacunar infarct</span></td></tr><tr><th scope="row">Vasculitis</th><td><abbr class="term" tabindex="0" data-definition="Erythrocyte sedimentation rate">ESR</abbr>, <abbr class="term" tabindex="0" data-definition="C-reactive protein">CRP</abbr>, autoimmune serology, <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr></td></tr><tr><th scope="row">Dissection</th><td><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> or <abbr class="term" tabindex="0" data-definition="Magnetic resonance">MR</abbr> angiogram of the neck</td></tr><tr><th scope="row"><span class="concept" data-concept="endocarditis">Infective endocarditis</span></th><td>Blood cultures, echocardiogram</td></tr><tr><th scope="row">Vascular risk factors</th><td>Lipids, <abbr class="term" tabindex="0" data-definition="Glycated hemoglobin">HbA1c</abbr></td></tr></tbody></table></div>
+                    </div>
+
+                    <p class="note">
+                        <strong>Note:</strong> <abbr class="term" tabindex="0" data-definition="National Institutes of Health Stroke Scale">NIHSS</abbr> grades stroke severity.
+                    </p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <div class="subsection">
+                        <h4 class="sc-heading">Acute treatment</h4>
+                        <div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">Goal</th><th scope="col">Treatment</th></tr></thead><tbody><tr><th scope="row">Reperfusion</th><td><ul class="bullet-list"><li><abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr> alteplase or tenecteplase <span class="node-label">within 4.5 hours of onset</span></li><li>Mechanical thrombectomy for <span class="concept" data-concept="lvo">large vessel occlusion</span> <span class="node-label">up to 24 hours with <span class="concept" data-concept="penumbra"><abbr class="term" tabindex="0" data-definition="Ischemic but still salvageable brain tissue around the infarct core">penumbra</abbr></span></span></li></ul></td></tr><tr><th scope="row">Antiplatelet</th><td>Aspirin within 24–48 hours <span class="node-label">wait 24 hours after thrombolysis</span></td></tr><tr><th scope="row">Supportive care</th><td><ul class="bullet-list"><li>Swallow screen before oral intake</li><li>Treat fever and glucose</li><li><abbr class="term" tabindex="0" data-definition="Deep vein thrombosis">DVT</abbr> prophylaxis</li></ul></td></tr></tbody></table></div>
+                        <p class="note">
+                            <strong>Blood pressure:</strong> below 185/110 for thrombolysis; otherwise allow up to 220/120.
+                        </p>
+                    </div>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">Thrombolysis contraindications</h4>
+                        <ul class="chip-list">
+                            <li>Hemorrhage on <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr></li>
+                            <li>Stroke or head trauma <span class="node-label">within 3 months</span></li>
+                            <li>Intracranial or spinal surgery <span class="node-label">within 3 months</span></li>
+                            <li>Active bleeding</li>
+                            <li>Platelets under 100000/µL</li>
+                            <li><abbr class="term" tabindex="0" data-definition="International normalized ratio">INR</abbr> over 1.7</li>
+                            <li><span class="concept" data-concept="endocarditis">Infective endocarditis</span></li>
+                        </ul>
+                    </div>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">Prevent recurrence</h4>
+                        <div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">Cause</th><th scope="col">Treatment</th></tr></thead><tbody><tr><th scope="row">Cardiac embolus</th><td>Anticoagulation <span class="node-label"><abbr class="term" tabindex="0" data-definition="Direct oral anticoagulant">DOAC</abbr>; warfarin for mechanical valve</span></td></tr><tr><th scope="row"><span class="concept" data-concept="endocarditis">Infective endocarditis</span></th><td><abbr class="term" tabindex="0" data-definition="Antibiotics">ABX</abbr></td></tr><tr><th scope="row">Paradoxical embolus</th><td>Antiplatelet; <span class="concept" data-concept="pfo"><abbr class="term" tabindex="0" data-definition="Patent foramen ovale">PFO</abbr></span> closure <span class="node-label">if under 60 with no other cause</span></td></tr><tr><th scope="row">Large vessel thrombus</th><td>Antiplatelet, high-intensity statin; carotid endarterectomy <span class="node-label">symptomatic <span class="concept" data-concept="ica-stenosis"><abbr class="term" tabindex="0" data-definition="Internal carotid artery">ICA</abbr> stenosis</span> of 70–99%</span></td></tr><tr><th scope="row">Small vessel thrombus</th><td>Antiplatelet, statin, blood pressure control</td></tr><tr><th scope="row">Global hypoperfusion</th><td>Treat the cause of low perfusion</td></tr><tr><th scope="row">Vasculitis</th><td>Immunosuppression; treat any infection</td></tr><tr><th scope="row">Dissection</th><td>Antiplatelet or anticoagulation</td></tr></tbody></table></div>
+                    </div>
+                </section>
+
+                <p class="see-also">
+                    Related:
+                    <button type="button" class="link-button" data-goto="stroke-symptoms">Stroke Symptoms and Complications</button>
+                </p>
+            </article>
+
+            <article class="condition-content" id="intracerebral-hemorrhage">
+                <h2>Intracerebral Hemorrhage</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p>
+                        Vessel rupture bleeds into the brain parenchyma, forming a hematoma that compresses tissue and raises <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr>.
+                    </p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <div class="subsection">
+                        <div class="etiology-grid-2">
+                            <div class="etiology-column">
+                                <h4>Hypertension <span class="badge">Most common under 60</span></h4>
+                                <ul class="step"><li>Basal ganglia <span class="badge">Important</span></li><li>Pons</li><li>Cerebellum</li><li>Cortex <span class="node-label">less common</span></li></ul>
+                            </div>
+                            <div class="etiology-column">
+                                <h4><span class="concept" data-concept="caa">Cerebral amyloid angiopathy</span> <span class="badge">Most common over 60</span></h4>
+                                <ul class="step"><li>Cortical structures <span class="node-label">may present with dementia</span></li></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="etiology-grid-2">
+                            <div class="etiology-column">
+                                <h4>Coagulopathy</h4>
+                                <ul class="step"><li>Warfarin</li><li>Heparin</li><li><abbr class="term" tabindex="0" data-definition="Direct oral anticoagulants">DOACs</abbr></li><li><abbr class="term" tabindex="0" data-definition="Tissue plasminogen activator">tPA</abbr></li><li>Aspirin</li><li>Clopidogrel</li><li>Liver disease</li></ul>
+                            </div>
+                            <div class="etiology-column">
+                                <h4><span class="concept" data-concept="hemorrhagic-transformation">Hemorrhagic transformation</span></h4>
+                                <ul class="step"><li>Ischemic stroke</li></ul>
+                                <div class="arrow-down" aria-hidden="true"></div>
+                                <ul class="step"><li>Conversion from <abbr class="term" tabindex="0" data-definition="Tissue plasminogen activator">tPA</abbr></li><li>Reperfusion injury</li></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <div class="etiology-grid-2">
+                            <div class="etiology-column">
+                                <h4><span class="concept" data-concept="avm">Arteriovenous malformation</span></h4>
+                                <ul class="step"><li>Vascular abnormality <span class="node-label">young patients</span></li></ul>
+                            </div>
+                            <div class="etiology-column">
+                                <h4><span class="concept" data-concept="mycotic-aneurysm">Mycotic aneurysm</span></h4>
+                                <ul class="step"><li><span class="concept" data-concept="endocarditis">Infective endocarditis</span></li></ul>
+                                <div class="arrow-down" aria-hidden="true"></div>
+                                <ul class="step"><li>Vegetation deposits</li></ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading"><span class="concept" data-concept="cvst">Cerebral venous sinus thrombosis</span></h4>
+                        <div class="lane-list">
+                            <div class="chain-lane"><div class="chain"><div class="chain-stage chain-start"><div class="chain-node">Factor V Leiden</div><div class="chain-node"><span class="change down">Decreased</span> <abbr class="term" tabindex="0" data-definition="Antithrombin III">AT-III</abbr></div><div class="chain-node"><span class="change down">Decreased</span> protein C or S</div><div class="chain-node"><abbr class="term" tabindex="0" data-definition="Antiphospholipid syndrome">APS</abbr></div><div class="chain-node"><abbr class="term" tabindex="0" data-definition="Oral contraceptive pill">OCP</abbr></div><div class="chain-node">Pregnancy</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Venous sinus thrombus</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Sinus swelling</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Hemorrhage near the cortex</div></div></div></div>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">Malignancy</h4>
+                        <div class="lane-list">
+                            <div class="chain-lane"><div class="chain"><div class="chain-stage chain-start"><div class="chain-node">Papillary thyroid cancer</div><div class="chain-node">Small cell lung carcinoma</div><div class="chain-node"><abbr class="term" tabindex="0" data-definition="Renal cell carcinoma">RCC</abbr></div><div class="chain-node">Melanoma</div><div class="chain-node">Choriocarcinoma</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Disrupted <abbr class="term" tabindex="0" data-definition="Blood-brain barrier">BBB</abbr></div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Blood around the tumor</div></div></div></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <div class="subsection">
+                        <div class="flow">
+                            <div class="flow-step">
+                                <span class="flow-condition">First</span>
+                                <span class="flow-action">Non-contrast <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> head</span>
+                                <span class="flow-condition">hyperdense blood in the parenchyma</span>
+                            </div>
+                            <div class="arrow-down" aria-hidden="true"></div>
+                            <div class="flow-step">
+                                <span class="flow-condition">If young, lobar, or no hypertension</span>
+                                <span class="flow-action"><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> angiogram</span>
+                                <span class="flow-condition">look for a vascular cause</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">Find the cause</h4>
+                        <div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">For</th><th scope="col">Obtain</th></tr></thead><tbody><tr><th scope="row">Hypertension</th><td>Non-contrast <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> head <span class="node-label">deep location</span></td></tr><tr><th scope="row"><span class="concept" data-concept="caa">Cerebral amyloid angiopathy</span></th><td><abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr> with <abbr class="term" tabindex="0" data-definition="Susceptibility-weighted imaging">SWI</abbr> <span class="node-label">lobar microbleeds</span></td></tr><tr><th scope="row">Coagulopathy</th><td><abbr class="term" tabindex="0" data-definition="Full blood count">FBC</abbr>, <abbr class="term" tabindex="0" data-definition="Prothrombin time">PT</abbr>/<abbr class="term" tabindex="0" data-definition="International normalized ratio">INR</abbr>, <abbr class="term" tabindex="0" data-definition="Activated partial thromboplastin time">aPTT</abbr>, <abbr class="term" tabindex="0" data-definition="Liver function tests">LFTs</abbr></td></tr><tr><th scope="row"><span class="concept" data-concept="hemorrhagic-transformation">Hemorrhagic transformation</span></th><td><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> head after stroke or thrombolysis <span class="node-label">blood within the infarct</span></td></tr><tr><th scope="row"><span class="concept" data-concept="cvst">Cerebral venous sinus thrombosis</span></th><td><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> or <abbr class="term" tabindex="0" data-definition="Magnetic resonance">MR</abbr> venography <span class="node-label">empty delta sign</span></td></tr><tr><th scope="row">Malignancy</th><td><abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr> with contrast <span class="node-label">enhancing mass</span></td></tr><tr><th scope="row"><span class="concept" data-concept="avm">Arteriovenous malformation</span></th><td><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> angiogram <span class="node-label">catheter angiography to confirm</span></td></tr><tr><th scope="row"><span class="concept" data-concept="mycotic-aneurysm">Mycotic aneurysm</span></th><td>Blood cultures, echocardiogram, <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> angiogram <span class="node-label">looking for <span class="concept" data-concept="endocarditis">infective endocarditis</span></span></td></tr></tbody></table></div>
+                    </div>
+
+                    <p class="note">
+                        <strong>Note:</strong> The <abbr class="term" tabindex="0" data-definition="Intracerebral hemorrhage">ICH</abbr> score estimates 30-day mortality.
+                    </p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <div class="subsection">
+                        <h4 class="sc-heading">Acute treatment</h4>
+                        <div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">Goal</th><th scope="col">Treatment</th></tr></thead><tbody><tr><th scope="row">Limit hematoma growth</th><td><ul class="bullet-list"><li><abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr> nicardipine, clevidipine, or labetalol</li><li>Reverse any coagulopathy</li></ul></td></tr><tr><th scope="row">Lower <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr></th><td><ul class="bullet-list"><li>Head of bed at 30°</li><li>Hypertonic saline or mannitol</li><li><abbr class="term" tabindex="0" data-definition="External ventricular drain">EVD</abbr> <span class="node-label">hydrocephalus</span></li></ul></td></tr><tr><th scope="row">Decompression</th><td>Surgical evacuation <span class="node-label">cerebellar bleed over 3 cm</span></td></tr><tr><th scope="row">Supportive care</th><td><ul class="bullet-list"><li><abbr class="term" tabindex="0" data-definition="Intensive care unit">ICU</abbr> admission</li><li>Treat fever and hyperglycemia</li><li>Antiseizure medication <span class="node-label">only for seizures</span></li><li>Intermittent pneumatic compression</li></ul></td></tr></tbody></table></div>
+                        <p class="note">
+                            <strong>Blood pressure:</strong> if systolic is 150–220, lower it to a target of 140.
+                        </p>
+                    </div>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">Reverse coagulopathy</h4>
+                        <div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">If there is</th><th scope="col">Treat with</th></tr></thead><tbody><tr><th scope="row">Warfarin</th><td>4-factor <abbr class="term" tabindex="0" data-definition="Prothrombin complex concentrate">PCC</abbr> and <abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr> vitamin K</td></tr><tr><th scope="row">Heparin</th><td>Protamine</td></tr><tr><th scope="row">Dabigatran</th><td>Idarucizumab</td></tr><tr><th scope="row">Apixaban or rivaroxaban</th><td>Andexanet alfa or 4-factor <abbr class="term" tabindex="0" data-definition="Prothrombin complex concentrate">PCC</abbr></td></tr><tr><th scope="row"><abbr class="term" tabindex="0" data-definition="Tissue plasminogen activator">tPA</abbr></th><td>Cryoprecipitate</td></tr><tr><th scope="row">Aspirin or clopidogrel</th><td>Stop the offending drug <span class="node-label">platelets only before neurosurgery</span></td></tr><tr><th scope="row">Liver disease</th><td>Vitamin K and <abbr class="term" tabindex="0" data-definition="Fresh frozen plasma">FFP</abbr></td></tr></tbody></table></div>
+                    </div>
+
+                    <div class="subsection">
+                        <h4 class="sc-heading">Treat the cause</h4>
+                        <div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">Cause</th><th scope="col">Treatment</th></tr></thead><tbody><tr><th scope="row">Hypertension</th><td>Long-term control <span class="node-label">below 130/80</span></td></tr><tr><th scope="row"><span class="concept" data-concept="caa">Cerebral amyloid angiopathy</span></th><td>Avoid antithrombotics where possible</td></tr><tr><th scope="row"><span class="concept" data-concept="hemorrhagic-transformation">Hemorrhagic transformation</span></th><td>Stop antithrombotics</td></tr><tr><th scope="row"><span class="concept" data-concept="cvst">Cerebral venous sinus thrombosis</span></th><td>Anticoagulation <span class="node-label">even with hemorrhage</span></td></tr><tr><th scope="row">Malignancy</th><td>Surgery, radiation, or systemic therapy</td></tr><tr><th scope="row"><span class="concept" data-concept="avm">Arteriovenous malformation</span></th><td>Surgical resection, embolization, or radiosurgery</td></tr><tr><th scope="row"><span class="concept" data-concept="mycotic-aneurysm">Mycotic aneurysm</span></th><td><abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr> <abbr class="term" tabindex="0" data-definition="Antibiotics">ABX</abbr> for <span class="concept" data-concept="endocarditis">infective endocarditis</span> <span class="node-label">endovascular or surgical repair if ruptured</span></td></tr></tbody></table></div>
+                    </div>
+                </section>
+
+                <p class="see-also">
+                    Related:
+                    <button type="button" class="link-button" data-goto="stroke-symptoms">Stroke Symptoms and Complications</button>
+                </p>
+            </article>
+
+            <article class="condition-content" id="subarachnoid-hemorrhage">
+                <h2>Subarachnoid Hemorrhage</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <p class="see-also">
+                    Related:
+                    <button type="button" class="link-button" data-goto="stroke-symptoms">Stroke Symptoms and Complications</button>
+                </p>
+            </article>
+
+            <article class="condition-content" id="seizures">
+                <h2>Seizures</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="multiple-sclerosis">
+                <h2>Multiple Sclerosis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="alzheimers">
+                <h2>Alzheimer Disease</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="lewy-body">
+                <h2>Dementia with Lewy Bodies</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="parkinsons">
+                <h2>Parkinson Disease</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="psp">
+                <h2>Progressive Supranuclear Palsy</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="msa">
+                <h2>Multiple System Atrophy</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="cbd">
+                <h2>Corticobasal Degeneration</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="movement-disorders">
+                <h2>Other Movement Disorders</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <!-- Practice quiz (filled in by quiz.js) -->
+            <section class="quiz-view" id="quiz" aria-labelledby="quiz-title"></section>
+
+        </section>
+    </main>
+</body>
+</html>

@@ -1004,8 +1004,7 @@ body {
    Bordered columns (etiology, symptoms, complications)
 ========================= */
 
-.etiology-column,
-.info-column {
+.etiology-column {
     min-width: 0;
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
@@ -1018,21 +1017,18 @@ body {
     box-shadow: var(--shadow-raised);
 }
 
-.etiology-column h4,
-.info-column h4 {
+.etiology-column h4 {
     margin: 0 0 14px;
     padding-bottom: 10px;
     border-bottom: 2px solid var(--color-accent-line);
     text-align: center;
 }
 
-.etiology-column ul,
-.info-column ul {
+.etiology-column ul {
     margin: 0;
 }
 
-.etiology-column li,
-.info-column li {
+.etiology-column li {
     min-height: 28px;
     margin-bottom: 12px;
 }
@@ -2342,8 +2338,8 @@ button.mnemonic-item:hover:not(:disabled) {
     color: var(--color-accent);
 }
 
-/* HCV flowchart */
-.flow .hcv-branches {
+/* Branches inside a flowchart */
+.flow .flow-branches {
     width: 100%;
     max-width: 760px;
 }
@@ -3860,14 +3856,13 @@ a.specialty-card:hover {
     font-weight: 650;
 }
 
-.specialty-card.is-soon {
-    border-style: dashed;
-    background-color: transparent;
-    box-shadow: none;
+/* Each card hints at its organ system's own colour */
+.specialty-card.is-neuro .specialty-meta {
+    color: #6a60e0;
 }
 
-.specialty-card.is-soon .specialty-meta {
-    color: var(--color-text-muted);
+a.specialty-card.is-neuro:hover {
+    border-color: #6a60e0;
 }
 
 .landing-footer {
