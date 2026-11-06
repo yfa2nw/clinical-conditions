@@ -10,6 +10,7 @@ const noResults = document.getElementById("no-results");
 const themeToggle = document.getElementById("theme-toggle");
 const quizView = document.getElementById("quiz");
 const quizButton = document.getElementById("quiz-button");
+const ITEM_NAME = document.body.dataset.page === "physiology" ? "topic" : "condition";
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 const scrollBehavior = () => (reducedMotion.matches ? "auto" : "smooth");
@@ -117,9 +118,12 @@ function showCondition(id, { updateHistory = true, focusTitle = false } = {}) {
     });
     activeArticle = selectedContent;
 
-    quizView.classList.remove("active");
-    quizButton.classList.remove("active");
-    quizButton.removeAttribute("aria-current");
+    // Physiology pages have no quiz
+    if (quizView) {
+        quizView.classList.remove("active");
+        quizButton.classList.remove("active");
+        quizButton.removeAttribute("aria-current");
+    }
 
     // Return the right panel to the top when switching conditions
     contentPanel.scrollTop = 0;
@@ -166,7 +170,7 @@ function conditionFromHash() {
 }
 
 window.addEventListener("popstate", () => {
-    if (location.hash === "#quiz") {
+    if (quizView && location.hash === "#quiz") {
         openQuiz({ updateHistory: false });
         return;
     }
@@ -274,7 +278,7 @@ function filterConditions() {
 
     noResults.hidden = matchCount > 0;
     searchHint.textContent = query
-        ? `${matchCount} ${matchCount === 1 ? "condition" : "conditions"} found`
+        ? `${matchCount} ${ITEM_NAME}${matchCount === 1 ? "" : "s"} found`
         : "";
 
     highlightMatches();

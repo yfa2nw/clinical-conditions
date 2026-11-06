@@ -95,6 +95,7 @@ shared/
   map.js            Lines the sidebar drawing up with its stations; highlighting
 gi/
   index.html        Page layout and all GI condition content
+  physiology.html   GI physiology topics
   style.css         GI theme, diagrams, and journey styles
   questions.js      GI quiz question bank
   map.js            Draws the GI tract

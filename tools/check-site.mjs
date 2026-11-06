@@ -10,6 +10,7 @@ import vm from "node:vm";
 
 const EDGE = "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe";
 const SITES = ["gi", "neuro"];
+const PAGES = ["gi/index.html", "gi/physiology.html", "neuro/index.html"];
 const shotsAt = process.argv.indexOf("--shots");
 const shotsFolder = shotsAt > 0 ? process.argv[shotsAt + 1] : null;
 
@@ -55,9 +56,15 @@ function checkQuestions(site) {
 }
 
 const counts = {};
-for (const site of SITES) {
-    checkMarkup(`${site}/index.html`);
-    counts[site] = checkQuestions(site);
+for (const site of SITES) counts[site] = checkQuestions(site);
+for (const file of PAGES) {
+    checkMarkup(file);
+    // Links between a system's pages are plain links, so check that they land on an article
+    const folder = file.slice(0, file.indexOf("/"));
+    for (const m of readFileSync(file, "utf8").matchAll(/href="([a-z-]+\.html)#([^"]+)"/g)) {
+        const target = `${folder}/${m[1]}`;
+        if (!existsSync(target) || !readFileSync(target, "utf8").includes(`id="${m[2]}"`)) fail(`${file}: broken link to ${m[1]}#${m[2]}`);
+    }
 }
 const landing = readFileSync("index.html", "utf8");
 for (const m of landing.matchAll(/href="([^"#]+)"/g)) {
@@ -137,8 +144,9 @@ for (const [view, width, height, scheme] of [["desktop", 1440, 900, "light"], ["
     if (pageErrors.length) fail(`${view} landing: ${pageErrors.join("; ")}`);
     pageErrors = [];
 
-    for (const site of SITES) {
-        await open(`${site}/index.html`);
+    for (const file of PAGES) {
+        const site = file.replace("/index.html", "").replace(".html", "");
+        await open(file);
         const ids = JSON.parse(await run(`JSON.stringify(conditionContents.map((article) => article.id))`));
         for (const id of ids) {
             await run(`location.hash = ${JSON.stringify(id)}; 1`);
@@ -170,9 +178,10 @@ for (const [view, width, height, scheme] of [["desktop", 1440, 900, "light"], ["
 if (shotsFolder) {
     mkdirSync(shotsFolder, { recursive: true });
     await send("Emulation.setEmulatedMedia", { features: [{ name: "prefers-color-scheme", value: "light" }, { name: "prefers-reduced-motion", value: "reduce" }] });
-    for (const site of SITES) {
+    for (const file of PAGES) {
+        const site = file.replace("/index.html", "").replace(".html", "").replace("/", "-");
         await send("Emulation.setDeviceMetricsOverride", { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
-        await open(`${site}/index.html`);
+        await open(file);
         const ids = JSON.parse(await run(`JSON.stringify(conditionContents.map((article) => article.id))`));
         for (const id of ids) {
             await send("Emulation.setDeviceMetricsOverride", { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });

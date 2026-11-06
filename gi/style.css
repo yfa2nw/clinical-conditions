@@ -889,3 +889,67 @@
     max-width: 280px;
     margin-inline: auto;
 }
+
+/* =========================
+   Physiology pages
+========================= */
+
+/* Stations with no topic keep their part of the drawing, without a label */
+.station:not(:has(.condition-item)) .group-label {
+    visibility: hidden;
+}
+
+[data-page="physiology"] .station[data-organ="liver"] {
+    min-height: 190px;
+    padding-top: 30px;
+}
+
+.cause-map.is-wide svg[aria-label^="A parietal cell"] {
+    max-width: 560px;
+}
+
+.etiology-map + .subsection {
+    margin-top: 28px;
+}
+
+.pair-link {
+    color: var(--color-accent-hover);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.phys-nerve {
+    fill: none;
+    stroke: var(--color-bolus);
+    stroke-dasharray: 9 7;
+    stroke-linecap: round;
+    stroke-width: 3;
+}
+
+.phys-gland {
+    fill: var(--color-surface);
+    stroke: var(--color-accent-line);
+    stroke-width: 3;
+}
+
+.phys-go,
+.phys-stop {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+}
+
+.phys-go {
+    stroke: var(--color-accent-line);
+}
+
+.phys-stop {
+    stroke: var(--color-bolus);
+}
+
+.phys-pump {
+    fill: var(--color-up-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 3;
+}

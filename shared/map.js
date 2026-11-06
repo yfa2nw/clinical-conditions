@@ -57,7 +57,9 @@ function drawMap() {
     const organs = drawTract({ stations: s, width, add, part, note });
 
     /* ----- Stations: a dot on each organ, with a leader line to its conditions ----- */
+    // A station with nothing listed keeps its part of the drawing but gets no leader line
     Object.entries(organs).forEach(([organ, [px, py]]) => {
+        if (!mapNav.querySelector(`.station[data-organ="${organ}"] .condition-item`)) return;
         const ly = s[organ].labelY;
         const mid = (px + width) / 2;
         add(svgEl("path", {

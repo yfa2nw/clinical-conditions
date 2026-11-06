@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GI Physiology · Clinical Conditions</title>
+
+    <script src="../shared/theme.js"></script>
+
+    <link rel="stylesheet" href="../shared/style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared/app.js" defer></script>
+    <script src="map.js" defer></script>
+    <script src="../shared/map.js" defer></script>
+    <script src="journey.js" defer></script>
+</head>
+
+<body data-specialty="gi" data-page="physiology">
+    <a class="skip-link" href="#content-panel">Skip to content</a>
+
+    <main class="app-container">
+
+        <!-- Left sidebar -->
+        <aside class="sidebar">
+            <a class="home-link" href="../index.html">← Clinical Conditions</a>
+
+            <div class="sidebar-header">
+                <h1>
+                    <span class="brand-mark" aria-hidden="true"></span>
+                    GI Physiology
+                </h1>
+                <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme">
+                    <span class="theme-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <nav class="section-switch" aria-label="Section">
+                <a href="index.html">Clinical</a>
+                <a href="physiology.html" aria-current="page">Physiology</a>
+            </nav>
+
+            <div class="search" role="search">
+                <label class="visually-hidden" for="condition-search">Search topics and content</label>
+                <input type="search" id="condition-search" class="search-input" placeholder="Search…" autocomplete="off" aria-describedby="search-hint">
+                <kbd class="search-key" aria-hidden="true">/</kbd>
+            </div>
+            <p class="search-hint" id="search-hint" aria-live="polite"></p>
+
+            <nav class="condition-list map-nav" aria-label="GI physiology topics">
+                <!-- The GI tract string is drawn here by map.js and shared/map.js, lined up with the stations below -->
+                <svg class="map-svg" aria-hidden="true" focusable="false"></svg>
+
+                <div class="station" data-organ="esophagus">
+                <p class="group-label" id="group-esophagus">Esophagus</p>
+                </div>
+
+                <div class="station" data-organ="stomach">
+                <p class="group-label" id="group-stomach">Stomach</p>
+                <div class="condition-group" role="group" aria-labelledby="group-stomach">
+                    <button type="button" class="condition-item active" data-condition="gastric-secretion" aria-current="true">Gastric secretion <span class="condition-sub">Cephalic, gastric, and intestinal phases</span></button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="liver">
+                <p class="group-label" id="group-liver">Liver</p>
+                <div class="condition-group" role="group" aria-labelledby="group-liver">
+                    <button type="button" class="condition-item" data-condition="liver-function">Liver function <span class="condition-sub">Histology, metabolism, and bile</span></button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="biliary">
+                <p class="group-label" id="group-biliary">Gallbladder and biliary tree</p>
+                </div>
+
+                <div class="station" data-organ="pancreas">
+                <p class="group-label" id="group-pancreas">Pancreas</p>
+                </div>
+
+                <div class="station" data-organ="small-intestine">
+                <p class="group-label" id="group-small-intestine">Small intestine</p>
+                <div class="condition-group" role="group" aria-labelledby="group-small-intestine">
+                    <button type="button" class="condition-item" data-condition="digestion-absorption">Digestion and absorption <span class="condition-sub">Macromolecules and micronutrients</span></button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="colon">
+                <p class="group-label" id="group-colon">Colon and rectum</p>
+                </div>
+
+                <div class="station" data-organ="appendix">
+                <p class="group-label" id="group-appendix">Appendix</p>
+                </div>
+
+                <p class="no-results" id="no-results" hidden>No matches</p>
+            </nav>
+        </aside>
+
+        <!-- Announces the newly opened topic to screen readers -->
+        <p class="visually-hidden" id="view-status" role="status"></p>
+
+        <!-- Right content panel -->
+        <section class="content-panel" id="content-panel" tabindex="0" aria-label="Topic details">
+
+            <!-- Gastric secretion -->
+            <article class="condition-content active" id="gastric-secretion" data-stop="stomach">
+                <h2>Gastric Secretion</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+<p>Food triggers gastric secretion in three overlapping phases, which start it, sustain it, and then slow it down.</p>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="0 -136 440 506" role="img" aria-label="A head, stomach, and duodenum, showing that the cephalic phase starts in the head and reaches the stomach through the vagus nerve, the gastric phase happens in the stomach, and the intestinal phase happens in the duodenum"><circle class="eso-mouth" cx="231" cy="-82" r="48"/><path class="eso-outline" d="M214 -38V20M248 -38V20"/><path class="eso-wall" d="M84 262C38 266 28 322 60 346C84 362 124 352 140 334"/><path class="eso-lumen" d="M84 262C38 266 28 322 60 346C84 362 124 352 140 334"/>
+<path class="eso-stomach" d="M214 18V70C170 76 180 150 168 190C158 226 120 240 96 236L72 234V286L106 286C186 316 306 296 340 204C364 130 344 58 286 50C268 48 254 56 248 68V18Z"/><path class="phys-nerve" d="M278 -74C372 -62 402 44 330 104"/><text class="site-label" x="231" y="-77" text-anchor="middle">Cephalic</text><text class="site-label" x="394" y="12" text-anchor="middle">CN X</text><text class="site-label" x="262" y="186" text-anchor="middle">Gastric</text><text class="site-label" x="154" y="352" text-anchor="start">Intestinal</text></svg></figure>
+<ul class="pair-list">
+<li><span class="pair-from">Cephalic phase</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">About 30% of <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr>; starts secretion before food arrives</span></li>
+<li><span class="pair-from">Gastric phase</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">About 60% of <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr>; food in the stomach sustains secretion</span></li>
+<li><span class="pair-from">Intestinal phase</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">About 10% of <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr>; chyme in the duodenum mostly slows secretion</span></li>
+</ul>
+</div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Cells and signals</h3>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="0 0 440 360" role="img" aria-label="Two gastric glands. The body and fundus gland holds mucous neck, parietal, chief, enterochromaffin-like, and D cells. The antral gland holds mucous neck, G, and D cells"><text class="site-label" x="220" y="18" text-anchor="middle">Lumen</text><path class="phys-gland" d="M102 30V288C102 312 138 312 138 288V30"/><rect class="gut-cell" x="52" y="64" width="46" height="36" rx="8"/><rect class="gut-cell" x="142" y="64" width="46" height="36" rx="8"/><rect class="gut-cell" x="52" y="104" width="46" height="36" rx="8"/><rect class="gut-cell" x="142" y="104" width="46" height="36" rx="8"/><rect class="gut-cell" x="52" y="144" width="46" height="36" rx="8"/><rect class="gut-cell" x="142" y="144" width="46" height="36" rx="8"/><rect class="gut-cell" x="52" y="184" width="46" height="36" rx="8"/><rect class="gut-cell" x="142" y="184" width="46" height="36" rx="8"/><rect class="gut-cell" x="52" y="224" width="46" height="36" rx="8"/><rect class="gut-cell" x="142" y="224" width="46" height="36" rx="8"/><rect class="gut-cell" x="52" y="264" width="46" height="36" rx="8"/><rect class="gut-cell" x="142" y="264" width="46" height="36" rx="8"/><text class="site-label" x="120" y="346" text-anchor="middle">Body and fundus</text><path class="phys-gland" d="M302 30V288C302 312 338 312 338 288V30"/><rect class="gut-cell" x="252" y="64" width="46" height="36" rx="8"/><rect class="gut-cell" x="342" y="64" width="46" height="36" rx="8"/><rect class="gut-cell" x="252" y="104" width="46" height="36" rx="8"/><rect class="gut-cell" x="342" y="104" width="46" height="36" rx="8"/><rect class="gut-cell" x="252" y="144" width="46" height="36" rx="8"/><rect class="gut-cell" x="342" y="144" width="46" height="36" rx="8"/><rect class="gut-cell" x="252" y="184" width="46" height="36" rx="8"/><rect class="gut-cell" x="342" y="184" width="46" height="36" rx="8"/><rect class="gut-cell" x="252" y="224" width="46" height="36" rx="8"/><rect class="gut-cell" x="342" y="224" width="46" height="36" rx="8"/><rect class="gut-cell" x="252" y="264" width="46" height="36" rx="8"/><rect class="gut-cell" x="342" y="264" width="46" height="36" rx="8"/><text class="site-label" x="320" y="346" text-anchor="middle">Antrum</text><g class="site-marker"><circle cx="75" cy="82" r="11"/><text x="75" y="86.5">1</text></g><g class="site-marker"><circle cx="165" cy="122" r="11"/><text x="165" y="126.5">2</text></g><g class="site-marker"><circle cx="75" cy="162" r="11"/><text x="75" y="166.5">2</text></g><g class="site-marker"><circle cx="165" cy="202" r="11"/><text x="165" y="206.5">4</text></g><g class="site-marker"><circle cx="75" cy="242" r="11"/><text x="75" y="246.5">3</text></g><g class="site-marker"><circle cx="165" cy="282" r="11"/><text x="165" y="286.5">3</text></g><g class="site-marker"><circle cx="75" cy="282" r="11"/><text x="75" y="286.5">6</text></g><g class="site-marker"><circle cx="275" cy="82" r="11"/><text x="275" y="86.5">1</text></g><g class="site-marker"><circle cx="365" cy="162" r="11"/><text x="365" y="166.5">5</text></g><g class="site-marker"><circle cx="275" cy="202" r="11"/><text x="275" y="206.5">5</text></g><g class="site-marker"><circle cx="365" cy="242" r="11"/><text x="365" y="246.5">6</text></g></svg><figcaption>Numbers match the cells listed here and in each phase.</figcaption></figure>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Mucous neck cells</span><span class="cause-detail">Mucus and <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, which protect the mucosa</span></span></li>
+<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Parietal cells</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> and <abbr class="term" tabindex="0" data-definition="Intrinsic factor">IF</abbr></span></span></li>
+<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Chief cells</span><span class="cause-detail">Pepsinogen and gastric lipase</span></span></li>
+<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name"><abbr class="term" tabindex="0" data-definition="Enterochromaffin-like">ECL</abbr> cells</span><span class="cause-detail">Histamine</span></span></li>
+<li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">G cells</span><span class="cause-detail">Gastrin</span></span></li>
+<li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name">D cells</span><span class="cause-detail">Somatostatin</span></span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">How a parietal cell makes <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr></h4>
+<figure class="cause-map is-wide"><svg viewBox="0 0 560 300" role="img" aria-label="A parietal cell. Acetylcholine, gastrin, and histamine stimulate it through M3, CCK2, and H2 receptors. Somatostatin and prostaglandin E2 inhibit it. The H+/K+ ATPase pumps H+ into the lumen in exchange for K+"><rect class="eso-stomach" x="166" y="26" width="238" height="248" rx="38"/><text class="site-label" x="84" y="18" text-anchor="middle">Blood</text><text class="site-label" x="490" y="18" text-anchor="middle">Lumen</text>
+<text class="site-label" x="112" y="66" text-anchor="end">ACh</text><path class="phys-go" d="M118 61L164 61M164 61L154.3 55.7M164 61L154.3 66.3"/><text class="site-label" x="176" y="66" text-anchor="start">M3</text>
+<text class="site-label" x="112" y="114" text-anchor="end">Gastrin</text><path class="phys-go" d="M118 109L164 109M164 109L154.3 103.7M164 109L154.3 114.3"/><text class="site-label" x="176" y="114" text-anchor="start">CCK2</text>
+<text class="site-label" x="112" y="162" text-anchor="end">Histamine</text><path class="phys-go" d="M118 157L164 157M164 157L154.3 151.7M164 157L154.3 162.3"/><text class="site-label" x="176" y="162" text-anchor="start">H2</text>
+<text class="site-label" x="112" y="212" text-anchor="end">Somatostatin</text><path class="phys-stop" d="M118 207H160M160 198V216"/>
+<text class="site-label" x="112" y="256" text-anchor="end">PGE2</text><path class="phys-stop" d="M118 251H160M160 242V260"/>
+<text class="site-label" x="248" y="90" text-anchor="start">Ca2+</text><text class="site-label" x="248" y="162" text-anchor="start">cAMP</text><text class="site-label" x="176" y="236" text-anchor="start">Lower cAMP</text>
+<path class="phys-go" d="M292 86C330 86 356 108 384 134M292 157C322 157 356 154 382 150"/>
+<circle class="phys-pump" cx="404" cy="146" r="20"/><text class="site-label" x="392" y="196" text-anchor="end">H+/K+ ATPase</text>
+<path class="phys-go" d="M428 136L484 136M484 136L474.3 130.7M484 136L474.3 141.3"/><text class="site-label" x="492" y="141" text-anchor="start">H+</text><path class="phys-go" d="M484 160L428 160M428 160L437.7 165.3M428 160L437.7 154.7"/><text class="site-label" x="492" y="165" text-anchor="start">K+</text><text class="site-label" x="492" y="214" text-anchor="start">HCl</text></svg></figure>
+</div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Cephalic phase</h3>
+<ol class="pathway">
+<li><span class="pathway-title">Sight, smell, taste, and chewing</span><span class="pathway-detail">Or the thought of food</span></li>
+<li><span class="pathway-title"><abbr class="term" tabindex="0" data-definition="Cranial nerve X (the vagus nerve)">CN X</abbr></span><span class="pathway-detail">Vagal output to the stomach</span></li>
+<li><span class="pathway-title">Secretion starts</span><span class="pathway-detail">Before food arrives</span></li>
+</ol>
+<div class="subsection">
+<h4 class="sc-heading">Cells activated</h4>
+<ul class="cause-list is-two-column">
+<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Parietal cells</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Acetylcholine">ACh</abbr> → increased <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr></span></span></li>
+<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Chief cells</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Acetylcholine">ACh</abbr> → increased pepsinogen</span></span></li>
+<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name"><abbr class="term" tabindex="0" data-definition="Enterochromaffin-like">ECL</abbr> cells</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Acetylcholine">ACh</abbr> → increased histamine</span></span></li>
+<li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">G cells</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Gastrin-releasing peptide">GRP</abbr> → increased gastrin</span></span></li>
+<li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name">D cells</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Acetylcholine">ACh</abbr> → decreased somatostatin</span></span></li>
+</ul>
+</div>
+<p class="note"><strong>Note:</strong> This phase depends on <abbr class="term" tabindex="0" data-definition="Cranial nerve X (the vagus nerve)">CN X</abbr>, so vagotomy abolishes it.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Gastric phase</h3>
+<div class="subsection">
+<h4 class="sc-heading">Triggers</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Distension</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Cranial nerve X (the vagus nerve)">CN X</abbr> and enteric reflexes release <abbr class="term" tabindex="0" data-definition="Acetylcholine">ACh</abbr></span></li>
+<li><span class="pair-from">Peptides and amino acids</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">G cells release gastrin</span></li>
+<li><span class="pair-from">Food buffering <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Higher pH decreases somatostatin</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Main route to <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr></h4>
+<ol class="pathway">
+<li><span class="pathway-title">Gastrin</span><span class="pathway-detail">From G cells</span></li>
+<li><span class="pathway-title">Histamine</span><span class="pathway-detail">From <abbr class="term" tabindex="0" data-definition="Enterochromaffin-like">ECL</abbr> cells</span></li>
+<li><span class="pathway-title"><abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr></span><span class="pathway-detail">From parietal cells, through H2 receptors</span></li>
+</ol>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Other cells</h4>
+<ul class="cause-list is-two-column">
+<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Chief cells</span><span class="cause-detail">Increased pepsinogen, which <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> converts to pepsin</span></span></li>
+<li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name">D cells</span><span class="cause-detail">Once pH falls below 3, increased somatostatin inhibits G, <abbr class="term" tabindex="0" data-definition="Enterochromaffin-like">ECL</abbr>, and parietal cells</span></span></li>
+</ul>
+</div>
+<p class="note"><strong>Low pH is the brake on gastrin,</strong> so losing <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> raises gastrin.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Intestinal phase</h3>
+<div class="subsection">
+<h4 class="sc-heading">Stimulation</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Peptides in the duodenum</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Duodenal G cells release gastrin, causing a brief rise</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Slowing secretion</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Acid</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">S cells release secretin → decreased gastrin and <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr>; increased pancreatic <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr></span></li>
+<li><span class="pair-from">Fat</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">I cells release <abbr class="term" tabindex="0" data-definition="Cholecystokinin: released by the duodenum in response to fat; makes the gallbladder contract">CCK</abbr> and K cells release <abbr class="term" tabindex="0" data-definition="Glucose-dependent insulinotropic peptide">GIP</abbr> → decreased <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> and slower gastric emptying</span></li>
+<li><span class="pair-from">Distension or hyperosmolar chyme</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Enterogastric reflex → decreased <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> and slower gastric emptying</span></li>
+</ul>
+</div>
+<p class="note"><strong>Note:</strong> Slowing the stomach gives the duodenum time to neutralize and digest chyme.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+<div class="subsection">
+<h4 class="sc-heading">Too much <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr></h4>
+<ul class="pair-list">
+<li><span class="pair-from"><a class="pair-link" href="index.html#pud">Zollinger-Ellison syndrome</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Gastrin from a tumor ignores feedback → increased <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr></span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#pud"><em>H. pylori</em></a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Increased gastrin → increased <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr></span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#gastritis"><abbr class="term" tabindex="0" data-definition="Nonsteroidal anti-inflammatory drugs">NSAIDs</abbr> and alcohol</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Cyclooxygenase">COX</abbr> inhibition → decreased <abbr class="term" tabindex="0" data-definition="Prostaglandins">PG</abbr> → increased <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> and decreased mucus</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#gastritis">Cushing ulcers</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Increased <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> → increased <abbr class="term" tabindex="0" data-definition="Cranial nerve X (the vagus nerve)">CN X</abbr> activity → increased <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr></span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#gerd"><abbr class="term" tabindex="0" data-definition="Gastroesophageal reflux disease">GERD</abbr></a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> enters the esophagus</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Too little <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr></h4>
+<ul class="pair-list">
+<li><span class="pair-from"><a class="pair-link" href="index.html#gastritis">Autoimmune gastritis</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Parietal cell loss → decreased <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> and <abbr class="term" tabindex="0" data-definition="Intrinsic factor">IF</abbr>; no feedback → increased gastrin</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Where drugs act</h4>
+<ul class="pair-list">
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Proton pump inhibitors">PPIs</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Irreversibly block the H+/K+ ATPase</span></li>
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Histamine H2 receptor">H2R</abbr> antagonists</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Block H2 receptors on parietal cells</span></li>
+<li><span class="pair-from">Misoprostol</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Protects the mucosa in place of lost <abbr class="term" tabindex="0" data-definition="Prostaglandins">PG</abbr></span></li>
+</ul>
+</div>
+                </section>
+
+                <p class="see-also">
+                    Related:
+                    <button type="button" class="link-button" data-goto="digestion-absorption">Digestion and Absorption</button>
+                    <a class="link-button" href="index.html#pud">Peptic Ulcer Disease (PUD)</a>
+                    <a class="link-button" href="index.html#gastritis">Gastritis</a>
+                    <a class="link-button" href="index.html#gerd">Gastroesophageal Reflux Disease (GERD)</a>
+                </p>
+            </article>
+
+            <!-- Liver function -->
+            <article class="condition-content" id="liver-function" data-stop="liver">
+                <h2>Liver Function</h2>
+
+                <section class="content-section">
+                    <h3>Histology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Metabolic pathways</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Bile salt synthesis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Bilirubin conjugation</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Xenobiotic metabolism</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Hormone synthesis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Hepatocyte channels</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <!-- Digestion and absorption -->
+            <article class="condition-content" id="digestion-absorption" data-stop="small-intestine">
+                <h2>Digestion and Absorption</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+<p>Enzymes break food down in the lumen and at the brush border, and enterocytes absorb the products, mainly in the duodenum and jejunum.</p>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="0 -136 440 506" role="img" aria-label="The digestive tract from mouth to duodenum, with five numbered sites: the mouth, stomach, pancreas, bile from the gallbladder, and the brush border of the duodenum"><circle class="eso-mouth" cx="231" cy="-82" r="48"/><path class="eso-outline" d="M214 -38V20M248 -38V20"/><path class="eso-wall" d="M84 262C38 266 28 322 60 346C84 362 124 352 140 334"/><path class="eso-lumen" d="M84 262C38 266 28 322 60 346C84 362 124 352 140 334"/>
+<path class="eso-stomach" d="M214 18V70C170 76 180 150 168 190C158 226 120 240 96 236L72 234V286L106 286C186 316 306 296 340 204C364 130 344 58 286 50C268 48 254 56 248 68V18Z"/><path class="phys-gland" d="M126 316C170 318 250 322 332 300C352 296 356 324 332 332C270 354 190 356 134 346C118 340 116 322 126 316Z"/><ellipse class="eso-mouth" cx="74" cy="184" rx="24" ry="36"/><path class="eso-outline" d="M74 220V262"/><g class="site-marker"><circle cx="231" cy="-82" r="11"/><text x="231" y="-77.5">1</text></g><g class="site-marker"><circle cx="262" cy="170" r="11"/><text x="262" y="174.5">2</text></g><g class="site-marker"><circle cx="236" cy="336" r="11"/><text x="236" y="340.5">3</text></g><g class="site-marker"><circle cx="74" cy="184" r="11"/><text x="74" y="188.5">4</text></g><g class="site-marker"><circle cx="46" cy="316" r="11"/><text x="46" y="320.5">5</text></g></svg></figure>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Mouth</span><span class="cause-detail">Salivary amylase and lingual lipase</span></span></li>
+<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Stomach</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr>, pepsin, and gastric lipase</span></span></li>
+<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Pancreas</span><span class="cause-detail">Amylase, proteases, lipase, and <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr></span></span></li>
+<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Bile</span><span class="cause-detail">Bile salts, which emulsify fat</span></span></li>
+<li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">Brush border</span><span class="cause-detail">Final enzymes and transporters on enterocytes</span></span></li>
+</ul>
+</div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Carbohydrates</h3>
+<div class="subsection">
+<h4 class="sc-heading">Digestion</h4>
+<ul class="cause-list is-two-column">
+<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Mouth</span><span class="cause-detail">Salivary amylase starts on starch; stomach acid stops it</span></span></li>
+<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Pancreas</span><span class="cause-detail">Pancreatic amylase → maltose, maltotriose, and α-limit dextrins</span></span></li>
+<li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">Brush border</span><span class="cause-detail">Disaccharidases → monosaccharides</span></span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Brush border enzymes</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Lactase</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Lactose → glucose and galactose</span></li>
+<li><span class="pair-from">Sucrase</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Sucrose → glucose and fructose</span></li>
+<li><span class="pair-from">Maltase</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Maltose → glucose</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Absorption</h4>
+<figure class="cause-map is-wide"><svg viewBox="0 0 600 270" role="img" aria-label="An enterocyte. Glucose and galactose enter through SGLT1 with sodium, fructose enters through GLUT5, and all three leave through GLUT2 into the portal vein"><rect class="eso-stomach" x="214" y="22" width="196" height="226" rx="30"/><text class="site-label" x="92" y="18" text-anchor="middle">Lumen</text><text class="site-label" x="312" y="16" text-anchor="middle">Enterocyte</text>
+<text class="site-label" x="160" y="89" text-anchor="end">Glucose, galactose</text><path class="phys-go" d="M166 84L212 84M212 84L202.3 78.7M212 84L202.3 89.3"/><text class="site-label" x="224" y="89" text-anchor="start">SGLT1</text><text class="site-label" x="160" y="191" text-anchor="end">Fructose</text><path class="phys-go" d="M166 186L212 186M212 186L202.3 180.7M212 186L202.3 191.3"/><text class="site-label" x="224" y="191" text-anchor="start">GLUT5</text>
+<text class="site-label" x="224" y="110" text-anchor="start">with Na+</text><path class="phys-go" d="M286 84C318 84 330 118 346 130M286 186C318 186 330 152 346 140"/>
+<text class="site-label" x="398" y="140" text-anchor="end">GLUT2</text><path class="phys-go" d="M412 135L474 135M474 135L464.3 129.7M474 135L464.3 140.3"/><text class="site-label" x="482" y="140" text-anchor="start">Portal vein</text></svg></figure>
+</div>
+<p class="note"><strong>Note:</strong> Fiber is not digested, so colonic bacteria ferment it.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Proteins</h3>
+<div class="subsection">
+<h4 class="sc-heading">Digestion</h4>
+<ul class="cause-list is-two-column">
+<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Stomach</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> converts pepsinogen to pepsin → peptides</span></span></li>
+<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Pancreas</span><span class="cause-detail">Trypsin, chymotrypsin, elastase, and carboxypeptidases → oligopeptides and amino acids</span></span></li>
+<li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">Brush border</span><span class="cause-detail">Peptidases → amino acids, dipeptides, and tripeptides</span></span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Activating pancreatic proteases</h4>
+<ol class="pathway">
+<li><span class="pathway-title">Enterokinase</span><span class="pathway-detail">On the brush border</span></li>
+<li><span class="pathway-title">Trypsin</span><span class="pathway-detail">From trypsinogen</span></li>
+<li><span class="pathway-title">Other proteases</span><span class="pathway-detail">Trypsin activates them, and more trypsinogen</span></li>
+</ol>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Absorption</h4>
+<figure class="cause-map is-wide"><svg viewBox="0 0 600 270" role="img" aria-label="An enterocyte. Amino acids enter with sodium, di- and tripeptides enter through PepT1 with hydrogen ions and are split by peptidases, and amino acids leave into the portal vein"><rect class="eso-stomach" x="214" y="22" width="196" height="226" rx="30"/><text class="site-label" x="92" y="18" text-anchor="middle">Lumen</text><text class="site-label" x="312" y="16" text-anchor="middle">Enterocyte</text>
+<text class="site-label" x="160" y="89" text-anchor="end">Amino acids</text><path class="phys-go" d="M166 84L212 84M212 84L202.3 78.7M212 84L202.3 89.3"/><text class="site-label" x="224" y="89" text-anchor="start">with Na+</text><text class="site-label" x="160" y="191" text-anchor="end">Di-, tripeptides</text><path class="phys-go" d="M166 186L212 186M212 186L202.3 180.7M212 186L202.3 191.3"/><text class="site-label" x="224" y="191" text-anchor="start">PepT1</text>
+<text class="site-label" x="224" y="212" text-anchor="start">with H+</text><text class="site-label" x="312" y="150" text-anchor="middle">Peptidases</text><path class="phys-go" d="M296 84C340 84 372 112 408 133M286 186C308 186 318 176 318 162M358 145C374 142 392 138 408 136"/>
+<path class="phys-go" d="M412 135L474 135M474 135L464.3 129.7M474 135L464.3 140.3"/><text class="site-label" x="482" y="140" text-anchor="start">Portal vein</text></svg></figure>
+</div>
+<p class="note"><strong>Enterokinase sits in the duodenum,</strong> so trypsin normally stays inactive until it leaves the pancreas.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Fats</h3>
+<div class="subsection">
+<h4 class="sc-heading">Digestion</h4>
+<ul class="cause-list is-two-column">
+<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Mouth</span><span class="cause-detail">Lingual lipase, a minor role in adults</span></span></li>
+<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Stomach</span><span class="cause-detail">Gastric lipase, a minor role in adults</span></span></li>
+<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Bile</span><span class="cause-detail">Bile salts emulsify fat into small droplets</span></span></li>
+<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Pancreas</span><span class="cause-detail">Lipase and colipase → monoglycerides and fatty acids; also cholesterol esterase and phospholipase A2</span></span></li>
+<li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">Brush border</span><span class="cause-detail">Micelles of bile salts deliver the products to enterocytes</span></span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Absorption</h4>
+<figure class="cause-map is-wide"><svg viewBox="0 0 600 270" role="img" aria-label="An enterocyte. Micelles deliver fatty acids and monoglycerides, which enter, are rebuilt into triglycerides, packaged with ApoB-48 into chylomicrons, and leave into a lacteal"><rect class="eso-stomach" x="214" y="22" width="196" height="226" rx="30"/><text class="site-label" x="92" y="18" text-anchor="middle">Lumen</text><text class="site-label" x="312" y="16" text-anchor="middle">Enterocyte</text>
+<text class="site-label" x="160" y="140" text-anchor="end">Micelles</text><path class="phys-go" d="M166 135L212 135M212 135L202.3 129.7M212 135L202.3 140.3"/>
+<text class="site-label" x="312" y="66" text-anchor="middle">Triglycerides rebuilt</text><text class="site-label" x="312" y="88" text-anchor="middle">in the ER</text><path class="phys-go" d="M312 98L312 124M312 124L317.3 114.3M312 124L306.7 114.3"/><text class="site-label" x="312" y="146" text-anchor="middle">ApoB-48 added</text><path class="phys-go" d="M312 156L312 182M312 182L317.3 172.3M312 182L306.7 172.3"/><text class="site-label" x="312" y="204" text-anchor="middle">Chylomicrons</text>
+<path class="phys-go" d="M412 135L474 135M474 135L464.3 129.7M474 135L464.3 140.3"/><text class="site-label" x="482" y="140" text-anchor="start">Lacteal</text></svg></figure>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Bile salts recycle</h4>
+<ol class="pathway">
+<li><span class="pathway-title">Micelles</span><span class="pathway-detail">In the jejunum</span></li>
+<li><span class="pathway-title">Terminal ileum</span><span class="pathway-detail">Bile salts are reabsorbed</span></li>
+<li><span class="pathway-title">Portal vein</span><span class="pathway-detail">They return to the liver</span></li>
+</ol>
+</div>
+<p class="note"><strong>Note:</strong> Short- and medium-chain fatty acids skip chylomicrons and enter the portal vein directly.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Micronutrients</h3>
+<figure class="cause-map is-wide"><svg viewBox="0 0 600 140" role="img" aria-label="The small intestine in three parts. Iron and calcium are absorbed in the duodenum, folate and most vitamins in the jejunum, and B12 and bile salts in the terminal ileum"><rect class="eso-stomach" x="8" y="14" width="192" height="56" rx="20"/><text class="site-label" x="104" y="48" text-anchor="middle">Duodenum</text><text class="site-label" x="104" y="104" text-anchor="middle">Iron, calcium</text><rect class="eso-stomach" x="204" y="14" width="192" height="56" rx="20"/><text class="site-label" x="300" y="48" text-anchor="middle">Jejunum</text><text class="site-label" x="300" y="104" text-anchor="middle">Folate, most vitamins</text><rect class="eso-stomach" x="400" y="14" width="192" height="56" rx="20"/><text class="site-label" x="496" y="48" text-anchor="middle">Terminal ileum</text><text class="site-label" x="496" y="104" text-anchor="middle">B12, bile salts</text></svg></figure>
+<div class="subsection">
+<h4 class="sc-heading">Iron</h4>
+<ol class="pathway">
+<li><span class="pathway-title">Reduction</span><span class="pathway-detail">Fe<sup>3+</sup> → Fe<sup>2+</sup>, helped by <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> and vitamin C</span></li>
+<li><span class="pathway-title">Into the enterocyte</span><span class="pathway-detail">Through <abbr class="term" tabindex="0" data-definition="Divalent metal transporter 1">DMT1</abbr></span></li>
+<li><span class="pathway-title">Into the blood</span><span class="pathway-detail">Through ferroportin, then carried by transferrin</span></li>
+</ol>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">B12</h4>
+<ol class="pathway">
+<li><span class="pathway-title">Stomach</span><span class="pathway-detail">Binds haptocorrin from saliva</span></li>
+<li><span class="pathway-title">Duodenum</span><span class="pathway-detail">Proteases free it, and it binds <abbr class="term" tabindex="0" data-definition="Intrinsic factor">IF</abbr> from parietal cells</span></li>
+<li><span class="pathway-title">Terminal ileum</span><span class="pathway-detail">The B12 and <abbr class="term" tabindex="0" data-definition="Intrinsic factor">IF</abbr> complex is absorbed</span></li>
+<li><span class="pathway-title">Blood</span><span class="pathway-detail">Carried by transcobalamin</span></li>
+</ol>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Others</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Fat-soluble vitamins</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">A, D, E, and K travel in micelles and leave in chylomicrons</span></li>
+<li><span class="pair-from">Water-soluble vitamins</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Absorbed by transporters, mostly in the jejunum</span></li>
+<li><span class="pair-from">Folate</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Absorbed in the jejunum</span></li>
+<li><span class="pair-from">Calcium</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Absorbed in the duodenum; vitamin D increases absorption</span></li>
+</ul>
+</div>
+<p class="note"><strong>Hepcidin is the brake on iron:</strong> it binds ferroportin and causes it to be degraded.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+<div class="subsection">
+<h4 class="sc-heading">Maldigestion</h4>
+<ul class="pair-list">
+<li><span class="pair-from"><a class="pair-link" href="index.html#malabsorption">Lactose intolerance</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Undigested lactose → osmotic diarrhea and gas from bacterial digestion</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#malabsorption">Pancreatic insufficiency</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Decreased pancreatic enzymes → undigested fat, protein, and carbohydrate</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#malabsorption">Bile salt deficiency</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Decreased micelles → steatorrhea and fat-soluble vitamin deficiencies</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#pud">Zollinger-Ellison syndrome</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Excess acid inactivates pancreatic enzymes → diarrhea</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Malabsorption</h4>
+<ul class="pair-list">
+<li><span class="pair-from"><a class="pair-link" href="index.html#malabsorption">Celiac disease</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Blunted villi → decreased absorption, with iron and folate deficiency</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#ibd">Ileal Crohn disease</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Decreased ileal absorption → B12 deficiency and bile salt loss</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#gastritis">Autoimmune gastritis</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Decreased <abbr class="term" tabindex="0" data-definition="Intrinsic factor">IF</abbr> → B12 deficiency</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Other</h4>
+<ul class="pair-list">
+<li><span class="pair-from"><a class="pair-link" href="index.html#hepatic-metabolic">Hemochromatosis</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Decreased hepcidin → increased iron absorption</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#pancreatitis">Acute pancreatitis</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Trypsin activated inside the pancreas → autodigestion</span></li>
+</ul>
+</div>
+                </section>
+
+                <p class="see-also">
+                    Related:
+                    <button type="button" class="link-button" data-goto="gastric-secretion">Gastric Secretion</button>
+                    <button type="button" class="link-button" data-goto="liver-function">Liver Function</button>
+                    <a class="link-button" href="index.html#malabsorption">Malabsorption</a>
+                </p>
+            </article>
+
+        </section>
+    </main>
+</body>
+</html>

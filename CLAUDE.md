@@ -23,6 +23,7 @@ Each organ system is a folder (`gi/`, `neuro/`) with its own `index.html`, `styl
 
 Scripts are classic `defer` scripts sharing one global scope, so load order matters: `shared/app.js`, `questions.js`, `shared/quiz.js`, the organ system's `map.js`, `shared/map.js`, then any organ-specific scripts such as `gi/journey.js` or `neuro/concepts.js`. Top-level `const`s in `app.js` (`conditionButtons`, `contentPanel`, `quizView`, `SITE_NAME` and others) are used directly by later scripts, and redeclaring one is a SyntaxError that stops that script.
 
+- **Physiology pages:** `gi/physiology.html` is a second page of the organ system, reached by the `.section-switch` in the sidebar. It uses the same engine, map, and journey, with `data-page="physiology"` on `<body>` and no quiz, so it does not load `questions.js` or `quiz.js`. `drawTract` needs every station, so a station with no topic stays in the markup; it keeps its part of the drawing but shows no label or leader line. Links between a system's two pages are plain `<a href="index.html#id">` links, because `data-goto` only reaches the same page. Use `.link-button` in Related lines and `.pair-link` inside a `.pair-list`.
 - **Pages are generated from markup.** `app.js` builds each article's sticky header, jump bar (from `.content-section > h3`) and Previous/Next (from sidebar button order). `quiz.js` adds "Quiz me" buttons and builds its topic groups from `.condition-group` and the `.group-label` directly before it, so keep that adjacency.
 - **Routing** is by hash, using article `id`s; `#quiz` opens the quiz. A `data-goto` link to a missing article is shown disabled as "not added yet" and activates by itself once that `id` exists.
 - **Sidebar map.** Conditions sit in `.station[data-organ]` groups. `shared/map.js` measures the stations, calls the organ system's `drawTract({ stations, width, add, part, note })`, and draws a dot and leader line for each `[x, y]` point it returns. Every `data-organ` value needs a returned point; the last station sets the drawing height. Redraws follow station size changes, so the drawing must be derived from measured positions, never fixed coordinates.
@@ -39,6 +40,8 @@ Neurology's look is "connected": the sidebar is a chain of neurons, each article
 GI's look is food's journey from the mouth to the rectum. An article with `data-stop` (`esophagus`, `stomach`, `small-intestine`, or `colon`) gets a strip showing where it sits on the tract, a gut tube down its sections, and a bolus that moves down the tube with scrolling, all from `gi/journey.js`. Food does not pass through the accessory organs, so they are side branches listed in `JOURNEY_BRANCHES`: `liver`, `biliary`, `pancreas`, and `appendix`. Each draws its link to the tract (the portal vein, bile duct, or pancreatic duct), and the tube takes that branch's color (`.is-branch`, `--branch-color`). Every GI page has this.
 
 ## Writing content
+
+Physiology topics do not use the five condition sections. Each has its own sections, ending in "When it fails", which links to the conditions, and those conditions link back in their Related line. They keep the visual style below. A cell or structure keeps the same number throughout a page, as a cause does on a condition page.
 
 Match the GI pages Esophagitis, Esophageal motility disorders, GERD, PUD and IBD:
 
