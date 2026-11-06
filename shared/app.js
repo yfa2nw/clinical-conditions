@@ -529,6 +529,43 @@ document.addEventListener("keydown", (event) => {
 });
 
 /* =========================
+   Review article popup
+   A <dialog class="quick-review"> inside an article gets a button above the page's footer.
+========================= */
+
+document.querySelectorAll("dialog.quick-review").forEach((dialog) => {
+    const opener = document.createElement("button");
+    opener.type = "button";
+    opener.className = "quick-review-open";
+    opener.innerHTML = `<span class="quick-review-title">Review article</span>
+        <span class="quick-review-hint">A short journal-style review of this condition and how it relates to others</span>`;
+    dialog.closest(".condition-content").querySelector(".article-footer").before(opener);
+
+    const closer = document.createElement("button");
+    closer.type = "button";
+    closer.className = "quick-review-close";
+    closer.setAttribute("aria-label", "Close review article");
+    closer.textContent = "×";
+    dialog.prepend(closer);
+
+    opener.addEventListener("click", () => {
+        dialog.showModal();
+        dialog.append(tooltip); // the page's tooltip would otherwise sit behind the popup
+    });
+    closer.addEventListener("click", () => dialog.close());
+
+    dialog.addEventListener("close", () => {
+        hideTooltip();
+        document.body.append(tooltip);
+    });
+
+    dialog.addEventListener("click", (event) => {
+        const clickedBackdrop = event.target === dialog;
+        if (clickedBackdrop || event.target.closest("[data-goto]")) dialog.close();
+    });
+});
+
+/* =========================
    Start-up
 ========================= */
 
