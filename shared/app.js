@@ -542,7 +542,7 @@ document.querySelectorAll("dialog.quick-review").forEach((dialog) => {
     opener.type = "button";
     opener.className = "quick-review-open";
     opener.innerHTML = `<span class="quick-review-title">Review article</span>
-        <span class="quick-review-hint">A short journal-style review of this condition and how it relates to others</span>`;
+        <span class="quick-review-hint">A short journal-style review of this ${ITEM_NAME} and how it relates to others</span>`;
     dialog.closest(".condition-content").querySelector(".article-footer").before(opener);
 
     const closer = document.createElement("button");

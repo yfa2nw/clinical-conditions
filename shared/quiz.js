@@ -248,6 +248,7 @@ function renderSetup() {
         const ids = [...group.querySelectorAll(".condition-item")]
             .map((button) => button.dataset.condition)
             .filter((id) => quizConditionIds.includes(id));
+        if (!ids.length) return null; // a group with no questions yet
 
         return el("div", { class: "topic-group" },
             el("p", { class: "topic-group-label", text: group.previousElementSibling.textContent }),
@@ -271,7 +272,7 @@ function renderSetup() {
                 }),
             ),
         );
-    });
+    }).filter(Boolean);
 
     function setAllTopics(checked) {
         settings.topics = new Set(checked ? quizConditionIds : []);

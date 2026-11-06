@@ -10,12 +10,14 @@
     <link rel="stylesheet" href="../shared/style.css">
     <link rel="stylesheet" href="style.css">
     <script src="../shared/app.js" defer></script>
+    <script src="physiology-questions.js" defer></script>
+    <script src="../shared/quiz.js" defer></script>
     <script src="map.js" defer></script>
     <script src="../shared/map.js" defer></script>
     <script src="journey.js" defer></script>
 </head>
 
-<body data-specialty="gi" data-page="physiology">
+<body data-specialty="gi-physiology" data-page="physiology">
     <a class="skip-link" href="#content-panel">Skip to content</a>
 
     <main class="app-container">
@@ -93,6 +95,14 @@
 
                 <p class="no-results" id="no-results" hidden>No matches</p>
             </nav>
+
+            <button type="button" class="quiz-button" id="quiz-button">
+                <span class="quiz-button-icon" aria-hidden="true">?</span>
+                <span class="quiz-button-text">
+                    Practice quiz
+                    <span class="quiz-button-sub">USMLE-style questions</span>
+                </span>
+            </button>
         </aside>
 
         <!-- Announces the newly opened topic to screen readers -->
@@ -120,48 +130,26 @@
                 </section>
 
                 <section class="content-section">
-                    <h3>Cells and signals</h3>
-<div class="etiology-map">
-<figure class="cause-map"><svg viewBox="0 0 440 360" role="img" aria-label="Two gastric glands. The body and fundus gland holds mucous neck, parietal, chief, enterochromaffin-like, and D cells. The antral gland holds mucous neck, G, and D cells"><text class="site-label" x="220" y="18" text-anchor="middle">Lumen</text><path class="phys-gland" d="M102 30V288C102 312 138 312 138 288V30"/><rect class="gut-cell" x="52" y="64" width="46" height="36" rx="8"/><rect class="gut-cell" x="142" y="64" width="46" height="36" rx="8"/><rect class="gut-cell" x="52" y="104" width="46" height="36" rx="8"/><rect class="gut-cell" x="142" y="104" width="46" height="36" rx="8"/><rect class="gut-cell" x="52" y="144" width="46" height="36" rx="8"/><rect class="gut-cell" x="142" y="144" width="46" height="36" rx="8"/><rect class="gut-cell" x="52" y="184" width="46" height="36" rx="8"/><rect class="gut-cell" x="142" y="184" width="46" height="36" rx="8"/><rect class="gut-cell" x="52" y="224" width="46" height="36" rx="8"/><rect class="gut-cell" x="142" y="224" width="46" height="36" rx="8"/><rect class="gut-cell" x="52" y="264" width="46" height="36" rx="8"/><rect class="gut-cell" x="142" y="264" width="46" height="36" rx="8"/><text class="site-label" x="120" y="346" text-anchor="middle">Body and fundus</text><path class="phys-gland" d="M302 30V288C302 312 338 312 338 288V30"/><rect class="gut-cell" x="252" y="64" width="46" height="36" rx="8"/><rect class="gut-cell" x="342" y="64" width="46" height="36" rx="8"/><rect class="gut-cell" x="252" y="104" width="46" height="36" rx="8"/><rect class="gut-cell" x="342" y="104" width="46" height="36" rx="8"/><rect class="gut-cell" x="252" y="144" width="46" height="36" rx="8"/><rect class="gut-cell" x="342" y="144" width="46" height="36" rx="8"/><rect class="gut-cell" x="252" y="184" width="46" height="36" rx="8"/><rect class="gut-cell" x="342" y="184" width="46" height="36" rx="8"/><rect class="gut-cell" x="252" y="224" width="46" height="36" rx="8"/><rect class="gut-cell" x="342" y="224" width="46" height="36" rx="8"/><rect class="gut-cell" x="252" y="264" width="46" height="36" rx="8"/><rect class="gut-cell" x="342" y="264" width="46" height="36" rx="8"/><text class="site-label" x="320" y="346" text-anchor="middle">Antrum</text><g class="site-marker"><circle cx="75" cy="82" r="11"/><text x="75" y="86.5">1</text></g><g class="site-marker"><circle cx="165" cy="122" r="11"/><text x="165" y="126.5">2</text></g><g class="site-marker"><circle cx="75" cy="162" r="11"/><text x="75" y="166.5">2</text></g><g class="site-marker"><circle cx="165" cy="202" r="11"/><text x="165" y="206.5">4</text></g><g class="site-marker"><circle cx="75" cy="242" r="11"/><text x="75" y="246.5">3</text></g><g class="site-marker"><circle cx="165" cy="282" r="11"/><text x="165" y="286.5">3</text></g><g class="site-marker"><circle cx="75" cy="282" r="11"/><text x="75" y="286.5">6</text></g><g class="site-marker"><circle cx="275" cy="82" r="11"/><text x="275" y="86.5">1</text></g><g class="site-marker"><circle cx="365" cy="162" r="11"/><text x="365" y="166.5">5</text></g><g class="site-marker"><circle cx="275" cy="202" r="11"/><text x="275" y="206.5">5</text></g><g class="site-marker"><circle cx="365" cy="242" r="11"/><text x="365" y="246.5">6</text></g></svg><figcaption>Numbers match the cells listed here and in each phase.</figcaption></figure>
-<ul class="cause-list">
-<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Mucous neck cells</span><span class="cause-detail">Mucus and <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, which protect the mucosa</span></span></li>
-<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Parietal cells</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> and <abbr class="term" tabindex="0" data-definition="Intrinsic factor">IF</abbr></span></span></li>
-<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Chief cells</span><span class="cause-detail">Pepsinogen and gastric lipase</span></span></li>
-<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name"><abbr class="term" tabindex="0" data-definition="Enterochromaffin-like">ECL</abbr> cells</span><span class="cause-detail">Histamine</span></span></li>
-<li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">G cells</span><span class="cause-detail">Gastrin</span></span></li>
-<li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name">D cells</span><span class="cause-detail">Somatostatin</span></span></li>
-</ul>
-</div>
-<div class="subsection">
-<h4 class="sc-heading">How a parietal cell makes <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr></h4>
-<figure class="cause-map is-wide"><svg viewBox="0 0 560 300" role="img" aria-label="A parietal cell. Acetylcholine, gastrin, and histamine stimulate it through M3, CCK2, and H2 receptors. Somatostatin and prostaglandin E2 inhibit it. The H+/K+ ATPase pumps H+ into the lumen in exchange for K+"><rect class="eso-stomach" x="166" y="26" width="238" height="248" rx="38"/><text class="site-label" x="84" y="18" text-anchor="middle">Blood</text><text class="site-label" x="490" y="18" text-anchor="middle">Lumen</text>
-<text class="site-label" x="112" y="66" text-anchor="end">ACh</text><path class="phys-go" d="M118 61L164 61M164 61L154.3 55.7M164 61L154.3 66.3"/><text class="site-label" x="176" y="66" text-anchor="start">M3</text>
-<text class="site-label" x="112" y="114" text-anchor="end">Gastrin</text><path class="phys-go" d="M118 109L164 109M164 109L154.3 103.7M164 109L154.3 114.3"/><text class="site-label" x="176" y="114" text-anchor="start">CCK2</text>
-<text class="site-label" x="112" y="162" text-anchor="end">Histamine</text><path class="phys-go" d="M118 157L164 157M164 157L154.3 151.7M164 157L154.3 162.3"/><text class="site-label" x="176" y="162" text-anchor="start">H2</text>
-<text class="site-label" x="112" y="212" text-anchor="end">Somatostatin</text><path class="phys-stop" d="M118 207H160M160 198V216"/>
-<text class="site-label" x="112" y="256" text-anchor="end">PGE2</text><path class="phys-stop" d="M118 251H160M160 242V260"/>
-<text class="site-label" x="248" y="90" text-anchor="start">Ca2+</text><text class="site-label" x="248" y="162" text-anchor="start">cAMP</text><text class="site-label" x="176" y="236" text-anchor="start">Lower cAMP</text>
-<path class="phys-go" d="M292 86C330 86 356 108 384 134M292 157C322 157 356 154 382 150"/>
-<circle class="phys-pump" cx="404" cy="146" r="20"/><text class="site-label" x="392" y="196" text-anchor="end">H+/K+ ATPase</text>
-<path class="phys-go" d="M428 136L484 136M484 136L474.3 130.7M484 136L474.3 141.3"/><text class="site-label" x="492" y="141" text-anchor="start">H+</text><path class="phys-go" d="M484 160L428 160M428 160L437.7 165.3M428 160L437.7 154.7"/><text class="site-label" x="492" y="165" text-anchor="start">K+</text><text class="site-label" x="492" y="214" text-anchor="start">HCl</text></svg></figure>
-</div>
-                </section>
-
-                <section class="content-section">
                     <h3>Cephalic phase</h3>
+<div class="subsection">
+<h4 class="sc-heading">Neural circuit</h4>
+<figure class="cause-map is-wide"><svg viewBox="0 0 600 262" role="img" aria-label="Higher-order neurons drive the dorsal motor nucleus of the vagus, whose efferent vagus fibers stimulate the stomach. Afferent vagus fibers return from the stomach to the nucleus. Thoracolumbar sympathetic fibers inhibit the stomach"><rect class="eso-stomach" x="14" y="26" width="176" height="60" rx="16"/><text class="site-label" x="102" y="62" text-anchor="middle">Higher-order neurons</text><path class="phys-go" d="M194 56L250 56M250 56L240.3 50.7M250 56L240.3 61.3"/>
+<rect class="eso-stomach" x="254" y="26" width="112" height="60" rx="16"/><text class="site-label" x="310" y="62" text-anchor="middle">DMV</text>
+<rect class="eso-stomach" x="444" y="92" width="142" height="112" rx="16"/><text class="site-label" x="515" y="154" text-anchor="middle">Stomach</text>
+<path class="phys-go" d="M370 48C430 44 492 54 512 88"/><path class="phys-go" d="M512 88L503 79M512 88L516 76"/><text class="site-label" x="462" y="34" text-anchor="middle">Efferent CN X</text>
+<path class="phys-nerve" d="M440 130C392 130 330 124 312 92"/><text class="site-label" x="296" y="130" text-anchor="end">Afferent CN X</text>
+<rect class="eso-stomach" x="158" y="178" width="226" height="60" rx="16"/><text class="site-label" x="271" y="214" text-anchor="middle">Thoracolumbar outflow</text><path class="phys-stop" d="M388 190H434M434 180V200"/><text class="site-label" x="515" y="230" text-anchor="middle">Sympathetic fibers</text></svg></figure>
+</div>
 <ol class="pathway">
-<li><span class="pathway-title">Sight, smell, taste, and chewing</span><span class="pathway-detail">Or the thought of food</span></li>
-<li><span class="pathway-title"><abbr class="term" tabindex="0" data-definition="Cranial nerve X (the vagus nerve)">CN X</abbr></span><span class="pathway-detail">Vagal output to the stomach</span></li>
-<li><span class="pathway-title">Secretion starts</span><span class="pathway-detail">Before food arrives</span></li>
+<li><span class="pathway-title">Higher-order neurons</span><span class="pathway-detail">Sight, smell, taste, and thought of food</span></li>
+<li><span class="pathway-title"><abbr class="term" tabindex="0" data-definition="Dorsal motor nucleus of the vagus">DMV</abbr></span><span class="pathway-detail">Also called <abbr class="term" tabindex="0" data-definition="Dorsal motor nucleus of the vagus">DMX</abbr></span></li>
+<li><span class="pathway-title">Efferent <abbr class="term" tabindex="0" data-definition="Cranial nerve X (the vagus nerve)">CN X</abbr></span><span class="pathway-detail">Synapses at the stomach, stimulating it</span></li>
 </ol>
 <div class="subsection">
-<h4 class="sc-heading">Cells activated</h4>
-<ul class="cause-list is-two-column">
-<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Parietal cells</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Acetylcholine">ACh</abbr> → increased <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr></span></span></li>
-<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Chief cells</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Acetylcholine">ACh</abbr> → increased pepsinogen</span></span></li>
-<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name"><abbr class="term" tabindex="0" data-definition="Enterochromaffin-like">ECL</abbr> cells</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Acetylcholine">ACh</abbr> → increased histamine</span></span></li>
-<li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">G cells</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Gastrin-releasing peptide">GRP</abbr> → increased gastrin</span></span></li>
-<li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name">D cells</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Acetylcholine">ACh</abbr> → decreased somatostatin</span></span></li>
+<h4 class="sc-heading">Feedback and inhibition</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Afferent <abbr class="term" tabindex="0" data-definition="Cranial nerve X (the vagus nerve)">CN X</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Vagovagal feedback from the stomach to the brainstem</span></li>
+<li><span class="pair-from">Sympathetic fibers</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">From the thoracolumbar outflow; inhibit stomach activity</span></li>
 </ul>
 </div>
 <p class="note"><strong>Note:</strong> This phase depends on <abbr class="term" tabindex="0" data-definition="Cranial nerve X (the vagus nerve)">CN X</abbr>, so vagotomy abolishes it.</p>
@@ -170,27 +158,63 @@
                 <section class="content-section">
                     <h3>Gastric phase</h3>
 <div class="subsection">
-<h4 class="sc-heading">Triggers</h4>
-<ul class="pair-list">
-<li><span class="pair-from">Distension</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Cranial nerve X (the vagus nerve)">CN X</abbr> and enteric reflexes release <abbr class="term" tabindex="0" data-definition="Acetylcholine">ACh</abbr></span></li>
-<li><span class="pair-from">Peptides and amino acids</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">G cells release gastrin</span></li>
-<li><span class="pair-from">Food buffering <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Higher pH decreases somatostatin</span></li>
+<h4 class="sc-heading">Cells</h4>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="0 0 440 360" role="img" aria-label="Two gastric glands, numbered from the surface down. The body and fundus gland holds foveolar, mucous neck, parietal, enterochromaffin-like, D, and chief cells. The antral gland holds foveolar, mucous neck, G, and D cells"><text class="site-label" x="220" y="18" text-anchor="middle">Lumen</text><path class="phys-gland" d="M102 30V288C102 312 138 312 138 288V30"/><rect class="gut-cell" x="52" y="64" width="46" height="36" rx="8"/><rect class="gut-cell" x="142" y="64" width="46" height="36" rx="8"/><rect class="gut-cell" x="52" y="104" width="46" height="36" rx="8"/><rect class="gut-cell" x="142" y="104" width="46" height="36" rx="8"/><rect class="gut-cell" x="52" y="144" width="46" height="36" rx="8"/><rect class="gut-cell" x="142" y="144" width="46" height="36" rx="8"/><rect class="gut-cell" x="52" y="184" width="46" height="36" rx="8"/><rect class="gut-cell" x="142" y="184" width="46" height="36" rx="8"/><rect class="gut-cell" x="52" y="224" width="46" height="36" rx="8"/><rect class="gut-cell" x="142" y="224" width="46" height="36" rx="8"/><rect class="gut-cell" x="52" y="264" width="46" height="36" rx="8"/><rect class="gut-cell" x="142" y="264" width="46" height="36" rx="8"/><text class="site-label" x="120" y="346" text-anchor="middle">Body and fundus</text><path class="phys-gland" d="M302 30V288C302 312 338 312 338 288V30"/><rect class="gut-cell" x="252" y="64" width="46" height="36" rx="8"/><rect class="gut-cell" x="342" y="64" width="46" height="36" rx="8"/><rect class="gut-cell" x="252" y="104" width="46" height="36" rx="8"/><rect class="gut-cell" x="342" y="104" width="46" height="36" rx="8"/><rect class="gut-cell" x="252" y="144" width="46" height="36" rx="8"/><rect class="gut-cell" x="342" y="144" width="46" height="36" rx="8"/><rect class="gut-cell" x="252" y="184" width="46" height="36" rx="8"/><rect class="gut-cell" x="342" y="184" width="46" height="36" rx="8"/><rect class="gut-cell" x="252" y="224" width="46" height="36" rx="8"/><rect class="gut-cell" x="342" y="224" width="46" height="36" rx="8"/><rect class="gut-cell" x="252" y="264" width="46" height="36" rx="8"/><rect class="gut-cell" x="342" y="264" width="46" height="36" rx="8"/><text class="site-label" x="320" y="346" text-anchor="middle">Antrum</text><g class="site-marker"><circle cx="75" cy="82" r="11"/><text x="75" y="86.5">1</text></g><g class="site-marker"><circle cx="75" cy="122" r="11"/><text x="75" y="126.5">2</text></g><g class="site-marker"><circle cx="75" cy="162" r="11"/><text x="75" y="166.5">3</text></g><g class="site-marker"><circle cx="75" cy="202" r="11"/><text x="75" y="206.5">3</text></g><g class="site-marker"><circle cx="75" cy="242" r="11"/><text x="75" y="246.5">7</text></g><g class="site-marker"><circle cx="75" cy="282" r="11"/><text x="75" y="286.5">4</text></g><g class="site-marker"><circle cx="165" cy="82" r="11"/><text x="165" y="86.5">1</text></g><g class="site-marker"><circle cx="165" cy="122" r="11"/><text x="165" y="126.5">2</text></g><g class="site-marker"><circle cx="165" cy="162" r="11"/><text x="165" y="166.5">3</text></g><g class="site-marker"><circle cx="165" cy="202" r="11"/><text x="165" y="206.5">5</text></g><g class="site-marker"><circle cx="165" cy="242" r="11"/><text x="165" y="246.5">4</text></g><g class="site-marker"><circle cx="165" cy="282" r="11"/><text x="165" y="286.5">4</text></g><g class="site-marker"><circle cx="275" cy="82" r="11"/><text x="275" y="86.5">1</text></g><g class="site-marker"><circle cx="275" cy="122" r="11"/><text x="275" y="126.5">2</text></g><g class="site-marker"><circle cx="275" cy="162" r="11"/><text x="275" y="166.5">6</text></g><g class="site-marker"><circle cx="275" cy="202" r="11"/><text x="275" y="206.5">6</text></g><g class="site-marker"><circle cx="275" cy="242" r="11"/><text x="275" y="246.5">6</text></g><g class="site-marker"><circle cx="275" cy="282" r="11"/><text x="275" y="286.5">7</text></g><g class="site-marker"><circle cx="365" cy="82" r="11"/><text x="365" y="86.5">1</text></g><g class="site-marker"><circle cx="365" cy="122" r="11"/><text x="365" y="126.5">2</text></g><g class="site-marker"><circle cx="365" cy="162" r="11"/><text x="365" y="166.5">6</text></g><g class="site-marker"><circle cx="365" cy="202" r="11"/><text x="365" y="206.5">7</text></g><g class="site-marker"><circle cx="365" cy="242" r="11"/><text x="365" y="246.5">6</text></g><g class="site-marker"><circle cx="365" cy="282" r="11"/><text x="365" y="286.5">7</text></g></svg><figcaption>Numbers match the cells listed here.</figcaption></figure>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Foveolar cells</span><span class="cause-detail">Surface and gastric pits; mucus</span></span></li>
+<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Mucous neck cells</span><span class="cause-detail">Gland neck; mucus</span></span></li>
+<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Parietal cells</span><span class="cause-detail">Body and fundus; protons and <abbr class="term" tabindex="0" data-definition="Intrinsic factor">IF</abbr></span></span></li>
+<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Chief cells</span><span class="cause-detail">Body and fundus, at the gland base; pepsinogen and gastric lipase</span></span></li>
+<li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name"><abbr class="term" tabindex="0" data-definition="Enterochromaffin-like">ECL</abbr> cells</span><span class="cause-detail">Body and fundus; histamine</span></span></li>
+<li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name">G cells</span><span class="cause-detail">Antrum; gastrin</span></span></li>
+<li><span class="cause-number" aria-hidden="true">7</span><span class="cause-text"><span class="cause-name">D cells</span><span class="cause-detail">Body, fundus, and antrum; somatostatin</span></span></li>
 </ul>
 </div>
+</div>
 <div class="subsection">
-<h4 class="sc-heading">Main route to <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr></h4>
+<h4 class="sc-heading">Mucosal barrier</h4>
+<figure class="cause-map is-wide"><svg viewBox="0 0 600 226" role="img" aria-label="The mucosal barrier. A top layer of water, phospholipids, electrolytes, and mucin proteins lies over a bottom layer of bicarbonate, above foveolar and mucous neck cells"><text class="site-label" x="300" y="18" text-anchor="middle">Lumen</text><rect class="phys-layer" x="20" y="30" width="560" height="66" rx="10"/><text class="site-label" x="300" y="56" text-anchor="middle">Top layer</text><text class="site-label" x="300" y="80" text-anchor="middle">95% water, phospholipids, electrolytes, and mucin proteins</text><rect class="phys-layer is-base" x="20" y="100" width="560" height="44" rx="10"/><text class="site-label" x="300" y="128" text-anchor="middle">Bottom layer: bicarbonate</text><rect class="gut-cell" x="20" y="150" width="63" height="40" rx="8"/><rect class="gut-cell" x="91" y="150" width="63" height="40" rx="8"/><rect class="gut-cell" x="162" y="150" width="63" height="40" rx="8"/><rect class="gut-cell" x="233" y="150" width="63" height="40" rx="8"/><rect class="gut-cell" x="304" y="150" width="63" height="40" rx="8"/><rect class="gut-cell" x="375" y="150" width="63" height="40" rx="8"/><rect class="gut-cell" x="446" y="150" width="63" height="40" rx="8"/><rect class="gut-cell" x="517" y="150" width="63" height="40" rx="8"/><text class="site-label" x="300" y="216" text-anchor="middle">Foveolar and mucous neck cells</text></svg></figure>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">From stimulation to protons</h4>
 <ol class="pathway">
-<li><span class="pathway-title">Gastrin</span><span class="pathway-detail">From G cells</span></li>
-<li><span class="pathway-title">Histamine</span><span class="pathway-detail">From <abbr class="term" tabindex="0" data-definition="Enterochromaffin-like">ECL</abbr> cells</span></li>
-<li><span class="pathway-title"><abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr></span><span class="pathway-detail">From parietal cells, through H2 receptors</span></li>
+<li><span class="pathway-title">Local and vagal stimulation</span><span class="pathway-detail">Act on G cells</span></li>
+<li><span class="pathway-title">Gastrin</span><span class="pathway-detail">Promotes <abbr class="term" tabindex="0" data-definition="Enterochromaffin-like">ECL</abbr>, parietal, and chief cells</span></li>
+<li><span class="pathway-title">Histamine</span><span class="pathway-detail">From <abbr class="term" tabindex="0" data-definition="Enterochromaffin-like">ECL</abbr> cells; promotes parietal cells</span></li>
+<li><span class="pathway-title">Protons</span><span class="pathway-detail">From parietal cells</span></li>
 </ol>
 </div>
 <div class="subsection">
-<h4 class="sc-heading">Other cells</h4>
-<ul class="cause-list is-two-column">
-<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Chief cells</span><span class="cause-detail">Increased pepsinogen, which <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> converts to pepsin</span></span></li>
-<li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name">D cells</span><span class="cause-detail">Once pH falls below 3, increased somatostatin inhibits G, <abbr class="term" tabindex="0" data-definition="Enterochromaffin-like">ECL</abbr>, and parietal cells</span></span></li>
+<h4 class="sc-heading">From stimulation to pepsin</h4>
+<ol class="pathway">
+<li><span class="pathway-title">Vagal <abbr class="term" tabindex="0" data-definition="Acetylcholine">ACh</abbr></span><span class="pathway-detail">Promotes chief cells</span></li>
+<li><span class="pathway-title">Pepsinogen</span><span class="pathway-detail">From chief cells</span></li>
+<li><span class="pathway-title">Pepsin</span><span class="pathway-detail">Activated at pH under 3.5</span></li>
+</ol>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">How a parietal cell makes <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr></h4>
+<figure class="cause-map is-wide"><svg viewBox="0 0 560 300" role="img" aria-label="A parietal cell. Acetylcholine, gastrin, and histamine stimulate it through M3, CCK-2, and H2 receptors. Somatostatin and prostaglandin E2 inhibit it. The H+/K+ ATPase pumps H+ into the lumen in exchange for K+"><rect class="eso-stomach" x="166" y="26" width="238" height="248" rx="38"/><text class="site-label" x="84" y="18" text-anchor="middle">Blood</text><text class="site-label" x="490" y="18" text-anchor="middle">Lumen</text>
+<text class="site-label" x="112" y="66" text-anchor="end">ACh</text><path class="phys-go" d="M118 61L164 61M164 61L154.3 55.7M164 61L154.3 66.3"/><text class="site-label" x="176" y="66" text-anchor="start">M3</text>
+<text class="site-label" x="112" y="114" text-anchor="end">Gastrin</text><path class="phys-go" d="M118 109L164 109M164 109L154.3 103.7M164 109L154.3 114.3"/><text class="site-label" x="176" y="114" text-anchor="start">CCK-2</text>
+<text class="site-label" x="112" y="162" text-anchor="end">Histamine</text><path class="phys-go" d="M118 157L164 157M164 157L154.3 151.7M164 157L154.3 162.3"/><text class="site-label" x="176" y="162" text-anchor="start">H2</text>
+<text class="site-label" x="112" y="212" text-anchor="end">Somatostatin</text><path class="phys-stop" d="M118 207H160M160 198V216"/>
+<text class="site-label" x="112" y="256" text-anchor="end">PGE2</text><path class="phys-stop" d="M118 251H160M160 242V260"/>
+<text class="site-label" x="248" y="90" text-anchor="start">Ca2+</text><text class="site-label" x="248" y="162" text-anchor="start">cAMP</text><text class="site-label" x="176" y="236" text-anchor="start">Lower cAMP</text>
+<path class="phys-go" d="M292 86C330 86 356 108 384 134M292 157C322 157 356 154 382 150"/>
+<circle class="phys-pump" cx="404" cy="146" r="20"/><text class="site-label" x="392" y="196" text-anchor="end">H+/K+ ATPase</text>
+<path class="phys-go" d="M428 136L484 136M484 136L474.3 130.7M484 136L474.3 141.3"/><text class="site-label" x="492" y="141" text-anchor="start">H+</text><path class="phys-go" d="M484 160L428 160M428 160L437.7 165.3M428 160L437.7 154.7"/><text class="site-label" x="492" y="165" text-anchor="start">K+</text><text class="site-label" x="492" y="214" text-anchor="start">HCl</text></svg></figure>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Negative feedback</h4>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">7</span><span class="cause-text"><span class="cause-name">D cells</span><span class="cause-detail">Excess protons → somatostatin → inhibits G, <abbr class="term" tabindex="0" data-definition="Enterochromaffin-like">ECL</abbr>, parietal, and chief cells</span></span></li>
 </ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Signals, receptors, and pathways</h4>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Cell</th><th scope="col">Signal</th><th scope="col">Receptor</th><th scope="col">Pathway</th><th scope="col">Effect</th></tr></thead><tbody><tr><th scope="rowgroup" rowspan="5">Parietal</th><td><abbr class="term" tabindex="0" data-definition="Acetylcholine">ACh</abbr></td><td><abbr class="term" tabindex="0" data-definition="Muscarinic acetylcholine receptor 3">M3</abbr></td><td><abbr class="term" tabindex="0" data-definition="G protein that raises intracellular Ca2+">Gq</abbr> → increased Ca<sup>2+</sup></td><td>Stimulates</td></tr><tr><td>Gastrin</td><td><abbr class="term" tabindex="0" data-definition="Cholecystokinin receptor 2">CCK-2</abbr></td><td><abbr class="term" tabindex="0" data-definition="G protein that raises intracellular Ca2+">Gq</abbr> → increased Ca<sup>2+</sup></td><td>Stimulates</td></tr><tr><td>Histamine</td><td><abbr class="term" tabindex="0" data-definition="Histamine receptor 2">H2</abbr></td><td><abbr class="term" tabindex="0" data-definition="Stimulatory G protein, which raises cAMP">Gs</abbr> → increased <abbr class="term" tabindex="0" data-definition="Cyclic adenosine monophosphate">cAMP</abbr></td><td>Stimulates</td></tr><tr><td>Somatostatin</td><td><abbr class="term" tabindex="0" data-definition="Somatostatin receptor 2">SSTR2</abbr></td><td><abbr class="term" tabindex="0" data-definition="Inhibitory G protein, which lowers cAMP">Gi</abbr> → decreased <abbr class="term" tabindex="0" data-definition="Cyclic adenosine monophosphate">cAMP</abbr></td><td>Inhibits</td></tr><tr><td><abbr class="term" tabindex="0" data-definition="Prostaglandin E2">PGE2</abbr></td><td><abbr class="term" tabindex="0" data-definition="Prostaglandin E receptor 3">EP3</abbr></td><td><abbr class="term" tabindex="0" data-definition="Inhibitory G protein, which lowers cAMP">Gi</abbr> → decreased <abbr class="term" tabindex="0" data-definition="Cyclic adenosine monophosphate">cAMP</abbr></td><td>Inhibits</td></tr><tr><th scope="rowgroup" rowspan="2"><abbr class="term" tabindex="0" data-definition="Enterochromaffin-like">ECL</abbr></th><td>Gastrin</td><td><abbr class="term" tabindex="0" data-definition="Cholecystokinin receptor 2">CCK-2</abbr></td><td><abbr class="term" tabindex="0" data-definition="G protein that raises intracellular Ca2+">Gq</abbr> → increased Ca<sup>2+</sup></td><td>Stimulates</td></tr><tr><td>Somatostatin</td><td><abbr class="term" tabindex="0" data-definition="Somatostatin receptor 2">SSTR2</abbr></td><td><abbr class="term" tabindex="0" data-definition="Inhibitory G protein, which lowers cAMP">Gi</abbr> → decreased <abbr class="term" tabindex="0" data-definition="Cyclic adenosine monophosphate">cAMP</abbr></td><td>Inhibits</td></tr><tr><th scope="rowgroup" rowspan="3">Chief</th><td><abbr class="term" tabindex="0" data-definition="Acetylcholine">ACh</abbr></td><td><abbr class="term" tabindex="0" data-definition="Muscarinic acetylcholine receptor 3">M3</abbr></td><td><abbr class="term" tabindex="0" data-definition="G protein that raises intracellular Ca2+">Gq</abbr> → increased Ca<sup>2+</sup></td><td>Stimulates</td></tr><tr><td>Gastrin</td><td><abbr class="term" tabindex="0" data-definition="Cholecystokinin receptor 2">CCK-2</abbr></td><td><abbr class="term" tabindex="0" data-definition="G protein that raises intracellular Ca2+">Gq</abbr> → increased Ca<sup>2+</sup></td><td>Stimulates</td></tr><tr><td>Somatostatin</td><td><abbr class="term" tabindex="0" data-definition="Somatostatin receptor 2">SSTR2</abbr></td><td><abbr class="term" tabindex="0" data-definition="Inhibitory G protein, which lowers cAMP">Gi</abbr> → decreased <abbr class="term" tabindex="0" data-definition="Cyclic adenosine monophosphate">cAMP</abbr></td><td>Inhibits</td></tr><tr><th scope="rowgroup" rowspan="3">G</th><td><abbr class="term" tabindex="0" data-definition="Gastrin-releasing peptide">GRP</abbr></td><td><abbr class="term" tabindex="0" data-definition="Bombesin receptor 2, the GRP receptor">BB2</abbr></td><td><abbr class="term" tabindex="0" data-definition="G protein that raises intracellular Ca2+">Gq</abbr> → increased Ca<sup>2+</sup></td><td>Stimulates</td></tr><tr><td>Amino acids</td><td><abbr class="term" tabindex="0" data-definition="Calcium-sensing receptor">CaSR</abbr></td><td><abbr class="term" tabindex="0" data-definition="G protein that raises intracellular Ca2+">Gq</abbr> → increased Ca<sup>2+</sup></td><td>Stimulates</td></tr><tr><td>Somatostatin</td><td><abbr class="term" tabindex="0" data-definition="Somatostatin receptor 2">SSTR2</abbr></td><td><abbr class="term" tabindex="0" data-definition="Inhibitory G protein, which lowers cAMP">Gi</abbr> → decreased <abbr class="term" tabindex="0" data-definition="Cyclic adenosine monophosphate">cAMP</abbr></td><td>Inhibits</td></tr></tbody></table></div>
 </div>
 <p class="note"><strong>Low pH is the brake on gastrin,</strong> so losing <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> raises gastrin.</p>
                 </section>
@@ -198,16 +222,12 @@
                 <section class="content-section">
                     <h3>Intestinal phase</h3>
 <div class="subsection">
-<h4 class="sc-heading">Stimulation</h4>
-<ul class="pair-list">
-<li><span class="pair-from">Peptides in the duodenum</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Duodenal G cells release gastrin, causing a brief rise</span></li>
-</ul>
+<h4 class="sc-heading">Intestinal cells and their hormones</h4>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Cell</th><th scope="col">Secretes</th><th scope="col">Released by</th><th scope="col">Effect</th></tr></thead><tbody><tr><th scope="row">G</th><td>Gastrin</td><td>Peptides and amino acids</td><td>Brief rise in parietal cell activity</td></tr><tr><th scope="row">Entero-oxyntin-secreting</th><td>Entero-oxyntin</td><td>Peptides and amino acids</td><td>Stimulates parietal cells</td></tr><tr><th scope="row">Enterochromaffin</th><td><abbr class="term" tabindex="0" data-definition="5-hydroxytryptamine (serotonin)">5-HT</abbr></td><td>Chyme and distension</td><td>Increased motility and secretion</td></tr><tr><th scope="row">S</th><td>Secretin</td><td>Acid</td><td>Decreased gastrin and <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr>; increased pancreatic <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr></td></tr><tr><th scope="row">I</th><td><abbr class="term" tabindex="0" data-definition="Cholecystokinin: released by the duodenum in response to fat; makes the gallbladder contract">CCK</abbr></td><td>Fat and amino acids</td><td>Decreased <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr>; slower gastric emptying; gallbladder contraction and pancreatic enzymes</td></tr><tr><th scope="row">K</th><td><abbr class="term" tabindex="0" data-definition="Glucose-dependent insulinotropic peptide">GIP</abbr></td><td>Fat and glucose</td><td>Decreased <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr>; increased insulin</td></tr><tr><th scope="row">L</th><td><abbr class="term" tabindex="0" data-definition="Peptide YY">PYY</abbr> and <abbr class="term" tabindex="0" data-definition="Glucagon-like peptide 1">GLP-1</abbr></td><td>Chyme reaching the ileum</td><td>Inhibits parietal cells; slower gastric emptying</td></tr></tbody></table></div>
 </div>
 <div class="subsection">
-<h4 class="sc-heading">Slowing secretion</h4>
+<h4 class="sc-heading">Neural braking</h4>
 <ul class="pair-list">
-<li><span class="pair-from">Acid</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">S cells release secretin → decreased gastrin and <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr>; increased pancreatic <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr></span></li>
-<li><span class="pair-from">Fat</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">I cells release <abbr class="term" tabindex="0" data-definition="Cholecystokinin: released by the duodenum in response to fat; makes the gallbladder contract">CCK</abbr> and K cells release <abbr class="term" tabindex="0" data-definition="Glucose-dependent insulinotropic peptide">GIP</abbr> → decreased <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> and slower gastric emptying</span></li>
 <li><span class="pair-from">Distension or hyperosmolar chyme</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Enterogastric reflex → decreased <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> and slower gastric emptying</span></li>
 </ul>
 </div>
@@ -232,14 +252,63 @@
 <li><span class="pair-from"><a class="pair-link" href="index.html#gastritis">Autoimmune gastritis</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Parietal cell loss → decreased <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> and <abbr class="term" tabindex="0" data-definition="Intrinsic factor">IF</abbr>; no feedback → increased gastrin</span></li>
 </ul>
 </div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
 <div class="subsection">
-<h4 class="sc-heading">Where drugs act</h4>
-<ul class="pair-list">
-<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Proton pump inhibitors">PPIs</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Irreversibly block the H+/K+ ATPase</span></li>
-<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Histamine H2 receptor">H2R</abbr> antagonists</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Block H2 receptors on parietal cells</span></li>
-<li><span class="pair-from">Misoprostol</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Protects the mucosa in place of lost <abbr class="term" tabindex="0" data-definition="Prostaglandins">PG</abbr></span></li>
-</ul>
+<h4 class="sc-heading">Where each drug acts</h4>
+<figure class="cause-map is-wide"><svg viewBox="0 0 600 330" role="img" aria-label="Six numbered drug sites. Antacids neutralize protons in the lumen, H2 receptor antagonists block H2 receptors, PPIs block the H+/K+ ATPase, misoprostol acts on EP3 receptors, and sucralfate and bismuth subcitrate coat the ulcer base"><text class="site-label" x="70" y="18" text-anchor="middle">Blood</text><text class="site-label" x="500" y="18" text-anchor="middle">Lumen</text><rect class="eso-stomach" x="150" y="30" width="230" height="190" rx="34"/><text class="site-label" x="265" y="132" text-anchor="middle">Parietal cell</text>
+<g class="site-marker"><circle cx="18" cy="74" r="11"/><text x="18" y="78.5">2</text></g><text class="site-label" x="36" y="79" text-anchor="start">Histamine</text><path class="phys-go" d="M112 74L148 74M148 74L138.3 68.7M148 74L138.3 79.3"/><text class="site-label" x="162" y="79" text-anchor="start">H2</text>
+<g class="site-marker"><circle cx="18" cy="176" r="11"/><text x="18" y="180.5">4</text></g><text class="site-label" x="36" y="181" text-anchor="start">Misoprostol</text><path class="phys-go" d="M122 176L148 176M148 176L138.3 170.7M148 176L138.3 181.3"/><text class="site-label" x="162" y="181" text-anchor="start">EP3</text>
+<circle class="phys-pump" cx="380" cy="124" r="20"/><g class="site-marker"><circle cx="380" cy="124" r="11"/><text x="380" y="128.5">3</text></g><text class="site-label" x="366" y="170" text-anchor="end">H+/K+ ATPase</text>
+<path class="phys-go" d="M402 124L450 124M450 124L440.3 118.7M450 124L440.3 129.3"/><text class="site-label" x="458" y="129" text-anchor="start">H+</text><g class="site-marker"><circle cx="496" cy="124" r="11"/><text x="496" y="128.5">1</text></g><text class="site-label" x="514" y="129" text-anchor="start">Antacids</text>
+<path class="eso-outline" d="M14 262H238C252 262 256 300 280 300C304 300 308 262 322 262H586"/><path class="phys-coat" d="M243 266C256 298 304 298 317 266Z"/>
+<g class="site-marker"><circle cx="226" cy="242" r="11"/><text x="226" y="246.5">5</text></g><text class="site-label" x="208" y="247" text-anchor="end">Sucralfate</text><g class="site-marker"><circle cx="334" cy="242" r="11"/><text x="334" y="246.5">6</text></g><text class="site-label" x="352" y="247" text-anchor="start">Bismuth subcitrate</text><text class="site-label" x="280" y="322" text-anchor="middle">Ulcer base</text><text class="site-label" x="70" y="286" text-anchor="middle">Mucosa</text></svg></figure>
 </div>
+<div class="subsection">
+<h4 class="sc-heading">Suppressing acid</h4>
+<h5 class="drug-name"><span class="cause-number" aria-hidden="true">1</span>Antacids <span class="drug-examples">Calcium carbonate, sodium bicarbonate, magnesium salts, and aluminum hydroxide</span></h5>
+<ol class="pathway">
+<li><span class="pathway-title">Target</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> in the lumen</span></li>
+<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Neutralize <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr></span></li>
+<li><span class="pathway-title">Response</span><span class="pathway-detail">Increased gastric pH; fast, short-acting relief</span></li>
+</ol>
+<h5 class="drug-name"><span class="cause-number" aria-hidden="true">2</span><span><abbr class="term" tabindex="0" data-definition="Histamine H2 receptor">H2R</abbr> antagonists</span> <span class="drug-examples">Famotidine and cimetidine</span></h5>
+<ol class="pathway">
+<li><span class="pathway-title">Target</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Histamine receptor 2">H2</abbr> receptors on parietal cells</span></li>
+<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Competitively block histamine → decreased <abbr class="term" tabindex="0" data-definition="Cyclic adenosine monophosphate">cAMP</abbr> → decreased H+/K+ ATPase activity</span></li>
+<li><span class="pathway-title">Response</span><span class="pathway-detail">Decreased <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr>, especially basal and nocturnal</span></li>
+</ol>
+<h5 class="drug-name"><span class="cause-number" aria-hidden="true">3</span><span><abbr class="term" tabindex="0" data-definition="Proton pump inhibitors">PPIs</abbr></span> <span class="drug-examples">Omeprazole and lansoprazole</span></h5>
+<ol class="pathway">
+<li><span class="pathway-title">Target</span><span class="pathway-detail">H+/K+ ATPase</span></li>
+<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Prodrug activated in parietal cell canaliculi; irreversibly binds the pump</span></li>
+<li><span class="pathway-title">Response</span><span class="pathway-detail">Profound decrease in basal and stimulated <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr></span></li>
+</ol>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Protecting the mucosa</h4>
+<h5 class="drug-name"><span class="cause-number" aria-hidden="true">4</span>Misoprostol</h5>
+<ol class="pathway">
+<li><span class="pathway-title">Target</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Prostaglandin E">EP</abbr> receptors on parietal cells</span></li>
+<li><span class="pathway-title">Mechanism</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Prostaglandins">PG</abbr> analog → decreased <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr>; increased mucus and <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr></span></li>
+<li><span class="pathway-title">Response</span><span class="pathway-detail">Gastroprotection in <abbr class="term" tabindex="0" data-definition="Nonsteroidal anti-inflammatory drug">NSAID</abbr> users</span></li>
+</ol>
+<h5 class="drug-name"><span class="cause-number" aria-hidden="true">5</span>Sucralfate</h5>
+<ol class="pathway">
+<li><span class="pathway-title">Target</span><span class="pathway-detail">Ulcer base proteins</span></li>
+<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Polymerizes at pH under 4 into a paste that binds the ulcer base; increases local <abbr class="term" tabindex="0" data-definition="Prostaglandins">PG</abbr> and <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr></span></li>
+<li><span class="pathway-title">Response</span><span class="pathway-detail">Barrier against acid, pepsin, and bile; promotes healing</span></li>
+</ol>
+<h5 class="drug-name"><span class="cause-number" aria-hidden="true">6</span>Bismuth subcitrate</h5>
+<ol class="pathway">
+<li><span class="pathway-title">Target</span><span class="pathway-detail">Ulcer base and <em>H. pylori</em></span></li>
+<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Coats the ulcer base; kills <em>H. pylori</em>; increases <abbr class="term" tabindex="0" data-definition="Prostaglandins">PG</abbr> and <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr></span></li>
+<li><span class="pathway-title">Response</span><span class="pathway-detail">Mucosal protection and ulcer healing</span></li>
+</ol>
+</div>
+<p class="note"><strong>Sucralfate needs acid to activate,</strong> so it works poorly with acid-suppressing drugs.</p>
                 </section>
 
                 <p class="see-also">
@@ -249,6 +318,50 @@
                     <a class="link-button" href="index.html#gastritis">Gastritis</a>
                     <a class="link-button" href="index.html#gerd">Gastroesophageal Reflux Disease (GERD)</a>
                 </p>
+                <dialog class="quick-review" aria-labelledby="gastric-secretion-review-title">
+                    <div class="quick-review-body">
+                        <p class="review-kicker">Review article</p>
+                        <h3 id="gastric-secretion-review-title">Gastric secretion: neural, endocrine, and local control of acid and its protection</h3>
+
+                        <p class="review-abstract">Food triggers gastric secretion in three overlapping phases, which start it, sustain it, and then slow it down. The cephalic phase contributes about 30% of <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr>, the gastric phase about 60%, and the intestinal phase about 10%. Secretion depends on seven gastric cell types and on signals that converge on the parietal cell, while a two-layer mucosal barrier protects the mucosa and D cells apply negative feedback. Here, we review this control, how it fails, and how drugs suppress acid or protect the mucosa, and consider how it relates to acid-related conditions.</p>
+
+                        <aside class="review-key-points">
+                            <h4>Key points</h4>
+                            <ul>
+                                <li>Higher-order neurons drive the <abbr class="term" tabindex="0" data-definition="Dorsal motor nucleus of the vagus">DMV</abbr>, and efferent <abbr class="term" tabindex="0" data-definition="Cranial nerve X (the vagus nerve)">CN X</abbr> stimulates the stomach; thoracolumbar sympathetic fibers inhibit it.</li>
+                                <li>Gastrin promotes <abbr class="term" tabindex="0" data-definition="Enterochromaffin-like">ECL</abbr>, parietal, and chief cells, and histamine from <abbr class="term" tabindex="0" data-definition="Enterochromaffin-like">ECL</abbr> cells promotes parietal cells.</li>
+                                <li>Excess protons drive D cells, whose somatostatin inhibits G, <abbr class="term" tabindex="0" data-definition="Enterochromaffin-like">ECL</abbr>, parietal, and chief cells.</li>
+                                <li>Low pH is the brake on gastrin, so losing <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> raises gastrin.</li>
+                                <li>The intestinal phase mostly slows secretion, giving the duodenum time to neutralize and digest chyme.</li>
+                            </ul>
+                        </aside>
+
+                        <h4>Cephalic phase</h4>
+                        <p>Sight, smell, taste, and thought of food act through higher-order neurons on the <abbr class="term" tabindex="0" data-definition="Dorsal motor nucleus of the vagus">DMV</abbr>, also called <abbr class="term" tabindex="0" data-definition="Dorsal motor nucleus of the vagus">DMX</abbr>. Efferent <abbr class="term" tabindex="0" data-definition="Cranial nerve X (the vagus nerve)">CN X</abbr> synapses at the stomach and stimulates it, so secretion starts before food arrives. Afferent <abbr class="term" tabindex="0" data-definition="Cranial nerve X (the vagus nerve)">CN X</abbr> carries vagovagal feedback from the stomach to the brainstem, whereas sympathetic fibers from the thoracolumbar outflow inhibit stomach activity. This phase depends on <abbr class="term" tabindex="0" data-definition="Cranial nerve X (the vagus nerve)">CN X</abbr>, so vagotomy abolishes it.</p>
+
+                        <h4>Gastric cells and the mucosal barrier</h4>
+                        <p>Foveolar cells, at the surface and in gastric pits, and mucous neck cells, in the gland neck, secrete mucus. Parietal cells in the body and fundus secrete protons and <abbr class="term" tabindex="0" data-definition="Intrinsic factor">IF</abbr>, and chief cells at the gland base secrete pepsinogen and gastric lipase. <abbr class="term" tabindex="0" data-definition="Enterochromaffin-like">ECL</abbr> cells in the body and fundus secrete histamine, G cells in the antrum secrete gastrin, and D cells in the body, fundus, and antrum secrete somatostatin. Foveolar and mucous neck cells form the mucosal barrier, which has a top layer of 95% water, phospholipids, electrolytes, and mucin proteins, and a bottom layer of bicarbonate.</p>
+
+                        <h4>Gastric phase</h4>
+                        <p>Local and vagal stimulation act on G cells. Gastrin then promotes <abbr class="term" tabindex="0" data-definition="Enterochromaffin-like">ECL</abbr>, parietal, and chief cells, and histamine from <abbr class="term" tabindex="0" data-definition="Enterochromaffin-like">ECL</abbr> cells promotes parietal cells, which secrete protons through the H+/K+ ATPase in exchange for K+. Vagal <abbr class="term" tabindex="0" data-definition="Acetylcholine">ACh</abbr> promotes chief cells, and the pepsinogen they secrete is activated to pepsin at pH under 3.5. D cells are negative regulators: excess protons lead to somatostatin, which inhibits G, <abbr class="term" tabindex="0" data-definition="Enterochromaffin-like">ECL</abbr>, parietal, and chief cells.</p>
+
+                        <h4>Receptors and intracellular pathways</h4>
+                        <p>On parietal cells, <abbr class="term" tabindex="0" data-definition="Acetylcholine">ACh</abbr> acts through <abbr class="term" tabindex="0" data-definition="Muscarinic acetylcholine receptor 3">M3</abbr> and gastrin through <abbr class="term" tabindex="0" data-definition="Cholecystokinin receptor 2">CCK-2</abbr>, both using Gq and increased Ca2+, whereas histamine acts through <abbr class="term" tabindex="0" data-definition="Histamine receptor 2">H2</abbr>, using Gs and increased <abbr class="term" tabindex="0" data-definition="Cyclic adenosine monophosphate">cAMP</abbr>. Somatostatin through <abbr class="term" tabindex="0" data-definition="Somatostatin receptor 2">SSTR2</abbr> and <abbr class="term" tabindex="0" data-definition="Prostaglandin E2">PGE2</abbr> through <abbr class="term" tabindex="0" data-definition="Prostaglandin E receptor 3">EP3</abbr> inhibit parietal cells, using Gi and decreased <abbr class="term" tabindex="0" data-definition="Cyclic adenosine monophosphate">cAMP</abbr>. On <abbr class="term" tabindex="0" data-definition="Enterochromaffin-like">ECL</abbr> cells, gastrin stimulates through <abbr class="term" tabindex="0" data-definition="Cholecystokinin receptor 2">CCK-2</abbr>, and somatostatin inhibits through <abbr class="term" tabindex="0" data-definition="Somatostatin receptor 2">SSTR2</abbr>. On chief cells, <abbr class="term" tabindex="0" data-definition="Acetylcholine">ACh</abbr> through <abbr class="term" tabindex="0" data-definition="Muscarinic acetylcholine receptor 3">M3</abbr> and gastrin through <abbr class="term" tabindex="0" data-definition="Cholecystokinin receptor 2">CCK-2</abbr> stimulate, and somatostatin through <abbr class="term" tabindex="0" data-definition="Somatostatin receptor 2">SSTR2</abbr> inhibits. On G cells, <abbr class="term" tabindex="0" data-definition="Gastrin-releasing peptide">GRP</abbr> through <abbr class="term" tabindex="0" data-definition="Bombesin receptor 2, the GRP receptor">BB2</abbr> and amino acids through <abbr class="term" tabindex="0" data-definition="Calcium-sensing receptor">CaSR</abbr> stimulate, using Gq and increased Ca2+, and somatostatin through <abbr class="term" tabindex="0" data-definition="Somatostatin receptor 2">SSTR2</abbr> inhibits.</p>
+
+                        <h4>Intestinal phase</h4>
+                        <p>Chyme in the duodenum mostly slows secretion. Peptides and amino acids release gastrin from G cells, causing a brief rise in parietal cell activity, and entero-oxyntin, which stimulates parietal cells. Chyme and distension release <abbr class="term" tabindex="0" data-definition="5-hydroxytryptamine (serotonin)">5-HT</abbr> from enterochromaffin cells, increasing motility and secretion. Acid releases secretin from S cells, which decreases gastrin and <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> and increases pancreatic <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>. Fat and amino acids release <abbr class="term" tabindex="0" data-definition="Cholecystokinin: released by the duodenum in response to fat; makes the gallbladder contract">CCK</abbr> from I cells, which decreases <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr>, slows gastric emptying, and causes gallbladder contraction and pancreatic enzyme release. Fat and glucose release <abbr class="term" tabindex="0" data-definition="Glucose-dependent insulinotropic peptide">GIP</abbr> from K cells, which decreases <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> and increases insulin. Chyme reaching the ileum releases <abbr class="term" tabindex="0" data-definition="Peptide YY">PYY</abbr> and <abbr class="term" tabindex="0" data-definition="Glucagon-like peptide 1">GLP-1</abbr> from L cells, which inhibit parietal cells and slow gastric emptying. Distension or hyperosmolar chyme triggers the enterogastric reflex, which decreases <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> and slows gastric emptying.</p>
+
+                        <h4>Pharmacology</h4>
+                        <p>Antacids (calcium carbonate, sodium bicarbonate, magnesium salts, and aluminum hydroxide) neutralize <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> in the lumen, increasing gastric pH and giving fast, short-acting relief. <abbr class="term" tabindex="0" data-definition="Histamine H2 receptor">H2R</abbr> antagonists (famotidine and cimetidine) competitively block histamine at <abbr class="term" tabindex="0" data-definition="Histamine receptor 2">H2</abbr> receptors on parietal cells, decreasing <abbr class="term" tabindex="0" data-definition="Cyclic adenosine monophosphate">cAMP</abbr> and H+/K+ ATPase activity, and so decrease <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr>, especially basal and nocturnal secretion. <abbr class="term" tabindex="0" data-definition="Proton pump inhibitors">PPIs</abbr> (omeprazole and lansoprazole) are prodrugs activated in parietal cell canaliculi that irreversibly bind the pump, causing a profound decrease in basal and stimulated <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr>. Misoprostol is a <abbr class="term" tabindex="0" data-definition="Prostaglandins">PG</abbr> analog acting on <abbr class="term" tabindex="0" data-definition="Prostaglandin E">EP</abbr> receptors on parietal cells; it decreases <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> and increases mucus and <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, giving gastroprotection in <abbr class="term" tabindex="0" data-definition="Nonsteroidal anti-inflammatory drug">NSAID</abbr> users. Sucralfate polymerizes at pH under 4 into a paste that binds ulcer base proteins and increases local <abbr class="term" tabindex="0" data-definition="Prostaglandins">PG</abbr> and <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, forming a barrier against acid, pepsin, and bile; because it needs acid, it works poorly with acid-suppressing drugs. Bismuth subcitrate coats the ulcer base, kills <em>H. pylori</em>, and increases <abbr class="term" tabindex="0" data-definition="Prostaglandins">PG</abbr> and <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>.</p>
+
+                        <h4>Relationships to other conditions</h4>
+                        <p><em><a class="review-link" href="index.html#pud">Peptic ulcer disease</a>.</em> <em>H. pylori</em> increases gastrin and so <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr>, and <abbr class="term" tabindex="0" data-definition="Nonsteroidal anti-inflammatory drugs">NSAIDs</abbr> and alcohol inhibit <abbr class="term" tabindex="0" data-definition="Cyclooxygenase">COX</abbr>, decreasing <abbr class="term" tabindex="0" data-definition="Prostaglandins">PG</abbr>, which increases <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> and decreases mucus. Both therefore damage the balance between acid and the mucosal barrier.</p>
+                        <p><em><a class="review-link" href="index.html#pud">Zollinger-Ellison syndrome</a> and <a class="review-link" href="index.html#gastritis">autoimmune gastritis</a>.</em> Both raise gastrin, but for opposite reasons. In Zollinger-Ellison syndrome, gastrin from a tumor ignores feedback, so <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> is high; in autoimmune gastritis, parietal cell loss decreases <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> and <abbr class="term" tabindex="0" data-definition="Intrinsic factor">IF</abbr>, so feedback is lost. High <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> favors the former, and low <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> with B12 deficiency favors the latter. Secretin normally inhibits gastrin release but paradoxically increases it from gastrinoma cells.</p>
+                        <p><em><a class="review-link" href="index.html#gastritis">Cushing ulcers</a> and <a class="review-link" href="index.html#gastritis"><abbr class="term" tabindex="0" data-definition="Nonsteroidal anti-inflammatory drug">NSAID</abbr> injury</a>.</em> Both increase <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr>. In Cushing ulcers, increased <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> increases <abbr class="term" tabindex="0" data-definition="Cranial nerve X (the vagus nerve)">CN X</abbr> activity, whereas <abbr class="term" tabindex="0" data-definition="Nonsteroidal anti-inflammatory drugs">NSAIDs</abbr> act through <abbr class="term" tabindex="0" data-definition="Cyclooxygenase">COX</abbr> inhibition and also decrease mucus.</p>
+                        <p><em><a class="review-link" href="index.html#gerd"><abbr class="term" tabindex="0" data-definition="Gastroesophageal reflux disease">GERD</abbr></a>.</em> Here the problem is the location of <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr>, which enters the esophagus, so the drugs that suppress acid apply here as well.</p>
+                        <p><em><button type="button" class="review-link" data-goto="digestion-absorption">Digestion and absorption</button>.</em> Secretion links directly to digestion: <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> converts pepsinogen to pepsin, <abbr class="term" tabindex="0" data-definition="Intrinsic factor">IF</abbr> is needed for B12 absorption, and the intestinal phase slows the stomach so that the duodenum can neutralize and digest chyme.</p>
+                    </div>
+                </dialog>
             </article>
 
             <!-- Liver function -->
@@ -294,6 +407,12 @@
                     <h3>When it fails</h3>
                     <p class="pending-content">To be added.</p>
                 </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
             </article>
 
             <!-- Digestion and absorption -->
@@ -462,6 +581,11 @@
 </div>
                 </section>
 
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
                 <p class="see-also">
                     Related:
                     <button type="button" class="link-button" data-goto="gastric-secretion">Gastric Secretion</button>
@@ -469,6 +593,9 @@
                     <a class="link-button" href="index.html#malabsorption">Malabsorption</a>
                 </p>
             </article>
+
+            <!-- Practice quiz (filled in by quiz.js) -->
+            <section class="quiz-view" id="quiz" aria-labelledby="quiz-title"></section>
 
         </section>
     </main>

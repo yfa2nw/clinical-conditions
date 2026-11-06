@@ -34,10 +34,10 @@ function checkMarkup(file) {
     if (/\sstyle="/.test(html.replace(/<svg[\s\S]*?<\/svg>/g, ""))) fail(`${file}: inline style`);
 }
 
-function checkQuestions(site) {
-    const html = readFileSync(`${site}/index.html`, "utf8");
+function checkQuestions(site, page = "index.html", bank = "questions.js") {
+    const html = readFileSync(`${site}/${page}`, "utf8");
     const articles = [...html.matchAll(/<article class="condition-content[^"]*" id="([^"]+)"/g)].map((m) => m[1]);
-    const questions = vm.runInNewContext(`${readFileSync(`${site}/questions.js`, "utf8")};QUIZ_QUESTIONS`);
+    const questions = vm.runInNewContext(`${readFileSync(`${site}/${bank}`, "utf8")};QUIZ_QUESTIONS`);
     const seen = new Set();
     for (const q of questions) {
         if (seen.has(q.id)) fail(`${site}: duplicate question ${q.id}`);
@@ -57,6 +57,7 @@ function checkQuestions(site) {
 
 const counts = {};
 for (const site of SITES) counts[site] = checkQuestions(site);
+const physiology = checkQuestions("gi", "physiology.html", "physiology-questions.js");
 for (const file of PAGES) {
     checkMarkup(file);
     // Links between a system's pages are plain links, so check that they land on an article
@@ -200,6 +201,7 @@ socket.close();
 
 /* ---------- Report ---------- */
 for (const site of SITES) console.log(`${site}: ${counts[site].articles} pages, ${counts[site].questions} questions, correct option longest in ${counts[site].longestShare}%`);
+console.log(`gi physiology: ${physiology.articles} pages, ${physiology.questions} questions, correct option longest in ${physiology.longestShare}%`);
 if (notes.length) console.log(`\nNotes:\n${[...new Set(notes)].map((n) => `  ${n}`).join("\n")}`);
 if (problems.length) {
     console.log(`\n${problems.length} problem(s):\n${problems.map((p) => `  ${p}`).join("\n")}`);

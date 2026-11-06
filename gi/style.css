@@ -953,3 +953,23 @@
     stroke: var(--color-accent-line);
     stroke-width: 3;
 }
+
+.phys-layer {
+    fill: var(--color-surface-muted);
+    stroke: var(--color-accent-line);
+    stroke-width: 3;
+}
+
+.phys-layer.is-base {
+    fill: var(--color-up-soft);
+}
+
+[data-page="physiology"] .data-table .term {
+    white-space: nowrap;
+}
+
+.phys-coat {
+    fill: var(--color-up-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}

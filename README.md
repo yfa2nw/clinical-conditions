@@ -96,6 +96,7 @@ shared/
 gi/
   index.html        Page layout and all GI condition content
   physiology.html   GI physiology topics
+  physiology-questions.js  GI physiology quiz question bank
   style.css         GI theme, diagrams, and journey styles
   questions.js      GI quiz question bank
   map.js            Draws the GI tract
