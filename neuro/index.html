@@ -667,107 +667,91 @@
 
                 <section class="content-section">
                     <h3>Pathophysiology</h3>
-                    <p>
-                        Blocked or inadequate arterial blood flow leads to cerebral ischemia, causing an infarct core surrounded by a salvageable <span class="concept" data-concept="penumbra"><abbr class="term" tabindex="0" data-definition="Ischemic but still salvageable brain tissue around the infarct core">penumbra</abbr></span>.
-                    </p>
+                    <div class="patho-map">
+                        <p>
+                            Blocked or inadequate arterial blood flow leads to cerebral ischemia, causing an infarct core surrounded by a salvageable <span class="concept" data-concept="penumbra"><abbr class="term" tabindex="0" data-definition="Ischemic but still salvageable brain tissue around the infarct core">penumbra</abbr></span>.
+                        </p>
+                        <figure class="penumbra-map">
+                        <svg viewBox="0 0 240 150" role="img" aria-label="Infarct core surrounded by a salvageable penumbra">
+                            <path class="penumbra-zone" d="M46 76C42 34 92 12 130 18C176 22 210 54 202 92C196 128 144 142 104 136C70 132 48 110 46 76Z"/>
+                            <path class="core-zone" d="M92 76C90 56 112 44 130 48C150 50 164 66 158 84C154 102 130 110 112 104C100 100 92 90 92 76Z"/>
+                            <text class="core-label" x="125" y="81">Core</text>
+                            <text class="site-label" x="125" y="36" text-anchor="middle">Penumbra</text>
+                        </svg>
+                    </figure>
+                    </div>
                 </section>
 
                 <section class="content-section">
                     <h3>Etiology</h3>
-                    <div class="subsection">
-                        <h4 class="sc-heading">Embolus <span class="badge">Most common</span></h4>
-                        <div class="lane-list">
-                            <p class="lane-title">Cardiac embolus <span class="badge">Important</span></p>
-                            <div class="chain-lane"><div class="chain"><div class="chain-stage chain-start"><div class="chain-node"><span class="concept" data-concept="A-fib"><abbr class="term" tabindex="0" data-definition="Atrial fibrillation">A-fib</abbr></span> or flutter</div><div class="chain-node">Mechanical valve</div><div class="chain-node"><abbr class="term" tabindex="0" data-definition="Rheumatic heart disease">RHD</abbr></div><div class="chain-node"><span class="concept" data-concept="endocarditis">Infective endocarditis</span></div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Left atrial thrombus</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Cardiac embolus</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Cerebral artery occlusion</div></div></div></div>
-                            <div class="chain-lane"><div class="chain"><div class="chain-stage chain-start"><div class="chain-node"><abbr class="term" tabindex="0" data-definition="Left ventricular">LV</abbr> aneurysm <span class="node-label">from <abbr class="term" tabindex="0" data-definition="Myocardial infarction">MI</abbr></span></div><div class="chain-node">Anterior or lateral <abbr class="term" tabindex="0" data-definition="Myocardial infarction">MI</abbr></div><div class="chain-node"><abbr class="term" tabindex="0" data-definition="Heart failure with reduced ejection fraction">HFrEF</abbr></div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Left ventricular thrombus</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Cardiac embolus</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Cerebral artery occlusion</div></div></div></div>
-                            <p class="lane-title">Paradoxical embolus</p>
-                            <div class="chain-lane"><div class="chain"><div class="chain-stage chain-start"><div class="chain-node"><abbr class="term" tabindex="0" data-definition="Atrial septal defect">ASD</abbr></div><div class="chain-node"><span class="concept" data-concept="pfo">Patent foramen ovale</span></div><div class="chain-node">Atrial septal aneurysm</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Right-to-left shunt</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Venous thrombus reaches arterial circulation</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Cerebral artery occlusion</div></div></div></div>
-                        </div>
-                    </div>
-
-                    <div class="subsection">
-                        <h4 class="sc-heading">Global hypoperfusion</h4>
-                        <div class="lane-list">
-                            <div class="chain-lane"><div class="chain"><div class="chain-stage chain-start"><div class="chain-node">Cardiac arrest</div><div class="chain-node">Acute respiratory failure</div><div class="chain-node"><span class="concept" data-concept="ica-stenosis"><abbr class="term" tabindex="0" data-definition="Internal carotid artery">ICA</abbr> stenosis</span> with low <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr></div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node"><span class="change down">Decreased</span> cerebral oxygen delivery</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node"><span class="concept" data-concept="watershed">Watershed</span> infarcts</div></div></div></div>
-                        </div>
-                    </div>
-
-                    <div class="subsection">
-                        <h4 class="sc-heading">Thrombus</h4>
-                        <div class="etiology-grid-2">
-                            <div class="etiology-column">
-                                <h4>Large vessel</h4>
-                                <ul class="step"><li><span class="concept" data-concept="ica-stenosis"><abbr class="term" tabindex="0" data-definition="Internal carotid artery">ICA</abbr></span></li><li><abbr class="term" tabindex="0" data-definition="Middle cerebral artery">MCA</abbr></li><li>Vertebrobasilar arteries</li></ul>
-                                <div class="arrow-down" aria-hidden="true"></div>
-                                <ul class="step"><li>Atherosclerotic thrombus</li></ul>
-                            </div>
-                            <div class="etiology-column">
-                                <h4>Small vessel</h4>
-                                <ul class="step"><li>Lenticulostriate arteries</li><li>Small pontine branches</li></ul>
-                                <div class="arrow-down" aria-hidden="true"></div>
-                                <ul class="step"><li>Lacunar infarct</li></ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="subsection">
-                        <div class="etiology-grid-2">
-                            <div class="etiology-column">
-                                <h4>Vasculitis</h4>
-                                <ul class="step"><li>Autoimmune</li><li>Infections</li><li>Primary <abbr class="term" tabindex="0" data-definition="Central nervous system">CNS</abbr> vasculitis</li></ul>
-                                <div class="arrow-down" aria-hidden="true"></div>
-                                <ul class="step"><li>Arterial wall inflammation</li></ul>
-                            </div>
-                            <div class="etiology-column">
-                                <h4>Dissection</h4>
-                                <ul class="step"><li>Trauma</li><li>Iatrogenic</li><li>Connective tissue diseases</li></ul>
-                                <div class="arrow-down" aria-hidden="true"></div>
-                                <ul class="step"><li>Intimal tear</li><li>Thrombus and embolus</li></ul>
-                            </div>
-                        </div>
+                    <div class="etiology-map">
+                        <figure class="cause-map">
+                            <svg viewBox="0 0 470 430" role="img" aria-label="Diagram of the heart, aortic arch, neck arteries, and brain showing where each cause of ischemic stroke starts">
+                                <path class="vessel" d="M214 322C214 262 300 256 322 306"/>
+                                <path class="vessel" d="M238 276C210 262 172 262 172 226V150C172 130 164 118 150 104"/>
+                                <path class="vessel" d="M278 266V150C278 130 286 118 300 104"/>
+                                <path class="heart" d="M132 342C130 300 190 298 205 318C225 296 282 302 274 345C268 386 218 410 205 422C190 410 138 384 132 342Z"/>
+                                <path class="heart-wall" d="M205 318V422M134 352H273"/>
+                                <path class="brain-cerebrum" d="M350.5 84.0L351.1 86.4L351.3 88.5L351.0 90.4L350.4 92.3L349.8 94.1L349.3 95.8L348.9 97.6L348.7 99.3L348.3 101.0L347.7 102.6L346.8 104.2L345.6 105.7L344.2 107.1L343.0 108.5L342.0 110.0L341.5 111.5L341.4 113.1L341.6 114.9L341.9 116.6L341.9 118.3L341.4 119.9L340.3 121.3L338.7 122.5L336.8 123.6L334.7 124.5L332.8 125.5L331.1 126.6L329.8 127.8L328.8 129.1L327.8 130.5L326.8 131.8L325.6 133.0L324.2 134.2L322.7 135.3L321.3 136.4L320.0 137.6L318.9 139.0L317.9 140.4L317.0 141.9L315.9 143.3L314.4 144.5L312.5 145.4L310.2 146.0L307.6 146.3L304.9 146.6L302.3 146.9L300.0 147.4L298.0 148.1L296.3 149.1L294.6 150.2L293.0 151.3L291.1 152.3L289.0 153.1L286.7 153.6L284.1 153.8L281.4 154.0L278.8 154.0L276.1 154.2L273.5 154.3L270.8 154.3L268.1 154.2L265.1 153.8L262.1 153.2L259.0 152.3L255.9 151.3L252.9 150.3L250.0 149.6L247.2 149.3L244.5 149.3L241.9 149.6L239.1 150.0L236.2 150.4L233.1 150.6L229.6 150.5L225.0 150.2L220.5 149.8L217.1 149.5L214.0 149.4L211.0 149.5L208.1 149.8L205.1 150.3L202.2 150.9L199.4 151.4L196.5 151.8L193.8 152.0L191.0 152.3L188.2 152.6L185.3 153.0L182.3 153.6L179.2 154.3L176.0 155.0L172.9 155.4L170.1 155.5L167.6 155.2L165.4 154.4L163.5 153.4L161.8 152.2L160.1 151.1L158.3 150.1L156.2 149.4L153.9 148.9L151.5 148.5L149.1 148.1L146.9 147.5L144.8 146.8L142.9 145.9L141.2 145.0L139.5 144.0L137.6 143.1L135.7 142.2L133.7 141.4L131.8 140.6L130.1 139.6L128.7 138.4L127.7 137.0L127.1 135.4L126.5 133.8L125.9 132.3L124.9 131.0L123.4 129.9L121.5 129.0L119.3 128.2L116.9 127.4L114.8 126.5L113.0 125.4L111.7 124.1L110.9 122.6L110.3 121.1L109.8 119.5L109.2 118.0L108.4 116.5L107.6 115.1L106.7 113.6L106.0 112.1L105.6 110.5L105.4 108.9L105.4 107.2L105.4 105.5L105.1 103.9L104.5 102.3L103.4 100.8L102.0 99.2L100.5 97.6L99.3 96.0L98.7 94.2L98.6 92.3L99.2 90.4L100.3 88.4L101.5 86.3L102.5 84.0L103.2 81.7L103.5 79.7L103.4 77.8L103.1 76.0L102.9 74.2L102.9 72.4L103.1 70.7L103.5 69.0L103.9 67.3L104.1 65.7L104.2 64.0L104.0 62.2L103.8 60.5L103.7 58.8L104.0 57.1L104.8 55.6L106.2 54.3L108.0 53.0L109.9 51.9L111.6 50.7L112.9 49.4L113.7 48.0L114.1 46.5L114.2 44.8L114.3 43.1L114.6 41.4L115.3 39.9L116.4 38.6L117.8 37.4L119.4 36.3L121.0 35.2L122.5 34.0L123.9 32.9L125.3 31.7L126.9 30.6L128.6 29.6L130.7 28.8L132.9 28.1L135.3 27.5L137.5 26.9L139.5 26.2L141.1 25.2L142.4 23.9L143.5 22.5L144.6 21.0L145.9 19.7L147.5 18.5L149.5 17.7L151.9 17.2L154.5 17.0L157.1 16.8L159.7 16.5L162.1 16.1L164.3 15.5L166.4 14.8L168.6 14.1L170.8 13.4L173.1 12.8L175.6 12.4L178.1 12.0L180.6 11.5L183.0 11.0L185.4 10.2L187.8 9.2L190.2 8.3L192.9 7.5L195.7 7.0L198.8 7.0L202.1 7.6L205.7 8.9L209.4 11.2L213.2 14.3L217.0 17.7L220.6 20.3L225.0 21.0L229.4 19.6L233.2 16.6L237.0 13.2L240.7 10.6L244.3 9.1L247.6 8.6L250.7 8.6L253.6 8.8L256.5 8.9L259.4 9.1L262.2 9.2L264.9 9.6L267.5 10.1L269.8 11.0L271.9 12.0L273.9 13.1L275.9 14.1L278.1 14.8L280.5 15.3L283.1 15.4L285.9 15.3L288.8 15.2L291.6 15.2L294.1 15.5L296.4 16.2L298.3 17.1L300.0 18.1L301.7 19.3L303.3 20.3L305.1 21.3L307.0 22.1L309.0 22.9L310.8 23.8L312.6 24.8L314.1 25.9L315.5 27.1L316.8 28.3L318.3 29.4L320.1 30.3L322.1 31.1L324.4 31.8L326.8 32.5L328.9 33.3L330.7 34.4L331.9 35.7L332.5 37.3L332.7 39.0L332.8 40.7L333.0 42.4L333.4 43.9L334.3 45.3L335.5 46.6L336.9 47.8L338.2 49.1L339.5 50.4L340.4 51.8L341.2 53.2L341.9 54.7L342.6 56.2L343.6 57.7L344.7 59.1L345.9 60.6L347.0 62.1L347.7 63.6L348.0 65.3L347.8 67.1L347.1 68.9L346.4 70.7L345.7 72.5L345.6 74.3L345.9 76.0L346.8 77.8L348.1 79.7L349.4 81.6Z"/>
+                                <path class="brain-fissure" d="M225 22V62"/>
+                                <path class="vessel is-inside" d="M172 150C176 130 184 118 194 104M278 150C280 128 286 112 300 96"/>
+                                <path class="embolus-path" d="M242 326C240 292 262 276 278 266V150C278 130 286 112 300 96"/>
+                                <circle class="embolus-end" cx="300" cy="96" r="5"/>
+                                <path class="clot" d="M228 330C234 320 256 322 258 334C258 344 234 346 228 340Z"/>
+                                <path class="clot" d="M226 376C232 364 256 368 256 380C254 392 232 394 226 386Z"/>
+                                <path class="clot" d="M268 196C272 190 284 190 288 196C290 208 288 220 278 222C270 220 266 208 268 196Z"/>
+                                <path class="clot" d="M183 82C190 76 204 78 206 88C206 98 190 102 183 96C180 92 180 86 183 82Z"/>
+                                <path class="watershed-band" d="M268 28C300 30 330 48 342 74"/>
+                                <path class="tear" d="M166 190L178 200L166 210L178 220"/>
+                                <path class="site-leader" d="M287 206H340"/><text class="site-label" x="346" y="211" text-anchor="start">Carotid</text>
+                                <path class="site-leader" d="M164 205H96"/><text class="site-label" x="90" y="210" text-anchor="end">Neck artery</text>
+                                <path class="site-leader" d="M259 332H346"/><text class="site-label" x="352" y="337" text-anchor="start">Left atrium</text>
+                                <path class="site-leader" d="M263 352H346"/><text class="site-label" x="352" y="361" text-anchor="start">Mitral valve</text>
+                                <path class="site-leader" d="M257 380H346"/><text class="site-label" x="352" y="385" text-anchor="start">Left ventricle</text>
+                                <path class="site-leader" d="M205 330H112"/><text class="site-label" x="106" y="335" text-anchor="end">Atrial septum</text>
+                                <path class="site-leader" d="M334 58L372 34"/><text class="site-label" x="378" y="34" text-anchor="start">Watershed</text>
+                                <text class="site-label" x="194" y="122" text-anchor="middle">Deep small vessels</text>
+                                <g class="site-marker"><circle cx="226" cy="322" r="11"/><text x="226" y="326.5">1</text></g><g class="site-marker"><circle cx="226" cy="392" r="11"/><text x="226" y="396.5">1</text></g><g class="site-marker"><circle cx="246" cy="352" r="11"/><text x="246" y="356.5">2</text></g><g class="site-marker"><circle cx="205" cy="342" r="11"/><text x="205" y="346.5">3</text></g><g class="site-marker"><circle cx="298" cy="204" r="11"/><text x="298" y="208.5">4</text></g><g class="site-marker"><circle cx="178" cy="72" r="11"/><text x="178" y="76.5">5</text></g><g class="site-marker"><circle cx="306" cy="34" r="11"/><text x="306" y="38.5">6</text></g><g class="site-marker"><circle cx="156" cy="204" r="11"/><text x="156" y="208.5">8</text></g>
+                            </svg>
+                            <figcaption>Causes 1–3 travel to the brain as emboli. Cause 7 can affect any artery.</figcaption>
+                        </figure>
+                        <ul class="cause-list">
+                            <li class="cause-group">Embolus <span class="badge">Most common</span></li>
+                            <li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Cardiac embolus <span class="badge">Important</span></span><span class="cause-detail">Left atrial thrombus: <span class="concept" data-concept="a-fib"><abbr class="term" tabindex="0" data-definition="Atrial fibrillation">A-fib</abbr></span> or flutter, mechanical valve, or <abbr class="term" tabindex="0" data-definition="Rheumatic heart disease">RHD</abbr><br>Left ventricular thrombus: <abbr class="term" tabindex="0" data-definition="Left ventricular">LV</abbr> aneurysm from <abbr class="term" tabindex="0" data-definition="Myocardial infarction">MI</abbr>, anterior or lateral <abbr class="term" tabindex="0" data-definition="Myocardial infarction">MI</abbr>, or <abbr class="term" tabindex="0" data-definition="Heart failure with reduced ejection fraction">HFrEF</abbr></span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name"><span class="concept" data-concept="endocarditis">Infective endocarditis</span></span><span class="cause-detail">Cardiac embolus; a contraindication to thrombolysis</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Paradoxical embolus</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Atrial septal defect">ASD</abbr>, <span class="concept" data-concept="pfo">patent foramen ovale</span>, or atrial septal aneurysm; a right-to-left shunt lets a venous thrombus reach arterial circulation</span></span></li>
+                            <li class="cause-group">Thrombus</li>
+                            <li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Large vessel thrombus</span><span class="cause-detail">Atherosclerotic thrombus in the <span class="concept" data-concept="ica-stenosis"><abbr class="term" tabindex="0" data-definition="Internal carotid artery">ICA</abbr></span>, <abbr class="term" tabindex="0" data-definition="Middle cerebral artery">MCA</abbr>, or vertebrobasilar arteries</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">Small vessel thrombus</span><span class="cause-detail">Lacunar infarct from lenticulostriate arteries or small pontine branches</span></span></li>
+                            <li class="cause-group">Low flow</li>
+                            <li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name">Global hypoperfusion</span><span class="cause-detail">Cardiac arrest, acute respiratory failure, or <span class="concept" data-concept="ica-stenosis"><abbr class="term" tabindex="0" data-definition="Internal carotid artery">ICA</abbr> stenosis</span> with low <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr>; decreased cerebral oxygen delivery causes <span class="concept" data-concept="watershed">watershed</span> infarcts</span></span></li>
+                            <li class="cause-group">Vessel wall</li>
+                            <li><span class="cause-number" aria-hidden="true">7</span><span class="cause-text"><span class="cause-name">Vasculitis</span><span class="cause-detail">Autoimmune, infections, or primary <abbr class="term" tabindex="0" data-definition="Central nervous system">CNS</abbr> vasculitis; arterial wall inflammation</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">8</span><span class="cause-text"><span class="cause-name">Dissection</span><span class="cause-detail">Trauma, iatrogenic, or connective tissue diseases; intimal tear with thrombus and embolus</span></span></li>
+                        </ul>
                     </div>
                 </section>
 
                 <section class="content-section">
                     <h3>Diagnosis</h3>
-                    <div class="subsection">
-                        <div class="flow">
-                            <div class="flow-step">
-                                <span class="flow-condition">First</span>
-                                <span class="flow-action">Glucose and non-contrast <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> head</span>
-                                <span class="flow-condition">rule out hypoglycemia and hemorrhage</span>
-                            </div>
-
-                            <div class="branch-grid flow-branches">
-                                <div class="branch">
-                                    <div class="arrow-down" aria-hidden="true"></div>
-                                    <span class="branch-label">Hemorrhage</span>
-                                    <div class="flow-step">
-                                        <span class="flow-action"><button type="button" class="link-button" data-goto="intracerebral-hemorrhage">Intracerebral hemorrhage</button></span>
-                                    </div>
-                                </div>
-
-                                <div class="branch">
-                                    <div class="arrow-down" aria-hidden="true"></div>
-                                    <span class="branch-label">No hemorrhage</span>
-                                    <div class="flow-step">
-                                        <span class="flow-condition">Look for <span class="concept" data-concept="lvo">large vessel occlusion</span></span>
-                                        <span class="flow-action"><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> angiogram of the head and neck</span>
-                                    </div>
-                                    <div class="arrow-down" aria-hidden="true"></div>
-                                    <div class="flow-step">
-                                        <span class="flow-condition">If over 6 hours or onset unknown</span>
-                                        <span class="flow-action"><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> perfusion or <abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr></span>
-                                        <span class="flow-condition">look for <span class="concept" data-concept="penumbra"><abbr class="term" tabindex="0" data-definition="Ischemic but still salvageable brain tissue around the infarct core">penumbra</abbr></span></span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <ol class="pathway">
+                        <li><span class="pathway-title">Glucose and non-contrast <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> head</span><span class="pathway-detail">Rule out hypoglycemia and hemorrhage <button type="button" class="link-button" data-goto="intracerebral-hemorrhage">Intracerebral Hemorrhage</button></span></li>
+                        <li><span class="pathway-title"><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> angiogram of the head and neck</span><span class="pathway-detail">Look for <span class="concept" data-concept="lvo">large vessel occlusion</span></span></li>
+                        <li><span class="pathway-title"><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> perfusion or <abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr></span><span class="pathway-detail">If over 6 hours or onset unknown; look for <span class="concept" data-concept="penumbra"><abbr class="term" tabindex="0" data-definition="Ischemic but still salvageable brain tissue around the infarct core">penumbra</abbr></span></span></li>
+                    </ol>
 
                     <div class="subsection">
                         <h4 class="sc-heading">Find the cause</h4>
-                        <div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">For</th><th scope="col">Obtain</th></tr></thead><tbody><tr><th scope="row">Cardiac embolus</th><td><abbr class="term" tabindex="0" data-definition="Electrocardiogram">ECG</abbr>, telemetry, echocardiogram <span class="node-label">looking for <span class="concept" data-concept="A-fib"><abbr class="term" tabindex="0" data-definition="Atrial fibrillation">A-fib</abbr></span>, thrombus</span></td></tr><tr><th scope="row">Paradoxical embolus</th><td>Bubble echocardiogram <span class="node-label">looking for <span class="concept" data-concept="pfo"><abbr class="term" tabindex="0" data-definition="Patent foramen ovale">PFO</abbr></span></span></td></tr><tr><th scope="row">Large vessel thrombus</th><td><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> angiogram or carotid duplex <span class="node-label"><span class="concept" data-concept="ica-stenosis"><abbr class="term" tabindex="0" data-definition="Internal carotid artery">ICA</abbr> stenosis</span></span></td></tr><tr><th scope="row">Small vessel thrombus</th><td><abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr> <span class="node-label">lacunar infarct</span></td></tr><tr><th scope="row">Vasculitis</th><td><abbr class="term" tabindex="0" data-definition="Erythrocyte sedimentation rate">ESR</abbr>, <abbr class="term" tabindex="0" data-definition="C-reactive protein">CRP</abbr>, autoimmune serology, <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr></td></tr><tr><th scope="row">Dissection</th><td><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> or <abbr class="term" tabindex="0" data-definition="Magnetic resonance">MR</abbr> angiogram of the neck</td></tr><tr><th scope="row"><span class="concept" data-concept="endocarditis">Infective endocarditis</span></th><td>Blood cultures, echocardiogram</td></tr><tr><th scope="row">Vascular risk factors</th><td>Lipids, <abbr class="term" tabindex="0" data-definition="Glycated hemoglobin">HbA1c</abbr></td></tr></tbody></table></div>
+                        <ul class="cause-list is-two-column">
+                            <li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Cardiac embolus</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Electrocardiogram">ECG</abbr>, telemetry, and echocardiogram: <span class="concept" data-concept="a-fib"><abbr class="term" tabindex="0" data-definition="Atrial fibrillation">A-fib</abbr></span>, thrombus</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name"><span class="concept" data-concept="endocarditis">Infective endocarditis</span></span><span class="cause-detail">Blood cultures and echocardiogram</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Paradoxical embolus</span><span class="cause-detail">Bubble echocardiogram: <span class="concept" data-concept="pfo"><abbr class="term" tabindex="0" data-definition="Patent foramen ovale">PFO</abbr></span></span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Large vessel thrombus</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> angiogram or carotid duplex: <span class="concept" data-concept="ica-stenosis"><abbr class="term" tabindex="0" data-definition="Internal carotid artery">ICA</abbr> stenosis</span></span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">Small vessel thrombus</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr>: lacunar infarct</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">7</span><span class="cause-text"><span class="cause-name">Vasculitis</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Erythrocyte sedimentation rate">ESR</abbr>, <abbr class="term" tabindex="0" data-definition="C-reactive protein">CRP</abbr>, autoimmune serology, and <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr></span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">8</span><span class="cause-text"><span class="cause-name">Dissection</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> or <abbr class="term" tabindex="0" data-definition="Magnetic resonance">MR</abbr> angiogram of the neck</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">+</span><span class="cause-text"><span class="cause-name">Vascular risk factors</span><span class="cause-detail">Lipids and <abbr class="term" tabindex="0" data-definition="Glycated hemoglobin">HbA1c</abbr></span></span></li>
+                        </ul>
                     </div>
 
                     <p class="note">
@@ -779,7 +763,18 @@
                     <h3>Treatment</h3>
                     <div class="subsection">
                         <h4 class="sc-heading">Acute treatment</h4>
-                        <div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">Goal</th><th scope="col">Treatment</th></tr></thead><tbody><tr><th scope="row">Reperfusion</th><td><ul class="bullet-list"><li><abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr> alteplase or tenecteplase <span class="node-label">within 4.5 hours of onset</span></li><li>Mechanical thrombectomy for <span class="concept" data-concept="lvo">large vessel occlusion</span> <span class="node-label">up to 24 hours with <span class="concept" data-concept="penumbra"><abbr class="term" tabindex="0" data-definition="Ischemic but still salvageable brain tissue around the infarct core">penumbra</abbr></span></span></li></ul></td></tr><tr><th scope="row">Antiplatelet</th><td>Aspirin within 24–48 hours <span class="node-label">wait 24 hours after thrombolysis</span></td></tr><tr><th scope="row">Supportive care</th><td><ul class="bullet-list"><li>Swallow screen before oral intake</li><li>Treat fever and glucose</li><li><abbr class="term" tabindex="0" data-definition="Deep vein thrombosis">DVT</abbr> prophylaxis</li></ul></td></tr></tbody></table></div>
+                        <div class="time-windows">
+                            <ul>
+                                <li><span class="window-text"><strong><abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr> alteplase or tenecteplase</strong> within 4.5 hours of onset</span><span class="window-bar to-first"></span></li>
+                                <li><span class="window-text"><strong>Mechanical thrombectomy</strong> for <span class="concept" data-concept="lvo">large vessel occlusion</span>, up to 24 hours with <span class="concept" data-concept="penumbra"><abbr class="term" tabindex="0" data-definition="Ischemic but still salvageable brain tissue around the infarct core">penumbra</abbr></span></span><span class="window-bar to-second"></span></li>
+                                <li><span class="window-text"><strong>Aspirin</strong> within 24–48 hours; wait 24 hours after thrombolysis</span><span class="window-bar to-third is-soft"></span></li>
+                            </ul>
+                            <div class="time-scale" aria-hidden="true"><span>Onset</span><span>4.5 hours</span><span>24 hours</span><span>48 hours</span></div>
+                        </div>
+                        <div class="goal is-inline">
+                            <h5>Supportive care</h5>
+                            <ul><li>Swallow screen before oral intake</li><li>Treat fever and glucose</li><li><abbr class="term" tabindex="0" data-definition="Deep vein thrombosis">DVT</abbr> prophylaxis</li></ul>
+                        </div>
                         <p class="note">
                             <strong>Blood pressure:</strong> below 185/110 for thrombolysis; otherwise allow up to 220/120.
                         </p>
@@ -787,10 +782,10 @@
 
                     <div class="subsection">
                         <h4 class="sc-heading">Thrombolysis contraindications</h4>
-                        <ul class="chip-list">
+                        <ul class="stop-list">
                             <li>Hemorrhage on <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr></li>
-                            <li>Stroke or head trauma <span class="node-label">within 3 months</span></li>
-                            <li>Intracranial or spinal surgery <span class="node-label">within 3 months</span></li>
+                            <li>Stroke or head trauma within 3 months</li>
+                            <li>Intracranial or spinal surgery within 3 months</li>
                             <li>Active bleeding</li>
                             <li>Platelets under 100000/µL</li>
                             <li><abbr class="term" tabindex="0" data-definition="International normalized ratio">INR</abbr> over 1.7</li>
@@ -800,7 +795,16 @@
 
                     <div class="subsection">
                         <h4 class="sc-heading">Prevent recurrence</h4>
-                        <div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">Cause</th><th scope="col">Treatment</th></tr></thead><tbody><tr><th scope="row">Cardiac embolus</th><td>Anticoagulation <span class="node-label"><abbr class="term" tabindex="0" data-definition="Direct oral anticoagulant">DOAC</abbr>; warfarin for mechanical valve</span></td></tr><tr><th scope="row"><span class="concept" data-concept="endocarditis">Infective endocarditis</span></th><td><abbr class="term" tabindex="0" data-definition="Antibiotics">ABX</abbr></td></tr><tr><th scope="row">Paradoxical embolus</th><td>Antiplatelet; <span class="concept" data-concept="pfo"><abbr class="term" tabindex="0" data-definition="Patent foramen ovale">PFO</abbr></span> closure <span class="node-label">if under 60 with no other cause</span></td></tr><tr><th scope="row">Large vessel thrombus</th><td>Antiplatelet, high-intensity statin; carotid endarterectomy <span class="node-label">symptomatic <span class="concept" data-concept="ica-stenosis"><abbr class="term" tabindex="0" data-definition="Internal carotid artery">ICA</abbr> stenosis</span> of 70–99%</span></td></tr><tr><th scope="row">Small vessel thrombus</th><td>Antiplatelet, statin, blood pressure control</td></tr><tr><th scope="row">Global hypoperfusion</th><td>Treat the cause of low perfusion</td></tr><tr><th scope="row">Vasculitis</th><td>Immunosuppression; treat any infection</td></tr><tr><th scope="row">Dissection</th><td>Antiplatelet or anticoagulation</td></tr></tbody></table></div>
+                        <ul class="cause-list is-two-column">
+                            <li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Cardiac embolus</span><span class="cause-detail">Anticoagulation: <abbr class="term" tabindex="0" data-definition="Direct oral anticoagulant">DOAC</abbr>; warfarin for mechanical valve</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name"><span class="concept" data-concept="endocarditis">Infective endocarditis</span></span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Antibiotics">ABX</abbr></span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Paradoxical embolus</span><span class="cause-detail">Antiplatelet; <span class="concept" data-concept="pfo"><abbr class="term" tabindex="0" data-definition="Patent foramen ovale">PFO</abbr></span> closure if under 60 with no other cause</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Large vessel thrombus</span><span class="cause-detail">Antiplatelet and high-intensity statin; carotid endarterectomy for symptomatic <span class="concept" data-concept="ica-stenosis"><abbr class="term" tabindex="0" data-definition="Internal carotid artery">ICA</abbr> stenosis</span> of 70–99%</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">Small vessel thrombus</span><span class="cause-detail">Antiplatelet, statin, and <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr> control</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name">Global hypoperfusion</span><span class="cause-detail">Treat the cause of low perfusion</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">7</span><span class="cause-text"><span class="cause-name">Vasculitis</span><span class="cause-detail">Immunosuppression; treat any infection</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">8</span><span class="cause-text"><span class="cause-name">Dissection</span><span class="cause-detail">Antiplatelet or anticoagulation</span></span></li>
+                        </ul>
                     </div>
                 </section>
 
@@ -822,85 +826,68 @@
 
                 <section class="content-section">
                     <h3>Etiology</h3>
-                    <div class="subsection">
-                        <div class="etiology-grid-2">
-                            <div class="etiology-column">
-                                <h4>Hypertension <span class="badge">Most common under 60</span></h4>
-                                <ul class="step"><li>Basal ganglia <span class="badge">Important</span></li><li>Pons</li><li>Cerebellum</li><li>Cortex <span class="node-label">less common</span></li></ul>
-                            </div>
-                            <div class="etiology-column">
-                                <h4><span class="concept" data-concept="caa">Cerebral amyloid angiopathy</span> <span class="badge">Most common over 60</span></h4>
-                                <ul class="step"><li>Cortical structures <span class="node-label">may present with dementia</span></li></ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="subsection">
-                        <div class="etiology-grid-2">
-                            <div class="etiology-column">
-                                <h4>Coagulopathy</h4>
-                                <ul class="step"><li>Warfarin</li><li>Heparin</li><li><abbr class="term" tabindex="0" data-definition="Direct oral anticoagulants">DOACs</abbr></li><li><abbr class="term" tabindex="0" data-definition="Tissue plasminogen activator">tPA</abbr></li><li>Aspirin</li><li>Clopidogrel</li><li>Liver disease</li></ul>
-                            </div>
-                            <div class="etiology-column">
-                                <h4><span class="concept" data-concept="hemorrhagic-transformation">Hemorrhagic transformation</span></h4>
-                                <ul class="step"><li>Ischemic stroke</li></ul>
-                                <div class="arrow-down" aria-hidden="true"></div>
-                                <ul class="step"><li>Conversion from <abbr class="term" tabindex="0" data-definition="Tissue plasminogen activator">tPA</abbr></li><li>Reperfusion injury</li></ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="subsection">
-                        <div class="etiology-grid-2">
-                            <div class="etiology-column">
-                                <h4><span class="concept" data-concept="avm">Arteriovenous malformation</span></h4>
-                                <ul class="step"><li>Vascular abnormality <span class="node-label">young patients</span></li></ul>
-                            </div>
-                            <div class="etiology-column">
-                                <h4><span class="concept" data-concept="mycotic-aneurysm">Mycotic aneurysm</span></h4>
-                                <ul class="step"><li><span class="concept" data-concept="endocarditis">Infective endocarditis</span></li></ul>
-                                <div class="arrow-down" aria-hidden="true"></div>
-                                <ul class="step"><li>Vegetation deposits</li></ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="subsection">
-                        <h4 class="sc-heading"><span class="concept" data-concept="cvst">Cerebral venous sinus thrombosis</span></h4>
-                        <div class="lane-list">
-                            <div class="chain-lane"><div class="chain"><div class="chain-stage chain-start"><div class="chain-node">Factor V Leiden</div><div class="chain-node"><span class="change down">Decreased</span> <abbr class="term" tabindex="0" data-definition="Antithrombin III">AT-III</abbr></div><div class="chain-node"><span class="change down">Decreased</span> protein C or S</div><div class="chain-node"><abbr class="term" tabindex="0" data-definition="Antiphospholipid syndrome">APS</abbr></div><div class="chain-node"><abbr class="term" tabindex="0" data-definition="Oral contraceptive pill">OCP</abbr></div><div class="chain-node">Pregnancy</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Venous sinus thrombus</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Sinus swelling</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Hemorrhage near the cortex</div></div></div></div>
-                        </div>
-                    </div>
-
-                    <div class="subsection">
-                        <h4 class="sc-heading">Malignancy</h4>
-                        <div class="lane-list">
-                            <div class="chain-lane"><div class="chain"><div class="chain-stage chain-start"><div class="chain-node">Papillary thyroid cancer</div><div class="chain-node">Small cell lung carcinoma</div><div class="chain-node"><abbr class="term" tabindex="0" data-definition="Renal cell carcinoma">RCC</abbr></div><div class="chain-node">Melanoma</div><div class="chain-node">Choriocarcinoma</div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Disrupted <abbr class="term" tabindex="0" data-definition="Blood-brain barrier">BBB</abbr></div></div><div class="chain-arrow" aria-hidden="true"></div><div class="chain-stage"><div class="chain-node">Blood around the tumor</div></div></div></div>
-                        </div>
+                    <div class="etiology-map">
+                        <figure class="cause-map">
+                            <svg viewBox="0 0 440 340" role="img" aria-label="Coronal brain diagram: hypertension bleeds in the basal ganglia, pons, and cerebellum; amyloid angiopathy bleeds in the cortex; venous sinus thrombosis bleeds near the cortex under the sagittal sinus">
+                                <ellipse class="brain-cerebellum" cx="220" cy="284" rx="92" ry="40"/>
+                                <path class="brain-folia" d="M146 270q74 20 148 0M136 286q84 22 168 0M150 303q70 16 140 0"/>
+                                <path class="brain-stem" d="M198 196C198 222 190 232 190 248C190 270 200 296 204 330H236C240 296 250 270 250 248C250 232 242 222 242 196Z"/>
+                                <path class="brain-cerebrum" d="M371.8 126.0L372.6 129.3L372.8 132.2L372.4 134.9L371.7 137.5L371.0 140.0L370.4 142.5L369.9 144.9L369.6 147.3L369.1 149.7L368.4 152.0L367.3 154.2L365.9 156.2L364.2 158.2L362.7 160.2L361.5 162.2L360.9 164.4L360.8 166.6L361.1 169.0L361.4 171.5L361.4 173.9L360.8 176.1L359.5 178.0L357.6 179.7L355.2 181.2L352.7 182.5L350.3 183.9L348.4 185.4L346.8 187.1L345.5 188.9L344.4 190.8L343.1 192.7L341.7 194.4L340.0 196.0L338.2 197.6L336.5 199.1L334.9 200.8L333.6 202.7L332.4 204.7L331.3 206.7L329.9 208.7L328.1 210.3L325.8 211.6L323.0 212.4L319.9 212.9L316.6 213.2L313.5 213.6L310.7 214.3L308.2 215.3L306.1 216.6L304.1 218.2L302.0 219.7L299.7 221.0L297.1 221.9L294.2 222.5L291.0 222.7L287.7 222.7L284.4 222.7L281.1 222.6L277.8 222.5L274.4 222.3L271.0 221.8L267.3 221.0L263.6 219.7L259.7 218.0L255.9 216.2L252.2 214.5L248.7 213.1L245.5 212.3L242.3 211.9L239.2 212.0L236.0 212.3L232.7 212.6L229.1 212.7L225.1 212.5L220.0 212.0L214.9 211.5L211.1 211.1L207.5 211.1L204.1 211.5L200.7 212.3L197.3 213.3L193.9 214.5L190.4 215.6L187.0 216.5L183.6 217.3L180.3 218.0L176.8 218.8L173.2 219.8L169.5 221.0L165.6 222.3L161.6 223.5L157.8 224.4L154.3 224.7L151.1 224.4L148.4 223.6L146.0 222.2L143.9 220.7L141.8 219.2L139.5 218.0L136.9 217.0L134.2 216.4L131.2 215.9L128.3 215.3L125.5 214.5L123.0 213.6L120.7 212.3L118.6 211.0L116.5 209.7L114.3 208.4L112.0 207.2L109.6 206.1L107.2 204.9L105.2 203.5L103.5 201.8L102.3 199.9L101.5 197.7L100.9 195.5L100.1 193.4L98.9 191.6L97.1 190.0L94.8 188.8L92.1 187.7L89.3 186.5L86.7 185.3L84.5 183.7L83.0 181.9L81.9 179.9L81.2 177.8L80.6 175.6L79.9 173.4L79.0 171.4L78.0 169.3L76.9 167.3L76.1 165.2L75.5 163.0L75.3 160.7L75.3 158.3L75.3 156.0L75.0 153.7L74.2 151.5L72.9 149.4L71.2 147.2L69.4 145.0L68.0 142.7L67.2 140.2L67.2 137.6L67.9 134.9L69.1 132.1L70.6 129.3L71.8 126.0L72.6 122.8L73.0 120.0L72.9 117.4L72.6 114.8L72.3 112.3L72.3 109.8L72.6 107.4L73.0 105.0L73.5 102.7L73.8 100.4L73.8 98.1L73.6 95.6L73.3 93.2L73.2 90.8L73.6 88.5L74.6 86.4L76.3 84.5L78.4 82.8L80.7 81.2L82.8 79.5L84.4 77.8L85.4 75.8L85.9 73.6L86.0 71.3L86.1 68.9L86.4 66.6L87.2 64.5L88.6 62.7L90.3 61.0L92.2 59.4L94.2 57.9L96.0 56.3L97.7 54.7L99.5 53.0L101.3 51.5L103.4 50.1L105.9 49.0L108.6 48.0L111.4 47.2L114.2 46.4L116.6 45.3L118.5 44.0L120.1 42.2L121.4 40.2L122.7 38.2L124.3 36.3L126.2 34.7L128.7 33.6L131.6 32.9L134.7 32.5L137.9 32.2L141.0 31.9L143.9 31.3L146.6 30.5L149.1 29.5L151.7 28.4L154.4 27.5L157.2 26.7L160.2 26.1L163.2 25.6L166.3 24.9L169.2 24.1L172.1 23.0L175.0 21.7L178.0 20.4L181.1 19.3L184.6 18.6L188.3 18.6L192.3 19.4L196.6 21.3L201.2 24.5L205.8 28.8L210.3 33.5L214.7 37.1L220.0 38.2L225.3 36.2L229.9 32.0L234.5 27.3L239.0 23.7L243.3 21.6L247.3 20.8L251.0 20.8L254.6 21.1L258.1 21.3L261.6 21.5L265.0 21.7L268.3 22.2L271.4 23.0L274.2 24.2L276.8 25.6L279.2 27.1L281.6 28.5L284.2 29.5L287.1 30.1L290.3 30.3L293.7 30.2L297.1 30.0L300.5 30.1L303.6 30.5L306.3 31.4L308.7 32.6L310.8 34.1L312.7 35.7L314.8 37.2L316.9 38.5L319.2 39.7L321.6 40.8L323.8 42.0L325.9 43.4L327.8 45.0L329.4 46.6L331.1 48.3L332.9 49.8L335.0 51.1L337.5 52.2L340.3 53.2L343.1 54.2L345.7 55.3L347.8 56.8L349.3 58.6L350.0 60.8L350.3 63.2L350.4 65.6L350.6 68.0L351.2 70.1L352.2 72.1L353.6 73.8L355.3 75.5L357.0 77.3L358.5 79.1L359.6 81.1L360.6 83.1L361.4 85.2L362.3 87.3L363.4 89.3L364.8 91.3L366.2 93.3L367.6 95.4L368.5 97.6L368.8 100.0L368.5 102.4L367.7 104.9L366.8 107.5L366.1 110.0L365.8 112.4L366.3 114.9L367.4 117.4L368.9 119.9L370.5 122.7Z"/>
+                                <path class="brain-fissure" d="M220 38V90"/>
+                                <path class="brain-ventricle" d="M212 104C196 92 176 96 170 112C184 106 198 110 212 122ZM228 104C244 92 264 96 270 112C256 106 242 110 228 122Z"/>
+                                <ellipse class="brain-nuclei" cx="162" cy="148" rx="30" ry="22"/>
+                                <ellipse class="brain-nuclei" cx="278" cy="148" rx="30" ry="22"/>
+                                <path class="brain-sinus" d="M205 18H235L220 38Z"/>
+                                <path class="bleed" d="M140 148C142 134 160 130 172 136C184 142 186 156 176 162C164 170 138 164 140 148Z"/>
+                                <path class="bleed" d="M204 246C208 236 232 236 236 246C240 258 226 268 218 266C208 266 200 256 204 246Z"/>
+                                <path class="bleed" d="M268 286C272 276 298 276 304 286C308 296 292 304 282 302C272 302 264 296 268 286Z"/>
+                                <path class="bleed" d="M332 92C342 86 354 100 354 120C354 140 342 152 332 146C322 138 320 100 332 92Z"/>
+                                <path class="bleed" d="M240 52C250 44 274 50 280 60C282 70 262 74 250 70C240 68 232 60 240 52Z"/>
+                                <path class="site-leader" d="M204 250H128"/><text class="site-label" x="122" y="255" text-anchor="end">Pons</text>
+                                <path class="site-leader" d="M302 296L344 318"/><text class="site-label" x="350" y="324" text-anchor="start">Cerebellum</text>
+                                <path class="site-leader" d="M352 104L386 74"/><text class="site-label" x="380" y="64" text-anchor="start">Cortex</text>
+                                <path class="site-leader" d="M234 26H290"/><text class="site-label" x="296" y="31" text-anchor="start">Sagittal sinus</text>
+                                <text class="site-label" x="162" y="190" text-anchor="middle">Basal ganglia</text>
+                                <g class="site-marker"><circle cx="186" cy="132" r="11"/><text x="186" y="136.5">1</text></g><g class="site-marker"><circle cx="240" cy="236" r="11"/><text x="240" y="240.5">1</text></g><g class="site-marker"><circle cx="262" cy="276" r="11"/><text x="262" y="280.5">1</text></g><g class="site-marker"><circle cx="318" cy="118" r="11"/><text x="318" y="122.5">2</text></g><g class="site-marker"><circle cx="232" cy="66" r="11"/><text x="232" y="70.5">3</text></g>
+                            </svg>
+                            <figcaption>Causes 4–8 can bleed at any site.</figcaption>
+                        </figure>
+                        <ul class="cause-list">
+                            <li class="cause-group">Deep</li>
+                            <li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Hypertension <span class="badge">Most common under 60</span></span><span class="cause-detail">Basal ganglia <span class="badge">Important</span>, pons, and cerebellum; cortex is less common</span></span></li>
+                            <li class="cause-group">Cortex</li>
+                            <li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name"><span class="concept" data-concept="caa">Cerebral amyloid angiopathy</span> <span class="badge">Most common over 60</span></span><span class="cause-detail">Cortical bleeds; may present with dementia</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name"><span class="concept" data-concept="cvst">Cerebral venous sinus thrombosis</span></span><span class="cause-detail">Factor V Leiden, decreased <abbr class="term" tabindex="0" data-definition="Antithrombin III">AT-III</abbr>, decreased protein C or S, <abbr class="term" tabindex="0" data-definition="Antiphospholipid syndrome">APS</abbr>, <abbr class="term" tabindex="0" data-definition="Oral contraceptive pill">OCP</abbr>, and pregnancy; sinus swelling near the cortex</span></span></li>
+                            <li class="cause-group">Any site</li>
+                            <li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Coagulopathy</span><span class="cause-detail">Warfarin, heparin, <abbr class="term" tabindex="0" data-definition="Direct oral anticoagulants">DOACs</abbr>, <abbr class="term" tabindex="0" data-definition="Tissue plasminogen activator">tPA</abbr>, aspirin, clopidogrel, and liver disease</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name"><span class="concept" data-concept="hemorrhagic-transformation">Hemorrhagic transformation</span></span><span class="cause-detail">Ischemic stroke conversion from <abbr class="term" tabindex="0" data-definition="Tissue plasminogen activator">tPA</abbr> or reperfusion injury</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name">Malignancy</span><span class="cause-detail">Papillary thyroid cancer, small cell lung carcinoma, <abbr class="term" tabindex="0" data-definition="Renal cell carcinoma">RCC</abbr>, melanoma, and choriocarcinoma disrupt the <abbr class="term" tabindex="0" data-definition="Blood-brain barrier">BBB</abbr></span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">7</span><span class="cause-text"><span class="cause-name"><span class="concept" data-concept="avm">Arteriovenous malformation</span></span><span class="cause-detail">Vascular abnormality in young patients</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">8</span><span class="cause-text"><span class="cause-name"><span class="concept" data-concept="mycotic-aneurysm">Mycotic aneurysm</span></span><span class="cause-detail"><span class="concept" data-concept="endocarditis">Infective endocarditis</span> vegetation deposits</span></span></li>
+                        </ul>
                     </div>
                 </section>
 
                 <section class="content-section">
                     <h3>Diagnosis</h3>
-                    <div class="subsection">
-                        <div class="flow">
-                            <div class="flow-step">
-                                <span class="flow-condition">First</span>
-                                <span class="flow-action">Non-contrast <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> head</span>
-                                <span class="flow-condition">hyperdense blood in the parenchyma</span>
-                            </div>
-                            <div class="arrow-down" aria-hidden="true"></div>
-                            <div class="flow-step">
-                                <span class="flow-condition">If young, lobar, or no hypertension</span>
-                                <span class="flow-action"><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> angiogram</span>
-                                <span class="flow-condition">look for a vascular cause</span>
-                            </div>
-                        </div>
-                    </div>
+                    <ol class="pathway">
+                        <li><span class="pathway-title">Non-contrast <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> head</span><span class="pathway-detail">Hyperdense blood in the parenchyma</span></li>
+                        <li><span class="pathway-title">Bloods</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Full blood count">FBC</abbr>, <abbr class="term" tabindex="0" data-definition="Prothrombin time">PT</abbr>/<abbr class="term" tabindex="0" data-definition="International normalized ratio">INR</abbr>, <abbr class="term" tabindex="0" data-definition="Activated partial thromboplastin time">aPTT</abbr>, and <abbr class="term" tabindex="0" data-definition="Liver function tests">LFTs</abbr></span></li>
+                        <li><span class="pathway-title"><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> angiogram</span><span class="pathway-detail">If young, lobar, or no hypertension</span></li>
+                    </ol>
 
                     <div class="subsection">
                         <h4 class="sc-heading">Find the cause</h4>
-                        <div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">For</th><th scope="col">Obtain</th></tr></thead><tbody><tr><th scope="row">Hypertension</th><td>Non-contrast <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> head <span class="node-label">deep location</span></td></tr><tr><th scope="row"><span class="concept" data-concept="caa">Cerebral amyloid angiopathy</span></th><td><abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr> with <abbr class="term" tabindex="0" data-definition="Susceptibility-weighted imaging">SWI</abbr> <span class="node-label">lobar microbleeds</span></td></tr><tr><th scope="row">Coagulopathy</th><td><abbr class="term" tabindex="0" data-definition="Full blood count">FBC</abbr>, <abbr class="term" tabindex="0" data-definition="Prothrombin time">PT</abbr>/<abbr class="term" tabindex="0" data-definition="International normalized ratio">INR</abbr>, <abbr class="term" tabindex="0" data-definition="Activated partial thromboplastin time">aPTT</abbr>, <abbr class="term" tabindex="0" data-definition="Liver function tests">LFTs</abbr></td></tr><tr><th scope="row"><span class="concept" data-concept="hemorrhagic-transformation">Hemorrhagic transformation</span></th><td><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> head after stroke or thrombolysis <span class="node-label">blood within the infarct</span></td></tr><tr><th scope="row"><span class="concept" data-concept="cvst">Cerebral venous sinus thrombosis</span></th><td><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> or <abbr class="term" tabindex="0" data-definition="Magnetic resonance">MR</abbr> venography <span class="node-label">empty delta sign</span></td></tr><tr><th scope="row">Malignancy</th><td><abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr> with contrast <span class="node-label">enhancing mass</span></td></tr><tr><th scope="row"><span class="concept" data-concept="avm">Arteriovenous malformation</span></th><td><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> angiogram <span class="node-label">catheter angiography to confirm</span></td></tr><tr><th scope="row"><span class="concept" data-concept="mycotic-aneurysm">Mycotic aneurysm</span></th><td>Blood cultures, echocardiogram, <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> angiogram <span class="node-label">looking for <span class="concept" data-concept="endocarditis">infective endocarditis</span></span></td></tr></tbody></table></div>
+                        <ul class="cause-list is-two-column">
+                            <li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Hypertension</span><span class="cause-detail">Non-contrast <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> head: deep location</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name"><span class="concept" data-concept="caa">Cerebral amyloid angiopathy</span></span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr> with <abbr class="term" tabindex="0" data-definition="Susceptibility-weighted imaging">SWI</abbr>: lobar microbleeds</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name"><span class="concept" data-concept="cvst">Cerebral venous sinus thrombosis</span></span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> or <abbr class="term" tabindex="0" data-definition="Magnetic resonance">MR</abbr> venography: empty delta sign</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Coagulopathy</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Full blood count">FBC</abbr>, <abbr class="term" tabindex="0" data-definition="Prothrombin time">PT</abbr>/<abbr class="term" tabindex="0" data-definition="International normalized ratio">INR</abbr>, <abbr class="term" tabindex="0" data-definition="Activated partial thromboplastin time">aPTT</abbr>, and <abbr class="term" tabindex="0" data-definition="Liver function tests">LFTs</abbr></span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name"><span class="concept" data-concept="hemorrhagic-transformation">Hemorrhagic transformation</span></span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> head after stroke or thrombolysis: blood within the infarct</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name">Malignancy</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr> with contrast: enhancing mass</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">7</span><span class="cause-text"><span class="cause-name"><span class="concept" data-concept="avm">Arteriovenous malformation</span></span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> angiogram; catheter angiography to confirm</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">8</span><span class="cause-text"><span class="cause-name"><span class="concept" data-concept="mycotic-aneurysm">Mycotic aneurysm</span></span><span class="cause-detail">Blood cultures, echocardiogram, and <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> angiogram</span></span></li>
+                        </ul>
                     </div>
 
                     <p class="note">
@@ -912,7 +899,12 @@
                     <h3>Treatment</h3>
                     <div class="subsection">
                         <h4 class="sc-heading">Acute treatment</h4>
-                        <div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">Goal</th><th scope="col">Treatment</th></tr></thead><tbody><tr><th scope="row">Limit hematoma growth</th><td><ul class="bullet-list"><li><abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr> nicardipine, clevidipine, or labetalol</li><li>Reverse any coagulopathy</li></ul></td></tr><tr><th scope="row">Lower <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr></th><td><ul class="bullet-list"><li>Head of bed at 30°</li><li>Hypertonic saline or mannitol</li><li><abbr class="term" tabindex="0" data-definition="External ventricular drain">EVD</abbr> <span class="node-label">hydrocephalus</span></li></ul></td></tr><tr><th scope="row">Decompression</th><td>Surgical evacuation <span class="node-label">cerebellar bleed over 3 cm</span></td></tr><tr><th scope="row">Supportive care</th><td><ul class="bullet-list"><li><abbr class="term" tabindex="0" data-definition="Intensive care unit">ICU</abbr> admission</li><li>Treat fever and hyperglycemia</li><li>Antiseizure medication <span class="node-label">only for seizures</span></li><li>Intermittent pneumatic compression</li></ul></td></tr></tbody></table></div>
+                        <div class="goal-grid">
+                            <div class="goal"><h5>Limit hematoma growth</h5><ul><li><abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr> nicardipine, clevidipine, or labetalol</li><li>Reverse any coagulopathy</li></ul></div>
+                            <div class="goal"><h5>Lower <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr></h5><ul><li>Head of bed at 30°</li><li>Hypertonic saline or mannitol</li><li><abbr class="term" tabindex="0" data-definition="External ventricular drain">EVD</abbr> for hydrocephalus</li></ul></div>
+                            <div class="goal"><h5>Decompression</h5><ul><li>Surgical evacuation for a cerebellar bleed over 3 cm</li></ul></div>
+                            <div class="goal"><h5>Supportive care</h5><ul><li><abbr class="term" tabindex="0" data-definition="Intensive care unit">ICU</abbr> admission</li><li>Treat fever and hyperglycemia</li><li>Antiseizure medication only for seizures</li><li>Intermittent pneumatic compression</li></ul></div>
+                        </div>
                         <p class="note">
                             <strong>Blood pressure:</strong> if systolic is 150–220, lower it to a target of 140.
                         </p>
@@ -920,12 +912,29 @@
 
                     <div class="subsection">
                         <h4 class="sc-heading">Reverse coagulopathy</h4>
-                        <div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">If there is</th><th scope="col">Treat with</th></tr></thead><tbody><tr><th scope="row">Warfarin</th><td>4-factor <abbr class="term" tabindex="0" data-definition="Prothrombin complex concentrate">PCC</abbr> and <abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr> vitamin K</td></tr><tr><th scope="row">Heparin</th><td>Protamine</td></tr><tr><th scope="row">Dabigatran</th><td>Idarucizumab</td></tr><tr><th scope="row">Apixaban or rivaroxaban</th><td>Andexanet alfa or 4-factor <abbr class="term" tabindex="0" data-definition="Prothrombin complex concentrate">PCC</abbr></td></tr><tr><th scope="row"><abbr class="term" tabindex="0" data-definition="Tissue plasminogen activator">tPA</abbr></th><td>Cryoprecipitate</td></tr><tr><th scope="row">Aspirin or clopidogrel</th><td>Stop the offending drug <span class="node-label">platelets only before neurosurgery</span></td></tr><tr><th scope="row">Liver disease</th><td>Vitamin K and <abbr class="term" tabindex="0" data-definition="Fresh frozen plasma">FFP</abbr></td></tr></tbody></table></div>
+                        <ul class="pair-list">
+                            <li><span class="pair-from">Warfarin</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">4-factor <abbr class="term" tabindex="0" data-definition="Prothrombin complex concentrate">PCC</abbr> and <abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr> vitamin K</span></li>
+                            <li><span class="pair-from">Heparin</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Protamine</span></li>
+                            <li><span class="pair-from">Dabigatran</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Idarucizumab</span></li>
+                            <li><span class="pair-from">Apixaban or rivaroxaban</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Andexanet alfa or 4-factor <abbr class="term" tabindex="0" data-definition="Prothrombin complex concentrate">PCC</abbr></span></li>
+                            <li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Tissue plasminogen activator">tPA</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Cryoprecipitate</span></li>
+                            <li><span class="pair-from">Aspirin or clopidogrel</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Stop the offending drug; platelets only before neurosurgery</span></li>
+                            <li><span class="pair-from">Liver disease</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Vitamin K and <abbr class="term" tabindex="0" data-definition="Fresh frozen plasma">FFP</abbr></span></li>
+                        </ul>
                     </div>
 
                     <div class="subsection">
                         <h4 class="sc-heading">Treat the cause</h4>
-                        <div class="table-wrap"><table class="data-table"><thead><tr><th scope="col">Cause</th><th scope="col">Treatment</th></tr></thead><tbody><tr><th scope="row">Hypertension</th><td>Long-term control <span class="node-label">below 130/80</span></td></tr><tr><th scope="row"><span class="concept" data-concept="caa">Cerebral amyloid angiopathy</span></th><td>Avoid antithrombotics where possible</td></tr><tr><th scope="row"><span class="concept" data-concept="hemorrhagic-transformation">Hemorrhagic transformation</span></th><td>Stop antithrombotics</td></tr><tr><th scope="row"><span class="concept" data-concept="cvst">Cerebral venous sinus thrombosis</span></th><td>Anticoagulation <span class="node-label">even with hemorrhage</span></td></tr><tr><th scope="row">Malignancy</th><td>Surgery, radiation, or systemic therapy</td></tr><tr><th scope="row"><span class="concept" data-concept="avm">Arteriovenous malformation</span></th><td>Surgical resection, embolization, or radiosurgery</td></tr><tr><th scope="row"><span class="concept" data-concept="mycotic-aneurysm">Mycotic aneurysm</span></th><td><abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr> <abbr class="term" tabindex="0" data-definition="Antibiotics">ABX</abbr> for <span class="concept" data-concept="endocarditis">infective endocarditis</span> <span class="node-label">endovascular or surgical repair if ruptured</span></td></tr></tbody></table></div>
+                        <ul class="cause-list is-two-column">
+                            <li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Hypertension</span><span class="cause-detail">Long-term control below 130/80</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name"><span class="concept" data-concept="caa">Cerebral amyloid angiopathy</span></span><span class="cause-detail">Avoid antithrombotics where possible</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name"><span class="concept" data-concept="cvst">Cerebral venous sinus thrombosis</span></span><span class="cause-detail">Anticoagulation, even with hemorrhage</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Coagulopathy</span><span class="cause-detail">Reverse as above</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name"><span class="concept" data-concept="hemorrhagic-transformation">Hemorrhagic transformation</span></span><span class="cause-detail">Stop antithrombotics</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name">Malignancy</span><span class="cause-detail">Surgery, radiation, or systemic therapy</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">7</span><span class="cause-text"><span class="cause-name"><span class="concept" data-concept="avm">Arteriovenous malformation</span></span><span class="cause-detail">Surgical resection, embolization, or radiosurgery</span></span></li>
+                            <li><span class="cause-number" aria-hidden="true">8</span><span class="cause-text"><span class="cause-name"><span class="concept" data-concept="mycotic-aneurysm">Mycotic aneurysm</span></span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr> <abbr class="term" tabindex="0" data-definition="Antibiotics">ABX</abbr> for <span class="concept" data-concept="endocarditis">infective endocarditis</span>; endovascular or surgical repair if ruptured</span></span></li>
+                        </ul>
                     </div>
                 </section>
 
