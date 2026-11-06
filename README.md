@@ -93,9 +93,10 @@ shared/
   app.js            Navigation, search, section jump bar, tooltips, theme toggle
   quiz.js           Quiz screens and logic
   map.js            Lines the sidebar drawing up with its stations; highlighting
+  journey.js        Food's journey strip, tube, and bolus
 gi/
   index.html        Page layout and all GI condition content
-  style.css         GI-only styles (map spacing, biliary tree diagram)
+  style.css         GI theme, diagrams, and journey styles
   questions.js      GI quiz question bank
   map.js            Draws the GI tract
 neuro/

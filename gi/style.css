@@ -171,3 +171,739 @@
         hyphens: auto;
     }
 }
+
+/* =========================
+   Food's journey (gi/journey.js)
+   Pages with data-stop: the section line becomes a gut tube with a bolus moving down it
+========================= */
+
+:root {
+    --color-bolus: #f2a65a;
+    --color-on-bolus: #3a1f05;
+    --tube-width: 16px;
+    --tube-left: 6px;
+}
+
+.journey-strip {
+    margin: 0 0 30px;
+}
+
+.journey-strip svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.journey-strip figcaption {
+    display: none;
+    margin-top: 6px;
+    color: var(--color-accent);
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+}
+
+.journey-organ > * {
+    fill: none;
+    stroke: var(--color-border-strong);
+    stroke-linecap: round;
+    stroke-width: 9;
+}
+
+.journey-organ[data-organ="stomach"] > * {
+    stroke-width: 15;
+}
+
+.journey-organ[data-organ="colon"] > * {
+    stroke-dasharray: 20 3;
+    stroke-linecap: butt;
+    stroke-width: 15;
+}
+
+.journey-organ[data-organ="mouth"] > * {
+    stroke-width: 4;
+}
+
+.journey-organ.is-here > * {
+    stroke: var(--color-accent);
+}
+
+.journey-name {
+    fill: var(--color-text-muted);
+    font-size: 13px;
+    font-weight: 600;
+    text-anchor: middle;
+}
+
+.journey-name.is-here {
+    fill: var(--color-accent);
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.journey-food {
+    fill: var(--color-bolus);
+    stroke: var(--color-surface);
+    stroke-width: 2;
+}
+
+/* The tube */
+.journey-page {
+    position: relative;
+}
+
+.journey-page .content-section {
+    position: relative;
+    padding-left: 46px;
+    scroll-margin-top: 130px;
+}
+
+.journey-page .content-section::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    bottom: -44px;
+    left: var(--tube-left);
+    width: var(--tube-width);
+    border-inline: 2px solid var(--color-accent-line);
+    background: repeating-linear-gradient(180deg, var(--color-accent-soft) 0 12px, transparent 12px 18px);
+}
+
+.journey-page .content-section + .content-section {
+    margin-top: 0;
+    padding-top: 40px;
+    border-top: 0;
+}
+
+.journey-page .content-section + .content-section::before {
+    top: 0;
+}
+
+.journey-page .content-section:last-of-type::before {
+    bottom: 0;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Each section is a sphincter on the tube */
+.journey-page .content-section > h3 {
+    position: relative;
+    z-index: 1;
+}
+
+.journey-page .content-section > h3::before {
+    position: absolute;
+    top: -3px;
+    left: -46px;
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    box-shadow: 0 0 0 4px var(--color-surface);
+    color: var(--color-on-accent, #ffffff);
+    font-size: 11px;
+}
+
+.journey-bolus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    width: calc(var(--tube-width) + 8px);
+    height: 30px;
+    margin-left: calc(var(--tube-left) - 4px);
+    border-radius: 48% 52% 46% 54% / 56% 50% 50% 44%;
+    background-color: var(--color-bolus);
+    box-shadow: 0 0 0 3px var(--color-surface), 0 3px 8px rgb(0 0 0 / 0.18);
+    pointer-events: none;
+    transition: transform 0.12s linear;
+}
+
+/* Food-themed versions of the shared visual layouts */
+.journey-page .cause-number {
+    border-radius: 48% 52% 46% 54% / 56% 50% 50% 44%;
+    background-color: var(--color-bolus);
+    color: var(--color-on-bolus);
+}
+
+.journey-page .site-marker circle {
+    fill: var(--color-bolus);
+}
+
+.journey-page .site-marker text {
+    fill: var(--color-on-bolus);
+}
+
+.journey-page .pair-list li {
+    grid-template-columns: 180px 54px minmax(0, 1fr);
+}
+
+.journey-page .pair-from {
+    text-align: left;
+}
+
+.journey-page .pair-arrow {
+    height: 3px;
+    background: var(--color-accent-line);
+}
+
+.journey-page .pair-arrow::after {
+    background-color: var(--color-bolus);
+}
+
+/* Esophagus diagram */
+.eso-wall {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 34;
+}
+
+.eso-lumen {
+    fill: none;
+    stroke: var(--color-surface);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 26;
+}
+
+.eso-stomach {
+    fill: var(--color-surface);
+    stroke: var(--color-accent-line);
+    stroke-width: 4;
+}
+
+.eso-acid {
+    fill: var(--color-up-soft);
+}
+
+.eso-outline {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-width: 4;
+}
+
+.eso-diaphragm {
+    fill: none;
+    stroke: var(--color-border-strong);
+    stroke-dasharray: 8 6;
+    stroke-width: 2;
+}
+
+.eso-mouth {
+    fill: var(--color-surface);
+    stroke: var(--color-accent-line);
+    stroke-width: 4;
+}
+
+.eso-pill {
+    fill: var(--color-accent);
+}
+
+.eso-burn {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-linecap: round;
+    stroke-width: 26;
+    opacity: 0.35;
+}
+
+.eso-ring {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 2.5;
+}
+
+.eso-plaque {
+    fill: var(--color-text-muted);
+}
+
+.eso-flow {
+    fill: none;
+    stroke: var(--color-bolus);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 4;
+}
+
+.eso-side {
+    fill: var(--color-text-muted);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+/* Complications */
+.complication-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 28px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.complication-grid li {
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    .journey-strip svg text {
+        display: none;
+    }
+
+    .journey-strip figcaption {
+        display: block;
+    }
+
+    .journey-page .content-section {
+        padding-left: 38px;
+    }
+
+    .journey-page .content-section > h3::before {
+        left: -38px;
+    }
+
+    .complication-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* Too narrow for a row: the label sits above its details */
+    .journey-page .pair-list li {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 2px;
+    }
+
+    .journey-page .pair-arrow {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .journey-bolus {
+        transition: none;
+    }
+}
+
+/* Main tract diagrams */
+.cause-map.is-wide {
+    position: static;
+    max-width: 640px;
+    margin: 0 auto 22px;
+}
+
+.eso-shape {
+    fill: var(--color-surface);
+    stroke: var(--color-accent-line);
+    stroke-width: 4;
+}
+
+.gut-hit {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-linecap: round;
+    stroke-width: 7;
+}
+
+.gut-lumen {
+    fill: var(--color-surface-muted);
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}
+
+.gut-cell {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 1.5;
+}
+
+.gut-cell.is-hit {
+    fill: var(--color-wrong);
+    opacity: 0.7;
+}
+
+.gut-sugar {
+    fill: var(--color-bolus);
+}
+
+.gut-blood {
+    fill: var(--color-wrong);
+}
+
+.gut-villus {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}
+
+.gut-villus.is-blunt {
+    fill: var(--color-wrong);
+    opacity: 0.55;
+}
+
+.gut-base {
+    fill: var(--color-accent-line);
+}
+
+.gut-atrophy {
+    fill: var(--color-surface-sunken);
+    stroke: var(--color-border-strong);
+    stroke-dasharray: 5 4;
+    stroke-width: 1.5;
+}
+
+.gut-ulcer {
+    fill: var(--color-wrong);
+    stroke: var(--color-surface);
+    stroke-width: 2;
+}
+
+.colon-wall {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-dasharray: 34 4;
+    stroke-width: 36;
+}
+
+.colon-lumen {
+    fill: none;
+    stroke: var(--color-surface);
+    stroke-width: 26;
+}
+
+.gut-pouch {
+    fill: var(--color-surface);
+    stroke: var(--color-accent-line);
+    stroke-width: 3;
+}
+
+.gut-pouch.is-inflamed {
+    fill: var(--color-wrong);
+    opacity: 0.75;
+}
+
+.gut-disease {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-linecap: round;
+    stroke-width: 20;
+    opacity: 0.7;
+}
+
+.gut-gas {
+    fill: var(--color-bolus);
+}
+
+.gut-watershed {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-linecap: round;
+    stroke-width: 24;
+    opacity: 0.45;
+}
+
+.vessel-artery {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-linecap: round;
+    stroke-width: 12;
+    opacity: 0.8;
+}
+
+.vessel-artery.is-branch {
+    stroke-width: 6;
+}
+
+.vessel-vein {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-dasharray: 8 5;
+    stroke-width: 5;
+}
+
+.brain-simple {
+    fill: var(--color-surface-muted);
+    stroke: var(--color-border-strong);
+    stroke-width: 3;
+}
+
+.site-note {
+    fill: var(--color-text-muted);
+    font-size: 12.5px;
+}
+
+/* Side branch pages */
+.journey-branch {
+    fill: var(--branch-color);
+    fill-opacity: 0.35;
+    stroke: var(--branch-color);
+    stroke-width: 4;
+}
+
+.journey-link {
+    fill: none;
+    stroke: var(--branch-color);
+    stroke-dasharray: 7 5;
+    stroke-width: 5;
+}
+
+/* The tube becomes the portal vein: what food leaves behind, carried to the liver */
+.journey-page.is-branch .content-section::before {
+    border-inline-color: var(--branch-color);
+    background: repeating-linear-gradient(180deg, color-mix(in srgb, var(--branch-color) 28%, transparent) 0 12px, transparent 12px 18px);
+}
+
+.journey-page.is-branch .journey-bolus {
+    height: calc(var(--tube-width) + 8px);
+    border-radius: 50%;
+}
+
+.liver-body {
+    fill: var(--color-bolus);
+    fill-opacity: 0.22;
+    stroke: var(--color-bolus);
+    stroke-width: 3;
+}
+
+.heart-simple,
+.spleen,
+.kidney {
+    fill: var(--color-surface-muted);
+    stroke: var(--color-border-strong);
+    stroke-width: 3;
+}
+
+.vessel-vein.is-solid {
+    stroke-dasharray: none;
+    stroke-width: 12;
+    opacity: 0.6;
+}
+
+.vessel-vein.is-solid.is-small {
+    stroke-width: 7;
+}
+
+.vessel-portal {
+    fill: none;
+    stroke: var(--color-bolus);
+    stroke-linecap: round;
+    stroke-width: 9;
+}
+
+.clot-spot {
+    fill: var(--color-wrong);
+}
+
+.laceration {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 5;
+}
+
+.virus circle {
+    fill: var(--color-accent);
+    stroke: var(--color-surface);
+    stroke-width: 2;
+}
+
+.virus text {
+    fill: var(--color-on-accent, #ffffff);
+    font-size: 14px;
+    font-weight: 800;
+    text-anchor: middle;
+}
+
+.duct {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-linecap: round;
+    stroke-width: 8;
+}
+
+.duct.is-thin {
+    stroke-width: 4;
+}
+
+.duct-lost {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-dasharray: 3 6;
+    stroke-linecap: round;
+    stroke-width: 4;
+}
+
+.duct-bead {
+    fill: var(--color-surface);
+    stroke: var(--color-accent);
+    stroke-width: 4;
+}
+
+.cell-body {
+    fill: var(--color-surface-muted);
+    stroke: var(--color-bolus);
+    stroke-width: 3;
+}
+
+.cell-nucleus {
+    fill: var(--color-accent-line);
+}
+
+.deposit-iron {
+    fill: var(--color-wrong);
+}
+
+.deposit-copper {
+    fill: var(--color-up);
+}
+
+.deposit-protein {
+    fill: var(--color-accent);
+    fill-opacity: 0.55;
+}
+
+.deposit-fat {
+    fill: var(--color-bolus);
+    fill-opacity: 0.65;
+}
+
+.meta-safe {
+    fill: var(--color-accent-soft);
+}
+
+.meta-toxic {
+    fill: var(--color-wrong);
+    fill-opacity: 0.55;
+}
+
+.lesion-benign {
+    fill: var(--color-accent);
+    fill-opacity: 0.4;
+}
+
+.lesion-bad {
+    fill: var(--color-wrong);
+    fill-opacity: 0.7;
+}
+
+.womb {
+    fill: var(--color-surface-muted);
+    stroke: var(--color-border-strong);
+    stroke-width: 3;
+}
+
+.fetus {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}
+
+.eso-wall.is-thin {
+    stroke-width: 22;
+}
+
+.ascites {
+    fill: var(--color-accent);
+    fill-opacity: 0.22;
+}
+
+/* Biliary, pancreas, and appendix */
+.journey-page {
+    --branch-color: var(--color-bolus);
+}
+
+.journey-page[data-stop="biliary"] {
+    --branch-color: #8aa63c;
+}
+
+.journey-page[data-stop="appendix"] {
+    --branch-color: #a07fc0;
+}
+
+.journey-worm {
+    fill: none;
+    stroke: var(--branch-color);
+    stroke-linecap: round;
+    stroke-width: 10;
+}
+
+.bile-stone {
+    fill: var(--color-bolus);
+    stroke: var(--color-text-muted);
+    stroke-width: 2;
+}
+
+.bug {
+    fill: var(--color-wrong);
+}
+
+.fistula {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-dasharray: 7 5;
+    stroke-linecap: round;
+    stroke-width: 4;
+}
+
+.gut-disease.is-thin {
+    stroke-width: 8;
+}
+
+.cecum {
+    fill: var(--color-surface);
+    stroke: var(--color-accent-line);
+    stroke-width: 4;
+}
+
+.eso-wall.is-ileum {
+    stroke-width: 26;
+}
+
+.eso-lumen.is-ileum {
+    stroke-width: 18;
+}
+
+.eso-wall.is-appendix {
+    stroke-width: 22;
+}
+
+.eso-lumen.is-appendix {
+    stroke-width: 14;
+}
+
+.lymph {
+    fill: var(--color-accent);
+    fill-opacity: 0.5;
+}
+
+.abdomen {
+    fill: var(--color-surface-muted);
+    stroke: var(--color-border-strong);
+    stroke-width: 3;
+}
+
+.navel,
+.asis {
+    fill: var(--color-text-muted);
+}
+
+.pain-start {
+    fill: var(--color-bolus);
+    fill-opacity: 0.35;
+}
+
+.pain-spot {
+    fill: var(--color-wrong);
+    fill-opacity: 0.6;
+}
+
+.etiology-map .cause-list + .subsection {
+    margin-top: 20px;
+}
+
+.etiology-map .cause-map svg[aria-label^="Abdomen"] {
+    max-width: 280px;
+    margin-inline: auto;
+}
