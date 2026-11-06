@@ -41,7 +41,7 @@ GI's look is food's journey from the mouth to the rectum. An article with `data-
 
 ## Writing content
 
-Physiology topics do not use the five condition sections. Each has its own sections, ending in "When it fails", which links to the conditions, and those conditions link back in their Related line, then "Pharmacology". Each drug there has a Target, Mechanism, and Response `.pathway`, drawn from the neighboring `pharm` project, with no contraindications or adverse effects. They keep the visual style below. A cell or structure keeps the same number throughout a page, as a cause does on a condition page.
+Physiology topics do not use the five condition sections. Each has its own sections, ending in "When it fails", which links to the conditions, and those conditions link back in their Related line, then "Pharmacology" where drugs are relevant. Each drug there has a Target, Mechanism, and Response `.pathway`, drawn from the neighboring `pharm` project, with no contraindications or adverse effects. They keep the visual style below. A cell or structure keeps the same number throughout a page, as a cause does on a condition page.
 
 Match the GI pages Esophagitis, Esophageal motility disorders, GERD, PUD and IBD:
 
