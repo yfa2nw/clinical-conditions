@@ -101,8 +101,8 @@ gi/
   questions.js      GI quiz question bank
   map.js            Draws the GI tract
   journey.js        Food's journey strip, tube, and bolus
-  gi-review-articles.pdf  All GI review articles (rebuild with tools/build-review-pdf.mjs)
-  gi-practice-tests.pdf   Practice tests A, B, and C (rebuild with tools/build-practice-pdf.mjs)
+  gi-review-articles.pdf  All GI review articles, clinical and physiology (rebuild with tools/build-review-pdf.mjs)
+  gi-practice-tests.pdf   Practice tests A, B, and C, clinical and physiology (rebuild with tools/build-practice-pdf.mjs)
 neuro/
   index.html        Page layout and all neurology condition content
   style.css         Neurology theme

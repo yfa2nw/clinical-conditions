@@ -1,13 +1,16 @@
-// Builds gi/gi-practice-tests.pdf from the question bank in gi/questions.js.
+// Builds gi/gi-practice-tests.pdf from the question banks in gi/questions.js and gi/physiology-questions.js.
 // Run from the project root after changing a GI question: node tools/build-practice-pdf.mjs
-// The same bank always gives the same tests. Adding or removing a question reshuffles them.
+// Each test takes a fixed number of questions from each bank, so some are left over.
+// The same banks always give the same tests. Adding or removing a question reshuffles them.
 import { readFileSync } from "node:fs";
 import vm from "node:vm";
 import { printPdf } from "./print-pdf.mjs";
 
 const OUTPUT = "gi/gi-practice-tests.pdf";
 const TEST_NAMES = ["A", "B", "C"];
-const MINUTES = 120;
+const MINUTES = 60;
+const CLINICAL_PER_TEST = 35;
+const PHYSIOLOGY_PER_TEST = 15;
 const LETTERS = ["A", "B", "C", "D", "E"];
 
 // Used in questions but not defined on a page, which is where the quiz finds its definitions
@@ -26,6 +29,7 @@ const EXTRA_TERMS = {
     FODMAP: "Fermentable oligosaccharides, disaccharides, monosaccharides, and polyols",
     GE: "Gastroesophageal",
     HIV: "Human immunodeficiency virus",
+    IM: "Intramuscular",
     LDL: "Low-density lipoprotein",
     MCAD: "Medium-chain acyl-CoA dehydrogenase",
     MCV: "Mean corpuscular volume",
@@ -38,8 +42,11 @@ const EXTRA_TERMS = {
     VIP: "Vasoactive intestinal peptide",
 };
 
-const questions = vm.runInNewContext(`${readFileSync("gi/questions.js", "utf8")};QUIZ_QUESTIONS`);
+const loadBank = (file) => vm.runInNewContext(`${readFileSync(file, "utf8")};QUIZ_QUESTIONS`);
+const clinicalBank = loadBank("gi/questions.js");
+const physiologyBank = loadBank("gi/physiology-questions.js").map((question) => ({ ...question, isPhysiology: true }));
 const page = readFileSync("gi/index.html", "utf8");
+const physiologyPage = readFileSync("gi/physiology.html", "utf8");
 
 /* ---------- Repeatable shuffling ---------- */
 function randomFrom(text) {
@@ -63,10 +70,43 @@ function shuffled(items, key) {
 }
 
 /* ---------- Split the bank ---------- */
-// Dealing in condition and step order puts every condition, and both steps, in every test
-const conditionOrder = [...new Set([...page.matchAll(/data-condition="([^"]+)"/g)].map((m) => m[1]))];
-const dealt = [...questions].sort((a, b) => conditionOrder.indexOf(a.condition) - conditionOrder.indexOf(b.condition) || a.step - b.step);
-const tests = TEST_NAMES.map((name, index) => ({ name, questions: dealt.filter((q, i) => i % TEST_NAMES.length === index) }));
+const orderIn = (source) => [...new Set([...source.matchAll(/data-condition="([^"]+)"/g)].map((m) => m[1]))];
+const conditionOrder = orderIn(page);
+const physiologyOrder = orderIn(physiologyPage);
+
+// Gives every test each condition, then shares the extras among the largest conditions.
+// Steps alternate within a condition, so each test gets a similar mix.
+function deal(bank, order, perTest) {
+    const picks = TEST_NAMES.map(() => []);
+    const base = Math.floor(perTest / order.length);
+    const extras = (perTest - base * order.length) * TEST_NAMES.length;
+    const bySize = [...order].sort((a, b) => bank.filter((q) => q.condition === b).length - bank.filter((q) => q.condition === a).length || order.indexOf(a) - order.indexOf(b));
+
+    order.forEach((condition, index) => {
+        const inCondition = shuffled(bank.filter((q) => q.condition === condition), `deal-${condition}`);
+        const [first, second] = index % 2 ? [2, 1] : [1, 2];
+        const lanes = [inCondition.filter((q) => q.step === first), inCondition.filter((q) => q.step === second)];
+        const queue = [];
+        while (lanes[0].length || lanes[1].length) {
+            if (lanes[0].length) queue.push(lanes[0].shift());
+            if (lanes[1].length) queue.push(lanes[1].shift());
+        }
+
+        const rank = bySize.indexOf(condition);
+        const quota = TEST_NAMES.map((name, test) => base + (rank < extras && rank % TEST_NAMES.length === test ? 1 : 0));
+        for (let round = 0; round < Math.max(...quota); round += 1) {
+            quota.forEach((count, test) => {
+                if (round < count) picks[test].push(queue.shift());
+            });
+        }
+    });
+    return picks;
+}
+
+const clinicalPicks = deal(clinicalBank, conditionOrder, CLINICAL_PER_TEST);
+const physiologyPicks = deal(physiologyBank, physiologyOrder, PHYSIOLOGY_PER_TEST);
+const tests = TEST_NAMES.map((name, index) => ({ name, questions: [...clinicalPicks[index], ...physiologyPicks[index]] }));
+const questions = tests.flatMap((test) => test.questions);
 
 for (const test of tests) {
     // The bank usually lists the correct answer first, so each letter is given an equal share
@@ -80,16 +120,16 @@ for (const test of tests) {
 
 /* ---------- Markup ---------- */
 const escape = (text) => text.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
-const conditionName = (id) => page.match(new RegExp(`data-condition="${id}"[^>]*>([^<]+)<`))[1].trim();
+const conditionName = (id) => (page.match(new RegExp(`data-condition="${id}"[^>]*>([^<]+)<`)) || physiologyPage.match(new RegExp(`data-condition="${id}"[^>]*>([^<]+)<`)))[1].trim();
 
 const glossary = new Map();
-for (const m of page.matchAll(/<abbr [^>]*data-definition="([^"]*)"[^>]*>([^<]+)<\/abbr>/g)) {
+for (const m of (page + physiologyPage).matchAll(/<abbr [^>]*data-definition="([^"]*)"[^>]*>([^<]+)<\/abbr>/g)) {
     const term = m[2].trim();
     if (/[A-Z].*[A-Z0-9]|^[a-z]+[A-Z]/.test(term) && !/ [a-z]/.test(term) && !glossary.has(term)) glossary.set(term, m[1]);
 }
 const allText = questions.map((q) => [q.stem, q.leadIn, ...q.options].join(" ")).join(" ");
 const usedTerms = [...[...glossary]
-    .filter(([term]) => new RegExp(`(^|[^A-Za-z0-9-])${term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^A-Za-z0-9-]|$)`).test(allText)), ...Object.entries(EXTRA_TERMS)]
+    .filter(([term]) => new RegExp(`(^|[^A-Za-z0-9-])${term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^A-Za-z0-9-]|$)`).test(allText)), ...Object.entries(EXTRA_TERMS).filter(([term]) => allText.toLowerCase().includes(term.toLowerCase()))]
     .sort(([a], [b]) => a.localeCompare(b, "en", { sensitivity: "base" }));
 
 const questionHtml = (q) => `<section class="question">
@@ -112,7 +152,7 @@ const answerHtml = (q) => {
         .join("");
     return `<section class="answer">
     <p class="answer-head"><span class="number">${q.number}.</span> ${LETTERS[q.correct]}. ${escape(q.shown[q.correct].text)}</p>
-    <p class="answer-tag">${escape(conditionName(q.condition))} · Step ${q.step}</p>
+    <p class="answer-tag">${q.isPhysiology ? "Physiology · " : ""}${escape(conditionName(q.condition))} · Step ${q.step}</p>
     <p>${escape(q.explanation)}</p>
     ${reasons ? `<ul class="reasons">${reasons}</ul>` : ""}
     ${q.info ? `<p class="info"><strong>Additional information:</strong> ${escape(q.info)}</p>` : ""}
@@ -185,7 +225,7 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
     <section class="cover">
         <p class="label">Clinical Conditions</p>
         <h1>Gastrointestinal Practice Tests</h1>
-        <p>${tests.length} tests, ${questions.length} USMLE-style questions, with answers and explanations</p>
+        <p>${tests.length} tests of ${sizes[0]} USMLE-style questions, with answers and explanations</p>
         <p>For educational use only. This is a study aid, not a clinical reference.</p>
     </section>
 
@@ -208,13 +248,14 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
         <h2>About the tests</h2>
         <ul>
             <li>No question appears in more than one test, so the three tests can be taken in any order.</li>
-            <li>Every test covers all ${conditionOrder.length} conditions, with a similar mix of Step 1 questions (mechanisms, microbiology, and pathology) and Step 2 questions (diagnosis, next step, and management).</li>
-            <li>Questions are in random order, and the condition being tested is not shown until the answers.</li>
+            <li>Every test has ${PHYSIOLOGY_PER_TEST} physiology and ${CLINICAL_PER_TEST} clinical questions, covering all ${physiologyOrder.length} physiology topics and all ${conditionOrder.length} conditions, with a similar mix of Step 1 questions (mechanisms, microbiology, and pathology) and Step 2 questions (diagnosis, next step, and management).</li>
+            <li>The tests use ${questions.length} of the ${clinicalBank.length + physiologyBank.length} questions on the website, so the website quiz has more practice.</li>
+            <li>Questions are in random order, and the topic being tested is not shown until the answers.</li>
         </ul>
         <h2>Scoring and review</h2>
         <ul>
             <li>Your score is the number of correct answers. Use the answer key at the start of each answer section, and write your score on your answer sheet.</li>
-            <li>Then read the explanations. Each one names the condition and step, so you can see which conditions to revisit.</li>
+            <li>Then read the explanations. Each one names the topic and step, so you can see what to revisit.</li>
             <li>Answers follow the course material. Where a guideline differs, the explanation says so under "Additional information".</li>
         </ul>
         <h2>Contents</h2>
@@ -249,7 +290,7 @@ await printPdf(html, OUTPUT, "Clinical Conditions · Gastrointestinal practice t
 for (const test of tests) {
     const count = (check) => test.questions.filter(check).length;
     const letters = LETTERS.map((letter, i) => `${letter} ${count((q) => q.correct === i)}`).join(", ");
-    console.log(`Test ${test.name}: ${test.questions.length} questions, Step 1 ${count((q) => q.step === 1)}, Step 2 ${count((q) => q.step === 2)}, ${new Set(test.questions.map((q) => q.condition)).size} conditions, ${letters}`);
+    console.log(`Test ${test.name}: ${test.questions.length} questions (${count((q) => q.isPhysiology)} physiology), Step 1 ${count((q) => q.step === 1)}, Step 2 ${count((q) => q.step === 2)}, ${new Set(test.questions.map((q) => q.condition)).size} conditions, ${letters}`);
 }
 console.log(`${OUTPUT}: ${usedTerms.length} abbreviations`);
 process.exit(0);

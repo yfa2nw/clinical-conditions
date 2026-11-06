@@ -1,4 +1,4 @@
-// Builds gi/gi-review-articles.pdf from the review article popups in gi/index.html.
+// Builds gi/gi-review-articles.pdf from the review article popups in gi/physiology.html and gi/index.html.
 // Run from the project root after changing a review: node tools/build-review-pdf.mjs
 import { readFileSync } from "node:fs";
 import { printPdf } from "./print-pdf.mjs";
@@ -7,14 +7,19 @@ const OUTPUT = "gi/gi-review-articles.pdf";
 
 /* ---------- Read the reviews in sidebar order ---------- */
 const page = readFileSync("gi/index.html", "utf8");
-const articleText = (id) => {
-    const start = page.indexOf(`id="${id}"`);
-    return page.slice(start, page.indexOf("</article>", start));
+const physiologyPage = readFileSync("gi/physiology.html", "utf8");
+const articleText = (source, id) => {
+    const start = source.indexOf(`<article class="condition-content`, source.indexOf(`data-condition="${id}"`));
+    const at = source.indexOf(`id="${id}"`, start);
+    return source.slice(at, source.indexOf("</article>", at));
 };
 
-const groups = [...page.matchAll(/<p class="group-label"[^>]*>([^<]+)<\/p>([\s\S]*?)<\/(?:div|nav|ul)>\s*<\/div>/g)]
+const physiologyIds = [...new Set([...physiologyPage.matchAll(/data-condition="([^"]+)"/g)].map((m) => m[1]))];
+const clinicalGroups = [...page.matchAll(/<p class="group-label"[^>]*>([^<]+)<\/p>([\s\S]*?)<\/(?:div|nav|ul)>\s*<\/div>/g)]
     .map((m) => ({ name: m[1].replaceAll("&amp;", "&"), ids: [...m[2].matchAll(/data-condition="([^"]+)"/g)].map((c) => c[1]) }))
-    .filter((group) => group.ids.length);
+    .filter((group) => group.ids.length)
+    .map((group) => ({ ...group, source: page }));
+const groups = [{ name: "Physiology", ids: physiologyIds, source: physiologyPage }, ...clinicalGroups];
 
 const glossary = new Map();
 function clean(html) {
@@ -23,11 +28,12 @@ function clean(html) {
             if (/[A-Z].*[A-Z0-9]|^[a-z]+[A-Z]/.test(text) && !/ [a-z]/.test(text) && !glossary.has(text)) glossary.set(text, definition);
             return text;
         })
-        .replace(/<button [^>]*data-goto="([^"]+)"[^>]*>([\s\S]*?)<\/button>/g, '<a href="#review-$1">$2</a>');
+        .replace(/<button [^>]*data-goto="([^"]+)"[^>]*>([\s\S]*?)<\/button>/g, '<a href="#review-$1">$2</a>')
+        .replace(/<a [^>]*href="(?:index|physiology)\.html#([^"]+)"[^>]*>/g, '<a href="#review-$1">');
 }
 
 const articles = groups.flatMap((group) => group.ids.map((id) => {
-    const text = articleText(id);
+    const text = articleText(group.source, id);
     const open = text.indexOf('<div class="quick-review-body">');
     if (open < 0) throw new Error(`No review for ${id}`);
     const body = clean(text.slice(open + '<div class="quick-review-body">'.length, text.lastIndexOf("</div>", text.indexOf("</dialog>", open))));
@@ -77,7 +83,7 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
     <section class="cover">
         <p class="label">Clinical Conditions</p>
         <h1>Gastrointestinal Review Articles</h1>
-        <p>${articles.length} conditions, from the esophagus to the appendix</p>
+        <p>${physiologyIds.length} physiology topics and ${articles.length - physiologyIds.length} conditions, from the esophagus to the appendix</p>
         <p>For educational use only. This is a study aid, not a clinical reference.</p>
     </section>
     <nav class="contents"><h1>Contents</h1>${contents}</nav>
