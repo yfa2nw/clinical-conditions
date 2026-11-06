@@ -5,6 +5,18 @@ import { printPdf } from "./print-pdf.mjs";
 
 const OUTPUT = "gi/gi-review-articles.pdf";
 
+// Which review section each diagram sits beside, in page order. Other reviews place theirs after Key points.
+const FIGURE_SECTIONS = {
+    "gastric-secretion": ["", "Cephalic phase", "Gastric cells and the mucosal barrier", "Gastric cells and the mucosal barrier", "Receptors and intracellular pathways", "Pharmacology"],
+    "digestion-absorption": ["", "Carbohydrates", "Proteins", "Fats", "Micronutrients"],
+    "liver-function": ["Anatomy and histology", "Anatomy and histology", "Anatomy and histology", "Carbohydrate metabolism", "Bilirubin conjugation", "Channels", "Pharmacology"],
+};
+
+// For a diagram with no description on its page
+const FIGURE_LEGENDS = {
+    "biliary-stones": "The gallbladder and biliary tree.",
+};
+
 /* ---------- Read the reviews in sidebar order ---------- */
 const page = readFileSync("gi/index.html", "utf8");
 const physiologyPage = readFileSync("gi/physiology.html", "utf8");
@@ -22,6 +34,7 @@ const clinicalGroups = [...page.matchAll(/<p class="group-label"[^>]*>([^<]+)<\/
 const groups = [{ name: "Physiology", ids: physiologyIds, source: physiologyPage }, ...clinicalGroups];
 
 const glossary = new Map();
+let figureCount = 0;
 function clean(html) {
     return html
         .replace(/<abbr [^>]*data-definition="([^"]*)"[^>]*>([\s\S]*?)<\/abbr>/g, (m, definition, text) => {
@@ -32,6 +45,79 @@ function clean(html) {
         .replace(/<a [^>]*href="(?:index|physiology)\.html#([^"]+)"[^>]*>/g, '<a href="#review-$1">');
 }
 
+/* ---------- Diagrams ---------- */
+// Diagrams are styled by classes in the site's stylesheets, so copy those rules, in the light theme
+const plain = (html) => html.replace(/<span class="badge">[\s\S]*?<\/span>/g, "").replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+
+function topLevelRules(css) {
+    const rules = [];
+    const source = css.replace(/\/\*[\s\S]*?\*\//g, "");
+    let depth = 0;
+    let start = 0;
+    for (let i = 0; i < source.length; i += 1) {
+        if (source[i] === "{") depth += 1;
+        if (source[i] === "}") {
+            depth -= 1;
+            if (depth === 0) {
+                rules.push(source.slice(start, i + 1).trim());
+                start = i + 1;
+            }
+        }
+    }
+    return rules;
+}
+
+function diagramStyles() {
+    const svgs = (page + physiologyPage).match(/<svg\b[\s\S]*?<\/svg>/g);
+    const classes = new Set(svgs.flatMap((svg) => [...svg.matchAll(/class="([^"]+)"/g)].flatMap((m) => m[1].split(/\s+/))));
+    classes.delete("map-svg");
+    const usesDiagram = (selector) => [...selector.matchAll(/\.([\w-]+)/g)].some((m) => classes.has(m[1]));
+    const rules = ["shared/style.css", "gi/style.css"].flatMap((file) => topLevelRules(readFileSync(file, "utf8")));
+    return rules.flatMap((rule) => {
+        const brace = rule.indexOf("{");
+        const selector = rule.slice(0, brace).trim();
+        if (selector.startsWith("@")) return [];
+        if (selector === ":root") return [rule];
+        const kept = selector.split(",").map((part) => part.trim()).filter((part) => usesDiagram(part) && !part.includes(":hover"));
+        return kept.length ? [`${kept.join(", ")} ${rule.slice(brace)}`] : [];
+    }).join("\n");
+}
+
+// The numbers on a diagram refer to lists on its page, so a figure's legend has to carry them
+function figureKey(after, svg, id) {
+    const wanted = [...new Set([...svg.matchAll(/<g class="site-marker">[\s\S]*?<text[^>]*>(\d+)<\/text>/g)].map((m) => Number(m[1])))].sort((a, b) => a - b);
+    if (!wanted.length) return "";
+    const section = after.slice(0, after.indexOf("</section>"));
+    const found = new Map();
+    for (const m of section.matchAll(/<span class="cause-number"[^>]*>(\d+)<\/span><span class="cause-text"><span class="cause-name">([\s\S]*?)<\/span><span class="cause-detail">/g)) {
+        if (!found.has(Number(m[1]))) found.set(Number(m[1]), plain(m[2]));
+    }
+    for (const m of section.matchAll(/<h5 class="drug-name"><span class="cause-number"[^>]*>(\d+)<\/span>([\s\S]*?)<\/h5>/g)) {
+        if (!found.has(Number(m[1]))) found.set(Number(m[1]), plain(m[2].replace(/<span class="drug-examples">[\s\S]*?<\/span>/, "")));
+    }
+    for (const m of section.matchAll(/<h4 class="sc-heading">(\d+)\. ([\s\S]*?)<\/h4>/g)) {
+        if (!found.has(Number(m[1]))) found.set(Number(m[1]), plain(m[2]));
+    }
+    const missing = wanted.filter((n) => !found.has(n));
+    if (missing.length) throw new Error(`${id}: no key for diagram numbers ${missing.join(", ")}`);
+    return ` ${wanted.map((n) => `${n}, ${found.get(n)}`).join("; ")}.`;
+}
+
+function figuresFor(text, id) {
+    const body = text.replace(/<dialog[\s\S]*?<\/dialog>/g, "");
+    return [...body.matchAll(/<svg\b[^>]*>[\s\S]*?<\/svg>/g)].map((m, index) => {
+        const svg = m[0];
+        const after = body.slice(m.index + svg.length);
+        const box = svg.match(/viewBox="[-\d.]+ [-\d.]+ ([\d.]+) ([\d.]+)"/);
+        const label = svg.match(/aria-label="([^"]+)"/)?.[1] || FIGURE_LEGENDS[id];
+        if (!label) throw new Error(`${id}: diagram with no legend`);
+        const note = after.match(/^<figcaption>([\s\S]*?)<\/figcaption>/)?.[1];
+        const legend = `${label.replace(/\.?$/, ".")}${note && !note.startsWith("Numbers match") ? ` ${plain(note)}` : ""}${figureKey(after, svg, id)}`;
+        const wide = Number(box[1]) / Number(box[2]) > 1.6;
+        return { section: FIGURE_SECTIONS[id]?.[index] || "", html: `<figure class="figure journey-page${wide ? " is-wide" : ""}">${svg}<figcaption><strong>Fig. ${index + 1} |</strong> ${legend}</figcaption></figure>` };
+    });
+}
+
 const articles = groups.flatMap((group) => group.ids.map((id) => {
     const text = articleText(group.source, id);
     const open = text.indexOf('<div class="quick-review-body">');
@@ -40,7 +126,21 @@ const articles = groups.flatMap((group) => group.ids.map((id) => {
     const title = body.match(/<h3[^>]*>([\s\S]*?)<\/h3>/)[1];
     const split = body.indexOf("</aside>") + "</aside>".length;
     const top = body.slice(0, split).replace(/<p class="review-kicker">[^<]*<\/p>/, `<p class="kicker">${group.name}</p>`).replace(/<h3[^>]*>/, "<h2>").replace("</h3>", "</h2>");
-    return { id, group: group.name, title, html: `<article id="review-${id}">${top}<div class="columns">${body.slice(split)}</div></article>` };
+    const figures = figuresFor(text, id);
+    let columns = body.slice(split);
+    // A figure for the first section goes above the columns, so it does not split them at the page top
+    const firstSection = columns.match(/<h4>([\s\S]*?)<\/h4>/)[1];
+    figures.forEach((figure) => {
+        if (figure.section === firstSection) figure.section = "";
+    });
+    figures.filter((figure) => figure.section).forEach((figure) => {
+        const heading = `<h4>${figure.section}</h4>`;
+        if (!columns.includes(heading)) throw new Error(`${id}: no section ${figure.section}`);
+        columns = columns.replace(heading, () => `${figure.html}${heading}`);
+    });
+    const lead = figures.filter((figure) => !figure.section).map((figure) => figure.html).join("");
+    figureCount += figures.length;
+    return { id, group: group.name, title, html: `<article id="review-${id}"${group.source === physiologyPage ? ' class="is-physiology"' : ""}>${top}${lead}<div class="columns">${columns}</div></article>` };
 }));
 
 /* ---------- Page ---------- */
@@ -79,6 +179,18 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
     .terms { break-before: page; column-count: 3; column-gap: 6mm; }
     .terms p { margin: 0 0 1mm; font-size: 8pt; line-height: 1.3; break-inside: avoid; }
     .terms strong { font-family: "Segoe UI", system-ui, sans-serif; }
+    .figure { display: flex; align-items: center; gap: 5mm; margin: 2mm 0 4mm; padding: 2.5mm 0; border-top: 0.6pt solid var(--accent); border-bottom: 0.6pt solid var(--accent); break-inside: avoid; column-span: all; }
+    .figure svg { flex: 0 0 72mm; width: 72mm; height: auto; max-height: 66mm; }
+    .figure.is-wide { display: block; }
+    .figure.is-wide svg { display: block; width: 122mm; max-height: 62mm; margin: 0 auto 2mm; }
+    .figure svg text { font-family: "Segoe UI", system-ui, sans-serif; }
+    .is-physiology .figure { margin: 1mm 0 3mm; padding: 1.5mm 0; }
+    .is-physiology .figure svg { flex-basis: 52mm; width: 52mm; max-height: 48mm; }
+    .is-physiology .figure.is-wide { display: flex; }
+    .is-physiology .figure.is-wide svg { flex-basis: 92mm; width: 92mm; max-height: 46mm; margin: 0; }
+    .figure figcaption { color: #333b44; font: 8pt/1.35 "Segoe UI", system-ui, sans-serif; text-align: left; }
+    .figure figcaption strong { color: var(--accent); }
+    ${diagramStyles()}
 </style></head><body>
     <section class="cover">
         <p class="label">Clinical Conditions</p>
@@ -92,5 +204,5 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
 </body></html>`;
 
 await printPdf(html, OUTPUT, "Clinical Conditions · Gastrointestinal review articles");
-console.log(`${OUTPUT}: ${articles.length} reviews, ${glossary.size} abbreviations`);
+console.log(`${OUTPUT}: ${articles.length} reviews, ${figureCount} figures, ${glossary.size} abbreviations`);
 process.exit(0);
