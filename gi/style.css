@@ -434,20 +434,6 @@
     font-weight: 700;
 }
 
-/* Complications */
-.complication-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px 28px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.complication-grid li {
-    margin: 0;
-}
-
 @media (max-width: 700px) {
     .journey-strip svg text {
         display: none;
@@ -463,10 +449,6 @@
 
     .journey-page .content-section > h3::before {
         left: -38px;
-    }
-
-    .complication-grid {
-        grid-template-columns: minmax(0, 1fr);
     }
 
     /* Too narrow for a row: the label sits above its details */

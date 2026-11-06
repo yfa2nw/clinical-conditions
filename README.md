@@ -93,19 +93,22 @@ shared/
   app.js            Navigation, search, section jump bar, tooltips, theme toggle
   quiz.js           Quiz screens and logic
   map.js            Lines the sidebar drawing up with its stations; highlighting
-  journey.js        Food's journey strip, tube, and bolus
-  gi-review-articles.pdf  All GI review articles (rebuild with tools/build-review-pdf.mjs)
 gi/
   index.html        Page layout and all GI condition content
   style.css         GI theme, diagrams, and journey styles
   questions.js      GI quiz question bank
   map.js            Draws the GI tract
+  journey.js        Food's journey strip, tube, and bolus
+  gi-review-articles.pdf  All GI review articles (rebuild with tools/build-review-pdf.mjs)
 neuro/
   index.html        Page layout and all neurology condition content
   style.css         Neurology theme
   questions.js      Neurology quiz question bank
   map.js            Draws the neuron chain
   concepts.js       Shared concepts panel linking conditions
+tools/
+  check-site.mjs    Checks question banks, markup, and every page at desktop and phone widths
+  build-review-pdf.mjs  Builds the GI review articles PDF
 ```
 
 ## Editing content
