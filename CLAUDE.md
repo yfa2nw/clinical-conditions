@@ -8,8 +8,9 @@ Clinical Conditions: a static study reference for medical conditions, organized 
 
 ## Commands
 
-There is nothing to install, build or lint, and there is no test suite. Open `index.html` in a browser. Everything must keep working from `file://`, so do not load content with `fetch` or ES modules.
+There is nothing to install or lint, and there is no test suite. The site itself has no build step; only the review PDF is generated. Open `index.html` in a browser. Everything must keep working from `file://`, so do not load content with `fetch` or ES modules.
 
+- After changing a GI review article, rebuild its PDF from the project root: `node tools/build-review-pdf.mjs`. It writes `gi/gi-review-articles.pdf`, which the landing page links to, using headless Edge.
 - Syntax-check a script: `node --check shared/app.js`
 - Load a question bank in Node to validate it (it is a plain script, so use `vm`): `vm.runInNewContext(fs.readFileSync("gi/questions.js", "utf8") + ";QUIZ_QUESTIONS")`. Check for unique `id`s, exactly five distinct `options`, `answer` from 0 to 4, `step` of 1 or 2, a `condition` matching an article `id`, and no `notes` entry on the correct answer.
 - Browser checks: headless Edge is available at `C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe`. Headless windows have a 500px minimum width, so test phone layouts with the DevTools protocol's `Emulation.setDeviceMetricsOverride`, and emulate `prefers-reduced-motion: reduce` so screenshots are not caught mid-animation.

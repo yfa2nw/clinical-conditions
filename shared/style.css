@@ -3866,6 +3866,27 @@ a.specialty-card.is-neuro:hover {
     border-color: #6a60e0;
 }
 
+.landing-download {
+    display: block;
+    margin-top: 12px;
+    padding: 14px 20px;
+    border: 1px dashed var(--color-border-strong);
+    border-radius: var(--radius-md);
+    color: var(--color-text);
+    text-decoration: none;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.landing-download:hover {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent-soft);
+}
+
+.landing-download .specialty-name,
+.landing-download .specialty-detail {
+    display: block;
+}
+
 .landing-footer {
     margin: 0;
     color: var(--color-text-muted);

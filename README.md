@@ -94,6 +94,7 @@ shared/
   quiz.js           Quiz screens and logic
   map.js            Lines the sidebar drawing up with its stations; highlighting
   journey.js        Food's journey strip, tube, and bolus
+  gi-review-articles.pdf  All GI review articles (rebuild with tools/build-review-pdf.mjs)
 gi/
   index.html        Page layout and all GI condition content
   style.css         GI theme, diagrams, and journey styles
