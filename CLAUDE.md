@@ -8,10 +8,11 @@ Clinical Conditions: a static study reference for medical conditions, organized 
 
 ## Commands
 
-There is nothing to install or lint. The site itself has no build step; only the review PDF is generated. Open `index.html` in a browser. Everything must keep working from `file://`, so do not load content with `fetch` or ES modules.
+There is nothing to install or lint. The site itself has no build step; only the two GI PDFs are generated. Open `index.html` in a browser. Everything must keep working from `file://`, so do not load content with `fetch` or ES modules.
 
-- After changing anything, run `node tools/check-site.mjs` from the project root. It takes about three minutes and exits with a failure if a question bank or the markup is invalid, or if any page has a console error, overflows sideways at desktop or phone width, or has a review popup that does not open and close. Add `--shots <folder>` to save a full-page screenshot of every page. It does not check content, so compare a new review article with its page by hand.
+- After changing anything, run `node tools/check-site.mjs` from the project root. It takes about three minutes and exits with a failure if a question bank or the markup is invalid, if correct options are too often the longest, or if any page has a console error, overflows sideways at desktop or phone width, or has a review popup that does not open and close. Add `--shots <folder>` to save a full-page screenshot of every page. It does not check content, so compare a new review article with its page by hand.
 - After changing a GI review article, rebuild its PDF from the project root: `node tools/build-review-pdf.mjs`. It writes `gi/gi-review-articles.pdf`, which the landing page links to, using headless Edge.
+- After changing a GI question, rebuild the practice tests: `node tools/build-practice-pdf.mjs`. It writes `gi/gi-practice-tests.pdf`, which the landing page also links to. It deals the bank into Tests A, B, and C by condition and step, and shuffles options so correct letters are evenly spread, because the bank usually lists the correct answer first. The split is repeatable, but adding or removing a question reshuffles it. An abbreviation used in a question with no definition on a page goes in `EXTRA_TERMS` there.
 - Syntax-check a script: `node --check shared/app.js`
 - Load a question bank in Node to validate it (it is a plain script, so use `vm`): `vm.runInNewContext(fs.readFileSync("gi/questions.js", "utf8") + ";QUIZ_QUESTIONS")`. Check for unique `id`s, exactly five distinct `options`, `answer` from 0 to 4, `step` of 1 or 2, a `condition` matching an article `id`, and no `notes` entry on the correct answer.
 - Browser checks: headless Edge is available at `C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe`. Headless windows have a 500px minimum width, so test phone layouts with the DevTools protocol's `Emulation.setDeviceMetricsOverride`, and emulate `prefers-reduced-motion: reduce` so screenshots are not caught mid-animation.
@@ -57,4 +58,4 @@ Match the GI pages Esophagitis, Esophageal motility disorders, GERD, PUD and IBD
 
 The site owner's coursework sets the expected answers, including where it differs from other sources: IBS uses Rome V, and first-line H. pylori treatment is triple therapy. Guideline differences go in a question's `info` field, shown as "Additional information", and are not presented as the answer.
 
-Quiz questions are clinical vignettes with an optional `notes` map of `{ optionIndex: "why it is wrong" }`. Options are shuffled when shown, so never refer to an option by its letter or position.
+Quiz questions are clinical vignettes with an optional `notes` map of `{ optionIndex: "why it is wrong" }`. Options are shuffled when shown, so never refer to an option by its letter or position. Keep options similar in length and detail, so the correct one is the longest in about one question in five; `tools/check-site.mjs` fails above 30%.

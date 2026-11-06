@@ -1,12 +1,8 @@
 // Builds gi/gi-review-articles.pdf from the review article popups in gi/index.html.
 // Run from the project root after changing a review: node tools/build-review-pdf.mjs
-import { spawn } from "node:child_process";
-import { mkdtempSync, readFileSync, writeFileSync } from "node:fs";
-import { tmpdir } from "node:os";
-import { join } from "node:path";
-import { pathToFileURL } from "node:url";
+import { readFileSync } from "node:fs";
+import { printPdf } from "./print-pdf.mjs";
 
-const EDGE = "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe";
 const OUTPUT = "gi/gi-review-articles.pdf";
 
 /* ---------- Read the reviews in sidebar order ---------- */
@@ -89,56 +85,6 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
     <section class="terms"><h1>Abbreviations</h1>${terms}</section>
 </body></html>`;
 
-/* ---------- Print with headless Edge ---------- */
-const folder = mkdtempSync(join(tmpdir(), "review-pdf-"));
-const source = join(folder, "reviews.html");
-writeFileSync(source, html);
-
-const port = 9900 + Math.floor(Math.random() * 90);
-const browser = spawn(EDGE, ["--headless=new", "--disable-gpu", `--remote-debugging-port=${port}`, `--user-data-dir=${join(folder, "profile")}`, "about:blank"]);
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
-
-let targets;
-for (let i = 0; i < 50 && !targets; i += 1) {
-    try { targets = await (await fetch(`http://127.0.0.1:${port}/json`)).json(); } catch { await sleep(200); }
-}
-const socket = new WebSocket(targets.find((t) => t.type === "page").webSocketDebuggerUrl);
-await new Promise((resolve) => socket.addEventListener("open", resolve));
-
-let nextId = 0;
-const waiting = new Map();
-socket.addEventListener("message", (event) => {
-    const message = JSON.parse(event.data);
-    if (waiting.has(message.id)) { waiting.get(message.id)(message); waiting.delete(message.id); }
-});
-const send = (method, params = {}) => new Promise((resolve) => {
-    nextId += 1;
-    waiting.set(nextId, resolve);
-    socket.send(JSON.stringify({ id: nextId, method, params }));
-});
-
-await send("Page.enable");
-await send("Page.navigate", { url: pathToFileURL(source).href });
-await sleep(1500);
-
-const footer = `<div style="width: 100%; padding: 0 16mm; color: #5b6470; font: 7.5pt 'Segoe UI', sans-serif; display: flex; justify-content: space-between;"><span>Clinical Conditions · Gastrointestinal review articles</span><span class="pageNumber"></span></div>`;
-const result = await send("Page.printToPDF", {
-    printBackground: true,
-    preferCSSPageSize: true,
-    displayHeaderFooter: true,
-    headerTemplate: "<span></span>",
-    footerTemplate: footer,
-    marginTop: 0.63,
-    marginBottom: 0.7,
-    marginLeft: 0.63,
-    marginRight: 0.63,
-    generateTaggedPDF: true,
-    generateDocumentOutline: true,
-});
-if (!result.result?.data) throw new Error(JSON.stringify(result.error));
-writeFileSync(OUTPUT, Buffer.from(result.result.data, "base64"));
+await printPdf(html, OUTPUT, "Clinical Conditions · Gastrointestinal review articles");
 console.log(`${OUTPUT}: ${articles.length} reviews, ${glossary.size} abbreviations`);
-
-socket.close();
-browser.kill();
 process.exit(0);

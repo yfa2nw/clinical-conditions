@@ -100,6 +100,7 @@ gi/
   map.js            Draws the GI tract
   journey.js        Food's journey strip, tube, and bolus
   gi-review-articles.pdf  All GI review articles (rebuild with tools/build-review-pdf.mjs)
+  gi-practice-tests.pdf   Practice tests A, B, and C (rebuild with tools/build-practice-pdf.mjs)
 neuro/
   index.html        Page layout and all neurology condition content
   style.css         Neurology theme
@@ -109,6 +110,8 @@ neuro/
 tools/
   check-site.mjs    Checks question banks, markup, and every page at desktop and phone widths
   build-review-pdf.mjs  Builds the GI review articles PDF
+  build-practice-pdf.mjs  Builds the GI practice tests PDF
+  print-pdf.mjs     Prints HTML to a PDF with headless Edge, for both builders
 ```
 
 ## Editing content

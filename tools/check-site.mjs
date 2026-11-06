@@ -47,7 +47,11 @@ function checkQuestions(site) {
         if (!articles.includes(q.condition)) fail(`${site}/${q.id}: no article ${q.condition}`);
         if (q.notes && q.answer in q.notes) fail(`${site}/${q.id}: note on the correct answer`);
     }
-    return { articles: articles.length, questions: questions.length };
+    // Chance is about 20%; well above that, picking the longest option becomes a way to guess
+    const longest = questions.filter((q) => q.options[q.answer].length >= Math.max(...q.options.map((option) => option.length))).length;
+    const longestShare = questions.length ? Math.round((longest / questions.length) * 100) : 0;
+    if (longestShare > 30) fail(`${site}: the correct option is the longest in ${longestShare}% of questions`);
+    return { articles: articles.length, questions: questions.length, longestShare };
 }
 
 const counts = {};
@@ -186,7 +190,7 @@ if (shotsFolder) {
 socket.close();
 
 /* ---------- Report ---------- */
-for (const site of SITES) console.log(`${site}: ${counts[site].articles} pages, ${counts[site].questions} questions`);
+for (const site of SITES) console.log(`${site}: ${counts[site].articles} pages, ${counts[site].questions} questions, correct option longest in ${counts[site].longestShare}%`);
 if (notes.length) console.log(`\nNotes:\n${[...new Set(notes)].map((n) => `  ${n}`).join("\n")}`);
 if (problems.length) {
     console.log(`\n${problems.length} problem(s):\n${problems.map((p) => `  ${p}`).join("\n")}`);
