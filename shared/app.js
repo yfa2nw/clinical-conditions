@@ -88,6 +88,10 @@ conditionContents.forEach((article) => {
     });
 
     article.appendChild(footer);
+
+    // References close the page, below Previous/Next
+    const references = article.querySelector(":scope > .references");
+    if (references) article.appendChild(references);
 });
 
 /* =========================

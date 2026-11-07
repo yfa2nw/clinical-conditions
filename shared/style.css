@@ -1597,6 +1597,37 @@ body {
    Cross-links between conditions
 ========================= */
 
+.references {
+    margin-top: 28px;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-divider);
+    color: var(--color-text-muted);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.references h3 {
+    margin: 0 0 8px;
+    color: var(--color-text);
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.references ol {
+    margin: 0;
+    padding-left: 22px;
+}
+
+.references li {
+    margin-bottom: 4px;
+    overflow-wrap: anywhere;
+}
+
+.references a {
+    color: var(--color-accent);
+}
+
 .condition-content .see-also {
     margin-top: 40px;
     padding: 14px 18px;

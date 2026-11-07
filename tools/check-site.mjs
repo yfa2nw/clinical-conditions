@@ -132,6 +132,7 @@ const inspect = (id) => `(() => {
     out.pending = article.querySelectorAll(".pending-content").length;
     const dialog = article.querySelector("dialog.quick-review");
     out.review = !!dialog;
+    out.references = !!article.querySelector(":scope > .references");
     if (dialog) {
         const opener = article.querySelector(".quick-review-open");
         out.opener = !!opener;
@@ -173,6 +174,7 @@ for (const [view, width, height, scheme] of [["desktop", 1440, 900, "light"], ["
             if (view === "desktop") {
                 r.dead.forEach((target) => notes.push(`${site}#${id}: link waits for a page that does not exist yet (${target})`));
                 if (!r.pending && !r.review) notes.push(`${site}#${id}: finished page with no review article`);
+                if (!r.pending && !r.references) notes.push(`${site}#${id}: finished page with no references`);
             }
             if (pageErrors.length) { fail(`${where}: ${pageErrors.join("; ")}`); pageErrors = []; }
         }
