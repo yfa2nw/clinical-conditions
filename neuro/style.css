@@ -940,3 +940,100 @@ body {
     stroke-dasharray: 5 5;
     stroke-width: 2;
 }
+
+/* Alzheimer disease diagrams */
+.ad-membrane {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}
+
+.ad-app {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-linecap: round;
+    stroke-width: 12;
+}
+
+.ad-abeta {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-width: 12;
+}
+
+.ad-cut {
+    fill: none;
+    stroke: var(--color-text);
+    stroke-dasharray: 6 5;
+    stroke-width: 2.5;
+}
+
+.ad-fibril {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 5;
+}
+
+.ad-plaque {
+    fill: var(--color-wrong);
+    opacity: 0.7;
+}
+
+.ad-compare {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-inline: auto;
+    max-width: 640px;
+}
+
+@media (max-width: 768px) {
+    .ad-compare {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.ad-region,
+.ad-pool {
+    fill: var(--color-accent-soft);
+}
+
+.ad-pool {
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}
+
+.ad-stem {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-linecap: round;
+    stroke-width: 26;
+}
+
+.ad-hippocampus {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-linecap: round;
+    stroke-width: 9;
+}
+
+.ad-stage.is-1 {
+    fill: var(--color-wrong);
+    opacity: 0.2;
+}
+
+.ad-stage.is-2 {
+    fill: var(--color-wrong);
+    opacity: 0.4;
+}
+
+.ad-stage.is-3 {
+    fill: var(--color-wrong);
+    opacity: 0.6;
+}
+
+.ad-stage.is-clear {
+    fill: var(--color-surface);
+}
