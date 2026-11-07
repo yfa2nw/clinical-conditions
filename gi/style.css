@@ -973,3 +973,150 @@
     stroke: var(--color-accent-line);
     stroke-width: 2;
 }
+
+/* =========================
+   Pathophysiology diagrams
+========================= */
+
+.wall-muscle {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 1.5;
+}
+
+.wall-hit {
+    fill: var(--color-wrong);
+    opacity: 0.72;
+}
+
+.wall-scar {
+    fill: var(--color-border-strong);
+    opacity: 0.75;
+}
+
+.wall-meta {
+    fill: var(--color-bolus);
+    opacity: 0.8;
+}
+
+.wall-meta-dot {
+    fill: var(--color-bolus);
+}
+
+.wall-pale {
+    fill: var(--color-surface-muted);
+    stroke: var(--color-wrong);
+    stroke-dasharray: 5 4;
+    stroke-width: 2;
+}
+
+.wall-thin {
+    fill: var(--color-surface);
+    stroke: var(--color-accent-line);
+    stroke-width: 1.5;
+}
+
+.wall-acid {
+    fill: var(--color-bolus);
+}
+
+.wall-fat {
+    fill: var(--color-up-soft);
+    stroke: var(--color-bolus);
+    stroke-width: 1.5;
+}
+
+.wall-globule {
+    fill: var(--color-accent);
+    opacity: 0.6;
+}
+
+.wall-vessel {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-linecap: round;
+    stroke-width: 7;
+}
+
+.wall-pouch {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 2.5;
+}
+
+.wall-pouch.is-hot {
+    fill: var(--color-up-soft);
+    stroke: var(--color-wrong);
+}
+
+.wall-tract {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-dasharray: 7 6;
+    stroke-linecap: round;
+    stroke-width: 5;
+}
+
+.wall-fibrosis {
+    fill: none;
+    stroke: var(--color-border-strong);
+    stroke-linecap: round;
+    stroke-width: 7;
+}
+
+.wall-tear {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 6;
+}
+
+.wall-tumor {
+    fill: var(--color-wrong);
+    opacity: 0.65;
+}
+
+.wall-ring {
+    fill: none;
+    stroke: var(--color-border-strong);
+    stroke-width: 4;
+}
+
+.wall-swell {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-dasharray: 8 6;
+    stroke-width: 3;
+}
+
+.wall-swell-line {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-linecap: round;
+    stroke-width: 38;
+}
+
+.wall-wide {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-linecap: round;
+    stroke-width: 20;
+}
+
+.phys-duct {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 12;
+}
+
+.phys-stone {
+    fill: var(--color-text-muted);
+}
+
+.phys-blood {
+    fill: var(--color-wrong);
+    opacity: 0.8;
+}

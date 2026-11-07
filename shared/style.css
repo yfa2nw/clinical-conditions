@@ -4002,6 +4002,7 @@ a.link-button {
 }
 
 .cause-map svg {
+    overflow: visible;
     display: block;
     width: 100%;
     height: auto;

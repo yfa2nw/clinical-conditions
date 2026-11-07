@@ -85,18 +85,18 @@ function diagramStyles() {
 
 // The numbers on a diagram refer to lists on its page, so a figure's legend has to carry them
 function figureKey(after, svg, id) {
-    const wanted = [...new Set([...svg.matchAll(/<g class="site-marker">[\s\S]*?<text[^>]*>(\d+)<\/text>/g)].map((m) => Number(m[1])))].sort((a, b) => a - b);
+    const wanted = [...new Set([...svg.matchAll(/<g class="site-marker">[\s\S]*?<text[^>]*>([A-Z0-9]+)<\/text>/g)].map((m) => m[1]))].sort((a, b) => a.localeCompare(b, "en", { numeric: true }));
     if (!wanted.length) return "";
     const section = after.slice(0, after.indexOf("</section>"));
     const found = new Map();
-    for (const m of section.matchAll(/<span class="cause-number"[^>]*>(\d+)<\/span><span class="cause-text"><span class="cause-name">([\s\S]*?)<\/span><span class="cause-detail">/g)) {
-        if (!found.has(Number(m[1]))) found.set(Number(m[1]), plain(m[2]));
+    for (const m of section.matchAll(/<span class="cause-number"[^>]*>([A-Z0-9]+)<\/span><span class="cause-text"><span class="cause-name">([\s\S]*?)<\/span><span class="cause-detail">/g)) {
+        if (!found.has(m[1])) found.set(m[1], plain(m[2]));
     }
     for (const m of section.matchAll(/<h5 class="drug-name"><span class="cause-number"[^>]*>(\d+)<\/span>([\s\S]*?)<\/h5>/g)) {
-        if (!found.has(Number(m[1]))) found.set(Number(m[1]), plain(m[2].replace(/<span class="drug-examples">[\s\S]*?<\/span>/, "")));
+        if (!found.has(m[1])) found.set(m[1], plain(m[2].replace(/<span class="drug-examples">[\s\S]*?<\/span>/, "")));
     }
     for (const m of section.matchAll(/<h4 class="sc-heading">(\d+)\. ([\s\S]*?)<\/h4>/g)) {
-        if (!found.has(Number(m[1]))) found.set(Number(m[1]), plain(m[2]));
+        if (!found.has(m[1])) found.set(m[1], plain(m[2]));
     }
     const missing = wanted.filter((n) => !found.has(n));
     if (missing.length) throw new Error(`${id}: no key for diagram numbers ${missing.join(", ")}`);
@@ -183,6 +183,7 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
     .figure svg { flex: 0 0 72mm; width: 72mm; height: auto; max-height: 66mm; }
     .figure.is-wide { display: block; }
     .figure.is-wide svg { display: block; width: 122mm; max-height: 62mm; margin: 0 auto 2mm; }
+    .figure svg { overflow: visible; }
     .figure svg text { font-family: "Segoe UI", system-ui, sans-serif; }
     .is-physiology .figure { margin: 1mm 0 3mm; padding: 1.5mm 0; }
     .is-physiology .figure svg { flex-basis: 52mm; width: 52mm; max-height: 48mm; }
