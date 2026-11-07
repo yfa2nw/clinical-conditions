@@ -1,0 +1,581 @@
+/* Landing page. Each panel borrows its organ system's tokens, so it shows that system's look. */
+
+/* =========================
+   Tokens
+========================= */
+
+.landing-page {
+    --landing-left: #f3f1ec;
+    --landing-right: #eef0f8;
+}
+
+.is-gi {
+    --color-bolus: #f2a65a;
+    --art-page: #e3f2ef;
+    --art-tube: #0f766e;
+    --art-label: #0b5f58;
+}
+
+.is-neuro {
+    --color-text: #1b1e33;
+    --color-text-muted: #565b7a;
+    --color-surface: #ffffff;
+    --color-surface-muted: #f5f6fc;
+    --color-border: #dcdfef;
+    --color-border-strong: #c3c8e2;
+    --color-accent: #4f46c8;
+    --color-accent-hover: #3d35a8;
+    --color-accent-soft: #e9e8fb;
+    --color-accent-line: #b1adec;
+    --font-display: Bahnschrift, "DIN Alternate", "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .landing-page {
+        --landing-left: #0f1316;
+        --landing-right: #0b0d1c;
+    }
+}
+
+:root[data-theme="dark"] .landing-page {
+    --landing-left: #0f1316;
+    --landing-right: #0b0d1c;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .is-gi {
+        --art-page: #12302c;
+        --art-tube: #3cc7b5;
+        --art-label: #a9e4da;
+    }
+}
+
+:root[data-theme="dark"] .is-gi {
+    --art-page: #12302c;
+    --art-tube: #3cc7b5;
+    --art-label: #a9e4da;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .is-neuro {
+        --color-text: #e7e8f5;
+        --color-text-muted: #a4a8c9;
+        --color-surface: #13162b;
+        --color-surface-muted: #191d36;
+        --color-border: #2a2f52;
+        --color-border-strong: #3b4170;
+        --color-accent: #8f8aff;
+        --color-accent-hover: #b0acff;
+        --color-accent-soft: #232350;
+        --color-accent-line: #4c4a9c;
+    }
+}
+
+:root[data-theme="dark"] .is-neuro {
+    --color-text: #e7e8f5;
+    --color-text-muted: #a4a8c9;
+    --color-surface: #13162b;
+    --color-surface-muted: #191d36;
+    --color-border: #2a2f52;
+    --color-border-strong: #3b4170;
+    --color-accent: #8f8aff;
+    --color-accent-hover: #b0acff;
+    --color-accent-soft: #232350;
+    --color-accent-line: #4c4a9c;
+}
+
+/* =========================
+   Page
+========================= */
+
+.landing-page {
+    min-height: 100vh;
+    background: linear-gradient(100deg, var(--landing-left) 35%, var(--landing-right) 65%);
+}
+
+.landing {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    max-width: 1240px;
+    margin: 0 auto;
+    padding-top: 16px;
+}
+
+.landing-header h1 {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 8px;
+    font-family: var(--font-display);
+    font-size: 46px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+
+.landing-header .brand-mark {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+}
+
+.landing-header .brand-mark::after {
+    inset: 12px 14px;
+}
+
+.landing-header p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+/* =========================
+   System panels
+========================= */
+
+.worlds {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.world {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: 24px;
+    background-color: var(--color-surface);
+    box-shadow: var(--shadow-panel);
+    color: var(--color-text);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s var(--ease);
+}
+
+.world:hover {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-raised);
+    transform: translateY(-2px);
+}
+
+.world-link {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    color: inherit;
+    text-decoration: none;
+}
+
+.world-link:focus-visible {
+    outline: 3px solid var(--color-accent);
+    outline-offset: -3px;
+    border-radius: 24px;
+}
+
+.world-art svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.is-gi .world-art {
+    background: repeating-linear-gradient(90deg, transparent 0 22px, rgb(15 118 110 / 0.035) 22px 26px), var(--art-page);
+}
+
+/* The neuron chain always sits in the dark, like a signal seen under a microscope */
+.is-neuro .world-art {
+    background: radial-gradient(ellipse at 50% 45%, #232350, #0b0d1c 72%);
+}
+
+.art-label {
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 650;
+    text-anchor: middle;
+}
+
+.is-gi .art-label {
+    fill: var(--art-label);
+}
+
+.is-neuro .art-label {
+    fill: #d6d6f7;
+}
+
+.world-intro {
+    padding: 22px 26px 20px;
+}
+
+.world-intro h2 {
+    margin: 0 0 6px;
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+.world-go {
+    display: inline-block;
+    color: var(--color-accent);
+    transition: transform 0.2s var(--ease);
+}
+
+.world-link:hover .world-go {
+    transform: translateX(5px);
+}
+
+.world-intro p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.world-stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 24px;
+    margin: 14px 0 0;
+    padding: 0;
+    color: var(--color-text-muted);
+    font-size: 15px;
+    list-style: none;
+}
+
+.world-stats strong {
+    color: var(--color-accent);
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 700;
+}
+
+/* =========================
+   Food and signal
+========================= */
+
+.gi-mouth,
+.gi-tube {
+    fill: none;
+    stroke: var(--art-tube);
+    stroke-linecap: round;
+    stroke-width: 13;
+}
+
+.gi-mouth {
+    stroke-width: 5;
+}
+
+.gi-tube.is-stomach {
+    stroke-width: 28;
+}
+
+.gi-tube.is-colon {
+    stroke-dasharray: 22 4;
+    stroke-linecap: butt;
+    stroke-width: 24;
+}
+
+.gi-bolus {
+    fill: none;
+    stroke: var(--color-bolus);
+    stroke-dasharray: 0.01 200;
+    stroke-linecap: round;
+    stroke-width: 20;
+    animation: bolus-travel 14s linear infinite;
+}
+
+@keyframes bolus-travel {
+    from {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: -100;
+    }
+}
+
+.neuro-dendrite,
+.neuro-axon {
+    fill: none;
+    stroke: #8f8aff;
+    stroke-linecap: round;
+    stroke-width: 2.5;
+}
+
+.neuro-myelin {
+    fill: none;
+    stroke: #6d67d1;
+    stroke-dasharray: 15 5;
+    stroke-width: 8;
+}
+
+.neuro-bouton {
+    fill: #b0acff;
+}
+
+.neuro-soma {
+    fill: #232350;
+    stroke: #b0acff;
+    stroke-width: 3;
+    animation: soma-fire 7s linear infinite;
+}
+
+.neuro-soma[data-step="1"] { animation-delay: 1.75s; }
+.neuro-soma[data-step="2"] { animation-delay: 3.5s; }
+.neuro-soma[data-step="3"] { animation-delay: 5.25s; }
+.neuro-soma[data-step="4"] { animation-delay: 7s; }
+
+@keyframes soma-fire {
+    0%, 12%, 100% {
+        fill: #232350;
+    }
+
+    4% {
+        fill: #b0acff;
+    }
+}
+
+.neuro-pulse {
+    fill: none;
+    filter: drop-shadow(0 0 5px #ffffff);
+    stroke: #ffffff;
+    stroke-dasharray: 2 200;
+    stroke-linecap: round;
+    stroke-width: 6;
+    animation: signal-travel 7s linear infinite;
+}
+
+@keyframes signal-travel {
+    from {
+        stroke-dashoffset: 2;
+    }
+
+    to {
+        stroke-dashoffset: -100;
+    }
+}
+
+/* =========================
+   Shelf: what comes with each system
+========================= */
+
+.world-shelf {
+    min-height: 150px;
+    padding: 16px 26px 22px;
+    border-top: 1px solid var(--color-border);
+    background-color: var(--color-surface-muted);
+}
+
+.world-shelf h3 {
+    margin: 0 0 10px;
+    color: var(--color-accent);
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.shelf-files {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.shelf-file {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    border: 1px solid var(--color-border-strong);
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface);
+    color: var(--color-text);
+    text-decoration: none;
+    transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.shelf-file:hover {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent-soft);
+}
+
+.shelf-icon {
+    flex: none;
+    width: 26px;
+    height: 26px;
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-linejoin: round;
+    stroke-width: 1.6;
+}
+
+.shelf-text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 0;
+    font-size: 13px;
+    line-height: 1.35;
+    color: var(--color-text-muted);
+}
+
+.shelf-text strong {
+    color: var(--color-text);
+    font-size: 15px;
+}
+
+.shelf-type {
+    flex: none;
+    color: var(--color-accent);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.progress-chain {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    margin: 6px 0 12px;
+}
+
+.progress-chain::before {
+    content: "";
+    position: absolute;
+    inset: 50% 0 auto;
+    border-top: 2px dashed var(--color-accent-line);
+}
+
+.progress-cell {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--color-accent-line);
+    border-radius: 50%;
+    background-color: var(--color-surface);
+}
+
+.progress-cell.is-done {
+    border-color: var(--color-accent);
+    background-color: var(--color-accent);
+}
+
+.shelf-progress p {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.shelf-progress strong {
+    color: var(--color-text);
+}
+
+/* =========================
+   Five steps
+========================= */
+
+.landing-steps h2 {
+    margin: 0 0 14px;
+    font-family: var(--font-display);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.landing-steps ol {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    counter-reset: step;
+    list-style: none;
+}
+
+.landing-steps li {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    padding-top: 12px;
+    border-top: 3px solid var(--color-border-strong);
+    color: var(--color-text-muted);
+    font-size: 14px;
+}
+
+.landing-steps strong {
+    color: var(--color-text);
+    font-size: 16px;
+}
+
+.landing-footer {
+    margin: 0;
+    color: var(--color-text-muted);
+    font-size: 14px;
+}
+
+/* =========================
+   Smaller screens
+========================= */
+
+@media (max-width: 960px) {
+    .worlds {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .landing-page {
+        background: linear-gradient(180deg, var(--landing-left) 35%, var(--landing-right) 65%);
+    }
+}
+
+@media (max-width: 600px) {
+    .landing-header h1 {
+        font-size: 32px;
+    }
+
+    .landing-header .brand-mark {
+        width: 34px;
+        height: 34px;
+    }
+
+    .art-label {
+        font-size: 17px;
+    }
+
+    .world-shelf {
+        min-height: 0;
+    }
+
+    .shelf-files,
+    .landing-steps ol {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .world-intro,
+    .world-shelf {
+        padding-inline: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gi-bolus {
+        animation: none;
+        stroke-dashoffset: -19;
+    }
+
+    .neuro-pulse {
+        animation: none;
+        stroke-dashoffset: -45;
+    }
+
+    .neuro-soma {
+        animation: none;
+    }
+
+    .world,
+    .world-go {
+        transition: none;
+    }
+}

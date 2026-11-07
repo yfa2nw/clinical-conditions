@@ -201,7 +201,7 @@ Options are shuffled when shown, so you can list them in any order.
 1. Copy the `gi` folder (e.g. to `neuro`), then replace its conditions, questions and drawing.
 2. In the new `index.html`, set `data-specialty` on `<body>`. Quiz progress is saved separately for each value.
 3. In the new `map.js`, write a `drawTract()` that returns the point each `.station`'s leader line starts from. The last `.station` in the sidebar sets the height of the drawing.
-4. Add a card for it to the landing page (`index.html`).
+4. Add a panel for it to the landing page (`index.html`), with its tokens and drawing in `landing.css`.
 
 ### Shared concepts (neurology)
 

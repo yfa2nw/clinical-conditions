@@ -71,9 +71,19 @@ const landing = readFileSync("index.html", "utf8");
 for (const m of landing.matchAll(/href="([^"#]+)"/g)) {
     if (!/^(https?:|\.\.)/.test(m[1]) && !existsSync(m[1])) fail(`index.html: broken link ${m[1]}`);
 }
-const stated = landing.match(/(\d+) conditions · (\d+) questions/);
-if (stated && (+stated[1] !== counts.gi.articles || +stated[2] !== counts.gi.questions)) {
-    fail(`index.html: says ${stated[0]}, but GI has ${counts.gi.articles} conditions and ${counts.gi.questions} questions`);
+const stat = (word) => +(landing.match(new RegExp(`<strong>(\\d+)</strong> ${word}`)) || [])[1];
+if (stat("conditions") !== counts.gi.articles || stat("questions") !== counts.gi.questions) {
+    fail(`index.html: says ${stat("conditions")} conditions and ${stat("questions")} questions, but GI has ${counts.gi.articles} and ${counts.gi.questions}`);
+}
+const neuroHtml = readFileSync("neuro/index.html", "utf8");
+const neuroGroups = (neuroHtml.match(/class="station"/g) || []).length;
+const neuroPages = neuroHtml.split(/<article class="condition-content[ "]/).slice(1);
+const neuroDone = neuroPages.filter((page) => !page.includes("pending-content")).length;
+const written = landing.match(/(\d+) of (\d+) topics written/) || [];
+const cells = (landing.match(/class="progress-cell/g) || []).length;
+const litCells = (landing.match(/progress-cell is-done/g) || []).length;
+if (stat("groups") !== neuroGroups || +written[1] !== neuroDone || +written[2] !== neuroPages.length || stat("topics") !== neuroPages.length || cells !== neuroPages.length || litCells !== neuroDone) {
+    fail(`index.html: neurology progress is out of date; ${neuroDone} of ${neuroPages.length} topics are written, in ${neuroGroups} groups`);
 }
 
 /* ---------- Browser ---------- */

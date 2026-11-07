@@ -12,42 +12,156 @@
 
     <script src="shared/theme.js"></script>
     <link rel="stylesheet" href="shared/style.css">
+    <link rel="stylesheet" href="landing.css">
 </head>
 
-<body>
+<body class="landing-page">
     <main class="landing">
         <header class="landing-header">
             <h1>
                 <span class="brand-mark" aria-hidden="true"></span>
                 Clinical Conditions
             </h1>
-            <p>
-                An interactive study reference covering normal physiology, and the pathophysiology,
-                etiology, symptoms and complications, diagnosis, and treatment of each condition,
-                with USMLE-style practice questions.
-            </p>
+            <p>A visual study reference for medical conditions, organized by organ system.</p>
         </header>
 
-        <ul class="specialty-list">
-            <li>
-                <div class="specialty-card">
-                    <a class="specialty-name" href="gi/index.html">Gastrointestinal</a>
-                    <span class="specialty-detail">Esophagus, stomach, liver, biliary tree, pancreas, intestines and appendix</span>
-                    <span class="specialty-meta">28 conditions · 238 questions · Physiology topics</span>
-                    <div class="specialty-downloads">
-                        <a class="specialty-download" href="gi/gi-review-articles.pdf" target="_blank" rel="noopener">Review articles (PDF)</a>
-                        <a class="specialty-download" href="gi/gi-practice-tests.pdf" target="_blank" rel="noopener">Practice tests (PDF)</a>
+        <div class="worlds">
+            <article class="world is-gi">
+                <a class="world-link" href="gi/index.html">
+                    <div class="world-art">
+                        <svg viewBox="0 0 640 250" role="img" aria-label="Food travels from the mouth through the esophagus, stomach, small intestine, and colon to the rectum">
+                            <ellipse class="gi-mouth" cx="32" cy="118" rx="15" ry="11"/>
+                            <path class="gi-tube" d="M44.7 118L143.4 118"/>
+                            <path class="gi-tube is-stomach" d="M143.4 118C150.4 42.4 198.3 29.8 211 101.2C215.3 130.6 220.9 130.6 229.4 118"/>
+                            <path class="gi-tube" d="M229.4 118C236.4 55 249.1 55 256.2 118C263.2 181 275.9 181 282.9 118C290 55 302.7 55 309.7 118C316.8 181 329.5 181 336.5 118C343.6 55 356.3 55 363.3 118C370.4 181 383.1 181 390.1 118"/>
+                            <path class="gi-tube" d="M390.1 118C407 29.8 531.1 29.8 549.4 118"/>
+                            <path class="gi-tube is-colon" d="M390.1 118C407 29.8 531.1 29.8 549.4 118"/>
+                            <path class="gi-tube" d="M549.4 118L612.9 118"/>
+                            <path class="gi-bolus" pathLength="100" d="M44.7 118L143.4 118C150.4 42.4 198.3 29.8 211 101.2C215.3 130.6 220.9 130.6 229.4 118C236.4 55 249.1 55 256.2 118C263.2 181 275.9 181 282.9 118C290 55 302.7 55 309.7 118C316.8 181 329.5 181 336.5 118C343.6 55 356.3 55 363.3 118C370.4 181 383.1 181 390.1 118C407 29.8 531.1 29.8 549.4 118L612.9 118"/>
+                            <text class="art-label" x="30.6" y="228">Mouth</text>
+                            <text class="art-label" x="112" y="228">Esophagus</text>
+                            <text class="art-label" x="204" y="228">Stomach</text>
+                            <text class="art-label" x="315.4" y="228">Small intestine</text>
+                            <text class="art-label" x="470.5" y="228">Colon</text>
+                            <text class="art-label" x="580.5" y="228">Rectum</text>
+                        </svg>
                     </div>
-                </div>
-            </li>
-            <li>
-                <div class="specialty-card is-neuro">
-                    <a class="specialty-name" href="neuro/index.html">Neurology</a>
-                    <span class="specialty-detail">Stroke, seizures, multiple sclerosis, dementia, parkinsonism and movement disorders</span>
-                    <span class="specialty-meta">In progress</span>
-                </div>
-            </li>
-        </ul>
+                    <div class="world-intro">
+                        <h2>Gastrointestinal <span class="world-go" aria-hidden="true">→</span></h2>
+                        <p>Follow food from the mouth to the rectum, with the liver, biliary tree, pancreas, and appendix as side branches.</p>
+                        <ul class="world-stats">
+                            <li><strong>28</strong> conditions</li>
+                            <li><strong>238</strong> questions</li>
+                            <li><strong>3</strong> physiology topics</li>
+                        </ul>
+                    </div>
+                </a>
+                <section class="world-shelf" aria-labelledby="gi-shelf">
+                    <h3 id="gi-shelf">Study offline</h3>
+                    <div class="shelf-files">
+                        <a class="shelf-file" href="gi/gi-review-articles.pdf" target="_blank" rel="noopener">
+                            <svg class="shelf-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>
+                            <span class="shelf-text"><strong>Review articles</strong><span>Physiology and every condition, with diagrams</span></span>
+                            <span class="shelf-type">PDF</span>
+                        </a>
+                        <a class="shelf-file" href="gi/gi-practice-tests.pdf" target="_blank" rel="noopener">
+                            <svg class="shelf-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 3h8l4 4v14H6z"/><path d="M14 3v4h4M9 12h6M9 16h6"/></svg>
+                            <span class="shelf-text"><strong>Practice tests</strong><span>Three 60-minute tests of 50 questions</span></span>
+                            <span class="shelf-type">PDF</span>
+                        </a>
+                    </div>
+                </section>
+            </article>
+
+            <article class="world is-neuro">
+                <a class="world-link" href="neuro/index.html">
+                    <div class="world-art">
+                        <svg viewBox="0 0 640 250" role="img" aria-label="A chain of five neurons joined by myelinated axons, one for each group of neurologic conditions, with a signal passing along the chain">
+                            <path class="neuro-dendrite" d="M72 81L65.2 73.9L62 62.8M65.2 73.9L52.6 77.2"/>
+                            <path class="neuro-dendrite" d="M78 74.5L75.7 59.2L81.6 46.1M75.7 59.2L61 52.3"/>
+                            <path class="neuro-dendrite" d="M89.9 74.4L97.6 68.2L108.9 65.9M97.6 68.2L95.2 55.3"/>
+                            <path class="neuro-dendrite" d="M96 80.9L111.3 79.9L124 86.8M111.3 79.9L119.4 65.7"/>
+                            <path class="neuro-dendrite" d="M190 171L180.1 170.7L170 165.1M180.1 170.7L173.5 182"/>
+                            <path class="neuro-dendrite" d="M196 177.5L184.9 188.1L170.7 190.9M184.9 188.1L187.7 204.2"/>
+                            <path class="neuro-dendrite" d="M207.9 177.6L208.4 187.5L203.6 198M208.4 187.5L220.2 193.1"/>
+                            <path class="neuro-dendrite" d="M214 171.1L225.4 181.3L229.3 195.2M225.4 181.3L241.2 177.3"/>
+                            <path class="neuro-dendrite" d="M308 81L301.2 73.9L298 62.8M301.2 73.9L288.6 77.2"/>
+                            <path class="neuro-dendrite" d="M314 74.5L311.7 59.2L317.6 46.1M311.7 59.2L297 52.3"/>
+                            <path class="neuro-dendrite" d="M325.9 74.4L333.6 68.2L344.9 65.9M333.6 68.2L331.2 55.3"/>
+                            <path class="neuro-dendrite" d="M332 80.9L347.3 79.9L360 86.8M347.3 79.9L355.4 65.7"/>
+                            <path class="neuro-dendrite" d="M426 171L416.1 170.7L406 165.1M416.1 170.7L409.5 182"/>
+                            <path class="neuro-dendrite" d="M432 177.5L420.9 188.1L406.7 190.9M420.9 188.1L423.7 204.2"/>
+                            <path class="neuro-dendrite" d="M443.9 177.6L444.4 187.5L439.6 198M444.4 187.5L456.2 193.1"/>
+                            <path class="neuro-dendrite" d="M450 171.1L461.4 181.3L465.3 195.2M461.4 181.3L477.2 177.3"/>
+                            <path class="neuro-dendrite" d="M544 81L537.2 73.9L534 62.8M537.2 73.9L524.6 77.2"/>
+                            <path class="neuro-dendrite" d="M550 74.5L547.7 59.2L553.6 46.1M547.7 59.2L533 52.3"/>
+                            <path class="neuro-dendrite" d="M561.9 74.4L569.6 68.2L580.9 65.9M569.6 68.2L567.2 55.3"/>
+                            <path class="neuro-dendrite" d="M568 80.9L583.3 79.9L596 86.8M583.3 79.9L591.4 65.7"/>
+                            <path class="neuro-axon" d="M101 95C134 103 168 127 190 139"/>
+                            <path class="neuro-myelin" d="M101 95C134 103 168 127 190 139"/>
+                            <path class="neuro-axon" d="M219 157C252 149 286 125 308 113"/>
+                            <path class="neuro-myelin" d="M219 157C252 149 286 125 308 113"/>
+                            <path class="neuro-axon" d="M337 95C370 103 404 127 426 139"/>
+                            <path class="neuro-myelin" d="M337 95C370 103 404 127 426 139"/>
+                            <path class="neuro-axon" d="M455 157C488 149 522 125 544 113"/>
+                            <path class="neuro-myelin" d="M455 157C488 149 522 125 544 113"/>
+                            <path class="neuro-pulse" pathLength="100" d="M101 95C134 103 168 127 190 139L219 157C252 149 286 125 308 113L337 95C370 103 404 127 426 139L455 157C488 149 522 125 544 113"/>
+                            <circle class="neuro-bouton" cx="190" cy="139" r="5"/>
+                            <circle class="neuro-bouton" cx="308" cy="113" r="5"/>
+                            <circle class="neuro-bouton" cx="426" cy="139" r="5"/>
+                            <circle class="neuro-bouton" cx="544" cy="113" r="5"/>
+                            <path class="neuro-soma" data-step="0" d="M99.1 85.8Q103.1 94.1 94.6 98.2Q86 102.2 79.5 98.3Q72.9 94.4 68.9 86.2Q64.9 77.9 73.4 73.9Q82 69.8 88.6 73.7Q95.1 77.6 99.1 85.8Z"/>
+                            <path class="neuro-soma" data-step="1" d="M201 179.2Q193.4 180.7 187.5 173.3Q181.6 165.9 188.5 160.1Q195.3 154.3 203 152.7Q210.7 151.2 216.5 158.7Q222.4 166.1 215.5 171.9Q208.7 177.7 201 179.2Z"/>
+                            <path class="neuro-soma" data-step="2" d="M306.7 85.2Q309.5 77.8 316.1 71.9Q322.7 66 329.4 72.7Q336.1 79.4 333.3 86.8Q330.6 94.2 323.9 100.1Q317.3 106.1 310.6 99.3Q303.9 92.6 306.7 85.2Z"/>
+                            <path class="neuro-soma" data-step="3" d="M440.3 150.9Q448 156 450.7 163.1Q453.5 170.2 448.4 178.2Q443.4 186.1 435.7 181Q428 176 425.2 168.9Q422.5 161.8 427.6 153.8Q432.7 145.9 440.3 150.9Z"/>
+                            <path class="neuro-soma" data-step="4" d="M571.3 92.1Q567.3 100.7 559.1 99.4Q551 98 543.8 93.3Q536.7 88.5 540.7 79.9Q544.8 71.3 552.9 72.6Q561 73.9 568.2 78.7Q575.4 83.5 571.3 92.1Z"/>
+                            <text class="art-label" x="84" y="26">Strokes and lesions</text>
+                            <text class="art-label" x="202" y="232">Epilepsy</text>
+                            <text class="art-label" x="320" y="26">Demyelinating</text>
+                            <text class="art-label" x="438" y="232">Dementia</text>
+                            <text class="art-label" x="556" y="26">Movement disorders</text>
+                        </svg>
+                    </div>
+                    <div class="world-intro">
+                        <h2>Neurology <span class="world-go" aria-hidden="true">→</span></h2>
+                        <p>Trace a chain of neurons through stroke, seizures, multiple sclerosis, dementia, and movement disorders.</p>
+                        <ul class="world-stats">
+                            <li><strong>10</strong> topics</li>
+                            <li><strong>5</strong> groups</li>
+                        </ul>
+                    </div>
+                </a>
+                <section class="world-shelf" aria-labelledby="neuro-shelf">
+                    <h3 id="neuro-shelf">Still growing</h3>
+                    <div class="shelf-progress">
+                        <div class="progress-chain" aria-hidden="true">
+                                <span class="progress-cell is-done"></span>
+                                <span class="progress-cell is-done"></span>
+                                <span class="progress-cell is-done"></span>
+                                <span class="progress-cell is-done"></span>
+                                <span class="progress-cell is-done"></span>
+                                <span class="progress-cell is-done"></span>
+                                <span class="progress-cell is-done"></span>
+                                <span class="progress-cell is-done"></span>
+                                <span class="progress-cell"></span>
+                                <span class="progress-cell"></span>
+                        </div>
+                        <p><strong>8 of 10 topics written.</strong> Each has a review article on its page; there is no quiz or PDF yet.</p>
+                    </div>
+                </section>
+            </article>
+        </div>
+
+        <section class="landing-steps" aria-labelledby="steps-title">
+            <h2 id="steps-title">Every condition, the same five steps</h2>
+            <ol>
+                <li><strong>Pathophysiology</strong><span>What goes wrong</span></li>
+                <li><strong>Etiology</strong><span>Why it happens</span></li>
+                <li><strong>Symptoms</strong><span>What it causes</span></li>
+                <li><strong>Diagnosis</strong><span>How to find it</span></li>
+                <li><strong>Treatment</strong><span>How to manage it</span></li>
+            </ol>
+        </section>
 
         <p class="landing-footer">For educational use only. This is a study aid, not a clinical reference.</p>
     </main>

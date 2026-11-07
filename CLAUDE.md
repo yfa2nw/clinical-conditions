@@ -19,7 +19,7 @@ There is nothing to install or lint. The site itself has no build step; only the
 
 ## Architecture
 
-Each organ system is a folder (`gi/`, `neuro/`) with its own `index.html`, `style.css`, `questions.js` and `map.js`, sharing the engine in `shared/`. The root `index.html` is the landing page; it also redirects old hash links such as `index.html#gerd` to `gi/`.
+Each organ system is a folder (`gi/`, `neuro/`) with its own `index.html`, `style.css`, `questions.js` and `map.js`, sharing the engine in `shared/`. The root `index.html` is the landing page, styled by `landing.css`; it also redirects old hash links such as `index.html#gerd` to `gi/`. Each system has a panel that uses its own tokens and a large version of its drawing, and a shelf at the bottom holds what comes with it. `tools/check-site.mjs` fails if the GI counts or the neurology progress there are out of date.
 
 Scripts are classic `defer` scripts sharing one global scope, so load order matters: `shared/app.js`, `questions.js`, `shared/quiz.js`, the organ system's `map.js`, `shared/map.js`, then any organ-specific scripts such as `gi/journey.js` or `neuro/concepts.js`. Top-level `const`s in `app.js` (`conditionButtons`, `contentPanel`, `quizView`, `SITE_NAME` and others) are used directly by later scripts, and redeclaring one is a SyntaxError that stops that script.
 
@@ -60,5 +60,7 @@ Match the GI pages Esophagitis, Esophageal motility disorders, GERD, PUD and IBD
 - **Punctuation:** Oxford commas, double quotes, no commas in numbers (3000), en dashes in ranges, and a capital after "Note:". Links at the end of a page start "Related:" and use the target page's title.
 
 The site owner's coursework sets the expected answers, including where it differs from other sources: IBS uses Rome V, and first-line H. pylori treatment is triple therapy. Guideline differences go in a question's `info` field, shown as "Additional information", and are not presented as the answer.
+
+By default, check PubMed Central and the local StatPearls archive when writing or checking content, and say what came from neither. Read PubMed Central through NCBI's E-utilities (`efetch.fcgi?db=pmc&id=<number>&retmode=xml`), because the website blocks automated reads. StatPearls is at `C:/Users/wu133/reference-data/statpearls`, with one `.nxml` file per chapter in `statpearls_NBK430685/`. Its chapters can be older than consensus criteria, so it is a cross-check, and the coursework above still sets the answers. Licenses vary by article and StatPearls is CC BY-NC-ND, so state facts in the site's own words and copy no passages or images.
 
 Quiz questions are clinical vignettes with an optional `notes` map of `{ optionIndex: "why it is wrong" }`. Options are shuffled when shown, so never refer to an option by its letter or position. Keep options similar in length and detail, so the correct one is the longest in about one question in five; `tools/check-site.mjs` fails above 30%.
