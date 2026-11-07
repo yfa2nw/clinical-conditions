@@ -47,7 +47,7 @@ Match the GI pages Esophagitis, Esophageal motility disorders, GERD, PUD and IBD
 
 - **Sections, in order:** Pathophysiology, Etiology, Symptoms and complications, Diagnosis, Treatment.
   Exception: the stroke types share one "Stroke symptoms and complications" page in the sidebar, organized by lesion location, so their own pages omit that section and link to it. Its syndrome diagrams use the slice outlines and lesion shapes from the neighboring `neuro-tracts` project.
-- **Pathophysiology:** one sentence, cause → mechanism → result, or a comparison table.
+- **Pathophysiology:** one sentence, cause → mechanism → result, or a comparison table. Neurology pages build on this: the sentence, a `.pathway`, and a subsection pairing a diagram with lettered effects (`.etiology-map`, with letters so numbers stay with the causes), as on Subarachnoid hemorrhage. Their review articles have a matching Pathophysiology section.
 - **Notes (`.note`):** at most one per section, one sentence, starting `<strong>Note:</strong>` or a bold rule.
 - **`.node-label`:** a short qualifier of a few words, never a sentence.
 - **Flowchart steps:** short noun phrases. `.change.up` and `.change.down` mark Increased and Decreased.

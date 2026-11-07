@@ -685,6 +685,7 @@
                     <button type="button" class="link-button" data-goto="ischemic-stroke">Acute Ischemic Stroke</button>
                     <button type="button" class="link-button" data-goto="intracerebral-hemorrhage">Intracerebral Hemorrhage</button>
                     <button type="button" class="link-button" data-goto="subarachnoid-hemorrhage">Subarachnoid Hemorrhage</button>
+                    <button type="button" class="link-button" data-goto="seizures">Seizures</button>
                 </p>
                 <dialog class="quick-review" aria-labelledby="stroke-symptoms-review-title">
                     <div class="quick-review-body">
@@ -733,19 +734,29 @@
 
                 <section class="content-section">
                     <h3>Pathophysiology</h3>
-                    <div class="patho-map">
-                        <p>
-                            Blocked or inadequate arterial blood flow leads to cerebral ischemia, causing an infarct core surrounded by a salvageable <span class="concept" data-concept="penumbra"><abbr class="term" tabindex="0" data-definition="Ischemic but still salvageable brain tissue around the infarct core">penumbra</abbr></span>.
-                        </p>
-                        <figure class="penumbra-map">
-                        <svg viewBox="0 0 240 150" role="img" aria-label="Infarct core surrounded by a salvageable penumbra">
-                            <path class="penumbra-zone" d="M46 76C42 34 92 12 130 18C176 22 210 54 202 92C196 128 144 142 104 136C70 132 48 110 46 76Z"/>
-                            <path class="core-zone" d="M92 76C90 56 112 44 130 48C150 50 164 66 158 84C154 102 130 110 112 104C100 100 92 90 92 76Z"/>
-                            <text class="core-label" x="125" y="81">Core</text>
-                            <text class="site-label" x="125" y="36" text-anchor="middle">Penumbra</text>
-                        </svg>
-                    </figure>
-                    </div>
+<p>Blocked or inadequate arterial blood flow leads to cerebral ischemia, causing an infarct core surrounded by a salvageable <span class="concept" data-concept="penumbra"><abbr class="term" tabindex="0" data-definition="Ischemic but still salvageable brain tissue around the infarct core">penumbra</abbr></span>.</p>
+<ol class="pathway">
+<li><span class="pathway-title">Blocked or inadequate flow</span><span class="pathway-detail">Embolus, thrombus, low flow, or vessel wall disease</span></li>
+<li><span class="pathway-title">Cerebral ischemia</span><span class="pathway-detail">Decreased oxygen delivery</span></li>
+<li><span class="pathway-title">Core and penumbra</span><span class="pathway-detail">The core dies, and the penumbra can recover</span></li>
+</ol>
+<div class="subsection">
+<h4 class="sc-heading">What ischemia does</h4>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="0 0 440 360" role="img" aria-label="An artery blocked by an embolus, with a core of infarcted brain surrounded by a penumbra downstream. Arrows show swelling, and small spots show bleeding into the infarct"><path class="sah-brain" d="M14 20H426V346H14Z"/><path class="sah-artery" d="M14 74H150"/><circle class="sah-clot" cx="170" cy="74" r="20"/><path class="sah-flowless" d="M192 74H300C330 74 340 96 330 118"/>
+<g transform="translate(62 66) scale(1.42)"><path class="penumbra-zone" d="M46 76C42 34 92 12 130 18C176 22 210 54 202 92C196 128 144 142 104 136C70 132 48 110 46 76Z"/><path class="core-zone" d="M92 76C90 56 112 44 130 48C150 50 164 66 158 84C154 102 130 110 112 104C100 100 92 90 92 76Z"/></g>
+<circle class="sah-sac" cx="222" cy="206" r="6"/><circle class="sah-sac" cx="244" cy="184" r="5"/><circle class="sah-sac" cx="262" cy="214" r="6"/>
+<path class="sah-press" d="M108 256L72 288M72 276V288H84M372 244L410 276M398 276H410V264"/>
+<g class="site-marker"><circle cx="170" cy="74" r="11"/><text x="170" y="78.5">A</text></g><g class="site-marker"><circle cx="226" cy="164" r="11"/><text x="226" y="168.5">B</text></g><g class="site-marker"><circle cx="160" cy="180" r="11"/><text x="160" y="184.5">C</text></g><g class="site-marker"><circle cx="60" cy="310" r="11"/><text x="60" y="314.5">D</text></g><g class="site-marker"><circle cx="292" cy="196" r="11"/><text x="292" y="200.5">E</text></g></svg></figure>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">A</span><span class="cause-text"><span class="cause-name">Arterial occlusion</span><span class="cause-detail">An embolus or thrombus stops flow downstream</span></span></li>
+<li><span class="cause-number" aria-hidden="true">B</span><span class="cause-text"><span class="cause-name">Infarct core</span><span class="cause-detail">Flow is too low for cells to survive → irreversible injury</span></span></li>
+<li><span class="cause-number" aria-hidden="true">C</span><span class="cause-text"><span class="cause-name">Penumbra</span><span class="cause-detail">Flow stops function but not survival → deficits that reperfusion can reverse</span></span></li>
+<li><span class="cause-number" aria-hidden="true">D</span><span class="cause-text"><span class="cause-name">Cerebral edema</span><span class="cause-detail">Failing ion pumps swell cells → malignant <abbr class="term" tabindex="0" data-definition="Middle cerebral artery">MCA</abbr> infarct, with herniation within 2–5 days</span></span></li>
+<li><span class="cause-number" aria-hidden="true">E</span><span class="cause-text"><span class="cause-name">Hemorrhagic transformation</span><span class="cause-detail">Reperfusion of injured vessels → blood within the infarct</span></span></li>
+</ul>
+</div>
+</div>
                 </section>
 
                 <section class="content-section">
@@ -895,6 +906,9 @@
                             </ul>
                         </aside>
 
+                        <h4>Pathophysiology</h4>
+                        <p>Blocked or inadequate flow causes cerebral ischemia with decreased oxygen delivery. An embolus or thrombus stops flow downstream. In the infarct core, flow is too low for cells to survive, so injury is irreversible, whereas in the penumbra, flow stops function but not survival, so reperfusion can reverse deficits. Failing ion pumps swell cells, causing cerebral edema, with malignant <abbr class="term" tabindex="0" data-definition="Middle cerebral artery">MCA</abbr> infarct and herniation within 2–5 days, and reperfusion of injured vessels can cause hemorrhagic transformation, with blood within the infarct.</p>
+
                         <h4>Etiology and mechanisms</h4>
                         <p>Cardiac embolus, an important cause, arises from a left atrial thrombus in <abbr class="term" tabindex="0" data-definition="Atrial fibrillation">A-fib</abbr> or flutter, mechanical valve, or <abbr class="term" tabindex="0" data-definition="Rheumatic heart disease">RHD</abbr>, or from a left ventricular thrombus in <abbr class="term" tabindex="0" data-definition="Left ventricular">LV</abbr> aneurysm from <abbr class="term" tabindex="0" data-definition="Myocardial infarction">MI</abbr>, anterior or lateral <abbr class="term" tabindex="0" data-definition="Myocardial infarction">MI</abbr>, or <abbr class="term" tabindex="0" data-definition="Heart failure with reduced ejection fraction">HFrEF</abbr>. Infective endocarditis is a separate source of cardiac embolus and a contraindication to thrombolysis. Paradoxical embolus occurs with <abbr class="term" tabindex="0" data-definition="Atrial septal defect">ASD</abbr>, patent foramen ovale, and atrial septal aneurysm, where a right-to-left shunt lets a venous thrombus reach arterial circulation. Global hypoperfusion from cardiac arrest, acute respiratory failure, or <abbr class="term" tabindex="0" data-definition="Internal carotid artery">ICA</abbr> stenosis with low <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr> decreases cerebral oxygen delivery, causing watershed infarcts. Large vessel thrombus is atherosclerotic thrombus in the <abbr class="term" tabindex="0" data-definition="Internal carotid artery">ICA</abbr>, <abbr class="term" tabindex="0" data-definition="Middle cerebral artery">MCA</abbr>, and vertebrobasilar arteries. Small vessel thrombus causes lacunar infarcts from the lenticulostriate arteries or small pontine branches. Vasculitis from autoimmune disease, infections, or primary <abbr class="term" tabindex="0" data-definition="Central nervous system">CNS</abbr> vasculitis causes arterial wall inflammation and can affect any artery. Dissection from trauma, iatrogenic injury, or connective tissue diseases causes an intimal tear with thrombus and embolus.</p>
 
@@ -922,9 +936,29 @@
 
                 <section class="content-section">
                     <h3>Pathophysiology</h3>
-                    <p>
-                        Vessel rupture bleeds into the brain parenchyma, forming a hematoma that compresses tissue and raises <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr>.
-                    </p>
+<p>Vessel rupture bleeds into the brain parenchyma, forming a hematoma that compresses tissue and raises <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr>.</p>
+<ol class="pathway">
+<li><span class="pathway-title">Weakened vessel</span><span class="pathway-detail">Hypertension, amyloid, and other causes</span></li>
+<li><span class="pathway-title">Vessel rupture</span><span class="pathway-detail">Into the brain parenchyma</span></li>
+<li><span class="pathway-title">Hematoma</span><span class="pathway-detail">Compresses tissue and raises <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr></span></li>
+</ol>
+<div class="subsection">
+<h4 class="sc-heading">What the hematoma does</h4>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="0 0 440 360" role="img" aria-label="A brain in coronal section with a hematoma in one hemisphere. Swelling surrounds the hematoma, arrows show it growing, the midline is pushed across, and the nearby ventricle is compressed"><ellipse class="sah-brain" cx="220" cy="182" rx="204" ry="166"/><path class="ich-midline" d="M220 18C220 70 196 120 188 182C182 236 212 300 220 346"/>
+<path class="sah-csf ich-ventricle" d="M104 146C126 120 160 126 170 152C176 174 150 184 130 176C112 170 96 164 104 146Z"/><path class="sah-csf ich-ventricle" d="M204 158C214 146 228 146 232 156C234 168 220 176 210 174C202 172 198 166 204 158Z"/>
+<ellipse class="ich-edema" cx="306" cy="192" rx="86" ry="78"/><ellipse class="sah-sac" cx="306" cy="192" rx="54" ry="48"/>
+<path class="sah-press" d="M306 136V110M298 118L306 110L314 118M362 192H386M378 184L386 192L378 200"/>
+<g class="site-marker"><circle cx="306" cy="192" r="11"/><text x="306" y="196.5">A</text></g><g class="site-marker"><circle cx="332" cy="104" r="11"/><text x="332" y="108.5">B</text></g><g class="site-marker"><circle cx="364" cy="246" r="11"/><text x="364" y="250.5">C</text></g><g class="site-marker"><circle cx="186" cy="60" r="11"/><text x="186" y="64.5">D</text></g><g class="site-marker"><circle cx="216" cy="196" r="11"/><text x="216" y="200.5">E</text></g></svg></figure>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">A</span><span class="cause-text"><span class="cause-name">Tissue compression</span><span class="cause-detail">The hematoma presses on brain tissue → cortical focal neurologic deficits</span></span></li>
+<li><span class="cause-number" aria-hidden="true">B</span><span class="cause-text"><span class="cause-name">Hematoma growth</span><span class="cause-detail">Bleeding can continue → worsening deficits, so <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr> control and reversal limit it</span></span></li>
+<li><span class="cause-number" aria-hidden="true">C</span><span class="cause-text"><span class="cause-name">Surrounding edema</span><span class="cause-detail">Injured tissue swells around the hematoma, adding to its mass</span></span></li>
+<li><span class="cause-number" aria-hidden="true">D</span><span class="cause-text"><span class="cause-name">Raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr></span><span class="cause-detail">Added mass → headache, nausea and vomiting, loss of consciousness, posturing, and Cushing triad</span></span></li>
+<li><span class="cause-number" aria-hidden="true">E</span><span class="cause-text"><span class="cause-name">Hydrocephalus</span><span class="cause-detail">Blood or mass effect blocks <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr> flow, so an <abbr class="term" tabindex="0" data-definition="External ventricular drain">EVD</abbr> may be needed</span></span></li>
+</ul>
+</div>
+</div>
                 </section>
 
                 <section class="content-section">
@@ -1062,6 +1096,9 @@
                             </ul>
                         </aside>
 
+                        <h4>Pathophysiology</h4>
+                        <p>A weakened vessel ruptures into the brain parenchyma, forming a hematoma. The hematoma presses on brain tissue, causing cortical focal neurologic deficits, and bleeding can continue, causing worsening deficits, which is why <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr> control and reversal limit it. Injured tissue swells around the hematoma, adding to its mass. This added mass raises <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr>, causing headache, nausea and vomiting, loss of consciousness, posturing, and Cushing triad, and blood or mass effect can block <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr> flow, causing hydrocephalus that may need an <abbr class="term" tabindex="0" data-definition="External ventricular drain">EVD</abbr>.</p>
+
                         <h4>Etiology and mechanisms</h4>
                         <p>Hypertension, the most common cause under 60, bleeds in the basal ganglia, pons, and cerebellum, and less commonly the cortex. Cerebral amyloid angiopathy, the most common cause over 60, bleeds in cortical structures and may present with dementia. Coagulopathy follows warfarin, heparin, <abbr class="term" tabindex="0" data-definition="Direct oral anticoagulants">DOACs</abbr>, <abbr class="term" tabindex="0" data-definition="Tissue plasminogen activator">tPA</abbr>, aspirin, clopidogrel, and liver disease. Hemorrhagic transformation follows ischemic stroke, through conversion from <abbr class="term" tabindex="0" data-definition="Tissue plasminogen activator">tPA</abbr> or reperfusion injury. Arteriovenous malformation is a vascular abnormality of young patients. Mycotic aneurysm follows infective endocarditis vegetation deposits. Cerebral venous sinus thrombosis follows factor V Leiden, decreased <abbr class="term" tabindex="0" data-definition="Antithrombin III">AT-III</abbr>, decreased protein C or S, <abbr class="term" tabindex="0" data-definition="Antiphospholipid syndrome">APS</abbr>, <abbr class="term" tabindex="0" data-definition="Oral contraceptive pill">OCP</abbr>, and pregnancy, with sinus swelling near the cortex. Malignancy, including papillary thyroid cancer, small cell lung carcinoma, <abbr class="term" tabindex="0" data-definition="Renal cell carcinoma">RCC</abbr>, melanoma, and choriocarcinoma, disrupts the <abbr class="term" tabindex="0" data-definition="Blood-brain barrier">BBB</abbr>. Causes from coagulopathy onward can bleed at any site.</p>
 
@@ -1089,7 +1126,33 @@
                 <section class="content-section">
                     <h3>Pathophysiology</h3>
 <p>Vessel rupture, from trauma or a weakened wall such as an aneurysm, bleeds into the subarachnoid space, causing meningeal irritation and raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr>.</p>
-</section>
+<ol class="pathway">
+<li><span class="pathway-title">Trauma or weakened wall</span><span class="pathway-detail">Such as an aneurysm</span></li>
+<li><span class="pathway-title">Vessel rupture</span><span class="pathway-detail">Triggered by increased <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr>, pain, or anger</span></li>
+<li><span class="pathway-title">Blood in the subarachnoid space</span><span class="pathway-detail">Spreads through the <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr></span></li>
+</ol>
+<div class="subsection">
+<h4 class="sc-heading">What the blood does</h4>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="0 0 540 372" role="img" aria-label="A cross-section from skull to brain. An artery in the subarachnoid space has a ruptured aneurysm, and blood spreads through the space. Lettered sites mark irritated meninges, raised pressure on the brain, a blocked arachnoid granulation, a narrowed artery, and the aneurysm that can bleed again"><rect class="sah-bone" x="10" y="12" width="420" height="42"/>
+<path class="sah-dura" d="M10 54H70C78 54 80 38 92 38C104 38 106 54 114 54H430V76H10Z"/>
+<path class="sah-csf" d="M10 76H430V198C390 182 350 214 310 198C270 182 230 214 190 198C150 182 110 214 70 198C50 190 30 196 10 198Z"/>
+<path class="sah-brain" d="M10 198C30 196 50 190 70 198C110 214 150 182 190 198C230 214 270 182 310 198C350 214 390 182 430 198V360H10Z"/>
+<path class="sah-blood" d="M96 92C150 78 236 84 262 110C288 134 262 176 210 176C168 176 110 186 84 160C62 138 64 102 96 92Z"/>
+<path class="sah-artery" d="M10 138H118M190 138H320M372 138H430"/><path class="sah-artery is-narrow" d="M320 138H372"/>
+<circle class="sah-sac" cx="154" cy="134" r="30"/><path class="sah-tear" d="M172 110L188 92M180 120L202 108M164 104L170 86"/>
+<path class="sah-press" d="M150 214V258M140 246L150 258L160 246M322 214V258M312 246L322 258L332 246"/><g class="site-marker"><circle cx="250" cy="96" r="11"/><text x="250" y="100.5">A</text></g><g class="site-marker"><circle cx="236" cy="232" r="11"/><text x="236" y="236.5">B</text></g><g class="site-marker"><circle cx="92" cy="26" r="11"/><text x="92" y="30.5">C</text></g><g class="site-marker"><circle cx="346" cy="112" r="11"/><text x="346" y="116.5">D</text></g><g class="site-marker"><circle cx="154" cy="134" r="11"/><text x="154" y="138.5">E</text></g>
+<text class="site-label" x="442" y="38" text-anchor="start">Skull</text><text class="site-label" x="442" y="70" text-anchor="start">Meninges</text><text class="site-label" x="442" y="142" text-anchor="start">Subarachnoid</text><text class="site-label" x="442" y="162" text-anchor="start">space</text><text class="site-label" x="442" y="284" text-anchor="start">Brain</text></svg></figure>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">A</span><span class="cause-text"><span class="cause-name">Meningeal irritation</span><span class="cause-detail">Blood irritates the meninges → thunderclap headache, photophobia, and neck stiffness</span></span></li>
+<li><span class="cause-number" aria-hidden="true">B</span><span class="cause-text"><span class="cause-name">Raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr></span><span class="cause-detail">Added blood volume → nausea and vomiting, <abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> deficits, posturing, and Cushing triad</span></span></li>
+<li><span class="cause-number" aria-hidden="true">C</span><span class="cause-text"><span class="cause-name">Hydrocephalus</span><span class="cause-detail">Blood blocks <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr> absorption at the arachnoid granulations</span></span></li>
+<li><span class="cause-number" aria-hidden="true">D</span><span class="cause-text"><span class="cause-name">Vasospasm</span><span class="cause-detail">Blood around arteries narrows them on days 3–14 → delayed cerebral ischemia</span></span></li>
+<li><span class="cause-number" aria-hidden="true">E</span><span class="cause-text"><span class="cause-name">Rebleeding</span><span class="cause-detail">The unsecured aneurysm can rupture again; risk is highest early</span></span></li>
+</ul>
+</div>
+</div>
+                </section>
 
                 <section class="content-section">
                     <h3>Etiology</h3>
@@ -1197,6 +1260,9 @@
                             </ul>
                         </aside>
 
+                        <h4>Pathophysiology</h4>
+                        <p>Trauma or a weakened wall such as an aneurysm leads to vessel rupture, triggered by increased <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr>, pain, or anger, and blood spreads through the <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr> of the subarachnoid space. Blood irritates the meninges, causing thunderclap headache, photophobia, and neck stiffness, and added blood volume raises <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr>, causing nausea and vomiting, <abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> deficits, posturing, and Cushing triad. Blood blocks <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr> absorption at the arachnoid granulations, causing hydrocephalus, and blood around arteries narrows them on days 3–14, causing vasospasm and delayed cerebral ischemia. The unsecured aneurysm can rupture again, with the highest risk early.</p>
+
                         <h4>Etiology and mechanisms</h4>
                         <p>Traumatic <abbr class="term" tabindex="0" data-definition="Subarachnoid hemorrhage">SAH</abbr> follows blunt force or penetrating injury. Non-traumatic causes are aneurysms (saccular or berry, giant, fusiform, dissection pseudoaneurysm, and mycotic); hypertension, sympathomimetics, smoking, alcohol, <abbr class="term" tabindex="0" data-definition="Oral contraceptive pill">OCP</abbr>, and pregnancy, which lead to hyaline arteriosclerosis and decreased perfusion to the tunica media; <abbr class="term" tabindex="0" data-definition="Arteriovenous malformation">AVM</abbr>; and connective tissue defects (Marfan syndrome, Ehlers-Danlos syndrome, and <abbr class="term" tabindex="0" data-definition="Polycystic kidney disease">PKD</abbr>). Triggers are increased <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr>, pain, and anger. In descending probability, aneurysms occur at the <abbr class="term" tabindex="0" data-definition="Anterior communicating artery">AComm</abbr>, <abbr class="term" tabindex="0" data-definition="Posterior communicating artery">PComm</abbr>, <abbr class="term" tabindex="0" data-definition="Middle cerebral artery">MCA</abbr>, <abbr class="term" tabindex="0" data-definition="Internal carotid artery">ICA</abbr>-<abbr class="term" tabindex="0" data-definition="Middle cerebral artery">MCA</abbr> bifurcation, <abbr class="term" tabindex="0" data-definition="Posterior inferior cerebellar artery">PICA</abbr>, and <abbr class="term" tabindex="0" data-definition="Anterior cerebral artery">ACA</abbr>.</p>
 
@@ -1223,17 +1289,76 @@
 
                 <section class="content-section">
                     <h3>Pathophysiology</h3>
-                    <p class="pending-content">To be added.</p>
+<p>Excess excitation (glutamate) or lost inhibition (<abbr class="term" tabindex="0" data-definition="Gamma-aminobutyric acid">GABA</abbr>) lowers the seizure threshold, so cortical neurons fire in excessive synchrony, causing a seizure.</p>
+<ol class="pathway">
+<li><span class="pathway-title">Excess excitation or lost inhibition</span><span class="pathway-detail">From an etiology, with or without a trigger</span></li>
+<li><span class="pathway-title">Lowered seizure threshold</span><span class="pathway-detail">Neurons fire more easily</span></li>
+<li><span class="pathway-title">Synchronous firing</span><span class="pathway-detail">Causes the seizure</span></li>
+</ol>
+<div class="subsection">
+<h4 class="sc-heading">How firing builds and spreads</h4>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="0 0 440 372" role="img" aria-label="A tilted balance with excitation outweighing inhibition. Below it, firing starts at one site in one hemisphere and spreads to the other"><path class="seizure-beam" d="M56 150L384 74"/><path class="seizure-pivot" d="M220 112L196 170H244Z"/>
+<rect class="seizure-bar is-trigger" x="16" y="110" width="104" height="64" rx="10"/><text class="site-label" x="68" y="148" text-anchor="middle">Excitation</text><rect class="seizure-bar" x="326" y="38" width="96" height="50" rx="10"/><text class="site-label" x="374" y="69" text-anchor="middle">Inhibition</text>
+<g class="site-marker"><circle cx="30" cy="96" r="11"/><text x="30" y="100.5">A</text></g><g class="site-marker"><circle cx="412" cy="26" r="11"/><text x="412" y="30.5">B</text></g><g class="site-marker"><circle cx="220" cy="196" r="11"/><text x="220" y="200.5">C</text></g>
+<ellipse class="sah-brain" cx="146" cy="290" rx="82" ry="68"/><ellipse class="sah-brain" cx="294" cy="290" rx="82" ry="68"/><circle class="sah-sac" cx="118" cy="286" r="12"/><path class="sah-press" d="M134 286H210M198 276L210 286L198 296M232 286H300M288 276L300 286L288 296"/>
+<g class="site-marker"><circle cx="100" cy="262" r="11"/><text x="100" y="266.5">D</text></g><g class="site-marker"><circle cx="294" cy="254" r="11"/><text x="294" y="258.5">E</text></g></svg></figure>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">A</span><span class="cause-text"><span class="cause-name">Excitation</span><span class="cause-detail">Glutamate opens Na+ and Ca2+ channels → depolarization</span></span></li>
+<li><span class="cause-number" aria-hidden="true">B</span><span class="cause-text"><span class="cause-name">Inhibition</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Gamma-aminobutyric acid">GABA</abbr> opens Cl− channels → hyperpolarization</span></span></li>
+<li><span class="cause-number" aria-hidden="true">C</span><span class="cause-text"><span class="cause-name">Synchrony</span><span class="cause-detail">When excitation wins, neurons fire together rather than independently</span></span></li>
+<li><span class="cause-number" aria-hidden="true">D</span><span class="cause-text"><span class="cause-name">Focal seizure</span><span class="cause-detail">Firing starts in one region, so symptoms match that region</span></span></li>
+<li><span class="cause-number" aria-hidden="true">E</span><span class="cause-text"><span class="cause-name">Generalized seizure</span><span class="cause-detail">Firing involves both hemispheres from the start, or spreads to them</span></span></li>
+</ul>
+</div>
+</div>
                 </section>
 
                 <section class="content-section">
                     <h3>Etiology</h3>
-                    <p class="pending-content">To be added.</p>
+<figure class="cause-map is-wide"><svg viewBox="0 0 540 286" role="img" aria-label="Three bars rising toward a dashed seizure threshold. A healthy brain stays far below it. An etiology raises excitability closer to it. A trigger on top of an etiology crosses it, causing a seizure"><rect class="seizure-bar" x="40" y="172" width="96" height="60" rx="6"/><text class="site-label" x="88" y="256" text-anchor="middle">Healthy brain</text><rect class="seizure-bar" x="216" y="108" width="96" height="124" rx="6"/><text class="site-label" x="264" y="256" text-anchor="middle">With an etiology</text><rect class="seizure-bar" x="392" y="108" width="96" height="124" rx="6"/><rect class="seizure-bar is-trigger" x="392" y="22" width="96" height="82" rx="6"/><text class="site-label" x="440" y="256" text-anchor="middle">Etiology</text><text class="site-label" x="440" y="276" text-anchor="middle">plus a trigger</text><path class="seizure-line" d="M16 76H524"/><text class="site-label" x="20" y="66" text-anchor="start">Seizure threshold</text><text class="site-label" x="440" y="50" text-anchor="middle">Trigger</text><text class="site-label" x="440" y="182" text-anchor="middle">Etiology</text><text class="site-label" x="264" y="182" text-anchor="middle">Etiology</text></svg></figure>
+<div class="subsection">
+<h4 class="sc-heading">Etiology: VITAMIN DEFG</h4>
+<ul class="cause-list is-two-column">
+<li><span class="cause-number" aria-hidden="true">V</span><span class="cause-text"><span class="cause-name">Vascular</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Acute ischemic stroke">AIS</abbr>, <abbr class="term" tabindex="0" data-definition="Intracerebral hemorrhage">ICH</abbr>, <abbr class="term" tabindex="0" data-definition="Subarachnoid hemorrhage">SAH</abbr>, <abbr class="term" tabindex="0" data-definition="Posterior reversible encephalopathy syndrome">PRES</abbr> from increased <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr>, and anoxic brain injury from global hypoxia</span></span></li>
+<li><span class="cause-number" aria-hidden="true">I</span><span class="cause-text"><span class="cause-name">Infectious</span><span class="cause-detail">Meningitis, encephalitis, and brain abscess</span></span></li>
+<li><span class="cause-number" aria-hidden="true">T</span><span class="cause-text"><span class="cause-name">Traumatic</span><span class="cause-detail">Epidural and subdural hematomas</span></span></li>
+<li><span class="cause-number" aria-hidden="true">A</span><span class="cause-text"><span class="cause-name">Autoimmune</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Systemic lupus erythematosus">SLE</abbr> and paraneoplastic syndrome → autoimmune encephalitis</span></span></li>
+<li><span class="cause-number" aria-hidden="true">M</span><span class="cause-text"><span class="cause-name">Metabolic</span><span class="cause-detail">Decreased vitamin B1, hypoglycemia or hyperglycemia, hyponatremia or hypernatremia, hypocalcemia, hypomagnesemia, hypophosphatemia, increased urea and metabolic waste, increased ammonia, and increased thyroid hormones</span></span></li>
+<li><span class="cause-number" aria-hidden="true">I</span><span class="cause-text"><span class="cause-name">Iatrogenic or idiopathic</span><span class="cause-detail">Drugs: opioids, <abbr class="term" tabindex="0" data-definition="Tricyclic antidepressants">TCAs</abbr>, isoniazid, salicylate, cocaine, cefepime, amphetamine, metronidazole, penicillin, bupropion, lithium, and benzodiazepine or alcohol withdrawal</span><span class="cause-detail">Epilepsy: non-adherence to medications, West syndrome, Lennox-Gastaut syndrome, and juvenile myoclonic epilepsy</span></span></li>
+<li><span class="cause-number" aria-hidden="true">N</span><span class="cause-text"><span class="cause-name">Neoplastic</span><span class="cause-detail">Glioblastoma, meningioma, and metastatic cancer</span></span></li>
+<li><span class="cause-number" aria-hidden="true">D</span><span class="cause-text"><span class="cause-name">Degenerative</span><span class="cause-detail">Alzheimer disease and <abbr class="term" tabindex="0" data-definition="Multiple sclerosis">MS</abbr></span></span></li>
+<li><span class="cause-number" aria-hidden="true">E</span><span class="cause-text"><span class="cause-name">Eclampsia</span><span class="cause-detail"></span></span></li>
+<li><span class="cause-number" aria-hidden="true">F</span><span class="cause-text"><span class="cause-name">Fever</span><span class="cause-detail"></span></span></li>
+<li><span class="cause-number" aria-hidden="true">G</span><span class="cause-text"><span class="cause-name">Genetic</span><span class="cause-detail"></span></span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Triggers</h4>
+<ul class="chip-list"><li>Stress</li><li>Sleep deprivation</li><li>Bright lights and sounds</li></ul>
+</div>
+<p class="note"><strong>Triggers act on top of an etiology,</strong> pushing the brain over the seizure threshold.</p>
                 </section>
 
                 <section class="content-section">
                     <h3>Symptoms and complications</h3>
-                    <p class="pending-content">To be added.</p>
+<ol class="pathway">
+<li><span class="pathway-title">Aura</span><span class="pathway-detail">If focal</span></li>
+<li><span class="pathway-title">Ictal event</span><span class="pathway-detail">Focal or generalized</span></li>
+<li><span class="pathway-title">Post-ictal state</span><span class="pathway-detail">After some seizure types</span></li>
+</ol>
+<div class="subsection">
+<h4 class="sc-heading">Aura</h4>
+<ul class="chip-list"><li>Déjà vu</li><li>Nausea</li><li>Automatisms: rapid blinking, chewing, and lip smacking</li></ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Post-ictal state</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Follows</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Focal seizures with impairment, generalized seizures, and focal seizures that become generalized</span></li>
+<li><span class="pair-from">Features</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Confusion, lethargy, amnesia, and Todd paralysis</span></li>
+</ul>
+</div>
+<p class="note"><strong>Note:</strong> Todd paralysis occurs only after focal seizures with impairment.</p>
                 </section>
 
                 <section class="content-section">
@@ -1245,6 +1370,15 @@
                     <h3>Treatment</h3>
                     <p class="pending-content">To be added.</p>
                 </section>
+
+                <p class="see-also">
+                    Related:
+                    <button type="button" class="link-button" data-goto="ischemic-stroke">Acute Ischemic Stroke</button>
+                    <button type="button" class="link-button" data-goto="intracerebral-hemorrhage">Intracerebral Hemorrhage</button>
+                    <button type="button" class="link-button" data-goto="subarachnoid-hemorrhage">Subarachnoid Hemorrhage</button>
+                    <button type="button" class="link-button" data-goto="multiple-sclerosis">Multiple Sclerosis</button>
+                    <button type="button" class="link-button" data-goto="alzheimers">Alzheimer Disease</button>
+                </p>
             </article>
 
             <article class="condition-content" id="multiple-sclerosis">

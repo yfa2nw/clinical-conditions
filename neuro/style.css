@@ -716,3 +716,131 @@ body {
         transform: translateX(-50%);
     }
 }
+
+/* Wide diagrams stay in the page flow, and the list sits below them */
+.cause-map.is-wide {
+    position: static;
+    max-width: 560px;
+    margin: 0 auto 22px;
+}
+
+/* Seizure threshold diagram */
+.seizure-bar {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}
+
+.seizure-bar.is-trigger {
+    fill: var(--color-up-soft);
+}
+
+.seizure-line {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-dasharray: 9 7;
+    stroke-width: 2.5;
+}
+
+/* Subarachnoid hemorrhage cross-section */
+.sah-bone {
+    fill: var(--color-surface-muted);
+    stroke: var(--color-border-strong);
+    stroke-width: 2;
+}
+
+.sah-dura {
+    fill: var(--color-accent-line);
+}
+
+.sah-csf {
+    fill: var(--color-accent-soft);
+}
+
+.sah-brain {
+    fill: var(--color-surface);
+    stroke: var(--color-accent-line);
+    stroke-width: 3;
+}
+
+.sah-blood {
+    fill: var(--color-wrong);
+    opacity: 0.5;
+}
+
+.sah-artery {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-linecap: round;
+    stroke-width: 18;
+}
+
+.sah-artery.is-narrow {
+    stroke-width: 7;
+}
+
+.sah-sac {
+    fill: var(--color-wrong);
+    opacity: 0.85;
+}
+
+.sah-press {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+}
+
+.sah-tear {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-linecap: round;
+    stroke-width: 4;
+}
+
+/* Pathophysiology diagrams */
+.sah-clot {
+    fill: var(--color-wrong);
+    stroke: var(--color-surface);
+    stroke-width: 3;
+}
+
+.sah-flowless {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-dasharray: 3 9;
+    stroke-linecap: round;
+    stroke-width: 6;
+    opacity: 0.6;
+}
+
+.ich-midline {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-dasharray: 9 7;
+    stroke-width: 3;
+}
+
+.ich-ventricle {
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}
+
+.ich-edema {
+    fill: var(--color-up-soft);
+    stroke: var(--color-accent-line);
+    stroke-dasharray: 6 6;
+    stroke-width: 2;
+}
+
+.seizure-beam {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-linecap: round;
+    stroke-width: 7;
+}
+
+.seizure-pivot {
+    fill: var(--color-accent-line);
+}
