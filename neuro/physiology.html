@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neurophysiology · Clinical Conditions</title>
+
+    <script src="../shared/theme.js"></script>
+
+    <link rel="stylesheet" href="../shared/style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared/app.js" defer></script>
+    <script src="physiology-questions.js" defer></script>
+    <script src="../shared/quiz.js" defer></script>
+    <script src="map.js" defer></script>
+    <script src="../shared/map.js" defer></script>
+</head>
+
+<body data-specialty="neuro-physiology" data-page="physiology">
+    <a class="skip-link" href="#content-panel">Skip to content</a>
+
+    <main class="app-container">
+
+        <!-- Left sidebar -->
+        <aside class="sidebar">
+            <a class="home-link" href="../index.html">← Clinical Conditions</a>
+
+            <div class="sidebar-header">
+                <h1>
+                    <span class="brand-mark" aria-hidden="true"></span>
+                    Neurophysiology
+                </h1>
+                <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme">
+                    <span class="theme-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <nav class="section-switch" aria-label="Section">
+                <a href="index.html" aria-current="page">Clinical</a>
+                <a href="physiology.html">Physiology</a>
+            </nav>
+
+            <div class="search" role="search">
+                <label class="visually-hidden" for="condition-search">Search conditions and content</label>
+                <input type="search" id="condition-search" class="search-input" placeholder="Search…" autocomplete="off" aria-describedby="search-hint">
+                <kbd class="search-key" aria-hidden="true">/</kbd>
+            </div>
+            <p class="search-hint" id="search-hint" aria-live="polite"></p>
+
+            <nav class="condition-list map-nav" aria-label="Neurophysiology topics">
+                <!-- The neuron chain is drawn here by map.js and shared/map.js, lined up with the stations below -->
+                <svg class="map-svg" aria-hidden="true" focusable="false"></svg>
+
+                <div class="station" data-organ="neurons">
+                <p class="group-label" id="group-neurons">Neurons</p>
+                <div class="condition-group" role="group" aria-labelledby="group-neurons">
+                    <button type="button" class="condition-item" data-condition="neurons">Neurons and action potentials</button>
+                    <button type="button" class="condition-item" data-condition="synapses">Synapses and neurotransmitters</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="tracts">
+                <p class="group-label" id="group-tracts">Tracts</p>
+                <div class="condition-group" role="group" aria-labelledby="group-tracts">
+                    <button type="button" class="condition-item" data-condition="ascending">Ascending tracts</button>
+                    <button type="button" class="condition-item" data-condition="descending">Descending tracts</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="pathways">
+                <p class="group-label" id="group-pathways">Pathways</p>
+                <div class="condition-group" role="group" aria-labelledby="group-pathways">
+                    <button type="button" class="condition-item" data-condition="basal-ganglia">Basal ganglia pathways</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="cranial-nerves">
+                <p class="group-label" id="group-cranial-nerves">Cranial nerves</p>
+                <div class="condition-group" role="group" aria-labelledby="group-cranial-nerves">
+                    <button type="button" class="condition-item" data-condition="cn-special">I, II, and VIII</button>
+                    <button type="button" class="condition-item" data-condition="cn-eye">III, IV, and VI</button>
+                    <button type="button" class="condition-item" data-condition="cn-face">V and VII</button>
+                    <button type="button" class="condition-item" data-condition="cn-lower">IX, X, XI, and XII</button>
+                </div>
+                </div>
+
+                <p class="no-results" id="no-results" hidden>No matches</p>
+            </nav>
+
+            <button type="button" class="quiz-button" id="quiz-button">
+                <span class="quiz-button-icon" aria-hidden="true">?</span>
+                <span class="quiz-button-text">
+                    Practice quiz
+                    <span class="quiz-button-sub">USMLE-style questions</span>
+                </span>
+            </button>
+        </aside>
+
+        <!-- Announces the newly opened topic to screen readers -->
+        <p class="visually-hidden" id="view-status" role="status"></p>
+
+        <!-- Right content panel -->
+        <section class="content-panel" id="content-panel" tabindex="0" aria-label="Topic details">
+
+            <article class="condition-content active" id="neurons">
+                <h2>Neurons and Action Potentials</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+<p>A neuron receives input on its dendrites, sums it at the axon hillock, and, if threshold is reached, fires an all-or-none action potential that myelin carries quickly to the terminals.</p>
+<ol class="pathway">
+<li><span class="pathway-title">Dendrites</span><span class="pathway-detail">Receive input</span></li>
+<li><span class="pathway-title">Soma</span><span class="pathway-detail">Sums the input</span></li>
+<li><span class="pathway-title">Axon hillock</span><span class="pathway-detail">Fires at threshold</span></li>
+<li><span class="pathway-title">Axon</span><span class="pathway-detail">Conducts, fastest with myelin</span></li>
+<li><span class="pathway-title">Terminals</span><span class="pathway-detail">Release neurotransmitter</span></li>
+</ol>
+                </section>
+
+                <section class="content-section">
+                    <h3>Structure</h3>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="0 0 520 190" role="img" aria-label="A neuron: dendrites, 1, receive input; the soma, 2, holds the nucleus; the axon hillock, 3, starts the action potential; myelin, 4, insulates the axon; nodes of Ranvier, 5, regenerate the signal; and axon terminals, 6, release neurotransmitter"><path class="nr-dend" d="M110 96L60 56M60 56L40 44M60 56L52 32M110 96L50 100M50 100L30 92M50 100L32 114M110 96L66 142M66 142L46 152M66 142L60 166"/>
+<circle class="nr-soma" cx="110" cy="96" r="30"/><circle class="nr-nucleus" cx="106" cy="94" r="10"/><path class="nr-soma" d="M136 84L172 93V99L136 108Z"/>
+<path class="nr-axon" d="M172 96H452"/><rect class="nr-myelin" x="190" y="86" width="52" height="20" rx="10"/><rect class="nr-myelin" x="256" y="86" width="52" height="20" rx="10"/><rect class="nr-myelin" x="322" y="86" width="52" height="20" rx="10"/><rect class="nr-myelin" x="388" y="86" width="52" height="20" rx="10"/>
+<path class="nr-axon" d="M452 96L482 72M452 96L486 96M452 96L482 120"/><circle class="nr-bouton" cx="486" cy="68" r="7"/><circle class="nr-bouton" cx="492" cy="96" r="7"/><circle class="nr-bouton" cx="486" cy="124" r="7"/>
+<g class="site-marker"><circle cx="40" cy="140" r="11"/><text x="40" y="144.5">1</text></g><g class="site-marker"><circle cx="110" cy="146" r="11"/><text x="110" y="150.5">2</text></g><g class="site-marker"><circle cx="156" cy="66" r="11"/><text x="156" y="70.5">3</text></g><g class="site-marker"><circle cx="216" cy="64" r="11"/><text x="216" y="68.5">4</text></g><g class="site-marker"><circle cx="249" cy="128" r="11"/><text x="249" y="132.5">5</text></g><g class="site-marker"><circle cx="486" cy="158" r="11"/><text x="486" y="162.5">6</text></g></svg></figure>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Dendrites</span><span class="cause-detail">Receive afferent signals from other neurons</span></span></li>
+<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Soma</span><span class="cause-detail">Holds the nucleus and organelles</span></span></li>
+<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Axon hillock</span><span class="cause-detail">Where the action potential begins</span></span></li>
+<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Myelin</span><span class="cause-detail">Insulation from oligodendrocytes in the <abbr class="term" tabindex="0" data-definition="Central nervous system">CNS</abbr> and Schwann cells in the periphery</span></span></li>
+<li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">Nodes of Ranvier</span><span class="cause-detail">Gaps packed with voltage-gated sodium channels</span></span></li>
+<li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name">Axon terminals</span><span class="cause-detail">Release neurotransmitter at the synapse</span></span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Shapes</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Multipolar</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Many dendrites and one axon; most neurons, including motor neurons</span></li>
+<li><span class="pair-from">Bipolar</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">One dendrite and one axon</span></li>
+<li><span class="pair-from">Pseudounipolar</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">One process that splits in two; sensory neurons of the dorsal root ganglia</span></li>
+</ul>
+</div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Channels</h3>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Channel</th><th scope="col">Opens with</th><th scope="col">Role</th></tr></thead><tbody><tr><th scope="row">Potassium leak channels</th><td>Always open</td><td>Make the membrane most permeable to potassium at rest</td></tr><tr><th scope="row">Na/K-ATPase</th><td><abbr class="term" tabindex="0" data-definition="Adenosine triphosphate">ATP</abbr></td><td>Pumps 3 sodium out and 2 potassium in, restoring the gradients</td></tr><tr><th scope="row">Voltage-gated sodium channels</th><td>Depolarization to threshold</td><td>Sodium influx: the rising phase; an inactivation gate then closes them</td></tr><tr><th scope="row">Voltage-gated potassium channels</th><td>Depolarization, more slowly</td><td>Potassium efflux: repolarization</td></tr><tr><th scope="row">Voltage-gated calcium channels</th><td>Depolarization at the terminal</td><td>Calcium influx triggers transmitter release</td></tr><tr><th scope="row">Ligand-gated channels</th><td>Neurotransmitter</td><td>Postsynaptic potentials</td></tr></tbody></table></div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Action potential</h3>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="0 0 520 236" role="img" aria-label="A neuronal action potential plotted as voltage over time: A, resting at minus 70 millivolts; B, a stimulus reaches threshold at minus 55; C, depolarization as sodium enters; D, repolarization as potassium leaves; E, hyperpolarization before the return to rest. The refractory period spans the spike and hyperpolarization"><path class="nr-axis" d="M50 18V200H504"/><path class="nr-guide" d="M50 160H504M50 140.5H504"/>
+<text class="site-label" x="44" y="165" text-anchor="end">−70</text><text class="site-label" x="44" y="145.5" text-anchor="end">−55</text><text class="site-label" x="44" y="35" text-anchor="end">+30</text><text class="site-label" x="44" y="14" text-anchor="end">mV</text><text class="site-label" x="504" y="222" text-anchor="end">Time</text>
+<path class="nr-trace" d="M50 160H140L160 140.5C168 120 174 60 182 30C190 60 198 120 210 170C222 182 240 178 270 166C300 161 330 160 504 160"/>
+<path class="nr-bracket" d="M182 212H268"/><text class="site-label" x="225" y="230" text-anchor="middle">Refractory</text>
+<g class="site-marker"><circle cx="100" cy="146" r="11"/><text x="100" y="150.5">A</text></g><g class="site-marker"><circle cx="142" cy="122" r="11"/><text x="142" y="126.5">B</text></g><g class="site-marker"><circle cx="160" cy="76" r="11"/><text x="160" y="80.5">C</text></g><g class="site-marker"><circle cx="210" cy="78" r="11"/><text x="210" y="82.5">D</text></g><g class="site-marker"><circle cx="252" cy="192" r="11"/><text x="252" y="196.5">E</text></g></svg></figure>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">A</span><span class="cause-text"><span class="cause-name">Resting potential</span><span class="cause-detail">About −70 mV, close to the potassium equilibrium potential because of potassium leak</span></span></li>
+<li><span class="cause-number" aria-hidden="true">B</span><span class="cause-text"><span class="cause-name">Threshold</span><span class="cause-detail">About −55 mV; summed input opens voltage-gated sodium channels</span></span></li>
+<li><span class="cause-number" aria-hidden="true">C</span><span class="cause-text"><span class="cause-name">Depolarization</span><span class="cause-detail">Sodium rushes in; all-or-none</span></span></li>
+<li><span class="cause-number" aria-hidden="true">D</span><span class="cause-text"><span class="cause-name">Repolarization</span><span class="cause-detail">Sodium channels inactivate and potassium channels open</span></span></li>
+<li><span class="cause-number" aria-hidden="true">E</span><span class="cause-text"><span class="cause-name">Hyperpolarization</span><span class="cause-detail">Potassium channels close slowly; the pump restores the gradients</span></span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Refractory periods</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Absolute</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Sodium channels are inactivated: no second action potential can fire</span></li>
+<li><span class="pair-from">Relative</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">A stronger stimulus is needed while potassium channels stay open</span></li>
+<li><span class="pair-from">Effect</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Sets the maximum firing rate and keeps conduction one-way</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Conduction</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Unmyelinated</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Depolarization spreads to the next patch of membrane: slow</span></li>
+<li><span class="pair-from">Myelinated</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Current jumps from node to node (saltatory conduction): over 10 times faster</span></li>
+</ul>
+</div>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+<div class="subsection">
+<h4 class="sc-heading">Conduction</h4>
+<ul class="pair-list">
+<li><span class="pair-from"><a class="pair-link" href="index.html#multiple-sclerosis">Multiple sclerosis</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Oligodendrocytes are destroyed → demyelination → slowed or blocked conduction</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#mogad"><abbr class="term" tabindex="0" data-definition="MOG antibody-associated disease">MOGAD</abbr></a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Antibodies against myelin → demyelination</span></li>
+<li><span class="pair-from">Tetrodotoxin</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Pufferfish toxin blocks sodium channels → numbness and weakness</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Excitability</h4>
+<ul class="pair-list">
+<li><span class="pair-from"><a class="pair-link" href="index.html#seizures">Seizures</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Sodium channel mutations, such as SCN1A, raise excitability → epilepsy</span></li>
+</ul>
+</div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+<div class="subsection">
+<h4 class="sc-heading">Sodium channel blockers</h4>
+<h5 class="drug-name"><span class="cause-number" aria-hidden="true">1</span>Local anesthetics <span class="drug-examples">Lidocaine</span></h5>
+<ol class="pathway">
+<li><span class="pathway-title">Target</span><span class="pathway-detail">Voltage-gated sodium channels in nerves</span></li>
+<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Block sodium influx</span></li>
+<li><span class="pathway-title">Response</span><span class="pathway-detail">Conduction fails, so pain signals stop</span></li>
+</ol>
+<h5 class="drug-name"><span class="cause-number" aria-hidden="true">2</span>Antiseizure drugs <span class="drug-examples">Phenytoin, carbamazepine, and lamotrigine</span></h5>
+<ol class="pathway">
+<li><span class="pathway-title">Target</span><span class="pathway-detail">Voltage-gated sodium channels in neurons</span></li>
+<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Reduce sodium influx</span></li>
+<li><span class="pathway-title">Response</span><span class="pathway-detail">Lower excitability, preventing seizures</span></li>
+</ol>
+</div>
+                </section>
+
+                <p class="see-also">
+                    Related:
+                    <a class="link-button" href="index.html#multiple-sclerosis">Multiple Sclerosis</a>
+                    <a class="link-button" href="index.html#seizures">Seizures</a>
+                </p>
+                <section class="references" aria-label="References">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Ludwig PE, Reddy V, Varacallo MA. Neuroanatomy, Neurons. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK441977/" target="_blank" rel="noopener">NBK441977</a></li>
+                        <li>Chrysafides SM, Bordes SJ, Sharma S. Physiology, Resting Potential. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK538338/" target="_blank" rel="noopener">NBK538338</a></li>
+                        <li>Grider MH, Jessu R, Kabir R. Physiology, Action Potential. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK538143/" target="_blank" rel="noopener">NBK538143</a></li>
+                        <li>Jozsa F, Lui F. Neuroanatomy, Neuron Action Potential. 2026. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK546639/" target="_blank" rel="noopener">NBK546639</a></li>
+                        <li>Hernandez CM, Richards JR. Physiology, Sodium Channels. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK545257/" target="_blank" rel="noopener">NBK545257</a></li>
+                    </ol>
+                </section>
+                <dialog class="quick-review" aria-labelledby="neurons-review-title">
+                    <div class="quick-review-body">
+                        <p class="review-kicker">Review article</p>
+                        <h3 id="neurons-review-title">Neurons and action potentials: structure, channels, and conduction</h3>
+
+                        <p class="review-abstract">Neurons receive input on dendrites, integrate it at the axon hillock, and conduct all-or-none action potentials to their terminals. The resting potential of about −70 mV reflects potassium leak and the Na/K-ATPase, and voltage-gated sodium and potassium channels drive depolarization and repolarization. Refractory periods limit firing rate and keep conduction one-way, and myelin allows fast saltatory conduction. Demyelination, sodium channel mutations, and sodium channel toxins disrupt this process, and sodium channel blockers exploit it. Here, we review neuron structure, membrane channels, the action potential, and their failures.</p>
+
+                        <aside class="review-key-points">
+                            <h4>Key points</h4>
+                            <ul>
+                                <li>The resting potential is about −70 mV, close to the potassium equilibrium potential, because potassium leak channels dominate at rest.</li>
+                                <li>At threshold, about −55 mV, voltage-gated sodium channels open, producing an all-or-none spike.</li>
+                                <li>Sodium channel inactivation and potassium efflux repolarize the membrane, and inactivation causes the absolute refractory period.</li>
+                                <li>Myelin from oligodendrocytes and Schwann cells allows saltatory conduction between nodes of Ranvier.</li>
+                                <li>Lidocaine and phenytoin block voltage-gated sodium channels.</li>
+                            </ul>
+                        </aside>
+
+                        <h4>Structure</h4>
+                        <p>Dendrites receive afferent signals, the soma holds the nucleus, and the axon hillock initiates the action potential, which the axon carries to terminals that release neurotransmitter. Myelin, from oligodendrocytes in the <abbr class="term" tabindex="0" data-definition="Central nervous system">CNS</abbr> and Schwann cells in the periphery, insulates the axon, leaving nodes of Ranvier packed with voltage-gated sodium channels. Most neurons, including motor neurons, are multipolar; some are bipolar; and sensory neurons of the dorsal root ganglia are pseudounipolar.</p>
+
+                        <h4>Channels and the action potential</h4>
+                        <p>Potassium leak channels make the resting membrane most permeable to potassium, so the resting potential of about −70 mV lies near the potassium equilibrium potential, and the Na/K-ATPase pumps 3 sodium out and 2 potassium in to maintain the gradients. When summed input reaches threshold, about −55 mV, voltage-gated sodium channels open and sodium rushes in, an all-or-none depolarization. Sodium channels then inactivate and voltage-gated potassium channels open, repolarizing the membrane, and slow potassium channel closure causes hyperpolarization. At the terminal, voltage-gated calcium channels trigger transmitter release, and ligand-gated channels generate postsynaptic potentials.</p>
+                        <p>During the absolute refractory period, inactivated sodium channels prevent another spike; during the relative refractory period, a stronger stimulus is needed. These periods set the maximum firing rate and keep conduction one-way. In unmyelinated axons, depolarization spreads to adjacent membrane slowly, whereas in myelinated axons current jumps from node to node, saltatory conduction, more than 10 times faster.</p>
+
+                        <h4>When it fails</h4>
+                        <p>Multiple sclerosis destroys oligodendrocytes, and <abbr class="term" tabindex="0" data-definition="MOG antibody-associated disease">MOGAD</abbr> targets myelin, slowing or blocking conduction. Tetrodotoxin blocks sodium channels, causing numbness and weakness, and sodium channel mutations such as SCN1A raise excitability and cause epilepsy.</p>
+
+                        <h4>Pharmacology</h4>
+                        <p>Local anesthetics such as lidocaine block voltage-gated sodium channels in nerves, so pain signals fail to conduct. Antiseizure drugs such as phenytoin, carbamazepine, and lamotrigine reduce sodium influx in neurons, lowering excitability.</p>
+
+                        <h4>Relationships to other topics</h4>
+                        <p><em><button type="button" class="review-link" data-goto="synapses">Synapses and neurotransmitters</button>.</em> The action potential ends at the terminal, where calcium entry converts the electrical signal into chemical transmission.</p>
+                    </div>
+                </dialog>
+            </article>
+
+            <article class="condition-content" id="synapses">
+                <h2>Synapses and Neurotransmitters</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+<p>At a chemical synapse, calcium entry releases neurotransmitter, which binds postsynaptic receptors to excite or inhibit the next cell before reuptake or enzymes clear it.</p>
+<ol class="pathway">
+<li><span class="pathway-title">Action potential</span><span class="pathway-detail">Reaches the terminal</span></li>
+<li><span class="pathway-title">Calcium influx</span><span class="pathway-detail">Voltage-gated calcium channels</span></li>
+<li><span class="pathway-title">Release</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Soluble NSF attachment protein receptor">SNARE</abbr> proteins fuse vesicles</span></li>
+<li><span class="pathway-title">Receptor binding</span><span class="pathway-detail">Ionotropic or metabotropic</span></li>
+<li><span class="pathway-title">Clearance</span><span class="pathway-detail">Reuptake, enzymes, or diffusion</span></li>
+</ol>
+                </section>
+
+                <section class="content-section">
+                    <h3>Synaptic transmission</h3>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="0 0 460 256" role="img" aria-label="A chemical synapse: 1, an action potential reaches the terminal; 2, voltage-gated calcium channels open; 3, vesicles fuse and release neurotransmitter; 4, it binds ionotropic receptors and, 5, metabotropic receptors; it is cleared by, 6, reuptake or, 7, enzymes"><path class="nr-terminal" d="M80 20H380V110C380 150 330 160 230 160C130 160 80 150 80 110Z"/><text class="site-label" x="230" y="46" text-anchor="middle">Presynaptic terminal</text>
+<circle class="nr-vesicle" cx="180" cy="92" r="14"/><circle class="nr-vesicle" cx="214" cy="112" r="14"/><circle class="nr-vesicle" cx="262" cy="94" r="14"/><circle class="nr-vesicle" cx="300" cy="116" r="14"/><path class="nr-vesicle" d="M216 160A14 14 0 0 1 244 160"/>
+<rect class="nr-channel" x="120" y="146" width="14" height="26" rx="3"/><path class="sah-press" d="M127 196L127 150M127 150L121.7 159.7M127 150L132.3 159.7"/><text class="site-label" x="144" y="206" text-anchor="start">Ca²⁺</text>
+<rect class="nr-transporter" x="322" y="146" width="16" height="24" rx="3"/><path class="sah-press" d="M344 190L334 168M334 168L333.2 179.0M334 168L342.8 174.6"/>
+<circle class="nr-nt" cx="230" cy="176" r="3.5"/><circle class="nr-nt" cx="242" cy="186" r="3.5"/><circle class="nr-nt" cx="252" cy="174" r="3.5"/><circle class="nr-nt" cx="218" cy="188" r="3.5"/><circle class="nr-nt" cx="262" cy="186" r="3.5"/><circle class="nr-enzyme" cx="362" cy="184" r="8"/>
+<rect class="nr-post" x="60" y="200" width="340" height="44" rx="8"/><path class="nr-membrane" d="M60 200H400"/>
+<rect class="nr-receptor" x="190" y="190" width="20" height="20" rx="4"/><rect class="nr-receptor is-gpcr" x="270" y="190" width="20" height="20" rx="10"/>
+<text class="site-label" x="70" y="238" text-anchor="start">Postsynaptic</text><path class="sah-press" d="M418 40L384 70M384 70L394.7 67.6M384 70L387.7 59.7"/>
+<g class="site-marker"><circle cx="426" cy="26" r="11"/><text x="426" y="30.5">1</text></g><g class="site-marker"><circle cx="104" cy="186" r="11"/><text x="104" y="190.5">2</text></g><g class="site-marker"><circle cx="262" cy="142" r="11"/><text x="262" y="146.5">3</text></g><g class="site-marker"><circle cx="200" cy="226" r="11"/><text x="200" y="230.5">4</text></g><g class="site-marker"><circle cx="280" cy="226" r="11"/><text x="280" y="230.5">5</text></g><g class="site-marker"><circle cx="356" cy="136" r="11"/><text x="356" y="140.5">6</text></g><g class="site-marker"><circle cx="388" cy="172" r="11"/><text x="388" y="176.5">7</text></g></svg></figure>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Action potential</span><span class="cause-detail">Depolarizes the presynaptic terminal</span></span></li>
+<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Calcium channels</span><span class="cause-detail">Voltage-gated; calcium enters</span></span></li>
+<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Vesicle fusion</span><span class="cause-detail">Calcium activates <abbr class="term" tabindex="0" data-definition="Soluble NSF attachment protein receptor">SNARE</abbr> proteins, which fuse vesicles with the membrane</span></span></li>
+<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Ionotropic receptors</span><span class="cause-detail">Ion channels: fast responses</span></span></li>
+<li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">Metabotropic receptors</span><span class="cause-detail">G protein-coupled: slower, longer effects</span></span></li>
+<li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name">Reuptake</span><span class="cause-detail">Into the terminal or glia; small-molecule transmitters only</span></span></li>
+<li><span class="cause-number" aria-hidden="true">7</span><span class="cause-text"><span class="cause-name">Enzymes</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Acetylcholinesterase">AChE</abbr> splits acetylcholine into choline and acetate</span></span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Integration</h4>
+<ul class="pair-list">
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Excitatory postsynaptic potential">EPSP</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Depolarizes the next neuron toward threshold</span></li>
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Inhibitory postsynaptic potential">IPSP</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Hyperpolarizes it, as chloride enters through <abbr class="term" tabindex="0" data-definition="Gamma-aminobutyric acid">GABA</abbr>-A receptors</span></li>
+<li><span class="pair-from">Summation</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Inputs add at the axon hillock; threshold triggers a spike</span></li>
+<li><span class="pair-from">Electrical synapses</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Gap junctions pass current directly, with almost no delay</span></li>
+</ul>
+</div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Neurotransmitters</h3>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Transmitter</th><th scope="col">Main source</th><th scope="col">Receptors</th><th scope="col">Action</th></tr></thead><tbody><tr><th scope="row">Glutamate</th><td>Throughout the brain</td><td>AMPA and <abbr class="term" tabindex="0" data-definition="N-methyl-D-aspartate">NMDA</abbr> (ionotropic)</td><td>The main excitatory transmitter; plasticity and memory</td></tr><tr><th scope="row"><abbr class="term" tabindex="0" data-definition="Gamma-aminobutyric acid">GABA</abbr></th><td>Interneurons throughout the brain</td><td><abbr class="term" tabindex="0" data-definition="Gamma-aminobutyric acid">GABA</abbr>-A (chloride channel) and <abbr class="term" tabindex="0" data-definition="Gamma-aminobutyric acid">GABA</abbr>-B (G protein)</td><td>The main inhibitory transmitter in the brain</td></tr><tr><th scope="row">Glycine</th><td>Spinal cord</td><td>Chloride channel</td><td>Inhibitory, mainly in the cord</td></tr><tr><th scope="row">Acetylcholine</th><td>Motor neurons, autonomic neurons, and the basal forebrain</td><td>Nicotinic (ion channel) and muscarinic <abbr class="term" tabindex="0" data-definition="Primary motor cortex">M1</abbr>–M5 (G protein)</td><td>Muscle contraction; memory and attention</td></tr><tr><th scope="row">Dopamine</th><td><abbr class="term" tabindex="0" data-definition="Substantia nigra pars compacta">SNc</abbr> and ventral tegmental area</td><td><abbr class="term" tabindex="0" data-definition="Dopamine receptor 1">D1</abbr> and <abbr class="term" tabindex="0" data-definition="Dopamine receptor 2">D2</abbr> families</td><td>Movement, reward, and executive function</td></tr><tr><th scope="row">Norepinephrine</th><td>Locus coeruleus and sympathetic nerves</td><td>Adrenergic</td><td>Arousal and attention</td></tr><tr><th scope="row">Serotonin</th><td>Raphe nuclei</td><td>Many subtypes</td><td>Mood, sleep, and gut motility</td></tr></tbody></table></div>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+<div class="subsection">
+<h4 class="sc-heading">Too little</h4>
+<ul class="pair-list">
+<li><span class="pair-from"><a class="pair-link" href="index.html#alzheimers">Alzheimer disease</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Cholinergic neurons are lost → memory decline</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#parkinsons">Typical Parkinson disease</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Substantia nigra pars compacta">SNc</abbr> dopamine neurons die → too little dopamine in the striatum</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Too much</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Glutamate excitotoxicity</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Excess glutamate kills neurons, contributing to Alzheimer and Parkinson disease</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#seizures">Seizures</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Excitation outweighs <abbr class="term" tabindex="0" data-definition="Gamma-aminobutyric acid">GABA</abbr> inhibition</span></li>
+<li><span class="pair-from">Hepatic encephalopathy</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Ammonia enhances <abbr class="term" tabindex="0" data-definition="Gamma-aminobutyric acid">GABA</abbr>-A chloride flow → depressed consciousness</span></li>
+</ul>
+</div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+<div class="subsection">
+<h4 class="sc-heading">Inhibition</h4>
+<h5 class="drug-name"><span class="cause-number" aria-hidden="true">1</span>Benzodiazepines <span class="drug-examples">Lorazepam, diazepam, and midazolam</span></h5>
+<ol class="pathway">
+<li><span class="pathway-title">Target</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Gamma-aminobutyric acid">GABA</abbr>-A receptors</span></li>
+<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Increase how often chloride channels open</span></li>
+<li><span class="pathway-title">Response</span><span class="pathway-detail">Hyperpolarization: sedation and seizure control</span></li>
+</ol>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Acetylcholine</h4>
+<h5 class="drug-name"><span class="cause-number" aria-hidden="true">2</span>Cholinesterase inhibitors <span class="drug-examples">Donepezil, rivastigmine, and galantamine</span></h5>
+<ol class="pathway">
+<li><span class="pathway-title">Target</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Acetylcholinesterase">AChE</abbr></span></li>
+<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Block acetylcholine breakdown</span></li>
+<li><span class="pathway-title">Response</span><span class="pathway-detail">More acetylcholine at cholinergic synapses</span></li>
+</ol>
+<h5 class="drug-name"><span class="cause-number" aria-hidden="true">3</span>Botulinum toxin</h5>
+<ol class="pathway">
+<li><span class="pathway-title">Target</span><span class="pathway-detail">Presynaptic release machinery at the neuromuscular junction</span></li>
+<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Blocks acetylcholine release</span></li>
+<li><span class="pathway-title">Response</span><span class="pathway-detail">Local weakness, used for dystonia</span></li>
+</ol>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Monoamines</h4>
+<h5 class="drug-name"><span class="cause-number" aria-hidden="true">4</span>SSRIs <span class="drug-examples">Sertraline and citalopram</span></h5>
+<ol class="pathway">
+<li><span class="pathway-title">Target</span><span class="pathway-detail">Serotonin transporter</span></li>
+<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Block serotonin reuptake</span></li>
+<li><span class="pathway-title">Response</span><span class="pathway-detail">More serotonin in the synapse</span></li>
+</ol>
+</div>
+                </section>
+
+                <p class="see-also">
+                    Related:
+                    <a class="link-button" href="index.html#alzheimers">Alzheimer Disease</a>
+                    <a class="link-button" href="index.html#parkinsons">Typical Parkinson Disease</a>
+                    <a class="link-button" href="index.html#seizures">Seizures</a>
+                </p>
+                <section class="references" aria-label="References">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Caire MJ, Reddy V, Varacallo MA. Physiology, Synapse. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK526047/" target="_blank" rel="noopener">NBK526047</a></li>
+                        <li>Sheffler ZM, Reddy V, Pillarisetty LS. Physiology, Neurotransmitters. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK539894/" target="_blank" rel="noopener">NBK539894</a></li>
+                        <li>Sam C, Bordoni B. Physiology, Acetylcholine. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK557825/" target="_blank" rel="noopener">NBK557825</a></li>
+                        <li>Jewett BE, Sharma S. Physiology, GABA. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK513311/" target="_blank" rel="noopener">NBK513311</a></li>
+                        <li>Khalil B, Marwaha K, Bollu PC. Physiology, Neuromuscular Junction. 2025. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK470413/" target="_blank" rel="noopener">NBK470413</a></li>
+                        <li>Pana A, Saggu BM. Dystonia. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK448144/" target="_blank" rel="noopener">NBK448144</a></li>
+                    </ol>
+                </section>
+                <dialog class="quick-review" aria-labelledby="synapses-review-title">
+                    <div class="quick-review-body">
+                        <p class="review-kicker">Review article</p>
+                        <h3 id="synapses-review-title">Synapses and neurotransmitters: release, receptors, and clearance</h3>
+
+                        <p class="review-abstract">At chemical synapses, an action potential opens voltage-gated calcium channels, and calcium-activated <abbr class="term" tabindex="0" data-definition="Soluble NSF attachment protein receptor">SNARE</abbr> proteins fuse vesicles to release neurotransmitter. Transmitters act on fast ionotropic or slower metabotropic receptors, producing excitatory or inhibitory postsynaptic potentials that sum at the axon hillock, and are cleared by reuptake or enzymes. Glutamate is the main excitatory and <abbr class="term" tabindex="0" data-definition="Gamma-aminobutyric acid">GABA</abbr> the main inhibitory transmitter, with acetylcholine, dopamine, norepinephrine, and serotonin modulating specific systems. Here, we review synaptic transmission, the major transmitters, their failures, and drugs that target them.</p>
+
+                        <aside class="review-key-points">
+                            <h4>Key points</h4>
+                            <ul>
+                                <li>Calcium entry activates <abbr class="term" tabindex="0" data-definition="Soluble NSF attachment protein receptor">SNARE</abbr> proteins, which fuse vesicles and release transmitter.</li>
+                                <li>Ionotropic receptors are fast ion channels; metabotropic receptors act through G proteins.</li>
+                                <li>Glutamate is the main excitatory transmitter, <abbr class="term" tabindex="0" data-definition="Gamma-aminobutyric acid">GABA</abbr> the main inhibitory transmitter in the brain, and glycine inhibitory in the cord.</li>
+                                <li>Acetylcholine is cleared by <abbr class="term" tabindex="0" data-definition="Acetylcholinesterase">AChE</abbr>; small-molecule transmitters are cleared by reuptake.</li>
+                                <li>Benzodiazepines increase <abbr class="term" tabindex="0" data-definition="Gamma-aminobutyric acid">GABA</abbr>-A channel opening, and cholinesterase inhibitors raise acetylcholine.</li>
+                            </ul>
+                        </aside>
+
+                        <h4>Synaptic transmission</h4>
+                        <p>An action potential depolarizes the terminal, opening voltage-gated calcium channels, and calcium activates <abbr class="term" tabindex="0" data-definition="Soluble NSF attachment protein receptor">SNARE</abbr> proteins that fuse vesicles with the membrane. Transmitter binds ionotropic receptors, ion channels that act quickly, or metabotropic receptors, G protein-coupled receptors with slower, longer effects. Excitatory postsynaptic potentials depolarize the next neuron and inhibitory potentials hyperpolarize it, as chloride enters through <abbr class="term" tabindex="0" data-definition="Gamma-aminobutyric acid">GABA</abbr>-A receptors, and inputs sum at the axon hillock. Transmitter is cleared by reuptake into the terminal or glia, for small molecules only, or by enzymes such as <abbr class="term" tabindex="0" data-definition="Acetylcholinesterase">AChE</abbr>. Electrical synapses pass current directly through gap junctions with almost no delay.</p>
+
+                        <h4>Neurotransmitters</h4>
+                        <p>Glutamate, acting on AMPA and <abbr class="term" tabindex="0" data-definition="N-methyl-D-aspartate">NMDA</abbr> receptors, is the main excitatory transmitter and underlies plasticity and memory. <abbr class="term" tabindex="0" data-definition="Gamma-aminobutyric acid">GABA</abbr>, acting on <abbr class="term" tabindex="0" data-definition="Gamma-aminobutyric acid">GABA</abbr>-A chloride channels and <abbr class="term" tabindex="0" data-definition="Gamma-aminobutyric acid">GABA</abbr>-B G protein-coupled receptors, is the main inhibitory transmitter in the brain, and glycine is inhibitory mainly in the cord. Acetylcholine acts on nicotinic ion channels and muscarinic <abbr class="term" tabindex="0" data-definition="Primary motor cortex">M1</abbr>–M5 receptors at muscle, autonomic synapses, and the basal forebrain. Dopamine from the <abbr class="term" tabindex="0" data-definition="Substantia nigra pars compacta">SNc</abbr> and ventral tegmental area acts on <abbr class="term" tabindex="0" data-definition="Dopamine receptor 1">D1</abbr> and <abbr class="term" tabindex="0" data-definition="Dopamine receptor 2">D2</abbr> families, norepinephrine from the locus coeruleus drives arousal, and serotonin from the raphe nuclei modulates mood, sleep, and gut motility.</p>
+
+                        <h4>When it fails</h4>
+                        <p>Loss of cholinergic neurons contributes to memory decline in Alzheimer disease, and death of <abbr class="term" tabindex="0" data-definition="Substantia nigra pars compacta">SNc</abbr> dopamine neurons leaves too little dopamine in Parkinson disease. Glutamate excitotoxicity contributes to both, seizures arise when excitation outweighs <abbr class="term" tabindex="0" data-definition="Gamma-aminobutyric acid">GABA</abbr> inhibition, and in hepatic encephalopathy, ammonia enhances <abbr class="term" tabindex="0" data-definition="Gamma-aminobutyric acid">GABA</abbr>-A chloride flow.</p>
+
+                        <h4>Pharmacology</h4>
+                        <p>Benzodiazepines increase how often <abbr class="term" tabindex="0" data-definition="Gamma-aminobutyric acid">GABA</abbr>-A chloride channels open, causing sedation and seizure control. Cholinesterase inhibitors such as donepezil block acetylcholine breakdown, botulinum toxin blocks acetylcholine release at the neuromuscular junction, and <abbr class="term" tabindex="0" data-definition="Selective serotonin reuptake inhibitors">SSRIs</abbr> block serotonin reuptake.</p>
+
+                        <h4>Relationships to other topics</h4>
+                        <p><em><button type="button" class="review-link" data-goto="neurons">Neurons and action potentials</button>.</em> The action potential arriving at the terminal opens the calcium channels that start release.</p>
+                        <p><em><button type="button" class="review-link" data-goto="basal-ganglia">Basal ganglia pathways</button>.</em> Dopamine acts on <abbr class="term" tabindex="0" data-definition="Dopamine receptor 1">D1</abbr> and <abbr class="term" tabindex="0" data-definition="Dopamine receptor 2">D2</abbr> striatal neurons to balance the direct and indirect pathways.</p>
+                    </div>
+                </dialog>
+            </article>
+
+            <article class="condition-content" id="ascending">
+                <h2>Ascending Tracts</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+<p>Sensory tracts carry signals from the body to the thalamus and cortex or to the cerebellum, and where each crosses the midline decides which side a lesion affects.</p>
+<ol class="pathway">
+<li><span class="pathway-title">First-order neuron</span><span class="pathway-detail">Cell body in the dorsal root ganglion</span></li>
+<li><span class="pathway-title">Second-order neuron</span><span class="pathway-detail">Crosses the midline</span></li>
+<li><span class="pathway-title">Third-order neuron</span><span class="pathway-detail">Thalamus to cortex</span></li>
+</ol>
+                </section>
+
+                <section class="content-section">
+                    <h3>Routes</h3>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="0 0 460 314" role="img" aria-label="Ascending tracts from the right side of the body. 1, the dorsal column-medial lemniscus ascends on the same side and crosses in the medulla. 2, the spinothalamic tract crosses in the cord, one to two segments above entry. Both reach the left thalamus and cortex. 3, the dorsal spinocerebellar tract stays on the same side and enters the cerebellum"><path class="tr-level" d="M84 30H450"/><text class="site-label" x="14" y="35" text-anchor="start">Cortex</text><path class="tr-level" d="M84 80H450"/><text class="site-label" x="14" y="85" text-anchor="start">Thalamus</text><path class="tr-level" d="M84 160H450"/><text class="site-label" x="14" y="165" text-anchor="start">Medulla</text><path class="tr-level" d="M84 244H450"/><text class="site-label" x="14" y="249" text-anchor="start">Spinal cord</text><path class="tr-mid" d="M230 10V300"/>
+<path class="tr-dc" d="M300 300V160L160 176V30"/><path class="tr-stt" d="M330 300V262L130 246V30"/><path class="tr-sc" d="M366 300V150L392 132"/>
+<ellipse class="tr-box" cx="414" cy="118" rx="38" ry="22"/><text class="site-label" x="414" y="123" text-anchor="middle">Cerebellum</text>
+<circle class="tr-node" cx="300" cy="160" r="5"/><circle class="tr-node" cx="330" cy="262" r="5"/><circle class="tr-node" cx="366" cy="250" r="5"/><circle class="tr-node" cx="160" cy="80" r="5"/><circle class="tr-node" cx="130" cy="80" r="5"/><circle class="tr-node" cx="160" cy="30" r="5"/><circle class="tr-node" cx="130" cy="30" r="5"/>
+<path class="tr-cross" d="M225 163l10 10M235 163l-10 10M225 249l10 10M235 249l-10 10"/>
+<g class="site-marker"><circle cx="300" cy="210" r="11"/><text x="300" y="214.5">1</text></g><g class="site-marker"><circle cx="330" cy="288" r="11"/><text x="330" y="292.5">2</text></g><g class="site-marker"><circle cx="366" cy="206" r="11"/><text x="366" y="210.5">3</text></g><text class="site-label" x="330" y="312" text-anchor="middle">Right body</text></svg></figure>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Dorsal column-medial lemniscus</span><span class="cause-detail">Fine touch, vibration, and conscious proprioception; crosses in the medulla</span></span></li>
+<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Spinothalamic tract</span><span class="cause-detail">Pain, temperature, and crude touch; crosses in the cord</span></span></li>
+<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Spinocerebellar tracts</span><span class="cause-detail">Unconscious proprioception; ends in the cerebellum on the same side</span></span></li>
+</ul>
+</div>
+                </section>
+
+                <section class="content-section">
+                    <h3>1. Dorsal column-medial lemniscus</h3>
+<ul class="pair-list">
+<li><span class="pair-from">First order</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Large fibers from the <abbr class="term" tabindex="0" data-definition="Dorsal root ganglion">DRG</abbr> ascend on the same side: gracilis from below T6 (legs), cuneatus from T6 up (arms)</span></li>
+<li><span class="pair-from">Second order</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Nucleus gracilis and cuneatus in the medulla; internal arcuate fibers cross as the medial lemniscus</span></li>
+<li><span class="pair-from">Third order</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Ventral posterolateral nucleus of the thalamus">VPL</abbr> thalamus to <abbr class="term" tabindex="0" data-definition="Primary somatosensory cortex">S1</abbr></span></li>
+<li><span class="pair-from">Carries</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Fine touch, vibration, conscious proprioception, and two-point discrimination</span></li>
+</ul>
+                </section>
+
+                <section class="content-section">
+                    <h3>2. Spinothalamic tract</h3>
+<ul class="pair-list">
+<li><span class="pair-from">First order</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Thin Aδ and C fibers synapse in the dorsal horn</span></li>
+<li><span class="pair-from">Second order</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Cross in the anterior white commissure 1–2 segments above entry</span></li>
+<li><span class="pair-from">Lateral tract</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Sharp pain and temperature; sacral fibers lie most laterally</span></li>
+<li><span class="pair-from">Anterior tract</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Crude touch and pressure</span></li>
+<li><span class="pair-from">Third order</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Ventral posterolateral nucleus of the thalamus">VPL</abbr> thalamus to <abbr class="term" tabindex="0" data-definition="Primary somatosensory cortex">S1</abbr>, insula, and cingulate cortex</span></li>
+</ul>
+                </section>
+
+                <section class="content-section">
+                    <h3>3. Spinocerebellar tracts</h3>
+<ul class="pair-list">
+<li><span class="pair-from">Dorsal (<abbr class="term" tabindex="0" data-definition="Dorsal spinocerebellar tract">DSCT</abbr>)</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Clarke nucleus (C8–L3); uncrossed; inferior cerebellar peduncle; leg and trunk</span></li>
+<li><span class="pair-from">Ventral (<abbr class="term" tabindex="0" data-definition="Ventral spinocerebellar tract">VSCT</abbr>)</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Spinal border cells; crosses twice, so ends on the same side; superior cerebellar peduncle</span></li>
+<li><span class="pair-from">Carries</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Unconscious proprioception from muscle spindles and tendon organs</span></li>
+</ul>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+<div class="subsection">
+<h4 class="sc-heading">Cord lesions</h4>
+<ul class="pair-list">
+<li><span class="pair-from"><a class="pair-link" href="index.html#stroke-symptoms">Brown-Séquard syndrome</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Hemisection → same-side dorsal column loss and weakness, opposite-side pain and temperature loss</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#stroke-symptoms">Posterior cord syndrome</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Dorsal columns → vibration and position loss</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#motor-signs">Sensory ataxia</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Dorsal column loss, as in <abbr class="term" tabindex="0" data-definition="Vitamin B12 (cobalamin)">B12</abbr> deficiency and tabes dorsalis → positive Romberg test</span></li>
+<li><span class="pair-from">Syringomyelia</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Crossing spinothalamic fibers → cape-like pain and temperature loss</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Brainstem and cerebellum</h4>
+<ul class="pair-list">
+<li><span class="pair-from"><a class="pair-link" href="index.html#stroke-symptoms">Medial medullary syndrome</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Medial lemniscus → opposite-side vibration and position loss</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#motor-signs">Limb ataxia</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Spinocerebellar loss, as in Friedreich ataxia → same-side ataxia</span></li>
+</ul>
+</div>
+                </section>
+
+                <p class="see-also">
+                    Related:
+                    <a class="link-button" href="index.html#stroke-symptoms">Stroke Symptoms and Complications</a>
+                    <a class="link-button" href="index.html#motor-signs">Motor Signs and Syndromes</a>
+                </p>
+                <section class="references" aria-label="References">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Al-Chalabi M, Reddy V, Alsalman I. Neuroanatomy, Posterior Column (Dorsal Column). 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK507888/" target="_blank" rel="noopener">NBK507888</a></li>
+                        <li>Navarro-Orozco D, Miller R, Bollu PC. Neuroanatomy, Medial Lemniscus (Reils Band, Reils Ribbon). 2025. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK526040/" target="_blank" rel="noopener">NBK526040</a></li>
+                        <li>Al-Chalabi M, Reddy V, Gupta S. Neuroanatomy, Spinothalamic Tract. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK507824/" target="_blank" rel="noopener">NBK507824</a></li>
+                        <li>Koh M, Markovich B. Neuroanatomy, Spinocerebellar Dorsal Tract. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK556013/" target="_blank" rel="noopener">NBK556013</a></li>
+                    </ol>
+                </section>
+                <dialog class="quick-review" aria-labelledby="ascending-review-title">
+                    <div class="quick-review-body">
+                        <p class="review-kicker">Review article</p>
+                        <h3 id="ascending-review-title">Ascending tracts: dorsal columns, spinothalamic tracts, and spinocerebellar tracts</h3>
+
+                        <p class="review-abstract">Ascending tracts carry sensation from the body to the thalamus and cortex or to the cerebellum. The dorsal column-medial lemniscus carries fine touch, vibration, and conscious proprioception, ascends on the same side, and crosses in the medulla. The spinothalamic tract carries pain, temperature, and crude touch and crosses in the cord within 1–2 segments of entry. The spinocerebellar tracts carry unconscious proprioception to the cerebellum on the same side. Where each crosses determines the side of deficits after a lesion. Here, we review their routes and failures.</p>
+
+                        <aside class="review-key-points">
+                            <h4>Key points</h4>
+                            <ul>
+                                <li>The dorsal columns ascend on the same side and cross in the medulla as the medial lemniscus.</li>
+                                <li>Spinothalamic fibers cross in the anterior white commissure 1–2 segments above entry.</li>
+                                <li>A cord hemisection causes same-side dorsal column loss and opposite-side pain and temperature loss.</li>
+                                <li>Spinocerebellar tracts end in the cerebellum on the same side, so their lesions cause same-side ataxia.</li>
+                            </ul>
+                        </aside>
+
+                        <h4>Routes</h4>
+                        <p>In the dorsal column-medial lemniscus, large <abbr class="term" tabindex="0" data-definition="Dorsal root ganglion">DRG</abbr> fibers ascend on the same side, gracilis from below T6 and cuneatus from T6 up, to the nucleus gracilis and cuneatus in the medulla. Second-order internal arcuate fibers cross and ascend as the medial lemniscus to the <abbr class="term" tabindex="0" data-definition="Ventral posterolateral nucleus of the thalamus">VPL</abbr> thalamus, which projects to <abbr class="term" tabindex="0" data-definition="Primary somatosensory cortex">S1</abbr>. The pathway carries fine touch, vibration, conscious proprioception, and two-point discrimination.</p>
+                        <p>In the spinothalamic tract, thin Aδ and C fibers synapse in the dorsal horn, and second-order fibers cross in the anterior white commissure 1–2 segments above entry. The lateral tract carries sharp pain and temperature, with sacral fibers most lateral, and the anterior tract carries crude touch; both reach the <abbr class="term" tabindex="0" data-definition="Ventral posterolateral nucleus of the thalamus">VPL</abbr> thalamus and <abbr class="term" tabindex="0" data-definition="Primary somatosensory cortex">S1</abbr>, insula, and cingulate cortex.</p>
+                        <p>The dorsal spinocerebellar tract arises in the Clarke nucleus (C8–L3) and ascends uncrossed through the inferior cerebellar peduncle, carrying leg and trunk information. The ventral tract arises from spinal border cells, crosses twice, and enters through the superior cerebellar peduncle, so both end on the same side, carrying unconscious proprioception from muscle spindles and tendon organs.</p>
+
+                        <h4>When it fails</h4>
+                        <p>A cord hemisection, Brown-Séquard syndrome, causes same-side dorsal column loss and weakness with opposite-side pain and temperature loss. Posterior cord lesions and dorsal column loss from <abbr class="term" tabindex="0" data-definition="Vitamin B12 (cobalamin)">B12</abbr> deficiency or tabes dorsalis cause vibration and position loss with a positive Romberg test, and syringomyelia interrupts crossing spinothalamic fibers, causing cape-like pain and temperature loss. Medial medullary syndrome damages the medial lemniscus, causing opposite-side vibration and position loss, and spinocerebellar loss, as in Friedreich ataxia, causes same-side ataxia.</p>
+
+                        <h4>Relationships to other topics</h4>
+                        <p><em><button type="button" class="review-link" data-goto="descending">Descending tracts</button>.</em> Lesions often hit both: in a hemisected cord, the corticospinal tract adds same-side weakness to the sensory pattern.</p>
+                    </div>
+                </dialog>
+            </article>
+
+            <article class="condition-content" id="descending">
+                <h2>Descending Tracts</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+<p>Descending tracts carry motor commands from the cortex and brainstem to cranial nerve nuclei and the spinal cord; the corticospinal and corticobulbar tracts drive skilled movement, and brainstem tracts set posture and tone.</p>
+<ol class="pathway">
+<li><span class="pathway-title">Cortex or brainstem</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Upper motor neuron">UMN</abbr> cell body</span></li>
+<li><span class="pathway-title">Descending tract</span><span class="pathway-detail">Crosses or stays on its side</span></li>
+<li><span class="pathway-title"><abbr class="term" tabindex="0" data-definition="Lower motor neuron">LMN</abbr></span><span class="pathway-detail">Brainstem nucleus or ventral horn</span></li>
+<li><span class="pathway-title">Muscle</span><span class="pathway-detail">Movement and tone</span></li>
+</ol>
+                </section>
+
+                <section class="content-section">
+                    <h3>Routes</h3>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="0 0 460 314" role="img" aria-label="Descending tracts from the left cortex and brainstem. 1, the lateral corticospinal tract crosses at the pyramids to the right cord. 2, the corticobulbar tract reaches cranial nerve nuclei on both sides. 3, the rubrospinal tract crosses in the midbrain. 4, the vestibulospinal and, 5, reticulospinal tracts descend on their own side"><path class="tr-level" d="M84 30H450"/><text class="site-label" x="14" y="35" text-anchor="start">Cortex</text><path class="tr-level" d="M84 100H450"/><text class="site-label" x="14" y="105" text-anchor="start">Midbrain</text><path class="tr-level" d="M84 130H450"/><text class="site-label" x="14" y="135" text-anchor="start">Pons</text><path class="tr-level" d="M84 180H450"/><text class="site-label" x="14" y="185" text-anchor="start">Medulla</text><path class="tr-level" d="M84 250H450"/><text class="site-label" x="14" y="255" text-anchor="start">Spinal cord</text><path class="tr-mid" d="M230 10V300"/>
+<path class="tr-cst" d="M130 30V180L330 196V300"/><path class="tr-cb" d="M164 30V124M164 124H144M164 124L300 132"/><path class="tr-rub" d="M200 100L262 112V300"/>
+<path class="tr-vst" d="M384 178V300"/><path class="tr-rst" d="M414 134V300"/>
+<circle class="tr-node" cx="130" cy="30" r="5"/><circle class="tr-node" cx="164" cy="30" r="5"/><circle class="tr-node" cx="144" cy="124" r="5"/><circle class="tr-node" cx="300" cy="132" r="5"/><circle class="tr-node" cx="200" cy="100" r="5"/><circle class="tr-node" cx="384" cy="178" r="5"/><circle class="tr-node" cx="414" cy="134" r="5"/>
+<path class="tr-cross" d="M225 183l10 10M235 183l-10 10M225 101l10 10M235 101l-10 10"/>
+<g class="site-marker"><circle cx="330" cy="240" r="11"/><text x="330" y="244.5">1</text></g><g class="site-marker"><circle cx="186" cy="142" r="11"/><text x="186" y="146.5">2</text></g><g class="site-marker"><circle cx="262" cy="270" r="11"/><text x="262" y="274.5">3</text></g><g class="site-marker"><circle cx="384" cy="270" r="11"/><text x="384" y="274.5">4</text></g><g class="site-marker"><circle cx="414" cy="214" r="11"/><text x="414" y="218.5">5</text></g><text class="site-label" x="330" y="312" text-anchor="middle">Right cord</text></svg></figure>
+<ul class="cause-list">
+<li class="cause-group">Corticospinal and corticobulbar</li>
+<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Lateral corticospinal</span><span class="cause-detail">Crosses at the pyramids; distal skilled movement</span></span></li>
+<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Corticobulbar</span><span class="cause-detail">Mostly bilateral to cranial nerve nuclei</span></span></li>
+<li class="cause-group">Brainstem tracts</li>
+<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Rubrospinal</span><span class="cause-detail">Crosses in the midbrain; upper limb flexor tone</span></span></li>
+<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Lateral vestibulospinal</span><span class="cause-detail">Uncrossed; antigravity extensors</span></span></li>
+<li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">Reticulospinal</span><span class="cause-detail">Pontine: excites extensors; medullary: inhibits extensors and facilitates flexors</span></span></li>
+</ul>
+</div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Corticospinal and corticobulbar</h3>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Tract</th><th scope="col">Origin</th><th scope="col">Course</th><th scope="col">Ends</th></tr></thead><tbody><tr><th scope="row">1. Lateral corticospinal</th><td><abbr class="term" tabindex="0" data-definition="Primary motor cortex">M1</abbr>, premotor cortex and <abbr class="term" tabindex="0" data-definition="Superior mesenteric artery">SMA</abbr>, and <abbr class="term" tabindex="0" data-definition="Primary somatosensory cortex">S1</abbr></td><td>Posterior limb of the internal capsule, cerebral peduncle, basis pontis, and pyramid; 90% cross at the pyramidal decussation</td><td>Ventral horn motor neurons for distal limbs</td></tr><tr><th scope="row">Anterior corticospinal</th><td><abbr class="term" tabindex="0" data-definition="Primary motor cortex">M1</abbr> and premotor cortex (10%)</td><td>Uncrossed in the anterior funiculus; crosses segmentally</td><td>Axial and proximal muscles on both sides</td></tr><tr><th scope="row">2. Corticobulbar</th><td>Face area of the motor cortex</td><td>Genu of the internal capsule and medial peduncle</td><td>Motor nuclei of <abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> V, VII, and IX–XII, mostly bilaterally</td></tr></tbody></table></div>
+<p class="note"><strong>Note:</strong> The upper face receives corticobulbar input from both hemispheres, so a cortical lesion spares the forehead.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Brainstem tracts</h3>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Tract</th><th scope="col">Origin</th><th scope="col">Side</th><th scope="col">Effect</th></tr></thead><tbody><tr><th scope="row">3. Rubrospinal</th><td>Red nucleus, with cortical and cerebellar input</td><td>Crosses in the midbrain (ventral tegmental decussation)</td><td>Upper limb flexor tone</td></tr><tr><th scope="row">4. Lateral vestibulospinal</th><td>Lateral vestibular (Deiters) nucleus</td><td>Uncrossed</td><td>Facilitates antigravity extensors; balance</td></tr><tr><th scope="row">5. Pontine reticulospinal</th><td>Pontine reticular formation</td><td>Uncrossed</td><td>Excites axial and proximal extensors</td></tr><tr><th scope="row">5. Medullary reticulospinal</th><td>Medullary reticular formation</td><td>Both sides, mainly uncrossed</td><td>Inhibits extensors, facilitates flexors; autonomic and breathing control</td></tr></tbody></table></div>
+<div class="subsection">
+<h4 class="sc-heading">Posturing</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Decorticate</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Lesion above the red nucleus: rubrospinal flexion of the arms, with extended legs</span></li>
+<li><span class="pair-from">Decerebrate</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Lesion below the red nucleus: unopposed vestibulospinal and pontine reticulospinal extension of all limbs</span></li>
+</ul>
+</div>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+<div class="subsection">
+<h4 class="sc-heading">Corticospinal</h4>
+<ul class="pair-list">
+<li><span class="pair-from"><a class="pair-link" href="index.html#motor-signs">Hemiparesis</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Capsular or brainstem lesion above the decussation → opposite-side spastic weakness</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#stroke-symptoms">Spinal cord lesions</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Below the decussation → same-side spasticity, hyperreflexia, and Babinski sign</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Corticobulbar</h4>
+<ul class="pair-list">
+<li><span class="pair-from"><a class="pair-link" href="index.html#motor-signs">Supranuclear facial palsy</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Lower face weak, forehead spared</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#motor-signs">Pseudobulbar palsy</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Bilateral lesions → dysarthria, dysphagia, and brisk jaw jerk</span></li>
+</ul>
+</div>
+                </section>
+
+                <p class="see-also">
+                    Related:
+                    <a class="link-button" href="index.html#motor-signs">Motor Signs and Syndromes</a>
+                    <a class="link-button" href="index.html#stroke-symptoms">Stroke Symptoms and Complications</a>
+                </p>
+                <section class="references" aria-label="References">
+                    <h3>References</h3>
+                    <ol>
+                        <li>AbuHasan Q, Munakomi S. Neuroanatomy, Pyramidal Tract. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK545314/" target="_blank" rel="noopener">NBK545314</a></li>
+                        <li>Natali AL, Reddy V, Bordoni B. Neuroanatomy, Corticospinal Cord Tract. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK535423/" target="_blank" rel="noopener">NBK535423</a></li>
+                        <li>Bhardwaj N, Yadala S. Neuroanatomy, Corticobulbar Tract. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK555891/" target="_blank" rel="noopener">NBK555891</a></li>
+                        <li>Lee J, Muzio MR. Neuroanatomy, Extrapyramidal System. 2022. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK554542/" target="_blank" rel="noopener">NBK554542</a></li>
+                    </ol>
+                </section>
+                <dialog class="quick-review" aria-labelledby="descending-review-title">
+                    <div class="quick-review-body">
+                        <p class="review-kicker">Review article</p>
+                        <h3 id="descending-review-title">Descending tracts: corticospinal, corticobulbar, and brainstem motor tracts</h3>
+
+                        <p class="review-abstract">Descending tracts carry motor commands to cranial nerve nuclei and the spinal cord. The lateral corticospinal tract crosses at the pyramids and drives skilled distal movement, and the corticobulbar tract reaches cranial nerve nuclei mostly bilaterally. Brainstem tracts set posture and tone: the rubrospinal tract favors upper limb flexion, and the vestibulospinal and pontine reticulospinal tracts favor extension, whereas the medullary reticulospinal tract inhibits extensors. Lesions above or below the pyramidal decussation and the red nucleus produce predictable weakness and posturing. Here, we review these tracts and their failures.</p>
+
+                        <aside class="review-key-points">
+                            <h4>Key points</h4>
+                            <ul>
+                                <li>About 90% of corticospinal fibers cross at the pyramidal decussation, so lesions above it cause opposite-side weakness.</li>
+                                <li>Corticobulbar input is mostly bilateral, and the upper face receives input from both hemispheres.</li>
+                                <li>The rubrospinal tract crosses in the midbrain and favors upper limb flexion.</li>
+                                <li>Lesions above the red nucleus cause decorticate posturing; lesions below it cause decerebrate posturing.</li>
+                            </ul>
+                        </aside>
+
+                        <h4>Corticospinal and corticobulbar tracts</h4>
+                        <p>The lateral corticospinal tract arises from <abbr class="term" tabindex="0" data-definition="Primary motor cortex">M1</abbr>, the premotor cortex and <abbr class="term" tabindex="0" data-definition="Superior mesenteric artery">SMA</abbr>, and <abbr class="term" tabindex="0" data-definition="Primary somatosensory cortex">S1</abbr>, and descends through the posterior limb of the internal capsule, cerebral peduncle, basis pontis, and pyramid; 90% of fibers cross at the pyramidal decussation to reach ventral horn neurons for distal limbs, driving skilled movement. The anterior corticospinal tract, about 10%, stays uncrossed until its segment and serves axial and proximal muscles on both sides. The corticobulbar tract arises from the face area of the motor cortex, passes through the genu of the internal capsule, and reaches the motor nuclei of <abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> V, VII, and IX–XII, mostly bilaterally; because the upper face receives input from both hemispheres, a cortical lesion spares the forehead.</p>
+
+                        <h4>Brainstem tracts</h4>
+                        <p>The rubrospinal tract arises from the red nucleus, which receives cortical and cerebellar input, crosses in the midbrain, and favors upper limb flexion. The lateral vestibulospinal tract, from the lateral vestibular nucleus, and the pontine reticulospinal tract descend uncrossed and excite antigravity extensors, whereas the medullary reticulospinal tract, mainly uncrossed, inhibits extensors, facilitates flexors, and contributes to autonomic and breathing control. A lesion above the red nucleus causes decorticate posturing, with flexed arms and extended legs, and a lesion below it causes decerebrate posturing, with extension of all limbs.</p>
+
+                        <h4>When it fails</h4>
+                        <p>Capsular or brainstem lesions above the decussation cause opposite-side spastic hemiparesis, and cord lesions below it cause same-side spasticity, hyperreflexia, and a Babinski sign. Corticobulbar lesions cause supranuclear facial palsy, sparing the forehead, and bilateral lesions cause pseudobulbar palsy, with dysarthria, dysphagia, and a brisk jaw jerk.</p>
+
+                        <h4>Relationships to other topics</h4>
+                        <p><em><button type="button" class="review-link" data-goto="ascending">Ascending tracts</button>.</em> Combined lesions localize precisely: a cord hemisection adds same-side corticospinal weakness to the sensory pattern.</p>
+                        <p><em><button type="button" class="review-link" data-goto="basal-ganglia">Basal ganglia pathways</button>.</em> The basal ganglia shape movement by acting on the thalamus and cortex, which then act through the corticospinal tract.</p>
+                    </div>
+                </dialog>
+            </article>
+
+            <article class="condition-content" id="basal-ganglia">
+                <h2>Basal Ganglia Pathways</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+<p>The basal ganglia select movements: the direct pathway releases the thalamus to allow movement, the indirect pathway restrains it, and dopamine tips the balance toward movement.</p>
+<ol class="pathway">
+<li><span class="pathway-title">Cortex</span><span class="pathway-detail">Excites the striatum</span></li>
+<li><span class="pathway-title">Striatum</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Dopamine receptor 1">D1</abbr> and <abbr class="term" tabindex="0" data-definition="Dopamine receptor 2">D2</abbr> <abbr class="term" tabindex="0" data-definition="Medium spiny neurons">MSNs</abbr></span></li>
+<li><span class="pathway-title"><abbr class="term" tabindex="0" data-definition="Globus pallidus internus">GPi</abbr> and <abbr class="term" tabindex="0" data-definition="Substantia nigra pars reticulata">SNr</abbr></span><span class="pathway-detail">Tonic inhibition of the thalamus</span></li>
+<li><span class="pathway-title">Thalamus</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Ventral anterior nucleus of the thalamus">VA</abbr> and <abbr class="term" tabindex="0" data-definition="Ventral lateral nucleus of the thalamus">VL</abbr> excite the cortex</span></li>
+</ol>
+                </section>
+
+                <section class="content-section">
+                    <h3>Structures</h3>
+<ul class="pair-list">
+<li><span class="pair-from">Striatum</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Caudate and putamen; <abbr class="term" tabindex="0" data-definition="Gamma-aminobutyric acid">GABA</abbr> <abbr class="term" tabindex="0" data-definition="Medium spiny neurons">MSNs</abbr> receive cortical and dopamine input</span></li>
+<li><span class="pair-from">Globus pallidus</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">External (<abbr class="term" tabindex="0" data-definition="Globus pallidus externus">GPe</abbr>) and internal (<abbr class="term" tabindex="0" data-definition="Globus pallidus internus">GPi</abbr>) segments</span></li>
+<li><span class="pair-from">Subthalamic nucleus</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">The only excitatory (glutamate) nucleus of the loop</span></li>
+<li><span class="pair-from">Substantia nigra</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Pars compacta (<abbr class="term" tabindex="0" data-definition="Substantia nigra pars compacta">SNc</abbr>) makes dopamine; pars reticulata (<abbr class="term" tabindex="0" data-definition="Substantia nigra pars reticulata">SNr</abbr>) is an output nucleus with the <abbr class="term" tabindex="0" data-definition="Globus pallidus internus">GPi</abbr></span></li>
+<li><span class="pair-from">Thalamus</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Ventral anterior nucleus of the thalamus">VA</abbr> and <abbr class="term" tabindex="0" data-definition="Ventral lateral nucleus of the thalamus">VL</abbr> relay to the motor cortex</span></li>
+</ul>
+                </section>
+
+                <section class="content-section">
+                    <h3>Direct and indirect pathways</h3>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="0 0 460 300" role="img" aria-label="The basal ganglia loop. A, the cortex excites the striatum. B, in the direct pathway, D1 neurons inhibit the GPi and SNr, releasing the thalamus. C, in the indirect pathway, D2 neurons inhibit the GPe, freeing the STN to excite the GPi, which inhibits the thalamus. D, dopamine from the SNc excites D1 and inhibits D2 neurons, so both changes favor movement. E, the thalamus excites the cortex"><rect class="pd-box" x="150" y="10" width="160" height="36" rx="10"/><text class="site-label" x="230" y="33" text-anchor="middle">Cortex</text><rect class="pd-box" x="110" y="76" width="240" height="64" rx="12"/><text class="site-label" x="230" y="136" text-anchor="middle">Striatum</text>
+<circle class="hd-msn" cx="170" cy="108" r="19"/><text class="site-label" x="170" y="113" text-anchor="middle">D1</text><circle class="hd-msn" cx="290" cy="108" r="19"/><text class="site-label" x="290" y="113" text-anchor="middle">D2</text>
+<rect class="pd-box" x="380" y="90" width="74" height="36" rx="10"/><text class="site-label" x="417" y="113" text-anchor="middle">SNc</text><rect class="pd-box" x="300" y="166" width="120" height="36" rx="10"/><text class="site-label" x="360" y="189" text-anchor="middle">GPe</text><rect class="pd-box" x="300" y="236" width="120" height="36" rx="10"/><text class="site-label" x="360" y="259" text-anchor="middle">STN</text><rect class="pd-box" x="110" y="236" width="140" height="36" rx="10"/><text class="site-label" x="180" y="259" text-anchor="middle">GPi/SNr</text><rect class="pd-box" x="6" y="160" width="92" height="36" rx="10"/><text class="site-label" x="52" y="183" text-anchor="middle">Thalamus</text>
+<path class="sah-press" d="M230 46L230 74M230 74L235.3 64.3M230 74L224.7 64.3"/><path class="sah-press" d="M380 108L312 108M312 108L321.7 113.3M312 108L321.7 102.7"/><path class="bg-dopa" d="M417 90V60H170"/><path class="sah-press" d="M170 60L170 87M170 87L175.3 77.3M170 87L164.7 77.3"/>
+<path class="sah-press" d="M170 128L170 234M170 234L175.3 224.3M170 234L164.7 224.3"/><path class="sah-press" d="M298 127L342 164M342 164L338.0 153.8M342 164L331.2 161.8"/><path class="sah-press" d="M360 202L360 234M360 234L365.3 224.3M360 234L354.7 224.3"/><path class="sah-press" d="M300 254L253 254M253 254L262.7 259.3M253 254L262.7 248.7"/><path class="sah-press" d="M112 250L62 198M62 198L64.9 208.6M62 198L72.5 201.3"/><path class="sah-press" d="M52 160L150 30M150 30L140.0 34.5M150 30L148.4 40.9"/>
+<text class="bg-sign" x="184" y="76" text-anchor="middle">+</text><text class="bg-sign" x="336" y="102" text-anchor="middle">−</text><text class="bg-sign" x="158" y="186" text-anchor="end">−</text><text class="bg-sign" x="330" y="142" text-anchor="start">−</text><text class="bg-sign" x="372" y="224" text-anchor="start">−</text><text class="bg-sign" x="276" y="248" text-anchor="middle">+</text><text class="bg-sign" x="78" y="234" text-anchor="end">−</text><text class="bg-sign" x="92" y="88" text-anchor="end">+</text>
+<g class="site-marker"><circle cx="252" cy="60" r="11"/><text x="252" y="64.5">A</text></g><g class="site-marker"><circle cx="184" cy="206" r="11"/><text x="184" y="210.5">B</text></g><g class="site-marker"><circle cx="442" cy="220" r="11"/><text x="442" y="224.5">C</text></g><g class="site-marker"><circle cx="440" cy="146" r="11"/><text x="440" y="150.5">D</text></g><g class="site-marker"><circle cx="52" cy="220" r="11"/><text x="52" y="224.5">E</text></g></svg></figure>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">A</span><span class="cause-text"><span class="cause-name">Cortex</span><span class="cause-detail">Excites both striatal populations</span></span></li>
+<li><span class="cause-number" aria-hidden="true">B</span><span class="cause-text"><span class="cause-name">Direct pathway</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Dopamine receptor 1">D1</abbr> <abbr class="term" tabindex="0" data-definition="Medium spiny neurons">MSNs</abbr> inhibit the <abbr class="term" tabindex="0" data-definition="Globus pallidus internus">GPi</abbr> and <abbr class="term" tabindex="0" data-definition="Substantia nigra pars reticulata">SNr</abbr>, so the thalamus is released: more movement</span></span></li>
+<li><span class="cause-number" aria-hidden="true">C</span><span class="cause-text"><span class="cause-name">Indirect pathway</span><span class="cause-detail"><abbr class="term" tabindex="0" data-definition="Dopamine receptor 2">D2</abbr> <abbr class="term" tabindex="0" data-definition="Medium spiny neurons">MSNs</abbr> inhibit the <abbr class="term" tabindex="0" data-definition="Globus pallidus externus">GPe</abbr>, which then inhibits the <abbr class="term" tabindex="0" data-definition="Subthalamic nucleus">STN</abbr> less; the <abbr class="term" tabindex="0" data-definition="Subthalamic nucleus">STN</abbr> excites the <abbr class="term" tabindex="0" data-definition="Globus pallidus internus">GPi</abbr>: less movement</span></span></li>
+<li><span class="cause-number" aria-hidden="true">D</span><span class="cause-text"><span class="cause-name">Dopamine</span><span class="cause-detail">From the <abbr class="term" tabindex="0" data-definition="Substantia nigra pars compacta">SNc</abbr>: excites <abbr class="term" tabindex="0" data-definition="Dopamine receptor 1">D1</abbr> and inhibits <abbr class="term" tabindex="0" data-definition="Dopamine receptor 2">D2</abbr> <abbr class="term" tabindex="0" data-definition="Medium spiny neurons">MSNs</abbr>, so both favor movement</span></span></li>
+<li><span class="cause-number" aria-hidden="true">E</span><span class="cause-text"><span class="cause-name">Thalamus</span><span class="cause-detail">Excites the cortex when released</span></span></li>
+</ul>
+</div>
+<p class="note"><strong>Note:</strong> The <abbr class="term" tabindex="0" data-definition="Globus pallidus internus">GPi</abbr> always inhibits the thalamus; the pathways only turn that inhibition down (direct) or up (indirect).</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+<div class="subsection">
+<h4 class="sc-heading">Too little movement</h4>
+<ul class="pair-list">
+<li><span class="pair-from"><a class="pair-link" href="index.html#parkinsons">Typical Parkinson disease</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Substantia nigra pars compacta">SNc</abbr> dopamine loss → direct pathway weaker, indirect stronger → more <abbr class="term" tabindex="0" data-definition="Globus pallidus internus">GPi</abbr> inhibition → bradykinesia</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#parkinsons">Drug-induced parkinsonism</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Dopamine-blocking drugs block <abbr class="term" tabindex="0" data-definition="Dopamine receptor 2">D2</abbr> receptors</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Too much movement</h4>
+<ul class="pair-list">
+<li><span class="pair-from"><a class="pair-link" href="index.html#huntington">Huntington disease</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Indirect-pathway <abbr class="term" tabindex="0" data-definition="Medium spiny neurons">MSNs</abbr> die first → less <abbr class="term" tabindex="0" data-definition="Globus pallidus internus">GPi</abbr> inhibition → chorea</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#motor-signs">Hemiballismus</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Subthalamic nucleus">STN</abbr> lesion → <abbr class="term" tabindex="0" data-definition="Globus pallidus internus">GPi</abbr> loses its excitation → thalamus released → flinging movements</span></li>
+</ul>
+</div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+<div class="subsection">
+<h4 class="sc-heading">Raising dopamine</h4>
+<h5 class="drug-name"><span class="cause-number" aria-hidden="true">1</span>Levodopa with carbidopa</h5>
+<ol class="pathway">
+<li><span class="pathway-title">Target</span><span class="pathway-detail">Dopamine synthesis in the brain</span></li>
+<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Levodopa crosses the <abbr class="term" tabindex="0" data-definition="Blood-brain barrier">BBB</abbr> and becomes dopamine; carbidopa blocks its peripheral conversion</span></li>
+<li><span class="pathway-title">Response</span><span class="pathway-detail">More striatal dopamine: less bradykinesia</span></li>
+</ol>
+<h5 class="drug-name"><span class="cause-number" aria-hidden="true">2</span>Dopamine agonists <span class="drug-examples">Pramipexole</span></h5>
+<ol class="pathway">
+<li><span class="pathway-title">Target</span><span class="pathway-detail">Striatal dopamine receptors</span></li>
+<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Stimulate them directly</span></li>
+<li><span class="pathway-title">Response</span><span class="pathway-detail">Less bradykinesia; impulse control disorders</span></li>
+</ol>
+<h5 class="drug-name"><span class="cause-number" aria-hidden="true">3</span>MAO-B and COMT inhibitors <span class="drug-examples">Rasagiline and entacapone</span></h5>
+<ol class="pathway">
+<li><span class="pathway-title">Target</span><span class="pathway-detail">Enzymes that break down dopamine and levodopa</span></li>
+<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Slow breakdown</span></li>
+<li><span class="pathway-title">Response</span><span class="pathway-detail">Longer dopamine effect</span></li>
+</ol>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Lowering dopamine</h4>
+<h5 class="drug-name"><span class="cause-number" aria-hidden="true">4</span>VMAT2 inhibitors <span class="drug-examples">Tetrabenazine</span></h5>
+<ol class="pathway">
+<li><span class="pathway-title">Target</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Vesicular monoamine transporter 2">VMAT2</abbr> on presynaptic vesicles</span></li>
+<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Block loading of dopamine into vesicles</span></li>
+<li><span class="pathway-title">Response</span><span class="pathway-detail">Less dopamine release: less chorea</span></li>
+</ol>
+<h5 class="drug-name"><span class="cause-number" aria-hidden="true">5</span>D2 antagonists <span class="drug-examples">Haloperidol and risperidone</span></h5>
+<ol class="pathway">
+<li><span class="pathway-title">Target</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Dopamine receptor 2">D2</abbr> receptors</span></li>
+<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Block dopamine</span></li>
+<li><span class="pathway-title">Response</span><span class="pathway-detail">Less hyperkinesia; can cause parkinsonism</span></li>
+</ol>
+</div>
+                </section>
+
+                <p class="see-also">
+                    Related:
+                    <a class="link-button" href="index.html#parkinsons">Typical Parkinson Disease</a>
+                    <a class="link-button" href="index.html#huntington">Huntington Disease</a>
+                    <a class="link-button" href="index.html#motor-signs">Motor Signs and Syndromes</a>
+                </p>
+                <section class="references" aria-label="References">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Young CB, Reddy V, Sonne J. Neuroanatomy, Basal Ganglia. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK537141/" target="_blank" rel="noopener">NBK537141</a></li>
+                        <li>Lee J, Muzio MR. Neuroanatomy, Extrapyramidal System. 2022. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK554542/" target="_blank" rel="noopener">NBK554542</a></li>
+                        <li>Rocha Cabrero F, De Jesus O. Hemiballismus. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK559127/" target="_blank" rel="noopener">NBK559127</a></li>
+                    </ol>
+                </section>
+                <dialog class="quick-review" aria-labelledby="basal-ganglia-review-title">
+                    <div class="quick-review-body">
+                        <p class="review-kicker">Review article</p>
+                        <h3 id="basal-ganglia-review-title">Basal ganglia pathways: direct, indirect, and the role of dopamine</h3>
+
+                        <p class="review-abstract">The basal ganglia select and scale movement through two opposing striatal output pathways. In the direct pathway, <abbr class="term" tabindex="0" data-definition="Dopamine receptor 1">D1</abbr> medium spiny neurons inhibit the <abbr class="term" tabindex="0" data-definition="Globus pallidus internus">GPi</abbr> and <abbr class="term" tabindex="0" data-definition="Substantia nigra pars reticulata">SNr</abbr>, releasing the thalamus to drive movement; in the indirect pathway, <abbr class="term" tabindex="0" data-definition="Dopamine receptor 2">D2</abbr> neurons inhibit the <abbr class="term" tabindex="0" data-definition="Globus pallidus externus">GPe</abbr>, freeing the <abbr class="term" tabindex="0" data-definition="Subthalamic nucleus">STN</abbr> to excite the <abbr class="term" tabindex="0" data-definition="Globus pallidus internus">GPi</abbr> and restrain movement. Dopamine from the <abbr class="term" tabindex="0" data-definition="Substantia nigra pars compacta">SNc</abbr> excites <abbr class="term" tabindex="0" data-definition="Dopamine receptor 1">D1</abbr> and inhibits <abbr class="term" tabindex="0" data-definition="Dopamine receptor 2">D2</abbr> neurons, so both actions favor movement. Dopamine loss causes parkinsonism, whereas indirect-pathway loss and <abbr class="term" tabindex="0" data-definition="Subthalamic nucleus">STN</abbr> lesions cause chorea and ballismus. Here, we review the circuit, its failures, and drugs that act on it.</p>
+
+                        <aside class="review-key-points">
+                            <h4>Key points</h4>
+                            <ul>
+                                <li>The <abbr class="term" tabindex="0" data-definition="Globus pallidus internus">GPi</abbr> and <abbr class="term" tabindex="0" data-definition="Substantia nigra pars reticulata">SNr</abbr> tonically inhibit the <abbr class="term" tabindex="0" data-definition="Ventral anterior nucleus of the thalamus">VA</abbr> and <abbr class="term" tabindex="0" data-definition="Ventral lateral nucleus of the thalamus">VL</abbr> thalamus.</li>
+                                <li>The direct pathway (<abbr class="term" tabindex="0" data-definition="Dopamine receptor 1">D1</abbr>) reduces that inhibition; the indirect pathway (<abbr class="term" tabindex="0" data-definition="Dopamine receptor 2">D2</abbr>, <abbr class="term" tabindex="0" data-definition="Globus pallidus externus">GPe</abbr>, <abbr class="term" tabindex="0" data-definition="Subthalamic nucleus">STN</abbr>) increases it.</li>
+                                <li>Dopamine excites <abbr class="term" tabindex="0" data-definition="Dopamine receptor 1">D1</abbr> and inhibits <abbr class="term" tabindex="0" data-definition="Dopamine receptor 2">D2</abbr> neurons, favoring movement through both pathways.</li>
+                                <li>Dopamine loss in Parkinson disease causes bradykinesia; indirect-pathway loss in Huntington disease and <abbr class="term" tabindex="0" data-definition="Subthalamic nucleus">STN</abbr> lesions cause hyperkinesia.</li>
+                            </ul>
+                        </aside>
+
+                        <h4>Circuit</h4>
+                        <p>The striatum, made of the caudate and putamen, contains <abbr class="term" tabindex="0" data-definition="Gamma-aminobutyric acid">GABA</abbr> medium spiny neurons that receive cortical and dopamine input. The <abbr class="term" tabindex="0" data-definition="Globus pallidus internus">GPi</abbr> and <abbr class="term" tabindex="0" data-definition="Substantia nigra pars reticulata">SNr</abbr> form the output and tonically inhibit the <abbr class="term" tabindex="0" data-definition="Ventral anterior nucleus of the thalamus">VA</abbr> and <abbr class="term" tabindex="0" data-definition="Ventral lateral nucleus of the thalamus">VL</abbr> thalamus, which relays to the motor cortex. In the direct pathway, <abbr class="term" tabindex="0" data-definition="Dopamine receptor 1">D1</abbr> neurons inhibit the <abbr class="term" tabindex="0" data-definition="Globus pallidus internus">GPi</abbr> and <abbr class="term" tabindex="0" data-definition="Substantia nigra pars reticulata">SNr</abbr>, releasing the thalamus and allowing movement. In the indirect pathway, <abbr class="term" tabindex="0" data-definition="Dopamine receptor 2">D2</abbr> neurons inhibit the <abbr class="term" tabindex="0" data-definition="Globus pallidus externus">GPe</abbr>, which then inhibits the <abbr class="term" tabindex="0" data-definition="Subthalamic nucleus">STN</abbr> less, and the <abbr class="term" tabindex="0" data-definition="Subthalamic nucleus">STN</abbr>, the loop's only glutamate nucleus, excites the <abbr class="term" tabindex="0" data-definition="Globus pallidus internus">GPi</abbr>, restraining movement. Dopamine from the <abbr class="term" tabindex="0" data-definition="Substantia nigra pars compacta">SNc</abbr> excites <abbr class="term" tabindex="0" data-definition="Dopamine receptor 1">D1</abbr> and inhibits <abbr class="term" tabindex="0" data-definition="Dopamine receptor 2">D2</abbr> neurons, so both actions favor movement.</p>
+
+                        <h4>When it fails</h4>
+                        <p>In Parkinson disease, loss of <abbr class="term" tabindex="0" data-definition="Substantia nigra pars compacta">SNc</abbr> dopamine weakens the direct pathway and strengthens the indirect pathway, increasing <abbr class="term" tabindex="0" data-definition="Globus pallidus internus">GPi</abbr> inhibition and causing bradykinesia, and dopamine-blocking drugs cause parkinsonism by blocking <abbr class="term" tabindex="0" data-definition="Dopamine receptor 2">D2</abbr> receptors. In Huntington disease, indirect-pathway neurons die first, reducing <abbr class="term" tabindex="0" data-definition="Globus pallidus internus">GPi</abbr> inhibition and causing chorea, and an <abbr class="term" tabindex="0" data-definition="Subthalamic nucleus">STN</abbr> lesion removes the <abbr class="term" tabindex="0" data-definition="Globus pallidus internus">GPi</abbr>'s excitation, releasing the thalamus and causing hemiballismus.</p>
+
+                        <h4>Pharmacology</h4>
+                        <p>Levodopa crosses the <abbr class="term" tabindex="0" data-definition="Blood-brain barrier">BBB</abbr> and becomes dopamine, with carbidopa blocking its peripheral conversion, and dopamine agonists such as pramipexole stimulate receptors directly. <abbr class="term" tabindex="0" data-definition="Monoamine oxidase B">MAO-B</abbr> and <abbr class="term" tabindex="0" data-definition="Catechol-O-methyltransferase">COMT</abbr> inhibitors slow dopamine and levodopa breakdown. <abbr class="term" tabindex="0" data-definition="Vesicular monoamine transporter 2">VMAT2</abbr> inhibitors such as tetrabenazine block vesicular loading of dopamine, reducing chorea, and <abbr class="term" tabindex="0" data-definition="Dopamine receptor 2">D2</abbr> antagonists such as haloperidol reduce hyperkinesia but can cause parkinsonism.</p>
+
+                        <h4>Relationships to other topics</h4>
+                        <p><em><button type="button" class="review-link" data-goto="synapses">Synapses and neurotransmitters</button>.</em> Dopamine acts through <abbr class="term" tabindex="0" data-definition="Dopamine receptor 1">D1</abbr> and <abbr class="term" tabindex="0" data-definition="Dopamine receptor 2">D2</abbr> receptors, members of the metabotropic receptor family.</p>
+                        <p><em><button type="button" class="review-link" data-goto="descending">Descending tracts</button>.</em> The basal ganglia act through the thalamus and cortex, which drive movement through the corticospinal tract.</p>
+                    </div>
+                </dialog>
+            </article>
+
+            <article class="condition-content" id="cn-special">
+                <h2>Olfactory, Optic, and Vestibulocochlear Nerves</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+<p>Cranial nerves I, II, and VIII carry the special senses of smell, sight, hearing, and balance; I and II are really <abbr class="term" tabindex="0" data-definition="Central nervous system">CNS</abbr> tracts.</p>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="-90 0 500 380" role="img" aria-label="The brainstem from the front with the olfactory, optic, and vestibulocochlear nerves highlighted"><path class="cn-stem" d="M100 60C110 50 190 50 200 60L206 130C240 140 248 210 214 226L206 236L200 320L190 370H110L100 320L94 236L86 226C52 210 60 140 94 130Z"/><path class="cn-groove" d="M94 130C150 140 150 140 206 130M86 226C150 236 150 236 214 226"/>
+<text class="site-label" x="150" y="104" text-anchor="middle">Midbrain</text><text class="site-label" x="150" y="186" text-anchor="middle">Pons</text><text class="site-label" x="150" y="290" text-anchor="middle">Medulla</text>
+<path class="cn-nerve is-on" d="M136 22L128 4M164 22L172 4"/><text class="cn-label is-on" x="186" y="14" text-anchor="start">I</text><path class="cn-nerve is-on" d="M118 26L182 48M182 26L118 48M126 46L120 60M174 46L180 60"/><text class="cn-label is-on" x="196" y="40" text-anchor="start">II</text><path class="cn-nerve" d="M156 112C200 112 240 130 270 160"/><text class="cn-label" x="276" y="165" text-anchor="start">III</text><path class="cn-nerve is-dorsal" d="M204 96C240 96 258 150 270 182"/><text class="cn-label" x="276" y="187" text-anchor="start">IV</text><path class="cn-nerve" d="M232 186L270 208"/><text class="cn-label" x="276" y="213" text-anchor="start">V</text><path class="cn-nerve" d="M214 230L270 248"/><text class="cn-label" x="276" y="253" text-anchor="start">VII</text><path class="cn-nerve is-on" d="M216 238L270 268"/><text class="cn-label is-on" x="276" y="273" text-anchor="start">VIII</text><path class="cn-nerve" d="M162 236C200 250 240 270 270 288"/><text class="cn-label" x="276" y="293" text-anchor="start">VI</text><path class="cn-nerve" d="M198 262L270 312"/><text class="cn-label" x="276" y="317" text-anchor="start">IX</text><path class="cn-nerve" d="M198 278L270 332"/><text class="cn-label" x="276" y="337" text-anchor="start">X</text><path class="cn-nerve" d="M190 366C230 360 254 356 270 352"/><text class="cn-label" x="276" y="357" text-anchor="start">XI</text><path class="cn-nerve" d="M128 290L36 300"/><text class="cn-label" x="30" y="305" text-anchor="end">XII</text></svg><figcaption>Brainstem from the front; IV leaves from the back</figcaption></figure>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">I</span><span class="cause-text"><span class="cause-name">Olfactory</span><span class="cause-detail">Smell; reaches cortex without a thalamic relay</span></span></li>
+<li><span class="cause-number" aria-hidden="true">II</span><span class="cause-text"><span class="cause-name">Optic</span><span class="cause-detail">Sight and the afferent limb of the pupillary light reflex</span></span></li>
+<li><span class="cause-number" aria-hidden="true">VIII</span><span class="cause-text"><span class="cause-name">Vestibulocochlear</span><span class="cause-detail">Hearing and balance; enters at the pontomedullary junction</span></span></li>
+</ul>
+</div>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Nerve</th><th scope="col">Fibers</th><th scope="col">Exits through</th><th scope="col">Function</th></tr></thead><tbody><tr><th scope="row">I. Olfactory</th><td><abbr class="term" tabindex="0" data-definition="Special visceral afferent">SVA</abbr></td><td>Cribriform plate</td><td>Smell and most of flavor</td></tr><tr><th scope="row">II. Optic</th><td><abbr class="term" tabindex="0" data-definition="Special somatic afferent">SSA</abbr></td><td>Optic canal</td><td>Vision and the pupillary light reflex</td></tr><tr><th scope="row">VIII. Vestibulocochlear</th><td><abbr class="term" tabindex="0" data-definition="Special somatic afferent">SSA</abbr></td><td>Internal acoustic meatus</td><td>Hearing and balance</td></tr></tbody></table></div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Olfactory nerve (I)</h3>
+<ol class="pathway">
+<li><span class="pathway-title">Olfactory epithelium</span><span class="pathway-detail">Receptor neurons regenerate for life</span></li>
+<li><span class="pathway-title">Cribriform plate</span><span class="pathway-detail">About 20 bundles</span></li>
+<li><span class="pathway-title">Olfactory bulb</span><span class="pathway-detail">Synapse on mitral cells</span></li>
+<li><span class="pathway-title">Olfactory cortex</span><span class="pathway-detail">Piriform cortex, amygdala, and entorhinal cortex</span></li>
+</ol>
+<p class="note"><strong>Note:</strong> Ammonia irritates the trigeminal nerve rather than stimulating smell, so it does not test <abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> I; test each nostril separately.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Optic nerve (II)</h3>
+<ol class="pathway">
+<li><span class="pathway-title">Retina</span><span class="pathway-detail">Ganglion cells form the optic disc</span></li>
+<li><span class="pathway-title">Optic nerve</span><span class="pathway-detail">A <abbr class="term" tabindex="0" data-definition="Central nervous system">CNS</abbr> tract myelinated by oligodendrocytes</span></li>
+<li><span class="pathway-title">Optic chiasm</span><span class="pathway-detail">Nasal fibers cross</span></li>
+<li><span class="pathway-title">Optic tract</span><span class="pathway-detail">Carries the opposite visual field</span></li>
+<li><span class="pathway-title"><abbr class="term" tabindex="0" data-definition="Lateral geniculate nucleus">LGN</abbr></span><span class="pathway-detail">Thalamic relay</span></li>
+<li><span class="pathway-title"><abbr class="term" tabindex="0" data-definition="Primary visual cortex">V1</abbr></span><span class="pathway-detail">Calcarine cortex; macula at the occipital pole</span></li>
+</ol>
+<div class="subsection">
+<h4 class="sc-heading">Where the field is lost</h4>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Lesion</th><th scope="col">Field defect</th></tr></thead><tbody><tr><th scope="row">Optic nerve</th><td>Blindness in that eye</td></tr><tr><th scope="row">Optic chiasm</th><td>Bitemporal hemianopia</td></tr><tr><th scope="row">Optic tract</th><td>Opposite homonymous hemianopia</td></tr><tr><th scope="row">Meyer loop (temporal)</th><td>Opposite upper quadrantanopia: pie in the sky</td></tr><tr><th scope="row">Parietal radiation</th><td>Opposite lower quadrantanopia</td></tr><tr><th scope="row"><abbr class="term" tabindex="0" data-definition="Primary visual cortex">V1</abbr></th><td>Opposite homonymous hemianopia</td></tr></tbody></table></div>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Pupillary light reflex</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Afferent</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> II; pupil fibers leave before the <abbr class="term" tabindex="0" data-definition="Lateral geniculate nucleus">LGN</abbr> for the pretectum</span></li>
+<li><span class="pair-from">Efferent</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Cranial nerve III (oculomotor)">CN III</abbr>, through the Edinger-Westphal nucleus and ciliary ganglion, constricts both pupils</span></li>
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Relative afferent pupillary defect">RAPD</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Light in a damaged eye constricts both pupils less than light in the good eye</span></li>
+</ul>
+</div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Vestibulocochlear nerve (VIII)</h3>
+<ol class="pathway">
+<li><span class="pathway-title">Hair cells</span><span class="pathway-detail">Cochlea and vestibular labyrinth</span></li>
+<li><span class="pathway-title">Spiral and Scarpa ganglia</span><span class="pathway-detail">Bipolar neurons</span></li>
+<li><span class="pathway-title">Internal acoustic meatus</span><span class="pathway-detail">With <abbr class="term" tabindex="0" data-definition="Cranial nerve VII (facial)">CN VII</abbr></span></li>
+<li><span class="pathway-title">Cochlear and vestibular nuclei</span><span class="pathway-detail">First synapse</span></li>
+</ol>
+<div class="subsection">
+<h4 class="sc-heading">Two pathways</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Hearing</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Cochlear nuclei → trapezoid body, where hearing becomes bilateral → lateral lemniscus → inferior colliculus → <abbr class="term" tabindex="0" data-definition="Medial geniculate nucleus">MGN</abbr> → Heschl gyrus</span></li>
+<li><span class="pair-from">Balance</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Vestibular nuclei → <abbr class="term" tabindex="0" data-definition="Medial longitudinal fasciculus">MLF</abbr> for the <abbr class="term" tabindex="0" data-definition="Vestibulo-ocular reflex">VOR</abbr>, vestibulospinal tracts, and cerebellum</span></li>
+</ul>
+</div>
+<p class="note"><strong>Note:</strong> Hearing is bilateral above the cochlear nuclei, so one-sided deafness points to the ear, nerve, or cochlear nucleus.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+<ul class="pair-list">
+<li><span class="pair-from"><a class="pair-link" href="index.html#parkinsons">Anosmia</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Smell is lost early in Parkinson disease, and after head injury</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#eye-conditions">Optic neuritis</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Demyelination of <abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> II → painful vision loss with an <abbr class="term" tabindex="0" data-definition="Relative afferent pupillary defect">RAPD</abbr></span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#stroke-symptoms">Homonymous hemianopia</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Stroke behind the chiasm, as in <abbr class="term" tabindex="0" data-definition="Posterior cerebral artery">PCA</abbr> strokes</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#hearing-loss">Vestibular schwannoma</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Tumor of <abbr class="term" tabindex="0" data-definition="Cranial nerve VIII (vestibulocochlear)">CN VIII</abbr> → one-sided hearing loss and tinnitus</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#vertigo">Vestibular neuritis</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Vestibular nerve inflammation → vertigo with an abnormal head impulse</span></li>
+</ul>
+                </section>
+
+                <p class="see-also">
+                    Related:
+                    <a class="link-button" href="index.html#eye-conditions">Vision Loss and Red Eye</a>
+                    <a class="link-button" href="index.html#hearing-loss">Hearing Loss</a>
+                    <a class="link-button" href="index.html#vertigo">Vertigo</a>
+                </p>
+                <section class="references" aria-label="References">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Sonne J, Omole AE, Lopez-Ojeda W. Neuroanatomy, Cranial Nerve. 2025. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK470353/" target="_blank" rel="noopener">NBK470353</a></li>
+                        <li>Helwany M, Bordoni B. Neuroanatomy, Cranial Nerve 1 (Olfactory). 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK556051/" target="_blank" rel="noopener">NBK556051</a></li>
+                        <li>Smith AM, Czyz CN. Neuroanatomy, Cranial Nerve 2 (Optic). 2022. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK507907/" target="_blank" rel="noopener">NBK507907</a></li>
+                        <li>Ireland AC, Carter IB. Neuroanatomy, Optic Chiasm. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK542287/" target="_blank" rel="noopener">NBK542287</a></li>
+                        <li>Bordoni B, Omole AE, Daly DT. Neuroanatomy, Cranial Nerve 8 (Vestibulocochlear). 2026. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK537359/" target="_blank" rel="noopener">NBK537359</a></li>
+                    </ol>
+                </section>
+                <dialog class="quick-review" aria-labelledby="cn-special-review-title">
+                    <div class="quick-review-body">
+                        <p class="review-kicker">Review article</p>
+                        <h3 id="cn-special-review-title">Olfactory, optic, and vestibulocochlear nerves: the special senses</h3>
+
+                        <p class="review-abstract">Cranial nerves I, II, and VIII carry smell, sight, hearing, and balance. Olfactory receptor neurons pass through the cribriform plate to the olfactory bulb and reach cortex without a thalamic relay. The optic pathway crosses only its nasal fibers at the chiasm, so lesions produce characteristic field defects, and <abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> II forms the afferent limb of the pupillary light reflex. <abbr class="term" tabindex="0" data-definition="Cranial nerve VIII (vestibulocochlear)">CN VIII</abbr> carries hearing, which becomes bilateral above the cochlear nuclei, and vestibular input to the eye, spinal, and cerebellar pathways. Here, we review these nerves and their failures.</p>
+
+                        <aside class="review-key-points">
+                            <h4>Key points</h4>
+                            <ul>
+                                <li>Smell reaches cortex without a thalamic relay, and olfactory receptor neurons regenerate.</li>
+                                <li>Only nasal fibers cross at the chiasm, so chiasmal lesions cause bitemporal hemianopia and tract lesions homonymous hemianopia.</li>
+                                <li><abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> II is the afferent and <abbr class="term" tabindex="0" data-definition="Cranial nerve III (oculomotor)">CN III</abbr> the efferent limb of the pupillary light reflex.</li>
+                                <li>Hearing becomes bilateral above the cochlear nuclei, so one-sided deafness localizes to the ear, nerve, or nucleus.</li>
+                            </ul>
+                        </aside>
+
+                        <h4>Olfactory and optic nerves</h4>
+                        <p>Olfactory receptor neurons, which regenerate for life, pass through the cribriform plate to synapse on mitral cells in the olfactory bulb, which project to the piriform cortex, amygdala, and entorhinal cortex without a thalamic relay. Ammonia tests the trigeminal nerve rather than smell. Retinal ganglion cells form the optic nerve, a <abbr class="term" tabindex="0" data-definition="Central nervous system">CNS</abbr> tract myelinated by oligodendrocytes, which passes through the optic canal to the chiasm, where nasal fibers cross. Each optic tract carries the opposite visual field to the <abbr class="term" tabindex="0" data-definition="Lateral geniculate nucleus">LGN</abbr>, and radiations reach <abbr class="term" tabindex="0" data-definition="Primary visual cortex">V1</abbr> in the calcarine cortex, the lower field through Meyer loop in the temporal lobe. Optic nerve lesions blind one eye, chiasmal lesions cause bitemporal hemianopia, tract and <abbr class="term" tabindex="0" data-definition="Primary visual cortex">V1</abbr> lesions cause homonymous hemianopia, and Meyer loop lesions cause an upper quadrantanopia. Pupil fibers leave before the <abbr class="term" tabindex="0" data-definition="Lateral geniculate nucleus">LGN</abbr> for the pretectum, and <abbr class="term" tabindex="0" data-definition="Cranial nerve III (oculomotor)">CN III</abbr> constricts both pupils, so a damaged optic nerve produces an <abbr class="term" tabindex="0" data-definition="Relative afferent pupillary defect">RAPD</abbr>.</p>
+
+                        <h4>Vestibulocochlear nerve</h4>
+                        <p>Hair cells of the cochlea and vestibular labyrinth synapse on bipolar neurons of the spiral and Scarpa ganglia, whose axons pass through the internal acoustic meatus with <abbr class="term" tabindex="0" data-definition="Cranial nerve VII (facial)">CN VII</abbr> to the cochlear and vestibular nuclei. Hearing becomes bilateral at the trapezoid body and ascends through the lateral lemniscus, inferior colliculus, and <abbr class="term" tabindex="0" data-definition="Medial geniculate nucleus">MGN</abbr> to the Heschl gyrus, so one-sided deafness localizes to the ear, nerve, or cochlear nucleus. Vestibular nuclei project through the <abbr class="term" tabindex="0" data-definition="Medial longitudinal fasciculus">MLF</abbr> for the <abbr class="term" tabindex="0" data-definition="Vestibulo-ocular reflex">VOR</abbr>, to the vestibulospinal tracts, and to the cerebellum.</p>
+
+                        <h4>When it fails</h4>
+                        <p>Smell is lost early in Parkinson disease and after head injury. Optic neuritis demyelinates <abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> II, causing painful vision loss with an <abbr class="term" tabindex="0" data-definition="Relative afferent pupillary defect">RAPD</abbr>, and strokes behind the chiasm cause homonymous hemianopia. Vestibular schwannoma causes one-sided hearing loss and tinnitus, and vestibular neuritis causes vertigo with an abnormal head impulse.</p>
+
+                        <h4>Relationships to other topics</h4>
+                        <p><em><button type="button" class="review-link" data-goto="cn-eye">Oculomotor, trochlear, and abducens nerves</button>.</em> <abbr class="term" tabindex="0" data-definition="Cranial nerve III (oculomotor)">CN III</abbr> forms the efferent limb of the pupillary light reflex, and the vestibular nuclei drive eye movements through the <abbr class="term" tabindex="0" data-definition="Medial longitudinal fasciculus">MLF</abbr>.</p>
+                    </div>
+                </dialog>
+            </article>
+
+            <article class="condition-content" id="cn-eye">
+                <h2>Oculomotor, Trochlear, and Abducens Nerves</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+<p>Cranial nerves III, IV, and VI move the eyes; III also lifts the lid and constricts the pupil.</p>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="-90 0 500 380" role="img" aria-label="The brainstem from the front with the oculomotor, trochlear, and abducens nerves highlighted; the trochlear nerve leaves from the back"><path class="cn-stem" d="M100 60C110 50 190 50 200 60L206 130C240 140 248 210 214 226L206 236L200 320L190 370H110L100 320L94 236L86 226C52 210 60 140 94 130Z"/><path class="cn-groove" d="M94 130C150 140 150 140 206 130M86 226C150 236 150 236 214 226"/>
+<text class="site-label" x="150" y="104" text-anchor="middle">Midbrain</text><text class="site-label" x="150" y="186" text-anchor="middle">Pons</text><text class="site-label" x="150" y="290" text-anchor="middle">Medulla</text>
+<path class="cn-nerve" d="M136 22L128 4M164 22L172 4"/><text class="cn-label" x="186" y="14" text-anchor="start">I</text><path class="cn-nerve" d="M118 26L182 48M182 26L118 48M126 46L120 60M174 46L180 60"/><text class="cn-label" x="196" y="40" text-anchor="start">II</text><path class="cn-nerve is-on" d="M156 112C200 112 240 130 270 160"/><text class="cn-label is-on" x="276" y="165" text-anchor="start">III</text><path class="cn-nerve is-on is-dorsal" d="M204 96C240 96 258 150 270 182"/><text class="cn-label is-on" x="276" y="187" text-anchor="start">IV</text><path class="cn-nerve" d="M232 186L270 208"/><text class="cn-label" x="276" y="213" text-anchor="start">V</text><path class="cn-nerve" d="M214 230L270 248"/><text class="cn-label" x="276" y="253" text-anchor="start">VII</text><path class="cn-nerve" d="M216 238L270 268"/><text class="cn-label" x="276" y="273" text-anchor="start">VIII</text><path class="cn-nerve is-on" d="M162 236C200 250 240 270 270 288"/><text class="cn-label is-on" x="276" y="293" text-anchor="start">VI</text><path class="cn-nerve" d="M198 262L270 312"/><text class="cn-label" x="276" y="317" text-anchor="start">IX</text><path class="cn-nerve" d="M198 278L270 332"/><text class="cn-label" x="276" y="337" text-anchor="start">X</text><path class="cn-nerve" d="M190 366C230 360 254 356 270 352"/><text class="cn-label" x="276" y="357" text-anchor="start">XI</text><path class="cn-nerve" d="M128 290L36 300"/><text class="cn-label" x="30" y="305" text-anchor="end">XII</text></svg><figcaption>Brainstem from the front; IV leaves from the back</figcaption></figure>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">III</span><span class="cause-text"><span class="cause-name">Oculomotor</span><span class="cause-detail">Four eye muscles, the lid, and the pupil</span></span></li>
+<li><span class="cause-number" aria-hidden="true">IV</span><span class="cause-text"><span class="cause-name">Trochlear</span><span class="cause-detail">Superior oblique; the only nerve leaving the back of the brainstem</span></span></li>
+<li><span class="cause-number" aria-hidden="true">VI</span><span class="cause-text"><span class="cause-name">Abducens</span><span class="cause-detail">Lateral rectus</span></span></li>
+</ul>
+</div>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Nerve</th><th scope="col">Fibers</th><th scope="col">Exits through</th><th scope="col">Function</th></tr></thead><tbody><tr><th scope="row">III. Oculomotor</th><td><abbr class="term" tabindex="0" data-definition="General somatic efferent">GSE</abbr> and <abbr class="term" tabindex="0" data-definition="General visceral efferent">GVE</abbr></td><td>Superior orbital fissure</td><td>SR, <abbr class="term" tabindex="0" data-definition="Magnetic resonance">MR</abbr>, IR, IO, and levator; pupil constriction and accommodation</td></tr><tr><th scope="row">IV. Trochlear</th><td><abbr class="term" tabindex="0" data-definition="General somatic efferent">GSE</abbr></td><td>Superior orbital fissure</td><td>Superior oblique</td></tr><tr><th scope="row">VI. Abducens</th><td><abbr class="term" tabindex="0" data-definition="General somatic efferent">GSE</abbr></td><td>Superior orbital fissure</td><td>Lateral rectus</td></tr></tbody></table></div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Eye muscles</h3>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Muscle</th><th scope="col">Nerve</th><th scope="col">Action</th></tr></thead><tbody><tr><th scope="row">Lateral rectus</th><td>VI</td><td>Abducts</td></tr><tr><th scope="row">Medial rectus</th><td>III</td><td>Adducts</td></tr><tr><th scope="row">Superior rectus</th><td>III</td><td>Elevates</td></tr><tr><th scope="row">Inferior rectus</th><td>III</td><td>Depresses</td></tr><tr><th scope="row">Superior oblique</th><td>IV</td><td>Depresses and intorts, especially when adducted</td></tr><tr><th scope="row">Inferior oblique</th><td>III</td><td>Elevates and extorts when adducted</td></tr><tr><th scope="row">Levator palpebrae</th><td>III</td><td>Lifts the lid</td></tr></tbody></table></div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Oculomotor nerve (III)</h3>
+<ol class="pathway">
+<li><span class="pathway-title">Nucleus and Edinger-Westphal</span><span class="pathway-detail">Midbrain, superior colliculus level</span></li>
+<li><span class="pathway-title">Interpeduncular fossa</span><span class="pathway-detail">Between the <abbr class="term" tabindex="0" data-definition="Posterior cerebral artery">PCA</abbr> and superior cerebellar artery, beside the <abbr class="term" tabindex="0" data-definition="Posterior communicating artery">PComm</abbr></span></li>
+<li><span class="pathway-title">Cavernous sinus</span><span class="pathway-detail">Lateral wall</span></li>
+<li><span class="pathway-title">Superior orbital fissure</span><span class="pathway-detail">Divides into superior and inferior branches</span></li>
+<li><span class="pathway-title">Ciliary ganglion</span><span class="pathway-detail">Parasympathetic synapse for the pupil</span></li>
+</ol>
+<div class="subsection">
+<h4 class="sc-heading">Palsy</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Signs</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Eye down and out, ptosis, and a dilated pupil</span></li>
+<li><span class="pair-from">Compressive</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Pupil fibers ride on the surface, so a <abbr class="term" tabindex="0" data-definition="Posterior communicating artery">PComm</abbr> aneurysm dilates the pupil early</span></li>
+<li><span class="pair-from">Ischemic</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">A diabetic infarct spares the pupil</span></li>
+</ul>
+</div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Trochlear nerve (IV)</h3>
+<ul class="pair-list">
+<li><span class="pair-from">Course</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Nucleus at the inferior colliculus level; every fiber crosses, then leaves the back of the midbrain; the longest intracranial course</span></li>
+<li><span class="pair-from">Palsy</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Hypertropia and extorsion; the head tilts away from the weak side</span></li>
+</ul>
+                </section>
+
+                <section class="content-section">
+                    <h3>Abducens nerve (VI)</h3>
+<ul class="pair-list">
+<li><span class="pair-from">Course</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Nucleus under the facial colliculus in the pons; long climb up the clivus; runs free in the cavernous sinus beside the <abbr class="term" tabindex="0" data-definition="Internal carotid artery">ICA</abbr></span></li>
+<li><span class="pair-from">Palsy</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Inward deviation (esotropia) with no abduction</span></li>
+<li><span class="pair-from">Raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Stretching on the clivus makes VI palsy a false localizing sign</span></li>
+<li><span class="pair-from">Nucleus</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">The horizontal gaze center: a nuclear lesion causes a gaze palsy</span></li>
+</ul>
+<p class="note"><strong>Note:</strong> The <abbr class="term" tabindex="0" data-definition="Medial longitudinal fasciculus">MLF</abbr> links the VI nucleus to the opposite III nucleus; its lesion causes <abbr class="term" tabindex="0" data-definition="Internuclear ophthalmoplegia">INO</abbr>, with failed adduction and nystagmus of the abducting eye, as in <abbr class="term" tabindex="0" data-definition="Multiple sclerosis">MS</abbr>.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+<ul class="pair-list">
+<li><span class="pair-from"><a class="pair-link" href="index.html#subarachnoid-hemorrhage"><abbr class="term" tabindex="0" data-definition="Posterior communicating artery">PComm</abbr> aneurysm</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Compresses III → blown pupil</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#stroke-symptoms">Weber syndrome</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Midbrain stroke → same-side III palsy with opposite hemiparesis</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#multiple-sclerosis"><abbr class="term" tabindex="0" data-definition="Internuclear ophthalmoplegia">INO</abbr></a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Medial longitudinal fasciculus">MLF</abbr> demyelination → failed adduction</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#atypical-parkinsonism">Progressive supranuclear palsy</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Supranuclear vertical gaze palsy; the nerves themselves are intact</span></li>
+</ul>
+                </section>
+
+                <p class="see-also">
+                    Related:
+                    <a class="link-button" href="index.html#stroke-symptoms">Stroke Symptoms and Complications</a>
+                    <a class="link-button" href="index.html#multiple-sclerosis">Multiple Sclerosis</a>
+                    <a class="link-button" href="index.html#subarachnoid-hemorrhage">Subarachnoid Hemorrhage</a>
+                </p>
+                <section class="references" aria-label="References">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Sonne J, Omole AE, Lopez-Ojeda W. Neuroanatomy, Cranial Nerve. 2025. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK470353/" target="_blank" rel="noopener">NBK470353</a></li>
+                        <li>Joyce C, Le PH, Peterson DC. Neuroanatomy, Cranial Nerve 3 (Oculomotor). 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK537126/" target="_blank" rel="noopener">NBK537126</a></li>
+                        <li>Kim SY, Motlagh M, Naqvi IA. Neuroanatomy, Cranial Nerve 4 (Trochlear). 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK537244/" target="_blank" rel="noopener">NBK537244</a></li>
+                        <li>Nguyen V, Reddy V, Varacallo MA. Neuroanatomy, Cranial Nerve 6 (Abducens). 2022. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK430711/" target="_blank" rel="noopener">NBK430711</a></li>
+                    </ol>
+                </section>
+                <dialog class="quick-review" aria-labelledby="cn-eye-review-title">
+                    <div class="quick-review-body">
+                        <p class="review-kicker">Review article</p>
+                        <h3 id="cn-eye-review-title">Oculomotor, trochlear, and abducens nerves: moving the eyes</h3>
+
+                        <p class="review-abstract">Cranial nerves III, IV, and VI move the eyes. <abbr class="term" tabindex="0" data-definition="Cranial nerve III (oculomotor)">CN III</abbr> supplies four extraocular muscles and the levator, and its parasympathetic fibers constrict the pupil; <abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> IV supplies the superior oblique and is the only nerve to leave the back of the brainstem; <abbr class="term" tabindex="0" data-definition="Cranial nerve VI (abducens)">CN VI</abbr> supplies the lateral rectus. Their palsies produce characteristic deviations, and the pattern of pupil involvement in <abbr class="term" tabindex="0" data-definition="Cranial nerve III (oculomotor)">CN III</abbr> palsy separates compression from ischemia. The <abbr class="term" tabindex="0" data-definition="Medial longitudinal fasciculus">MLF</abbr> links the abducens and oculomotor nuclei for conjugate gaze. Here, we review these nerves and their failures.</p>
+
+                        <aside class="review-key-points">
+                            <h4>Key points</h4>
+                            <ul>
+                                <li><abbr class="term" tabindex="0" data-definition="Cranial nerve III (oculomotor)">CN III</abbr> palsy turns the eye down and out with ptosis and, if compressive, a dilated pupil.</li>
+                                <li>A <abbr class="term" tabindex="0" data-definition="Posterior communicating artery">PComm</abbr> aneurysm dilates the pupil early, whereas a diabetic infarct spares it.</li>
+                                <li><abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> IV palsy causes hypertropia and extorsion, with a head tilt away from the weak side.</li>
+                                <li><abbr class="term" tabindex="0" data-definition="Cranial nerve VI (abducens)">CN VI</abbr> palsy causes esotropia and is a false localizing sign of raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr>.</li>
+                                <li>An <abbr class="term" tabindex="0" data-definition="Medial longitudinal fasciculus">MLF</abbr> lesion causes <abbr class="term" tabindex="0" data-definition="Internuclear ophthalmoplegia">INO</abbr>, as in <abbr class="term" tabindex="0" data-definition="Multiple sclerosis">MS</abbr>.</li>
+                            </ul>
+                        </aside>
+
+                        <h4>Eye muscles</h4>
+                        <p>The lateral rectus (VI) abducts, the medial rectus (III) adducts, the superior rectus (III) elevates, and the inferior rectus (III) depresses. The superior oblique (IV) depresses and intorts, especially when adducted, the inferior oblique (III) elevates and extorts when adducted, and the levator (III) lifts the lid.</p>
+
+                        <h4>The three nerves</h4>
+                        <p><abbr class="term" tabindex="0" data-definition="Cranial nerve III (oculomotor)">CN III</abbr> arises with the Edinger-Westphal nucleus at the superior colliculus level, leaves through the interpeduncular fossa beside the <abbr class="term" tabindex="0" data-definition="Posterior communicating artery">PComm</abbr>, runs in the lateral wall of the cavernous sinus, and enters the orbit through the superior orbital fissure, its parasympathetic fibers synapsing in the ciliary ganglion. Its palsy turns the eye down and out with ptosis and a dilated pupil; because pupil fibers ride on the surface, a <abbr class="term" tabindex="0" data-definition="Posterior communicating artery">PComm</abbr> aneurysm dilates the pupil early, whereas a diabetic infarct spares it. Every <abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> IV fiber crosses before leaving the back of the midbrain, and its palsy causes hypertropia and extorsion with a head tilt away from the weak side. <abbr class="term" tabindex="0" data-definition="Cranial nerve VI (abducens)">CN VI</abbr> arises under the facial colliculus, climbs the clivus, and runs free in the cavernous sinus; its palsy causes esotropia and can be a false localizing sign of raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr>, and its nucleus is the horizontal gaze center. The <abbr class="term" tabindex="0" data-definition="Medial longitudinal fasciculus">MLF</abbr> links the VI nucleus to the opposite III nucleus, and its lesion causes <abbr class="term" tabindex="0" data-definition="Internuclear ophthalmoplegia">INO</abbr>.</p>
+
+                        <h4>When it fails</h4>
+                        <p>A <abbr class="term" tabindex="0" data-definition="Posterior communicating artery">PComm</abbr> aneurysm compresses <abbr class="term" tabindex="0" data-definition="Cranial nerve III (oculomotor)">CN III</abbr> and blows the pupil, and Weber syndrome combines a same-side <abbr class="term" tabindex="0" data-definition="Cranial nerve III (oculomotor)">CN III</abbr> palsy with opposite hemiparesis. <abbr class="term" tabindex="0" data-definition="Multiple sclerosis">MS</abbr> demyelinates the <abbr class="term" tabindex="0" data-definition="Medial longitudinal fasciculus">MLF</abbr>, causing <abbr class="term" tabindex="0" data-definition="Internuclear ophthalmoplegia">INO</abbr>, and progressive supranuclear palsy causes a supranuclear vertical gaze palsy with intact nerves.</p>
+
+                        <h4>Relationships to other topics</h4>
+                        <p><em><button type="button" class="review-link" data-goto="cn-special">Olfactory, optic, and vestibulocochlear nerves</button>.</em> <abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> II and III form the pupillary light reflex, and vestibular input drives the eyes through the <abbr class="term" tabindex="0" data-definition="Medial longitudinal fasciculus">MLF</abbr>.</p>
+                    </div>
+                </dialog>
+            </article>
+
+            <article class="condition-content" id="cn-face">
+                <h2>Trigeminal and Facial Nerves</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+<p>The trigeminal nerve senses the face and moves the jaw; the facial nerve moves the face and carries tears, saliva, and taste.</p>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="-90 0 500 380" role="img" aria-label="The brainstem from the front with the trigeminal and facial nerves highlighted"><path class="cn-stem" d="M100 60C110 50 190 50 200 60L206 130C240 140 248 210 214 226L206 236L200 320L190 370H110L100 320L94 236L86 226C52 210 60 140 94 130Z"/><path class="cn-groove" d="M94 130C150 140 150 140 206 130M86 226C150 236 150 236 214 226"/>
+<text class="site-label" x="150" y="104" text-anchor="middle">Midbrain</text><text class="site-label" x="150" y="186" text-anchor="middle">Pons</text><text class="site-label" x="150" y="290" text-anchor="middle">Medulla</text>
+<path class="cn-nerve" d="M136 22L128 4M164 22L172 4"/><text class="cn-label" x="186" y="14" text-anchor="start">I</text><path class="cn-nerve" d="M118 26L182 48M182 26L118 48M126 46L120 60M174 46L180 60"/><text class="cn-label" x="196" y="40" text-anchor="start">II</text><path class="cn-nerve" d="M156 112C200 112 240 130 270 160"/><text class="cn-label" x="276" y="165" text-anchor="start">III</text><path class="cn-nerve is-dorsal" d="M204 96C240 96 258 150 270 182"/><text class="cn-label" x="276" y="187" text-anchor="start">IV</text><path class="cn-nerve is-on" d="M232 186L270 208"/><text class="cn-label is-on" x="276" y="213" text-anchor="start">V</text><path class="cn-nerve is-on" d="M214 230L270 248"/><text class="cn-label is-on" x="276" y="253" text-anchor="start">VII</text><path class="cn-nerve" d="M216 238L270 268"/><text class="cn-label" x="276" y="273" text-anchor="start">VIII</text><path class="cn-nerve" d="M162 236C200 250 240 270 270 288"/><text class="cn-label" x="276" y="293" text-anchor="start">VI</text><path class="cn-nerve" d="M198 262L270 312"/><text class="cn-label" x="276" y="317" text-anchor="start">IX</text><path class="cn-nerve" d="M198 278L270 332"/><text class="cn-label" x="276" y="337" text-anchor="start">X</text><path class="cn-nerve" d="M190 366C230 360 254 356 270 352"/><text class="cn-label" x="276" y="357" text-anchor="start">XI</text><path class="cn-nerve" d="M128 290L36 300"/><text class="cn-label" x="30" y="305" text-anchor="end">XII</text></svg><figcaption>Brainstem from the front; IV leaves from the back</figcaption></figure>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">V</span><span class="cause-text"><span class="cause-name">Trigeminal</span><span class="cause-detail">Face sensation and chewing; leaves the lateral mid-pons</span></span></li>
+<li><span class="cause-number" aria-hidden="true">VII</span><span class="cause-text"><span class="cause-name">Facial</span><span class="cause-detail">Facial expression, tears, saliva, and taste; leaves at the cerebellopontine angle</span></span></li>
+</ul>
+</div>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Nerve</th><th scope="col">Fibers</th><th scope="col">Exits through</th><th scope="col">Function</th></tr></thead><tbody><tr><th scope="row">V. Trigeminal</th><td><abbr class="term" tabindex="0" data-definition="General somatic afferent">GSA</abbr> and <abbr class="term" tabindex="0" data-definition="Special visceral efferent">SVE</abbr></td><td><abbr class="term" tabindex="0" data-definition="Primary visual cortex">V1</abbr> superior orbital fissure, V2 foramen rotundum, V3 foramen ovale</td><td>Face and mouth sensation; muscles of mastication</td></tr><tr><th scope="row">VII. Facial</th><td><abbr class="term" tabindex="0" data-definition="Special visceral efferent">SVE</abbr>, <abbr class="term" tabindex="0" data-definition="General visceral efferent">GVE</abbr>, <abbr class="term" tabindex="0" data-definition="Special visceral afferent">SVA</abbr>, and <abbr class="term" tabindex="0" data-definition="General somatic afferent">GSA</abbr></td><td>Internal acoustic meatus, then stylomastoid foramen</td><td>Facial expression and stapedius; lacrimal and salivary glands; taste from the front of the tongue</td></tr></tbody></table></div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Trigeminal nerve (V)</h3>
+<div class="subsection">
+<h4 class="sc-heading">Nuclei</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Mesencephalic</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Proprioception from the jaw</span></li>
+<li><span class="pair-from">Principal sensory</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Touch</span></li>
+<li><span class="pair-from">Spinal</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Pain and temperature; extends to C2</span></li>
+<li><span class="pair-from">Motor</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Muscles of mastication</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Divisions</h4>
+<ul class="pair-list">
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Primary visual cortex">V1</abbr> (ophthalmic)</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Forehead and cornea; afferent limb of the corneal reflex</span></li>
+<li><span class="pair-from">V2 (maxillary)</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Cheek and upper jaw</span></li>
+<li><span class="pair-from">V3 (mandibular)</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Lower jaw and sensation to the front of the tongue; motor to masseter, temporalis, and pterygoids</span></li>
+</ul>
+</div>
+<p class="note"><strong>Note:</strong> The angle of the jaw is supplied by C2–C3, not <abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> V, and the jaw deviates toward a weak V3.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Facial nerve (VII)</h3>
+<ol class="pathway">
+<li><span class="pathway-title">Facial nucleus</span><span class="pathway-detail">Pons; fibers loop over the VI nucleus</span></li>
+<li><span class="pathway-title">Cerebellopontine angle</span><span class="pathway-detail">With <abbr class="term" tabindex="0" data-definition="Cranial nerve VIII (vestibulocochlear)">CN VIII</abbr></span></li>
+<li><span class="pathway-title">Geniculate ganglion</span><span class="pathway-detail">Greater petrosal nerve to the lacrimal gland</span></li>
+<li><span class="pathway-title">Facial canal</span><span class="pathway-detail">Nerve to stapedius and chorda tympani</span></li>
+<li><span class="pathway-title">Stylomastoid foramen</span><span class="pathway-detail">Motor fibers only</span></li>
+<li><span class="pathway-title">Parotid gland</span><span class="pathway-detail">Divides into 5 branches without supplying it</span></li>
+</ol>
+<div class="subsection">
+<h4 class="sc-heading">Functions</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Motor</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Facial expression, stapedius, and posterior digastric</span></li>
+<li><span class="pair-from">Parasympathetic</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Lacrimal, submandibular, and sublingual glands</span></li>
+<li><span class="pair-from">Taste</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Front two-thirds of the tongue through the chorda tympani</span></li>
+<li><span class="pair-from">Sensory</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Part of the ear</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Reflexes</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Corneal reflex</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Primary visual cortex">V1</abbr> in, VII out: both eyes blink</span></li>
+<li><span class="pair-from">Stapedius reflex</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Loud sound tightens the stapedius; its loss causes hyperacusis</span></li>
+</ul>
+</div>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+<ul class="pair-list">
+<li><span class="pair-from"><a class="pair-link" href="index.html#motor-signs">Supranuclear facial palsy</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Upper motor neuron">UMN</abbr> lesion → lower face weak, forehead spared</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#motor-signs">Bell palsy</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Lower motor neuron">LMN</abbr> lesion of VII → whole half of the face, with hyperacusis and taste loss</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#stroke-symptoms">Lateral medullary syndrome</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Spinal trigeminal nucleus → same-side facial pain and temperature loss</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#hearing-loss">Vestibular schwannoma</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Can stretch VII at the cerebellopontine angle</span></li>
+</ul>
+                </section>
+
+                <p class="see-also">
+                    Related:
+                    <a class="link-button" href="index.html#motor-signs">Motor Signs and Syndromes</a>
+                    <a class="link-button" href="index.html#stroke-symptoms">Stroke Symptoms and Complications</a>
+                </p>
+                <section class="references" aria-label="References">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Sonne J, Omole AE, Lopez-Ojeda W. Neuroanatomy, Cranial Nerve. 2025. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK470353/" target="_blank" rel="noopener">NBK470353</a></li>
+                        <li>Huff T, Weisbrod LJ, Daly DT. Neuroanatomy, Cranial Nerve 5 (Trigeminal). 2024. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK482283/" target="_blank" rel="noopener">NBK482283</a></li>
+                        <li>Hohman MH, Warner MJ, Varacallo MA. Bell Palsy. 2024. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK482290/" target="_blank" rel="noopener">NBK482290</a></li>
+                    </ol>
+                </section>
+                <dialog class="quick-review" aria-labelledby="cn-face-review-title">
+                    <div class="quick-review-body">
+                        <p class="review-kicker">Review article</p>
+                        <h3 id="cn-face-review-title">Trigeminal and facial nerves: face sensation, mastication, and expression</h3>
+
+                        <p class="review-abstract">The trigeminal nerve carries sensation from the face through three divisions and supplies the muscles of mastication, with four nuclei extending from the midbrain to C2. The facial nerve supplies facial expression and the stapedius, carries parasympathetic fibers to the lacrimal and salivary glands, and carries taste from the front of the tongue. Together they form the corneal reflex. Upper and lower motor neuron facial palsies differ by forehead involvement, and trigeminal nuclear lesions cause dissociated facial sensory loss. Here, we review these nerves and their failures.</p>
+
+                        <aside class="review-key-points">
+                            <h4>Key points</h4>
+                            <ul>
+                                <li><abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> V has mesencephalic, principal sensory, spinal, and motor nuclei; the spinal nucleus carries facial pain and temperature to C2.</li>
+                                <li><abbr class="term" tabindex="0" data-definition="Primary visual cortex">V1</abbr>, V2, and V3 leave through the superior orbital fissure, foramen rotundum, and foramen ovale.</li>
+                                <li>The corneal reflex runs <abbr class="term" tabindex="0" data-definition="Primary visual cortex">V1</abbr> in and VII out.</li>
+                                <li>The facial nerve passes through the parotid without supplying it.</li>
+                                <li>A <abbr class="term" tabindex="0" data-definition="Upper motor neuron">UMN</abbr> facial palsy spares the forehead; an <abbr class="term" tabindex="0" data-definition="Lower motor neuron">LMN</abbr> palsy does not.</li>
+                            </ul>
+                        </aside>
+
+                        <h4>Trigeminal nerve</h4>
+                        <p><abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> V has a mesencephalic nucleus for jaw proprioception, a principal sensory nucleus for touch, a spinal nucleus for pain and temperature extending to C2, and a motor nucleus. Its ophthalmic division, through the superior orbital fissure, supplies the forehead and cornea; its maxillary division, through the foramen rotundum, the cheek and upper jaw; and its mandibular division, through the foramen ovale, the lower jaw and front of the tongue, plus the masseter, temporalis, and pterygoids. The angle of the jaw is supplied by C2–C3, and the jaw deviates toward a weak V3.</p>
+
+                        <h4>Facial nerve</h4>
+                        <p>The facial nucleus lies in the pons, and its fibers loop over the VI nucleus before leaving at the cerebellopontine angle with <abbr class="term" tabindex="0" data-definition="Cranial nerve VIII (vestibulocochlear)">CN VIII</abbr>. At the geniculate ganglion, the greater petrosal nerve leaves for the lacrimal gland; in the facial canal, branches supply the stapedius and form the chorda tympani, which carries taste from the front two-thirds of the tongue and fibers to the submandibular and sublingual glands. Only motor fibers leave the stylomastoid foramen, and the nerve divides into 5 branches within the parotid without supplying it. The corneal reflex runs <abbr class="term" tabindex="0" data-definition="Primary visual cortex">V1</abbr> in and VII out, and loss of the stapedius causes hyperacusis.</p>
+
+                        <h4>When it fails</h4>
+                        <p>A <abbr class="term" tabindex="0" data-definition="Upper motor neuron">UMN</abbr> lesion weakens the lower face and spares the forehead, whereas Bell palsy, an <abbr class="term" tabindex="0" data-definition="Lower motor neuron">LMN</abbr> lesion, weakens the whole half of the face with hyperacusis and taste loss. Lateral medullary syndrome damages the spinal trigeminal nucleus, causing same-side facial pain and temperature loss, and vestibular schwannoma can stretch <abbr class="term" tabindex="0" data-definition="Cranial nerve VII (facial)">CN VII</abbr> at the cerebellopontine angle.</p>
+
+                        <h4>Relationships to other topics</h4>
+                        <p><em><button type="button" class="review-link" data-goto="descending">Descending tracts</button>.</em> Corticobulbar input to the upper facial nucleus is bilateral, which is why <abbr class="term" tabindex="0" data-definition="Upper motor neuron">UMN</abbr> lesions spare the forehead.</p>
+                    </div>
+                </dialog>
+            </article>
+
+            <article class="condition-content" id="cn-lower">
+                <h2>Glossopharyngeal, Vagus, Accessory, and Hypoglossal Nerves</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+<p>Cranial nerves IX–XII leave the medulla and upper cord to control swallowing, voice, the heart and gut, head turning, and the tongue.</p>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="-90 0 500 380" role="img" aria-label="The brainstem from the front with the glossopharyngeal, vagus, accessory, and hypoglossal nerves highlighted"><path class="cn-stem" d="M100 60C110 50 190 50 200 60L206 130C240 140 248 210 214 226L206 236L200 320L190 370H110L100 320L94 236L86 226C52 210 60 140 94 130Z"/><path class="cn-groove" d="M94 130C150 140 150 140 206 130M86 226C150 236 150 236 214 226"/>
+<text class="site-label" x="150" y="104" text-anchor="middle">Midbrain</text><text class="site-label" x="150" y="186" text-anchor="middle">Pons</text><text class="site-label" x="150" y="290" text-anchor="middle">Medulla</text>
+<path class="cn-nerve" d="M136 22L128 4M164 22L172 4"/><text class="cn-label" x="186" y="14" text-anchor="start">I</text><path class="cn-nerve" d="M118 26L182 48M182 26L118 48M126 46L120 60M174 46L180 60"/><text class="cn-label" x="196" y="40" text-anchor="start">II</text><path class="cn-nerve" d="M156 112C200 112 240 130 270 160"/><text class="cn-label" x="276" y="165" text-anchor="start">III</text><path class="cn-nerve is-dorsal" d="M204 96C240 96 258 150 270 182"/><text class="cn-label" x="276" y="187" text-anchor="start">IV</text><path class="cn-nerve" d="M232 186L270 208"/><text class="cn-label" x="276" y="213" text-anchor="start">V</text><path class="cn-nerve" d="M214 230L270 248"/><text class="cn-label" x="276" y="253" text-anchor="start">VII</text><path class="cn-nerve" d="M216 238L270 268"/><text class="cn-label" x="276" y="273" text-anchor="start">VIII</text><path class="cn-nerve" d="M162 236C200 250 240 270 270 288"/><text class="cn-label" x="276" y="293" text-anchor="start">VI</text><path class="cn-nerve is-on" d="M198 262L270 312"/><text class="cn-label is-on" x="276" y="317" text-anchor="start">IX</text><path class="cn-nerve is-on" d="M198 278L270 332"/><text class="cn-label is-on" x="276" y="337" text-anchor="start">X</text><path class="cn-nerve is-on" d="M190 366C230 360 254 356 270 352"/><text class="cn-label is-on" x="276" y="357" text-anchor="start">XI</text><path class="cn-nerve is-on" d="M128 290L36 300"/><text class="cn-label is-on" x="30" y="305" text-anchor="end">XII</text></svg><figcaption>Brainstem from the front; IV leaves from the back</figcaption></figure>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">IX</span><span class="cause-text"><span class="cause-name">Glossopharyngeal</span><span class="cause-detail">Afferent limb of the gag; carotid sinus; parotid</span></span></li>
+<li><span class="cause-number" aria-hidden="true">X</span><span class="cause-text"><span class="cause-name">Vagus</span><span class="cause-detail">Palate, pharynx, and larynx; heart and gut</span></span></li>
+<li><span class="cause-number" aria-hidden="true">XI</span><span class="cause-text"><span class="cause-name">Accessory</span><span class="cause-detail">Sternocleidomastoid and trapezius</span></span></li>
+<li><span class="cause-number" aria-hidden="true">XII</span><span class="cause-text"><span class="cause-name">Hypoglossal</span><span class="cause-detail">Tongue muscles</span></span></li>
+</ul>
+</div>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Nerve</th><th scope="col">Fibers</th><th scope="col">Exits through</th><th scope="col">Function</th></tr></thead><tbody><tr><th scope="row">IX. Glossopharyngeal</th><td><abbr class="term" tabindex="0" data-definition="Special visceral efferent">SVE</abbr>, <abbr class="term" tabindex="0" data-definition="General visceral efferent">GVE</abbr>, <abbr class="term" tabindex="0" data-definition="General visceral afferent">GVA</abbr>, <abbr class="term" tabindex="0" data-definition="Special visceral afferent">SVA</abbr>, and <abbr class="term" tabindex="0" data-definition="General somatic afferent">GSA</abbr></td><td>Jugular foramen</td><td>Stylopharyngeus; parotid; carotid sinus and body; taste and touch on the back third of the tongue</td></tr><tr><th scope="row">X. Vagus</th><td><abbr class="term" tabindex="0" data-definition="Special visceral efferent">SVE</abbr>, <abbr class="term" tabindex="0" data-definition="General visceral efferent">GVE</abbr>, <abbr class="term" tabindex="0" data-definition="General visceral afferent">GVA</abbr>, <abbr class="term" tabindex="0" data-definition="Special visceral afferent">SVA</abbr>, and <abbr class="term" tabindex="0" data-definition="General somatic afferent">GSA</abbr></td><td>Jugular foramen</td><td>Palate, pharynx, and larynx; parasympathetic to heart, lungs, and gut</td></tr><tr><th scope="row">XI. Accessory</th><td><abbr class="term" tabindex="0" data-definition="Special visceral efferent">SVE</abbr></td><td>Jugular foramen</td><td>Sternocleidomastoid and trapezius</td></tr><tr><th scope="row">XII. Hypoglossal</th><td><abbr class="term" tabindex="0" data-definition="General somatic efferent">GSE</abbr></td><td>Hypoglossal canal</td><td>All tongue muscles except palatoglossus</td></tr></tbody></table></div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Glossopharyngeal nerve (IX)</h3>
+<ul class="pair-list">
+<li><span class="pair-from">Motor</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Stylopharyngeus, its only muscle</span></li>
+<li><span class="pair-from">Parasympathetic</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Parotid, through the otic ganglion</span></li>
+<li><span class="pair-from">Visceral sensory</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Carotid sinus (pressure) and carotid body (oxygen): slows the heart</span></li>
+<li><span class="pair-from">Sensory and taste</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Back third of the tongue; afferent limb of the gag reflex</span></li>
+</ul>
+                </section>
+
+                <section class="content-section">
+                    <h3>Vagus nerve (X)</h3>
+<ul class="pair-list">
+<li><span class="pair-from">Motor</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Palate, pharynx, and larynx, from the nucleus ambiguus; efferent limb of the gag reflex</span></li>
+<li><span class="pair-from">Parasympathetic</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Heart, lungs, and gut to the splenic flexure, from the dorsal motor nucleus</span></li>
+<li><span class="pair-from">Recurrent laryngeal nerve</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">The left hooks under the aortic arch, the right under the subclavian artery</span></li>
+<li><span class="pair-from">Sensory</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Ear canal: touching it can provoke a cough</span></li>
+</ul>
+<p class="note"><strong>Note:</strong> The uvula deviates away from a vagal lesion.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Accessory and hypoglossal nerves (XI, XII)</h3>
+<ul class="pair-list">
+<li><span class="pair-from">XI course</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Spinal accessory nucleus (C1–C5) → up through the foramen magnum → out through the jugular foramen</span></li>
+<li><span class="pair-from">XI function</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">The right sternocleidomastoid turns the head to the left; the trapezius shrugs</span></li>
+<li><span class="pair-from">XI injury</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Lymph node biopsy in the posterior triangle</span></li>
+<li><span class="pair-from">XII course</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Nucleus in the floor of the fourth ventricle → between the pyramid and olive → hypoglossal canal</span></li>
+<li><span class="pair-from">XII lesion</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">The tongue deviates toward the lesion, with wasting and fasciculations</span></li>
+</ul>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+<ul class="pair-list">
+<li><span class="pair-from"><a class="pair-link" href="index.html#stroke-symptoms">Lateral medullary syndrome</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Nucleus ambiguus (IX, X) → dysphagia, hoarseness, and a reduced gag</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#stroke-symptoms">Medial medullary syndrome</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">XII → tongue deviates toward the lesion, with opposite hemiparesis</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#motor-signs">Pseudobulbar palsy</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Bilateral <abbr class="term" tabindex="0" data-definition="Upper motor neuron">UMN</abbr> lesions → dysarthria and dysphagia without wasting</span></li>
+<li><span class="pair-from">Recurrent laryngeal nerve injury</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Hoarseness</span></li>
+</ul>
+                </section>
+
+                <p class="see-also">
+                    Related:
+                    <a class="link-button" href="index.html#stroke-symptoms">Stroke Symptoms and Complications</a>
+                    <a class="link-button" href="index.html#motor-signs">Motor Signs and Syndromes</a>
+                </p>
+                <section class="references" aria-label="References">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Sonne J, Omole AE, Lopez-Ojeda W. Neuroanatomy, Cranial Nerve. 2025. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK470353/" target="_blank" rel="noopener">NBK470353</a></li>
+                        <li>Thomas K, Minutello K, Das JM. Neuroanatomy, Cranial Nerve 9 (Glossopharyngeal). 2022. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK539877/" target="_blank" rel="noopener">NBK539877</a></li>
+                        <li>Kenny BJ, Bordoni B. Neuroanatomy, Cranial Nerve 10 (Vagus Nerve). 2022. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK537171/" target="_blank" rel="noopener">NBK537171</a></li>
+                        <li>Bordoni B, Varacallo MA. Neuroanatomy, Cranial Nerve 11 (Accessory). 2025. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK507722/" target="_blank" rel="noopener">NBK507722</a></li>
+                        <li>Kim SY, Naqvi IA. Neuroanatomy, Cranial Nerve 12 (Hypoglossal). 2022. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK532869/" target="_blank" rel="noopener">NBK532869</a></li>
+                        <li>Reese V, Das JM, Al Khalili Y. Cranial Nerve Testing. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK585066/" target="_blank" rel="noopener">NBK585066</a></li>
+                    </ol>
+                </section>
+                <dialog class="quick-review" aria-labelledby="cn-lower-review-title">
+                    <div class="quick-review-body">
+                        <p class="review-kicker">Review article</p>
+                        <h3 id="cn-lower-review-title">Glossopharyngeal, vagus, accessory, and hypoglossal nerves: the lower cranial nerves</h3>
+
+                        <p class="review-abstract">The lower cranial nerves leave the medulla and upper cervical cord. <abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> IX supplies the stylopharyngeus, the parotid, the carotid sinus and body, and the back of the tongue, forming the afferent limb of the gag reflex. <abbr class="term" tabindex="0" data-definition="Cranial nerve X (the vagus nerve)">CN X</abbr> supplies the palate, pharynx, and larynx and carries parasympathetic fibers to the heart, lungs, and gut. <abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> XI supplies the sternocleidomastoid and trapezius, and <abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> XII the tongue. Their lesions cause dysphagia, hoarseness, weakness of head turning, and tongue deviation, and they localize medullary strokes. Here, we review these nerves and their failures.</p>
+
+                        <aside class="review-key-points">
+                            <h4>Key points</h4>
+                            <ul>
+                                <li><abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> IX is the afferent and <abbr class="term" tabindex="0" data-definition="Cranial nerve X (the vagus nerve)">CN X</abbr> the efferent limb of the gag reflex.</li>
+                                <li>The left recurrent laryngeal nerve hooks under the aortic arch.</li>
+                                <li>The uvula deviates away from a vagal lesion, and the tongue toward a hypoglossal lesion.</li>
+                                <li>The right sternocleidomastoid turns the head to the left.</li>
+                                <li>Lateral medullary syndrome affects IX and X; medial medullary syndrome affects XII.</li>
+                            </ul>
+                        </aside>
+
+                        <h4>The four nerves</h4>
+                        <p><abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> IX supplies its only muscle, the stylopharyngeus, sends parasympathetic fibers to the parotid through the otic ganglion, carries pressure and oxygen signals from the carotid sinus and body that slow the heart, and carries taste and touch from the back third of the tongue, forming the afferent limb of the gag reflex. <abbr class="term" tabindex="0" data-definition="Cranial nerve X (the vagus nerve)">CN X</abbr>, from the nucleus ambiguus, supplies the palate, pharynx, and larynx and forms the efferent limb of the gag, and from the dorsal motor nucleus sends parasympathetic fibers to the heart, lungs, and gut to the splenic flexure; the left recurrent laryngeal nerve hooks under the aortic arch, and the uvula deviates away from a vagal lesion. <abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> XI arises from C1–C5, rises through the foramen magnum, and leaves through the jugular foramen to supply the sternocleidomastoid and trapezius, and can be injured in posterior triangle node biopsy. <abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> XII arises in the floor of the fourth ventricle, leaves between the pyramid and olive through the hypoglossal canal, and supplies all tongue muscles except palatoglossus; its lesion deviates the tongue toward the lesion, with wasting and fasciculations.</p>
+
+                        <h4>When it fails</h4>
+                        <p>Lateral medullary syndrome damages the nucleus ambiguus, causing dysphagia, hoarseness, and a reduced gag, and medial medullary syndrome damages <abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> XII, deviating the tongue toward the lesion with opposite hemiparesis. Bilateral <abbr class="term" tabindex="0" data-definition="Upper motor neuron">UMN</abbr> lesions cause pseudobulbar palsy, with dysarthria and dysphagia but no wasting, and recurrent laryngeal nerve injury causes hoarseness.</p>
+
+                        <h4>Relationships to other topics</h4>
+                        <p><em><button type="button" class="review-link" data-goto="descending">Descending tracts</button>.</em> Corticobulbar fibers reach these motor nuclei, so bilateral <abbr class="term" tabindex="0" data-definition="Upper motor neuron">UMN</abbr> lesions cause pseudobulbar palsy.</p>
+                    </div>
+                </dialog>
+            </article>
+
+            <!-- Practice quiz (filled in by quiz.js) -->
+            <section class="quiz-view" id="quiz" aria-labelledby="quiz-title"></section>
+
+        </section>
+    </main>
+</body>
+</html>

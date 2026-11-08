@@ -1,6 +1,7 @@
 // Checks the whole site: question banks, markup, and every page at desktop and phone widths.
 // Run from the project root: node tools/check-site.mjs
-// Add --shots <folder> to save a full-page screenshot of every page at desktop width.
+// Add --shots <folder> to save a full-page screenshot of every page at desktop width,
+// and --only <id,id> to limit the screenshots to those articles.
 import { spawn } from "node:child_process";
 import { existsSync, mkdirSync, mkdtempSync, readFileSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
@@ -10,9 +11,11 @@ import vm from "node:vm";
 
 const EDGE = "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe";
 const SITES = ["gi", "neuro"];
-const PAGES = ["gi/index.html", "gi/physiology.html", "neuro/index.html"];
+const PAGES = ["gi/index.html", "gi/physiology.html", "neuro/index.html", "neuro/physiology.html"];
 const shotsAt = process.argv.indexOf("--shots");
 const shotsFolder = shotsAt > 0 ? process.argv[shotsAt + 1] : null;
+const onlyAt = process.argv.indexOf("--only");
+const onlyIds = onlyAt > 0 ? new Set(process.argv[onlyAt + 1].split(",")) : null;
 
 const problems = [];
 const notes = [];
@@ -196,7 +199,7 @@ if (shotsFolder) {
         await send("Emulation.setDeviceMetricsOverride", { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
         await open(file);
         const ids = JSON.parse(await run(`JSON.stringify(conditionContents.map((article) => article.id))`));
-        for (const id of ids) {
+        for (const id of ids.filter((each) => !onlyIds || onlyIds.has(each))) {
             await send("Emulation.setDeviceMetricsOverride", { width: 1440, height: 900, deviceScaleFactor: 1, mobile: false });
             await run(`location.hash = ${JSON.stringify(id)}; 1`);
             await sleep(200);

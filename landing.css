@@ -201,6 +201,7 @@
 
 .is-neuro .art-label {
     fill: #d6d6f7;
+    font-size: 19px;
 }
 
 .world-intro {
@@ -318,13 +319,15 @@
     fill: #232350;
     stroke: #b0acff;
     stroke-width: 3;
-    animation: soma-fire 7s linear infinite;
+    animation: soma-fire 10.5s linear infinite;
 }
 
 .neuro-soma[data-step="1"] { animation-delay: 1.75s; }
 .neuro-soma[data-step="2"] { animation-delay: 3.5s; }
 .neuro-soma[data-step="3"] { animation-delay: 5.25s; }
 .neuro-soma[data-step="4"] { animation-delay: 7s; }
+.neuro-soma[data-step="5"] { animation-delay: 8.75s; }
+.neuro-soma[data-step="6"] { animation-delay: 10.5s; }
 
 @keyframes soma-fire {
     0%, 12%, 100% {
@@ -343,7 +346,7 @@
     stroke-dasharray: 2 200;
     stroke-linecap: round;
     stroke-width: 6;
-    animation: signal-travel 7s linear infinite;
+    animation: signal-travel 10.5s linear infinite;
 }
 
 @keyframes signal-travel {
@@ -542,6 +545,10 @@
 
     .art-label {
         font-size: 17px;
+    }
+
+    .is-neuro .art-label {
+        font-size: 23px;
     }
 
     .world-shelf {

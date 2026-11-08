@@ -1037,3 +1037,742 @@ body {
 .ad-stage.is-clear {
     fill: var(--color-surface);
 }
+
+/* Parkinson disease diagrams */
+.pd-box,
+.pd-midbrain {
+    fill: var(--color-surface-muted);
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}
+
+.pd-soma {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 3;
+}
+
+.pd-axon {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-linecap: round;
+    stroke-width: 8;
+}
+
+.pd-lewy {
+    fill: var(--color-wrong);
+    opacity: 0.45;
+}
+
+.pd-lewy-core {
+    fill: var(--color-wrong);
+}
+
+.pd-mito {
+    fill: var(--color-surface);
+    stroke: var(--color-accent);
+    stroke-width: 2;
+}
+
+.pd-mito-fold,
+.pd-proteasome-x {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 1.5;
+}
+
+.pd-proteasome-x {
+    stroke: var(--color-wrong);
+    stroke-width: 2.5;
+}
+
+.pd-proteasome {
+    fill: var(--color-surface);
+    stroke: var(--color-text-muted);
+    stroke-width: 2;
+}
+
+.pd-ros {
+    fill: var(--color-up);
+}
+
+.pd-dopa {
+    fill: var(--color-accent);
+}
+
+.pd-dopa.is-lost {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-dasharray: 3 3;
+    stroke-width: 1.5;
+}
+
+.pd-aqueduct {
+    fill: var(--color-surface);
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}
+
+.pd-sn {
+    fill: none;
+    stroke: var(--color-text);
+    stroke-linecap: round;
+    stroke-width: 11;
+}
+
+.pd-sn.is-pale {
+    stroke: var(--color-border-strong);
+}
+
+.pd-compare {
+    max-width: 440px;
+}
+
+.pd-list-title {
+    margin: 18px 0 8px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+/* Multiple sclerosis courses, S1P, and strategies */
+.ms-courses {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+@media (max-width: 768px) {
+    .ms-courses {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+.ms-courses .cause-map,
+.ms-courses figure {
+    margin: 0;
+}
+
+.ms-axis {
+    fill: none;
+    stroke: var(--color-border-strong);
+    stroke-width: 2;
+}
+
+.ms-course,
+.ms-stairs {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-linejoin: round;
+    stroke-width: 3.5;
+}
+
+.ms-node {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 2.5;
+}
+
+.ms-lymph {
+    fill: var(--color-accent);
+}
+
+.ms-lymph.is-few {
+    opacity: 0.35;
+}
+
+.ms-block {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-linecap: round;
+    stroke-width: 4;
+}
+
+.ms-vessel {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-opacity: 0.35;
+    stroke-width: 2;
+}
+
+.ms-endo {
+    fill: var(--color-wrong);
+    opacity: 0.55;
+}
+
+/* Atypical parkinsonism, frontotemporal dementia, and MOGAD diagrams */
+.ap-region {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}
+
+.ap-hit {
+    fill: var(--color-wrong);
+    opacity: 0.3;
+}
+
+.ap-arc {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-linecap: round;
+    stroke-opacity: 0.55;
+    stroke-width: 12;
+}
+
+.ap-cross {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-linecap: round;
+    stroke-width: 6;
+}
+
+.ap-fourth {
+    fill: var(--color-surface-muted);
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}
+
+.ap-stalk,
+.ap-process,
+.ap-axis {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-linecap: round;
+    stroke-width: 3;
+}
+
+.ap-curve {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-linecap: round;
+    stroke-width: 3;
+}
+
+.ap-lamella {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-width: 1.5;
+}
+
+.ap-gone {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-dasharray: 5 5;
+    stroke-width: 2;
+}
+
+.ap-mog {
+    fill: var(--color-accent);
+}
+
+.ap-ab {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+}
+
+.ap-c1q {
+    fill: var(--color-up);
+}
+
+/* Eye diagrams */
+.ey-globe,
+.ey-mini {
+    fill: var(--color-surface);
+    stroke: var(--color-accent-line);
+    stroke-width: 3;
+}
+
+.ey-mini {
+    stroke: var(--color-border-strong);
+}
+
+.ey-wall,
+.ey-mini-line {
+    fill: none;
+    stroke: var(--color-border-strong);
+    stroke-width: 3;
+}
+
+.ey-mini-line {
+    fill: var(--color-surface);
+}
+
+.ey-cornea {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-linecap: round;
+    stroke-width: 4;
+}
+
+.ey-conj {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-linecap: round;
+    stroke-opacity: 0.6;
+    stroke-width: 3;
+}
+
+.ey-iris {
+    fill: none;
+    stroke: var(--color-text-muted);
+    stroke-linecap: round;
+    stroke-width: 8;
+}
+
+.ey-lens {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}
+
+.ey-lens.ey-cloudy,
+.ey-opaque {
+    fill: var(--color-up-soft);
+    stroke: var(--color-up);
+}
+
+.ey-opaque {
+    stroke-width: 1.5;
+}
+
+.ey-spoke {
+    fill: none;
+    stroke: var(--color-up);
+    stroke-linecap: round;
+    stroke-width: 6;
+}
+
+.ey-tm {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent);
+    stroke-dasharray: 2 2;
+    stroke-width: 2;
+}
+
+.ey-canal {
+    fill: var(--color-surface);
+    stroke: var(--color-accent);
+    stroke-width: 2;
+}
+
+.ey-ciliary {
+    fill: var(--color-surface-muted);
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}
+
+.ey-retina {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 3;
+}
+
+.ey-macula {
+    fill: var(--color-accent);
+}
+
+.ey-nerve,
+.ey-mini-nerve {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-linecap: round;
+    stroke-width: 22;
+}
+
+.ey-mini-nerve {
+    stroke: var(--color-border-strong);
+    stroke-width: 12;
+}
+
+.ey-protein {
+    fill: var(--color-up);
+}
+
+.ey-mini-hit {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-linecap: round;
+    stroke-opacity: 0.75;
+    stroke-width: 7;
+}
+
+.ap-pill {
+    fill: var(--color-surface);
+    stroke: var(--color-border-strong);
+    stroke-width: 1.5;
+}
+
+.ap-pill.is-atypical {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent);
+    stroke-width: 2.5;
+}
+
+.ap-link {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-linecap: round;
+    stroke-width: 2.5;
+}
+
+/* Ear diagrams */
+.er-canal,
+.er-space {
+    fill: var(--color-surface-muted);
+    stroke: var(--color-border-strong);
+    stroke-width: 2;
+}
+
+.er-wall,
+.er-chain,
+.er-bracket,
+.er-link {
+    fill: none;
+    stroke: var(--color-border-strong);
+    stroke-linecap: round;
+    stroke-width: 3;
+}
+
+.er-bracket {
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}
+
+.er-tm {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-linecap: round;
+    stroke-width: 5;
+}
+
+.er-ossicle,
+.er-eye {
+    fill: var(--color-surface);
+    stroke: var(--color-accent);
+    stroke-width: 2.5;
+}
+
+.er-pupil {
+    fill: var(--color-accent);
+}
+
+.er-cochlea,
+.er-loop {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-linecap: round;
+    stroke-width: 5;
+}
+
+.er-loop {
+    stroke-width: 6;
+}
+
+.er-vestibule {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent);
+    stroke-width: 2.5;
+}
+
+.er-nerve {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-linecap: round;
+    stroke-width: 12;
+}
+
+.er-otoconia {
+    fill: var(--color-up);
+}
+
+/* Huntington disease diagrams */
+.hd-msn {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent);
+    stroke-width: 2.5;
+}
+
+.hd-msn.is-lost {
+    fill: var(--color-surface);
+    stroke: var(--color-wrong);
+    stroke-dasharray: 4 3;
+}
+
+.hd-vent {
+    fill: var(--color-surface-muted);
+    stroke: var(--color-border-strong);
+    stroke-width: 1.5;
+}
+
+.hd-septum,
+.hd-tick {
+    fill: none;
+    stroke: var(--color-border-strong);
+    stroke-width: 2;
+}
+
+.hd-caudate {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent);
+    stroke-width: 2;
+}
+
+.hd-note {
+    fill: var(--color-text-muted);
+    font-size: 12px;
+}
+
+.hd-seg {
+    stroke: var(--color-surface);
+    stroke-width: 2;
+}
+
+.hd-seg.is-normal {
+    fill: var(--color-accent-soft);
+}
+
+.hd-seg.is-mid {
+    fill: var(--color-surface-muted);
+    stroke: var(--color-border-strong);
+}
+
+.hd-seg.is-reduced {
+    fill: var(--color-up-soft);
+}
+
+.hd-seg.is-full {
+    fill: var(--color-wrong);
+    opacity: 0.55;
+}
+
+.hd-seg.is-juvenile {
+    fill: var(--color-wrong);
+}
+
+/* Motor signs diagrams */
+.mo-link {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-dasharray: 5 4;
+    stroke-width: 2.5;
+}
+
+.mo-face {
+    fill: none;
+    stroke: var(--color-text-muted);
+    stroke-linecap: round;
+    stroke-width: 3;
+}
+
+/* Neurophysiology diagrams */
+.nr-soma,
+.nr-terminal {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 2.5;
+}
+
+.nr-nucleus,
+.nr-bouton,
+.nr-nt {
+    fill: var(--color-accent);
+}
+
+.nr-dend,
+.nr-axon {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-linecap: round;
+    stroke-width: 4;
+}
+
+.nr-axon {
+    stroke-width: 6;
+}
+
+.nr-myelin {
+    fill: var(--color-surface);
+    stroke: var(--color-accent);
+    stroke-width: 2;
+}
+
+.nr-axis,
+.nr-bracket {
+    fill: none;
+    stroke: var(--color-text-muted);
+    stroke-width: 2;
+}
+
+.nr-guide,
+.tr-level {
+    fill: none;
+    stroke: var(--color-border-strong);
+    stroke-dasharray: 4 4;
+    stroke-width: 1.5;
+}
+
+.nr-trace {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 4;
+}
+
+.nr-vesicle {
+    fill: var(--color-surface);
+    stroke: var(--color-accent);
+    stroke-width: 2;
+}
+
+.nr-channel,
+.nr-transporter {
+    fill: var(--color-up-soft);
+    stroke: var(--color-up);
+    stroke-width: 2;
+}
+
+.nr-enzyme {
+    fill: var(--color-wrong);
+    opacity: 0.7;
+}
+
+.nr-post {
+    fill: var(--color-surface-muted);
+}
+
+.nr-membrane {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-width: 3;
+}
+
+.nr-receptor {
+    fill: var(--color-accent);
+}
+
+.nr-receptor.is-gpcr {
+    fill: var(--color-surface);
+    stroke: var(--color-accent);
+    stroke-width: 3;
+}
+
+.tr-mid {
+    fill: none;
+    stroke: var(--color-text-muted);
+    stroke-dasharray: 2 5;
+    stroke-width: 1.5;
+}
+
+.tr-dc,
+.tr-stt,
+.tr-sc,
+.tr-cst,
+.tr-cb,
+.tr-rub,
+.tr-vst,
+.tr-rst {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 4;
+}
+
+.tr-dc,
+.tr-cst {
+    stroke: var(--color-accent);
+}
+
+.tr-stt,
+.tr-cb {
+    stroke: var(--color-wrong);
+}
+
+.tr-sc,
+.tr-rub {
+    stroke: var(--color-up);
+}
+
+.tr-vst {
+    stroke: var(--color-accent-line);
+}
+
+.tr-rst {
+    stroke: var(--color-text-muted);
+    stroke-dasharray: 6 4;
+}
+
+.tr-node {
+    fill: var(--color-surface);
+    stroke: var(--color-text);
+    stroke-width: 2;
+}
+
+.tr-box {
+    fill: var(--color-surface-muted);
+    stroke: var(--color-border-strong);
+    stroke-width: 2;
+}
+
+.tr-cross {
+    fill: none;
+    stroke: var(--color-text);
+    stroke-linecap: round;
+    stroke-width: 2.5;
+}
+
+.bg-dopa {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-dasharray: 5 4;
+    stroke-width: 2.5;
+}
+
+.bg-sign {
+    fill: var(--color-text);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.cn-stem {
+    fill: var(--color-surface-muted);
+    stroke: var(--color-accent-line);
+    stroke-width: 2.5;
+}
+
+.cn-groove {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-width: 1.5;
+}
+
+.cn-nerve {
+    fill: none;
+    stroke: var(--color-border-strong);
+    stroke-linecap: round;
+    stroke-width: 3;
+}
+
+.cn-nerve.is-on {
+    stroke: var(--color-accent);
+    stroke-width: 5;
+}
+
+.cn-nerve.is-dorsal {
+    stroke-dasharray: 5 4;
+}
+
+.cn-label {
+    fill: var(--color-text-muted);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.cn-label.is-on {
+    fill: var(--color-accent);
+    font-size: 15px;
+    font-weight: 800;
+}
