@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renal · Clinical Conditions</title>
+
+    <script src="../shared/theme.js"></script>
+
+    <link rel="stylesheet" href="../shared/style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared/app.js" defer></script>
+    <script src="questions.js" defer></script>
+    <script src="../shared/quiz.js" defer></script>
+    <script src="map.js" defer></script>
+    <script src="../shared/map.js" defer></script>
+</head>
+
+<body data-specialty="renal">
+    <a class="skip-link" href="#content-panel">Skip to content</a>
+
+    <main class="app-container">
+
+        <!-- Left sidebar -->
+        <aside class="sidebar">
+            <a class="home-link" href="../index.html">← Clinical Conditions</a>
+
+            <div class="sidebar-header">
+                <h1>
+                    <span class="brand-mark" aria-hidden="true"></span>
+                    Renal
+                </h1>
+                <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme">
+                    <span class="theme-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <nav class="section-switch" aria-label="Section">
+                <a href="index.html" aria-current="page">Clinical</a>
+                <a href="physiology.html">Physiology</a>
+            </nav>
+
+            <div class="search" role="search">
+                <label class="visually-hidden" for="condition-search">Search conditions and content</label>
+                <input type="search" id="condition-search" class="search-input" placeholder="Search…" autocomplete="off" aria-describedby="search-hint">
+                <kbd class="search-key" aria-hidden="true">/</kbd>
+            </div>
+            <p class="search-hint" id="search-hint" aria-live="polite"></p>
+
+            <nav class="condition-list map-nav" aria-label="Renal conditions">
+                <!-- The neuron chain is drawn here by map.js and shared/map.js, lined up with the stations below -->
+                <svg class="map-svg" aria-hidden="true" focusable="false"></svg>
+
+                <div class="station" data-organ="fluid">
+                <p class="group-label" id="group-fluid">Fluid status</p>
+                <div class="condition-group" role="group" aria-labelledby="group-fluid">
+                    <button type="button" class="condition-item active" data-condition="acid-base" aria-current="true">Metabolic acidosis and alkalosis</button>
+                    <button type="button" class="condition-item" data-condition="volume">Hypovolemia and hypervolemia</button>
+                    <button type="button" class="condition-item" data-condition="sodium">Hyponatremia and hypernatremia</button>
+                    <button type="button" class="condition-item" data-condition="potassium">Hypokalemia and hyperkalemia</button>
+                    <button type="button" class="condition-item" data-condition="aldosterone">Hypoaldosteronism and hyperaldosteronism</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="aki">
+                <p class="group-label" id="group-aki">Acute kidney injury</p>
+                <div class="condition-group" role="group" aria-labelledby="group-aki">
+                    <button type="button" class="condition-item" data-condition="prerenal-aki">Prerenal AKI</button>
+                    <button type="button" class="condition-item" data-condition="atn">Acute tubular necrosis</button>
+                    <button type="button" class="condition-item" data-condition="ain">Acute interstitial nephritis</button>
+                    <button type="button" class="condition-item" data-condition="glomerulonephritis">Glomerulonephritis</button>
+                    <button type="button" class="condition-item" data-condition="tma">Thrombotic microangiopathy</button>
+                    <button type="button" class="condition-item" data-condition="postrenal-aki">Postrenal AKI</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="adh">
+                <p class="group-label" id="group-adh">ADH conditions</p>
+                <div class="condition-group" role="group" aria-labelledby="group-adh">
+                    <button type="button" class="condition-item" data-condition="diabetes-insipidus">Diabetes insipidus</button>
+                    <button type="button" class="condition-item" data-condition="siadh">SIADH</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="infection">
+                <p class="group-label" id="group-infection">Infection</p>
+                <div class="condition-group" role="group" aria-labelledby="group-infection">
+                    <button type="button" class="condition-item" data-condition="uti">Urinary tract infection</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="chronic">
+                <p class="group-label" id="group-chronic">Chronic kidney disease</p>
+                <div class="condition-group" role="group" aria-labelledby="group-chronic">
+                    <button type="button" class="condition-item" data-condition="ckd">Chronic kidney disease</button>
+                    <button type="button" class="condition-item" data-condition="pkd">Polycystic kidney disease</button>
+                </div>
+                </div>
+
+                <p class="no-results" id="no-results" hidden>No matches</p>
+            </nav>
+
+            <button type="button" class="quiz-button" id="quiz-button">
+                <span class="quiz-button-icon" aria-hidden="true">?</span>
+                <span class="quiz-button-text">
+                    Practice quiz
+                    <span class="quiz-button-sub">USMLE-style questions</span>
+                </span>
+            </button>
+        </aside>
+
+        <!-- Announces the newly opened condition to screen readers -->
+        <p class="visually-hidden" id="view-status" role="status"></p>
+
+        <!-- Right content panel -->
+        <section class="content-panel" id="content-panel" tabindex="0" aria-label="Condition details">
+
+            <article class="condition-content active" id="acid-base">
+                <h2>Metabolic Acidosis and Alkalosis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="volume">
+                <h2>Hypovolemia and Hypervolemia</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="sodium">
+                <h2>Hyponatremia and Hypernatremia</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="potassium">
+                <h2>Hypokalemia and Hyperkalemia</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="aldosterone">
+                <h2>Hypoaldosteronism and Hyperaldosteronism</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="prerenal-aki">
+                <h2>Prerenal Acute Kidney Injury</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="atn">
+                <h2>Acute Tubular Necrosis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="ain">
+                <h2>Acute Interstitial Nephritis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="glomerulonephritis">
+                <h2>Glomerulonephritis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="tma">
+                <h2>Thrombotic Microangiopathy</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="postrenal-aki">
+                <h2>Postrenal Acute Kidney Injury</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="diabetes-insipidus">
+                <h2>Diabetes Insipidus</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="siadh">
+                <h2>Syndrome of Inappropriate Antidiuretic Hormone (SIADH)</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="uti">
+                <h2>Urinary Tract Infection</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="ckd">
+                <h2>Chronic Kidney Disease</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="pkd">
+                <h2>Polycystic Kidney Disease</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <!-- Practice quiz (filled in by quiz.js) -->
+            <section class="quiz-view" id="quiz" aria-labelledby="quiz-title"></section>
+
+        </section>
+    </main>
+</body>
+</html>

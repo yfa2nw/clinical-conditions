@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renal Physiology · Clinical Conditions</title>
+
+    <script src="../shared/theme.js"></script>
+
+    <link rel="stylesheet" href="../shared/style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared/app.js" defer></script>
+    <script src="physiology-questions.js" defer></script>
+    <script src="../shared/quiz.js" defer></script>
+    <script src="map.js" defer></script>
+    <script src="../shared/map.js" defer></script>
+</head>
+
+<body data-specialty="renal-physiology" data-page="physiology">
+    <a class="skip-link" href="#content-panel">Skip to content</a>
+
+    <main class="app-container">
+
+        <!-- Left sidebar -->
+        <aside class="sidebar">
+            <a class="home-link" href="../index.html">← Clinical Conditions</a>
+
+            <div class="sidebar-header">
+                <h1>
+                    <span class="brand-mark" aria-hidden="true"></span>
+                    Renal Physiology
+                </h1>
+                <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme">
+                    <span class="theme-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <nav class="section-switch" aria-label="Section">
+                <a href="index.html">Clinical</a>
+                <a href="physiology.html" aria-current="page">Physiology</a>
+            </nav>
+
+            <div class="search" role="search">
+                <label class="visually-hidden" for="condition-search">Search conditions and content</label>
+                <input type="search" id="condition-search" class="search-input" placeholder="Search…" autocomplete="off" aria-describedby="search-hint">
+                <kbd class="search-key" aria-hidden="true">/</kbd>
+            </div>
+            <p class="search-hint" id="search-hint" aria-live="polite"></p>
+
+            <nav class="condition-list map-nav" aria-label="Renal physiology topics">
+                <!-- The neuron chain is drawn here by map.js and shared/map.js, lined up with the stations below -->
+                <svg class="map-svg" aria-hidden="true" focusable="false"></svg>
+
+                <div class="station" data-organ="physiology">
+                <p class="group-label" id="group-physiology">Physiology</p>
+                <div class="condition-group" role="group" aria-labelledby="group-physiology">
+                    <button type="button" class="condition-item active" data-condition="renal-physiology" aria-current="true">Renal physiology</button>
+                </div>
+                </div>
+
+                <p class="no-results" id="no-results" hidden>No matches</p>
+            </nav>
+
+            <button type="button" class="quiz-button" id="quiz-button">
+                <span class="quiz-button-icon" aria-hidden="true">?</span>
+                <span class="quiz-button-text">
+                    Practice quiz
+                    <span class="quiz-button-sub">USMLE-style questions</span>
+                </span>
+            </button>
+        </aside>
+
+        <!-- Announces the newly opened condition to screen readers -->
+        <p class="visually-hidden" id="view-status" role="status"></p>
+
+        <!-- Right content panel -->
+        <section class="content-panel" id="content-panel" tabindex="0" aria-label="Topic details">
+
+            <article class="condition-content active" id="renal-physiology">
+                <h2>Renal Physiology</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <!-- Practice quiz (filled in by quiz.js) -->
+            <section class="quiz-view" id="quiz" aria-labelledby="quiz-title"></section>
+
+        </section>
+    </main>
+</body>
+</html>

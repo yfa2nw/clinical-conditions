@@ -10,8 +10,9 @@ import { pathToFileURL } from "node:url";
 import vm from "node:vm";
 
 const EDGE = "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe";
-const SITES = ["gi", "neuro"];
-const PAGES = ["gi/index.html", "gi/physiology.html", "neuro/index.html", "neuro/physiology.html"];
+const SITES = ["gi", "neuro", "renal", "endocrine"];
+const PROGRESS_SITES = ["neuro", "renal", "endocrine"];
+const PAGES = ["gi/index.html", "gi/physiology.html", "neuro/index.html", "neuro/physiology.html", "renal/index.html", "renal/physiology.html", "endocrine/index.html"];
 const shotsAt = process.argv.indexOf("--shots");
 const shotsFolder = shotsAt > 0 ? process.argv[shotsAt + 1] : null;
 const onlyAt = process.argv.indexOf("--only");
@@ -78,15 +79,22 @@ const stat = (word) => +(landing.match(new RegExp(`<strong>(\\d+)</strong> ${wor
 if (stat("conditions") !== counts.gi.articles || stat("questions") !== counts.gi.questions) {
     fail(`index.html: says ${stat("conditions")} conditions and ${stat("questions")} questions, but GI has ${counts.gi.articles} and ${counts.gi.questions}`);
 }
-const neuroHtml = readFileSync("neuro/index.html", "utf8");
-const neuroGroups = (neuroHtml.match(/class="station"/g) || []).length;
-const neuroPages = neuroHtml.split(/<article class="condition-content[ "]/).slice(1);
-const neuroDone = neuroPages.filter((page) => !page.includes("pending-content")).length;
-const written = landing.match(/(\d+) of (\d+) topics written/) || [];
-const cells = (landing.match(/class="progress-cell/g) || []).length;
-const litCells = (landing.match(/progress-cell is-done/g) || []).length;
-if (stat("groups") !== neuroGroups || +written[1] !== neuroDone || +written[2] !== neuroPages.length || stat("topics") !== neuroPages.length || cells !== neuroPages.length || litCells !== neuroDone) {
-    fail(`index.html: neurology progress is out of date; ${neuroDone} of ${neuroPages.length} topics are written, in ${neuroGroups} groups`);
+// Each panel other than GI shows its topic and group counts and a progress chain
+for (const site of PROGRESS_SITES) {
+    const start = landing.indexOf(`<article class="world is-${site}">`);
+    if (start < 0) { fail(`index.html: no panel for ${site}`); continue; }
+    const panel = landing.slice(start, landing.indexOf("</article>", start));
+    const siteHtml = readFileSync(`${site}/index.html`, "utf8");
+    const groups = (siteHtml.match(/class="station"/g) || []).length;
+    const pages = siteHtml.split(/<article class="condition-content[ "]/).slice(1);
+    const done = pages.filter((page) => !page.includes("pending-content")).length;
+    const panelStat = (word) => +(panel.match(new RegExp(`<strong>(\\d+)</strong> ${word}`)) || [])[1];
+    const written = panel.match(/(\d+) of (\d+) topics written/) || [];
+    const cells = (panel.match(/class="progress-cell/g) || []).length;
+    const litCells = (panel.match(/progress-cell is-done/g) || []).length;
+    if (panelStat("groups") !== groups || +written[1] !== done || +written[2] !== pages.length || panelStat("topics") !== pages.length || cells !== pages.length || litCells !== done) {
+        fail(`index.html: ${site} progress is out of date; ${done} of ${pages.length} topics are written, in ${groups} groups`);
+    }
 }
 
 /* ---------- Browser ---------- */

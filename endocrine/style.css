@@ -1,0 +1,125 @@
+/* Endocrine theme: a web of hormone signals reaching out to the glands and organs.
+   Restyles the shared components in shared/style.css; the markup is unchanged. */
+
+/* =========================
+   Tokens
+========================= */
+
+:root {
+    --color-text: #2b1d0e;
+    --color-text-muted: #6e5a44;
+    --color-page: #f8f1e7;
+    --color-surface: #ffffff;
+    --color-surface-muted: #fcf7f0;
+    --color-surface-sunken: #f3e9dc;
+    --color-border: #ecdfcd;
+    --color-border-strong: #dcc6a8;
+    --color-divider: #f0e6d8;
+    --color-accent: #b35c0e;
+    --color-accent-hover: #91490a;
+    --color-accent-soft: #fbeedd;
+    --color-accent-line: #e6b884;
+    --color-on-accent: #ffffff;
+    --color-focus: #b35c0e;
+    --color-note: #fcf1e2;
+    --color-note-line: #d9954a;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --color-text: #f4ebdf;
+        --color-text-muted: #c2ae96;
+        --color-page: #160f08;
+        --color-surface: #21170d;
+        --color-surface-muted: #2a1e12;
+        --color-surface-sunken: #1a1209;
+        --color-border: #3f2f1d;
+        --color-border-strong: #5a4329;
+        --color-divider: #33261a;
+        --color-accent: #f2a65a;
+        --color-accent-hover: #f7c288;
+        --color-accent-soft: #3d2a15;
+        --color-accent-line: #8a5d2c;
+        --color-on-accent: #1c1007;
+        --color-focus: #f7c288;
+        --color-note: #33230f;
+        --color-note-line: #b9783a;
+    }
+}
+
+:root[data-theme="dark"] {
+    --color-text: #f4ebdf;
+    --color-text-muted: #c2ae96;
+    --color-page: #160f08;
+    --color-surface: #21170d;
+    --color-surface-muted: #2a1e12;
+    --color-surface-sunken: #1a1209;
+    --color-border: #3f2f1d;
+    --color-border-strong: #5a4329;
+    --color-divider: #33261a;
+    --color-accent: #f2a65a;
+    --color-accent-hover: #f7c288;
+    --color-accent-soft: #3d2a15;
+    --color-accent-line: #8a5d2c;
+    --color-on-accent: #1c1007;
+    --color-focus: #f7c288;
+    --color-note: #33230f;
+    --color-note-line: #b9783a;
+}
+
+/* =========================
+   Page and brand
+========================= */
+
+body {
+    background-image:
+        radial-gradient(circle at 88% 6%, var(--color-accent-soft), transparent 40%),
+        radial-gradient(circle at 6% 96%, var(--color-accent-soft), transparent 36%);
+    background-attachment: fixed;
+}
+
+/* A gland */
+.brand-mark {
+    clip-path: polygon(25% 4%, 75% 4%, 100% 50%, 75% 96%, 25% 96%, 0 50%);
+    border-radius: 0;
+}
+
+/* =========================
+   Sidebar: glands on threads from a central axis
+========================= */
+
+.station {
+    min-height: 104px;
+    padding-top: 20px;
+}
+
+.map-flow {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 5;
+    stroke-linecap: round;
+    stroke-dasharray: 0.01 100;
+    opacity: 0;
+}
+
+.map-flow.is-active {
+    opacity: 1;
+    animation: hormone-travel 1.8s ease-in infinite;
+}
+
+@keyframes hormone-travel {
+    from {
+        stroke-dashoffset: 0;
+    }
+
+    to {
+        stroke-dashoffset: -100;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .map-flow.is-active {
+        animation: none;
+        stroke-dashoffset: -60;
+    }
+}

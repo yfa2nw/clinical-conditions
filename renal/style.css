@@ -1,0 +1,124 @@
+/* Renal theme: water flowing through a glomerulus and down its tubule.
+   Restyles the shared components in shared/style.css; the markup is unchanged. */
+
+/* =========================
+   Tokens
+========================= */
+
+:root {
+    --color-text: #13283a;
+    --color-text-muted: #4f6578;
+    --color-page: #eaf3f9;
+    --color-surface: #ffffff;
+    --color-surface-muted: #f3f8fc;
+    --color-surface-sunken: #e2eef6;
+    --color-border: #d3e3ee;
+    --color-border-strong: #b6cfe0;
+    --color-divider: #e0ebf3;
+    --color-accent: #1c6db0;
+    --color-accent-hover: #155a93;
+    --color-accent-soft: #e1eff9;
+    --color-accent-line: #9ac4e6;
+    --color-on-accent: #ffffff;
+    --color-focus: #1c6db0;
+    --color-note: #e8f3fb;
+    --color-note-line: #5aa0d6;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --color-text: #e3eef7;
+        --color-text-muted: #9db4c6;
+        --color-page: #08131c;
+        --color-surface: #0e1d29;
+        --color-surface-muted: #132533;
+        --color-surface-sunken: #0a1720;
+        --color-border: #21384a;
+        --color-border-strong: #2f4c63;
+        --color-divider: #1a2e3d;
+        --color-accent: #63b3ee;
+        --color-accent-hover: #8fcaf5;
+        --color-accent-soft: #123047;
+        --color-accent-line: #2f6a96;
+        --color-on-accent: #06121b;
+        --color-focus: #8fcaf5;
+        --color-note: #112b3e;
+        --color-note-line: #3f88bf;
+    }
+}
+
+:root[data-theme="dark"] {
+    --color-text: #e3eef7;
+    --color-text-muted: #9db4c6;
+    --color-page: #08131c;
+    --color-surface: #0e1d29;
+    --color-surface-muted: #132533;
+    --color-surface-sunken: #0a1720;
+    --color-border: #21384a;
+    --color-border-strong: #2f4c63;
+    --color-divider: #1a2e3d;
+    --color-accent: #63b3ee;
+    --color-accent-hover: #8fcaf5;
+    --color-accent-soft: #123047;
+    --color-accent-line: #2f6a96;
+    --color-on-accent: #06121b;
+    --color-focus: #8fcaf5;
+    --color-note: #112b3e;
+    --color-note-line: #3f88bf;
+}
+
+/* =========================
+   Page and brand
+========================= */
+
+body {
+    background-image:
+        radial-gradient(ellipse at 10% 0%, var(--color-accent-soft), transparent 45%),
+        radial-gradient(ellipse at 95% 100%, var(--color-accent-soft), transparent 40%);
+    background-attachment: fixed;
+}
+
+/* A drop of water */
+.brand-mark {
+    border-radius: 50% 50% 50% 50% / 62% 62% 38% 38%;
+}
+
+/* =========================
+   Sidebar: one tubule with water flowing down it
+========================= */
+
+.station {
+    min-height: 110px;
+    padding-top: 20px;
+}
+
+.map-tubule {
+    stroke-width: 7;
+    stroke-linecap: round;
+}
+
+.map-flow {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 4;
+    stroke-linecap: round;
+    stroke-dasharray: 0.01 9;
+    opacity: 0.35;
+}
+
+.map-flow.is-active {
+    opacity: 1;
+    animation: water-flow 1.6s linear infinite;
+}
+
+@keyframes water-flow {
+    to {
+        stroke-dashoffset: -9;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .map-flow.is-active {
+        animation: none;
+    }
+}

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Endocrine · Clinical Conditions</title>
+
+    <script src="../shared/theme.js"></script>
+
+    <link rel="stylesheet" href="../shared/style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared/app.js" defer></script>
+    <script src="questions.js" defer></script>
+    <script src="../shared/quiz.js" defer></script>
+    <script src="map.js" defer></script>
+    <script src="../shared/map.js" defer></script>
+</head>
+
+<body data-specialty="endocrine">
+    <a class="skip-link" href="#content-panel">Skip to content</a>
+
+    <main class="app-container">
+
+        <!-- Left sidebar -->
+        <aside class="sidebar">
+            <a class="home-link" href="../index.html">← Clinical Conditions</a>
+
+            <div class="sidebar-header">
+                <h1>
+                    <span class="brand-mark" aria-hidden="true"></span>
+                    Endocrine
+                </h1>
+                <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme">
+                    <span class="theme-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <div class="search" role="search">
+                <label class="visually-hidden" for="condition-search">Search conditions and content</label>
+                <input type="search" id="condition-search" class="search-input" placeholder="Search…" autocomplete="off" aria-describedby="search-hint">
+                <kbd class="search-key" aria-hidden="true">/</kbd>
+            </div>
+            <p class="search-hint" id="search-hint" aria-live="polite"></p>
+
+            <nav class="condition-list map-nav" aria-label="Endocrine topics">
+                <!-- The neuron chain is drawn here by map.js and shared/map.js, lined up with the stations below -->
+                <svg class="map-svg" aria-hidden="true" focusable="false"></svg>
+
+                <div class="station" data-organ="pituitary">
+                <p class="group-label" id="group-pituitary">Pituitary gland</p>
+                <div class="condition-group" role="group" aria-labelledby="group-pituitary">
+                    <button type="button" class="condition-item active" data-condition="pituitary-physiology" aria-current="true">Pituitary physiology</button>
+                    <button type="button" class="condition-item" data-condition="hypopituitarism">Hypopituitarism</button>
+                    <button type="button" class="condition-item" data-condition="hyperpituitarism">Hyperpituitarism</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="cortisol">
+                <p class="group-label" id="group-cortisol">Cortisol</p>
+                <div class="condition-group" role="group" aria-labelledby="group-cortisol">
+                    <button type="button" class="condition-item" data-condition="cortisol-physiology">Cortisol physiology</button>
+                    <button type="button" class="condition-item" data-condition="adrenal-insufficiency">Adrenal insufficiency</button>
+                    <button type="button" class="condition-item" data-condition="cushing">Cushing syndrome</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="thyroid">
+                <p class="group-label" id="group-thyroid">Thyroid hormone</p>
+                <div class="condition-group" role="group" aria-labelledby="group-thyroid">
+                    <button type="button" class="condition-item" data-condition="thyroid-physiology">Thyroid hormone physiology</button>
+                    <button type="button" class="condition-item" data-condition="hyperthyroidism">Hyperthyroidism</button>
+                    <button type="button" class="condition-item" data-condition="hypothyroidism">Hypothyroidism</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="growth">
+                <p class="group-label" id="group-growth">Growth hormone</p>
+                <div class="condition-group" role="group" aria-labelledby="group-growth">
+                    <button type="button" class="condition-item" data-condition="gh-physiology">Growth hormone physiology</button>
+                    <button type="button" class="condition-item" data-condition="acromegaly">Acromegaly</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="prolactin">
+                <p class="group-label" id="group-prolactin">Prolactin</p>
+                <div class="condition-group" role="group" aria-labelledby="group-prolactin">
+                    <button type="button" class="condition-item" data-condition="prolactin-physiology">Prolactin physiology</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="gonadal">
+                <p class="group-label" id="group-gonadal">LH and FSH</p>
+                <div class="condition-group" role="group" aria-labelledby="group-gonadal">
+                    <button type="button" class="condition-item" data-condition="reproductive-cycles">Ovarian and uterine cycles</button>
+                    <button type="button" class="condition-item" data-condition="spermatogenesis">Spermatogenesis</button>
+                    <button type="button" class="condition-item" data-condition="hypogonadism">Hypogonadism</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="metabolic">
+                <p class="group-label" id="group-metabolic">Metabolic</p>
+                <div class="condition-group" role="group" aria-labelledby="group-metabolic">
+                    <button type="button" class="condition-item" data-condition="insulin-physiology">Insulin physiology</button>
+                    <button type="button" class="condition-item" data-condition="metabolic-syndrome">Metabolic syndrome</button>
+                    <button type="button" class="condition-item" data-condition="diabetes-mellitus">Diabetes mellitus</button>
+                </div>
+                </div>
+
+                <p class="no-results" id="no-results" hidden>No matches</p>
+            </nav>
+
+            <button type="button" class="quiz-button" id="quiz-button">
+                <span class="quiz-button-icon" aria-hidden="true">?</span>
+                <span class="quiz-button-text">
+                    Practice quiz
+                    <span class="quiz-button-sub">USMLE-style questions</span>
+                </span>
+            </button>
+        </aside>
+
+        <!-- Announces the newly opened condition to screen readers -->
+        <p class="visually-hidden" id="view-status" role="status"></p>
+
+        <!-- Right content panel -->
+        <section class="content-panel" id="content-panel" tabindex="0" aria-label="Topic details">
+
+            <article class="condition-content active" id="pituitary-physiology">
+                <h2>Pituitary Physiology</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="hypopituitarism">
+                <h2>Hypopituitarism</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="hyperpituitarism">
+                <h2>Hyperpituitarism</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="cortisol-physiology">
+                <h2>Cortisol Physiology</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="adrenal-insufficiency">
+                <h2>Adrenal Insufficiency</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="cushing">
+                <h2>Cushing Syndrome</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="thyroid-physiology">
+                <h2>Thyroid Hormone Physiology</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="hyperthyroidism">
+                <h2>Hyperthyroidism</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="hypothyroidism">
+                <h2>Hypothyroidism</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="gh-physiology">
+                <h2>Growth Hormone Physiology</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="acromegaly">
+                <h2>Acromegaly</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="prolactin-physiology">
+                <h2>Prolactin Physiology</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="reproductive-cycles">
+                <h2>Ovarian and Uterine Cycles</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="spermatogenesis">
+                <h2>Spermatogenesis</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="hypogonadism">
+                <h2>Hypogonadism</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="insulin-physiology">
+                <h2>Insulin Physiology</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="metabolic-syndrome">
+                <h2>Metabolic Syndrome</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="diabetes-mellitus">
+                <h2>Diabetes Mellitus</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <!-- Practice quiz (filled in by quiz.js) -->
+            <section class="quiz-view" id="quiz" aria-labelledby="quiz-title"></section>
+
+        </section>
+    </main>
+</body>
+</html>
