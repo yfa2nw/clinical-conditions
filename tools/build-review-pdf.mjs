@@ -1,29 +1,38 @@
-// Builds gi/gi-review-articles.pdf from the review article popups in gi/physiology.html and gi/index.html.
-// Run from the project root after changing a review: node tools/build-review-pdf.mjs
+// Builds an organ system's review article PDF from the review popups on its physiology and clinical pages.
+// Run from the project root after changing a review: node tools/build-review-pdf.mjs [gi|neuro]
 import { readFileSync } from "node:fs";
 import { printPdf } from "./print-pdf.mjs";
 
-const OUTPUT = "gi/gi-review-articles.pdf";
-
 // Which review section each diagram sits beside, in page order. Other reviews place theirs after Key points.
-const FIGURE_SECTIONS = {
+const GI_FIGURE_SECTIONS = {
     "gastric-secretion": ["", "Cephalic phase", "Gastric cells and the mucosal barrier", "Gastric cells and the mucosal barrier", "Receptors and intracellular pathways", "Pharmacology"],
     "digestion-absorption": ["", "Carbohydrates", "Proteins", "Fats", "Micronutrients"],
     "liver-function": ["Anatomy and histology", "Anatomy and histology", "Anatomy and histology", "Carbohydrate metabolism", "Bilirubin conjugation", "Channels", "Pharmacology"],
 };
 
 // For a diagram with no description on its page
-const FIGURE_LEGENDS = {
+const GI_FIGURE_LEGENDS = {
     "biliary-stones": "The gallbladder and biliary tree.",
 };
 
+const SYSTEMS = {
+    gi: { name: "Gastrointestinal", accent: "#0f766e", soft: "#e2f1ee", reach: "from the esophagus to the appendix", sections: GI_FIGURE_SECTIONS, legends: GI_FIGURE_LEGENDS },
+    neuro: { name: "Neurology", accent: "#4f46c8", soft: "#e9e8fb", reach: "from stroke to movement disorders", sections: {}, legends: {} },
+};
+const SYSTEM = process.argv[2] || "gi";
+if (!SYSTEMS[SYSTEM]) throw new Error(`Unknown organ system: ${SYSTEM}`);
+const { name: SYSTEM_NAME, accent: ACCENT, soft: SOFT, reach: REACH, sections: FIGURE_SECTIONS, legends: FIGURE_LEGENDS } = SYSTEMS[SYSTEM];
+const OUTPUT = `${SYSTEM}/${SYSTEM}-review-articles.pdf`;
+
 /* ---------- Read the reviews in sidebar order ---------- */
-const page = readFileSync("gi/index.html", "utf8");
-const physiologyPage = readFileSync("gi/physiology.html", "utf8");
+const page = readFileSync(`${SYSTEM}/index.html`, "utf8");
+const physiologyPage = readFileSync(`${SYSTEM}/physiology.html`, "utf8");
 const articleText = (source, id) => {
     const start = source.indexOf(`<article class="condition-content`, source.indexOf(`data-condition="${id}"`));
     const at = source.indexOf(`id="${id}"`, start);
-    return source.slice(at, source.indexOf("</article>", at));
+    // Cards inside a page are articles too, so end at the next condition article
+    const next = source.indexOf('<article class="condition-content', at);
+    return source.slice(at, next < 0 ? source.indexOf("<!-- Practice quiz", at) : next);
 };
 
 const physiologyIds = [...new Set([...physiologyPage.matchAll(/data-condition="([^"]+)"/g)].map((m) => m[1]))];
@@ -72,7 +81,7 @@ function diagramStyles() {
     const classes = new Set(svgs.flatMap((svg) => [...svg.matchAll(/class="([^"]+)"/g)].flatMap((m) => m[1].split(/\s+/))));
     classes.delete("map-svg");
     const usesDiagram = (selector) => [...selector.matchAll(/\.([\w-]+)/g)].some((m) => classes.has(m[1]));
-    const rules = ["shared/style.css", "gi/style.css"].flatMap((file) => topLevelRules(readFileSync(file, "utf8")));
+    const rules = ["shared/style.css", `${SYSTEM}/style.css`].flatMap((file) => topLevelRules(readFileSync(file, "utf8")));
     return rules.flatMap((rule) => {
         const brace = rule.indexOf("{");
         const selector = rule.slice(0, brace).trim();
@@ -104,7 +113,8 @@ function figureKey(after, svg, id) {
 }
 
 function figuresFor(text, id) {
-    const body = text.replace(/<dialog[\s\S]*?<\/dialog>/g, "");
+    // Card icons, such as the lesion maps, are too small to print as figures
+    const body = text.replace(/<dialog[\s\S]*?<\/dialog>/g, "").replace(/<figure class="lesion-map[\s\S]*?<\/figure>/g, "");
     return [...body.matchAll(/<svg\b[^>]*>[\s\S]*?<\/svg>/g)].map((m, index) => {
         const svg = m[0];
         const after = body.slice(m.index + svg.length);
@@ -147,9 +157,9 @@ const articles = groups.flatMap((group) => group.ids.map((id) => {
 const contents = groups.map((group) => `<h3>${group.name}</h3><ol>${articles.filter((a) => a.group === group.name).map((a) => `<li><a href="#review-${a.id}">${a.title}</a></li>`).join("")}</ol>`).join("");
 const terms = [...glossary].sort(([a], [b]) => a.localeCompare(b, "en", { sensitivity: "base" })).map(([term, definition]) => `<p><strong>${term}</strong> ${definition}</p>`).join("");
 
-const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Gastrointestinal Review Articles</title><style>
+const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>${SYSTEM_NAME} Review Articles</title><style>
     @page { size: A4; }
-    :root { --accent: #0f766e; --soft: #e2f1ee; --muted: #5b6470; }
+    :root { --accent: ${ACCENT}; --soft: ${SOFT}; --muted: #5b6470; }
     * { box-sizing: border-box; }
     body { margin: 0; color: #1a1f24; font: 9.6pt/1.42 Georgia, "Times New Roman", serif; }
     h1, h2, h3, h4, .kicker, .cover p, nav a { font-family: "Segoe UI", system-ui, sans-serif; }
@@ -195,8 +205,8 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
 </style></head><body>
     <section class="cover">
         <p class="label">Clinical Conditions</p>
-        <h1>Gastrointestinal Review Articles</h1>
-        <p>${physiologyIds.length} physiology topics and ${articles.length - physiologyIds.length} conditions, from the esophagus to the appendix</p>
+        <h1>${SYSTEM_NAME} Review Articles</h1>
+        <p>${physiologyIds.length} physiology topics and ${articles.length - physiologyIds.length} conditions, ${REACH}</p>
         <p>For educational use only. This is a study aid, not a clinical reference.</p>
     </section>
     <nav class="contents"><h1>Contents</h1>${contents}</nav>
@@ -204,6 +214,6 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
     <section class="terms"><h1>Abbreviations</h1>${terms}</section>
 </body></html>`;
 
-await printPdf(html, OUTPUT, "Clinical Conditions · Gastrointestinal review articles");
+await printPdf(html, OUTPUT, `Clinical Conditions · ${SYSTEM_NAME} review articles`);
 console.log(`${OUTPUT}: ${articles.length} reviews, ${figureCount} figures, ${glossary.size} abbreviations`);
 process.exit(0);
