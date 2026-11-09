@@ -1776,3 +1776,45 @@ body {
     font-size: 15px;
     font-weight: 800;
 }
+
+/* NMOSD diagrams */
+.nm-foot {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}
+
+.nm-astro {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 3;
+}
+
+.nm-aqp {
+    fill: var(--color-accent);
+}
+
+.nm-glu {
+    fill: var(--color-up);
+}
+
+.nm-gran {
+    fill: var(--color-up-soft);
+    stroke: var(--color-wrong);
+    stroke-width: 2.5;
+}
+
+.nm-lobe {
+    fill: var(--color-wrong);
+    opacity: 0.7;
+}
+
+.nm-bar {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}
+
+.nm-bar.is-women {
+    fill: var(--color-accent);
+}
