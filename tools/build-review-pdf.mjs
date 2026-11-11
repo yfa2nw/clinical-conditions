@@ -1,11 +1,12 @@
 // Builds an organ system's review article PDF from the review popups on its physiology and clinical pages.
-// Run from the project root after changing a review: node tools/build-review-pdf.mjs [gi|neuro]
+// Run from the project root only when the site owner asks: node tools/build-review-pdf.mjs [gi|neuro]
 import { readFileSync } from "node:fs";
 import { printPdf } from "./print-pdf.mjs";
 
 // Which review section each diagram sits beside, in page order. Other reviews place theirs after Key points.
 const GI_FIGURE_SECTIONS = {
     "gastric-secretion": ["", "Cephalic phase", "Gastric cells and the mucosal barrier", "Gastric cells and the mucosal barrier", "Receptors and intracellular pathways", "Pharmacology"],
+    "emetic-center": ["Inputs", "Pharmacology"],
     "digestion-absorption": ["", "Carbohydrates", "Proteins", "Fats", "Micronutrients"],
     "liver-function": ["Anatomy and histology", "Anatomy and histology", "Anatomy and histology", "Carbohydrate metabolism", "Bilirubin conjugation", "Channels", "Pharmacology"],
 };
@@ -16,12 +17,12 @@ const GI_FIGURE_LEGENDS = {
 };
 
 const SYSTEMS = {
-    gi: { name: "Gastrointestinal", accent: "#0f766e", soft: "#e2f1ee", reach: "from the esophagus to the appendix", sections: GI_FIGURE_SECTIONS, legends: GI_FIGURE_LEGENDS },
-    neuro: { name: "Neurology", accent: "#4f46c8", soft: "#e9e8fb", reach: "from stroke to movement disorders", sections: {}, legends: {} },
+    gi: { name: "Gastrointestinal", accent: "#0f766e", soft: "#e2f1ee", dark: "#0a3a35", art: "#bfe7df", reach: "from the esophagus to the appendix", sections: GI_FIGURE_SECTIONS, legends: GI_FIGURE_LEGENDS },
+    neuro: { name: "Neurology", accent: "#4f46c8", soft: "#e9e8fb", dark: "#1b1a47", art: "#c9c6ff", reach: "from stroke to movement disorders", sections: {}, legends: {} },
 };
 const SYSTEM = process.argv[2] || "gi";
 if (!SYSTEMS[SYSTEM]) throw new Error(`Unknown organ system: ${SYSTEM}`);
-const { name: SYSTEM_NAME, accent: ACCENT, soft: SOFT, reach: REACH, sections: FIGURE_SECTIONS, legends: FIGURE_LEGENDS } = SYSTEMS[SYSTEM];
+const { name: SYSTEM_NAME, accent: ACCENT, soft: SOFT, dark: DARK, art: ART, reach: REACH, sections: FIGURE_SECTIONS, legends: FIGURE_LEGENDS } = SYSTEMS[SYSTEM];
 const OUTPUT = `${SYSTEM}/${SYSTEM}-review-articles.pdf`;
 
 /* ---------- Read the reviews in sidebar order ---------- */
@@ -150,24 +151,55 @@ const articles = groups.flatMap((group) => group.ids.map((id) => {
     });
     const lead = figures.filter((figure) => !figure.section).map((figure) => figure.html).join("");
     figureCount += figures.length;
-    return { id, group: group.name, title, html: `<article id="review-${id}"${group.source === physiologyPage ? ' class="is-physiology"' : ""}>${top}${lead}<div class="columns">${columns}</div></article>` };
+    const refs = text.match(/<section class="references"[^>]*>[\s\S]*?<ol>([\s\S]*?)<\/ol>/)?.[1].trim() || "";
+    return { id, group: group.name, title, refs: clean(refs), html: `<article id="review-${id}"${group.source === physiologyPage ? ' class="is-physiology"' : ""}>${top}${lead}<div class="columns">${columns}</div></article>` };
 }));
+
+/* ---------- Cover ---------- */
+// The cover reuses the organ system's drawing from the landing page, without labels or the moving signal
+const landing = readFileSync("index.html", "utf8");
+const panelStart = landing.indexOf(`<article class="world is-${SYSTEM}">`);
+const coverArt = panelStart < 0 ? "" : landing.slice(landing.indexOf("<svg", panelStart), landing.indexOf("</svg>", panelStart) + 6)
+    .replace(/ role="img" aria-label="[^"]*"/, ' aria-hidden="true"')
+    .replace(/<text class="art-label"[\s\S]*?<\/text>/g, "")
+    .replace(/<path class="(?:gi-bolus|neuro-pulse)"[^>]*\/>/g, "");
+const referenceCount = articles.reduce((total, a) => total + (a.refs.match(/<li>/g) || []).length, 0);
 
 /* ---------- Page ---------- */
 const contents = groups.map((group) => `<h3>${group.name}</h3><ol>${articles.filter((a) => a.group === group.name).map((a) => `<li><a href="#review-${a.id}">${a.title}</a></li>`).join("")}</ol>`).join("");
+const references = articles.filter((a) => a.refs).map((a) => `<div class="ref-group"><h3>${a.title}</h3><ol>${a.refs}</ol></div>`).join("");
+const updated = new Date().toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" });
 const terms = [...glossary].sort(([a], [b]) => a.localeCompare(b, "en", { sensitivity: "base" })).map(([term, definition]) => `<p><strong>${term}</strong> ${definition}</p>`).join("");
 
 const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>${SYSTEM_NAME} Review Articles</title><style>
     @page { size: A4; }
-    :root { --accent: ${ACCENT}; --soft: ${SOFT}; --muted: #5b6470; }
+    :root { --accent: ${ACCENT}; --soft: ${SOFT}; --dark: ${DARK}; --art: ${ART}; --muted: #5b6470; }
     * { box-sizing: border-box; }
     body { margin: 0; color: #1a1f24; font: 9.6pt/1.42 Georgia, "Times New Roman", serif; }
     h1, h2, h3, h4, .kicker, .cover p, nav a { font-family: "Segoe UI", system-ui, sans-serif; }
     a { color: inherit; text-decoration: none; }
-    .cover { display: flex; flex-direction: column; justify-content: center; height: 245mm; }
-    .cover .label { margin: 0 0 3mm; color: var(--accent); font-size: 10pt; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
-    .cover h1 { margin: 0 0 5mm; font-size: 34pt; line-height: 1.1; }
-    .cover p { margin: 0 0 2mm; color: var(--muted); font-size: 11pt; }
+    .cover { display: flex; flex-direction: column; height: 245mm; }
+    .cover-panel { display: flex; flex-direction: column; justify-content: space-between; height: 158mm; padding: 13mm 14mm 14mm; border-radius: 5mm; background: linear-gradient(155deg, var(--dark) 0%, var(--dark) 45%, var(--accent) 140%); color: #fff; }
+    .cover .label { margin: 0; color: var(--art); font-size: 9.5pt; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+    .cover-art { display: flex; align-items: center; justify-content: center; flex: 1; padding: 6mm 0; }
+    .cover-art svg { width: 100%; max-height: 66mm; overflow: visible; }
+    .cover-art .gi-mouth, .cover-art .gi-tube { fill: none; stroke: var(--art); stroke-linecap: round; stroke-width: 13; }
+    .cover-art .gi-mouth { stroke-width: 5; }
+    .cover-art .gi-tube.is-stomach { stroke-width: 28; }
+    .cover-art .gi-tube.is-colon { stroke-dasharray: 22 4; stroke-linecap: butt; stroke-width: 24; }
+    .cover-art .neuro-dendrite, .cover-art .neuro-axon { fill: none; stroke: var(--art); stroke-linecap: round; stroke-width: 2.5; }
+    .cover-art .neuro-myelin { fill: none; stroke: var(--art); stroke-dasharray: 15 5; stroke-width: 8; opacity: 0.7; }
+    .cover-art .neuro-bouton { fill: var(--art); }
+    .cover-art .neuro-soma { fill: var(--dark); stroke: var(--art); stroke-width: 3; }
+    .cover h1 { margin: 0; color: #fff; font-size: 40pt; font-weight: 700; line-height: 1.02; letter-spacing: -0.01em; }
+    .cover h1 span { display: block; margin-top: 2mm; color: var(--art); font-size: 22pt; font-weight: 400; letter-spacing: 0; }
+    .cover-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; margin: 7mm 0 0; font-family: "Segoe UI", system-ui, sans-serif; }
+    .cover-stats div { padding: 3.5mm 4mm; border-top: 1.2pt solid var(--accent); background: var(--soft); border-radius: 0 0 2mm 2mm; }
+    .cover-stats strong { display: block; color: var(--dark); font-size: 20pt; line-height: 1.1; }
+    .cover-stats span { color: var(--muted); font-size: 8.5pt; }
+    .cover .reach { margin: 6mm 0 0; color: #1a1f24; font-size: 11.5pt; }
+    .cover-foot { display: flex; justify-content: space-between; align-items: flex-end; gap: 6mm; margin-top: auto; padding-top: 3mm; border-top: 0.6pt solid #c9d1d6; }
+    .cover-foot p { margin: 0; color: var(--muted); font-size: 8.5pt; }
     .contents { break-before: page; column-count: 2; column-gap: 8mm; }
     .contents > h1, .terms > h1 { column-span: all; margin: 0 0 4mm; font-size: 20pt; }
     .contents h3 { margin: 4mm 0 1mm; color: var(--accent); font-size: 9.5pt; break-after: avoid; }
@@ -189,6 +221,13 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
     .terms { break-before: page; column-count: 3; column-gap: 6mm; }
     .terms p { margin: 0 0 1mm; font-size: 8pt; line-height: 1.3; break-inside: avoid; }
     .terms strong { font-family: "Segoe UI", system-ui, sans-serif; }
+    .cover .updated { color: #1a1f24; font-weight: 600; }
+    .references { break-before: page; column-count: 2; column-gap: 7mm; }
+    .references > h1 { column-span: all; margin: 0 0 4mm; font-size: 20pt; }
+    .references h3 { margin: 3mm 0 1mm; color: var(--accent); font-size: 9pt; line-height: 1.25; break-after: avoid; }
+    .references ol { margin: 0; padding-left: 5mm; }
+    .references li { margin-bottom: 1mm; font-size: 7.6pt; line-height: 1.3; break-inside: avoid; }
+    .references a { color: var(--accent); }
     .figure { display: flex; align-items: center; gap: 5mm; margin: 2mm 0 4mm; padding: 2.5mm 0; border-top: 0.6pt solid var(--accent); border-bottom: 0.6pt solid var(--accent); break-inside: avoid; column-span: all; }
     .figure svg { flex: 0 0 72mm; width: 72mm; height: auto; max-height: 66mm; }
     .figure.is-wide { display: block; }
@@ -204,14 +243,27 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
     ${diagramStyles()}
 </style></head><body>
     <section class="cover">
-        <p class="label">Clinical Conditions</p>
-        <h1>${SYSTEM_NAME} Review Articles</h1>
-        <p>${physiologyIds.length} physiology topics and ${articles.length - physiologyIds.length} conditions, ${REACH}</p>
-        <p>For educational use only. This is a study aid, not a clinical reference.</p>
+        <div class="cover-panel">
+            <p class="label">Clinical Conditions</p>
+            <div class="cover-art">${coverArt}</div>
+            <h1>${SYSTEM_NAME}<span>Review Articles</span></h1>
+        </div>
+        <div class="cover-stats">
+            <div><strong>${physiologyIds.length}</strong><span>physiology topics</span></div>
+            <div><strong>${articles.length - physiologyIds.length}</strong><span>clinical topics</span></div>
+            <div><strong>${figureCount}</strong><span>diagrams</span></div>
+            <div><strong>${referenceCount}</strong><span>references</span></div>
+        </div>
+        <p class="reach">Every topic ${REACH}, written as a review article with its diagrams.</p>
+        <div class="cover-foot">
+            <p class="updated">Last updated ${updated}</p>
+            <p>For educational use only. This is a study aid, not a clinical reference.</p>
+        </div>
     </section>
     <nav class="contents"><h1>Contents</h1>${contents}</nav>
     ${articles.map((a) => a.html).join("\n")}
     <section class="terms"><h1>Abbreviations</h1>${terms}</section>
+    ${references ? `<section class="references"><h1>References</h1>${references}</section>` : ""}
 </body></html>`;
 
 await printPdf(html, OUTPUT, `Clinical Conditions · ${SYSTEM_NAME} review articles`);

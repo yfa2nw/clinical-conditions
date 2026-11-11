@@ -1,52 +1,74 @@
-// Builds gi/gi-practice-tests.pdf from the question banks in gi/questions.js and gi/physiology-questions.js.
-// Run from the project root after changing a GI question: node tools/build-practice-pdf.mjs
+// Builds an organ system's practice tests from its clinical and physiology question banks.
+// Run from the project root after changing a question: node tools/build-practice-pdf.mjs [gi|neuro]
 // Each test takes a fixed number of questions from each bank, so some are left over.
 // The same banks always give the same tests. Adding or removing a question reshuffles them.
 import { readFileSync } from "node:fs";
 import vm from "node:vm";
 import { printPdf } from "./print-pdf.mjs";
 
-const OUTPUT = "gi/gi-practice-tests.pdf";
 const TEST_NAMES = ["A", "B", "C"];
 const MINUTES = 60;
 const CLINICAL_PER_TEST = 35;
 const PHYSIOLOGY_PER_TEST = 15;
 const LETTERS = ["A", "B", "C", "D", "E"];
 
-// Used in questions but not defined on a page, which is where the quiz finds its definitions
-const EXTRA_TERMS = {
-    "5-HIAA": "5-hydroxyindoleacetic acid",
-    "anti-CCP": "Anti-cyclic citrullinated peptide antibody",
-    "anti-DGP": "Anti-deamidated gliadin peptide antibody",
-    "anti-dsDNA": "Anti-double-stranded DNA antibody",
-    "anti-HBe": "Antibody to hepatitis B e antigen",
-    "anti-HBs": "Antibody to hepatitis B surface antigen",
-    "anti-tTG": "Anti-tissue transglutaminase antibody",
-    BMI: "Body mass index",
-    cAMP: "Cyclic adenosine monophosphate",
-    CD4: "Cluster of differentiation 4",
-    COPD: "Chronic obstructive pulmonary disease",
-    FODMAP: "Fermentable oligosaccharides, disaccharides, monosaccharides, and polyols",
-    GE: "Gastroesophageal",
-    HIV: "Human immunodeficiency virus",
-    IM: "Intramuscular",
-    LDL: "Low-density lipoprotein",
-    MCAD: "Medium-chain acyl-CoA dehydrogenase",
-    MCV: "Mean corpuscular volume",
-    NSAID: "Nonsteroidal anti-inflammatory drug",
-    PAS: "Periodic acid-Schiff",
-    PET: "Positron emission tomography",
-    PTT: "Partial thromboplastin time",
-    "R-CHOP": "Rituximab, cyclophosphamide, doxorubicin, vincristine, and prednisone",
-    TPMT: "Thiopurine methyltransferase",
-    VIP: "Vasoactive intestinal peptide",
+// Terms used in questions but not defined on a page, which is where the quiz finds its definitions
+const SYSTEMS = {
+    gi: {
+        name: "Gastrointestinal",
+        accent: "#0f766e",
+        soft: "#e2f1ee",
+        extraTerms: {
+            "5-HIAA": "5-hydroxyindoleacetic acid",
+            "anti-CCP": "Anti-cyclic citrullinated peptide antibody",
+            "anti-DGP": "Anti-deamidated gliadin peptide antibody",
+            "anti-dsDNA": "Anti-double-stranded DNA antibody",
+            "anti-HBe": "Antibody to hepatitis B e antigen",
+            "anti-HBs": "Antibody to hepatitis B surface antigen",
+            "anti-tTG": "Anti-tissue transglutaminase antibody",
+            BMI: "Body mass index",
+            cAMP: "Cyclic adenosine monophosphate",
+            CD4: "Cluster of differentiation 4",
+            COPD: "Chronic obstructive pulmonary disease",
+            FODMAP: "Fermentable oligosaccharides, disaccharides, monosaccharides, and polyols",
+            GE: "Gastroesophageal",
+            HIV: "Human immunodeficiency virus",
+            IM: "Intramuscular",
+            LDL: "Low-density lipoprotein",
+            MCAD: "Medium-chain acyl-CoA dehydrogenase",
+            MCV: "Mean corpuscular volume",
+            NSAID: "Nonsteroidal anti-inflammatory drug",
+            PAS: "Periodic acid-Schiff",
+            PET: "Positron emission tomography",
+            PTT: "Partial thromboplastin time",
+            "R-CHOP": "Rituximab, cyclophosphamide, doxorubicin, vincristine, and prednisone",
+            TPMT: "Thiopurine methyltransferase",
+            VIP: "Vasoactive intestinal peptide",
+        },
+    },
+    neuro: {
+        name: "Neurology",
+        accent: "#4f46c8",
+        soft: "#e9e8fb",
+        extraTerms: {
+            BMI: "Body mass index",
+            G6PD: "Glucose-6-phosphate dehydrogenase",
+            QT: "The QT interval on the ECG",
+            SSRI: "Selective serotonin reuptake inhibitor",
+            TPMT: "Thiopurine methyltransferase",
+        },
+    },
 };
+const SYSTEM = process.argv[2] || "gi";
+if (!SYSTEMS[SYSTEM]) throw new Error(`Unknown system ${SYSTEM}; use ${Object.keys(SYSTEMS).join(" or ")}`);
+const { name: SYSTEM_NAME, accent: ACCENT, soft: SOFT, extraTerms: EXTRA_TERMS } = SYSTEMS[SYSTEM];
+const OUTPUT = `${SYSTEM}/${SYSTEM}-practice-tests.pdf`;
 
 const loadBank = (file) => vm.runInNewContext(`${readFileSync(file, "utf8")};QUIZ_QUESTIONS`);
-const clinicalBank = loadBank("gi/questions.js");
-const physiologyBank = loadBank("gi/physiology-questions.js").map((question) => ({ ...question, isPhysiology: true }));
-const page = readFileSync("gi/index.html", "utf8");
-const physiologyPage = readFileSync("gi/physiology.html", "utf8");
+const clinicalBank = loadBank(`${SYSTEM}/questions.js`);
+const physiologyBank = loadBank(`${SYSTEM}/physiology-questions.js`).map((question) => ({ ...question, isPhysiology: true }));
+const page = readFileSync(`${SYSTEM}/index.html`, "utf8");
+const physiologyPage = readFileSync(`${SYSTEM}/physiology.html`, "utf8");
 
 /* ---------- Repeatable shuffling ---------- */
 function randomFrom(text) {
@@ -81,6 +103,16 @@ function deal(bank, order, perTest) {
     const base = Math.floor(perTest / order.length);
     const extras = (perTest - base * order.length) * TEST_NAMES.length;
     const bySize = [...order].sort((a, b) => bank.filter((q) => q.condition === b).length - bank.filter((q) => q.condition === a).length || order.indexOf(a) - order.indexOf(b));
+    // Extras go round the conditions from largest to smallest, one test at a time, skipping any condition with no questions left
+    const extra = Object.fromEntries(order.map((condition) => [condition, TEST_NAMES.map(() => 0)]));
+    const left = Object.fromEntries(order.map((condition) => [condition, bank.filter((q) => q.condition === condition).length - base * TEST_NAMES.length]));
+    for (let k = 0, next = 0; k < extras && next < extras * order.length; next += 1) {
+        const condition = bySize[next % order.length];
+        if (left[condition] < 1) continue;
+        extra[condition][k % TEST_NAMES.length] += 1;
+        left[condition] -= 1;
+        k += 1;
+    }
 
     order.forEach((condition, index) => {
         const inCondition = shuffled(bank.filter((q) => q.condition === condition), `deal-${condition}`);
@@ -92,8 +124,7 @@ function deal(bank, order, perTest) {
             if (lanes[1].length) queue.push(lanes[1].shift());
         }
 
-        const rank = bySize.indexOf(condition);
-        const quota = TEST_NAMES.map((name, test) => base + (rank < extras && rank % TEST_NAMES.length === test ? 1 : 0));
+        const quota = TEST_NAMES.map((name, test) => base + extra[condition][test]);
         for (let round = 0; round < Math.max(...quota); round += 1) {
             quota.forEach((count, test) => {
                 if (round < count) picks[test].push(queue.shift());
@@ -163,9 +194,9 @@ const sizes = tests.map((test) => test.questions.length);
 const sizeText = new Set(sizes).size === 1 ? `${sizes[0]} questions` : `${Math.min(...sizes)}–${Math.max(...sizes)} questions`;
 const pace = Math.round((MINUTES * 60) / Math.max(...sizes));
 
-const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>Gastrointestinal Practice Tests</title><style>
+const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>${SYSTEM_NAME} Practice Tests</title><style>
     @page { size: A4; }
-    :root { --accent: #0f766e; --soft: #e2f1ee; --muted: #5b6470; --line: #c9d1d6; }
+    :root { --accent: ${ACCENT}; --soft: ${SOFT}; --muted: #5b6470; --line: #c9d1d6; }
     * { box-sizing: border-box; }
     body { margin: 0; color: #1a1f24; font: 9.6pt/1.42 Georgia, "Times New Roman", serif; }
     h1, h2, h3, .cover p, .answer-head, .answer-tag, .number, .letter, .sheet-line, .sheet-grid, .key, .contents { font-family: "Segoe UI", system-ui, sans-serif; }
@@ -224,7 +255,7 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
 </style></head><body>
     <section class="cover">
         <p class="label">Clinical Conditions</p>
-        <h1>Gastrointestinal Practice Tests</h1>
+        <h1>${SYSTEM_NAME} Practice Tests</h1>
         <p>${tests.length} tests of ${sizes[0]} USMLE-style questions, with answers and explanations</p>
         <p>For educational use only. This is a study aid, not a clinical reference.</p>
     </section>
@@ -248,7 +279,7 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
         <h2>About the tests</h2>
         <ul>
             <li>No question appears in more than one test, so the three tests can be taken in any order.</li>
-            <li>Every test has ${PHYSIOLOGY_PER_TEST} physiology and ${CLINICAL_PER_TEST} clinical questions, covering all ${physiologyOrder.length} physiology topics and all ${conditionOrder.length} conditions, with a similar mix of Step 1 questions (mechanisms, microbiology, and pathology) and Step 2 questions (diagnosis, next step, and management).</li>
+            <li>Every test has ${PHYSIOLOGY_PER_TEST} physiology and ${CLINICAL_PER_TEST} clinical questions, covering all ${physiologyOrder.length} physiology topics and all ${conditionOrder.length} clinical topics, with a similar mix of Step 1 questions (mechanisms, microbiology, and pathology) and Step 2 questions (diagnosis, next step, and management).</li>
             <li>The tests use ${questions.length} of the ${clinicalBank.length + physiologyBank.length} questions on the website, so the website quiz has more practice.</li>
             <li>Questions are in random order, and the topic being tested is not shown until the answers.</li>
         </ul>
@@ -285,7 +316,7 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
     </section>`).join("\n")}
 </body></html>`;
 
-await printPdf(html, OUTPUT, "Clinical Conditions · Gastrointestinal practice tests");
+await printPdf(html, OUTPUT, `Clinical Conditions · ${SYSTEM_NAME} practice tests`);
 
 for (const test of tests) {
     const count = (check) => test.questions.filter(check).length;

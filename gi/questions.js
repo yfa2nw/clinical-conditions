@@ -211,7 +211,7 @@ const QUIZ_QUESTIONS = [
         },
     },
 
-    /* ===== GERD ===== */
+    /* ===== Gastroesophageal Reflux Disease (GERD) ===== */
     {
         id: "gerd-ppi-trial",
         condition: "gerd",
@@ -389,7 +389,7 @@ const QUIZ_QUESTIONS = [
         explanation: "NSAIDs inhibit COX-1, lowering prostaglandins (PGE2) that normally increase mucus and bicarbonate secretion, maintain mucosal blood flow, and reduce acid secretion. Losing that protection allows acid injury.",
     },
 
-    /* ===== PUD ===== */
+    /* ===== Peptic Ulcer Disease (PUD) ===== */
     {
         id: "pud-urease",
         condition: "pud",
@@ -739,7 +739,7 @@ const QUIZ_QUESTIONS = [
         explanation: "Diverticular abscesses larger than about 3–4 cm are drained percutaneously alongside ABX. Surgery is reserved for failed drainage, perforation with peritonitis, or recurrent complicated disease.",
     },
 
-    /* ===== IBD ===== */
+    /* ===== Inflammatory Bowel Disease (IBD) ===== */
     {
         id: "ibd-crohn-biopsy",
         condition: "ibd",
@@ -844,7 +844,7 @@ const QUIZ_QUESTIONS = [
         },
     },
 
-    /* ===== IBS ===== */
+    /* ===== Irritable Bowel Syndrome (IBS) ===== */
     {
         id: "ibs-initial",
         condition: "ibs",
@@ -2425,7 +2425,7 @@ const QUIZ_QUESTIONS = [
         },
     },
 
-    /* ===== GERD ===== */
+    /* ===== Gastroesophageal Reflux Disease (GERD) ===== */
     {
         id: "gerd-alarm",
         condition: "gerd",
@@ -2603,7 +2603,7 @@ const QUIZ_QUESTIONS = [
         },
     },
 
-    /* ===== PUD ===== */
+    /* ===== Peptic Ulcer Disease (PUD) ===== */
     {
         id: "pud-gastric-biopsy",
         condition: "pud",
@@ -2935,7 +2935,7 @@ const QUIZ_QUESTIONS = [
         explanation: "The sigmoid colon has the narrowest lumen and generates the highest pressures (law of Laplace), especially with low-fiber diets and constipation, so diverticula form there most often in Western populations.",
     },
 
-    /* ===== IBD ===== */
+    /* ===== Inflammatory Bowel Disease (IBD) ===== */
     {
         id: "ibd-mesalamine",
         condition: "ibd",
@@ -3036,7 +3036,7 @@ const QUIZ_QUESTIONS = [
         explanation: "Ileal disease or resection disrupts enterohepatic circulation of bile salts. The smaller bile salt pool leaves bile supersaturated with cholesterol, so cholesterol gallstones form.",
     },
 
-    /* ===== IBS ===== */
+    /* ===== Irritable Bowel Syndrome (IBS) ===== */
     {
         id: "ibs-d",
         condition: "ibs",
@@ -4063,7 +4063,7 @@ const QUIZ_QUESTIONS = [
         },
     },
 
-    /* ===== Choledocholithiasis ===== */
+    /* ===== Choledocholithiasis and Gallstone Pancreatitis ===== */
     {
         id: "bd-primary",
         condition: "choledocholithiasis",
@@ -4323,5 +4323,338 @@ const QUIZ_QUESTIONS = [
         ],
         answer: 0,
         explanation: "Neuroendocrine (carcinoid) tumors are the most common appendiceal neoplasm, often found incidentally at the tip of the appendix. Small tumors (under 2 cm) are usually cured by appendectomy.",
+    },
+
+    /* ===== Localizing abdominal pain ===== */
+    {
+        id: "ap-shoulder-kehr",
+        condition: "abdominal-pain",
+        step: 1,
+        stem: "A 22-year-old man is tackled during a rugby match and develops left upper quadrant pain. Twenty minutes later he also reports pain at the tip of his left shoulder, which he did not injure. His pulse is 118/min and blood pressure 96/60 mm Hg.",
+        leadIn: "Which mechanism best explains his shoulder pain?",
+        options: [
+            "Visceral pain from stretch of a hollow organ wall",
+            "Referred pain from nerves sharing a spinal level",
+            "Somatoparietal pain from the inflamed lateral abdominal wall",
+            "Direct injury to the acromioclavicular joint",
+            "Radicular pain from a lower cervical nerve root",
+        ],
+        answer: 1,
+        explanation: "Blood from a ruptured spleen irritates the diaphragm, and the shoulder pain is referred because visceral and somatic nerves share a spinal level. Left shoulder pain with splenic rupture is the Kehr sign. He needs resuscitation and imaging.",
+        notes: {
+            0: "Visceral pain is dull and poorly localized to the abdomen, not felt at the shoulder.",
+            2: "Somatoparietal pain is felt at the site of the inflamed peritoneum.",
+            3: "He did not injure the shoulder, and the timing follows the abdominal injury.",
+        },
+    },
+    {
+        id: "ap-appendix-shift",
+        condition: "abdominal-pain",
+        step: 1,
+        stem: "A 19-year-old woman has had dull, poorly localized pain around her umbilicus since last night. This morning the pain moved to her right lower quadrant and became sharp, and she has vomited once. She is tender a third of the way from the right ASIS to the umbilicus.",
+        leadIn: "Why did the character of her pain change?",
+        options: [
+            "The inflamed organ began to bleed into the retroperitoneum",
+            "Inflammation spread from the visceral wall to the parietal peritoneum",
+            "Pain began to be referred through a shared spinal level",
+            "The organ perforated, releasing free air under the diaphragm",
+            "A ureteric stone moved from the kidney to the pelvic brim",
+        ],
+        answer: 1,
+        explanation: "Early appendicitis causes visceral pain, dull and periumbilical, from stretch of the appendix wall. When inflammation reaches the parietal peritoneum, somatoparietal pain becomes sharp and localizes to McBurney point.",
+        notes: {
+            2: "Referred pain is felt far from the organ, such as the shoulder, not at the organ itself.",
+            3: "Perforation causes sudden, diffuse pain and a rigid abdomen.",
+            4: "A ureteric stone causes colicky flank pain radiating to the groin, with hematuria.",
+        },
+    },
+    {
+        id: "ap-mesenteric-out-of-proportion",
+        condition: "abdominal-pain",
+        step: 2,
+        stem: "A 74-year-old woman with atrial fibrillation who stopped warfarin a month ago has sudden, severe periumbilical pain that began 3 hours ago. She is writhing on the bed, yet her abdomen is soft with only mild tenderness and no guarding. Lactate is normal.",
+        leadIn: "Which of the following is the most appropriate next step?",
+        options: [
+            "Upright chest x-ray for free air",
+            "Repeat lactate in 6 hours before imaging",
+            "CT angiogram of the abdomen",
+            "Colonoscopy with biopsy",
+            "Right upper quadrant ultrasound",
+        ],
+        answer: 2,
+        explanation: "Sudden pain out of proportion to the examination in a patient with an embolic source suggests acute mesenteric ischemia from an embolus to the proximal SMA. CT angiogram is the test. Lactate rises only late, so a normal value does not exclude it.",
+        notes: {
+            0: "An upright CXR looks for perforation, which gives a rigid abdomen with the patient lying still.",
+            1: "Lactate rises only once bowel is infarcting; waiting delays the diagnosis.",
+            3: "Colonoscopy is for ischemic colitis or chronic diarrhea, not suspected acute SMA occlusion.",
+        },
+    },
+    {
+        id: "ap-perforation-cxr",
+        condition: "abdominal-pain",
+        step: 2,
+        stem: "A 58-year-old man who takes ibuprofen daily for knee arthritis has sudden, severe epigastric pain that spread across his abdomen over an hour. He lies completely still, and his abdomen is rigid with rebound tenderness.",
+        leadIn: "Which test should be obtained first?",
+        options: [
+            "Upright chest x-ray",
+            "Upper endoscopy",
+            "Urea breath test",
+            "HIDA scan",
+            "Fecal calprotectin",
+        ],
+        answer: 0,
+        explanation: "Sudden pain followed by a rigid abdomen, with the patient lying still, suggests perforation with peritonitis, here a perforated NSAID ulcer. An upright CXR comes first to look for free air, with blood cultures, then CT AP with contrast.",
+        notes: {
+            1: "Endoscopy insufflates air and is avoided when perforation is suspected.",
+            2: "H. pylori testing does not answer the urgent question of perforation.",
+            3: "HIDA is used when cholecystitis is unclear on ultrasound.",
+        },
+    },
+    {
+        id: "ap-ectopic",
+        condition: "abdominal-pain",
+        step: 2,
+        stem: "A 27-year-old woman has sharp right lower quadrant pain and light vaginal bleeding. Her last menstrual period was 7 weeks ago. Her pulse is 104/min and blood pressure 108/70 mm Hg.",
+        leadIn: "Which of the following should be done first?",
+        options: [
+            "CT AP with contrast",
+            "Serum lipase",
+            "β-hCG",
+            "Colonoscopy",
+            "Fecal calprotectin",
+        ],
+        answer: 2,
+        explanation: "Pain and vaginal bleeding 6–8 weeks after the last period suggest ectopic pregnancy, a cause outside the gut that must be excluded early. β-hCG comes first, followed by transvaginal ultrasound.",
+        notes: {
+            0: "β-hCG, then transvaginal ultrasound, is the sequence for suspected ectopic pregnancy.",
+            1: "Lipase evaluates pancreatitis, which causes epigastric pain radiating to the back.",
+        },
+    },
+    {
+        id: "ap-cullen",
+        condition: "abdominal-pain",
+        step: 1,
+        stem: "A 49-year-old man with heavy alcohol use has had severe epigastric pain radiating to his back for 3 days. Today he has bruising around the umbilicus and over both flanks, and his hemoglobin has fallen from 145 to 110 g/L.",
+        leadIn: "What do these skin findings indicate?",
+        options: [
+            "Portal hypertension with caput medusae",
+            "Retroperitoneal bleeding from necrotizing pancreatitis",
+            "A coagulopathy from vitamin K malabsorption",
+            "Metastatic spread to a periumbilical lymph node",
+            "A paraneoplastic sign of gastric cancer",
+        ],
+        answer: 1,
+        explanation: "Cullen sign (periumbilical bruising) and Grey Turner sign (flank bruising) point to intra-abdominal or retroperitoneal bleeding, as in necrotizing pancreatitis.",
+        notes: {
+            0: "Caput medusae are dilated veins draining away from the umbilicus, not bruising.",
+            3: "A Sister Mary Joseph nodule is a firm periumbilical nodule from metastatic gastric cancer.",
+            4: "Paraneoplastic signs of gastric cancer include acanthosis nigricans and Trousseau syndrome.",
+        },
+    },
+    {
+        id: "ap-psoas-sign",
+        condition: "abdominal-pain",
+        step: 1,
+        stem: "A 24-year-old man has right-sided abdominal pain and fever. Tenderness at McBurney point is mild, but passively extending his right hip while he lies on his left side reproduces the pain.",
+        leadIn: "Where is the inflamed appendix most likely to lie?",
+        options: [
+            "In the pelvis, beside the obturator internus",
+            "Behind the cecum",
+            "Anterior to the terminal ileum",
+            "Under the right lobe of the liver",
+            "In an inguinal hernia sac",
+        ],
+        answer: 1,
+        explanation: "The psoas sign, pain on passive extension of the right hip, suggests a retrocecal appendix lying on the psoas muscle. The obturator sign, pain on internally rotating the flexed hip, suggests a pelvic appendix.",
+        notes: {
+            0: "A pelvic appendix gives the obturator sign.",
+        },
+    },
+    {
+        id: "ap-colonoscopy-avoid",
+        condition: "abdominal-pain",
+        step: 2,
+        stem: "A 66-year-old woman has 2 days of left lower quadrant pain and fever. Her white cell count is 15.8 × 10⁹/L, and CT AP shows sigmoid wall thickening with fat stranding and no abscess. She asks whether she should have a colonoscopy now.",
+        leadIn: "Which reply is correct?",
+        options: [
+            "Yes, today, to take biopsies of the inflamed segment",
+            "Yes, because colonoscopy is the first test for LLQ pain",
+            "No, colonoscopy is avoided during acute diverticulitis",
+            "No, because she is past the age for colonoscopy screening",
+            "No, because CT has excluded any colonic disease",
+        ],
+        answer: 2,
+        explanation: "LLQ pain, fever, and leukocytosis with these CT findings point to diverticulitis. Colonoscopy is avoided in peritonitis and acute diverticulitis, and is not needed for uncomplicated abdominal pain under 4 weeks.",
+        notes: {
+            1: "CT AP with contrast is the first test for suspected diverticulitis in adults.",
+            3: "Screening starts at 45–50; there is no age at which she is too old to need it for symptoms.",
+            4: "CT does not exclude a colonic tumor or other mucosal disease.",
+        },
+    },
+
+    /* ===== Reading liver function tests ===== */
+    {
+        id: "lft-alp-bone",
+        condition: "liver-tests",
+        step: 1,
+        stem: "A 71-year-old man has aching in his hips and an enlarged skull on examination. Blood tests show ALP 410 IU/L with normal GGT, bilirubin, AST, and ALT.",
+        leadIn: "What is the most likely source of the raised ALP?",
+        options: [
+            "Bile duct obstruction",
+            "Hepatic infiltration by lymphoma",
+            "Bone",
+            "Primary biliary cholangitis",
+            "Hepatic metastases",
+        ],
+        answer: 2,
+        explanation: "ALP also comes from bone, placenta, and intestine. A raised ALP with a normal GGT points to bone, pregnancy, or growth; a high GGT would confirm a hepatobiliary source.",
+        notes: {
+            0: "Obstruction raises GGT and usually bilirubin along with ALP.",
+            3: "PBC is cholestatic, so GGT would rise with ALP.",
+        },
+    },
+    {
+        id: "lft-gilbert",
+        condition: "liver-tests",
+        step: 2,
+        stem: "A 20-year-old student notices yellow eyes after 2 days of fasting during a bout of gastroenteritis. Total bilirubin is 48 µmol/L with direct bilirubin 4 µmol/L. AST, ALT, ALP, FBC, and blood film are normal.",
+        leadIn: "Which of the following is the most appropriate management?",
+        options: [
+            "MRCP to look for a bile duct stone",
+            "No treatment",
+            "Phototherapy",
+            "Ursodeoxycholic acid",
+            "Liver biopsy",
+        ],
+        answer: 1,
+        explanation: "An isolated unconjugated bilirubin after fasting or illness, with normal enzymes and FBC, suggests Gilbert syndrome, with UGT1A1 activity at 30–50%. It needs no treatment.",
+        notes: {
+            0: "A stone gives a conjugated rise with raised ALP and GGT.",
+            4: "Normal enzymes and a typical trigger make biopsy unnecessary.",
+        },
+    },
+    {
+        id: "lft-urine",
+        condition: "liver-tests",
+        step: 1,
+        stem: "Two patients have bilirubin of 70 µmol/L. One has hereditary spherocytosis during a viral illness; the other has a stone in the common bile duct. Only the second patient has dark urine.",
+        leadIn: "Which property of bilirubin explains the difference?",
+        options: [
+            "Unconjugated bilirubin is filtered and then fully reabsorbed",
+            "Conjugated bilirubin is water soluble and passes into urine",
+            "Hemolysis converts bilirubin to stercobilin before it reaches the kidney",
+            "Unconjugated bilirubin is excreted only through the lungs",
+            "Conjugated bilirubin is bound tightly to albumin",
+        ],
+        answer: 1,
+        explanation: "Conjugated bilirubin is water soluble and darkens the urine, whereas unconjugated bilirubin is bound to albumin and is not filtered. Bilirubin in the urine therefore means a conjugated rise, as in obstruction.",
+        notes: {
+            0: "Albumin-bound unconjugated bilirubin is not filtered in the first place.",
+            2: "Stercobilin forms from urobilinogen in the gut, not in the blood.",
+            4: "It is unconjugated bilirubin that travels bound to albumin.",
+        },
+    },
+    {
+        id: "lft-failing",
+        condition: "liver-tests",
+        step: 2,
+        stem: "A 35-year-old woman is admitted 2 days after a paracetamol overdose. Over the next 3 days her ALT falls from 9800 to 2100 IU/L, while her bilirubin rises from 40 to 120 µmol/L and her INR from 2.1 to 4.6. She is becoming drowsy.",
+        leadIn: "What do these trends indicate?",
+        options: [
+            "Recovery, since the hepatocyte injury is settling",
+            "A failing liver with fewer hepatocytes left to injure",
+            "Vitamin K deficiency from poor intake",
+            "Hemolysis from the paracetamol metabolite",
+            "Bile duct obstruction from swollen hepatocytes",
+        ],
+        answer: 1,
+        explanation: "Falling AST and ALT with rising bilirubin and INR mean a failing liver, not recovery. With encephalopathy and a high INR within 26 weeks and no prior liver disease, this is acute liver failure, which needs transplant referral.",
+        notes: {
+            0: "Falling enzymes are reassuring only if bilirubin and INR are also improving.",
+            2: "An INR from vitamin K deficiency corrects with parenteral vitamin K and does not cause drowsiness.",
+            4: "Obstruction gives a cholestatic pattern with raised ALP and GGT.",
+        },
+    },
+    {
+        id: "lft-ischemic",
+        condition: "liver-tests",
+        step: 2,
+        stem: "A 68-year-old man is resuscitated after a cardiac arrest. The next day his ALT is 6400 IU/L and AST 7200 IU/L, with bilirubin 30 µmol/L. He took no medications before the arrest and has no history of liver disease.",
+        leadIn: "Which of the following is the most appropriate management of his liver injury?",
+        options: [
+            "IV N-acetylcysteine for presumed paracetamol toxicity",
+            "Treat the low-flow state",
+            "High-dose prednisolone",
+            "ERCP to clear the bile duct",
+            "Hepatitis serology before supportive care",
+        ],
+        answer: 1,
+        explanation: "ALT over 1000 after shock, cardiac arrest, or heart failure suggests ischemic hepatitis, one of the causes of massive rises over 10000 IU/L. Treatment is restoring perfusion.",
+        notes: {
+            0: "Without an ingestion, the timing after arrest points to ischemia.",
+            2: "Prednisolone treats autoimmune or severe alcoholic hepatitis.",
+            3: "The pattern is hepatocellular, not cholestatic.",
+        },
+    },
+    {
+        id: "lft-vit-k",
+        condition: "liver-tests",
+        step: 1,
+        stem: "A 44-year-old woman with long-standing untreated celiac disease has an INR of 2.0, albumin 36 g/L, and normal bilirubin and transaminases. After parenteral vitamin K, her INR is 1.1.",
+        leadIn: "What explains her raised INR?",
+        options: [
+            "Severe hepatocellular dysfunction",
+            "Deficiency of vitamin K from malabsorption",
+            "Disseminated intravascular coagulation",
+            "Antiphospholipid antibodies",
+            "Loss of clotting factors in nephrotic syndrome",
+        ],
+        answer: 1,
+        explanation: "Factors II, VII, IX, and X need vitamin K. An INR that corrects with parenteral vitamin K points to deficiency, as in malabsorption, whereas failure to correct means severe hepatocellular dysfunction.",
+        notes: {
+            0: "Hepatocellular failure would not correct with vitamin K.",
+            2: "DIC does not correct with vitamin K and occurs in a sick patient with low platelets.",
+        },
+    },
+    {
+        id: "lft-albumin-chronic",
+        condition: "liver-tests",
+        step: 1,
+        stem: "A 30-year-old man develops acute hepatitis A. On day 5 of jaundice his INR is 1.6, but his albumin is normal at 41 g/L.",
+        leadIn: "Why has his albumin not yet fallen?",
+        options: [
+            "Albumin is also made by the kidney",
+            "Albumin has a half-life of 14–21 days",
+            "Inflammation increases albumin production",
+            "Acute hepatitis spares the albumin-making cells",
+            "Albumin is stored in the spleen and released in illness",
+        ],
+        answer: 1,
+        explanation: "Albumin, made only by the liver, has a half-life of 14–21 days, so it falls in chronic, not acute, liver disease. Clotting factors have short half-lives, so the INR rises quickly when synthesis fails.",
+        notes: {
+            0: "Albumin is made only by the liver.",
+            2: "Inflammation lowers albumin.",
+        },
+    },
+    {
+        id: "lft-pbc",
+        condition: "liver-tests",
+        step: 2,
+        stem: "A 52-year-old woman has 6 months of itching and fatigue. ALP is 380 IU/L and GGT 290 IU/L, with normal bilirubin and mildly raised ALT. Ultrasound shows normal bile ducts.",
+        leadIn: "Which test is most likely to confirm the diagnosis?",
+        options: [
+            "Antimitochondrial antibody",
+            "Ceruloplasmin",
+            "α1-antitrypsin level",
+            "MRCP showing beaded ducts",
+            "Transferrin saturation",
+        ],
+        answer: 0,
+        explanation: "A cholestatic pattern with itch and fatigue in a middle-aged woman suggests PBC, and AMA is positive in over 90%.",
+        notes: {
+            1: "Ceruloplasmin tests for Wilson disease, a hepatocellular pattern in a young patient.",
+            3: "Beaded ducts on MRCP suggest PSC, typically with ulcerative colitis.",
+            4: "Transferrin saturation screens for hemochromatosis, a hepatocellular pattern.",
+        },
     },
 ];

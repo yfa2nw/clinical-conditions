@@ -866,6 +866,13 @@
     stroke-width: 3;
 }
 
+.ab-grid {
+    fill: none;
+    stroke: var(--color-border-strong);
+    stroke-dasharray: 6 6;
+    stroke-width: 1.5;
+}
+
 .navel,
 .asis {
     fill: var(--color-text-muted);

@@ -345,6 +345,10 @@ body {
     background-color: var(--color-surface-muted);
 }
 
+.syndrome-grid:not(:last-child) {
+    margin-bottom: 28px;
+}
+
 .syndrome-head {
     display: flex;
     align-items: flex-start;
@@ -1818,3 +1822,136 @@ body {
 .nm-bar.is-women {
     fill: var(--color-accent);
 }
+
+/* Seizure type traces */
+.sz-base {
+    fill: none;
+    stroke: var(--color-border-strong);
+    stroke-dasharray: 4 4;
+    stroke-width: 1.5;
+}
+
+.sz-trace {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+}
+
+/* Multiple sclerosis: compact etiology, Charcot triad, and McDonald criteria */
+.cause-list.ms-etiology {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px 24px;
+}
+
+.cause-list.ms-etiology .cause-group {
+    grid-column: 1 / -1;
+}
+
+@media (max-width: 768px) {
+    .cause-list.ms-etiology {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+.ms-tri {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-linejoin: round;
+    stroke-width: 3;
+}
+
+.ms-tri-dot {
+    fill: var(--color-accent);
+}
+
+.ms-plaque {
+    fill: var(--color-wrong);
+}
+
+.ms-old {
+    fill: var(--color-surface);
+    stroke: var(--color-wrong);
+    stroke-width: 2;
+}
+
+.ms-new {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-dasharray: 3 3;
+    stroke-width: 2;
+}
+
+/* Special topics diagrams */
+.lc-tract {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-linecap: round;
+    stroke-width: 5;
+}
+
+.lc-nerve {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-linecap: round;
+    stroke-width: 3;
+}
+
+.lc-nucleus {
+    fill: var(--color-wrong);
+}
+
+.lc-aca,
+.lc-mca {
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 18;
+}
+
+.lc-aca {
+    stroke: var(--color-accent);
+    stroke-opacity: 0.55;
+}
+
+.lc-mca {
+    stroke: var(--color-wrong);
+    stroke-opacity: 0.45;
+}
+
+.lc-eye {
+    fill: var(--color-surface);
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}
+
+.lc-iris {
+    fill: var(--color-accent);
+}
+
+.lc-normal {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}
+
+.lc-penumbra {
+    fill: var(--color-up-soft);
+    stroke: var(--color-wrong);
+    stroke-dasharray: 5 4;
+    stroke-width: 2;
+}
+
+.lc-core {
+    fill: var(--color-wrong);
+    opacity: 0.8;
+}
+
+/* Schematic scans are grayscale in both themes, like real images */
+.mr-frame { fill: #15171b; }
+.mr-black { fill: #050607; }
+.mr-dark { fill: #34373d; }
+.mr-low { fill: #5a5f66; }
+.mr-mid { fill: #8b9098; }
+.mr-bright { fill: #e9ebee; }
+.mr-ring { fill: none; stroke: #f4f5f7; stroke-width: 3; }

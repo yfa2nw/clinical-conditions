@@ -11,7 +11,7 @@ import vm from "node:vm";
 
 const EDGE = "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe";
 const SITES = ["gi", "neuro", "renal", "endocrine"];
-const PROGRESS_SITES = ["neuro", "renal", "endocrine"];
+const PROGRESS_SITES = ["renal", "endocrine"];
 const PAGES = ["gi/index.html", "gi/physiology.html", "neuro/index.html", "neuro/physiology.html", "renal/index.html", "renal/physiology.html", "endocrine/index.html"];
 const shotsAt = process.argv.indexOf("--shots");
 const shotsFolder = shotsAt > 0 ? process.argv[shotsAt + 1] : null;
@@ -61,7 +61,9 @@ function checkQuestions(site, page = "index.html", bank = "questions.js") {
 
 const counts = {};
 for (const site of SITES) counts[site] = checkQuestions(site);
-const physiology = checkQuestions("gi", "physiology.html", "physiology-questions.js");
+// A system with a physiology page adds its topics and questions to the landing counts
+const physiology = {};
+for (const site of SITES) physiology[site] = existsSync(`${site}/physiology.html`) ? checkQuestions(site, "physiology.html", "physiology-questions.js") : { articles: 0, questions: 0 };
 for (const file of PAGES) {
     checkMarkup(file);
     // Links between a system's pages are plain links, so check that they land on an article
@@ -75,25 +77,24 @@ const landing = readFileSync("index.html", "utf8");
 for (const m of landing.matchAll(/href="([^"#]+)"/g)) {
     if (!/^(https?:|\.\.)/.test(m[1]) && !existsSync(m[1])) fail(`index.html: broken link ${m[1]}`);
 }
-const stat = (word) => +(landing.match(new RegExp(`<strong>(\\d+)</strong> ${word}`)) || [])[1];
-if (stat("conditions") !== counts.gi.articles || stat("questions") !== counts.gi.questions) {
-    fail(`index.html: says ${stat("conditions")} conditions and ${stat("questions")} questions, but GI has ${counts.gi.articles} and ${counts.gi.questions}`);
-}
-// Each panel other than GI shows its topic and group counts and a progress chain
-for (const site of PROGRESS_SITES) {
+// Each panel shows its topic and question counts; each unfinished panel also says how many are written
+for (const site of SITES) {
     const start = landing.indexOf(`<article class="world is-${site}">`);
     if (start < 0) { fail(`index.html: no panel for ${site}`); continue; }
     const panel = landing.slice(start, landing.indexOf("</article>", start));
-    const siteHtml = readFileSync(`${site}/index.html`, "utf8");
-    const groups = (siteHtml.match(/class="station"/g) || []).length;
-    const pages = siteHtml.split(/<article class="condition-content[ "]/).slice(1);
-    const done = pages.filter((page) => !page.includes("pending-content")).length;
     const panelStat = (word) => +(panel.match(new RegExp(`<strong>(\\d+)</strong> ${word}`)) || [])[1];
+    const topics = counts[site].articles + physiology[site].articles;
+    const questions = counts[site].questions + physiology[site].questions;
+    if (panelStat("topics") !== topics || panelStat("questions") !== questions) {
+        fail(`index.html: ${site} says ${panelStat("topics")} topics and ${panelStat("questions")} questions, but has ${topics} and ${questions}`);
+    }
+    if (!PROGRESS_SITES.includes(site)) continue;
+    const pages = ["index.html", "physiology.html"].filter((page) => existsSync(`${site}/${page}`))
+        .flatMap((page) => readFileSync(`${site}/${page}`, "utf8").split(/<article class="condition-content[ \"]/).slice(1));
+    const done = pages.filter((page) => !page.includes("pending-content")).length;
     const written = panel.match(/(\d+) of (\d+) topics written/) || [];
-    const cells = (panel.match(/class="progress-cell/g) || []).length;
-    const litCells = (panel.match(/progress-cell is-done/g) || []).length;
-    if (panelStat("groups") !== groups || +written[1] !== done || +written[2] !== pages.length || panelStat("topics") !== pages.length || cells !== pages.length || litCells !== done) {
-        fail(`index.html: ${site} progress is out of date; ${done} of ${pages.length} topics are written, in ${groups} groups`);
+    if (+written[1] !== done || +written[2] !== pages.length) {
+        fail(`index.html: ${site} progress is out of date; ${done} of ${pages.length} topics are written`);
     }
 }
 
@@ -224,7 +225,10 @@ socket.close();
 
 /* ---------- Report ---------- */
 for (const site of SITES) console.log(`${site}: ${counts[site].articles} pages, ${counts[site].questions} questions, correct option longest in ${counts[site].longestShare}%`);
-console.log(`gi physiology: ${physiology.articles} pages, ${physiology.questions} questions, correct option longest in ${physiology.longestShare}%`);
+for (const site of SITES) {
+    const p = physiology[site];
+    if (p.longestShare !== undefined) console.log(`${site} physiology: ${p.articles} pages, ${p.questions} questions, correct option longest in ${p.longestShare}%`);
+}
 if (notes.length) console.log(`\nNotes:\n${[...new Set(notes)].map((n) => `  ${n}`).join("\n")}`);
 if (problems.length) {
     console.log(`\n${problems.length} problem(s):\n${problems.map((p) => `  ${p}`).join("\n")}`);

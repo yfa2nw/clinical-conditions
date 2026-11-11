@@ -134,5 +134,13 @@ function drawTract({ stations: s, width, add, part, note }) {
     part("appendix", `M ${left} ${cecum + 10} C ${left} ${cecum + 34}, ${appTip[0] - 10} ${appTip[1] - 24}, ${appTip[0]} ${appTip[1]}`, "map-thin");
     organs.appendix = appTip;
 
+    /* ----- Special topics: a magnifying glass below the rectum, off the tract, for working back from a finding ----- */
+    if (s.special) {
+        const cy = s.special.top + 34;
+        add(svgEl("circle", { cx: x, cy, r: 10, class: "map-organ", "data-organ": "special" }));
+        part("special", `M ${x + 7} ${cy + 7} L ${x + 16} ${cy + 16}`, "map-thick");
+        organs.special = [x + 10, cy];
+    }
+
     return organs;
 }
