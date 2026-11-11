@@ -1955,3 +1955,54 @@ body {
 .mr-mid { fill: #8b9098; }
 .mr-bright { fill: #e9ebee; }
 .mr-ring { fill: none; stroke: #f4f5f7; stroke-width: 3; }
+
+/* Visual pathway and field maps */
+.vf-path { fill: none; stroke: var(--color-accent); stroke-linecap: round; stroke-width: 4; }
+.vf-field { fill: var(--color-surface); stroke: var(--color-border-strong); stroke-width: 1.5; }
+.vf-loss { fill: var(--color-text-muted); }
+.vf-spare { fill: var(--color-surface); }
+
+/* Eyes, heads, and faces */
+.eye-white { fill: var(--color-surface); stroke: var(--color-accent-line); stroke-width: 2.5; }
+.eye-iris { fill: var(--color-accent-soft); stroke: var(--color-accent); stroke-width: 2; }
+.eye-pupil { fill: var(--color-text); }
+.eye-lid { fill: var(--color-surface-muted); stroke: var(--color-accent-line); stroke-width: 2; }
+.head-outline { fill: var(--color-surface); stroke: var(--color-accent-line); stroke-width: 2.5; }
+.head-pain { fill: var(--color-accent); opacity: 0.35; }
+.head-burst { fill: none; stroke: var(--color-accent); stroke-linecap: round; stroke-width: 3; }
+.cn-uvula, .cn-tongue { fill: var(--color-accent-soft); stroke: var(--color-accent); stroke-width: 2; }
+
+/* Durations on a time scale */
+.tl-axis { fill: none; stroke: var(--color-border-strong); stroke-width: 1.5; }
+.tl-bar { fill: var(--color-accent); }
+
+/* Audiograms */
+.ag-grid { fill: none; stroke: var(--color-border); stroke-width: 1; }
+.ag-line { fill: none; stroke: var(--color-accent); stroke-linejoin: round; stroke-width: 3; }
+.ag-line.is-bone { stroke: var(--color-text-muted); stroke-dasharray: 5 4; }
+
+/* Transmitter sources */
+.nt-source { fill: var(--color-accent); stroke: var(--color-surface); stroke-width: 2; }
+
+/* Cranial nerves that travel together */
+.cn-nerve.is-cav, .cn-nerve.is-both { stroke: var(--color-accent); stroke-width: 4; }
+.cn-nerve.is-both { stroke-dasharray: 7 4; }
+.cn-nerve.is-cpa { stroke: var(--color-up); stroke-width: 4; }
+.cn-nerve.is-jug { stroke: var(--color-down); stroke-width: 4; }
+.cn-label.is-cav, .cn-label.is-both { fill: var(--color-accent); font-weight: 800; }
+.cn-label.is-cpa { fill: var(--color-up); font-weight: 800; }
+.cn-label.is-jug { fill: var(--color-down); font-weight: 800; }
+.cn-chip.is-cav { fill: var(--color-accent-soft); stroke: var(--color-accent); stroke-width: 1.5; }
+.cn-chip.is-cpa { fill: var(--color-up-soft); stroke: var(--color-up); stroke-width: 1.5; }
+.cn-chip.is-jug { fill: var(--color-down-soft); stroke: var(--color-down); stroke-width: 1.5; }
+
+/* Flowcharts */
+.flow-box { fill: var(--color-surface-muted); stroke: var(--color-accent-line); stroke-width: 2; }
+.flow-box.is-end { fill: var(--color-accent-soft); stroke: var(--color-accent); }
+.mimic-dot { fill: var(--color-wrong); stroke: var(--color-surface); stroke-width: 2; }
+
+/* Steps that follow one another in time */
+.time-windows.is-sequence { --stops: 1fr 3fr 4fr 3fr; }
+.window-bar.at-2::before { grid-column: 2 / 3; }
+.window-bar.at-3::before { grid-column: 3 / 4; }
+.window-bar.at-4::before { grid-column: 4 / 5; }

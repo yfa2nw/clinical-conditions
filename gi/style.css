@@ -1127,3 +1127,66 @@
     fill: var(--color-wrong);
     opacity: 0.8;
 }
+
+/* Hepatitis B serology through infection */
+.sero-window { fill: var(--color-accent-soft); }
+.sero-line { fill: none; stroke: var(--color-border-strong); stroke-dasharray: 4 4; }
+.sero-bar { fill: var(--color-accent); }
+.sero-bar.is-maybe { fill: var(--color-accent-line); }
+
+/* Body and abdomen maps */
+.body-shape { fill: var(--color-surface-muted); stroke: var(--color-accent-line); stroke-width: 2.5; }
+.body-limb { fill: none; stroke: var(--color-accent-line); stroke-linecap: round; stroke-width: 16; }
+.body-dot { fill: var(--color-text); }
+.body-line { fill: none; stroke: var(--color-accent-line); stroke-width: 2; }
+.exam-node { fill: var(--color-surface); stroke: var(--color-text); stroke-width: 2; }
+.exam-dash { fill: none; stroke: var(--color-text-muted); stroke-dasharray: 4 4; stroke-width: 1.5; }
+.exam-point { fill: var(--color-accent); stroke: var(--color-surface); stroke-width: 2; }
+.exam-arrow { fill: none; stroke: var(--color-accent); stroke-linecap: round; stroke-width: 2.5; }
+
+/* LFT patterns */
+.lft-uln { fill: none; stroke: var(--color-border-strong); stroke-dasharray: 5 4; stroke-width: 1.5; }
+.lft-enz { fill: var(--color-accent); }
+.lft-chol { fill: var(--color-accent-line); }
+.lft-bili { fill: var(--color-up); }
+.lft-inr { fill: var(--color-down); }
+.lft-level { stroke: var(--color-accent-line); stroke-width: 1.5; }
+.lft-level.is-1 { fill: var(--color-surface); }
+.lft-level.is-2 { fill: var(--color-accent-soft); }
+.lft-level.is-3 { fill: var(--color-up-soft); }
+.lft-level.is-4 { fill: var(--color-down-soft); }
+
+/* Gut immunity */
+.imm-epi { fill: var(--color-surface); stroke: var(--color-accent-line); stroke-width: 2.5; }
+.imm-follicle { fill: var(--color-accent-soft); stroke: var(--color-accent-line); stroke-width: 2; }
+.imm-center { fill: var(--color-surface); stroke: var(--color-accent); stroke-dasharray: 5 4; stroke-width: 1.5; }
+.imm-cell { fill: var(--color-up-soft); stroke: var(--color-up); stroke-width: 2; }
+.imm-plasma { fill: var(--color-down-soft); stroke: var(--color-down); stroke-width: 2; }
+.imm-iga { fill: none; stroke: var(--color-accent); stroke-linecap: round; stroke-width: 3; }
+.imm-lymph { fill: none; stroke: var(--color-text-muted); stroke-dasharray: 4 4; stroke-width: 2; }
+
+/* Enteric nervous system */
+.ens-sub { fill: var(--color-surface-muted); stroke: var(--color-accent-line); stroke-width: 1.5; }
+.ens-muscle { fill: var(--color-accent-soft); stroke: var(--color-accent-line); stroke-width: 1.5; }
+.ens-plexus { fill: none; stroke: var(--color-accent); stroke-width: 2.5; }
+.ens-ganglion { fill: var(--color-accent); stroke: var(--color-surface); stroke-width: 1.5; }
+.ens-icc { fill: none; stroke: var(--color-up); stroke-linecap: round; stroke-linejoin: round; stroke-width: 2.5; }
+.ens-tube { fill: none; stroke: var(--color-accent-line); stroke-width: 3; }
+.ens-squeeze { fill: var(--color-accent-soft); stroke: var(--color-accent); stroke-width: 2.5; }
+.ens-bolus { fill: var(--color-up-soft); stroke: var(--color-up); stroke-width: 2; }
+
+/* Embryology */
+.emb-fore, .emb-mid, .emb-hind { stroke: var(--color-accent-line); stroke-width: 2; }
+.emb-fore { fill: var(--color-accent-soft); }
+.emb-mid { fill: var(--color-up-soft); }
+.emb-hind { fill: var(--color-down-soft); }
+.emb-artery { fill: none; stroke: var(--color-wrong); stroke-width: 3; }
+.emb-artery-dot { fill: var(--color-wrong); }
+.emb-bud { fill: none; stroke: var(--color-accent-line); stroke-linecap: round; stroke-width: 8; }
+.emb-loop { fill: none; stroke: var(--color-accent); stroke-width: 4; }
+
+.imm-goblet { fill: var(--color-surface); stroke: var(--color-accent); stroke-width: 2.5; }
+.imm-paneth { fill: var(--color-down); }
+.imm-stem { fill: var(--color-up); }
+
+.emb-head { fill: var(--color-accent); }

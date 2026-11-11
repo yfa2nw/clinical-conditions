@@ -156,7 +156,11 @@ const conditionName = (id) => (page.match(new RegExp(`data-condition="${id}"[^>]
 const glossary = new Map();
 for (const m of (page + physiologyPage).matchAll(/<abbr [^>]*data-definition="([^"]*)"[^>]*>([^<]+)<\/abbr>/g)) {
     const term = m[2].trim();
-    if (/[A-Z].*[A-Z0-9]|^[a-z]+[A-Z]/.test(term) && !/ [a-z]/.test(term) && !glossary.has(term)) glossary.set(term, m[1]);
+    if (!/[A-Z].*[A-Z0-9]|^[a-z]+[A-Z]/.test(term) || / [a-z]/.test(term)) continue;
+    // An abbreviation can mean different things on different pages, such as V1, so each meaning is kept
+    const list = glossary.get(term) || [];
+    if (!list.some((d) => d.toLowerCase() === m[1].toLowerCase())) list.push(m[1]);
+    glossary.set(term, list);
 }
 const allText = questions.map((q) => [q.stem, q.leadIn, ...q.options].join(" ")).join(" ");
 const usedTerms = [...[...glossary]
@@ -299,7 +303,7 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
     <section class="abbreviations">
         <h1>Abbreviations</h1>
         <p class="intro">You may refer to this page during a test.</p>
-        <div class="terms">${usedTerms.map(([term, definition]) => `<p><strong>${term}</strong> ${definition}</p>`).join("")}</div>
+        <div class="terms">${usedTerms.map(([term, definition]) => `<p><strong>${term}</strong> ${[definition].flat().join("; ")}</p>`).join("")}</div>
     </section>
 
     ${tests.map((test) => `<section class="test" id="test-${test.name}">

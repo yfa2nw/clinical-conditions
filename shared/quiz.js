@@ -35,6 +35,16 @@ document.querySelectorAll("abbr.term").forEach((term) => {
     if (isAbbreviation && !quizTerms.has(text)) quizTerms.set(text, term.dataset.definition);
 });
 
+// Some abbreviations mean different things on different topics, such as V1, so each topic's own definitions come first
+const topicTerms = new Map(conditionContents.map((article) => {
+    const terms = new Map();
+    article.querySelectorAll("abbr.term").forEach((term) => {
+        const text = term.textContent.trim();
+        if (quizTerms.has(text) && !terms.has(text)) terms.set(text, term.dataset.definition);
+    });
+    return [article.id, terms];
+}));
+
 const quizTermPattern = quizTerms.size
     ? new RegExp(`(?<![\\w+-]|type )(${[...quizTerms.keys()]
         .sort((a, b) => b.length - a.length)
@@ -42,7 +52,7 @@ const quizTermPattern = quizTerms.size
         .join("|")})(?!\\w)`, "g")
     : null;
 
-function addQuizTerms(root) {
+function addQuizTerms(root, currentTopic = null) {
     if (!quizTermPattern) return;
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
     const nodes = [];
@@ -58,10 +68,11 @@ function addQuizTerms(root) {
         node.replaceWith(...pieces.map((piece, index) => {
             if (index % 2 === 0) return piece;
             const inLabel = parent.closest("label");
+            const topic = parent.closest("[data-topic]")?.dataset.topic || currentTopic;
             return el("abbr", {
                 class: "term",
                 tabindex: inLabel ? null : "0",
-                "data-definition": quizTerms.get(piece),
+                "data-definition": topicTerms.get(topic)?.get(piece) || quizTerms.get(piece),
                 text: piece,
             });
         }));
@@ -204,7 +215,7 @@ function renderQuiz() {
     if (quiz.phase === "question") quizView.replaceChildren(renderQuestion());
     else if (quiz.phase === "results") quizView.replaceChildren(renderResults());
     else quizView.replaceChildren(renderSetup());
-    if (quiz.phase !== "setup") addQuizTerms(quizView);
+    if (quiz.phase !== "setup") addQuizTerms(quizView, quiz.phase === "question" ? quiz.items[quiz.index].question.condition : null);
 }
 
 /* =========================
@@ -572,7 +583,7 @@ function renderResults() {
     const review = quiz.items.map((item, index) => {
         const ok = isCorrect(item);
         const question = item.question;
-        return el("details", { class: `review-item ${ok ? "review-correct" : "review-wrong"}` },
+        return el("details", { class: `review-item ${ok ? "review-correct" : "review-wrong"}`, "data-topic": question.condition },
             el("summary", {},
                 el("span", { class: "review-mark", "aria-hidden": "true", text: ok ? "✓" : "✗" }),
                 el("span", { class: "visually-hidden", text: ok ? "Correct: " : "Incorrect: " }),

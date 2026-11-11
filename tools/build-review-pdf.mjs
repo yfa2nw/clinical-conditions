@@ -7,6 +7,9 @@ import { printPdf } from "./print-pdf.mjs";
 const GI_FIGURE_SECTIONS = {
     "gastric-secretion": ["", "Cephalic phase", "Gastric cells and the mucosal barrier", "Gastric cells and the mucosal barrier", "Receptors and intracellular pathways", "Pharmacology"],
     "emetic-center": ["Inputs", "Pharmacology"],
+    "gi-embryology": ["Germ layers and regions", "Rotation and the pancreas"],
+    "gut-immunity": ["Epithelial cells", "Peyer patches", "Pharmacology"],
+    "enteric-nervous-system": ["Structure", "Motility patterns", "Pharmacology"],
     "digestion-absorption": ["", "Carbohydrates", "Proteins", "Fats", "Micronutrients"],
     "liver-function": ["Anatomy and histology", "Anatomy and histology", "Anatomy and histology", "Carbohydrate metabolism", "Bilirubin conjugation", "Channels", "Pharmacology"],
 };
@@ -17,12 +20,12 @@ const GI_FIGURE_LEGENDS = {
 };
 
 const SYSTEMS = {
-    gi: { name: "Gastrointestinal", accent: "#0f766e", soft: "#e2f1ee", dark: "#0a3a35", art: "#bfe7df", reach: "from the esophagus to the appendix", sections: GI_FIGURE_SECTIONS, legends: GI_FIGURE_LEGENDS },
-    neuro: { name: "Neurology", accent: "#4f46c8", soft: "#e9e8fb", dark: "#1b1a47", art: "#c9c6ff", reach: "from stroke to movement disorders", sections: {}, legends: {} },
+    gi: { name: "Gastrointestinal", accent: "#0f766e", soft: "#e2f1ee", dark: "#0a3a35", art: "#bfe7df", cover: { deep: "#041d1a", glow: "rgba(20, 184, 166, 0.55)", glow2: "rgba(245, 158, 11, 0.28)", art: "#9ff0de", hot: "#f5a524" }, reach: "from the esophagus to the appendix", sections: GI_FIGURE_SECTIONS, legends: GI_FIGURE_LEGENDS },
+    neuro: { name: "Neurology", accent: "#4f46c8", soft: "#e9e8fb", dark: "#1b1a47", art: "#c9c6ff", cover: { deep: "#0d0b2b", glow: "rgba(124, 115, 255, 0.6)", glow2: "rgba(236, 72, 153, 0.25)", art: "#d4d0ff", hot: "#ff8fc7" }, reach: "from stroke to movement disorders", sections: {}, legends: {} },
 };
 const SYSTEM = process.argv[2] || "gi";
 if (!SYSTEMS[SYSTEM]) throw new Error(`Unknown organ system: ${SYSTEM}`);
-const { name: SYSTEM_NAME, accent: ACCENT, soft: SOFT, dark: DARK, art: ART, reach: REACH, sections: FIGURE_SECTIONS, legends: FIGURE_LEGENDS } = SYSTEMS[SYSTEM];
+const { name: SYSTEM_NAME, accent: ACCENT, soft: SOFT, dark: DARK, art: ART, cover: COVER, reach: REACH, sections: FIGURE_SECTIONS, legends: FIGURE_LEGENDS } = SYSTEMS[SYSTEM];
 const OUTPUT = `${SYSTEM}/${SYSTEM}-review-articles.pdf`;
 
 /* ---------- Read the reviews in sidebar order ---------- */
@@ -44,11 +47,17 @@ const clinicalGroups = [...page.matchAll(/<p class="group-label"[^>]*>([^<]+)<\/
 const groups = [{ name: "Physiology", ids: physiologyIds, source: physiologyPage }, ...clinicalGroups];
 
 const glossary = new Map();
+// An abbreviation can mean different things on different pages, such as V1, so each meaning is kept
+const addDefinition = (term, definition) => {
+    const list = glossary.get(term) || [];
+    if (!list.some((d) => d.toLowerCase() === definition.toLowerCase())) list.push(definition);
+    glossary.set(term, list);
+};
 let figureCount = 0;
 function clean(html) {
     return html
         .replace(/<abbr [^>]*data-definition="([^"]*)"[^>]*>([\s\S]*?)<\/abbr>/g, (m, definition, text) => {
-            if (/[A-Z].*[A-Z0-9]|^[a-z]+[A-Z]/.test(text) && !/ [a-z]/.test(text) && !glossary.has(text)) glossary.set(text, definition);
+            if (/[A-Z].*[A-Z0-9]|^[a-z]+[A-Z]/.test(text) && !/ [a-z]/.test(text)) addDefinition(text, definition);
             return text;
         })
         .replace(/<button [^>]*data-goto="([^"]+)"[^>]*>([\s\S]*?)<\/button>/g, '<a href="#review-$1">$2</a>')
@@ -94,7 +103,7 @@ function diagramStyles() {
 }
 
 // The numbers on a diagram refer to lists on its page, so a figure's legend has to carry them
-function figureKey(after, svg, id) {
+function figureKey(after, svg, id, label = "") {
     const wanted = [...new Set([...svg.matchAll(/<g class="site-marker">[\s\S]*?<text[^>]*>([A-Z0-9]+)<\/text>/g)].map((m) => m[1]))].sort((a, b) => a.localeCompare(b, "en", { numeric: true }));
     if (!wanted.length) return "";
     const section = after.slice(0, after.indexOf("</section>"));
@@ -108,9 +117,12 @@ function figureKey(after, svg, id) {
     for (const m of section.matchAll(/<h4 class="sc-heading">(\d+)\. ([\s\S]*?)<\/h4>/g)) {
         if (!found.has(m[1])) found.set(m[1], plain(m[2]));
     }
-    const missing = wanted.filter((n) => !found.has(n));
+    // A legend that already names every numbered site, as in "1, the optic nerve", carries its own key
+    const named = (n) => new RegExp(`(^|[\\s:;,(])${n}, `).test(label);
+    const missing = wanted.filter((n) => !found.has(n) && !named(n));
     if (missing.length) throw new Error(`${id}: no key for diagram numbers ${missing.join(", ")}`);
-    return ` ${wanted.map((n) => `${n}, ${found.get(n)}`).join("; ")}.`;
+    const keyed = wanted.filter((n) => found.has(n));
+    return keyed.length ? ` ${keyed.map((n) => `${n}, ${found.get(n)}`).join("; ")}.` : "";
 }
 
 function figuresFor(text, id) {
@@ -123,7 +135,7 @@ function figuresFor(text, id) {
         const label = svg.match(/aria-label="([^"]+)"/)?.[1] || FIGURE_LEGENDS[id];
         if (!label) throw new Error(`${id}: diagram with no legend`);
         const note = after.match(/^<figcaption>([\s\S]*?)<\/figcaption>/)?.[1];
-        const legend = `${label.replace(/\.?$/, ".")}${note && !note.startsWith("Numbers match") ? ` ${plain(note)}` : ""}${figureKey(after, svg, id)}`;
+        const legend = `${label.replace(/\.?$/, ".")}${note && !note.startsWith("Numbers match") ? ` ${plain(note)}` : ""}${figureKey(after, svg, id, label)}`;
         const wide = Number(box[1]) / Number(box[2]) > 1.6;
         return { section: FIGURE_SECTIONS[id]?.[index] || "", html: `<figure class="figure journey-page${wide ? " is-wide" : ""}">${svg}<figcaption><strong>Fig. ${index + 1} |</strong> ${legend}</figcaption></figure>` };
     });
@@ -163,52 +175,71 @@ const coverArt = panelStart < 0 ? "" : landing.slice(landing.indexOf("<svg", pan
     .replace(/ role="img" aria-label="[^"]*"/, ' aria-hidden="true"')
     .replace(/<text class="art-label"[\s\S]*?<\/text>/g, "")
     .replace(/<path class="(?:gi-bolus|neuro-pulse)"[^>]*\/>/g, "");
-const referenceCount = articles.reduce((total, a) => total + (a.refs.match(/<li>/g) || []).length, 0);
+// The landing panel's one-line description becomes the cover's deck
+const coverDeck = panelStart < 0 ? "" : (landing.slice(panelStart).match(/<div class="world-intro">[\s\S]*?<p>([^<]+)<\/p>/) || [, ""])[1];
+// One bright point in the drawing: the bolus entering the stomach, or a firing neuron
+const coverArtLit = coverArt
+    .replace(/(<path class="gi-tube is-stomach"[^>]*\/>)/, '$1<circle class="cover-hot" cx="143" cy="118" r="11"/>')
+    .replace(/<path class="neuro-soma"/, '<path class="neuro-soma is-hot"');
 
 /* ---------- Page ---------- */
-const contents = groups.map((group) => `<h3>${group.name}</h3><ol>${articles.filter((a) => a.group === group.name).map((a) => `<li><a href="#review-${a.id}">${a.title}</a></li>`).join("")}</ol>`).join("");
+const contents = groups.map((group) => `<section class="toc-group"><h3>${group.name}</h3><ol>${articles.filter((a) => a.group === group.name).map((a) => `<li><a href="#review-${a.id}">${a.title}</a></li>`).join("")}</ol></section>`).join("");
 const references = articles.filter((a) => a.refs).map((a) => `<div class="ref-group"><h3>${a.title}</h3><ol>${a.refs}</ol></div>`).join("");
 const updated = new Date().toLocaleDateString("en-AU", { day: "numeric", month: "long", year: "numeric" });
-const terms = [...glossary].sort(([a], [b]) => a.localeCompare(b, "en", { sensitivity: "base" })).map(([term, definition]) => `<p><strong>${term}</strong> ${definition}</p>`).join("");
+const terms = [...glossary].sort(([a], [b]) => a.localeCompare(b, "en", { sensitivity: "base" })).map(([term, definitions]) => `<p><strong>${term}</strong> ${definitions.join("; ")}</p>`).join("");
 
 const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>${SYSTEM_NAME} Review Articles</title><style>
     @page { size: A4; }
-    :root { --accent: ${ACCENT}; --soft: ${SOFT}; --dark: ${DARK}; --art: ${ART}; --muted: #5b6470; }
+    :root { --accent: ${ACCENT}; --soft: ${SOFT}; --dark: ${DARK}; --art: ${ART}; --muted: #5b6470; --c-deep: ${COVER.deep}; --c-glow: ${COVER.glow}; --c-glow2: ${COVER.glow2}; --c-art: ${COVER.art}; --c-hot: ${COVER.hot}; }
     * { box-sizing: border-box; }
     body { margin: 0; color: #1a1f24; font: 9.6pt/1.42 Georgia, "Times New Roman", serif; }
     h1, h2, h3, h4, .kicker, .cover p, nav a { font-family: "Segoe UI", system-ui, sans-serif; }
     a { color: inherit; text-decoration: none; }
-    .cover { display: flex; flex-direction: column; height: 245mm; }
-    .cover-panel { display: flex; flex-direction: column; justify-content: space-between; height: 158mm; padding: 13mm 14mm 14mm; border-radius: 5mm; background: linear-gradient(155deg, var(--dark) 0%, var(--dark) 45%, var(--accent) 140%); color: #fff; }
-    .cover .label { margin: 0; color: var(--art); font-size: 9.5pt; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
-    .cover-art { display: flex; align-items: center; justify-content: center; flex: 1; padding: 6mm 0; }
-    .cover-art svg { width: 100%; max-height: 66mm; overflow: visible; }
-    .cover-art .gi-mouth, .cover-art .gi-tube { fill: none; stroke: var(--art); stroke-linecap: round; stroke-width: 13; }
+    @page :first { margin: 0; }
+    .cover { position: relative; width: 210mm; height: 297mm; overflow: hidden; color: #fff; break-after: page;
+        background: radial-gradient(70% 55% at 88% 30%, var(--c-glow) 0%, transparent 62%), radial-gradient(60% 45% at 6% 96%, var(--c-glow2) 0%, transparent 65%), linear-gradient(170deg, var(--c-deep) 0%, #000 140%); }
+    .cover-art { position: absolute; left: -22mm; top: 128mm; width: 252mm; transform: rotate(-8deg); transform-origin: 50% 50%; filter: drop-shadow(0 0 4mm var(--c-glow)); }
+    .cover-art svg { display: block; width: 100%; height: auto; overflow: visible; }
+    .cover-art .gi-mouth, .cover-art .gi-tube { fill: none; stroke: var(--c-art); stroke-linecap: round; stroke-width: 13; }
     .cover-art .gi-mouth { stroke-width: 5; }
     .cover-art .gi-tube.is-stomach { stroke-width: 28; }
     .cover-art .gi-tube.is-colon { stroke-dasharray: 22 4; stroke-linecap: butt; stroke-width: 24; }
-    .cover-art .neuro-dendrite, .cover-art .neuro-axon { fill: none; stroke: var(--art); stroke-linecap: round; stroke-width: 2.5; }
-    .cover-art .neuro-myelin { fill: none; stroke: var(--art); stroke-dasharray: 15 5; stroke-width: 8; opacity: 0.7; }
-    .cover-art .neuro-bouton { fill: var(--art); }
-    .cover-art .neuro-soma { fill: var(--dark); stroke: var(--art); stroke-width: 3; }
-    .cover h1 { margin: 0; color: #fff; font-size: 40pt; font-weight: 700; line-height: 1.02; letter-spacing: -0.01em; }
-    .cover h1 span { display: block; margin-top: 2mm; color: var(--art); font-size: 22pt; font-weight: 400; letter-spacing: 0; }
-    .cover-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; margin: 7mm 0 0; font-family: "Segoe UI", system-ui, sans-serif; }
-    .cover-stats div { padding: 3.5mm 4mm; border-top: 1.2pt solid var(--accent); background: var(--soft); border-radius: 0 0 2mm 2mm; }
-    .cover-stats strong { display: block; color: var(--dark); font-size: 20pt; line-height: 1.1; }
-    .cover-stats span { color: var(--muted); font-size: 8.5pt; }
-    .cover .reach { margin: 6mm 0 0; color: #1a1f24; font-size: 11.5pt; }
-    .cover-foot { display: flex; justify-content: space-between; align-items: flex-end; gap: 6mm; margin-top: auto; padding-top: 3mm; border-top: 0.6pt solid #c9d1d6; }
-    .cover-foot p { margin: 0; color: var(--muted); font-size: 8.5pt; }
-    .contents { break-before: page; column-count: 2; column-gap: 8mm; }
-    .contents > h1, .terms > h1 { column-span: all; margin: 0 0 4mm; font-size: 20pt; }
-    .contents h3 { margin: 4mm 0 1mm; color: var(--accent); font-size: 9.5pt; break-after: avoid; }
-    .contents ol { margin: 0; padding-left: 5mm; }
-    .contents li { margin-bottom: 1.2mm; font-size: 9pt; line-height: 1.3; break-inside: avoid; }
+    .cover-art .neuro-dendrite, .cover-art .neuro-axon { fill: none; stroke: var(--c-art); stroke-linecap: round; stroke-width: 2.5; }
+    .cover-art .neuro-myelin { fill: none; stroke: var(--c-art); stroke-dasharray: 15 5; stroke-width: 8; opacity: 0.7; }
+    .cover-art .neuro-bouton { fill: var(--c-art); }
+    .cover-art .neuro-soma { fill: var(--c-deep); stroke: var(--c-art); stroke-width: 3; }
+    .cover-art .neuro-soma.is-hot { fill: var(--c-hot); stroke: var(--c-hot); filter: drop-shadow(0 0 3mm var(--c-hot)); }
+    .cover-art .cover-hot { fill: var(--c-hot); filter: drop-shadow(0 0 3mm var(--c-hot)); }
+    .masthead { position: absolute; top: 15mm; left: 16mm; right: 16mm; display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 3.5mm; border-bottom: 0.7pt solid rgba(255, 255, 255, 0.55); }
+    .masthead h1 { margin: 0; font: 400 50pt/0.86 Georgia, "Times New Roman", serif; letter-spacing: -0.025em; }
+    .masthead h1 em { color: var(--c-art); font-style: italic; }
+    .issue { margin: 0 0 1mm; font: 600 8pt/1.5 "Segoe UI", system-ui, sans-serif; letter-spacing: 0.14em; text-align: right; text-transform: uppercase; white-space: nowrap; }
+    .issue span { display: block; color: var(--c-art); }
+    .coverlines { position: absolute; top: 48mm; right: 16mm; width: 46mm; margin: 0; padding: 0; list-style: none; font: 8.5pt/1.3 "Segoe UI", system-ui, sans-serif; text-align: right; }
+    .coverlines li { padding: 1.3mm 0; text-shadow: 0 0 2mm rgba(0, 0, 0, 0.6); border-bottom: 0.4pt solid rgba(255, 255, 255, 0.28); color: rgba(255, 255, 255, 0.86); }
+    .coverlines li:first-child { color: var(--c-hot); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+    .headline { position: absolute; left: 16mm; bottom: 34mm; width: 128mm; }
+    .headline .kicker { margin: 0 0 3mm; color: var(--c-hot); font: 700 8.5pt "Segoe UI", system-ui, sans-serif; letter-spacing: 0.18em; text-transform: uppercase; }
+    .headline h2 { margin: 0 0 4mm; color: #fff; font: 700 46pt/0.95 Georgia, "Times New Roman", serif; letter-spacing: -0.02em; }
+    .headline p.deck { margin: 0; color: rgba(255, 255, 255, 0.88); font: italic 13pt/1.4 Georgia, "Times New Roman", serif; }
+    .cover-base { position: absolute; left: 16mm; right: 16mm; bottom: 16mm; display: flex; justify-content: space-between; padding-top: 2.5mm; border-top: 0.4pt solid rgba(255, 255, 255, 0.35); color: rgba(255, 255, 255, 0.7); font: 7.5pt "Segoe UI", system-ui, sans-serif; letter-spacing: 0.04em; }
+    .contents { break-before: page; counter-reset: review; }
+    .toc-head { display: flex; justify-content: space-between; align-items: flex-end; margin: 0 0 6mm; padding-bottom: 3mm; border-bottom: 0.8pt solid #1a1f24; }
+    .toc-head h1 { margin: 0; font: 400 34pt/0.9 Georgia, "Times New Roman", serif; letter-spacing: -0.02em; }
+    .toc-head p { margin: 0 0 1mm; color: var(--accent); font: 700 8pt/1.5 "Segoe UI", system-ui, sans-serif; letter-spacing: 0.14em; text-align: right; text-transform: uppercase; }
+    .toc-head p span { display: block; color: var(--muted); font-weight: 600; }
+    .toc-groups { column-count: 2; column-gap: 9mm; }
+    .toc-group { break-inside: avoid-column; margin-bottom: 4.5mm; }
+    .contents h3 { margin: 0 0 1.5mm; padding-bottom: 1.2mm; border-bottom: 0.5pt solid var(--accent); color: var(--accent); font: 700 7.8pt "Segoe UI", system-ui, sans-serif; letter-spacing: 0.14em; text-transform: uppercase; break-after: avoid; }
+    .contents ol { margin: 0; padding: 0; list-style: none; }
+    .contents li { position: relative; margin: 0; padding: 1.1mm 0 1.1mm 8mm; border-bottom: 0.3pt solid #dfe4e8; font: 9pt/1.3 Georgia, "Times New Roman", serif; break-inside: avoid; counter-increment: review; }
+    .contents li::before { content: counter(review); position: absolute; left: 0; top: 1.2mm; color: var(--accent); font: 700 8pt "Segoe UI", system-ui, sans-serif; }
+    .contents li:last-child { border-bottom: 0; }
     article { break-before: page; }
-    .kicker { margin: 0 0 1.5mm; color: var(--accent); font-size: 8pt; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
-    h2 { margin: 0 0 3mm; font-size: 18pt; line-height: 1.2; }
-    .review-abstract { margin: 0 0 3.5mm; font-weight: 700; }
+    .kicker { display: flex; align-items: center; gap: 3mm; margin: 0 0 2.5mm; color: var(--accent); font-size: 7.8pt; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
+    .kicker::after { content: ""; flex: 1; border-top: 0.6pt solid var(--accent); }
+    h2 { margin: 0 0 3.5mm; font: 400 21pt/1.12 Georgia, "Times New Roman", serif; letter-spacing: -0.01em; }
+    .review-abstract { margin: 0 0 4mm; padding-bottom: 3.5mm; border-bottom: 0.6pt solid var(--accent); font-weight: 700; }
     .review-key-points { margin-bottom: 4mm; padding: 2.5mm 4mm; border-radius: 2mm; background: var(--soft); break-inside: avoid; }
     .review-key-points h4 { margin: 0 0 1mm; font-size: 9.5pt; }
     .review-key-points ul { margin: 0; padding-left: 4mm; }
@@ -221,9 +252,9 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
     .terms { break-before: page; column-count: 3; column-gap: 6mm; }
     .terms p { margin: 0 0 1mm; font-size: 8pt; line-height: 1.3; break-inside: avoid; }
     .terms strong { font-family: "Segoe UI", system-ui, sans-serif; }
-    .cover .updated { color: #1a1f24; font-weight: 600; }
     .references { break-before: page; column-count: 2; column-gap: 7mm; }
-    .references > h1 { column-span: all; margin: 0 0 4mm; font-size: 20pt; }
+    .terms > h1 { column-span: all; margin: 0 0 5mm; padding-bottom: 2.5mm; border-bottom: 0.8pt solid #1a1f24; font: 400 26pt/1 Georgia, "Times New Roman", serif; }
+    .references > h1 { column-span: all; margin: 0 0 5mm; padding-bottom: 2.5mm; border-bottom: 0.8pt solid #1a1f24; font: 400 26pt/1 Georgia, "Times New Roman", serif; }
     .references h3 { margin: 3mm 0 1mm; color: var(--accent); font-size: 9pt; line-height: 1.25; break-after: avoid; }
     .references ol { margin: 0; padding-left: 5mm; }
     .references li { margin-bottom: 1mm; font-size: 7.6pt; line-height: 1.3; break-inside: avoid; }
@@ -243,24 +274,23 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
     ${diagramStyles()}
 </style></head><body>
     <section class="cover">
-        <div class="cover-panel">
-            <p class="label">Clinical Conditions</p>
-            <div class="cover-art">${coverArt}</div>
-            <h1>${SYSTEM_NAME}<span>Review Articles</span></h1>
+        <div class="cover-art">${coverArtLit}</div>
+        <header class="masthead">
+            <h1>Clinical <em>Conditions</em></h1>
+            <p class="issue">Review articles<span>Last updated ${updated}</span></p>
+        </header>
+        <ul class="coverlines">
+            <li>Inside</li>
+            ${groups.map((group) => `<li>${group.name}</li>`).join("")}
+        </ul>
+        <div class="headline">
+            <p class="kicker">${REACH.charAt(0).toUpperCase() + REACH.slice(1)}</p>
+            <h2>${SYSTEM_NAME}</h2>
+            <p class="deck">${coverDeck}</p>
         </div>
-        <div class="cover-stats">
-            <div><strong>${physiologyIds.length}</strong><span>physiology topics</span></div>
-            <div><strong>${articles.length - physiologyIds.length}</strong><span>clinical topics</span></div>
-            <div><strong>${figureCount}</strong><span>diagrams</span></div>
-            <div><strong>${referenceCount}</strong><span>references</span></div>
-        </div>
-        <p class="reach">Every topic ${REACH}, written as a review article with its diagrams.</p>
-        <div class="cover-foot">
-            <p class="updated">Last updated ${updated}</p>
-            <p>For educational use only. This is a study aid, not a clinical reference.</p>
-        </div>
+        <div class="cover-base"><span>For educational use only. This is a study aid, not a clinical reference.</span></div>
     </section>
-    <nav class="contents"><h1>Contents</h1>${contents}</nav>
+    <nav class="contents"><header class="toc-head"><h1>Contents</h1><p>${SYSTEM_NAME} review articles<span>Last updated ${updated}</span></p></header><div class="toc-groups">${contents}</div></nav>
     ${articles.map((a) => a.html).join("\n")}
     <section class="terms"><h1>Abbreviations</h1>${terms}</section>
     ${references ? `<section class="references"><h1>References</h1>${references}</section>` : ""}
