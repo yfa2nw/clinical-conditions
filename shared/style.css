@@ -824,9 +824,24 @@ body {
     display: flex;
     gap: 4px;
     margin: 0 -8px;
-    padding: 0 0 10px;
+    padding: 0 0 8px;
     overflow-x: auto;
-    scrollbar-width: none;
+    scrollbar-color: var(--color-border-strong) transparent;
+    scrollbar-width: thin;
+}
+
+/* A thin, visible scrollbar shows that more sections lie off to the side */
+.section-nav::-webkit-scrollbar {
+    height: 6px;
+}
+
+.section-nav::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background-color: var(--color-border-strong);
+}
+
+.section-nav::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 .section-link {
@@ -3849,6 +3864,62 @@ a.link-button {
     color: var(--color-text-muted);
     font-size: 14px;
     font-weight: 500;
+}
+
+/* Full drug profiles on pharmacology pages: the same five rows, in the same order, under each mechanism */
+.drug-facts {
+    display: grid;
+    grid-template-columns: 176px minmax(0, 1fr);
+    column-gap: 18px;
+    margin: -10px 0 34px;
+}
+
+.drug-facts dt,
+.drug-facts dd {
+    margin: 0;
+    padding: 7px 0;
+    border-top: 1px solid var(--color-divider);
+}
+
+.drug-facts dt {
+    color: var(--color-text-muted);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    line-height: 1.9;
+    text-transform: uppercase;
+}
+
+.drug-facts dd {
+    font-size: 14.5px;
+    line-height: 1.5;
+}
+
+/* Contraindications and adverse effects carry a warning mark, so they are found by shape as well as by label */
+.drug-facts dt.is-caution::before {
+    content: "!";
+    display: inline-grid;
+    width: 15px;
+    height: 15px;
+    margin-right: 6px;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--color-up-soft);
+    color: var(--color-up);
+    font-size: 11px;
+    letter-spacing: 0;
+    vertical-align: 1px;
+}
+
+@media (max-width: 700px) {
+    .drug-facts {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .drug-facts dd {
+        padding-top: 0;
+        border-top: 0;
+    }
 }
 
 /* =========================

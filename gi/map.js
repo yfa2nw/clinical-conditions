@@ -142,5 +142,14 @@ function drawTract({ stations: s, width, add, part, note }) {
         organs.special = [x + 10, cy];
     }
 
+    /* ----- Pharmacology: a capsule below the rectum, off the tract, on the physiology page ----- */
+    if (s.pharmacology) {
+        const cy = s.pharmacology.top + 34;
+        const tilt = `rotate(-35 ${x} ${cy})`;
+        add(svgEl("rect", { x: x - 16, y: cy - 7, width: 32, height: 14, rx: 7, transform: tilt, class: "map-organ", "data-organ": "pharmacology" }));
+        part("pharmacology", `M ${x - 4} ${cy - 5.7} L ${x + 4} ${cy + 5.7}`, "map-thin"); // the seam, turned with the capsule
+        organs.pharmacology = [x + 14, cy - 8];
+    }
+
     return organs;
 }

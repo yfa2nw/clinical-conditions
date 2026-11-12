@@ -221,6 +221,15 @@ function updateScrollState() {
     });
     if (progress > 0.995) current = links[links.length - 1];
 
+    // Keep the current link visible when the bar is wider than the header
+    if (current.getAttribute("aria-current") !== "true") {
+        const nav = current.parentElement;
+        const left = current.getBoundingClientRect().left - nav.getBoundingClientRect().left + nav.scrollLeft;
+        if (left < nav.scrollLeft || left + current.offsetWidth > nav.scrollLeft + nav.clientWidth) {
+            nav.scrollTo({ left: left - 16, behavior: scrollBehavior() });
+        }
+    }
+
     links.forEach((link) => {
         if (link === current) {
             link.setAttribute("aria-current", "true");

@@ -12,6 +12,11 @@ const GI_FIGURE_SECTIONS = {
     "enteric-nervous-system": ["Structure", "Motility patterns", "Pharmacology"],
     "digestion-absorption": ["", "Carbohydrates", "Proteins", "Fats", "Micronutrients"],
     "liver-function": ["Anatomy and histology", "Anatomy and histology", "Anatomy and histology", "Carbohydrate metabolism", "Bilirubin conjugation", "Channels", "Pharmacology"],
+    "gi-pharm-acid": ["Suppressing acid"],
+    "gi-pharm-hepatitis-bile": ["Hepatitis B and D"],
+    "gi-pharm-nausea": ["The CTZ and the gut"],
+    "gi-pharm-motility": ["Speeding the gut"],
+    "gi-pharm-immune": ["Broad suppression"],
 };
 
 // For a diagram with no description on its page
@@ -111,7 +116,8 @@ function figureKey(after, svg, id, label = "") {
     for (const m of section.matchAll(/<span class="cause-number"[^>]*>([A-Z0-9]+)<\/span><span class="cause-text"><span class="cause-name">([\s\S]*?)<\/span><span class="cause-detail">/g)) {
         if (!found.has(m[1])) found.set(m[1], plain(m[2]));
     }
-    for (const m of section.matchAll(/<h5 class="drug-name"><span class="cause-number"[^>]*>(\d+)<\/span>([\s\S]*?)<\/h5>/g)) {
+    // On a pharmacology page the drugs follow in later sections, so their headings are looked for down the page
+    for (const m of after.matchAll(/<h5 class="drug-name"><span class="cause-number"[^>]*>(\d+)<\/span>([\s\S]*?)<\/h5>/g)) {
         if (!found.has(m[1])) found.set(m[1], plain(m[2].replace(/<span class="drug-examples">[\s\S]*?<\/span>/, "")));
     }
     for (const m of section.matchAll(/<h4 class="sc-heading">(\d+)\. ([\s\S]*?)<\/h4>/g)) {
