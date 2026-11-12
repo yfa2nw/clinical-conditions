@@ -49,7 +49,13 @@ const clinicalGroups = [...page.matchAll(/<p class="group-label"[^>]*>([^<]+)<\/
     .map((m) => ({ name: m[1].replaceAll("&amp;", "&"), ids: [...m[2].matchAll(/data-condition="([^"]+)"/g)].map((c) => c[1]) }))
     .filter((group) => group.ids.length)
     .map((group) => ({ ...group, source: page }));
-const groups = [{ name: "Physiology", ids: physiologyIds, source: physiologyPage }, ...clinicalGroups];
+// Pharmacology pages sit on the physiology page but get their own group, after the special topics
+const isPharmacology = (id) => id.startsWith(`${SYSTEM}-pharm`);
+const groups = [
+    { name: "Physiology", ids: physiologyIds.filter((id) => !isPharmacology(id)), source: physiologyPage },
+    ...clinicalGroups,
+    { name: "Pharmacology", ids: physiologyIds.filter(isPharmacology), source: physiologyPage },
+].filter((group) => group.ids.length);
 
 const glossary = new Map();
 // An abbreviation can mean different things on different pages, such as V1, so each meaning is kept
