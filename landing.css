@@ -373,67 +373,160 @@
     }
 }
 
+/* One neuron fires an action potential (6 s loop): inputs reach the soma, the hillock fires, the spike jumps
+   from node to node, the terminals release vesicles, and the trace above draws the spike */
 .neuro-dendrite,
 .neuro-axon {
     fill: none;
     stroke: #8f8aff;
     stroke-linecap: round;
-    stroke-width: 2.5;
+    stroke-width: 3;
 }
 
-.neuro-myelin {
-    fill: none;
+.neuro-myelin-seg {
+    fill: #3b3780;
     stroke: #6d67d1;
-    stroke-dasharray: 15 5;
-    stroke-width: 8;
+    stroke-width: 2;
 }
 
-.neuro-bouton {
-    fill: #b0acff;
+.neuro-hillock {
+    fill: #2c2a66;
+    stroke: #b0acff;
+    stroke-width: 2;
+    animation: hillock-fire 6s linear infinite;
 }
 
 .neuro-soma {
     fill: #232350;
     stroke: #b0acff;
     stroke-width: 3;
-    animation: soma-fire 10.5s linear infinite;
-}
-
-.neuro-soma[data-step="1"] { animation-delay: 1.75s; }
-.neuro-soma[data-step="2"] { animation-delay: 3.5s; }
-.neuro-soma[data-step="3"] { animation-delay: 5.25s; }
-.neuro-soma[data-step="4"] { animation-delay: 7s; }
-.neuro-soma[data-step="5"] { animation-delay: 8.75s; }
-.neuro-soma[data-step="6"] { animation-delay: 10.5s; }
-
-@keyframes soma-fire {
-    0%, 12%, 100% {
-        fill: #232350;
-    }
-
-    4% {
-        fill: #b0acff;
-    }
+    animation: soma-fire 6s linear infinite;
 }
 
 .neuro-pulse {
     fill: none;
     filter: drop-shadow(0 0 5px #ffffff);
     stroke: #ffffff;
-    stroke-dasharray: 2 200;
+    stroke-dasharray: 3 200;
     stroke-linecap: round;
     stroke-width: 6;
-    animation: signal-travel 10.5s linear infinite;
+    opacity: 0;
+    animation: input-travel 6s linear infinite;
 }
 
-@keyframes signal-travel {
-    from {
-        stroke-dashoffset: 2;
-    }
+.neuro-ranvier {
+    fill: #b0acff;
+    animation: node-fire 6s linear infinite;
+}
 
-    to {
-        stroke-dashoffset: -100;
-    }
+/* Saltatory conduction: each node fires in turn after the hillock, about 0.22 s apart */
+.neuro-ranvier[data-n="0"] { animation-delay: 1.5s; }
+.neuro-ranvier[data-n="1"] { animation-delay: 1.72s; }
+.neuro-ranvier[data-n="2"] { animation-delay: 1.94s; }
+.neuro-ranvier[data-n="3"] { animation-delay: 2.16s; }
+.neuro-ranvier[data-n="4"] { animation-delay: 2.38s; }
+.neuro-ranvier[data-n="5"] { animation-delay: 2.6s; }
+.neuro-ranvier[data-n="6"] { animation-delay: 2.82s; }
+
+.neuro-bouton {
+    fill: #232350;
+    stroke: #b0acff;
+    stroke-width: 2.5;
+    animation: bouton-fire 6s linear 3.05s infinite;
+}
+
+.neuro-vesicle {
+    fill: #e8e6ff;
+    animation: vesicle-release 6s ease-out 3.05s infinite;
+}
+
+/* The postsynaptic membrane, and transmitter that crosses the cleft when the bouton fires */
+.neuro-post {
+    fill: none;
+    stroke: #6d67d1;
+    stroke-linecap: round;
+    stroke-width: 3;
+}
+
+.neuro-transmitter {
+    fill: #ffffff;
+    opacity: 0;
+    animation: transmitter-cross 6s ease-out 3.05s infinite;
+}
+
+.neuro-axis,
+.neuro-threshold {
+    fill: none;
+    stroke: #4b479a;
+    stroke-width: 1.5;
+}
+
+.neuro-threshold {
+    stroke-dasharray: 6 6;
+}
+
+.neuro-trace {
+    fill: none;
+    stroke: #e8e6ff;
+    stroke-dasharray: 100;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+    filter: drop-shadow(0 0 4px #8f8aff);
+    animation: trace-draw 6s linear infinite;
+}
+
+.is-neuro .art-label.is-small {
+    fill: #9a97d6;
+    font-size: 14px;
+}
+
+@keyframes input-travel {
+    0% { opacity: 1; stroke-dashoffset: 3; }
+    18% { opacity: 1; stroke-dashoffset: -100; }
+    19%, 100% { opacity: 0; stroke-dashoffset: -100; }
+}
+
+@keyframes soma-fire {
+    0%, 16%, 34%, 100% { fill: #232350; filter: none; }
+    22% { fill: #e8e6ff; filter: drop-shadow(0 0 10px #b0acff); }
+}
+
+@keyframes hillock-fire {
+    0%, 20%, 30%, 100% { fill: #2c2a66; filter: none; }
+    24% { fill: #ffffff; filter: drop-shadow(0 0 8px #ffffff); }
+}
+
+@keyframes node-fire {
+    0%, 6%, 100% { fill: #b0acff; stroke: transparent; stroke-width: 0; filter: none; }
+    2% { fill: #ffffff; stroke: #ffffff; stroke-width: 9; filter: drop-shadow(0 0 12px #ffffff); }
+}
+
+@keyframes bouton-fire {
+    0%, 14%, 100% { fill: #232350; stroke-width: 2.5; }
+    3% { fill: #e8e6ff; stroke-width: 5; }
+}
+
+/* Vesicles fuse at the edge facing the cleft and vanish, then refill out of sight before fading back in */
+@keyframes vesicle-release {
+    0% { opacity: 1; transform: translateX(0); }
+    6% { opacity: 0; transform: translateX(4px); }
+    7%, 40% { opacity: 0; transform: translateX(0); }
+    55%, 100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes transmitter-cross {
+    0%, 4% { opacity: 0; transform: translateX(-4px); }
+    7% { opacity: 1; }
+    16% { opacity: 0; transform: translateX(3px); }
+    17%, 100% { opacity: 0; transform: translateX(-4px); }
+}
+
+@keyframes trace-draw {
+    0%, 16% { opacity: 1; stroke-dashoffset: 100; }
+    50% { opacity: 1; stroke-dashoffset: 0; }
+    85% { opacity: 1; stroke-dashoffset: 0; }
+    95%, 100% { opacity: 0; stroke-dashoffset: 0; }
 }
 
 /* =========================
@@ -760,11 +853,20 @@
 
     .neuro-pulse {
         animation: none;
-        stroke-dashoffset: -45;
     }
 
-    .neuro-soma {
+    .neuro-soma,
+    .neuro-hillock,
+    .neuro-ranvier,
+    .neuro-bouton,
+    .neuro-vesicle,
+    .neuro-transmitter,
+    .neuro-trace {
         animation: none;
+    }
+
+    .neuro-trace {
+        stroke-dashoffset: 0;
     }
 
     .world,

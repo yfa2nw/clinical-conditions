@@ -221,8 +221,8 @@ const landing = readFileSync("index.html", "utf8");
 const panelStart = landing.indexOf(`<article class="world is-${SYSTEM}">`);
 const coverArt = panelStart < 0 ? "" : landing.slice(landing.indexOf("<svg", panelStart), landing.indexOf("</svg>", panelStart) + 6)
     .replace(/ role="img" aria-label="[^"]*"/, ' aria-hidden="true"')
-    .replace(/<text class="art-label"[\s\S]*?<\/text>/g, "")
-    .replace(/<path class="(?:gi-bolus|neuro-pulse)"[^>]*\/>/g, "");
+    .replace(/<text class="art-label[^"]*"[\s\S]*?<\/text>/g, "")
+    .replace(/<path class="(?:gi-bolus|neuro-pulse)[^"]*"[^>]*\/>/g, "");
 
 const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>${SYSTEM_NAME} Practice Tests</title><style>
     @page { size: A4; }
@@ -248,8 +248,14 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
     .cover-art .gi-tube.is-colon { stroke-dasharray: 18 4; stroke-linecap: butt; stroke-width: 17; }
     .cover-art .neuro-dendrite, .cover-art .neuro-axon { fill: none; stroke: var(--accent); stroke-linecap: round; stroke-width: 2; }
     .cover-art .neuro-myelin { fill: none; stroke: var(--accent); stroke-dasharray: 15 5; stroke-width: 7; opacity: 0.55; }
-    .cover-art .neuro-bouton { fill: var(--accent); }
+    .cover-art .neuro-bouton { fill: #fff; stroke: var(--accent); stroke-width: 2.5; }
     .cover-art .neuro-soma { fill: #fff; stroke: var(--accent); stroke-width: 2.5; }
+    .cover-art .neuro-myelin-seg { fill: #fff; stroke: var(--accent); stroke-width: 2; }
+    .cover-art .neuro-hillock { fill: #fff; stroke: var(--accent); stroke-width: 2; }
+    .cover-art .neuro-ranvier, .cover-art .neuro-vesicle { fill: var(--accent); }
+    .cover-art .neuro-axis, .cover-art .neuro-threshold { fill: none; stroke: var(--accent); stroke-width: 1.5; opacity: 0.4; }
+    .cover-art .neuro-threshold { stroke-dasharray: 6 6; }
+    .cover-art .neuro-trace { fill: none; stroke: var(--accent); stroke-linecap: round; stroke-linejoin: round; stroke-width: 3; }
     .headline { position: absolute; left: 16mm; right: 16mm; bottom: 34mm; }
     .headline .kicker { margin-bottom: 3mm; }
     .headline h2 { margin: 0 0 3mm; font: 700 46pt/0.95 Georgia, "Times New Roman", serif; letter-spacing: -0.02em; }

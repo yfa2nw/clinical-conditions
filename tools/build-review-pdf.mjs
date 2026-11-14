@@ -185,8 +185,8 @@ const landing = readFileSync("index.html", "utf8");
 const panelStart = landing.indexOf(`<article class="world is-${SYSTEM}">`);
 const coverArt = panelStart < 0 ? "" : landing.slice(landing.indexOf("<svg", panelStart), landing.indexOf("</svg>", panelStart) + 6)
     .replace(/ role="img" aria-label="[^"]*"/, ' aria-hidden="true"')
-    .replace(/<text class="art-label"[\s\S]*?<\/text>/g, "")
-    .replace(/<path class="(?:gi-bolus|neuro-pulse)"[^>]*\/>/g, "");
+    .replace(/<text class="art-label[^"]*"[\s\S]*?<\/text>/g, "")
+    .replace(/<path class="(?:gi-bolus|neuro-pulse)[^"]*"[^>]*\/>/g, "");
 // The landing panel's one-line description becomes the cover's deck
 const coverDeck = panelStart < 0 ? "" : (landing.slice(panelStart).match(/<div class="world-intro">[\s\S]*?<p>([^<]+)<\/p>/) || [, ""])[1];
 // One bright point in the drawing: the bolus entering the stomach, or a firing neuron
@@ -218,9 +218,15 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
     .cover-art .gi-tube.is-colon { stroke-dasharray: 22 4; stroke-linecap: butt; stroke-width: 24; }
     .cover-art .neuro-dendrite, .cover-art .neuro-axon { fill: none; stroke: var(--c-art); stroke-linecap: round; stroke-width: 2.5; }
     .cover-art .neuro-myelin { fill: none; stroke: var(--c-art); stroke-dasharray: 15 5; stroke-width: 8; opacity: 0.7; }
-    .cover-art .neuro-bouton { fill: var(--c-art); }
+    .cover-art .neuro-bouton { fill: var(--c-deep); stroke: var(--c-art); stroke-width: 2.5; }
     .cover-art .neuro-soma { fill: var(--c-deep); stroke: var(--c-art); stroke-width: 3; }
     .cover-art .neuro-soma.is-hot { fill: var(--c-hot); stroke: var(--c-hot); filter: drop-shadow(0 0 3mm var(--c-hot)); }
+    .cover-art .neuro-myelin-seg { fill: var(--c-deep); stroke: var(--c-art); stroke-width: 2; }
+    .cover-art .neuro-hillock { fill: var(--c-deep); stroke: var(--c-art); stroke-width: 2; }
+    .cover-art .neuro-ranvier, .cover-art .neuro-vesicle { fill: var(--c-art); }
+    .cover-art .neuro-axis, .cover-art .neuro-threshold { fill: none; stroke: var(--c-art); stroke-width: 1.5; opacity: 0.4; }
+    .cover-art .neuro-threshold { stroke-dasharray: 6 6; }
+    .cover-art .neuro-trace { fill: none; stroke: var(--c-art); stroke-linecap: round; stroke-linejoin: round; stroke-width: 3; }
     .cover-art .cover-hot { fill: var(--c-hot); filter: drop-shadow(0 0 3mm var(--c-hot)); }
     .masthead { position: absolute; top: 15mm; left: 16mm; right: 16mm; display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 3.5mm; border-bottom: 0.7pt solid rgba(255, 255, 255, 0.55); }
     .masthead h1 { margin: 0; font: 400 50pt/0.86 Georgia, "Times New Roman", serif; letter-spacing: -0.025em; }
