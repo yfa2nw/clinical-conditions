@@ -256,6 +256,8 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
     .cover-art .neuro-axis, .cover-art .neuro-threshold { fill: none; stroke: var(--accent); stroke-width: 1.5; opacity: 0.4; }
     .cover-art .neuro-threshold { stroke-dasharray: 6 6; }
     .cover-art .neuro-trace { fill: none; stroke: var(--accent); stroke-linecap: round; stroke-linejoin: round; stroke-width: 3; }
+    .cover-art .neuro-post { fill: none; stroke: var(--accent); stroke-linecap: round; stroke-width: 2.5; }
+    .cover-art .neuro-transmitter { display: none; }
     .headline { position: absolute; left: 16mm; right: 16mm; bottom: 34mm; }
     .headline .kicker { margin-bottom: 3mm; }
     .headline h2 { margin: 0 0 3mm; font: 700 46pt/0.95 Georgia, "Times New Roman", serif; letter-spacing: -0.02em; }

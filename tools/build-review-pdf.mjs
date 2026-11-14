@@ -227,6 +227,8 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
     .cover-art .neuro-axis, .cover-art .neuro-threshold { fill: none; stroke: var(--c-art); stroke-width: 1.5; opacity: 0.4; }
     .cover-art .neuro-threshold { stroke-dasharray: 6 6; }
     .cover-art .neuro-trace { fill: none; stroke: var(--c-art); stroke-linecap: round; stroke-linejoin: round; stroke-width: 3; }
+    .cover-art .neuro-post { fill: none; stroke: var(--c-art); stroke-linecap: round; stroke-width: 2.5; }
+    .cover-art .neuro-transmitter { display: none; }
     .cover-art .cover-hot { fill: var(--c-hot); filter: drop-shadow(0 0 3mm var(--c-hot)); }
     .masthead { position: absolute; top: 15mm; left: 16mm; right: 16mm; display: flex; justify-content: space-between; align-items: flex-end; padding-bottom: 3.5mm; border-bottom: 0.7pt solid rgba(255, 255, 255, 0.55); }
     .masthead h1 { margin: 0; font: 400 50pt/0.86 Georgia, "Times New Roman", serif; letter-spacing: -0.025em; }
