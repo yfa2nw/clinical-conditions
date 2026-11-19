@@ -43,15 +43,29 @@ function checkQuestions(site, page = "index.html", bank = "questions.js") {
     const articles = [...html.matchAll(/<article class="condition-content[^"]*" id="([^"]+)"/g)].map((m) => m[1]);
     const questions = vm.runInNewContext(`${readFileSync(`${site}/${bank}`, "utf8")};QUIZ_QUESTIONS`);
     const seen = new Set();
+    let unexplained = 0;
     for (const q of questions) {
         if (seen.has(q.id)) fail(`${site}: duplicate question ${q.id}`);
         seen.add(q.id);
         if (q.options.length !== 5 || new Set(q.options).size !== 5) fail(`${site}/${q.id}: needs five distinct options`);
         if (!(q.answer >= 0 && q.answer <= 4)) fail(`${site}/${q.id}: bad answer index`);
-        if (![1, 2].includes(q.step)) fail(`${site}/${q.id}: bad step`);
+        if (!["memory", "reasoning", "analysis"].includes(q.kind)) fail(`${site}/${q.id}: kind must be memory, reasoning, or analysis`);
+        if ("step" in q || "difficulty" in q) fail(`${site}/${q.id}: "step" and "difficulty" were replaced by "kind"`);
         if (!articles.includes(q.condition)) fail(`${site}/${q.id}: no article ${q.condition}`);
         if (q.notes && q.answer in q.notes) fail(`${site}/${q.id}: note on the correct answer`);
+        // Every wrong option needs a note; older questions are still being brought up to this
+        if ([0, 1, 2, 3, 4].some((i) => i !== q.answer && !(q.notes && q.notes[i]))) unexplained += 1;
     }
+    // Questions sharing a passage: one passage, on the first question, all on one page
+    const sets = new Map();
+    for (const q of questions) if (q.set) sets.set(q.set, [...(sets.get(q.set) || []), q]);
+    for (const [name, members] of sets) {
+        if (members.length < 2) fail(`${site}: set ${name} has only one question`);
+        if (!members[0].passage || members.slice(1).some((q) => q.passage)) fail(`${site}: set ${name} needs its passage on the first question only`);
+        if (new Set(members.map((q) => q.condition)).size > 1) fail(`${site}: set ${name} spans more than one page`);
+    }
+    for (const q of questions) if (q.passage && !q.set) fail(`${site}/${q.id}: a passage belongs to a set`);
+    if (unexplained) notes.push(`${site} ${bank}: ${unexplained} of ${questions.length} questions still lack a note on every wrong option`);
     // Chance is about 20%; well above that, picking the longest option becomes a way to guess
     const longest = questions.filter((q) => q.options[q.answer].length >= Math.max(...q.options.map((option) => option.length))).length;
     const longestShare = questions.length ? Math.round((longest / questions.length) * 100) : 0;
@@ -190,7 +204,7 @@ for (const [view, width, height, scheme] of [["desktop", 1440, 900, "light"], ["
             }
             if (pageErrors.length) { fail(`${where}: ${pageErrors.join("; ")}`); pageErrors = []; }
         }
-        const quiz = await run(`(() => { if (typeof QUIZ_QUESTIONS === "undefined" || !QUIZ_QUESTIONS.length) return "none"; location.hash = "quiz"; return "ok"; })()`);
+        const quiz = await run(`(() => { if (typeof QUIZ_QUESTIONS === "undefined" || !QUIZ_QUESTIONS.length) return "none"; location.hash = "quiz/" + QUIZ_QUESTIONS[0].condition; return "ok"; })()`);
         if (quiz === "ok") {
             await sleep(200);
             await run(`quizView.querySelector("form").requestSubmit(); 1`);

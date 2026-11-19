@@ -9,7 +9,13 @@ const searchHint = document.getElementById("search-hint");
 const noResults = document.getElementById("no-results");
 const themeToggle = document.getElementById("theme-toggle");
 const quizView = document.getElementById("quiz");
-const quizButton = document.getElementById("quiz-button");
+// Quizzes open from each page's "Quiz me" button; the hash is #quiz/<page id>
+const QUIZ_HASH = /^#quiz\/(.+)$/;
+const quizHashCondition = () => {
+    const match = location.hash.match(QUIZ_HASH);
+    const id = match && decodeURIComponent(match[1]);
+    return id && conditionContents.some((article) => article.id === id) ? id : null;
+};
 const ITEM_NAME = document.body.dataset.page === "physiology" ? "topic" : "condition";
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -40,7 +46,14 @@ conditionContents.forEach((article) => {
     const header = document.createElement("header");
     header.className = "article-header";
     title.replaceWith(header);
-    header.appendChild(title);
+
+    // The title shares a row with the page's actions: review article, worksheet, and quiz.js's "Quiz me", in that order
+    const row = document.createElement("div");
+    row.className = "header-row";
+    const actions = document.createElement("div");
+    actions.className = "header-actions";
+    row.append(title, actions);
+    header.appendChild(row);
 
     const sections = [...article.querySelectorAll(".content-section > h3")];
     if (sections.length) {
@@ -122,12 +135,7 @@ function showCondition(id, { updateHistory = true, focusTitle = false } = {}) {
     });
     activeArticle = selectedContent;
 
-    // Physiology pages have no quiz
-    if (quizView) {
-        quizView.classList.remove("active");
-        quizButton.classList.remove("active");
-        quizButton.removeAttribute("aria-current");
-    }
+    if (quizView) quizView.classList.remove("active");
 
     // Return the right panel to the top when switching conditions
     contentPanel.scrollTop = 0;
@@ -174,8 +182,8 @@ function conditionFromHash() {
 }
 
 window.addEventListener("popstate", () => {
-    if (quizView && location.hash === "#quiz") {
-        openQuiz({ updateHistory: false });
+    if (quizView && quizHashCondition()) {
+        openQuiz({ updateHistory: false, condition: quizHashCondition() });
         return;
     }
     showCondition(conditionFromHash() || conditionContents[0].id, { updateHistory: false });
@@ -547,16 +555,18 @@ document.addEventListener("keydown", (event) => {
 
 /* =========================
    Review article popup
-   A <dialog class="quick-review"> inside an article gets a button above the page's footer.
+   A <dialog class="quick-review"> inside an article gets a button among the header actions, beside "Quiz me".
 ========================= */
 
 document.querySelectorAll("dialog.quick-review").forEach((dialog) => {
     const opener = document.createElement("button");
     opener.type = "button";
-    opener.className = "quick-review-open";
-    opener.innerHTML = `<span class="quick-review-title">Review article</span>
-        <span class="quick-review-hint">A short journal-style review of this ${ITEM_NAME} and how it relates to others</span>`;
-    dialog.closest(".condition-content").querySelector(".article-footer").before(opener);
+    opener.className = "quick-review-open header-action";
+    opener.title = `A short journal-style review of this ${ITEM_NAME} and how it relates to others`;
+    opener.setAttribute("aria-label", "Review article");
+    // A page-with-lines icon; on phones the icon shows alone
+    opener.innerHTML = `<span class="header-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M9.5 11h6M9.5 14.5h6M9.5 18h4"/></svg></span><span class="header-action-label">Review article</span>`;
+    dialog.closest(".condition-content").querySelector(".header-actions").append(opener);
 
     const closer = document.createElement("button");
     closer.type = "button";
@@ -583,13 +593,31 @@ document.querySelectorAll("dialog.quick-review").forEach((dialog) => {
 });
 
 /* =========================
+   Worksheet
+   An article with data-worksheet="worksheets/<id>.pdf" gets a link to it among the header actions, after the review article.
+========================= */
+
+document.querySelectorAll(".condition-content[data-worksheet]").forEach((article) => {
+    const link = document.createElement("a");
+    link.className = "worksheet-open header-action";
+    link.href = article.dataset.worksheet;
+    link.target = "_blank";
+    link.rel = "noopener";
+    link.title = `A flowchart, review questions, and clinical scenarios on this ${ITEM_NAME}, with answers (PDF)`;
+    link.setAttribute("aria-label", "Worksheet (PDF)");
+    // A pencil icon; on phones the icon shows alone
+    link.innerHTML = `<span class="header-action-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 19l1-4L16 5l3 3L9 18z"/><path d="M14 7l3 3"/></svg></span><span class="header-action-label">Worksheet <span class="worksheet-tag">PDF</span></span>`;
+    article.querySelector(".header-actions").append(link);
+});
+
+/* =========================
    Start-up
 ========================= */
 
 const initialCondition = conditionFromHash();
 if (initialCondition) {
     showCondition(initialCondition, { updateHistory: false });
-} else if (location.hash === "#quiz") {
+} else if (quizView && quizHashCondition()) {
     // quiz.js opens the quiz once it has loaded
     updateScrollState();
 } else {

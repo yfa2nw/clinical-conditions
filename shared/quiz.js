@@ -1,33 +1,30 @@
 /* =========================
-   Practice quiz
-   (uses conditionButtons, conditionContents, contentPanel, quizView, quizButton,
-   viewStatus, labelFor and SITE_NAME from app.js)
+   Page quizzes
+   (uses conditionButtons, conditionContents, contentPanel, quizView, viewStatus,
+   labelFor, buttonFor, scrollBehavior, quizHashCondition and SITE_NAME from app.js)
+
+   Each page has its own quiz, opened by its "Quiz me" button. Memory questions come first,
+   then reasoning, then analysis, shuffled within each kind; a set of questions that shares a
+   passage stays together and in order.
 ========================= */
 
 // Each specialty keeps its own results (e.g. "gi-quiz-history")
 const QUIZ_HISTORY_KEY = `${document.body.dataset.specialty}-quiz-history`;
 const LETTERS = ["A", "B", "C", "D", "E"];
-const STEP_NAMES = { 1: "Step 1", 2: "Step 2 CK" };
-
-const quizConditionIds = conditionButtons
-    .map((button) => button.dataset.condition)
-    .filter((id) => QUIZ_QUESTIONS.some((question) => question.condition === id));
+const KINDS = ["memory", "reasoning", "analysis"];
+const KIND_NAMES = { memory: "Memory", reasoning: "Reasoning", analysis: "Analysis" };
 
 const quiz = {
     phase: "setup", // setup | question | results
-    settings: {
-        topics: new Set(quizConditionIds),
-        step: "all",
-        source: "all",
-        count: "10",
-    },
+    condition: null,
+    settings: { kind: "all", source: "all", count: "all" },
     items: [], // { question, order: [original option indexes in display order], chosen: display index or null }
     index: 0,
 };
 
 /* ---------- Abbreviations ---------- */
 
-// Quiz text is plain strings, so it borrows the definitions already on the pages
+// Quiz text borrows the definitions already on the pages
 const quizTerms = new Map();
 document.querySelectorAll("abbr.term").forEach((term) => {
     const text = term.textContent.trim();
@@ -60,7 +57,7 @@ function addQuizTerms(root, currentTopic = null) {
 
     nodes.forEach((node) => {
         const parent = node.parentElement;
-        if (parent.closest("button, .tag, .eyebrow, .visually-hidden, .option-letter, .term, .review-meta, .breakdown-name")) return;
+        if (parent.closest("button, .tag, .eyebrow, .visually-hidden, .option-letter, .term, .review-meta, .breakdown-name, th")) return;
 
         const pieces = node.textContent.split(quizTermPattern);
         if (pieces.length === 1) return;
@@ -87,6 +84,7 @@ function el(tag, props = {}, ...children) {
         if (value === null || value === undefined || value === false) return;
         if (key === "class") node.className = value;
         else if (key === "text") node.textContent = value;
+        else if (key === "html") node.innerHTML = value;
         else if (key.startsWith("on")) node.addEventListener(key.slice(2), value);
         else node.setAttribute(key, value === true ? "" : value);
     });
@@ -94,6 +92,14 @@ function el(tag, props = {}, ...children) {
         if (child !== null && child !== undefined && child !== false) node.append(child);
     });
     return node;
+}
+
+// Question text is written by the site, so HTML in it (lists, tables, emphasis) is trusted
+const looksLikeHtml = (text) => /<\/?[a-z][^>]*>/i.test(text);
+
+function rich(tag, text, props = {}) {
+    if (!text) return null;
+    return looksLikeHtml(text) ? el(tag === "p" ? "div" : tag, { ...props, html: text }) : el(tag, { ...props, text });
 }
 
 function shuffle(list) {
@@ -105,16 +111,23 @@ function shuffle(list) {
     return copy;
 }
 
-function conditionName(id) {
-    return labelFor(id);
+const conditionName = (id) => labelFor(id);
+const isCorrect = (item) => item.chosen !== null && item.order[item.chosen] === item.question.answer;
+const correctDisplayIndex = (item) => item.order.indexOf(item.question.answer);
+const questionsFor = (id) => QUIZ_QUESTIONS.filter((question) => question.condition === id);
+
+// The passage of a set is written once, on its first question
+function passageFor(question) {
+    if (!question.set) return null;
+    return QUIZ_QUESTIONS.find((other) => other.set === question.set && other.passage)?.passage || null;
 }
 
-function isCorrect(item) {
-    return item.chosen !== null && item.order[item.chosen] === item.question.answer;
-}
-
-function correctDisplayIndex(item) {
-    return item.order.indexOf(item.question.answer);
+// A short label for a question in the results list
+function summaryText(question) {
+    if (question.leadIn) return question.leadIn;
+    const text = question.stem.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+    const sentences = text.match(/[^.?!]+[.?!]/g) || [text];
+    return sentences[sentences.length - 1].trim();
 }
 
 function focusQuizTitle() {
@@ -140,27 +153,51 @@ function saveQuizHistory() {
     } catch (error) {}
 }
 
-/* ---------- Choosing questions ---------- */
+/* ---------- Choosing and ordering questions ---------- */
 
-function questionPool(settings) {
-    return QUIZ_QUESTIONS.filter((question) => {
-        if (!settings.topics.has(question.condition)) return false;
-        if (settings.step !== "all" && String(question.step) !== settings.step) return false;
+function questionPool(condition, settings) {
+    return questionsFor(condition).filter((question) => {
+        if (settings.kind !== "all" && question.kind !== settings.kind) return false;
         if (settings.source === "new" && quizHistory[question.id]) return false;
         if (settings.source === "missed" && (!quizHistory[question.id] || quizHistory[question.id].correct)) return false;
         return true;
     });
 }
 
+// Memory, then reasoning, then analysis; shuffled within each kind, with each set kept whole and in order
+function orderQuestions(questions, limit = Infinity) {
+    const units = [];
+    const bySet = new Map();
+    questions.forEach((question) => {
+        if (!question.set) return units.push([question]);
+        if (!bySet.has(question.set)) {
+            bySet.set(question.set, []);
+            units.push(bySet.get(question.set));
+        }
+        bySet.get(question.set).push(question);
+    });
+
+    const ordered = KINDS.flatMap((kind) => shuffle(units.filter((unit) => unit[0].kind === kind)));
+    if (limit === Infinity) return ordered.flat();
+
+    // Pick across kinds, keeping their proportions, then put them back in order
+    const chosen = new Set(shuffle(ordered).reduce((picked, unit) => {
+        if (picked.count >= limit) return picked;
+        picked.units.push(unit);
+        picked.count += unit.length;
+        return picked;
+    }, { units: [], count: 0 }).units);
+    return ordered.filter((unit) => chosen.has(unit)).flat();
+}
+
 function startQuiz(questions) {
-    quiz.items = shuffle(questions).map((question) => ({
+    quiz.items = questions.map((question) => ({
         question,
         order: shuffle(question.options.map((option, index) => index)),
         chosen: null,
     }));
     quiz.index = 0;
     quiz.phase = "question";
-    quizButton.classList.add("in-progress");
     renderQuiz();
     contentPanel.scrollTop = 0;
     focusQuizTitle();
@@ -169,7 +206,6 @@ function startQuiz(questions) {
 function finishQuiz() {
     quiz.items = quiz.items.filter((item) => item.chosen !== null);
     quiz.phase = quiz.items.length ? "results" : "setup";
-    quizButton.classList.remove("in-progress");
     renderQuiz();
     contentPanel.scrollTop = 0;
     focusQuizTitle();
@@ -177,45 +213,44 @@ function finishQuiz() {
 
 /* ---------- Opening the quiz view ---------- */
 
-function openQuiz({ updateHistory = true, condition = null } = {}) {
+function openQuiz({ updateHistory = true, condition }) {
+    if (!condition || !questionsFor(condition).length) return;
+
     conditionContents.forEach((article) => article.classList.remove("active"));
+    // The page being quizzed stays marked in the sidebar
     conditionButtons.forEach((button) => {
-        button.classList.remove("active");
-        button.removeAttribute("aria-current");
+        const isCurrent = button.dataset.condition === condition;
+        button.classList.toggle("active", isCurrent);
+        if (isCurrent) button.setAttribute("aria-current", "true");
+        else button.removeAttribute("aria-current");
     });
-    quizButton.classList.add("active");
-    quizButton.setAttribute("aria-current", "true");
     quizView.classList.add("active");
 
-    if (updateHistory && location.hash !== "#quiz") {
-        history.pushState({ quiz: true }, "", "#quiz");
-    }
-    document.title = `Practice quiz · ${SITE_NAME}`;
-    viewStatus.textContent = "Showing practice quiz";
+    const hash = `#quiz/${encodeURIComponent(condition)}`;
+    if (updateHistory && location.hash !== hash) history.pushState({ quiz: condition }, "", hash);
+    document.title = `Quiz: ${conditionName(condition)} · ${SITE_NAME}`;
+    viewStatus.textContent = `Showing the quiz on ${conditionName(condition)}`;
 
-    if (condition) {
-        quiz.settings = { topics: new Set([condition]), step: "all", source: "all", count: "all" };
-        startQuiz(QUIZ_QUESTIONS.filter((question) => question.condition === condition));
-        return;
+    if (quiz.condition !== condition) {
+        quiz.condition = condition;
+        quiz.settings = { kind: "all", source: "all", count: "all" };
+        quiz.phase = "setup";
+    } else if (quiz.phase === "results") {
+        quiz.phase = "setup";
     }
-
     renderQuiz();
     contentPanel.scrollTop = 0;
 }
 
-// An organ system with no questions yet has no quiz to offer
-quizButton.hidden = QUIZ_QUESTIONS.length === 0;
-
-quizButton.addEventListener("click", () => {
-    openQuiz();
-    focusQuizTitle();
-});
+function closeQuiz() {
+    showCondition(quiz.condition, { focusTitle: true });
+}
 
 function renderQuiz() {
     if (quiz.phase === "question") quizView.replaceChildren(renderQuestion());
     else if (quiz.phase === "results") quizView.replaceChildren(renderResults());
     else quizView.replaceChildren(renderSetup());
-    if (quiz.phase !== "setup") addQuizTerms(quizView, quiz.phase === "question" ? quiz.items[quiz.index].question.condition : null);
+    addQuizTerms(quizView, quiz.condition);
 }
 
 /* =========================
@@ -241,12 +276,14 @@ function segmented(name, legend, choices, current, onChange) {
 }
 
 function renderSetup() {
+    const condition = quiz.condition;
     const settings = quiz.settings;
+    const all = questionsFor(condition);
     const poolCount = el("p", { class: "pool-count", "aria-live": "polite" });
     const startButton = el("button", { type: "submit", class: "btn btn-primary", text: "Start quiz" });
 
     function refreshCount() {
-        const available = questionPool(settings).length;
+        const available = questionPool(condition, settings).length;
         const count = settings.count === "all" ? available : Math.min(Number(settings.count), available);
         poolCount.textContent = available
             ? `${count} of ${available} matching ${available === 1 ? "question" : "questions"}`
@@ -254,88 +291,40 @@ function renderSetup() {
         startButton.disabled = available === 0;
     }
 
-    // Topic checkboxes, grouped like the sidebar
-    const topicGroups = [...document.querySelectorAll(".condition-group")].map((group) => {
-        const ids = [...group.querySelectorAll(".condition-item")]
-            .map((button) => button.dataset.condition)
-            .filter((id) => quizConditionIds.includes(id));
-        if (!ids.length) return null; // a group with no questions yet
-
-        return el("div", { class: "topic-group" },
-            el("p", { class: "topic-group-label", text: group.previousElementSibling.textContent }),
-            el("div", { class: "topic-list" },
-                ids.map((id) => {
-                    const total = QUIZ_QUESTIONS.filter((question) => question.condition === id).length;
-                    return el("label", { class: "topic-chip" },
-                        el("input", {
-                            type: "checkbox",
-                            value: id,
-                            checked: settings.topics.has(id),
-                            onchange: (event) => {
-                                if (event.target.checked) settings.topics.add(id);
-                                else settings.topics.delete(id);
-                                refreshCount();
-                            },
-                        }),
-                        el("span", { class: "topic-name", text: conditionName(id) }),
-                        el("span", { class: "topic-count", text: total, "aria-label": `${total} questions` }),
-                    );
-                }),
-            ),
-        );
-    }).filter(Boolean);
-
-    function setAllTopics(checked) {
-        settings.topics = new Set(checked ? quizConditionIds : []);
-        form.querySelectorAll(".topic-chip input").forEach((input) => {
-            input.checked = checked;
-        });
-        refreshCount();
-    }
-
+    const kindCounts = KINDS.map((kind) => [kind, all.filter((question) => question.kind === kind).length]);
     const form = el("form", {
         class: "quiz-setup",
         onsubmit: (event) => {
             event.preventDefault();
-            const pool = questionPool(settings);
-            const count = settings.count === "all" ? pool.length : Number(settings.count);
-            startQuiz(shuffle(pool).slice(0, count));
+            const pool = questionPool(condition, settings);
+            startQuiz(orderQuestions(pool, settings.count === "all" ? Infinity : Number(settings.count)));
         },
     },
-        el("fieldset", { class: "setup-group" },
-            el("legend", { text: "Topics" }),
-            el("div", { class: "setup-links" },
-                el("button", { type: "button", class: "text-button", text: "Select all", onclick: () => setAllTopics(true) }),
-                el("button", { type: "button", class: "text-button", text: "Clear", onclick: () => setAllTopics(false) }),
-            ),
-            topicGroups,
-        ),
-        segmented("quiz-step", "Exam focus", [["all", "Both"], ["1", "Step 1"], ["2", "Step 2 CK"]], settings.step, (value) => {
-            settings.step = value;
+        segmented("quiz-kind", "Questions to include", [["all", "All"], ...kindCounts.filter(([, n]) => n).map(([kind, n]) => [kind, `${KIND_NAMES[kind]} (${n})`])], settings.kind, (value) => {
+            settings.kind = value;
             refreshCount();
         }),
-        segmented("quiz-source", "Questions", [["all", "All"], ["new", "Not yet answered"], ["missed", "Previously missed"]], settings.source, (value) => {
+        segmented("quiz-source", "Progress", [["all", "All"], ["new", "Not yet answered"], ["missed", "Previously missed"]], settings.source, (value) => {
             settings.source = value;
             refreshCount();
         }),
-        segmented("quiz-count", "Length", [["5", "5"], ["10", "10"], ["20", "20"], ["all", "All"]], settings.count, (value) => {
+        segmented("quiz-count", "Length", [["10", "10"], ["20", "20"], ["all", "All"]], settings.count, (value) => {
             settings.count = value;
             refreshCount();
         }),
         el("div", { class: "setup-footer" }, poolCount, startButton),
     );
-
     refreshCount();
 
-    // Lifetime progress
-    const answeredIds = Object.keys(quizHistory).filter((id) => QUIZ_QUESTIONS.some((question) => question.id === id));
-    const correctCount = answeredIds.filter((id) => quizHistory[id].correct).length;
-    const stats = answeredIds.length
+    // Progress on this page
+    const answered = all.filter((question) => quizHistory[question.id]);
+    const correctCount = answered.filter((question) => quizHistory[question.id].correct).length;
+    const stats = answered.length
         ? el("div", { class: "quiz-stats" },
             el("p", {},
-                el("strong", { text: `${answeredIds.length} of ${QUIZ_QUESTIONS.length}` }),
+                el("strong", { text: `${answered.length} of ${all.length}` }),
                 " questions answered · ",
-                el("strong", { text: `${Math.round((correctCount / answeredIds.length) * 100)}%` }),
+                el("strong", { text: `${Math.round((correctCount / answered.length) * 100)}%` }),
                 " correct on your latest attempts",
             ),
             el("button", {
@@ -343,8 +332,8 @@ function renderSetup() {
                 class: "text-button",
                 text: "Reset progress",
                 onclick: () => {
-                    if (!window.confirm("Clear your saved quiz progress?")) return;
-                    quizHistory = {};
+                    if (!window.confirm(`Clear your saved progress on ${conditionName(condition)}?`)) return;
+                    all.forEach((question) => delete quizHistory[question.id]);
                     saveQuizHistory();
                     renderQuiz();
                 },
@@ -352,11 +341,16 @@ function renderSetup() {
         )
         : null;
 
+    const pdf = document.getElementById(condition)?.dataset.quizPdf;
     return el("div", { class: "quiz-shell" },
         el("header", { class: "quiz-intro" },
-            el("p", { class: "eyebrow", text: "Practice questions" }),
-            el("h2", { id: "quiz-title", tabindex: "-1", text: "Test yourself" }),
-            el("p", { text: "USMLE-style clinical vignettes: Step 1 questions test mechanisms, microbiology and pathology; Step 2 CK questions test diagnosis and the next best step in management. Every answer comes with an explanation and a link back to the topic." }),
+            el("p", { class: "eyebrow", text: "Quiz" }),
+            el("h2", { id: "quiz-title", tabindex: "-1", text: conditionName(condition) }),
+            el("p", { text: "Memory questions check the facts, reasoning questions ask how and why, and analysis questions work through cases and data. Every answer explains why it is right and why each other option is wrong, so read the explanations as part of the page." }),
+            el("p", { class: "quiz-intro-links" },
+                el("button", { type: "button", class: "text-button", text: `Back to ${conditionName(condition)}`, onclick: closeQuiz }),
+                pdf && el("a", { class: "text-button", href: pdf, target: "_blank", rel: "noopener", text: "Offline copy (PDF)" }),
+            ),
         ),
         stats,
         form,
@@ -374,6 +368,17 @@ function renderProgressTrack() {
             if (item.chosen !== null) state = isCorrect(item) ? "correct" : "wrong";
             return el("li", { class: `track-${state}${index === quiz.index ? " track-current" : ""}` });
         }),
+    );
+}
+
+function renderPassage(question) {
+    const passage = passageFor(question);
+    if (!passage) return null;
+    const members = quiz.items.filter((item) => item.question.set === question.set);
+    const position = members.findIndex((item) => item.question === question) + 1;
+    return el("section", { class: "quiz-passage" },
+        el("p", { class: "quiz-passage-label", text: `Case · question ${position} of ${members.length}` }),
+        rich("div", passage),
     );
 }
 
@@ -440,10 +445,7 @@ function renderQuestion() {
                 renderQuiz();
                 const feedbackTitle = quizView.querySelector(".feedback-title");
                 feedbackTitle.focus({ preventScroll: true });
-                feedbackTitle.closest(".feedback").scrollIntoView({
-                    block: "nearest",
-                    behavior: scrollBehavior(),
-                });
+                feedbackTitle.closest(".feedback").scrollIntoView({ block: "nearest", behavior: scrollBehavior() });
             } else if (isLast) {
                 finishQuiz();
             } else {
@@ -455,12 +457,14 @@ function renderQuestion() {
         },
     },
         el("div", { class: "question-tags" },
-            el("span", { class: `tag tag-step${question.step}`, text: STEP_NAMES[question.step] }),
-            el("span", { class: "tag", text: conditionName(question.condition) }),
+            el("span", { class: `tag tag-${question.kind}`, text: KIND_NAMES[question.kind] }),
         ),
-        el("p", { class: "vignette", text: question.stem }),
+        renderPassage(question),
+        rich("p", question.stem, { class: "vignette" }),
         el("fieldset", { class: "options" },
-            el("legend", { class: "lead-in", text: question.leadIn }),
+            question.leadIn
+                ? el("legend", { class: "lead-in", text: question.leadIn })
+                : el("legend", { class: "visually-hidden", text: "Choose one answer" }),
             options,
         ),
         el("div", { class: "quiz-actions" },
@@ -484,40 +488,37 @@ function renderQuestion() {
     );
 }
 
+// Why the chosen wrong option is wrong comes first, then the explanation, then every other option
 function renderFeedback(item) {
     const question = item.question;
     const correct = isCorrect(item);
     const chosenOriginal = item.order[item.chosen];
-    const chosenNote = !correct && question.notes && question.notes[chosenOriginal];
+    const notes = question.notes || {};
+    const chosenNote = !correct && notes[chosenOriginal];
 
-    // Notes on the other wrong options, in display order
     const otherNotes = item.order
         .map((originalIndex, displayIndex) => ({ originalIndex, displayIndex }))
-        .filter(({ originalIndex }) => question.notes && question.notes[originalIndex] && originalIndex !== chosenOriginal);
+        .filter(({ originalIndex }) => notes[originalIndex] && originalIndex !== chosenOriginal);
 
     return el("div", { class: `feedback ${correct ? "feedback-correct" : "feedback-wrong"}` },
         el("h3", { class: "feedback-title", tabindex: "-1" },
             el("span", { class: "feedback-icon", "aria-hidden": "true", text: correct ? "✓" : "✗" }),
             correct ? "Correct" : `Incorrect. The answer is ${LETTERS[correctDisplayIndex(item)]}.`,
         ),
-        el("p", { text: question.explanation }),
         chosenNote && el("p", { class: "feedback-note" },
             el("strong", { text: `Why not ${LETTERS[item.chosen]}? ` }),
-            chosenNote,
+            rich("span", chosenNote),
         ),
+        rich("div", question.explanation, { class: "feedback-explanation" }),
         renderInfo(question),
-        otherNotes.length > 0 && el("details", { class: "feedback-more" },
-            el("summary", { text: "About the other options" }),
+        otherNotes.length > 0 && el("div", { class: "feedback-options" },
+            el("h4", { text: correct ? "Why not the other options" : "The other options" }),
             el("ul", {},
                 otherNotes.map(({ originalIndex, displayIndex }) => el("li", {},
-                    el("strong", { text: `${LETTERS[displayIndex]}. ` }),
-                    question.notes[originalIndex],
+                    el("strong", { text: `${LETTERS[displayIndex]}. ${question.options[originalIndex]}: ` }),
+                    rich("span", notes[originalIndex]),
                 )),
             ),
-        ),
-        el("p", { class: "feedback-review" },
-            "Review: ",
-            el("button", { type: "button", class: "link-button", "data-goto": question.condition, text: conditionName(question.condition) }),
         ),
     );
 }
@@ -527,7 +528,7 @@ function renderInfo(question) {
     if (!question.info) return null;
     return el("p", { class: "feedback-info" },
         el("strong", { text: "Additional information: " }),
-        question.info,
+        rich("span", question.info),
     );
 }
 
@@ -536,20 +537,18 @@ function renderInfo(question) {
 ========================= */
 
 function scoreMessage(percent) {
-    if (percent >= 90) return "Excellent work. You know this material well.";
-    if (percent >= 70) return "Solid performance. Review the questions you missed to close the gaps.";
-    if (percent >= 50) return "Good start. Revisit the topics below with the lowest scores.";
-    return "Keep going. Read through the topics below, then try again.";
+    if (percent >= 90) return "Excellent work. You know this page well.";
+    if (percent >= 70) return "Solid performance. Read the explanations for the questions you missed.";
+    if (percent >= 50) return "Good start. Reread the page, then retry the questions you missed.";
+    return "Keep going. Work through the page and its explanations, then try again.";
 }
 
 function breakdownRows(groups) {
     return el("ul", { class: "breakdown" },
-        groups.map(({ label, correct, total, goto }) => {
+        groups.map(({ label, correct, total }) => {
             const percent = Math.round((correct / total) * 100);
             return el("li", { class: "breakdown-row" },
-                goto
-                    ? el("button", { type: "button", class: "breakdown-name", "data-goto": goto, text: label })
-                    : el("span", { class: "breakdown-name", text: label }),
+                el("span", { class: "breakdown-name", text: label }),
                 el("span", { class: "breakdown-bar", "aria-hidden": "true" },
                     el("span", { style: `--value: ${percent}%`, class: percent >= 70 ? "good" : percent >= 50 ? "fair" : "poor" }),
                 ),
@@ -565,18 +564,10 @@ function renderResults() {
     const percent = Math.round((correct / total) * 100);
     const missed = quiz.items.filter((item) => !isCorrect(item));
 
-    const byTopic = quizConditionIds
-        .map((id) => {
-            const items = quiz.items.filter((item) => item.question.condition === id);
-            return { label: conditionName(id), goto: id, total: items.length, correct: items.filter(isCorrect).length };
-        })
-        .filter((group) => group.total > 0)
-        .sort((a, b) => a.correct / a.total - b.correct / b.total);
-
-    const byStep = [1, 2]
-        .map((step) => {
-            const items = quiz.items.filter((item) => item.question.step === step);
-            return { label: STEP_NAMES[step], total: items.length, correct: items.filter(isCorrect).length };
+    const byKind = KINDS
+        .map((kind) => {
+            const items = quiz.items.filter((item) => item.question.kind === kind);
+            return { label: KIND_NAMES[kind], total: items.length, correct: items.filter(isCorrect).length };
         })
         .filter((group) => group.total > 0);
 
@@ -588,34 +579,29 @@ function renderResults() {
                 el("span", { class: "review-mark", "aria-hidden": "true", text: ok ? "✓" : "✗" }),
                 el("span", { class: "visually-hidden", text: ok ? "Correct: " : "Incorrect: " }),
                 el("span", { class: "review-summary" },
-                    el("span", { class: "review-meta", text: `Q${index + 1} · ${conditionName(question.condition)} · ${STEP_NAMES[question.step]}` }),
-                    question.leadIn,
+                    el("span", { class: "review-meta", text: `Q${index + 1} · ${KIND_NAMES[question.kind]}` }),
+                    summaryText(question),
                 ),
             ),
             el("div", { class: "review-body" },
-                el("p", { class: "vignette", text: question.stem }),
+                passageFor(question) && rich("div", passageFor(question), { class: "quiz-passage" }),
+                rich("p", question.stem, { class: "vignette" }),
+                question.leadIn && el("p", { class: "lead-in", text: question.leadIn }),
                 el("p", {}, el("strong", { text: "Your answer: " }), question.options[item.order[item.chosen]]),
                 !ok && el("p", {}, el("strong", { text: "Correct answer: " }), question.options[question.answer]),
-                el("p", { class: "review-explanation", text: question.explanation }),
+                rich("div", question.explanation, { class: "review-explanation" }),
                 renderInfo(question),
-                el("p", { class: "feedback-review" },
-                    "Review: ",
-                    el("button", { type: "button", class: "link-button", "data-goto": question.condition, text: conditionName(question.condition) }),
-                ),
             ),
         );
     });
 
     return el("div", { class: "quiz-shell" },
         el("section", { class: "results-hero" },
-            el("div", {
-                class: "score-ring",
-                style: `--score: ${percent}`,
-                role: "img",
-                "aria-label": `Score ${percent} percent`,
-            }, el("span", { text: `${percent}%` })),
+            el("div", { class: "score-ring", style: `--score: ${percent}`, role: "img", "aria-label": `Score ${percent} percent` },
+                el("span", { text: `${percent}%` }),
+            ),
             el("div", {},
-                el("p", { class: "eyebrow", text: "Quiz complete" }),
+                el("p", { class: "eyebrow", text: `Quiz complete · ${conditionName(quiz.condition)}` }),
                 el("h2", { id: "quiz-title", tabindex: "-1", text: `${correct} of ${total} correct` }),
                 el("p", { text: scoreMessage(percent) }),
                 el("div", { class: "results-actions" },
@@ -623,7 +609,7 @@ function renderResults() {
                         type: "button",
                         class: "btn btn-primary",
                         text: `Retry ${missed.length} missed`,
-                        onclick: () => startQuiz(missed.map((item) => item.question)),
+                        onclick: () => startQuiz(orderQuestions(missed.map((entry) => entry.question))),
                     }),
                     el("button", {
                         type: "button",
@@ -636,17 +622,13 @@ function renderResults() {
                             focusQuizTitle();
                         },
                     }),
+                    el("button", { type: "button", class: "btn btn-secondary", text: "Back to the page", onclick: closeQuiz }),
                 ),
             ),
         ),
-        el("section", { class: "results-section" },
-            el("h3", { text: "By topic" }),
-            el("p", { class: "results-hint", text: "Weakest first. Select a topic to review it." }),
-            breakdownRows(byTopic),
-        ),
-        byStep.length > 1 && el("section", { class: "results-section" },
-            el("h3", { text: "By exam" }),
-            breakdownRows(byStep),
+        byKind.length > 1 && el("section", { class: "results-section" },
+            el("h3", { text: "By kind of question" }),
+            breakdownRows(byKind),
         ),
         el("section", { class: "results-section" },
             el("h3", { text: "Review answers" }),
@@ -679,31 +661,28 @@ document.addEventListener("keydown", (event) => {
 });
 
 /* =========================
-   "Quiz me" buttons on each condition
+   "Quiz me" buttons on each page
 ========================= */
 
 conditionContents.forEach((article) => {
-    const count = QUIZ_QUESTIONS.filter((question) => question.condition === article.id).length;
+    const count = questionsFor(article.id).length;
     if (!count) return;
 
-    const title = article.querySelector(".article-header h2");
-    const row = el("div", { class: "header-row" });
-    title.replaceWith(row);
-    row.append(
-        title,
+    // app.js gives every header a row of actions; "Quiz me" goes last, after the review article and worksheet
+    article.querySelector(".header-actions").append(
         el("button", {
             type: "button",
-            class: "quiz-me",
+            class: "quiz-me header-action",
             "aria-label": `Quiz me on ${conditionName(article.id)}: ${count} questions`,
             onclick: () => openQuiz({ condition: article.id }),
         },
-            el("span", { class: "quiz-button-icon", "aria-hidden": "true", text: "?" }),
-            "Quiz me",
+            el("span", { class: "header-action-icon", "aria-hidden": "true", text: "?" }),
+            el("span", { class: "header-action-label", text: "Quiz me" }),
             el("span", { class: "quiz-me-count", "aria-hidden": "true", text: count }),
         ),
     );
 });
 
-if (location.hash === "#quiz") {
-    openQuiz({ updateHistory: false });
+if (quizHashCondition()) {
+    openQuiz({ updateHistory: false, condition: quizHashCondition() });
 }

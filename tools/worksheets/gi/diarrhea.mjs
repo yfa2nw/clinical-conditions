@@ -1,0 +1,288 @@
+// Worksheet for the Diarrhea page, built by tools/build-worksheet-pdf.mjs gi diarrhea.
+// Part 1 follows the page's sections; Part 2 asks for inference and avoids the quiz's questions.
+// Question types: blank (html with [[answer]] marks), match (items, options, and the option index for each item),
+// mc (options and answer; select: 2 or justify: <words>), sa, and order (items and the correct order of their indexes).
+
+const labs = (head, rows) => `<table><thead><tr>${head.map((h) => `<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+
+export const WORKSHEET = {
+    title: "Diarrhea",
+    // The first page: one flowchart of the whole page, with [[answer]] blanks to fill in
+    flowchart: {
+        title: "From cause to treatment",
+        top: "Infection, hormones, drugs, or malabsorption → water enters the lumen or is not [[absorbed]] → watery or bloody diarrhea",
+        rows: ["Type", "Why it happens", "Key test", "Treatment"],
+        columns: [
+            ["1. Acute non-inflammatory", "Enterotoxins, viruses, and parasites: less absorption and [[channel stimulation]]", "No fecal WBC; O&P, norovirus and rotavirus testing", "[[ORS]] or IV fluids; cholera: ORS and [[doxycycline]]"],
+            ["2. Acute inflammatory", "Invasive bacteria and E. histolytica: [[neutrophilic]] infiltration → mucus and bleeding", "Raised fecal WBC and [[calprotectin]]; culture; C. diff 2-step testing", "ABX for severe colitis or immunocompromise; none in [[STEC]]; C. diff: oral fidaxomicin or vancomycin"],
+            ["3. Chronic secretory", "VIP, gastrin, serotonin, or stimulant laxatives → channel stimulation", "Osmotic gap under [[50]]; VIP, gastrin, urine [[5-HIAA]]", "Carcinoid syndrome: [[octreotide]] or lanreotide"],
+            ["4. Chronic osmotic", "Malabsorption, maldigestion such as [[lactose]] intolerance, or osmotic laxatives", "Osmotic gap over [[75]]", "Remove the unabsorbed solute"],
+            ["5. Chronic inflammatory", "IBD, [[microscopic colitis]], and chronic infections", "Colonoscopy; biopsies: collagen band over [[10]] µm, or 20 or more IELs per 100 cells", "Microscopic colitis: stop culprit drugs; [[budesonide]] for 6–8 weeks"],
+        ],
+        span: "Loperamide in most diarrhea, but not in HUS, C. diff, toxic megacolon, or with [[fever]] or bloody stools",
+        chains: [
+            { label: "Fluid loss", steps: [["Watery stools", "High-volume loss of salt and water"], ["Bicarbonate and potassium lost", "Hypovolemia, hypokalemia, and [[NAGMA]]"], ["ORS", "Salt and glucose absorbed together by the [[sodium-glucose cotransporter]]"], ["IV fluids", "When ORS is not enough"]] },
+            { label: "Shiga toxin", steps: [["STEC or Shigella", "Bloody diarrhea"], ["Toxin in the blood", "Translocation-induced coagulopathy"], ["[[HUS]]", "AKI, thrombocytopenia, and hemolytic anemia"], ["Supportive care", "No ABX or loperamide; fluids, blood, or dialysis"]] },
+        ],
+    },
+    review: [
+        {
+            section: "Pathophysiology",
+            questions: [
+                { id: "r-path-table", type: "blank",
+                    stem: "Complete the table of types.",
+                    html: `<table><thead><tr><th>Type</th><th>Features</th></tr></thead><tbody>
+<tr><td>Acute non-inflammatory</td><td>No fecal WBC or calprotectin; [[watery]], high-volume diarrhea</td></tr>
+<tr><td>Acute inflammatory</td><td>Raised fecal WBC and calprotectin; [[dysentery]]</td></tr>
+<tr><td>Chronic secretory</td><td>No direct mucosal damage; watery diarrhea through [[channel stimulation]]</td></tr>
+<tr><td>Chronic osmotic</td><td>No direct mucosal damage; watery diarrhea through [[osmotic effects]]</td></tr>
+<tr><td>Chronic inflammatory</td><td>Direct [[mucosal damage]]; bloody, mucoid stools</td></tr>
+</tbody></table>` },
+                { id: "r-path-match", type: "match",
+                    stem: "Match each mechanism to how fluid reaches the stool.",
+                    items: ["Secretory", "Osmotic", "Inflammatory", "Decreased absorption"],
+                    options: ["Less water returns from the lumen", "Channel stimulation increases secretion", "Mucosal damage brings neutrophils, mucus, and blood", "Unabsorbed solutes pull water into the lumen"],
+                    answer: [1, 3, 2, 0],
+                    explanation: "Each mechanism adds water to the lumen or stops it returning; only inflammation damages the mucosa." },
+                { id: "r-path-why", type: "sa", lines: 2,
+                    stem: "Why does inflammatory diarrhea raise fecal calprotectin, while secretory diarrhea does not?",
+                    answer: "Calprotectin comes from neutrophils, which infiltrate damaged mucosa in inflammation; secretory diarrhea has no mucosal damage.",
+                    explanation: "Neutrophilic infiltration raises fecal WBC and calprotectin, which separates inflammatory from non-inflammatory diarrhea." },
+            ],
+        },
+        {
+            section: "Etiology",
+            questions: [
+                { id: "r-cause-match", type: "match",
+                    stem: "Match each organism to its classic setting.",
+                    items: ["S. aureus", "B. cereus", "Norovirus", "Rotavirus", "Giardia", "Cryptosporidium", "Salmonella"],
+                    options: ["Poultry", "Cruise", "Immunocompromised patients", "Picnic", "Childcare", "Rice", "River water"],
+                    answer: [3, 5, 1, 4, 6, 2, 0],
+                    explanation: "The setting is often the strongest clue to the organism in acute diarrhea." },
+                { id: "r-cause-inflam", type: "mc", select: 2,
+                    stem: "Which organisms cause acute inflammatory diarrhea?",
+                    options: ["Shigella", "Entamoeba histolytica", "V. cholerae", "ETEC", "Norovirus"], answer: [0, 1],
+                    explanation: "Invasive bacteria (Salmonella, Shigella, Campylobacter, EHEC/STEC, and C. difficile) and E. histolytica cause dysentery.",
+                    notes: { 2: "V. cholerae is enterotoxic and non-inflammatory, with rice-water stools.", 3: "ETEC is enterotoxic and non-inflammatory.", 4: "Norovirus causes non-inflammatory watery diarrhea." } },
+                { id: "r-cause-cdiff", type: "blank",
+                    html: "C. difficile follows [[ABX]], especially clindamycin, [[cephalosporins]], fluoroquinolones, and penicillins." },
+                { id: "r-cause-chronic", type: "blank",
+                    stem: "Complete the chronic causes.",
+                    html: `<table><thead><tr><th>Type</th><th>Causes</th></tr></thead><tbody>
+<tr><td>Secretory</td><td>VIP from [[vipomas]] (watery diarrhea, hypokalemia, and achlorhydria), gastrin from gastrinomas, serotonin from [[carcinoid syndrome]]; stimulant laxatives: senna, bisacodyl, and sodium picosulfate</td></tr>
+<tr><td>Osmotic</td><td>Malabsorption: celiac disease, [[Whipple disease]], and tropical sprue. Maldigestion: EPI, bile salt deficiency, and lactose intolerance. Osmotic laxatives: lactulose, PEG, and [[magnesium citrate]]</td></tr>
+<tr><td>Inflammatory</td><td>IBD, microscopic colitis, and chronic infections</td></tr>
+</tbody></table>` },
+                { id: "r-cause-laxative", type: "sa", lines: 2,
+                    stem: "Senna and lactulose are both laxatives. Why do they cause different types of diarrhea?",
+                    answer: "Senna is a stimulant that increases secretion (secretory); lactulose is an unabsorbed solute that pulls water into the lumen (osmotic).",
+                    explanation: "Stimulant laxatives are a secretory cause; osmotic laxatives are an osmotic cause, with a high osmotic gap." },
+            ],
+        },
+        {
+            section: "Symptoms and complications",
+            questions: [
+                { id: "r-comp-match", type: "match",
+                    stem: "Match each complication of acute diarrhea to its group.",
+                    items: ["NAGMA", "Toxic megacolon", "Thrombocytopenia with AKI", "Hypokalemia", "Perforation"],
+                    options: ["HUS", "Fluid status", "Colitis"],
+                    answer: [1, 2, 0, 1, 2],
+                    explanation: "Watery losses disturb fluid status, severe inflammation leads to megacolon and perforation, and Shiga toxin leads to HUS." },
+                { id: "r-comp-carcinoid", type: "sa", lines: 2,
+                    stem: "How does carcinoid syndrome lead to pellagra?",
+                    answer: "The tumor diverts tryptophan to make serotonin, leaving too little to make niacin.",
+                    explanation: "Carcinoid syndrome needs liver metastases and causes flushing, wheezing, and tricuspid valve disease." },
+                { id: "r-comp-micro", type: "blank",
+                    html: "Microscopic colitis causes chronic watery, [[nonbloody]] diarrhea, 4–9 stools a day, often [[nocturnal]], mostly in older women. It is linked to NSAIDs, [[PPIs]], SSRIs, statins, and smoking." },
+                { id: "r-comp-cdiff", type: "blank",
+                    html: "C. difficile is a gram-positive, [[spore]]-forming, toxin-producing anaerobic bacillus, carried by [[3–5]]% of healthy adults. It ranges from mild diarrhea to [[pseudomembranous]] colitis, toxic megacolon, and septic shock." },
+            ],
+        },
+        {
+            section: "Diagnosis",
+            questions: [
+                { id: "r-dx-acute", type: "sa", lines: 2,
+                    stem: "Why does acute bloody diarrhea with reduced urine output call for an FBC and BMP?",
+                    answer: "To look for HUS: thrombocytopenia and hemolytic anemia on the FBC, and AKI on the BMP.",
+                    explanation: "STEC and Shigella can cause HUS, which is checked with FBC and BMP." },
+                { id: "r-dx-cdiff", type: "order",
+                    stem: "Number the steps of C. difficile testing in order.",
+                    items: ["Toxin A and B", "Confirm the patient has diarrhea", "GDH or NAAT, such as a stool multiplex PCR"],
+                    order: [1, 2, 0],
+                    explanation: "Only diarrheal stool is tested, first for the organism, then for its toxins." },
+                { id: "r-dx-gap", type: "mc",
+                    stem: "Stool sodium is 60 and potassium 75 mmol/L. Using 290 − 2 × (sodium + potassium), what does the osmotic gap show?",
+                    options: ["A gap of 20: secretory", "A gap of 20: osmotic", "A gap of 155: osmotic", "A gap of 155: secretory", "A gap of 135: inflammatory"], answer: 0,
+                    explanation: "290 − 2 × 135 = 20 mOsm/kg; a gap under 50 is secretory, and over 75 is osmotic.",
+                    notes: { 1: "A gap of 20 is under 50, which is secretory.", 2: "The sum is doubled before it is subtracted: 2 × 135 = 270.", 3: "The arithmetic is wrong, and a gap of 155 would be osmotic.", 4: "The osmotic gap separates secretory from osmotic; inflammation is shown by fecal WBC and calprotectin." } },
+                { id: "r-dx-micro", type: "sa", lines: 2,
+                    stem: "Why can microscopic colitis be missed if colonoscopy is done without biopsies?",
+                    answer: "The mucosa looks normal; only histology shows the thick collagen band or the intraepithelial lymphocytes.",
+                    explanation: "Collagenous: collagen band over 10 µm. Lymphocytic: 20 or more intraepithelial lymphocytes per 100 cells." },
+            ],
+        },
+        {
+            section: "Treatment",
+            questions: [
+                { id: "r-tx-match", type: "match",
+                    stem: "Match each condition to its treatment.",
+                    items: ["Cholera", "Carcinoid syndrome", "Microscopic colitis", "A first episode of C. difficile", "Recurrent C. difficile"],
+                    options: ["Budesonide for 6–8 weeks", "Fidaxomicin, bezlotoxumab, or fecal microbiota transplant", "ORS and doxycycline", "Oral fidaxomicin or vancomycin for 10 days", "Octreotide or lanreotide"],
+                    answer: [2, 4, 0, 3, 1],
+                    explanation: "Metronidazole is used for C. difficile only if fidaxomicin and vancomycin are not available." },
+                { id: "r-tx-loperamide", type: "mc", select: 2,
+                    stem: "In which patients should loperamide be avoided?",
+                    options: ["A child with HUS after STEC", "A man with fever and bloody stools", "A traveler with watery diarrhea and no fever", "A woman with lactose intolerance", "A man with norovirus on a cruise"], answer: [0, 1],
+                    explanation: "Avoid loperamide in HUS, C. diff, toxic megacolon, and with fever or bloody stools.",
+                    notes: { 2: "Watery traveler's diarrhea without fever is a typical use.", 3: "Lactose intolerance is non-inflammatory.", 4: "Norovirus is non-inflammatory." } },
+                { id: "r-tx-stec", type: "sa", lines: 2,
+                    stem: "Why are ABX avoided in STEC, yet given in severe colitis from other causes?",
+                    answer: "In STEC, ABX raise the risk of HUS; in other severe colitis or immunocompromised patients they clear an invasive infection.",
+                    explanation: "ABX are for severe colitis or immunocompromised patients, but not for STEC." },
+                { id: "r-tx-spores", type: "blank",
+                    html: "After C. difficile, hands are washed with [[soap]], since alcohol gel does not kill [[spores]]." },
+            ],
+        },
+    ],
+    practice: {
+        scenarios: [
+            {
+                title: "The barbecue",
+                keyPoints: [
+                    "Bloody diarrhea with raised fecal WBC and calprotectin is inflammatory; the food history points to the organism.",
+                    "STEC and Shigella can cause HUS: AKI, thrombocytopenia, and hemolytic anemia, checked with FBC and BMP.",
+                    "ABX and loperamide are avoided in STEC because they raise the risk of HUS.",
+                    "HUS is treated supportively, with fluids, blood, and dialysis if needed.",
+                    "Fever or bloody stools are reasons to avoid loperamide in any diarrhea.",
+                ],
+                blocks: [
+                    { passage: `<p>A 6-year-old boy has 3 days of crampy abdominal pain and diarrhea that turned bloody yesterday, 3 days after a family barbecue where he ate a hamburger that was pink inside. He has no fever. He is drinking, though less than usual. His parents ask for loperamide and "something to kill the bug."</p>
+${labs(["Stool test", "Result"], [["Fecal WBC", "Raised"], ["Fecal calprotectin", "Raised"], ["Culture", "Pending"]])}`,
+                        questions: [
+                            { id: "s1-type", type: "sa", lines: 2,
+                                stem: "What type of acute diarrhea is this, and which organism best fits the history?",
+                                answer: "Inflammatory (dysentery), from STEC acquired from undercooked beef.",
+                                explanation: "Raised fecal WBC and calprotectin with bloody stools mean inflammatory diarrhea; EHEC/STEC comes from food." },
+                            { id: "s1-request", type: "mc", justify: 15,
+                                stem: "How should his parents' request be answered? Briefly justify your choice.",
+                                options: ["Neither ABX nor loperamide; give fluids and watch closely", "Give ABX now, but no loperamide", "Give loperamide now, but no ABX", "Give both, since he has no fever", "Give ABX only if the culture is positive"], answer: 0,
+                                justifyAnswer: "In STEC, ABX raise the risk of HUS, and loperamide is avoided with bloody stools.",
+                                explanation: "STEC needs no ABX, which raise the risk of HUS; loperamide is avoided with bloody stools and in HUS.",
+                                notes: { 1: "ABX raise the risk of HUS in STEC.", 2: "Loperamide is avoided with bloody stools.", 3: "The absence of fever does not make either safe.", 4: "A positive STEC culture is a reason to withhold ABX, not give them." } },
+                        ] },
+                    { passage: `<p>Culture grows STEC. Four days later he is pale and puffy around the eyes and has passed little urine.</p>
+${labs(["Test", "Day 1", "Day 5", "Reference range"], [["Hb (g/L)", "128", "79", "110–145"], ["Platelets (× 10⁹/L)", "260", "38", "150–400"], ["Creatinine (µmol/L)", "40", "210", "25–60"], ["Potassium (mmol/L)", "3.6", "5.9", "3.5–5.0"], ["Blood film", "Normal", "Schistocytes", ""]])}<p><em>Illustrative data.</em></p>`,
+                        questions: [
+                            { id: "s1-hus", type: "sa", lines: 3,
+                                stem: "Name the complication, and explain how each abnormal result fits it.",
+                                answer: "HUS: falling Hb with schistocytes is hemolytic anemia, low platelets are thrombocytopenia, and rising creatinine and potassium are AKI.",
+                                explanation: "Shiga toxin enters the blood and causes HUS: AKI, thrombocytopenia, and hemolytic anemia." },
+                            { id: "s1-tx", type: "mc", select: 2,
+                                stem: "Which treatments are appropriate now?",
+                                options: ["Careful fluids and blood transfusion as needed", "Dialysis if the AKI and hyperkalemia worsen", "IV ABX to clear the remaining STEC", "Loperamide to reduce fluid loss", "Platelet transfusion to correct the count"], answer: [0, 1],
+                                explanation: "HUS is treated supportively with fluids, blood, or dialysis if needed; ABX and loperamide are avoided.",
+                                notes: { 2: "ABX are avoided in STEC and HUS.", 3: "Loperamide is avoided in HUS.", 4: "The page's support for HUS is fluids, blood, and dialysis; platelets are not part of it." } },
+                        ] },
+                ],
+            },
+            {
+                title: "After the hip replacement",
+                keyPoints: [
+                    "ABX such as cephalosporins and clindamycin allow C. difficile to grow; diarrhea after ABX calls for testing.",
+                    "C. difficile is tested only in diarrhea, in 2 steps: GDH or NAAT, then toxin A and B, because healthy adults can carry it.",
+                    "A first episode is treated with oral fidaxomicin or oral vancomycin for 10 days, after stopping unnecessary ABX.",
+                    "Recurrence is treated with fidaxomicin, bezlotoxumab, or fecal microbiota transplant.",
+                    "Toxic megacolon is a complication of colitis; loperamide is avoided, and hands are washed with soap because alcohol gel does not kill spores.",
+                ],
+                blocks: [
+                    { passage: `<p>A 78-year-old woman is 6 days after a hip replacement, for which she received cefazolin. She is still taking ceftriaxone for a urinary infection that was treated 2 days ago with a sensitive organism. She now has 6 watery stools a day and lower abdominal cramps. Temperature 37.8 °C, heart rate 96, BP 128/74.</p>
+${labs(["Test", "Result"], [["WBC", "14.2 × 10⁹/L"], ["Creatinine", "88 µmol/L (her baseline)"], ["GDH", "Positive"], ["Toxin A and B", "Positive"]])}<p><em>Illustrative data.</em></p>`,
+                        questions: [
+                            { id: "s2-test", type: "sa", lines: 3,
+                                stem: "Why is the toxin result needed as well as the GDH, and how would you interpret a positive GDH with a negative toxin?",
+                                answer: "GDH shows the organism, which healthy adults can carry; toxin shows active disease. GDH positive, toxin negative suggests carriage.",
+                                explanation: "3–5% of healthy adults carry C. difficile, so 2-step testing ends with toxin A and B." },
+                            { id: "s2-plan", type: "order",
+                                stem: "Number the steps of her management in order.",
+                                items: ["Oral fidaxomicin or oral vancomycin for 10 days", "Stop the ceftriaxone if it is no longer needed", "Review her for response and recurrence"],
+                                order: [1, 0, 2],
+                                explanation: "Stop unnecessary ABX, then treat with oral fidaxomicin or vancomycin for 10 days." },
+                            { id: "s2-metro", type: "mc",
+                                stem: "The pharmacy has no fidaxomicin. Which choice is best?",
+                                options: ["Oral vancomycin", "IV vancomycin", "Oral metronidazole", "Loperamide while waiting for stock", "IV ceftriaxone at a higher dose"], answer: 0,
+                                explanation: "Oral fidaxomicin or oral vancomycin is first line; metronidazole is used only if neither is available.",
+                                notes: { 1: "IV vancomycin does not reach the colon lumen.", 2: "Metronidazole is only for when neither fidaxomicin nor oral vancomycin is available.", 3: "Loperamide is avoided in C. diff.", 4: "Cephalosporins are among the ABX that cause C. difficile." } },
+                        ] },
+                    { passage: `<p>On day 3 of treatment she becomes more unwell. Her abdomen is distended and tender, and her stools have slowed to 2 a day. Temperature 39.1 °C, heart rate 124, BP 92/58. An abdominal x-ray shows a dilated transverse colon of 9 cm.</p>`,
+                        questions: [
+                            { id: "s2-mega", type: "sa", lines: 3,
+                                stem: "What complication has developed, and why is fewer stools a bad sign here rather than a sign of improvement?",
+                                answer: "Toxic megacolon: the inflamed colon has stopped contracting and dilated, so stool and toxin are retained rather than passed.",
+                                explanation: "Colitis can progress to toxic megacolon, perforation, and septic shock; loperamide is avoided for this reason." },
+                            { id: "s2-perf", type: "mc",
+                                stem: "Which complication is she most at risk of next if the dilation continues?",
+                                options: ["Perforation", "HUS", "NAGMA", "Pellagra", "Microscopic colitis"], answer: 0,
+                                explanation: "Megacolon and perforation are complications of colitis.",
+                                notes: { 1: "HUS follows STEC or Shigella.", 2: "NAGMA follows large watery losses; her stools have slowed.", 3: "Pellagra is a complication of carcinoid syndrome.", 4: "Microscopic colitis is a chronic cause of watery diarrhea, not a complication." } },
+                        ] },
+                    { passage: `<p>She recovers. Five weeks later, at home, the watery diarrhea returns and her toxin test is positive again. Her husband, who cares for her, uses alcohol gel after helping her to the toilet.</p>`,
+                        questions: [
+                            { id: "s2-recur", type: "sa", lines: 2,
+                                stem: "Name two treatment options for her recurrence.",
+                                answer: "Any two of: fidaxomicin, bezlotoxumab, or fecal microbiota transplant.",
+                                explanation: "Recurrence: fidaxomicin, bezlotoxumab, or fecal microbiota transplant." },
+                            { id: "s2-hands", type: "sa", lines: 2,
+                                stem: "What should her husband change, and why?",
+                                answer: "Wash his hands with soap and water, because alcohol gel does not kill C. difficile spores.",
+                                explanation: "C. difficile is spore-forming, and the spores survive alcohol." },
+                        ] },
+                ],
+            },
+            {
+                title: "Flushing at dinner",
+                keyPoints: [
+                    "Chronic watery diarrhea with normal fecal WBC and calprotectin is non-inflammatory, and the osmotic gap separates secretory from osmotic.",
+                    "A gap under 50 mOsm/kg means secretory diarrhea: check laxative use and VIP, gastrin, and urine 5-HIAA.",
+                    "Carcinoid syndrome needs liver metastases and causes flushing, wheezing, and tricuspid valve disease.",
+                    "Tryptophan diverted to serotonin causes niacin deficiency (pellagra).",
+                    "Carcinoid syndrome is treated with octreotide or lanreotide.",
+                ],
+                blocks: [
+                    { passage: `<p>A 61-year-old man has 6 months of watery diarrhea, 5–6 times a day and sometimes at night. He has had episodes of red, hot flushing of his face and neck, sometimes with wheeze, often after a glass of wine. He takes no laxatives. He has lost 5 kg.</p>
+${labs(["Test", "Result"], [["Fecal WBC", "Not seen"], ["Fecal calprotectin", "Normal"], ["FOBT", "Negative"], ["Stool sodium", "70 mmol/L"], ["Stool potassium", "62 mmol/L"]])}<p><em>Illustrative data.</em></p>`,
+                        questions: [
+                            { id: "s3-gap", type: "sa", lines: 3,
+                                stem: "Calculate the stool osmotic gap (290 − 2 × [sodium + potassium]) and state the type of diarrhea it shows.",
+                                answer: "290 − 2 × 132 = 26 mOsm/kg: under 50, so secretory.",
+                                explanation: "Normal fecal WBC, calprotectin, and FOBT point to non-inflammatory diarrhea; a gap under 50 is secretory." },
+                            { id: "s3-tests", type: "mc", select: 2,
+                                stem: "Which tests are most useful next?",
+                                options: ["Urine 5-HIAA", "VIP and gastrin levels", "Fecal elastase for EPI", "Hydrogen breath test for lactose intolerance", "Celiac serology"], answer: [0, 1],
+                                explanation: "Non-inflammatory chronic diarrhea with a low gap calls for hormone levels: VIP, gastrin, and urine 5-HIAA for carcinoid, and a review of laxative use.",
+                                notes: { 2: "EPI is a maldigestion cause, which is osmotic.", 3: "Lactose intolerance is osmotic, with a high gap.", 4: "Celiac disease is a malabsorption cause, which is osmotic." } },
+                        ] },
+                    { passage: `<p>Urine 5-HIAA is markedly raised; VIP and gastrin are normal. CT shows a small mass in the terminal ileum and several liver lesions. An echocardiogram shows tricuspid regurgitation.</p>`,
+                        questions: [
+                            { id: "s3-dx", type: "mc", justify: 15,
+                                stem: "What is the diagnosis? Briefly justify your choice.",
+                                options: ["Carcinoid syndrome", "Vipoma", "Gastrinoma", "Microscopic colitis", "Stimulant laxative use"], answer: 0,
+                                justifyAnswer: "Raised 5-HIAA, flushing, wheeze, tricuspid disease, and liver metastases from an ileal tumor.",
+                                explanation: "Serotonin from carcinoid syndrome causes secretory diarrhea, flushing, wheezing, and tricuspid valve disease once the tumor has spread to the liver.",
+                                notes: { 1: "A vipoma raises VIP, which is normal.", 2: "A gastrinoma raises gastrin, which is normal.", 3: "Microscopic colitis is inflammatory and does not cause flushing.", 4: "He takes no laxatives, and laxatives do not raise 5-HIAA." } },
+                            { id: "s3-liver", type: "sa", lines: 3,
+                                stem: "Why did his symptoms appear only once the tumor had spread to the liver?",
+                                answer: "Serotonin from the gut drains to the liver, which breaks it down; liver metastases release it straight into the systemic circulation.",
+                                explanation: "Carcinoid syndrome comes with liver metastases." },
+                        ] },
+                    { passage: `<p>Three months later, before treatment has been started, he develops a scaly, darkened rash on the backs of his hands and his neck, which are exposed to the sun, and his wife notices he is forgetful.</p>`,
+                        questions: [
+                            { id: "s3-pellagra", type: "sa", lines: 3,
+                                stem: "Explain the cause of his new rash and forgetfulness, and name the drug treatment for his syndrome.",
+                                answer: "Pellagra: the tumor diverts tryptophan to serotonin, causing niacin deficiency. Treat the syndrome with octreotide or lanreotide.",
+                                explanation: "Carcinoid syndrome: tryptophan diverted to serotonin → niacin deficiency (pellagra); treated with octreotide or lanreotide." },
+                        ] },
+                ],
+            },
+        ],
+    },
+};

@@ -2563,68 +2563,6 @@ button.mnemonic-item:hover:not(:disabled) {
    Quiz: entry points
 ========================= */
 
-.quiz-button {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    width: 100%;
-    margin-top: 10px;
-    padding: 12px 14px;
-
-    border: 1px solid var(--color-accent-line);
-    border-radius: var(--radius-md);
-    background-color: var(--color-accent-soft);
-    color: var(--color-accent-hover);
-
-    font: inherit;
-    font-size: 15px;
-    font-weight: 700;
-    text-align: left;
-    cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
-}
-
-.quiz-button:hover {
-    border-color: var(--color-accent);
-}
-
-.quiz-button.active {
-    border-color: var(--color-accent);
-    background-color: var(--color-accent);
-    color: var(--color-on-accent);
-}
-
-.quiz-button-icon {
-    display: grid;
-    flex: 0 0 auto;
-    place-items: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background-color: var(--color-accent);
-    color: var(--color-on-accent);
-    font-size: 15px;
-    font-weight: 800;
-    line-height: 1;
-}
-
-.quiz-button.active .quiz-button-icon {
-    background-color: var(--color-on-accent);
-    color: var(--color-accent);
-}
-
-.quiz-button-sub {
-    display: block;
-    font-size: 12px;
-    font-weight: 500;
-    opacity: 0.8;
-}
-
-/* Dot shows a quiz is waiting to be resumed */
-.quiz-button.in-progress:not(.active) .quiz-button-icon {
-    box-shadow: 0 0 0 3px var(--color-accent-soft), 0 0 0 5px var(--color-up);
-}
-
 .header-row {
     display: flex;
     flex-wrap: wrap;
@@ -2638,36 +2576,7 @@ button.mnemonic-item:hover:not(:disabled) {
     margin-bottom: 0;
 }
 
-.quiz-me {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    padding: 6px 8px 6px 6px;
-
-    border: 1px solid var(--color-border);
-    border-radius: 999px;
-    background-color: var(--color-surface);
-    color: var(--color-text);
-
-    font: inherit;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: border-color 0.2s ease, background-color 0.2s ease;
-}
-
-.quiz-me .quiz-button-icon {
-    width: 24px;
-    height: 24px;
-    font-size: 13px;
-}
-
-.quiz-me:hover {
-    border-color: var(--color-accent-line);
-    background-color: var(--color-accent-soft);
-}
-
-.quiz-me-count {
+.quiz-me .quiz-me-count {
     padding: 1px 8px;
     border-radius: 999px;
     background-color: var(--color-surface-sunken);
@@ -3054,14 +2963,75 @@ button.mnemonic-item:hover:not(:disabled) {
     font-weight: 650;
 }
 
-.tag-step1 {
+.tag-memory {
+    background-color: var(--color-correct-soft);
+    color: var(--color-correct);
+}
+
+.tag-reasoning {
     background-color: var(--color-down-soft);
     color: var(--color-down);
 }
 
-.tag-step2 {
+.tag-analysis {
     background-color: var(--color-up-soft);
     color: var(--color-up);
+}
+
+/* A case shared by a set of questions, shown above each of them */
+.quiz-passage {
+    margin: 0 0 18px;
+    padding: 14px 18px;
+    border-left: 3px solid var(--color-accent-line);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    background-color: var(--color-surface-muted);
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+.quiz-passage-label {
+    margin: 0 0 6px;
+    color: var(--color-text-muted);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.quiz-shell .vignette p,
+.quiz-passage p {
+    margin: 0 0 10px;
+}
+
+.quiz-shell .vignette p:last-child,
+.quiz-passage p:last-child {
+    margin-bottom: 0;
+}
+
+.quiz-shell table {
+    width: 100%;
+    margin: 10px 0;
+    border-collapse: collapse;
+    font-size: 14.5px;
+}
+
+.quiz-shell th,
+.quiz-shell td {
+    padding: 6px 10px;
+    border-bottom: 1px solid var(--color-border);
+    text-align: left;
+    vertical-align: top;
+}
+
+.quiz-shell th {
+    color: var(--color-text-muted);
+    font-weight: 650;
+}
+
+.quiz-intro-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
 }
 
 .quiz-shell .vignette {
@@ -3289,25 +3259,47 @@ button.mnemonic-item:hover:not(:disabled) {
     font-size: 14.5px;
 }
 
-.feedback-more {
-    margin-bottom: 12px;
-    font-size: 15px;
+.feedback-explanation,
+.review-explanation {
+    font-size: 15.5px;
+    line-height: 1.65;
 }
 
-.feedback-more summary {
-    color: var(--color-accent-hover);
-    font-weight: 650;
-    cursor: pointer;
-}
-
-.feedback-more ul {
-    margin: 8px 0 0;
+.feedback-explanation ul,
+.review-explanation ul {
+    margin: 0 0 12px;
     padding-left: 20px;
+}
+
+.feedback-explanation li + li,
+.review-explanation li + li {
+    margin-top: 4px;
+}
+
+.feedback-options {
+    margin: 4px 0 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--color-border);
+}
+
+.feedback-options h4 {
+    margin: 0 0 8px;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+}
+
+.feedback-options ul {
+    margin: 0;
+    padding-left: 0;
+    list-style: none;
+    font-size: 15px;
     line-height: 1.6;
 }
 
-.feedback-more li + li {
-    margin-top: 6px;
+.feedback-options li + li {
+    margin-top: 8px;
 }
 
 .quiz-shell .feedback-review {
@@ -3527,41 +3519,6 @@ button.breakdown-name {
 }
 
 @media (max-width: 768px) {
-    /* Compact quiz pill tucked into the top bar */
-    .sidebar {
-        position: relative;
-    }
-
-    .quiz-button {
-        position: absolute;
-        top: 38px;
-        right: 58px;
-        width: auto;
-        margin: 0;
-        padding: 4px 12px 4px 4px;
-        border-radius: 999px;
-        font-size: 14px;
-    }
-
-    .quiz-button-icon {
-        width: 26px;
-        height: 26px;
-    }
-
-    .quiz-button-sub {
-        display: none;
-    }
-
-    /* Short visible label; the full name stays in the accessible text */
-    .quiz-button-text {
-        font-size: 0;
-    }
-
-    .quiz-button-text::before {
-        content: "Quiz";
-        font-size: 14px;
-    }
-
     .quiz-shell {
         padding-top: 20px;
     }
@@ -4231,37 +4188,110 @@ a.link-button {
    Review article popup
 ========================= */
 
-.quick-review-open {
-    display: block;
-    width: 100%;
-    margin-top: 32px;
-    padding: 14px 18px;
-    border: 1px solid var(--color-border-strong);
-    border-radius: var(--radius-md);
-    background-color: var(--color-surface-muted);
-    color: var(--color-text);
-    font: inherit;
-    text-align: left;
-    cursor: pointer;
-    transition: border-color 0.15s ease, background-color 0.15s ease;
+/* The header's actions sit beside the title: review article, worksheet, then "Quiz me" */
+.header-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
 }
 
-.quick-review-open:hover {
-    border-color: var(--color-accent);
+.header-actions:empty {
+    display: none;
+}
+
+.header-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-sizing: border-box;
+    height: 38px;
+    padding: 0 12px 0 6px;
+
+    border: 1px solid var(--color-border);
+    border-radius: 999px;
+    background-color: var(--color-surface);
+    color: var(--color-text);
+
+    font: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.header-action:hover {
+    border-color: var(--color-accent-line);
     background-color: var(--color-accent-soft);
 }
 
-.quick-review-title {
-    display: block;
-    color: var(--color-accent);
-    font-size: 16px;
-    font-weight: 700;
+.header-action-icon {
+    display: grid;
+    flex: 0 0 auto;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background-color: var(--color-accent-soft);
+    color: var(--color-accent-hover);
 }
 
-.quick-review-hint {
-    display: block;
-    color: var(--color-text-muted);
+.header-action-icon svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.header-action-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* "Quiz me" keeps its solid icon and question count */
+.quiz-me .header-action-icon {
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
     font-size: 14px;
+    font-weight: 800;
+    line-height: 1;
+}
+
+.quiz-me {
+    padding-right: 8px;
+}
+
+/* Phones show the icons alone; the names stay as accessible labels */
+@media (max-width: 768px) {
+    .header-action {
+        width: 38px;
+        padding: 0;
+        justify-content: center;
+    }
+
+    .header-action-label,
+    .quiz-me .quiz-me-count {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        white-space: nowrap;
+    }
+}
+
+.worksheet-tag {
+    padding: 1px 6px;
+    border-radius: 999px;
+    background-color: var(--color-surface-sunken);
+    color: var(--color-text-muted);
+    font-size: 11px;
+    letter-spacing: 0.06em;
 }
 
 .quick-review {

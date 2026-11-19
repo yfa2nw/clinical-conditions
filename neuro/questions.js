@@ -1,7 +1,6 @@
 /*
    Question bank for the neurology quiz.
-   The format is described at the top of gi/questions.js. The quiz button stays hidden
-   until this list has questions.
+   The format is described at the top of gi/questions.js.
 */
 
 const QUIZ_QUESTIONS = [
@@ -10,7 +9,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ss-wallenberg",
         condition: "stroke-symptoms",
-        step: 1,
+        kind: "memory",
         stem: "A 63-year-old man has sudden vertigo, hoarseness, and difficulty swallowing. Examination shows a drooping left eyelid with a small left pupil, left limb ataxia with normal strength, reduced pain and temperature sensation on the left face and right body, and hiccups.",
         leadIn: "Occlusion of which artery most likely caused this?",
         options: [
@@ -31,7 +30,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ss-aca",
         condition: "stroke-symptoms",
-        step: 1,
+        kind: "memory",
         stem: "A 71-year-old woman's family notices she has become apathetic and is wetting herself. Examination shows weakness and reduced sensation of the right leg, much worse than the right arm, and a grasp reflex.",
         leadIn: "Which artery is most likely affected?",
         options: [
@@ -52,7 +51,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ss-conduction",
         condition: "stroke-symptoms",
-        step: 1,
+        kind: "memory",
         stem: "A 66-year-old right-handed man speaks fluently and follows three-step commands, but cannot repeat \"no ifs, ands, or buts.\"",
         leadIn: "Which structure is most likely damaged?",
         options: [
@@ -73,7 +72,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ss-weber",
         condition: "stroke-symptoms",
-        step: 1,
+        kind: "memory",
         stem: "A 58-year-old woman has a right eye that is down and out with a dilated pupil and ptosis, and weakness of her left arm and leg. She has no ataxia or tremor.",
         leadIn: "Which syndrome is this?",
         options: [
@@ -94,7 +93,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ss-locked-in",
         condition: "stroke-symptoms",
-        step: 1,
+        kind: "memory",
         stem: "A 55-year-old man is found unable to move his limbs or speak after a basilar artery occlusion. He is awake, follows commands by looking up and down, and blinks to answer questions.",
         leadIn: "Where is the lesion?",
         options: [
@@ -110,7 +109,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ss-anterior-cord",
         condition: "stroke-symptoms",
-        step: 1,
+        kind: "memory",
         stem: "After repair of a thoracic aortic aneurysm, a 69-year-old man cannot move his legs and has lost pain and temperature sensation below the umbilicus. Vibration and joint position sense in his toes are normal. He has urinary retention.",
         leadIn: "Which syndrome is this?",
         options: [
@@ -131,7 +130,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ss-pca",
         condition: "stroke-symptoms",
-        step: 1,
+        kind: "memory",
         stem: "A 70-year-old right-handed woman suddenly cannot read her newspaper, although she can still write a letter. She has a right homonymous hemianopia with macular sparing and no weakness.",
         leadIn: "Which artery is most likely occluded?",
         options: [
@@ -151,7 +150,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ss-sah-complication",
         condition: "stroke-symptoms",
-        step: 2,
+        kind: "memory",
         stem: "A 49-year-old woman had a ruptured aneurysm coiled 6 days ago. Today she becomes confused and develops new right arm weakness. CT head shows no new bleeding.",
         leadIn: "Which complication is most likely?",
         options: [
@@ -171,7 +170,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ss-neglect",
         condition: "stroke-symptoms",
-        step: 1,
+        kind: "memory",
         stem: "A 74-year-old right-handed man has sudden weakness of his left face and arm. He ignores people on his left, eats food only from the right of his plate, and denies that anything is wrong.",
         leadIn: "Which artery is most likely affected?",
         options: [
@@ -192,7 +191,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ss-millard-gubler",
         condition: "stroke-symptoms",
-        step: 1,
+        kind: "memory",
         stem: "A 62-year-old woman has horizontal double vision from a right abduction deficit, weakness of the whole right side of her face including the forehead, and weakness of her left arm and leg.",
         leadIn: "Which syndrome is this?",
         options: [
@@ -214,7 +213,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ss-dejerine",
         condition: "stroke-symptoms",
-        step: 1,
+        kind: "memory",
         stem: "A 66-year-old man has weakness of his right arm and leg with a normal face, loss of vibration sense on the right, and his tongue deviates to the left when protruded.",
         leadIn: "Which artery is most likely occluded?",
         options: [
@@ -235,7 +234,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ss-central-cord",
         condition: "stroke-symptoms",
-        step: 1,
+        kind: "memory",
         stem: "A 70-year-old man falls forward and hits his chin, extending his neck. He has weakness of both arms, worst in his hands, with only mild leg weakness, and loss of pain and temperature sensation over his shoulders.",
         leadIn: "Which cord syndrome is this?",
         options: [
@@ -256,7 +255,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ss-lacunar-pure-sensory",
         condition: "stroke-symptoms",
-        step: 1,
+        kind: "memory",
         stem: "A 68-year-old woman with long-standing hypertension has sudden numbness of her whole left face, arm, and leg. Strength, language, and visual fields are normal.",
         leadIn: "Where is the infarct most likely?",
         options: [
@@ -277,7 +276,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ss-post-stroke-pain",
         condition: "stroke-symptoms",
-        step: 2,
+        kind: "memory",
         stem: "Four months after a stroke, a 63-year-old man has burning pain over his whole right side, worsened by light touch from his clothes. Examination shows reduced sensation on the right but no new deficit.",
         leadIn: "Which earlier infarct site is most likely?",
         options: [
@@ -300,7 +299,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ais-first-step",
         condition: "ischemic-stroke",
-        step: 2,
+        kind: "memory",
         stem: "A 67-year-old man arrives 50 minutes after sudden right face and arm weakness and difficulty speaking. His BP is 176/98 mm Hg.",
         leadIn: "Which of the following should be done first?",
         options: [
@@ -321,7 +320,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ais-thrombectomy",
         condition: "ischemic-stroke",
-        step: 2,
+        kind: "reasoning",
         stem: "A 72-year-old woman woke with left hemiplegia and was last seen well 10 hours ago. CT head shows no hemorrhage, CT angiogram shows a right MCA occlusion, and CT perfusion shows a small core with a large penumbra.",
         leadIn: "Which treatment is most appropriate?",
         options: [
@@ -341,7 +340,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ais-contraindication",
         condition: "ischemic-stroke",
-        step: 2,
+        kind: "memory",
         stem: "A 64-year-old man arrives 2 hours after sudden aphasia and right hemiparesis. CT head shows no hemorrhage. He takes warfarin for a mechanical valve, and his INR is 2.6. His BP is 170/95 mm Hg and platelets are 220000/µL.",
         leadIn: "Which finding contraindicates IV thrombolysis?",
         options: [
@@ -361,7 +360,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ais-af-prevention",
         condition: "ischemic-stroke",
-        step: 2,
+        kind: "reasoning",
         stem: "A 76-year-old woman recovers well from a left MCA stroke. Telemetry shows A-fib, and echocardiogram shows a normal native mitral valve.",
         leadIn: "Which treatment best prevents recurrence?",
         options: [
@@ -381,7 +380,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ais-pfo",
         condition: "ischemic-stroke",
-        step: 1,
+        kind: "reasoning",
         stem: "A 34-year-old woman has a stroke the day after a long-haul flight, during which her calf became swollen. Workup finds no A-fib or carotid disease, and a bubble echocardiogram shows a patent foramen ovale.",
         leadIn: "Which mechanism best explains her stroke?",
         options: [
@@ -397,7 +396,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ais-carotid",
         condition: "ischemic-stroke",
-        step: 2,
+        kind: "reasoning",
         stem: "A 68-year-old man had brief painless loss of vision in his left eye, like a curtain coming down, followed a week later by a minor right hand weakness that resolved. Carotid duplex shows 80% stenosis of the left ICA.",
         leadIn: "In addition to antiplatelet therapy and a high-intensity statin, which treatment is indicated?",
         options: [
@@ -413,7 +412,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ais-bp",
         condition: "ischemic-stroke",
-        step: 2,
+        kind: "reasoning",
         stem: "A 70-year-old woman presents 7 hours after onset of left hemiparesis. CT shows no hemorrhage and CT angiogram shows no large vessel occlusion. She will not receive reperfusion therapy. Her BP is 196/104 mm Hg.",
         leadIn: "Which is the most appropriate approach to her BP?",
         options: [
@@ -433,7 +432,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ais-mimic-bell",
         condition: "ischemic-stroke",
-        step: 2,
+        kind: "reasoning",
         stem: "A 41-year-old man woke with a droop of the right side of his face. He cannot wrinkle his right forehead or close his right eye fully. Limb strength, speech, and sensation are normal.",
         leadIn: "Why is this unlikely to be a stroke?",
         options: [
@@ -449,7 +448,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ais-dapt",
         condition: "ischemic-stroke",
-        step: 2,
+        kind: "memory",
         stem: "A 66-year-old woman presents 6 hours after transient right hand weakness and slurred speech, now with an NIHSS of 2. CT and CT angiogram show no hemorrhage or LVO, and ECG shows sinus rhythm. She is not given thrombolysis.",
         leadIn: "Which antithrombotic plan is most appropriate?",
         options: [
@@ -470,7 +469,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ais-aspirin-timing",
         condition: "ischemic-stroke",
-        step: 2,
+        kind: "memory",
         stem: "A 71-year-old man received IV tenecteplase for a left MCA stroke 2 hours ago. The team asks when to start aspirin.",
         leadIn: "Which timing is correct?",
         options: [
@@ -491,7 +490,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ais-swallow",
         condition: "ischemic-stroke",
-        step: 1,
+        kind: "memory",
         stem: "A 78-year-old woman admitted with a right MCA stroke is hungry and asks for breakfast. She has mild dysarthria.",
         leadIn: "What should happen before she eats or drinks?",
         options: [
@@ -511,7 +510,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ais-cha2ds2vasc",
         condition: "ischemic-stroke",
-        step: 1,
+        kind: "memory",
         stem: "A 70-year-old woman with hypertension and A-fib has had a TIA. She has no heart failure, diabetes, or vascular disease.",
         leadIn: "What is her CHA₂DS₂-VASc score?",
         options: [
@@ -531,7 +530,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ais-dissection",
         condition: "ischemic-stroke",
-        step: 2,
+        kind: "memory",
         stem: "A 38-year-old man develops neck pain and a left Horner syndrome after a car crash, followed 2 days later by right arm weakness and aphasia.",
         leadIn: "Which test is most likely to show the cause?",
         options: [
@@ -552,7 +551,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ais-endocarditis",
         condition: "ischemic-stroke",
-        step: 2,
+        kind: "reasoning",
         stem: "A 32-year-old man who injects drugs has fever for 2 weeks and sudden left hemiparesis 2 hours ago. CT shows no hemorrhage, and there is a new heart murmur.",
         leadIn: "Which management is most appropriate?",
         options: [
@@ -575,7 +574,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ich-location",
         condition: "intracerebral-hemorrhage",
-        step: 1,
+        kind: "memory",
         stem: "A 78-year-old woman with progressive memory loss has a headache and left homonymous hemianopia. CT shows a right occipital lobar hemorrhage. MRI with SWI shows many lobar microbleeds. She has no history of hypertension.",
         leadIn: "What is the most likely cause?",
         options: [
@@ -595,7 +594,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ich-bp",
         condition: "intracerebral-hemorrhage",
-        step: 2,
+        kind: "reasoning",
         stem: "A 62-year-old man has a left putaminal hemorrhage on CT. His BP is 196/110 mm Hg, and he takes no anticoagulants.",
         leadIn: "Which is the most appropriate BP management?",
         options: [
@@ -615,7 +614,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ich-warfarin",
         condition: "intracerebral-hemorrhage",
-        step: 2,
+        kind: "memory",
         stem: "A 74-year-old woman on warfarin for A-fib has a right thalamic hemorrhage. Her INR is 3.4.",
         leadIn: "Which is the best way to reverse her anticoagulation?",
         options: [
@@ -637,7 +636,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ich-cerebellar",
         condition: "intracerebral-hemorrhage",
-        step: 2,
+        kind: "reasoning",
         stem: "A 66-year-old man with hypertension has vomiting, inability to walk, and increasing drowsiness. CT shows a 4 cm right cerebellar hemorrhage compressing the fourth ventricle with early hydrocephalus.",
         leadIn: "Which treatment is most appropriate?",
         options: [
@@ -657,7 +656,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ich-cvst",
         condition: "intracerebral-hemorrhage",
-        step: 2,
+        kind: "reasoning",
         stem: "A 29-year-old woman taking the OCP has a week of worsening headache, then a seizure. CT shows a small hemorrhage near the cortex, and CT venography shows an empty delta sign.",
         leadIn: "Which treatment is most appropriate?",
         options: [
@@ -676,7 +675,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ich-charcot",
         condition: "intracerebral-hemorrhage",
-        step: 1,
+        kind: "reasoning",
         stem: "A 58-year-old man with 20 years of poorly controlled hypertension has a pontine hemorrhage.",
         leadIn: "Which vascular change most likely underlies the bleed?",
         options: [
@@ -696,7 +695,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ich-score",
         condition: "intracerebral-hemorrhage",
-        step: 2,
+        kind: "memory",
         stem: "An 82-year-old man has a supratentorial hemorrhage estimated at 40 mL on CT, with intraventricular extension. His GCS is 9.",
         leadIn: "What is his ICH score?",
         options: [
@@ -712,7 +711,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ich-dabigatran",
         condition: "intracerebral-hemorrhage",
-        step: 2,
+        kind: "memory",
         stem: "A 79-year-old man taking dabigatran for A-fib has a left lobar hemorrhage on CT. He took his last dose 3 hours ago.",
         leadIn: "Which reversal agent is most appropriate?",
         options: [
@@ -734,7 +733,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ich-ct-angiogram",
         condition: "intracerebral-hemorrhage",
-        step: 2,
+        kind: "reasoning",
         stem: "A 27-year-old woman with no hypertension has sudden headache and left arm weakness. Non-contrast CT shows a right frontal lobar hemorrhage.",
         leadIn: "Which test is most appropriate next?",
         options: [
@@ -754,7 +753,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ich-melanoma",
         condition: "intracerebral-hemorrhage",
-        step: 2,
+        kind: "memory",
         stem: "A 55-year-old man treated for a melanoma 2 years ago has a seizure. CT shows a lobar hemorrhage, and MRI with contrast shows an enhancing mass at its edge.",
         leadIn: "What is the most likely cause of the hemorrhage?",
         options: [
@@ -775,7 +774,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ich-amyloid-antithrombotic",
         condition: "intracerebral-hemorrhage",
-        step: 2,
+        kind: "memory",
         stem: "An 81-year-old woman recovers from a lobar hemorrhage. MRI with SWI shows many lobar microbleeds. She took aspirin for primary prevention.",
         leadIn: "Which long-term plan is most appropriate?",
         options: [
@@ -795,7 +794,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ich-seizure-prophylaxis",
         condition: "intracerebral-hemorrhage",
-        step: 2,
+        kind: "memory",
         stem: "A 68-year-old man with a right putaminal hemorrhage is admitted to the ICU. He has had no seizures.",
         leadIn: "Which part of his supportive care is correct?",
         options: [
@@ -819,7 +818,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sah-lp",
         condition: "subarachnoid-hemorrhage",
-        step: 2,
+        kind: "reasoning",
         stem: "A 44-year-old woman had a sudden, severe headache that peaked within a minute while lifting weights 10 hours ago. She is alert with mild neck stiffness. Non-contrast CT head is normal.",
         leadIn: "Which is the most appropriate next step?",
         options: [
@@ -838,7 +837,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sah-site",
         condition: "subarachnoid-hemorrhage",
-        step: 1,
+        kind: "memory",
         stem: "A 52-year-old smoker has a thunderclap headache. CT shows subarachnoid blood, and CT angiogram finds a saccular aneurysm.",
         leadIn: "Where is the aneurysm most likely to be?",
         options: [
@@ -854,7 +853,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sah-nimodipine",
         condition: "subarachnoid-hemorrhage",
-        step: 2,
+        kind: "reasoning",
         stem: "A 47-year-old man has an aneurysmal SAH that is coiled within 24 hours of onset.",
         leadIn: "Which drug should he receive to prevent delayed ischemia?",
         options: [
@@ -874,7 +873,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sah-hyponatremia",
         condition: "subarachnoid-hemorrhage",
-        step: 2,
+        kind: "reasoning",
         stem: "On day 5 after aneurysmal SAH, a 56-year-old woman's sodium falls to 127 mmol/L.",
         leadIn: "Which is the most appropriate approach?",
         options: [
@@ -893,7 +892,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sah-hydrocephalus",
         condition: "subarachnoid-hemorrhage",
-        step: 1,
+        kind: "reasoning",
         stem: "Two days after SAH, a 60-year-old man becomes increasingly drowsy. CT shows enlarged lateral ventricles.",
         leadIn: "What is the mechanism of this complication?",
         options: [
@@ -909,7 +908,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sah-pkd",
         condition: "subarachnoid-hemorrhage",
-        step: 1,
+        kind: "memory",
         stem: "A 38-year-old man with flank pain and hematuria has enlarged kidneys full of cysts on ultrasound. His mother died suddenly of a brain hemorrhage at 45.",
         leadIn: "Which type of brain hemorrhage is he at increased risk of?",
         options: [
@@ -925,7 +924,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sah-pain",
         condition: "subarachnoid-hemorrhage",
-        step: 2,
+        kind: "memory",
         stem: "A 50-year-old woman with SAH is awaiting coiling of her aneurysm later today and has a severe headache.",
         leadIn: "Which analgesic is most appropriate?",
         options: [
@@ -941,7 +940,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sah-ottawa",
         condition: "subarachnoid-hemorrhage",
-        step: 2,
+        kind: "memory",
         stem: "A 32-year-old alert woman has a new severe headache that peaked within 30 minutes while she was sitting at her desk. She has no neck pain or stiffness, did not lose consciousness, and has full neck flexion.",
         leadIn: "What does the Ottawa SAH rule indicate?",
         options: [
@@ -960,7 +959,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sah-ct-6h",
         condition: "subarachnoid-hemorrhage",
-        step: 2,
+        kind: "reasoning",
         stem: "A 50-year-old man has a thunderclap headache. Non-contrast CT head performed 3 hours after onset is normal, as read by an experienced radiologist.",
         leadIn: "What is the most appropriate next step?",
         options: [
@@ -980,7 +979,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sah-hunt-hess",
         condition: "subarachnoid-hemorrhage",
-        step: 1,
+        kind: "memory",
         stem: "A 58-year-old woman with SAH on CT is drowsy and confused, with mild weakness of her left arm.",
         leadIn: "What is her Hunt and Hess grade?",
         options: [
@@ -1000,7 +999,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sah-bp",
         condition: "subarachnoid-hemorrhage",
-        step: 2,
+        kind: "memory",
         stem: "A 46-year-old man with an unsecured ruptured AComm aneurysm has BP 182/100 mm Hg while awaiting coiling.",
         leadIn: "Which BP target is most appropriate until the aneurysm is secured?",
         options: [
@@ -1021,7 +1020,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sah-antifibrinolytic",
         condition: "subarachnoid-hemorrhage",
-        step: 2,
+        kind: "memory",
         stem: "A 53-year-old woman with aneurysmal SAH cannot have her aneurysm secured for 2 days because of transfer delays.",
         leadIn: "Which measure may be used to reduce rebleeding until then?",
         options: [
@@ -1044,7 +1043,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mig-criteria",
         condition: "migraine",
-        step: 1,
+        kind: "memory",
         stem: "A 27-year-old woman has had recurrent left-sided throbbing headaches since her teens, each lasting about a day, with nausea and a wish to lie in a dark, quiet room. Walking up stairs makes them worse. Examination between attacks is normal.",
         leadIn: "What is the most likely diagnosis?",
         options: [
@@ -1064,7 +1063,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mig-aura",
         condition: "migraine",
-        step: 1,
+        kind: "memory",
         stem: "A 31-year-old man sees a shimmering zigzag line that spreads slowly across his left visual field over 20 minutes and then fades completely, followed by a throbbing headache.",
         leadIn: "What process is thought to cause his visual symptoms?",
         options: [
@@ -1084,7 +1083,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mig-cgrp",
         condition: "migraine",
-        step: 1,
+        kind: "reasoning",
         stem: "A new drug for migraine blocks a neuropeptide released from trigeminal nerve terminals that dilates dural vessels and causes neurogenic inflammation.",
         leadIn: "Which neuropeptide does the drug target?",
         options: [
@@ -1100,7 +1099,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mig-triptan-contra",
         condition: "migraine",
-        step: 2,
+        kind: "reasoning",
         stem: "A 58-year-old man with migraine had a myocardial infarction last year. His attacks are moderate to severe and do not respond to ibuprofen.",
         leadIn: "Which acute treatment should be avoided?",
         options: [
@@ -1116,7 +1115,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mig-prevention",
         condition: "migraine",
-        step: 2,
+        kind: "memory",
         stem: "A 34-year-old woman has 8 disabling migraine attacks a month despite acute treatment. She also has hypertension and wants to lose weight.",
         leadIn: "Which preventive option best fits?",
         options: [
@@ -1136,7 +1135,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mig-red-flag",
         condition: "migraine",
-        step: 2,
+        kind: "reasoning",
         stem: "A 45-year-old woman with lifelong migraine has the worst headache of her life, reaching full intensity within a minute while lifting a box.",
         leadIn: "What is the most appropriate next step?",
         options: [
@@ -1152,7 +1151,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mig-ocp",
         condition: "migraine",
-        step: 2,
+        kind: "reasoning",
         stem: "A 24-year-old woman who has migraine with aura asks to start a combined estrogen-progestin pill for contraception.",
         leadIn: "Why is this pill avoided?",
         options: [
@@ -1168,7 +1167,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mig-moh",
         condition: "migraine",
-        step: 1,
+        kind: "memory",
         stem: "A 40-year-old woman with migraine now has headaches on 20 days a month. She takes paracetamol or a triptan almost every day.",
         leadIn: "What is the most likely cause of the increase?",
         options: [
@@ -1184,7 +1183,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "tth-features",
         condition: "tension-headache",
-        step: 1,
+        kind: "memory",
         stem: "A 38-year-old office worker has headaches most afternoons, described as a tight band around her head. They are mild to moderate, do not stop her working, and come without nausea. Her neck and scalp muscles are tender.",
         leadIn: "What is the most likely diagnosis?",
         options: [
@@ -1200,7 +1199,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "tth-trigger",
         condition: "tension-headache",
-        step: 1,
+        kind: "memory",
         stem: "A 29-year-old student has frequent band-like headaches during exam weeks that ease on holidays.",
         leadIn: "Which factor most often triggers this type of headache?",
         options: [
@@ -1216,7 +1215,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "tth-prevention",
         condition: "tension-headache",
-        step: 2,
+        kind: "reasoning",
         stem: "A 45-year-old man has bilateral pressing headaches on 18 days a month for a year. Neurologic examination is normal, and he uses ibuprofen often.",
         leadIn: "Which drug is best for prevention?",
         options: [
@@ -1235,7 +1234,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "tth-vs-mig",
         condition: "tension-headache",
-        step: 1,
+        kind: "memory",
         stem: "Two patients have recurrent headaches. One has bilateral pressing pain that walking does not worsen; the other has unilateral throbbing pain worsened by activity, with nausea.",
         leadIn: "Which feature best separates the first patient's headache from migraine?",
         options: [
@@ -1251,7 +1250,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "clu-features",
         condition: "cluster-headache",
-        step: 1,
+        kind: "memory",
         stem: "A 35-year-old man who smokes wakes at 2 am most nights for 3 weeks with excruciating pain behind his right eye lasting 45 minutes. He paces the room, and his right eye waters and his right nostril runs.",
         leadIn: "What is the most likely diagnosis?",
         options: [
@@ -1267,7 +1266,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "clu-oxygen",
         condition: "cluster-headache",
-        step: 2,
+        kind: "reasoning",
         stem: "A 40-year-old man presents during a typical attack of cluster headache.",
         leadIn: "What is the most appropriate acute treatment?",
         options: [
@@ -1287,7 +1286,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "clu-verapamil",
         condition: "cluster-headache",
-        step: 2,
+        kind: "reasoning",
         stem: "A 38-year-old man has a new bout of cluster headaches with 3 attacks a day.",
         leadIn: "Which drug is first line for prevention, and what should be monitored?",
         options: [
@@ -1303,7 +1302,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "clu-horner",
         condition: "cluster-headache",
-        step: 1,
+        kind: "reasoning",
         stem: "During an attack of cluster headache, a man's right eyelid droops and his right pupil becomes small.",
         leadIn: "Which pathway explains these signs?",
         options: [
@@ -1322,7 +1321,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "edh-lucid",
         condition: "epidural-hematoma",
-        step: 1,
+        kind: "memory",
         stem: "A 19-year-old man is hit on the side of the head by a baseball, briefly loses consciousness, then is alert and talking. An hour later he becomes drowsy, and his right pupil dilates.",
         leadIn: "Which vessel is most likely injured?",
         options: [
@@ -1341,7 +1340,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "edh-ct",
         condition: "epidural-hematoma",
-        step: 1,
+        kind: "memory",
         stem: "A 22-year-old woman has a head CT after a fall from a horse.",
         leadIn: "Which CT appearance indicates an epidural hematoma?",
         options: [
@@ -1357,7 +1356,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "edh-treatment",
         condition: "epidural-hematoma",
-        step: 2,
+        kind: "reasoning",
         stem: "A 20-year-old man with an epidural hematoma on CT has a falling GCS, a dilated left pupil, and midline shift.",
         leadIn: "What is the most appropriate management?",
         options: [
@@ -1376,7 +1375,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "edh-age",
         condition: "epidural-hematoma",
-        step: 1,
+        kind: "reasoning",
         stem: "Epidural hematomas are much more common in adolescents and young adults than in older adults.",
         leadIn: "What best explains this?",
         options: [
@@ -1392,7 +1391,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sdh-chronic",
         condition: "subdural-hematoma",
-        step: 2,
+        kind: "memory",
         stem: "A 79-year-old man on warfarin has 3 weeks of headache, fluctuating confusion, and a new unsteady gait. His daughter recalls a minor fall a month ago.",
         leadIn: "What is the most likely diagnosis?",
         options: [
@@ -1408,7 +1407,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sdh-veins",
         condition: "subdural-hematoma",
-        step: 1,
+        kind: "memory",
         stem: "An 84-year-old woman with brain atrophy develops a subdural hematoma after a minor bump to the head.",
         leadIn: "Which structures most likely bled?",
         options: [
@@ -1424,7 +1423,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sdh-ct",
         condition: "subdural-hematoma",
-        step: 1,
+        kind: "memory",
         stem: "A head CT shows a crescent-shaped collection along the left convexity that crosses the coronal suture but stops at the falx.",
         leadIn: "What is this collection?",
         options: [
@@ -1440,7 +1439,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sdh-infant",
         condition: "subdural-hematoma",
-        step: 2,
+        kind: "reasoning",
         stem: "A 4-month-old boy is brought in drowsy and vomiting. His parents say he rolled off a sofa. CT shows bilateral subdural hematomas of different ages, and there are retinal hemorrhages.",
         leadIn: "What is the most appropriate next step?",
         options: [
@@ -1456,7 +1455,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sdh-burr",
         condition: "subdural-hematoma",
-        step: 2,
+        kind: "memory",
         stem: "A 76-year-old man has a symptomatic chronic subdural hematoma with mild midline shift. His anticoagulant has been reversed.",
         leadIn: "Which procedure is usually used?",
         options: [
@@ -1472,7 +1471,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hern-uncal",
         condition: "herniation",
-        step: 1,
+        kind: "reasoning",
         stem: "A 50-year-old man with an expanding right temporal hematoma develops a dilated, unreactive right pupil and a right eye that rests down and out.",
         leadIn: "Which herniation and structure explain this?",
         options: [
@@ -1488,7 +1487,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hern-kernohan",
         condition: "herniation",
-        step: 1,
+        kind: "reasoning",
         stem: "A man with a large left subdural hematoma has a dilated left pupil and weakness of the left arm and leg.",
         leadIn: "Why is the weakness on the same side as the lesion?",
         options: [
@@ -1504,7 +1503,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hern-subfalcine",
         condition: "herniation",
-        step: 1,
+        kind: "memory",
         stem: "A patient with a large right frontal tumor develops new weakness of the left leg, with the arm spared.",
         leadIn: "Which artery is most likely compressed?",
         options: [
@@ -1520,7 +1519,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hern-tonsillar",
         condition: "herniation",
-        step: 1,
+        kind: "memory",
         stem: "A patient with a large cerebellar mass suddenly stops breathing after a lumbar puncture.",
         leadIn: "What has most likely happened?",
         options: [
@@ -1536,7 +1535,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hern-cushing",
         condition: "herniation",
-        step: 1,
+        kind: "memory",
         stem: "A patient with a large intracerebral hemorrhage becomes hypertensive at 210/110 with a heart rate of 44 and irregular breathing.",
         leadIn: "What do these signs indicate?",
         options: [
@@ -1552,7 +1551,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hern-treatment",
         condition: "herniation",
-        step: 2,
+        kind: "memory",
         stem: "A patient with a large hematoma shows signs of impending herniation while awaiting surgery.",
         leadIn: "Which measure lowers ICP fastest as a bridge?",
         options: [
@@ -1570,7 +1569,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sz-status",
         condition: "seizures",
-        step: 2,
+        kind: "reasoning",
         stem: "A 34-year-old man with epilepsy has been having a generalized tonic-clonic seizure for 7 minutes when paramedics arrive. His glucose is 6.1 mmol/L, and he has no IV access.",
         leadIn: "Which is the most appropriate next step?",
         options: [
@@ -1590,7 +1589,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sz-absence",
         condition: "seizures",
-        step: 2,
+        kind: "reasoning",
         stem: "An 8-year-old girl's teacher reports many brief staring spells a day, with lip smacking, after which she immediately resumes her work. Hyperventilation in clinic triggers one, and EEG shows a 3 Hz spike-and-wave pattern.",
         leadIn: "Which drug is most appropriate?",
         options: [
@@ -1610,7 +1609,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sz-temporal",
         condition: "seizures",
-        step: 1,
+        kind: "memory",
         stem: "A 27-year-old woman has episodes that begin with a rising feeling in her stomach and intense déjà vu, followed by staring, chewing movements, and no memory of the event. Afterward she is confused for 20 minutes.",
         leadIn: "Where do these seizures most likely start?",
         options: [
@@ -1630,7 +1629,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sz-valproate-pregnancy",
         condition: "seizures",
-        step: 2,
+        kind: "reasoning",
         stem: "A 22-year-old woman has juvenile myoclonic epilepsy with morning jerks and occasional generalized seizures. She is sexually active and does not plan pregnancy soon.",
         leadIn: "Which drug is the best long-term choice?",
         options: [
@@ -1650,7 +1649,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sz-prolactin",
         condition: "seizures",
-        step: 1,
+        kind: "memory",
         stem: "A 19-year-old woman has an episode of thrashing with her eyes closed, side-to-side head movement, and asynchronous limb movements for 4 minutes. She is alert immediately afterward.",
         leadIn: "Which test best confirms the diagnosis?",
         options: [
@@ -1669,7 +1668,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sz-carbamazepine-hla",
         condition: "seizures",
-        step: 1,
+        kind: "memory",
         stem: "A 30-year-old man of Han Chinese ancestry with focal seizures is about to start carbamazepine.",
         leadIn: "Which test should be done first?",
         options: [
@@ -1685,7 +1684,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sz-todd",
         condition: "seizures",
-        step: 2,
+        kind: "reasoning",
         stem: "A 45-year-old man with epilepsy is found after a witnessed tonic-clonic seizure with a bitten tongue. An hour later he has left arm weakness that is improving. CT head is normal and glucose is normal.",
         leadIn: "Which is the most appropriate management of his weakness?",
         options: [
@@ -1704,7 +1703,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sz-febrile",
         condition: "seizures",
-        step: 2,
+        kind: "reasoning",
         stem: "A 20-month-old boy has a 2-minute generalized seizure during a fever of 39.2 °C from an ear infection. He recovers fully within 30 minutes and has no meningeal signs.",
         leadIn: "How is this seizure best classified?",
         options: [
@@ -1720,7 +1719,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sz-status-second-line",
         condition: "seizures",
-        step: 2,
+        kind: "reasoning",
         stem: "A 40-year-old woman in convulsive status epilepticus has received two doses of IV lorazepam over 10 minutes, and her seizure continues 25 minutes after it began.",
         leadIn: "Which drug should be given next?",
         options: [
@@ -1741,7 +1740,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sz-ncse",
         condition: "seizures",
-        step: 2,
+        kind: "memory",
         stem: "A 70-year-old woman has been confused and staring for 2 days after a stroke, with occasional twitching of her eyelids and no convulsions. EEG shows continuous seizure activity.",
         leadIn: "What is the diagnosis?",
         options: [
@@ -1762,7 +1761,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sz-mechanism-sodium",
         condition: "seizures",
-        step: 1,
+        kind: "reasoning",
         stem: "A 34-year-old man with focal seizures starts lacosamide.",
         leadIn: "Which drug shares its main mechanism?",
         options: [
@@ -1784,7 +1783,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sz-phenytoin",
         condition: "seizures",
-        step: 1,
+        kind: "reasoning",
         stem: "A 45-year-old man taking a long-standing antiseizure drug has swollen, overgrown gums. His dose was recently increased, and he now has nystagmus and an unsteady gait, with a level far higher than the dose increase predicted.",
         leadIn: "Which drug is he most likely taking?",
         options: [
@@ -1804,7 +1803,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sz-west",
         condition: "seizures",
-        step: 2,
+        kind: "reasoning",
         stem: "A 6-month-old infant has clusters of sudden flexion of the trunk and arms on waking, and has stopped reaching developmental milestones.",
         leadIn: "Which treatment is most appropriate for this epilepsy syndrome?",
         options: [
@@ -1825,7 +1824,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "sz-hypoglycemia-first",
         condition: "seizures",
-        step: 2,
+        kind: "reasoning",
         stem: "A 52-year-old man with heavy alcohol use is brought in after a generalized seizure. He is drowsy, and his capillary glucose is 2.1 mmol/L.",
         leadIn: "Which treatment should be given alongside glucose?",
         options: [
@@ -1848,7 +1847,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms-ino",
         condition: "multiple-sclerosis",
-        step: 1,
+        kind: "reasoning",
         stem: "A 29-year-old woman has double vision. On looking left, her right eye fails to adduct while her left eye shows nystagmus, and the same happens on looking right. Convergence is normal.",
         leadIn: "Damage to which structure explains this?",
         options: [
@@ -1867,7 +1866,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms-uhthoff",
         condition: "multiple-sclerosis",
-        step: 1,
+        kind: "memory",
         stem: "A 33-year-old woman with MS notices that her leg weakness and blurred vision worsen after a hot shower and settle within an hour.",
         leadIn: "What is this phenomenon?",
         options: [
@@ -1887,7 +1886,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms-relapse",
         condition: "multiple-sclerosis",
-        step: 2,
+        kind: "reasoning",
         stem: "A 31-year-old woman with relapsing-remitting MS has 5 days of new numbness and weakness of her left leg. Infection has been excluded.",
         leadIn: "Which is the most appropriate treatment?",
         options: [
@@ -1907,7 +1906,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms-natalizumab",
         condition: "multiple-sclerosis",
-        step: 2,
+        kind: "memory",
         stem: "A 26-year-old woman with highly active relapsing MS is to start natalizumab.",
         leadIn: "Which test should be checked first?",
         options: [
@@ -1926,7 +1925,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms-fingolimod",
         condition: "multiple-sclerosis",
-        step: 1,
+        kind: "reasoning",
         stem: "A 35-year-old man with MS starts an oral drug that makes his lymphocyte count fall, and his HR drops after the first dose.",
         leadIn: "How does this drug work?",
         options: [
@@ -1942,7 +1941,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms-mcdonald",
         condition: "multiple-sclerosis",
-        step: 2,
+        kind: "memory",
         stem: "A 28-year-old woman has optic neuritis. MRI shows T2 plaques in periventricular and juxtacortical sites, all non-enhancing. She has had no previous symptoms.",
         leadIn: "Under the 2024 McDonald criteria, which result would most directly confirm MS now?",
         options: [
@@ -1961,7 +1960,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms-b12",
         condition: "multiple-sclerosis",
-        step: 2,
+        kind: "reasoning",
         stem: "A 52-year-old man has loss of vibration sense and proprioception in his feet, brisk knee reflexes, and up-going plantars. FBC shows a macrocytic anemia. MRI shows no plaques.",
         leadIn: "Which diagnosis best explains his findings?",
         options: [
@@ -1977,7 +1976,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms-pathology",
         condition: "multiple-sclerosis",
-        step: 1,
+        kind: "memory",
         stem: "A biopsy of an active demyelinating plaque from a young woman with relapsing neurologic symptoms shows macrophages stripping myelin, with relatively preserved axons.",
         leadIn: "Which cells start this process?",
         options: [
@@ -1997,7 +1996,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms-optic-neuritis",
         condition: "multiple-sclerosis",
-        step: 1,
+        kind: "memory",
         stem: "A 27-year-old woman has blurred vision in her right eye over 3 days, with pain on moving it. Colors look washed out.",
         leadIn: "Which other finding is most likely?",
         options: [
@@ -2018,7 +2017,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms-lhermitte",
         condition: "multiple-sclerosis",
-        step: 1,
+        kind: "memory",
         stem: "A 30-year-old man with numb hands feels an electric shock running down his spine and into his legs each time he bends his neck forward.",
         leadIn: "What is this sign called?",
         options: [
@@ -2039,7 +2038,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms-spms",
         condition: "multiple-sclerosis",
-        step: 1,
+        kind: "memory",
         stem: "A 45-year-old woman had relapsing-remitting MS from age 30. Over the last 3 years her walking has gradually worsened, without any relapses.",
         leadIn: "Which course does this describe?",
         options: [
@@ -2059,7 +2058,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms-bladder",
         condition: "multiple-sclerosis",
-        step: 2,
+        kind: "reasoning",
         stem: "A 38-year-old woman with MS has urgency and leaks urine before reaching the toilet. A bladder scan after voiding shows little residual urine.",
         leadIn: "Which treatment is most appropriate?",
         options: [
@@ -2080,7 +2079,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms-high-efficacy",
         condition: "multiple-sclerosis",
-        step: 2,
+        kind: "reasoning",
         stem: "A 24-year-old man has just been diagnosed with MS after two relapses in 6 months. MRI shows many T2 lesions, some enhancing, and he has no lasting disability.",
         leadIn: "Which treatment strategy best suits him?",
         options: [
@@ -2100,7 +2099,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms-cvs",
         condition: "multiple-sclerosis",
-        step: 2,
+        kind: "memory",
         stem: "A 33-year-old woman has a first episode of myelitis. MRI shows plaques in the spinal cord and periventricular white matter, none enhancing, and 7 plaques have a central vein sign. CSF has not been sent.",
         leadIn: "Under the 2024 McDonald criteria, is MS diagnosed?",
         options: [
@@ -2123,7 +2122,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nmo-mechanism",
         condition: "nmosd",
-        step: 1,
+        kind: "memory",
         stem: "A 38-year-old woman has severe bilateral optic neuritis and a cord lesion spanning 5 vertebral segments. Serum AQP4-IgG is positive.",
         leadIn: "Which cell is the primary target of the disease?",
         options: [
@@ -2142,7 +2141,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nmo-aps",
         condition: "nmosd",
-        step: 2,
+        kind: "memory",
         stem: "A 35-year-old woman has had 5 days of intractable hiccups and vomiting that did not respond to antiemetics. Endoscopy was normal and she was diagnosed with reflux. She has Sjögren syndrome.",
         leadIn: "Which test is most likely to make the diagnosis?",
         options: [
@@ -2162,7 +2161,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nmo-avoid-ms-drugs",
         condition: "nmosd",
-        step: 2,
+        kind: "reasoning",
         stem: "A 41-year-old woman with AQP4-IgG-positive NMOSD has recovered from her first attack of myelitis.",
         leadIn: "Which long-term treatment should be avoided?",
         options: [
@@ -2178,7 +2177,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nmo-plex",
         condition: "nmosd",
-        step: 2,
+        kind: "reasoning",
         stem: "A 44-year-old woman with NMOSD has a new attack of myelitis with paraplegia. After 5 days of IV methylprednisolone 1 g daily, she has not improved.",
         leadIn: "Which is the most appropriate next step?",
         options: [
@@ -2194,7 +2193,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nmo-csf",
         condition: "nmosd",
-        step: 1,
+        kind: "memory",
         stem: "A 30-year-old woman has a first attack of myelitis. CSF shows 85 white cells/µL with neutrophils and eosinophils and no oligoclonal bands.",
         leadIn: "Which diagnosis do these CSF findings favor?",
         options: [
@@ -2210,7 +2209,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nmo-pregnancy",
         condition: "nmosd",
-        step: 2,
+        kind: "memory",
         stem: "A 32-year-old woman with NMOSD is planning pregnancy and asks how pregnancy will affect her disease.",
         leadIn: "Which statement is correct?",
         options: [
@@ -2226,7 +2225,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nmo-mri",
         condition: "nmosd",
-        step: 1,
+        kind: "memory",
         stem: "MRI in a woman with acute paraplegia shows a swollen, central cord lesion spanning 4 vertebral segments with enhancement. Brain MRI shows a lesion in the dorsal medulla.",
         leadIn: "Which diagnosis does this pattern most suggest?",
         options: [
@@ -2242,7 +2241,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nmo-seronegative",
         condition: "nmosd",
-        step: 2,
+        kind: "memory",
         stem: "A 36-year-old woman has had optic neuritis and, 3 months later, myelitis with a lesion spanning 4 vertebral segments. A cell-based assay for AQP4-IgG is negative, and alternatives have been excluded.",
         leadIn: "Under the 2015 criteria, can NMOSD be diagnosed?",
         options: [
@@ -2262,7 +2261,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nmo-ocb-red-flag",
         condition: "nmosd",
-        step: 1,
+        kind: "memory",
         stem: "A woman thought to have NMOSD has CSF oligoclonal bands, short peripheral cord lesions, and periventricular lesions at right angles to the ventricles.",
         leadIn: "Which diagnosis do these findings favor?",
         options: [
@@ -2282,7 +2281,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nmo-eculizumab",
         condition: "nmosd",
-        step: 2,
+        kind: "reasoning",
         stem: "A 39-year-old woman with AQP4-IgG-positive NMOSD is to start eculizumab.",
         leadIn: "Which step is required before treatment?",
         options: [
@@ -2302,7 +2301,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nmo-rtx-ig",
         condition: "nmosd",
-        step: 2,
+        kind: "memory",
         stem: "A 45-year-old woman with NMOSD is starting RTX every 6 months.",
         leadIn: "Which monitoring is needed?",
         options: [
@@ -2321,7 +2320,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nmo-oct",
         condition: "nmosd",
-        step: 1,
+        kind: "memory",
         stem: "Two patients have recovered from optic neuritis, one with MS and one with AQP4-IgG-positive NMOSD.",
         leadIn: "Which finding is more typical of the NMOSD patient?",
         options: [
@@ -2344,7 +2343,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mog-target",
         condition: "mogad",
-        step: 1,
+        kind: "memory",
         stem: "A 9-year-old boy has encephalopathy and multifocal deficits 2 weeks after a viral illness. MRI shows fluffy, ill-defined white matter lesions, and serum MOG-IgG is positive at 1:320.",
         leadIn: "Where is the target antigen of this disease?",
         options: [
@@ -2360,7 +2359,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mog-optic",
         condition: "mogad",
-        step: 2,
+        kind: "memory",
         stem: "A 27-year-old man has painful vision loss in both eyes over a week. Both optic discs are swollen, and MRI shows enhancement of most of each optic nerve, with perineural sheath enhancement.",
         leadIn: "Which antibody test is most likely to be positive?",
         options: [
@@ -2379,7 +2378,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mog-titer",
         condition: "mogad",
-        step: 2,
+        kind: "memory",
         stem: "A 34-year-old woman has a first episode of myelitis. Serum MOG-IgG on a live cell-based assay is positive at 1:200.",
         leadIn: "Under the 2023 criteria, what else is needed to diagnose MOGAD?",
         options: [
@@ -2399,7 +2398,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mog-relapse",
         condition: "mogad",
-        step: 2,
+        kind: "reasoning",
         stem: "A 30-year-old man with MOGAD has a second attack of optic neuritis a year after his first, and MOG-IgG remains positive.",
         leadIn: "Which treatment is most appropriate to prevent further relapses?",
         options: [
@@ -2418,7 +2417,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mog-vs-ms",
         condition: "mogad",
-        step: 1,
+        kind: "memory",
         stem: "Two patients have a first demyelinating attack. One has a conus lesion and positive MOG-IgG; the other has well-circumscribed periventricular lesions and CSF oligoclonal bands.",
         leadIn: "Which feature distinguishes the course of MOGAD from that of MS?",
         options: [
@@ -2437,7 +2436,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mog-sex",
         condition: "mogad",
-        step: 1,
+        kind: "memory",
         stem: "Three groups of patients with demyelinating disease are compared: MS, AQP4-IgG-positive NMOSD, and MOGAD.",
         leadIn: "Which feature is typical of MOGAD?",
         options: [
@@ -2459,7 +2458,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mog-low-titer",
         condition: "mogad",
-        step: 2,
+        kind: "memory",
         stem: "A 41-year-old man has myelitis with a conus lesion. Serum MOG-IgG on a live cell-based assay is positive at 1:40, and AQP4-IgG is negative.",
         leadIn: "Under the 2023 criteria, can MOGAD be diagnosed?",
         options: [
@@ -2480,7 +2479,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mog-testing-all",
         condition: "mogad",
-        step: 1,
+        kind: "reasoning",
         stem: "A neurologist proposes testing MOG-IgG in every patient with possible MS.",
         leadIn: "Why is this discouraged?",
         options: [
@@ -2501,7 +2500,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mog-acute",
         condition: "mogad",
-        step: 2,
+        kind: "reasoning",
         stem: "A 25-year-old woman with MOGAD has acute bilateral optic neuritis. After 5 days of IV methylprednisolone 1 g daily, her vision has not improved.",
         leadIn: "Which treatment is most appropriate next?",
         options: [
@@ -2524,7 +2523,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gl-acute-closure",
         condition: "glaucoma",
-        step: 2,
+        kind: "reasoning",
         stem: "A 62-year-old East Asian woman has sudden severe pain in her right eye, halos around lights, headache, and vomiting after an evening in a dark cinema. The eye is red and firm, the cornea hazy, and the pupil fixed and mid-dilated. IOP is 58 mmHg.",
         leadIn: "After lowering the IOP medically, which treatment is definitive?",
         options: [
@@ -2544,7 +2543,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gl-open-angle",
         condition: "glaucoma",
-        step: 2,
+        kind: "reasoning",
         stem: "A 66-year-old man of African ancestry has no symptoms. Routine examination shows a cup-to-disc ratio of 0.8 in both eyes with notched rims, and visual fields show arcuate defects. Gonioscopy shows open angles.",
         leadIn: "Which is the most appropriate first treatment?",
         options: [
@@ -2564,7 +2563,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gl-timolol-asthma",
         condition: "glaucoma",
-        step: 1,
+        kind: "memory",
         stem: "A 58-year-old woman with open-angle glaucoma and asthma is wheezing more since starting a new eye drop.",
         leadIn: "Which drop is most likely responsible?",
         options: [
@@ -2584,7 +2583,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gl-latanoprost",
         condition: "glaucoma",
-        step: 1,
+        kind: "reasoning",
         stem: "A 70-year-old man notices his eyelashes have grown longer and his light brown iris has darkened since starting a glaucoma drop.",
         leadIn: "How does this drop lower IOP?",
         options: [
@@ -2605,7 +2604,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gl-decongestant",
         condition: "glaucoma",
-        step: 1,
+        kind: "reasoning",
         stem: "A 60-year-old hyperopic woman with a shallow anterior chamber takes an over-the-counter cold remedy containing pseudoephedrine. That night she develops a painful red eye with halos.",
         leadIn: "How did the remedy trigger her symptoms?",
         options: [
@@ -2621,7 +2620,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gl-gonioscopy",
         condition: "glaucoma",
-        step: 2,
+        kind: "memory",
         stem: "A 55-year-old woman has raised IOP of 28 mmHg in both eyes on routine screening.",
         leadIn: "Which examination determines whether she has open-angle or angle-closure glaucoma?",
         options: [
@@ -2637,7 +2636,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gl-pilocarpine-timing",
         condition: "glaucoma",
-        step: 2,
+        kind: "memory",
         stem: "A 64-year-old woman with acute angle closure has an IOP of 62 mmHg. She has received acetazolamide, timolol, and apraclonidine.",
         leadIn: "When should pilocarpine be added?",
         options: [
@@ -2657,7 +2656,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gl-iridotomy",
         condition: "glaucoma",
-        step: 1,
+        kind: "reasoning",
         stem: "After medical treatment of acute angle closure, a 59-year-old woman's IOP has fallen to 18 mmHg.",
         leadIn: "Which definitive treatment is most appropriate?",
         options: [
@@ -2678,7 +2677,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gl-brimonidine-child",
         condition: "glaucoma",
-        step: 1,
+        kind: "memory",
         stem: "A 2-year-old girl with congenital glaucoma needs a drop to lower her IOP.",
         leadIn: "Which drop should be avoided because it can cause apnea in children?",
         options: [
@@ -2698,7 +2697,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gl-ntg",
         condition: "glaucoma",
-        step: 2,
+        kind: "memory",
         stem: "A 67-year-old woman has an enlarged, notched optic cup with arcuate field loss, but her IOP is 16 mmHg on repeated measurements and her angles are open.",
         leadIn: "Which further assessment is most appropriate?",
         options: [
@@ -2720,7 +2719,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cat-nuclear",
         condition: "cataract",
-        step: 1,
+        kind: "reasoning",
         stem: "A 74-year-old man says he can read the newspaper without his glasses for the first time in years, but his distance vision is worse and colors look yellowed.",
         leadIn: "Which type of cataract explains this?",
         options: [
@@ -2740,7 +2739,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cat-steroid",
         condition: "cataract",
-        step: 1,
+        kind: "memory",
         stem: "A 40-year-old woman who has taken oral prednisone for 3 years for lupus has worsening glare from headlights when driving at night.",
         leadIn: "Which type of cataract is most likely?",
         options: [
@@ -2756,7 +2755,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cat-rapd",
         condition: "cataract",
-        step: 2,
+        kind: "memory",
         stem: "A 68-year-old man has a dense cataract in his left eye and reduced vision. The swinging flashlight test shows a left RAPD.",
         leadIn: "What does the RAPD indicate?",
         options: [
@@ -2772,7 +2771,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cat-phacomorphic",
         condition: "cataract",
-        step: 1,
+        kind: "reasoning",
         stem: "An 80-year-old woman with a long-neglected, swollen white cataract in her right eye develops sudden pain and redness in that eye. IOP is 46 mmHg, and gonioscopy shows a closed angle.",
         leadIn: "Which is the mechanism and treatment?",
         options: [
@@ -2791,7 +2790,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cat-tamsulosin",
         condition: "cataract",
-        step: 2,
+        kind: "reasoning",
         stem: "A 72-year-old man is booked for cataract surgery. His medications include tamsulosin for prostate symptoms.",
         leadIn: "Why should the surgeon know about tamsulosin?",
         options: [
@@ -2807,7 +2806,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cat-congenital",
         condition: "cataract",
-        step: 2,
+        kind: "reasoning",
         stem: "A 6-week-old infant has a white pupil in the right eye on a photograph. The red reflex is absent on that side.",
         leadIn: "Why is early treatment important?",
         options: [
@@ -2823,7 +2822,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cat-diabetes",
         condition: "cataract",
-        step: 1,
+        kind: "reasoning",
         stem: "A 24-year-old woman with poorly controlled type 1 diabetes has blurred vision. Slit lamp examination shows white, flake-like cortical opacities in both lenses.",
         leadIn: "Which mechanism explains these opacities?",
         options: [
@@ -2844,7 +2843,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cat-phacolytic",
         condition: "cataract",
-        step: 2,
+        kind: "reasoning",
         stem: "An 83-year-old man with a hypermature cataract has a painful red eye with IOP of 44 mmHg. Gonioscopy shows an open angle, and white cells float in the anterior chamber.",
         leadIn: "What is the mechanism of his raised IOP?",
         options: [
@@ -2864,7 +2863,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cat-monocular-diplopia",
         condition: "cataract",
-        step: 1,
+        kind: "memory",
         stem: "A 70-year-old woman sees two overlapping images when she looks at the moon with her right eye alone. Covering the right eye stops it.",
         leadIn: "What is the most likely cause?",
         options: [
@@ -2885,7 +2884,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cat-surgery-indication",
         condition: "cataract",
-        step: 2,
+        kind: "reasoning",
         stem: "A 72-year-old man with nuclear cataracts has acuity of 6/12 in each eye. He has stopped driving at night because of glare and struggles to read.",
         leadIn: "Which management is most appropriate?",
         options: [
@@ -2908,7 +2907,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "eye-keratitis",
         condition: "eye-conditions",
-        step: 2,
+        kind: "reasoning",
         stem: "A 24-year-old woman who sleeps in her contact lenses has 2 days of a painful red right eye, photophobia, and blurred vision. Slit lamp examination shows a white stromal infiltrate with an overlying epithelial defect.",
         leadIn: "Which is the most appropriate next step?",
         options: [
@@ -2927,7 +2926,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "eye-viral-conj",
         condition: "eye-conditions",
-        step: 2,
+        kind: "reasoning",
         stem: "A 30-year-old teacher has a red, watery, itchy left eye a week after a cold, now spreading to the right eye. Vision is normal, and she has a tender preauricular node.",
         leadIn: "Which is the most appropriate management?",
         options: [
@@ -2946,7 +2945,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "eye-optic-neuritis",
         condition: "eye-conditions",
-        step: 2,
+        kind: "reasoning",
         stem: "A 28-year-old woman has 3 days of blurred vision in her left eye and pain when she moves it. Colors look washed out, and she has a left RAPD. The optic disc looks normal.",
         leadIn: "Which investigation is most important next?",
         options: [
@@ -2965,7 +2964,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "eye-detachment",
         condition: "eye-conditions",
-        step: 2,
+        kind: "reasoning",
         stem: "A 52-year-old man with high myopia has new floaters and flashing lights in his right eye, and now a dark shadow spreading from the side of his vision like a curtain.",
         leadIn: "Which is the most appropriate management?",
         options: [
@@ -2981,7 +2980,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "eye-wet-amd",
         condition: "eye-conditions",
-        step: 1,
+        kind: "memory",
         stem: "A 78-year-old smoker notices that straight lines look wavy in her left eye over a week. An Amsler grid shows a central scotoma, and OCT shows subretinal fluid.",
         leadIn: "What drives the new vessels causing her symptoms?",
         options: [
@@ -3000,7 +2999,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "eye-rp",
         condition: "eye-conditions",
-        step: 1,
+        kind: "memory",
         stem: "A 19-year-old man has had trouble seeing at night for years and now bumps into things at his sides. The fundus shows bone spicule pigment and narrowed arterioles.",
         leadIn: "Which cells are lost first?",
         options: [
@@ -3016,7 +3015,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "eye-crao",
         condition: "eye-conditions",
-        step: 2,
+        kind: "reasoning",
         stem: "A 71-year-old man with A-fib has sudden, painless, severe loss of vision in his right eye. There is a right RAPD, and the retina is pale with a cherry-red spot.",
         leadIn: "How should this be managed?",
         options: [
@@ -3032,7 +3031,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "eye-bacterial-conj",
         condition: "eye-conditions",
-        step: 1,
+        kind: "reasoning",
         stem: "A 4-year-old boy wakes with both eyelids stuck together by yellow discharge. His eyes are red, but his vision is normal.",
         leadIn: "Which treatment shortens this illness?",
         options: [
@@ -3052,7 +3051,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "eye-gonococcal",
         condition: "eye-conditions",
-        step: 2,
+        kind: "reasoning",
         stem: "A 22-year-old man has a red eye that developed within 12 hours, with copious purulent discharge that reaccumulates as soon as it is wiped away.",
         leadIn: "Why does this need urgent assessment?",
         options: [
@@ -3072,7 +3071,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "eye-uveitis",
         condition: "eye-conditions",
-        step: 2,
+        kind: "reasoning",
         stem: "A 28-year-old man with inflammatory back pain has a painful red right eye with blurred vision and photophobia. The redness is concentrated around the cornea.",
         leadIn: "Which treatment is most appropriate?",
         options: [
@@ -3093,7 +3092,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "eye-dry-amd",
         condition: "eye-conditions",
-        step: 1,
+        kind: "reasoning",
         stem: "A 74-year-old smoker has slowly worsening central vision in both eyes over years. The macula shows yellow deposits and pigment changes, and OCT shows no fluid.",
         leadIn: "Which treatment slows progression?",
         options: [
@@ -3113,7 +3112,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "eye-crvo",
         condition: "eye-conditions",
-        step: 1,
+        kind: "memory",
         stem: "A 68-year-old man with hypertension and glaucoma has sudden painless blurring in his left eye. The fundus shows dilated, tortuous veins with hemorrhages in all four quadrants.",
         leadIn: "What is the most likely diagnosis?",
         options: [
@@ -3135,7 +3134,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hl-tuning-fork",
         condition: "hearing-loss",
-        step: 1,
+        kind: "memory",
         stem: "A 45-year-old woman has hearing loss in her left ear. The Weber test lateralizes to the left, and on the left the Rinne test shows bone conduction louder than air conduction.",
         leadIn: "Which type of hearing loss does she have?",
         options: [
@@ -3154,7 +3153,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hl-otosclerosis",
         condition: "hearing-loss",
-        step: 1,
+        kind: "reasoning",
         stem: "A 32-year-old woman has progressive hearing loss in both ears that worsened during her pregnancy. Her mother had the same problem. The eardrums look normal, and audiometry shows an air-bone gap.",
         leadIn: "What is the mechanism of her hearing loss?",
         options: [
@@ -3170,7 +3169,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hl-schwannoma",
         condition: "hearing-loss",
-        step: 2,
+        kind: "memory",
         stem: "A 54-year-old man has slowly worsening hearing in his right ear with ringing on the same side and mild imbalance. Audiometry shows right sensorineural loss.",
         leadIn: "Which investigation is most appropriate?",
         options: [
@@ -3189,7 +3188,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hl-sudden",
         condition: "hearing-loss",
-        step: 2,
+        kind: "reasoning",
         stem: "A 41-year-old man woke 2 days ago with severe hearing loss in his left ear. Otoscopy is normal, and audiometry shows a 50 dB sensorineural loss across 4 consecutive frequencies.",
         leadIn: "Which is the most appropriate treatment?",
         options: [
@@ -3205,7 +3204,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hl-noise",
         condition: "hearing-loss",
-        step: 1,
+        kind: "memory",
         stem: "A 48-year-old factory worker has tinnitus and difficulty hearing conversation. Audiometry shows a dip at 4 kHz with recovery at 8 kHz in both ears.",
         leadIn: "What is the cause?",
         options: [
@@ -3221,7 +3220,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hl-gjb2",
         condition: "hearing-loss",
-        step: 1,
+        kind: "memory",
         stem: "A newborn of hearing parents fails the hearing screen and has severe bilateral SNHL with no other abnormalities. Congenital CMV testing is negative.",
         leadIn: "Mutations in which gene are most likely?",
         options: [
@@ -3241,7 +3240,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hl-waardenburg",
         condition: "hearing-loss",
-        step: 1,
+        kind: "memory",
         stem: "A 4-year-old girl has hearing loss, a white forelock, one blue and one brown eye, and widely spaced inner canthi. Her father has a white forelock.",
         leadIn: "What is the underlying defect?",
         options: [
@@ -3257,7 +3256,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hl-presbycusis",
         condition: "hearing-loss",
-        step: 1,
+        kind: "memory",
         stem: "A 76-year-old man struggles to follow conversation in restaurants and mishears words like \"fit\" and \"sit.\" Both eardrums are normal.",
         leadIn: "Which audiogram pattern is most likely?",
         options: [
@@ -3278,7 +3277,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hl-ototoxic",
         condition: "hearing-loss",
-        step: 1,
+        kind: "reasoning",
         stem: "A 58-year-old man is being treated for testicular cancer. After his third cycle he notices ringing in both ears and difficulty hearing high-pitched sounds.",
         leadIn: "Which drug is most likely responsible?",
         options: [
@@ -3297,7 +3296,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hl-aspirin-tinnitus",
         condition: "hearing-loss",
-        step: 1,
+        kind: "memory",
         stem: "A 70-year-old woman taking high-dose aspirin for arthritis develops bilateral ringing in her ears.",
         leadIn: "What is the expected course if aspirin is stopped?",
         options: [
@@ -3317,7 +3316,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hl-nf2",
         condition: "hearing-loss",
-        step: 1,
+        kind: "memory",
         stem: "A 24-year-old woman has bilateral hearing loss. MRI shows enhancing masses in both internal auditory canals and a meningioma.",
         leadIn: "Mutation of which gene is most likely?",
         options: [
@@ -3337,7 +3336,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hl-effusion-child",
         condition: "hearing-loss",
-        step: 2,
+        kind: "reasoning",
         stem: "A 3-year-old boy has speech delay. Otoscopy shows dull, retracted eardrums with fluid behind them in both ears, persisting for 4 months. Audiometry shows conductive loss.",
         leadIn: "Which treatment is most appropriate?",
         options: [
@@ -3361,7 +3360,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "vt-bppv",
         condition: "vertigo",
-        step: 2,
+        kind: "reasoning",
         stem: "A 67-year-old woman has brief spinning lasting under a minute when she rolls over in bed or looks up. Hearing is normal. The Dix-Hallpike maneuver to the right provokes upbeat, torsional nystagmus that fatigues with repetition.",
         leadIn: "Which is the most appropriate treatment?",
         options: [
@@ -3380,7 +3379,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "vt-hints",
         condition: "vertigo",
-        step: 2,
+        kind: "reasoning",
         stem: "A 64-year-old man with hypertension and diabetes has had continuous vertigo and vomiting for 8 hours. He has nystagmus that beats right on right gaze and left on left gaze, and a normal head impulse test. He has no limb weakness.",
         leadIn: "Which is the most appropriate next step?",
         options: [
@@ -3396,7 +3395,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "vt-neuritis",
         condition: "vertigo",
-        step: 1,
+        kind: "memory",
         stem: "A 38-year-old woman has 2 days of continuous severe vertigo and vomiting after a cold. Hearing is normal. She has unidirectional horizontal-torsional nystagmus suppressed by fixation, an abnormal head impulse to the right, and no skew.",
         leadIn: "What is the most likely diagnosis?",
         options: [
@@ -3412,7 +3411,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "vt-meniere",
         condition: "vertigo",
-        step: 2,
+        kind: "reasoning",
         stem: "A 45-year-old man has had 3 attacks of vertigo lasting 2–4 hours, each with roaring tinnitus and fullness in his left ear. Audiometry shows left low-frequency sensorineural loss.",
         leadIn: "Which is the most appropriate first treatment?",
         options: [
@@ -3428,7 +3427,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "vt-nystagmus",
         condition: "vertigo",
-        step: 1,
+        kind: "reasoning",
         stem: "A student asks why patients with an acute left vestibular nerve lesion have nystagmus beating to the right.",
         leadIn: "Which statement explains this?",
         options: [
@@ -3444,7 +3443,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "vt-suppressants",
         condition: "vertigo",
-        step: 2,
+        kind: "reasoning",
         stem: "A 50-year-old woman with vestibular neuritis has used meclizine and diazepam daily for 6 weeks and still feels dizzy.",
         leadIn: "Which is the most appropriate change?",
         options: [
@@ -3460,7 +3459,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "vt-labyrinthitis",
         condition: "vertigo",
-        step: 1,
+        kind: "memory",
         stem: "A 35-year-old man has 2 days of continuous vertigo after a cold, with hearing loss and ringing in his right ear. Nystagmus is unidirectional and suppressed by fixation.",
         leadIn: "What is the most likely diagnosis?",
         options: [
@@ -3481,7 +3480,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "vt-epley",
         condition: "vertigo",
-        step: 2,
+        kind: "reasoning",
         stem: "A 70-year-old woman has brief vertigo when lying back. The Dix-Hallpike maneuver to the left provokes upbeat, torsional nystagmus that fatigues with repetition.",
         leadIn: "Which treatment is most appropriate?",
         options: [
@@ -3502,7 +3501,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "vt-head-roll",
         condition: "vertigo",
-        step: 1,
+        kind: "memory",
         stem: "A 60-year-old man has brief vertigo on rolling over in bed. The Dix-Hallpike maneuver is negative, but turning his head to each side while lying supine provokes horizontal nystagmus.",
         leadIn: "Which canal is most likely involved?",
         options: [
@@ -3522,7 +3521,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "vt-saccule",
         condition: "vertigo",
-        step: 1,
+        kind: "memory",
         stem: "A physiology student rides a lift that accelerates upward.",
         leadIn: "Which structure senses this vertical linear acceleration?",
         options: [
@@ -3545,7 +3544,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ad-secretase",
         condition: "alzheimers",
-        step: 1,
+        kind: "memory",
         stem: "A researcher compares two ways APP can be cut. In one, no Aβ forms; in the other, Aβ is released and aggregates into plaques.",
         leadIn: "Which sequence of cuts releases Aβ?",
         options: [
@@ -3561,7 +3560,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ad-early-onset",
         condition: "alzheimers",
-        step: 1,
+        kind: "memory",
         stem: "A 46-year-old woman has 2 years of progressive memory loss. Her mother and maternal grandfather developed dementia in their forties.",
         leadIn: "A mutation in which gene is most likely?",
         options: [
@@ -3581,7 +3580,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ad-down",
         condition: "alzheimers",
-        step: 1,
+        kind: "reasoning",
         stem: "A 42-year-old man with Down syndrome develops progressive memory loss and loss of daily skills.",
         leadIn: "Why is Alzheimer disease more common and earlier in Down syndrome?",
         options: [
@@ -3597,7 +3596,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ad-donepezil",
         condition: "alzheimers",
-        step: 2,
+        kind: "reasoning",
         stem: "A 76-year-old woman has 2 years of progressive short-term memory loss and now gets lost driving. MMSE is 21/30. TFTs, B12, and electrolytes are normal, and MRI shows medial temporal atrophy.",
         leadIn: "Which drug is most appropriate to start?",
         options: [
@@ -3616,7 +3615,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ad-donepezil-brady",
         condition: "alzheimers",
-        step: 1,
+        kind: "reasoning",
         stem: "Two months after starting a drug for mild Alzheimer disease, an 80-year-old man has a HR of 46/min and dizzy spells.",
         leadIn: "Which drug is most likely responsible?",
         options: [
@@ -3635,7 +3634,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ad-csf",
         condition: "alzheimers",
-        step: 2,
+        kind: "memory",
         stem: "A 63-year-old man has mild memory problems, and the diagnosis is uncertain after clinical assessment and MRI.",
         leadIn: "Which CSF pattern supports Alzheimer disease?",
         options: [
@@ -3651,7 +3650,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ad-nph",
         condition: "alzheimers",
-        step: 2,
+        kind: "memory",
         stem: "A 72-year-old man has 6 months of a shuffling, magnetic gait and urinary incontinence, followed more recently by forgetfulness.",
         leadIn: "Which investigation is most appropriate?",
         options: [
@@ -3667,7 +3666,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ad-delirium",
         condition: "alzheimers",
-        step: 2,
+        kind: "memory",
         stem: "An 84-year-old woman in a nursing home became confused over 2 days. Her attention wanders, and she is drowsy in the morning but agitated at night. She has a fever and cloudy urine.",
         leadIn: "Which is the most likely cause of her confusion?",
         options: [
@@ -3683,7 +3682,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ad-apoe",
         condition: "alzheimers",
-        step: 1,
+        kind: "reasoning",
         stem: "A 70-year-old woman with late-onset Alzheimer disease carries two copies of the APOE ε4 allele.",
         leadIn: "How does APOE ε4 raise her risk?",
         options: [
@@ -3703,7 +3702,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ad-braak",
         condition: "alzheimers",
-        step: 1,
+        kind: "memory",
         stem: "A pathologist stages neurofibrillary tangles in the brain of a woman who died with early Alzheimer disease.",
         leadIn: "Where do NFTs appear first?",
         options: [
@@ -3723,7 +3722,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ad-memantine",
         condition: "alzheimers",
-        step: 2,
+        kind: "reasoning",
         stem: "An 81-year-old man with Alzheimer disease has progressed to moderate to severe dementia despite donepezil. His family asks about another drug.",
         leadIn: "Which drug and mechanism fit?",
         options: [
@@ -3744,7 +3743,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ad-aria",
         condition: "alzheimers",
-        step: 2,
+        kind: "reasoning",
         stem: "A 68-year-old woman with early Alzheimer disease and amyloid confirmed on PET starts lecanemab.",
         leadIn: "Which monitoring does this treatment require?",
         options: [
@@ -3764,7 +3763,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ad-death",
         condition: "alzheimers",
-        step: 1,
+        kind: "memory",
         stem: "An 86-year-old woman has late Alzheimer disease with mutism, incontinence, and difficulty swallowing.",
         leadIn: "What is the most common cause of death in Alzheimer disease?",
         options: [
@@ -3783,7 +3782,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ad-abc",
         condition: "alzheimers",
-        step: 1,
+        kind: "memory",
         stem: "A family asks whether a living patient's ABC score can confirm Alzheimer disease.",
         leadIn: "What does the ABC score need?",
         options: [
@@ -3805,7 +3804,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ftd-bv",
         condition: "frontotemporal-dementia",
-        step: 2,
+        kind: "memory",
         stem: "A 56-year-old man has 18 months of making crude jokes to strangers, shoplifting, eating whole packets of biscuits, and showing no concern when his wife was ill. He denies anything has changed. Memory and drawing are intact.",
         leadIn: "Which diagnosis is most likely?",
         options: [
@@ -3821,7 +3820,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ftd-semantic",
         condition: "frontotemporal-dementia",
-        step: 1,
+        kind: "memory",
         stem: "A 61-year-old woman speaks fluently but cannot name common objects and asks \"what is a fork?\" when told to pick one up.",
         leadIn: "Atrophy of which region is most likely?",
         options: [
@@ -3841,7 +3840,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ftd-c9",
         condition: "frontotemporal-dementia",
-        step: 1,
+        kind: "memory",
         stem: "A 52-year-old man with behavioral change and frontal atrophy develops fasciculations and wasting of his hands. His father had ALS.",
         leadIn: "Which genetic cause is most likely?",
         options: [
@@ -3860,7 +3859,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ftd-treatment",
         condition: "frontotemporal-dementia",
-        step: 2,
+        kind: "reasoning",
         stem: "The wife of a 59-year-old man with bvFTD asks what can help his disinhibition and compulsive behavior.",
         leadIn: "Which drug is most appropriate?",
         options: [
@@ -3879,7 +3878,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ftd-pick",
         condition: "frontotemporal-dementia",
-        step: 1,
+        kind: "memory",
         stem: "At autopsy, a man who developed personality change at 55 has knife-edge atrophy of the frontal and anterior temporal lobes, with round tau-positive inclusions and ballooned neurons.",
         leadIn: "What are these inclusions?",
         options: [
@@ -3898,7 +3897,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ftd-nfvppa",
         condition: "frontotemporal-dementia",
-        step: 1,
+        kind: "memory",
         stem: "A 64-year-old woman speaks slowly and effortfully, leaving out small grammatical words and mispronouncing sounds, but understands single words well.",
         leadIn: "Where is the atrophy most likely?",
         options: [
@@ -3919,7 +3918,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ftd-right-temporal",
         condition: "frontotemporal-dementia",
-        step: 1,
+        kind: "memory",
         stem: "A 60-year-old man no longer recognizes the faces of his friends and gets lost in his own neighborhood. MRI shows asymmetric atrophy.",
         leadIn: "Which region is most affected?",
         options: [
@@ -3939,7 +3938,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ftd-donepezil",
         condition: "frontotemporal-dementia",
-        step: 2,
+        kind: "memory",
         stem: "A 58-year-old man with bvFTD is started on donepezil by a doctor who assumes it works as in Alzheimer disease.",
         leadIn: "What is the expected effect?",
         options: [
@@ -3959,7 +3958,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ftd-lppa",
         condition: "frontotemporal-dementia",
-        step: 2,
+        kind: "memory",
         stem: "A 66-year-old woman has frequent word-finding pauses and cannot repeat long sentences, but her grammar and word meanings are intact.",
         leadIn: "Which underlying disease is most likely?",
         options: [
@@ -3980,7 +3979,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dlb-core",
         condition: "lewy-body",
-        step: 2,
+        kind: "memory",
         stem: "A 73-year-old man has a year of fluctuating confusion, with good and bad days, and sees detailed small children in his living room. His wife says he has acted out his dreams for 10 years. He has mild bradykinesia.",
         leadIn: "Which diagnosis is most likely?",
         options: [
@@ -3999,7 +3998,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dlb-antipsychotic",
         condition: "lewy-body",
-        step: 2,
+        kind: "memory",
         stem: "A 77-year-old woman with DLB is given haloperidol in hospital for agitation. Within a day she becomes rigid, drowsy, and unable to swallow.",
         leadIn: "Which is the best explanation?",
         options: [
@@ -4015,7 +4014,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dlb-first-treatment",
         condition: "lewy-body",
-        step: 2,
+        kind: "reasoning",
         stem: "A 74-year-old man with DLB has troublesome visual hallucinations and worsening attention.",
         leadIn: "Which drug is most appropriate first?",
         options: [
@@ -4031,7 +4030,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dlb-biomarker",
         condition: "lewy-body",
-        step: 2,
+        kind: "memory",
         stem: "A 70-year-old woman has fluctuating cognition but no hallucinations, RBD, or parkinsonism. Her clinician wants a test that could make DLB probable.",
         leadIn: "Which result would count as an indicative biomarker?",
         options: [
@@ -4050,7 +4049,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dlb-memory",
         condition: "lewy-body",
-        step: 1,
+        kind: "reasoning",
         stem: "A neurologist notes that her patient with DLB draws a clock poorly and loses track of conversations, yet recalls recent events well.",
         leadIn: "Which feature of DLB explains the relatively spared memory?",
         options: [
@@ -4066,7 +4065,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dlb-rbd",
         condition: "lewy-body",
-        step: 2,
+        kind: "reasoning",
         stem: "A 71-year-old man with DLB punches and kicks in his sleep while acting out dreams, and his wife has been hurt.",
         leadIn: "Which treatment is most appropriate first?",
         options: [
@@ -4082,7 +4081,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dlb-pdd",
         condition: "lewy-body",
-        step: 1,
+        kind: "reasoning",
         stem: "A 75-year-old man has had Parkinson disease for 6 years and has now developed dementia with visual hallucinations.",
         leadIn: "How is this best classified?",
         options: [
@@ -4102,7 +4101,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dlb-mibg",
         condition: "lewy-body",
-        step: 2,
+        kind: "reasoning",
         stem: "A 72-year-old woman with dementia and RBD has a test of the heart's sympathetic nerves that shows low uptake.",
         leadIn: "How does this result affect the diagnosis?",
         options: [
@@ -4122,7 +4121,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dlb-quetiapine",
         condition: "lewy-body",
-        step: 2,
+        kind: "memory",
         stem: "An 80-year-old man with DLB has distressing psychosis despite rivastigmine, and his team decides an antipsychotic is essential.",
         leadIn: "Which choice is most appropriate?",
         options: [
@@ -4144,7 +4143,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dlb-saa",
         condition: "lewy-body",
-        step: 1,
+        kind: "memory",
         stem: "A researcher wants a CSF test that detects misfolded α-synuclein in a living patient.",
         leadIn: "Which test is this?",
         options: [
@@ -4167,7 +4166,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pd-prodrome",
         condition: "parkinsons",
-        step: 1,
+        kind: "reasoning",
         stem: "A 66-year-old man with new unilateral rest tremor and bradykinesia recalls years of constipation, a lost sense of smell, and acting out his dreams.",
         leadIn: "Which explains why these features came first?",
         options: [
@@ -4183,7 +4182,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pd-drug-induced",
         condition: "parkinsons",
-        step: 2,
+        kind: "reasoning",
         stem: "A 72-year-old woman developed symmetric slowness and rigidity of both arms 2 months after starting a drug for gastroparesis. She has no tremor at rest.",
         leadIn: "Which drug is most likely responsible?",
         options: [
@@ -4199,7 +4198,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pd-dat",
         condition: "parkinsons",
-        step: 2,
+        kind: "memory",
         stem: "A 68-year-old man has a bilateral tremor of his hands when holding a cup. His neurologist is unsure whether this is Parkinson disease.",
         leadIn: "Which result would point away from Parkinson disease?",
         options: [
@@ -4215,7 +4214,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pd-carbidopa",
         condition: "parkinsons",
-        step: 1,
+        kind: "memory",
         stem: "A 70-year-old man with Parkinson disease starts levodopa combined with carbidopa.",
         leadIn: "What is the role of carbidopa?",
         options: [
@@ -4235,7 +4234,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pd-impulse",
         condition: "parkinsons",
-        step: 2,
+        kind: "reasoning",
         stem: "Six months after pramipexole was added for Parkinson disease, a 62-year-old man has spent his savings on online gambling.",
         leadIn: "Which is the most appropriate management?",
         options: [
@@ -4251,7 +4250,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pd-wearing-off",
         condition: "parkinsons",
-        step: 2,
+        kind: "reasoning",
         stem: "A 69-year-old woman who has taken levodopa-carbidopa for 6 years notices her tremor and slowness return about 2 hours before each dose is due.",
         leadIn: "Which is the most appropriate change?",
         options: [
@@ -4267,7 +4266,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pd-mptp",
         condition: "parkinsons",
-        step: 1,
+        kind: "reasoning",
         stem: "Several young adults who injected a synthetic opioid made in a home laboratory developed sudden, severe parkinsonism.",
         leadIn: "How did the contaminant damage dopamine neurons?",
         options: [
@@ -4283,7 +4282,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pd-threshold",
         condition: "parkinsons",
-        step: 1,
+        kind: "memory",
         stem: "A 64-year-old man is diagnosed with Parkinson disease after 6 months of slowness and a right rest tremor.",
         leadIn: "Roughly what proportion of nigrostriatal neurons has already been lost when motor signs appear?",
         options: [
@@ -4303,7 +4302,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pd-lrrk2",
         condition: "parkinsons",
-        step: 1,
+        kind: "memory",
         stem: "A 50-year-old woman with Parkinson disease has an affected father and aunt, consistent with dominant inheritance.",
         leadIn: "Which gene is the most common dominant cause of familial PD?",
         options: [
@@ -4324,7 +4323,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pd-mds-exclusion",
         condition: "parkinsons",
-        step: 2,
+        kind: "reasoning",
         stem: "A 66-year-old man with parkinsonism cannot look down voluntarily, although his eyes move down when his head is tilted back.",
         leadIn: "How does this finding affect a diagnosis of PD under the MDS criteria?",
         options: [
@@ -4344,7 +4343,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pd-entacapone",
         condition: "parkinsons",
-        step: 1,
+        kind: "reasoning",
         stem: "A 71-year-old woman with Parkinson disease has a drug added that prolongs the effect of each levodopa dose.",
         leadIn: "Which drug and mechanism fit?",
         options: [
@@ -4366,7 +4365,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pd-dbs",
         condition: "parkinsons",
-        step: 2,
+        kind: "reasoning",
         stem: "A 60-year-old man with 12 years of Parkinson disease has disabling motor fluctuations and dyskinesia despite optimized levodopa, entacapone, and an agonist. His cognition is normal.",
         leadIn: "Which treatment is most appropriate?",
         options: [
@@ -4389,7 +4388,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "atp-msa",
         condition: "atypical-parkinsonism",
-        step: 2,
+        kind: "memory",
         stem: "A 58-year-old man has 2 years of parkinsonism with little benefit from levodopa, fainting on standing, urinary incontinence, erectile dysfunction, and a wide-based unsteady gait. His wife reports loud snoring with pauses and noisy breathing.",
         leadIn: "Which MRI finding is most likely?",
         options: [
@@ -4409,7 +4408,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "atp-psp",
         condition: "atypical-parkinsonism",
-        step: 2,
+        kind: "memory",
         stem: "A 67-year-old woman has fallen backward several times in the last year. She has a stiff, upright posture and cannot look down voluntarily, although her eyes move down when her head is tilted back.",
         leadIn: "Which diagnosis is most likely?",
         options: [
@@ -4425,7 +4424,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "atp-cbd",
         condition: "atypical-parkinsonism",
-        step: 2,
+        kind: "memory",
         stem: "A 66-year-old man has a stiff, jerky right arm that sometimes rises on its own as though controlled by someone else. He cannot copy hand gestures with it or identify a coin placed in that hand with his eyes closed.",
         leadIn: "Which diagnosis is most likely?",
         options: [
@@ -4441,7 +4440,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "atp-protein",
         condition: "atypical-parkinsonism",
-        step: 1,
+        kind: "memory",
         stem: "At autopsy, a patient with parkinsonism, early autonomic failure, and ataxia has α-synuclein inclusions in oligodendrocytes.",
         leadIn: "Which disease is this?",
         options: [
@@ -4457,7 +4456,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "atp-dat",
         condition: "atypical-parkinsonism",
-        step: 2,
+        kind: "memory",
         stem: "A 64-year-old man with parkinsonism has reduced putaminal uptake on DAT SPECT.",
         leadIn: "What does this result tell his neurologist?",
         options: [
@@ -4473,7 +4472,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "atp-oh",
         condition: "atypical-parkinsonism",
-        step: 2,
+        kind: "reasoning",
         stem: "A 61-year-old woman with MSA faints when she stands up. Her BP falls from 132/80 lying to 88/56 mm Hg standing.",
         leadIn: "Which drug is most appropriate?",
         options: [
@@ -4492,7 +4491,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "atp-msa-c",
         condition: "atypical-parkinsonism",
-        step: 1,
+        kind: "memory",
         stem: "A 55-year-old Japanese woman has 2 years of gait and limb ataxia with slurred speech, urinary urgency, and dizziness on standing. MRI shows a cross-shaped signal in the pons.",
         leadIn: "Which diagnosis is most likely?",
         options: [
@@ -4513,7 +4512,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "atp-psp-subtype",
         condition: "atypical-parkinsonism",
-        step: 2,
+        kind: "memory",
         stem: "A 70-year-old man has parkinsonism that responded moderately to levodopa for several years, with later vertical gaze slowing. His neurologist expects a longer course than classic PSP.",
         leadIn: "Which PSP subtype fits?",
         options: [
@@ -4533,7 +4532,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "atp-levodopa-trial",
         condition: "atypical-parkinsonism",
-        step: 2,
+        kind: "memory",
         stem: "A 68-year-old woman with suspected atypical parkinsonism is starting a levodopa trial.",
         leadIn: "Which trial is adequate?",
         options: [
@@ -4552,7 +4551,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "atp-cbs-nonspecific",
         condition: "atypical-parkinsonism",
-        step: 1,
+        kind: "memory",
         stem: "A 64-year-old woman meets criteria for probable corticobasal syndrome, with asymmetric limb rigidity, dystonia, limb apraxia, and alien limb.",
         leadIn: "Which statement about her underlying pathology is correct?",
         options: [
@@ -4575,7 +4574,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hd-indirect",
         condition: "huntington",
-        step: 1,
+        kind: "reasoning",
         stem: "A 42-year-old man has restless, flowing, involuntary movements of his fingers, face, and trunk, with irritability and poor planning.",
         leadIn: "Loss of which neurons first explains his movements?",
         options: [
@@ -4591,7 +4590,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hd-anticipation",
         condition: "huntington",
-        step: 1,
+        kind: "reasoning",
         stem: "A man developed Huntington disease at 48 with 42 CAG repeats. His son developed it at 24 with 58 repeats.",
         leadIn: "Why did the son develop it earlier?",
         options: [
@@ -4607,7 +4606,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hd-tetrabenazine",
         condition: "huntington",
-        step: 2,
+        kind: "memory",
         stem: "A 50-year-old woman with Huntington disease has chorea that makes her drop things and fall. She has a history of depression.",
         leadIn: "If tetrabenazine is started, what must be monitored?",
         options: [
@@ -4623,7 +4622,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hd-repeat-range",
         condition: "huntington",
-        step: 1,
+        kind: "reasoning",
         stem: "A 30-year-old woman whose father has Huntington disease has predictive testing. She has 38 CAG repeats.",
         leadIn: "How is this result interpreted?",
         options: [
@@ -4639,7 +4638,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hd-westphal",
         condition: "huntington",
-        step: 1,
+        kind: "memory",
         stem: "A 12-year-old boy whose father has Huntington disease has rigidity, slowness, dystonia, falling school grades, and seizures.",
         leadIn: "Which form of the disease is this?",
         options: [
@@ -4655,7 +4654,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hd-mri",
         condition: "huntington",
-        step: 1,
+        kind: "memory",
         stem: "A 38-year-old man who carries 44 CAG repeats has no symptoms yet.",
         leadIn: "Which imaging finding may already be present?",
         options: [
@@ -4671,7 +4670,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hd-27-35",
         condition: "huntington",
-        step: 1,
+        kind: "reasoning",
         stem: "A 45-year-old man with no neurologic signs has 31 CAG repeats in HTT.",
         leadIn: "How is this result interpreted?",
         options: [
@@ -4692,7 +4691,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hd-acanthocytes",
         condition: "huntington",
-        step: 2,
+        kind: "memory",
         stem: "A 30-year-old man has orofacial chorea that worsens when he eats, tongue biting, and raised CK. His HTT repeat length is normal, and his blood film shows spiky red cells. His parents are unaffected.",
         leadIn: "What is the most likely diagnosis?",
         options: [
@@ -4713,7 +4712,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hd-prenatal",
         condition: "huntington",
-        step: 2,
+        kind: "memory",
         stem: "A 32-year-old woman who carries 43 CAG repeats is 11 weeks pregnant and wants to know whether the fetus is affected.",
         leadIn: "Which test is appropriate now?",
         options: [
@@ -4733,7 +4732,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "hd-cognition",
         condition: "huntington",
-        step: 1,
+        kind: "reasoning",
         stem: "A 52-year-old woman with Huntington disease has slowed thinking and difficulty planning, but her language and praxis are intact.",
         leadIn: "How is her cognitive decline best described?",
         options: [
@@ -4755,7 +4754,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms2-umn-lmn",
         condition: "motor-signs",
-        step: 1,
+        kind: "memory",
         stem: "A 58-year-old man has weakness and wasting of his hands with visible fasciculations, and stiff legs with brisk knee jerks and up-going plantars.",
         leadIn: "Which pair of findings marks a lower motor neuron lesion?",
         options: [
@@ -4771,7 +4770,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms2-facial",
         condition: "motor-signs",
-        step: 1,
+        kind: "memory",
         stem: "A 64-year-old woman has weakness of the lower right face. She can wrinkle both sides of her forehead equally, and her right arm is weak.",
         leadIn: "Where is the lesion?",
         options: [
@@ -4787,7 +4786,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms2-peroneal",
         condition: "motor-signs",
-        step: 1,
+        kind: "memory",
         stem: "A 35-year-old man who often sits with his legs crossed has a right foot drop. Dorsiflexion and eversion are weak, the dorsum of the foot is numb, but inversion is strong.",
         leadIn: "Which nerve is injured?",
         options: [
@@ -4806,7 +4805,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms2-romberg",
         condition: "motor-signs",
-        step: 1,
+        kind: "memory",
         stem: "A 66-year-old vegan woman stomps when she walks and is worse in the dark. She stands steadily with her eyes open but sways and nearly falls when she closes them.",
         leadIn: "Which pathway is damaged?",
         options: [
@@ -4822,7 +4821,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms2-essential",
         condition: "motor-signs",
-        step: 2,
+        kind: "reasoning",
         stem: "A 52-year-old woman has a tremor of both hands when holding a cup or writing, which improves with a glass of wine. Her father had the same tremor. There is no bradykinesia.",
         leadIn: "Which drug is most appropriate?",
         options: [
@@ -4838,7 +4837,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms2-ballismus",
         condition: "motor-signs",
-        step: 1,
+        kind: "memory",
         stem: "A 74-year-old man suddenly develops violent, flinging movements of his left arm and leg.",
         leadIn: "Where is the lesion most likely?",
         options: [
@@ -4854,7 +4853,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms2-erb",
         condition: "motor-signs",
-        step: 1,
+        kind: "memory",
         stem: "After a delivery complicated by shoulder dystocia, a newborn holds the right arm adducted and internally rotated, with the elbow extended, forearm pronated, and wrist flexed. The biceps reflex is absent.",
         leadIn: "Which roots are injured?",
         options: [
@@ -4870,7 +4869,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms2-posturing",
         condition: "motor-signs",
-        step: 1,
+        kind: "memory",
         stem: "A comatose man extends and internally rotates all four limbs in response to a painful stimulus.",
         leadIn: "Where is the lesion most likely?",
         options: [
@@ -4886,7 +4885,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms2-decorticate",
         condition: "motor-signs",
-        step: 1,
+        kind: "memory",
         stem: "A comatose woman flexes her arms and extends her legs in response to a painful stimulus.",
         leadIn: "Where is the lesion most likely?",
         options: [
@@ -4905,7 +4904,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms2-radial",
         condition: "motor-signs",
-        step: 1,
+        kind: "memory",
         stem: "A 30-year-old man wakes after falling asleep drunk with his arm over a chair back. He cannot extend his wrist or fingers, and the back of his hand near the thumb is numb.",
         leadIn: "Where is the nerve most likely injured?",
         options: [
@@ -4926,7 +4925,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms2-carpal",
         condition: "motor-signs",
-        step: 1,
+        kind: "reasoning",
         stem: "A 45-year-old pregnant woman wakes at night with tingling in her thumb, index, and middle fingers. Sensation over her thenar eminence is normal.",
         leadIn: "Why is thenar sensation spared?",
         options: [
@@ -4946,7 +4945,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms2-winging",
         condition: "motor-signs",
-        step: 1,
+        kind: "memory",
         stem: "After an axillary lymph node dissection, a 52-year-old woman's right scapula sticks out when she pushes against a wall.",
         leadIn: "Which nerve was injured?",
         options: [
@@ -4968,7 +4967,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms2-klumpke",
         condition: "motor-signs",
-        step: 2,
+        kind: "reasoning",
         stem: "A 60-year-old smoker has wasting and clawing of his left hand, numbness of his medial forearm, and a small left pupil with ptosis.",
         leadIn: "Which lesion best explains these findings?",
         options: [
@@ -4989,7 +4988,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ms2-rubral",
         condition: "motor-signs",
-        step: 2,
+        kind: "memory",
         stem: "Eight months after a midbrain stroke, a 58-year-old man develops a slow, coarse tremor of his right arm, present at rest, when holding a posture, and when reaching.",
         leadIn: "Which tremor is this?",
         options: [
@@ -5012,7 +5011,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-crossed",
         condition: "localizing-lesions",
-        step: 1,
+        kind: "memory",
         stem: "A 61-year-old man has a left eye that cannot abduct and weakness of his right arm and leg.",
         leadIn: "Where is the lesion?",
         options: [
@@ -5028,7 +5027,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-cn3-pupil",
         condition: "localizing-lesions",
-        step: 2,
+        kind: "memory",
         stem: "A 48-year-old woman has a sudden severe headache and a left eye that is down and out with ptosis and a dilated pupil.",
         leadIn: "Which is the most likely cause?",
         options: [
@@ -5044,7 +5043,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-capsule",
         condition: "localizing-lesions",
-        step: 1,
+        kind: "memory",
         stem: "A 70-year-old man with hypertension has equal weakness of his right face, arm, and leg, with no aphasia, neglect, or visual field loss.",
         leadIn: "Where is the lesion most likely?",
         options: [
@@ -5060,7 +5059,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-bitemporal",
         condition: "localizing-lesions",
-        step: 1,
+        kind: "memory",
         stem: "A 44-year-old woman keeps bumping into door frames on both sides. Visual fields show loss of the outer half of the field in each eye.",
         leadIn: "Where is the lesion?",
         options: [
@@ -5076,7 +5075,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-jaw",
         condition: "localizing-lesions",
-        step: 1,
+        kind: "memory",
         stem: "A 52-year-old man has hearing loss, numbness of his left face, and left facial weakness that includes the forehead.",
         leadIn: "Where is the lesion most likely?",
         options: [
@@ -5092,7 +5091,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-parinaud",
         condition: "localizing-lesions",
-        step: 1,
+        kind: "memory",
         stem: "A 17-year-old boy cannot look up, his pupils constrict to a near target but not to light, and attempted upgaze makes his eyes jerk backward and converge.",
         leadIn: "Where is the lesion?",
         options: [
@@ -5108,7 +5107,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-iih",
         condition: "localizing-lesions",
-        step: 2,
+        kind: "reasoning",
         stem: "A 26-year-old woman with obesity has daily headaches, pulsatile tinnitus, and horizontal double vision. Both optic discs are swollen, and MRI shows no mass.",
         leadIn: "Which is the next step?",
         options: [
@@ -5124,7 +5123,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-cluster",
         condition: "localizing-lesions",
-        step: 2,
+        kind: "reasoning",
         stem: "A 35-year-old man has attacks of excruciating pain around his right eye lasting about an hour, with a watering eye and blocked nostril on that side. He paces during attacks, which wake him at night.",
         leadIn: "Which acute treatment is most effective?",
         options: [
@@ -5140,7 +5139,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-aca-leg",
         condition: "localizing-lesions",
-        step: 1,
+        kind: "memory",
         stem: "A 67-year-old woman suddenly develops weakness of her left leg, with only mild weakness of her left arm and a normal face.",
         leadIn: "Where is the lesion most likely?",
         options: [
@@ -5162,7 +5161,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-cord-face",
         condition: "localizing-lesions",
-        step: 1,
+        kind: "reasoning",
         stem: "A 45-year-old man has weakness of his right arm and leg with a sensory level at C5. His face is normal.",
         leadIn: "Why does the sparing of his face matter?",
         options: [
@@ -5183,7 +5182,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-hemisection",
         condition: "localizing-lesions",
-        step: 1,
+        kind: "memory",
         stem: "After a stab wound to the back, a 28-year-old man has weakness and loss of joint position sense in his left leg, with loss of pain and temperature sensation in his right leg.",
         leadIn: "Where is the lesion?",
         options: [
@@ -5204,7 +5203,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-lmn",
         condition: "localizing-lesions",
-        step: 1,
+        kind: "memory",
         stem: "A 58-year-old man has weakness of his right hand with wasting, fasciculations, and reduced reflexes in that arm.",
         leadIn: "What level of the nervous system do these signs point to?",
         options: [
@@ -5225,7 +5224,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-barrel",
         condition: "localizing-lesions",
-        step: 2,
+        kind: "memory",
         stem: "After cardiac surgery complicated by prolonged hypotension, a 66-year-old man cannot lift either arm at the shoulder, though his hands, face, and legs are strong.",
         leadIn: "Where are the lesions?",
         options: [
@@ -5245,7 +5244,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-jacksonian",
         condition: "localizing-lesions",
-        step: 1,
+        kind: "memory",
         stem: "A 40-year-old woman has twitching that starts in her left thumb, spreads over a minute to her hand and arm, then to the left side of her face.",
         leadIn: "What does this spread indicate?",
         options: [
@@ -5266,7 +5265,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-cn3-sparing",
         condition: "localizing-lesions",
-        step: 2,
+        kind: "memory",
         stem: "A 64-year-old man with diabetes has double vision and a drooping right eyelid. The right eye is down and out, but the right pupil is normal in size and reacts to light. He has no headache.",
         leadIn: "What is the most likely cause?",
         options: [
@@ -5287,7 +5286,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-cn4",
         condition: "localizing-lesions",
-        step: 1,
+        kind: "memory",
         stem: "After a head injury in a cycling crash, a 19-year-old woman has vertical double vision, worse reading and going downstairs, and tilts her head away from the affected eye.",
         leadIn: "Which nerve is most likely affected?",
         options: [
@@ -5308,7 +5307,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-bell",
         condition: "localizing-lesions",
-        step: 1,
+        kind: "memory",
         stem: "A 35-year-old man wakes with weakness of the whole left side of his face. He cannot wrinkle his left forehead or close his left eye.",
         leadIn: "Where is the lesion?",
         options: [
@@ -5329,7 +5328,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-cavernous",
         condition: "localizing-lesions",
-        step: 2,
+        kind: "memory",
         stem: "A 50-year-old woman has a painful, completely immobile left eye with ptosis, and numbness of her left forehead and cheek. Her jaw strength and hearing are normal.",
         leadIn: "Where is the lesion?",
         options: [
@@ -5350,7 +5349,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-jugular",
         condition: "localizing-lesions",
-        step: 2,
+        kind: "memory",
         stem: "A 48-year-old man has hoarseness, difficulty swallowing, and weakness turning his head to the left and shrugging his right shoulder.",
         leadIn: "Where is the lesion?",
         options: [
@@ -5370,7 +5369,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-pseudobulbar",
         condition: "localizing-lesions",
-        step: 2,
+        kind: "memory",
         stem: "A 72-year-old man with several previous strokes has slurred speech, difficulty swallowing, and a brisk jaw jerk. His tongue is not wasted.",
         leadIn: "What is the most likely explanation?",
         options: [
@@ -5390,7 +5389,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-horner",
         condition: "localizing-lesions",
-        step: 2,
+        kind: "memory",
         stem: "A 62-year-old smoker has a small right pupil with mild ptosis and less sweating on the right face. He has had right shoulder pain for 3 months.",
         leadIn: "Where should the lesion be sought first?",
         options: [
@@ -5411,7 +5410,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-rapd",
         condition: "localizing-lesions",
-        step: 1,
+        kind: "memory",
         stem: "A 28-year-old woman has blurred vision in her left eye with pain on eye movement. In the swinging light test, her left pupil dilates when the light moves to it.",
         leadIn: "Where is the lesion?",
         options: [
@@ -5432,7 +5431,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-ino-old",
         condition: "localizing-lesions",
-        step: 2,
+        kind: "memory",
         stem: "A 75-year-old man with hypertension suddenly develops double vision. His right eye cannot adduct on looking left, and his left eye shows nystagmus as it abducts.",
         leadIn: "What is the most likely cause?",
         options: [
@@ -5453,7 +5452,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-gaze-deviation",
         condition: "localizing-lesions",
-        step: 1,
+        kind: "memory",
         stem: "A 70-year-old man has sudden left hemiplegia and neglect. His eyes are deviated to the right.",
         leadIn: "Where is the lesion?",
         options: [
@@ -5473,7 +5472,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-peripheral-nystagmus",
         condition: "localizing-lesions",
-        step: 1,
+        kind: "memory",
         stem: "A 45-year-old woman has severe vertigo. Her nystagmus is horizontal-torsional, beats to the left in every direction of gaze, and lessens when she fixes on a target.",
         leadIn: "Where is the lesion most likely?",
         options: [
@@ -5493,7 +5492,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-downbeat",
         condition: "localizing-lesions",
-        step: 1,
+        kind: "memory",
         stem: "A 60-year-old woman has oscillopsia. Her nystagmus beats downward in primary gaze and is not suppressed by fixation.",
         leadIn: "Where is the lesion most likely?",
         options: [
@@ -5513,7 +5512,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-macular-sparing",
         condition: "localizing-lesions",
-        step: 1,
+        kind: "memory",
         stem: "A 68-year-old man has lost the right half of the field in both eyes, but his central vision is preserved.",
         leadIn: "Where is the lesion?",
         options: [
@@ -5534,7 +5533,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-gerstmann",
         condition: "localizing-lesions",
-        step: 1,
+        kind: "memory",
         stem: "A 63-year-old right-handed man cannot write, struggles with simple sums, cannot name his fingers, and confuses left and right.",
         leadIn: "Where is the lesion?",
         options: [
@@ -5555,7 +5554,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-orbitofrontal",
         condition: "localizing-lesions",
-        step: 1,
+        kind: "memory",
         stem: "After a head injury, a 34-year-old man has become impulsive, tactless, and makes inappropriate jokes at work. His strength, sensation, and speech are normal.",
         leadIn: "Which region is most likely injured?",
         options: [
@@ -5576,7 +5575,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-gca",
         condition: "localizing-lesions",
-        step: 2,
+        kind: "memory",
         stem: "A 74-year-old woman has a new headache over her temples for 3 weeks, with pain in her jaw when chewing. Her ESR is 88 mm/h.",
         leadIn: "Which step is most appropriate?",
         options: [
@@ -5597,7 +5596,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-steppage",
         condition: "localizing-lesions",
-        step: 1,
+        kind: "memory",
         stem: "A 50-year-old man who sits cross-legged for long periods lifts his right knee high when walking, and his right foot slaps down.",
         leadIn: "What is the most likely cause of this gait?",
         options: [
@@ -5619,7 +5618,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "loc-sensory-ataxia",
         condition: "localizing-lesions",
-        step: 1,
+        kind: "memory",
         stem: "A 66-year-old woman is unsteady, worse in the dark, and stamps her feet as she walks. She stands steadily with her eyes open but sways and nearly falls when she closes them.",
         leadIn: "Where is the lesion most likely?",
         options: [
@@ -5642,7 +5641,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-glucose",
         condition: "ruling-out-mimics",
-        step: 2,
+        kind: "memory",
         stem: "A 59-year-old man with type 1 diabetes is found confused with right-sided weakness.",
         leadIn: "Which test should be done first?",
         options: [
@@ -5658,7 +5657,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-early-ct",
         condition: "ruling-out-mimics",
-        step: 1,
+        kind: "memory",
         stem: "A 66-year-old woman has had right arm weakness and aphasia for 90 minutes. Non-contrast CT head is normal.",
         leadIn: "What does the normal CT mean?",
         options: [
@@ -5674,7 +5673,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-eeg",
         condition: "ruling-out-mimics",
-        step: 1,
+        kind: "reasoning",
         stem: "A 23-year-old woman has a routine 30-minute EEG between her episodes of convulsive collapse, and it is normal.",
         leadIn: "How should this result be interpreted?",
         options: [
@@ -5690,7 +5689,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-syncope",
         condition: "ruling-out-mimics",
-        step: 2,
+        kind: "memory",
         stem: "A 21-year-old woman collapsed after standing for an hour at a hot concert. She felt lightheaded and her vision greyed first, had a few brief jerks, and was fully alert within a minute.",
         leadIn: "Which tests are most appropriate?",
         options: [
@@ -5706,7 +5705,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-nmosd",
         condition: "ruling-out-mimics",
-        step: 2,
+        kind: "reasoning",
         stem: "A 34-year-old woman thought to have MS has severe optic neuritis in both eyes and a cord lesion spanning 6 vertebral segments.",
         leadIn: "Which test should be done before starting MS treatment?",
         options: [
@@ -5722,7 +5721,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-dat",
         condition: "ruling-out-mimics",
-        step: 1,
+        kind: "memory",
         stem: "A neurologist orders DAT SPECT for a man with parkinsonism, and uptake is reduced.",
         leadIn: "Which diagnosis can this result exclude?",
         options: [
@@ -5738,7 +5737,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-prion",
         condition: "ruling-out-mimics",
-        step: 2,
+        kind: "memory",
         stem: "A 63-year-old man has gone from normal to unable to dress himself in 3 months, with sudden jerks of his limbs.",
         leadIn: "Which diagnosis must be considered?",
         options: [
@@ -5754,7 +5753,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-todd",
         condition: "ruling-out-mimics",
-        step: 2,
+        kind: "memory",
         stem: "A 34-year-old man is brought in after his wife saw him shake all over for 2 minutes. He bit his tongue and was confused for 30 minutes. He now has right arm weakness that is improving.",
         leadIn: "What is the most likely explanation for his weakness?",
         options: [
@@ -5775,7 +5774,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-hoover",
         condition: "ruling-out-mimics",
-        step: 2,
+        kind: "memory",
         stem: "A 29-year-old woman cannot lift her left leg off the bed. When she lifts her right leg against resistance, the examiner feels the left heel pressing down firmly.",
         leadIn: "What does this finding suggest?",
         options: [
@@ -5795,7 +5794,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-migraine-aura",
         condition: "ruling-out-mimics",
-        step: 1,
+        kind: "memory",
         stem: "A 26-year-old woman has tingling that starts in her right fingers and spreads up her arm to her face over 20 minutes, followed by a throbbing headache. She has had similar attacks before.",
         leadIn: "What is the most likely diagnosis?",
         options: [
@@ -5816,7 +5815,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-tumor",
         condition: "ruling-out-mimics",
-        step: 1,
+        kind: "memory",
         stem: "A 64-year-old man's family has noticed his left hand becoming clumsier over 6 weeks, now with left leg weakness and morning headaches.",
         leadIn: "Which test is most appropriate?",
         options: [
@@ -5837,7 +5836,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-hints",
         condition: "ruling-out-mimics",
-        step: 2,
+        kind: "memory",
         stem: "A 50-year-old woman has constant vertigo and vomiting for 1 day, with no other neurologic signs. The HINTS examination is reassuring.",
         leadIn: "What does this suggest?",
         options: [
@@ -5857,7 +5856,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-unmasking",
         condition: "ruling-out-mimics",
-        step: 2,
+        kind: "memory",
         stem: "An 80-year-old man who had a left MCA stroke 3 years ago, with mild residual right weakness, has had worse right weakness since developing a urinary tract infection 2 days ago. CT shows only the old infarct.",
         leadIn: "What is the most likely explanation?",
         options: [
@@ -5877,7 +5876,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-pnes",
         condition: "ruling-out-mimics",
-        step: 2,
+        kind: "memory",
         stem: "A 25-year-old woman has episodes of shaking lasting 10 minutes. During them her eyes are tightly shut, her head moves side to side, and her limbs move out of phase. She is alert straight afterward.",
         leadIn: "Which test confirms the most likely diagnosis?",
         options: [
@@ -5897,7 +5896,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-arrhythmia",
         condition: "ruling-out-mimics",
-        step: 2,
+        kind: "memory",
         stem: "A 17-year-old boy collapsed while sprinting at football training and jerked briefly. His uncle died suddenly at 30.",
         leadIn: "Which tests are most appropriate?",
         options: [
@@ -5917,7 +5916,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-tia-negative",
         condition: "ruling-out-mimics",
-        step: 2,
+        kind: "memory",
         stem: "A 70-year-old woman had sudden numbness and weakness of her left arm for 15 minutes, without jerking or spread, then recovered fully.",
         leadIn: "Which evaluation is most appropriate?",
         options: [
@@ -5937,7 +5936,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-panic",
         condition: "ruling-out-mimics",
-        step: 1,
+        kind: "memory",
         stem: "A 30-year-old woman has episodes of intense fear, palpitations, rapid breathing, and tingling around her mouth. She remembers every episode clearly.",
         leadIn: "What is the most likely diagnosis?",
         options: [
@@ -5957,7 +5956,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-mogad",
         condition: "ruling-out-mimics",
-        step: 2,
+        kind: "memory",
         stem: "A 9-year-old girl has bilateral optic neuritis with swollen optic discs. MRI also shows a lesion in the conus medullaris.",
         leadIn: "Which test is most appropriate?",
         options: [
@@ -5977,7 +5976,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-adem",
         condition: "ruling-out-mimics",
-        step: 1,
+        kind: "memory",
         stem: "A 6-year-old boy becomes drowsy and confused with weakness 2 weeks after a viral illness. MRI shows multiple large white matter lesions. He has had no earlier episodes.",
         leadIn: "What is the most likely diagnosis?",
         options: [
@@ -5997,7 +5996,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-b12",
         condition: "ruling-out-mimics",
-        step: 1,
+        kind: "memory",
         stem: "A 58-year-old woman thought to have MS has numb feet, loss of vibration and joint position sense, brisk knee jerks, extensor plantars, and a macrocytic anemia.",
         leadIn: "Which mimic must be excluded?",
         options: [
@@ -6018,7 +6017,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-sarcoid",
         condition: "ruling-out-mimics",
-        step: 2,
+        kind: "memory",
         stem: "A 40-year-old woman with white matter lesions has bilateral facial weakness and a dry cough. Chest examination is unremarkable.",
         leadIn: "Which tests are most appropriate for the mimic suggested?",
         options: [
@@ -6038,7 +6037,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-svd",
         condition: "ruling-out-mimics",
-        step: 2,
+        kind: "memory",
         stem: "A 72-year-old man with hypertension and diabetes has scattered white matter lesions on MRI. CSF shows no oligoclonal bands.",
         leadIn: "What do these features favor?",
         options: [
@@ -6058,7 +6057,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-delirium",
         condition: "ruling-out-mimics",
-        step: 1,
+        kind: "memory",
         stem: "An 84-year-old woman became confused over 2 days. Her attention wanders, she is worse at night, and she has a urinary tract infection.",
         leadIn: "What is the most likely cause of her confusion?",
         options: [
@@ -6079,7 +6078,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-depression",
         condition: "ruling-out-mimics",
-        step: 2,
+        kind: "memory",
         stem: "A 70-year-old man worries that his memory is failing. He gives \"I don't know\" answers on cognitive testing, has low mood, and has stopped seeing friends.",
         leadIn: "Which mimic of dementia is most likely?",
         options: [
@@ -6100,7 +6099,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-nph",
         condition: "ruling-out-mimics",
-        step: 1,
+        kind: "memory",
         stem: "A 75-year-old man has early difficulty walking, with short, magnetic steps and urinary incontinence, followed by forgetfulness.",
         leadIn: "Which test best supports the most likely diagnosis?",
         options: [
@@ -6120,7 +6119,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-vascular-dementia",
         condition: "ruling-out-mimics",
-        step: 1,
+        kind: "memory",
         stem: "A 76-year-old man with hypertension, diabetes, and two TIAs has had a stepwise decline in thinking over 2 years, with sudden drops followed by plateaus.",
         leadIn: "Which diagnosis is most likely?",
         options: [
@@ -6140,7 +6139,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-essential-tremor",
         condition: "ruling-out-mimics",
-        step: 1,
+        kind: "memory",
         stem: "A 55-year-old man has a tremor of both hands when holding a cup or writing, present for years and better with alcohol. He has no bradykinesia or rigidity.",
         leadIn: "What would DAT SPECT most likely show?",
         options: [
@@ -6160,7 +6159,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "mim-levodopa",
         condition: "ruling-out-mimics",
-        step: 2,
+        kind: "memory",
         stem: "A 66-year-old woman has bradykinesia and rigidity of her right side with a rest tremor. She takes no dopamine-blocking drugs.",
         leadIn: "Which step best supports PD before DAT SPECT?",
         options: [
@@ -6182,7 +6181,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-dwi-flair",
         condition: "neuroimaging",
-        step: 2,
+        kind: "memory",
         stem: "A 68-year-old woman woke with aphasia, and her time of onset is unknown. MRI shows an infarct that is bright on DWI and dark on ADC but not yet visible on FLAIR.",
         leadIn: "What does this mismatch suggest?",
         options: [
@@ -6198,7 +6197,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-perfusion",
         condition: "neuroimaging",
-        step: 1,
+        kind: "memory",
         stem: "CT perfusion in a man with a left MCA occlusion 8 hours after onset shows a small area with rCBF under 30% surrounded by a larger area with Tmax over 6 seconds and rCBF 30% or more.",
         leadIn: "What does the larger area represent?",
         options: [
@@ -6214,7 +6213,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-swi",
         condition: "neuroimaging",
-        step: 2,
+        kind: "memory",
         stem: "A 79-year-old woman has a lobar hemorrhage and no hypertension.",
         leadIn: "Which test best supports cerebral amyloid angiopathy?",
         options: [
@@ -6230,7 +6229,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-hyperdense",
         condition: "neuroimaging",
-        step: 1,
+        kind: "memory",
         stem: "Non-contrast CT 40 minutes after sudden left hemiplegia shows a bright, linear density in the right MCA but no hemorrhage.",
         leadIn: "What does this sign indicate?",
         options: [
@@ -6246,7 +6245,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-triphasic",
         condition: "neuroimaging",
-        step: 1,
+        kind: "memory",
         stem: "A 60-year-old man with cirrhosis is increasingly drowsy with asterixis. An EEG is obtained.",
         leadIn: "Which EEG finding is most likely?",
         options: [
@@ -6262,7 +6261,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-gadolinium",
         condition: "neuroimaging",
-        step: 2,
+        kind: "reasoning",
         stem: "A 55-year-old man on dialysis needs imaging for a suspected brain abscess.",
         leadIn: "Why is gadolinium avoided where possible?",
         options: [
@@ -6278,7 +6277,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-hu-blood",
         condition: "neuroimaging",
-        step: 1,
+        kind: "memory",
         stem: "On non-contrast CT, a region measures about +40 HU, similar to gray matter, in an area where a patient had sudden headache 2 hours ago.",
         leadIn: "Which material best matches this density?",
         options: [
@@ -6299,7 +6298,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-early-signs",
         condition: "neuroimaging",
-        step: 1,
+        kind: "memory",
         stem: "Non-contrast CT 3 hours after sudden aphasia and right hemiparesis is read as showing loss of the gray-white border over the left insula.",
         leadIn: "What does this finding represent?",
         options: [
@@ -6319,7 +6318,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-aspects",
         condition: "neuroimaging",
-        step: 2,
+        kind: "reasoning",
         stem: "A man with a left MCA occlusion has early ischemic change in 3 of the 10 ASPECTS regions on non-contrast CT.",
         leadIn: "How should his ASPECTS be interpreted?",
         options: [
@@ -6339,7 +6338,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-collaterals",
         condition: "neuroimaging",
-        step: 2,
+        kind: "memory",
         stem: "Multiphase CT angiogram in a woman with an M1 occlusion shows good filling of the territory beyond it through collateral vessels.",
         leadIn: "What do good collaterals predict?",
         options: [
@@ -6359,7 +6358,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-core",
         condition: "neuroimaging",
-        step: 1,
+        kind: "memory",
         stem: "CT perfusion shows a region where rCBF is 20% of the other side.",
         leadIn: "What does this region represent?",
         options: [
@@ -6378,7 +6377,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-thunderclap-lp",
         condition: "neuroimaging",
-        step: 2,
+        kind: "reasoning",
         stem: "A 42-year-old woman had the worst headache of her life, reaching its peak within a minute. Non-contrast CT 8 hours later is normal.",
         leadIn: "What is the next step?",
         options: [
@@ -6398,7 +6397,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-xanthochromia",
         condition: "neuroimaging",
-        step: 1,
+        kind: "memory",
         stem: "A lumbar puncture 12 hours after a thunderclap headache shows yellow CSF after centrifugation.",
         leadIn: "What does this finding indicate?",
         options: [
@@ -6417,7 +6416,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-schwannoma",
         condition: "neuroimaging",
-        step: 1,
+        kind: "memory",
         stem: "A 50-year-old man has gradually worsening hearing in his left ear only, with left-sided tinnitus. Audiometry confirms asymmetric SNHL.",
         leadIn: "Which imaging is most appropriate?",
         options: [
@@ -6437,7 +6436,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-hints-central",
         condition: "neuroimaging",
-        step: 2,
+        kind: "memory",
         stem: "A 66-year-old man has acute continuous vertigo. HINTS testing shows a normal head impulse and direction-changing nystagmus.",
         leadIn: "Which imaging is most appropriate?",
         options: [
@@ -6457,7 +6456,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-flair",
         condition: "neuroimaging",
-        step: 1,
+        kind: "memory",
         stem: "A radiologist wants a sequence that makes lesions bright while keeping CSF dark, to show plaques next to the ventricles.",
         leadIn: "Which sequence is this?",
         options: [
@@ -6478,7 +6477,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-shine-through",
         condition: "neuroimaging",
-        step: 2,
+        kind: "memory",
         stem: "MRI of a woman with old MS plaques shows a lesion bright on DWI. The same lesion is bright on ADC.",
         leadIn: "What does this combination indicate?",
         options: [
@@ -6498,7 +6497,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-mra",
         condition: "neuroimaging",
-        step: 2,
+        kind: "memory",
         stem: "A 45-year-old man with neck pain after chiropractic manipulation needs his neck vessels imaged, but he had anaphylaxis to iodinated contrast.",
         leadIn: "Which test images flowing blood without iodinated contrast?",
         options: [
@@ -6518,7 +6517,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-cvst",
         condition: "neuroimaging",
-        step: 1,
+        kind: "memory",
         stem: "A 30-year-old woman on the oral contraceptive pill has a worsening headache for 4 days and a seizure. Contrast imaging shows a triangle of enhancement around a central filling defect in the superior sagittal sinus.",
         leadIn: "What does this sign indicate?",
         options: [
@@ -6538,7 +6537,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-dawson",
         condition: "neuroimaging",
-        step: 1,
+        kind: "memory",
         stem: "MRI in a 27-year-old woman with optic neuritis shows oval lesions extending at right angles from the lateral ventricles, several with a small vein in their center.",
         leadIn: "Which diagnosis do these signs favor?",
         options: [
@@ -6559,7 +6558,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-nmosd-optic",
         condition: "neuroimaging",
-        step: 2,
+        kind: "memory",
         stem: "Orbital MRI in a woman with severe visual loss shows a long lesion of the posterior optic nerve reaching the chiasm. Spinal MRI shows a lesion spanning 4 vertebral segments.",
         leadIn: "Which diagnosis do these findings favor?",
         options: [
@@ -6579,7 +6578,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-cingulate-island",
         condition: "neuroimaging",
-        step: 2,
+        kind: "memory",
         stem: "A 73-year-old man with visual hallucinations and fluctuating attention has FDG-PET showing reduced occipital metabolism with relatively preserved posterior cingulate metabolism. MRI shows preserved medial temporal lobes.",
         leadIn: "Which diagnosis do these findings favor?",
         options: [
@@ -6600,7 +6599,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-caudate",
         condition: "neuroimaging",
-        step: 1,
+        kind: "memory",
         stem: "MRI of a 40-year-old woman with a family history of chorea shows atrophy of both caudate nuclei, with enlarged frontal horns. She has no symptoms yet.",
         leadIn: "Which condition do these findings suggest?",
         options: [
@@ -6621,7 +6620,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "img-ictal-spect",
         condition: "neuroimaging",
-        step: 2,
+        kind: "memory",
         stem: "A 25-year-old man with drug-resistant focal seizures is being assessed for surgery. MRI is normal.",
         leadIn: "Which finding on ictal SPECT, injected within 90 seconds of onset, marks the seizure focus?",
         options: [

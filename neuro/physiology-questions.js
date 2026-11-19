@@ -1,7 +1,6 @@
 /*
    Question bank for the neurophysiology quiz.
-   The format is described at the top of gi/questions.js. The quiz button stays hidden
-   until this list has questions.
+   The format is described at the top of gi/questions.js.
 */
 
 const QUIZ_QUESTIONS = [
@@ -10,7 +9,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ne-neuropore",
         condition: "neuro-embryology",
-        step: 1,
+        kind: "reasoning",
         stem: "A routine second-trimester screen shows a markedly raised maternal serum AFP, and ultrasound shows absence of the skull vault and forebrain, with polyhydramnios.",
         leadIn: "Failure of which developmental event explains this?",
         options: [
@@ -32,7 +31,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ne-myelomeningocele",
         condition: "neuro-embryology",
-        step: 2,
+        kind: "memory",
         stem: "A newborn has an open sac over the lumbar spine containing neural tissue, weak legs, and an enlarging head circumference. The mother took no supplements before pregnancy.",
         leadIn: "Which associated finding is most likely on brain MRI?",
         options: [
@@ -53,7 +52,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ne-occulta",
         condition: "neuro-embryology",
-        step: 1,
+        kind: "memory",
         stem: "A healthy 8-year-old has a tuft of hair over the lower lumbar spine. Neurological examination is normal, and an x-ray shows incomplete fusion of the L5 vertebral arch.",
         leadIn: "Which finding would be expected in the mother's AFP in pregnancy?",
         options: [
@@ -75,7 +74,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ne-folate",
         condition: "neuro-embryology",
-        step: 2,
+        kind: "reasoning",
         stem: "A 28-year-old with epilepsy controlled on valproate plans a pregnancy next year.",
         leadIn: "Which advice best reduces the risk of a neural tube defect?",
         options: [
@@ -97,7 +96,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ne-plates",
         condition: "neuro-embryology",
-        step: 1,
+        kind: "memory",
         stem: "A histology slide of the embryonic spinal cord shows a groove on each side of the central canal dividing the wall into dorsal and ventral halves.",
         leadIn: "What does the ventral half become?",
         options: [
@@ -118,7 +117,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ne-vesicles",
         condition: "neuro-embryology",
-        step: 1,
+        kind: "memory",
         stem: "A student traces the adult derivatives of the five secondary brain vesicles.",
         leadIn: "Which structure arises from the diencephalon?",
         options: [
@@ -140,7 +139,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ne-crest",
         condition: "neuro-embryology",
-        step: 1,
+        kind: "memory",
         stem: "A newborn has delayed passage of meconium, and rectal biopsy shows no ganglion cells in the distal colon.",
         leadIn: "Which cells share the embryonic origin of the missing cells?",
         options: [
@@ -162,7 +161,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ne-holoprosencephaly",
         condition: "neuro-embryology",
-        step: 1,
+        kind: "memory",
         stem: "A newborn with trisomy 13 has a midline cleft lip. MRI shows a single ventricle.",
         leadIn: "Which signaling pathway is most often disrupted in this malformation?",
         options: [
@@ -183,7 +182,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ne-syrinx",
         condition: "neuro-embryology",
-        step: 2,
+        kind: "memory",
         stem: "A 34-year-old has burns on both hands that they did not feel. Pain and temperature sensation are lost over the shoulders and arms, with touch and vibration preserved. MRI also shows cerebellar tonsils 7 mm below the foramen magnum.",
         leadIn: "Which fibers are damaged to produce the sensory loss?",
         options: [
@@ -205,7 +204,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ne-dandy-walker",
         condition: "neuro-embryology",
-        step: 1,
+        kind: "memory",
         stem: "Fetal MRI shows an enlarged posterior fossa, absence of the cerebellar vermis, and a cystic fourth ventricle, with dilated lateral ventricles.",
         leadIn: "Which malformation is this?",
         options: [
@@ -228,7 +227,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nr-resting",
         condition: "neurons",
-        step: 1,
+        kind: "reasoning",
         stem: "A student measures the resting membrane potential of a neuron at about −70 mV.",
         leadIn: "Why is it close to the potassium equilibrium potential?",
         options: [
@@ -247,7 +246,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nr-refractory",
         condition: "neurons",
-        step: 1,
+        kind: "reasoning",
         stem: "A second stimulus delivered 0.5 ms after an action potential produces no response, however strong it is.",
         leadIn: "Which mechanism explains this?",
         options: [
@@ -263,7 +262,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nr-saltatory",
         condition: "neurons",
-        step: 1,
+        kind: "memory",
         stem: "Conduction velocity is much faster in a myelinated motor axon than in an unmyelinated C fiber of similar size.",
         leadIn: "What makes conduction faster in the myelinated axon?",
         options: [
@@ -279,7 +278,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nr-lidocaine",
         condition: "neurons",
-        step: 1,
+        kind: "reasoning",
         stem: "A dentist injects lidocaine before filling a tooth, and the patient feels no pain.",
         leadIn: "What is the mechanism?",
         options: [
@@ -295,7 +294,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nr-wallerian",
         condition: "neurons",
-        step: 1,
+        kind: "memory",
         stem: "A man cuts his median nerve at the wrist. A day later the distal axon and its myelin begin to break down, and the cell body swells with dispersed Nissl bodies.",
         leadIn: "What are these two processes?",
         options: [
@@ -311,7 +310,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nr-glia",
         condition: "neurons",
-        step: 1,
+        kind: "memory",
         stem: "A pathologist stains CNS tissue for the cell that buffers extracellular potassium, takes up neurotransmitter, and contributes foot processes to the BBB.",
         leadIn: "Which cell is this?",
         options: [
@@ -327,7 +326,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nr-threshold",
         condition: "neurons",
-        step: 1,
+        kind: "reasoning",
         stem: "Summed synaptic input depolarizes a neuron's axon hillock from −70 mV to −55 mV.",
         leadIn: "What happens next?",
         options: [
@@ -348,7 +347,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nr-pump",
         condition: "neurons",
-        step: 1,
+        kind: "memory",
         stem: "A cardiac glycoside partially blocks the pump that maintains neuronal ion gradients.",
         leadIn: "What does this pump move with each cycle?",
         options: [
@@ -364,7 +363,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nr-pseudounipolar",
         condition: "neurons",
-        step: 1,
+        kind: "memory",
         stem: "A student examines a sensory neuron whose cell body lies in a dorsal root ganglion, with one process that splits into a peripheral and a central branch.",
         leadIn: "Which type of neuron is this?",
         options: [
@@ -384,7 +383,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "nr-ttx",
         condition: "neurons",
-        step: 1,
+        kind: "reasoning",
         stem: "A man develops numbness around his mouth and weakness soon after eating improperly prepared pufferfish.",
         leadIn: "How does the toxin cause these symptoms?",
         options: [
@@ -406,7 +405,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "syn-calcium",
         condition: "synapses",
-        step: 1,
+        kind: "memory",
         stem: "A toxin prevents calcium from entering the presynaptic terminal when an action potential arrives.",
         leadIn: "Which step of transmission fails?",
         options: [
@@ -422,7 +421,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "syn-lems",
         condition: "synapses",
-        step: 2,
+        kind: "memory",
         stem: "A 62-year-old smoker has proximal leg weakness, dry mouth, and reduced reflexes that briefly improve after repeated contraction. CXR shows a hilar mass.",
         leadIn: "What is the target of the autoantibody?",
         options: [
@@ -441,7 +440,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "syn-benzo",
         condition: "synapses",
-        step: 1,
+        kind: "reasoning",
         stem: "Lorazepam stops a prolonged seizure.",
         leadIn: "How does it act?",
         options: [
@@ -457,7 +456,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "syn-ipsp",
         condition: "synapses",
-        step: 1,
+        kind: "reasoning",
         stem: "A neurotransmitter binds a postsynaptic receptor and makes the membrane potential more negative.",
         leadIn: "Which receptor and ion best explain this?",
         options: [
@@ -473,7 +472,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "syn-hepatic",
         condition: "synapses",
-        step: 1,
+        kind: "reasoning",
         stem: "A 58-year-old man with cirrhosis becomes drowsy and confused after a GI bleed.",
         leadIn: "How does ammonia contribute to his depressed consciousness?",
         options: [
@@ -489,7 +488,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "syn-mg",
         condition: "synapses",
-        step: 2,
+        kind: "reasoning",
         stem: "A 30-year-old woman has drooping eyelids and double vision that worsen through the day, with fatigable arm weakness.",
         leadIn: "Which is the first-line symptomatic drug?",
         options: [
@@ -505,7 +504,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "syn-ionotropic",
         condition: "synapses",
-        step: 1,
+        kind: "memory",
         stem: "Two receptors bind the same transmitter. One opens an ion channel within milliseconds; the other acts through a G protein with slower, longer effects.",
         leadIn: "Which pair fits this description for acetylcholine?",
         options: [
@@ -526,7 +525,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "syn-glycine",
         condition: "synapses",
-        step: 1,
+        kind: "memory",
         stem: "A neurophysiologist records inhibitory transmission onto motor neurons in the spinal cord.",
         leadIn: "Which transmitter is inhibitory mainly in the cord?",
         options: [
@@ -545,7 +544,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "syn-gap",
         condition: "synapses",
-        step: 1,
+        kind: "memory",
         stem: "Two neurons are coupled so that current passes directly between them with almost no delay.",
         leadIn: "Which structure allows this?",
         options: [
@@ -565,7 +564,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "syn-botulinum",
         condition: "synapses",
-        step: 1,
+        kind: "reasoning",
         stem: "An infant who was fed honey develops constipation, a weak cry, and descending flaccid weakness.",
         leadIn: "How does the toxin cause weakness?",
         options: [
@@ -588,7 +587,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "asc-hemisection",
         condition: "ascending",
-        step: 1,
+        kind: "memory",
         stem: "After a stab wound to the right side of the back at T8, a man has weakness and loss of vibration and position sense in the right leg.",
         leadIn: "Where else is sensation lost?",
         options: [
@@ -604,7 +603,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "asc-dc-cross",
         condition: "ascending",
-        step: 1,
+        kind: "memory",
         stem: "A neuroanatomy student traces vibration sense from the right foot to the cortex.",
         leadIn: "Where do these fibers cross the midline?",
         options: [
@@ -623,7 +622,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "asc-syrinx",
         condition: "ascending",
-        step: 1,
+        kind: "reasoning",
         stem: "A 34-year-old man burned his hands on a stove without noticing. He has loss of pain and temperature over both shoulders and arms, with normal touch and vibration.",
         leadIn: "Which lesion explains this?",
         options: [
@@ -639,7 +638,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "asc-friedreich",
         condition: "ascending",
-        step: 1,
+        kind: "memory",
         stem: "A 14-year-old girl has progressive clumsiness. Examination shows ataxia of the right arm and leg.",
         leadIn: "If a spinocerebellar tract is responsible, on which side is the lesion?",
         options: [
@@ -655,7 +654,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "asc-dermatome",
         condition: "ascending",
-        step: 1,
+        kind: "memory",
         stem: "A man with a cord lesion has a sensory level at the umbilicus.",
         leadIn: "Which dermatome is this?",
         options: [
@@ -671,7 +670,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "asc-gracilis",
         condition: "ascending",
-        step: 1,
+        kind: "memory",
         stem: "A student traces vibration sense from the big toe up the spinal cord.",
         leadIn: "In which fasciculus does it ascend?",
         options: [
@@ -691,7 +690,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "asc-crossing-level",
         condition: "ascending",
-        step: 1,
+        kind: "reasoning",
         stem: "A small right-sided cord lesion at T6 causes loss of pain and temperature on the left side of the body.",
         leadIn: "Why does the sensory level begin a little below T6?",
         options: [
@@ -711,7 +710,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "asc-medial-medullary",
         condition: "ascending",
-        step: 1,
+        kind: "memory",
         stem: "A 70-year-old woman has a stroke in the right medial medulla.",
         leadIn: "Which sensory loss is expected?",
         options: [
@@ -731,7 +730,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "asc-dsct",
         condition: "ascending",
-        step: 1,
+        kind: "memory",
         stem: "A student traces unconscious proprioception from leg muscle spindles to the cerebellum through the uncrossed dorsal tract.",
         leadIn: "Where does this tract arise, and which peduncle does it enter?",
         options: [
@@ -752,7 +751,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "desc-decussation",
         condition: "descending",
-        step: 1,
+        kind: "reasoning",
         stem: "A lesion of the left internal capsule causes right-sided weakness, but a lesion of the left half of the cervical cord causes left-sided weakness.",
         leadIn: "Why?",
         options: [
@@ -768,7 +767,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "desc-forehead",
         condition: "descending",
-        step: 1,
+        kind: "reasoning",
         stem: "A man with a left cortical stroke has right lower facial weakness but can raise both eyebrows.",
         leadIn: "Why is the forehead spared?",
         options: [
@@ -784,7 +783,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "desc-decerebrate",
         condition: "descending",
-        step: 1,
+        kind: "memory",
         stem: "A comatose patient with a pontine hemorrhage extends all four limbs to pain.",
         leadIn: "Which tracts drive this posture?",
         options: [
@@ -803,7 +802,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "desc-pseudobulbar",
         condition: "descending",
-        step: 1,
+        kind: "reasoning",
         stem: "A man with two previous strokes, one in each hemisphere, has slurred speech, difficulty swallowing, a brisk jaw jerk, and no tongue wasting.",
         leadIn: "Which lesion explains this?",
         options: [
@@ -819,7 +818,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "desc-anterior-cst",
         condition: "descending",
-        step: 1,
+        kind: "memory",
         stem: "A student asks which corticospinal fibers remain uncrossed until their segment.",
         leadIn: "What do these fibers serve?",
         options: [
@@ -835,7 +834,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "desc-capsule",
         condition: "descending",
-        step: 1,
+        kind: "memory",
         stem: "A neurosurgeon traces the lateral corticospinal tract from M1 toward the brainstem.",
         leadIn: "Through which part of the internal capsule does it pass?",
         options: [
@@ -854,7 +853,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "desc-rubrospinal",
         condition: "descending",
-        step: 1,
+        kind: "memory",
         stem: "A student studies a tract that arises in the red nucleus.",
         leadIn: "Where does it cross, and which movement does it favor?",
         options: [
@@ -873,7 +872,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "desc-medullary-rst",
         condition: "descending",
-        step: 1,
+        kind: "memory",
         stem: "A tract from the medulla inhibits extensors, facilitates flexors, and contributes to breathing control.",
         leadIn: "Which tract is this?",
         options: [
@@ -893,7 +892,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "desc-cord-ipsilateral",
         condition: "descending",
-        step: 1,
+        kind: "memory",
         stem: "A tumor compresses the right side of the cervical cord at C5.",
         leadIn: "Which signs are expected below the lesion?",
         options: [
@@ -915,7 +914,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "bg-direct",
         condition: "basal-ganglia",
-        step: 1,
+        kind: "memory",
         stem: "A student traces the direct pathway of the basal ganglia.",
         leadIn: "What is its net effect on movement?",
         options: [
@@ -931,7 +930,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "bg-dopamine",
         condition: "basal-ganglia",
-        step: 1,
+        kind: "reasoning",
         stem: "Dopamine from the SNc acts on both striatal output pathways.",
         leadIn: "How does it favor movement through both?",
         options: [
@@ -947,7 +946,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "bg-stn",
         condition: "basal-ganglia",
-        step: 1,
+        kind: "reasoning",
         stem: "A 71-year-old woman develops flinging movements of her right arm after a small stroke.",
         leadIn: "How does the lesion cause the movements?",
         options: [
@@ -963,7 +962,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "bg-parkinson",
         condition: "basal-ganglia",
-        step: 1,
+        kind: "memory",
         stem: "In Parkinson disease, SNc dopamine neurons die.",
         leadIn: "What happens to GPi output?",
         options: [
@@ -979,7 +978,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "bg-vmat2",
         condition: "basal-ganglia",
-        step: 1,
+        kind: "reasoning",
         stem: "A drug for chorea blocks the loading of dopamine into presynaptic vesicles.",
         leadIn: "Which drug is this?",
         options: [
@@ -995,7 +994,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "bg-gpi-output",
         condition: "basal-ganglia",
-        step: 1,
+        kind: "memory",
         stem: "A student identifies the output nuclei of the basal ganglia.",
         leadIn: "What is their resting effect on the thalamus?",
         options: [
@@ -1014,7 +1013,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "bg-stn-glutamate",
         condition: "basal-ganglia",
-        step: 1,
+        kind: "memory",
         stem: "A student lists the transmitters of the basal ganglia loop.",
         leadIn: "Which nucleus is the loop's only glutamate nucleus?",
         options: [
@@ -1033,7 +1032,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "bg-huntington",
         condition: "basal-ganglia",
-        step: 1,
+        kind: "memory",
         stem: "In early Huntington disease, indirect-pathway striatal neurons die first.",
         leadIn: "What happens to GPi output and movement?",
         options: [
@@ -1053,7 +1052,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "bg-haloperidol",
         condition: "basal-ganglia",
-        step: 1,
+        kind: "reasoning",
         stem: "A 40-year-old man on haloperidol develops slowness and rigidity.",
         leadIn: "Which receptor blockade explains this?",
         options: [
@@ -1074,7 +1073,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cns-rapd",
         condition: "cn-special",
-        step: 1,
+        kind: "memory",
         stem: "When a light is swung from the right eye to the left eye, both pupils dilate; when it returns to the right, both constrict.",
         leadIn: "Where is the lesion?",
         options: [
@@ -1090,7 +1089,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cns-meyer",
         condition: "cn-special",
-        step: 1,
+        kind: "memory",
         stem: "After surgery on the right temporal lobe for epilepsy, a man has lost the upper left quarter of his visual field in both eyes.",
         leadIn: "Which fibers were cut?",
         options: [
@@ -1106,7 +1105,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cns-smell",
         condition: "cn-special",
-        step: 1,
+        kind: "memory",
         stem: "A student notes that smell differs from the other senses in its route to the cortex.",
         leadIn: "What is distinctive about it?",
         options: [
@@ -1122,7 +1121,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cns-hearing",
         condition: "cn-special",
-        step: 1,
+        kind: "reasoning",
         stem: "A man has total deafness in his right ear after a stroke.",
         leadIn: "Why is a cortical stroke unlikely to be the cause?",
         options: [
@@ -1138,7 +1137,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cns-argyll",
         condition: "cn-special",
-        step: 1,
+        kind: "memory",
         stem: "A 60-year-old man has small, irregular pupils that constrict when he looks at a near target but not to light.",
         leadIn: "Which condition do these pupils mark?",
         options: [
@@ -1154,7 +1153,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cns-ammonia",
         condition: "cn-special",
-        step: 1,
+        kind: "reasoning",
         stem: "A patient with anosmia after a head injury still flinches when smelling salts are held under his nose.",
         leadIn: "Why?",
         options: [
@@ -1173,7 +1172,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cns-optic-cns",
         condition: "cn-special",
-        step: 1,
+        kind: "reasoning",
         stem: "A student notes that the optic nerve is affected in MS but not in Guillain-Barré syndrome.",
         leadIn: "Which feature of the optic nerve explains this?",
         options: [
@@ -1194,7 +1193,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cns-tract",
         condition: "cn-special",
-        step: 1,
+        kind: "memory",
         stem: "A 60-year-old woman has lost the left half of the visual field in both eyes, without macular sparing.",
         leadIn: "Which lesion fits?",
         options: [
@@ -1215,7 +1214,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cns-scarpa",
         condition: "cn-special",
-        step: 1,
+        kind: "memory",
         stem: "A student traces signals from the vestibular hair cells.",
         leadIn: "Where are the cell bodies of the first neurons, and through which opening do their axons pass?",
         options: [
@@ -1237,7 +1236,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cne-iv",
         condition: "cn-eye",
-        step: 1,
+        kind: "memory",
         stem: "After a head injury, a 22-year-old man has vertical double vision, worse when reading or going downstairs. His right eye sits higher and he tilts his head to the left.",
         leadIn: "Which nerve is affected?",
         options: [
@@ -1253,7 +1252,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cne-vi-icp",
         condition: "cn-eye",
-        step: 1,
+        kind: "reasoning",
         stem: "A woman with idiopathic intracranial hypertension has horizontal double vision and cannot abduct her left eye.",
         leadIn: "Why is CN VI a false localizing sign?",
         options: [
@@ -1272,7 +1271,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cne-pupil-surface",
         condition: "cn-eye",
-        step: 1,
+        kind: "reasoning",
         stem: "A 55-year-old man with diabetes has a left eye that is down and out with ptosis, but the pupil is normal.",
         leadIn: "Why is the pupil spared?",
         options: [
@@ -1288,7 +1287,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cne-horner",
         condition: "cn-eye",
-        step: 1,
+        kind: "memory",
         stem: "A 59-year-old smoker has right shoulder pain, mild ptosis, a small right pupil, and a dry right side of the face. CXR shows a right apical mass.",
         leadIn: "Which neurons are damaged?",
         options: [
@@ -1304,7 +1303,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cne-mlf",
         condition: "cn-eye",
-        step: 1,
+        kind: "memory",
         stem: "A 26-year-old woman cannot adduct her right eye on looking left, while her left eye shows nystagmus. Convergence is normal.",
         leadIn: "Where is the lesion?",
         options: [
@@ -1320,7 +1319,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cne-superior-oblique",
         condition: "cn-eye",
-        step: 1,
+        kind: "memory",
         stem: "A student tests each extraocular muscle in turn.",
         leadIn: "What does the superior oblique do?",
         options: [
@@ -1341,7 +1340,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cne-sympathetic",
         condition: "cn-eye",
-        step: 1,
+        kind: "memory",
         stem: "A 45-year-old woman develops neck pain and a left Horner syndrome after a chiropractic manipulation.",
         leadIn: "Along which structure do the third-order sympathetic fibers run to the eye?",
         options: [
@@ -1361,7 +1360,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cne-iv-crossing",
         condition: "cn-eye",
-        step: 1,
+        kind: "memory",
         stem: "A student notes that CN IV is unusual among the cranial nerves.",
         leadIn: "Which feature makes it unusual?",
         options: [
@@ -1382,7 +1381,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cne-vi-nucleus",
         condition: "cn-eye",
-        step: 2,
+        kind: "memory",
         stem: "A 60-year-old man has a small pontine stroke. Neither eye can look to the left, but convergence is preserved.",
         leadIn: "Which structure is damaged?",
         options: [
@@ -1404,7 +1403,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cnf-corneal",
         condition: "cn-face",
-        step: 1,
+        kind: "memory",
         stem: "Touching the left cornea causes neither eye to blink, whereas touching the right cornea causes both eyes to blink.",
         leadIn: "Which nerve is damaged?",
         options: [
@@ -1420,7 +1419,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cnf-bell",
         condition: "cn-face",
-        step: 1,
+        kind: "reasoning",
         stem: "A 38-year-old woman has sudden weakness of her whole right face, with sounds seeming too loud and loss of taste on the front of the tongue.",
         leadIn: "Which branch explains the hyperacusis?",
         options: [
@@ -1436,7 +1435,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cnf-neuralgia",
         condition: "cn-face",
-        step: 2,
+        kind: "reasoning",
         stem: "A 62-year-old woman has brief, electric shock-like pains in her right cheek and jaw, triggered by chewing and brushing her teeth.",
         leadIn: "Which drug is first line?",
         options: [
@@ -1452,7 +1451,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cnf-foramen",
         condition: "cn-face",
-        step: 1,
+        kind: "memory",
         stem: "A tumor at the skull base causes numbness of the lower lip and chin and weakness of the masseter on one side.",
         leadIn: "Through which foramen does the affected division pass?",
         options: [
@@ -1468,7 +1467,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cnf-ramsay",
         condition: "cn-face",
-        step: 2,
+        kind: "memory",
         stem: "A 70-year-old man has right facial weakness including the forehead, ear pain, and vesicles in his right ear canal.",
         leadIn: "What is the cause?",
         options: [
@@ -1484,7 +1483,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cnf-spinal-v",
         condition: "cn-face",
-        step: 1,
+        kind: "memory",
         stem: "A 64-year-old man with lateral medullary syndrome has lost pain and temperature sensation on the right side of his face, while touch is preserved.",
         leadIn: "Which nucleus is damaged?",
         options: [
@@ -1505,7 +1504,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cnf-jaw-angle",
         condition: "cn-face",
-        step: 1,
+        kind: "reasoning",
         stem: "A patient has numbness of the whole right face after a trigeminal nerve injury, but sensation is preserved over the angle of the jaw.",
         leadIn: "Why is the angle spared?",
         options: [
@@ -1525,7 +1524,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cnf-greater-petrosal",
         condition: "cn-face",
-        step: 2,
+        kind: "reasoning",
         stem: "A 50-year-old man has right facial weakness after temporal bone surgery, with a dry right eye but normal taste and hearing.",
         leadIn: "Which branch's fibers explain the dry eye?",
         options: [
@@ -1546,7 +1545,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cnf-parotid",
         condition: "cn-face",
-        step: 1,
+        kind: "memory",
         stem: "A surgeon removes a parotid tumor and preserves the nerve branches running through the gland.",
         leadIn: "Which nerve supplies parasympathetic fibers to the parotid itself?",
         options: [
@@ -1568,7 +1567,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cnl-uvula",
         condition: "cn-lower",
-        step: 1,
+        kind: "memory",
         stem: "When a patient says \"ah,\" the uvula deviates to the right.",
         leadIn: "Which nerve is damaged?",
         options: [
@@ -1584,7 +1583,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cnl-tongue",
         condition: "cn-lower",
-        step: 1,
+        kind: "memory",
         stem: "A man's tongue deviates to the left on protrusion, with wasting and fasciculations of the left side.",
         leadIn: "Which nerve is damaged?",
         options: [
@@ -1600,7 +1599,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cnl-gag",
         condition: "cn-lower",
-        step: 1,
+        kind: "memory",
         stem: "A student tests the gag reflex.",
         leadIn: "Which nerves form its afferent and efferent limbs?",
         options: [
@@ -1616,7 +1615,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cnl-recurrent",
         condition: "cn-lower",
-        step: 1,
+        kind: "reasoning",
         stem: "A 66-year-old man with an aortic arch aneurysm develops a hoarse voice.",
         leadIn: "Why is the left side affected?",
         options: [
@@ -1632,7 +1631,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cnl-xi",
         condition: "cn-lower",
-        step: 1,
+        kind: "memory",
         stem: "After a lymph node biopsy in the posterior triangle of the left neck, a woman cannot shrug her left shoulder well.",
         leadIn: "Which nerve was injured?",
         options: [
@@ -1648,7 +1647,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cnl-carotid-sinus",
         condition: "cn-lower",
-        step: 1,
+        kind: "memory",
         stem: "Massage over the carotid sinus slows a patient's heart rate.",
         leadIn: "Which nerve carries the afferent signal?",
         options: [
@@ -1667,7 +1666,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cnl-stylopharyngeus",
         condition: "cn-lower",
-        step: 1,
+        kind: "memory",
         stem: "A student lists the muscles supplied by each lower cranial nerve.",
         leadIn: "Which is the only muscle supplied by CN IX?",
         options: [
@@ -1688,7 +1687,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cnl-vagus-gut",
         condition: "cn-lower",
-        step: 1,
+        kind: "reasoning",
         stem: "A student traces the parasympathetic supply of the gut from the dorsal motor nucleus of the vagus.",
         leadIn: "How far along the gut does it reach?",
         options: [
@@ -1704,7 +1703,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cnl-xii-exit",
         condition: "cn-lower",
-        step: 1,
+        kind: "memory",
         stem: "A student traces CN XII from its nucleus in the floor of the fourth ventricle.",
         leadIn: "Where does it leave the brainstem and skull?",
         options: [
@@ -1727,7 +1726,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pain-fibers",
         condition: "pain-pathways",
-        step: 1,
+        kind: "memory",
         stem: "A man stubs his toe and feels an immediate sharp, well-localized pain, followed a second later by a dull, spreading ache.",
         leadIn: "Which fibers carry the second, dull pain?",
         options: [
@@ -1743,7 +1742,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pain-rub",
         condition: "pain-pathways",
-        step: 1,
+        kind: "reasoning",
         stem: "A child bumps her elbow and rubs it, and the pain eases.",
         leadIn: "Which mechanism explains this?",
         options: [
@@ -1759,7 +1758,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pain-referred",
         condition: "pain-pathways",
-        step: 1,
+        kind: "reasoning",
         stem: "A 61-year-old man with an MI has pain in his left neck, shoulder, and back.",
         leadIn: "What explains why the pain is felt there?",
         options: [
@@ -1775,7 +1774,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pain-descending",
         condition: "pain-pathways",
-        step: 1,
+        kind: "memory",
         stem: "A researcher stimulates the PAG of an animal and finds that responses to noxious heat in the dorsal horn are reduced.",
         leadIn: "Which route carries this effect to the dorsal horn?",
         options: [
@@ -1791,7 +1790,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pain-opioid-cellular",
         condition: "pain-pathways",
-        step: 1,
+        kind: "memory",
         stem: "Morphine binds μ receptors on nociceptive terminals in the dorsal horn.",
         leadIn: "Which cellular effects reduce transmission?",
         options: [
@@ -1807,7 +1806,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pain-duloxetine",
         condition: "pain-pathways",
-        step: 2,
+        kind: "reasoning",
         stem: "A 59-year-old man with diabetes has burning pain in both feet that disturbs his sleep. He also has depression.",
         leadIn: "Which drug treats both, by strengthening descending inhibition?",
         options: [
@@ -1823,7 +1822,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pain-gabapentin",
         condition: "pain-pathways",
-        step: 1,
+        kind: "memory",
         stem: "A woman with postherpetic neuralgia starts pregabalin.",
         leadIn: "What is its target?",
         options: [
@@ -1839,7 +1838,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pain-silent",
         condition: "pain-pathways",
-        step: 1,
+        kind: "memory",
         stem: "A 65-year-old woman with rheumatoid arthritis has knee pain even at rest during a flare.",
         leadIn: "Which nociceptors contribute to this rest pain?",
         options: [
@@ -1859,7 +1858,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pain-allodynia",
         condition: "pain-pathways",
-        step: 1,
+        kind: "memory",
         stem: "After shingles, a 70-year-old man finds the touch of his shirt on his chest unbearably painful.",
         leadIn: "What is this called?",
         options: [
@@ -1879,7 +1878,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pain-medial",
         condition: "pain-pathways",
-        step: 1,
+        kind: "memory",
         stem: "A student compares the lateral and medial spinothalamic pathways.",
         leadIn: "What does the medial pathway mainly convey?",
         options: [
@@ -1899,7 +1898,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pain-kappa",
         condition: "pain-pathways",
-        step: 1,
+        kind: "memory",
         stem: "A drug acts at the opioid receptor that binds dynorphins.",
         leadIn: "Which effects would be expected?",
         options: [
@@ -1920,7 +1919,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "pain-crps",
         condition: "pain-pathways",
-        step: 2,
+        kind: "memory",
         stem: "Six weeks after a wrist fracture, a 48-year-old woman has severe burning pain in her hand, pain from light touch, and a hand that is swollen, sweaty, and changes color.",
         leadIn: "What is the most likely diagnosis?",
         options: [
@@ -1941,7 +1940,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "resp-co2",
         condition: "respiratory-center",
-        step: 1,
+        kind: "memory",
         stem: "A healthy person holds their breath until they must breathe again.",
         leadIn: "Which signal mainly drives the urge to breathe?",
         options: [
@@ -1957,7 +1956,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "resp-opioid",
         condition: "respiratory-center",
-        step: 2,
+        kind: "memory",
         stem: "A 28-year-old man is found unresponsive with pinpoint pupils and a respiratory rate of 4/min.",
         leadIn: "Where do opioids act to depress his breathing?",
         options: [
@@ -1973,7 +1972,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "resp-cheyne",
         condition: "respiratory-center",
-        step: 1,
+        kind: "reasoning",
         stem: "A 74-year-old man with severe heart failure has cycles of breathing that grow deeper and then shallower, followed by pauses of 20 seconds, repeating about every minute during sleep.",
         leadIn: "Why does heart failure cause this pattern?",
         options: [
@@ -1993,7 +1992,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "resp-apneustic",
         condition: "respiratory-center",
-        step: 1,
+        kind: "memory",
         stem: "After a pontine stroke, a patient takes long, held breaths with prolonged pauses at full inspiration and short expirations.",
         leadIn: "What is this pattern?",
         options: [
@@ -2009,7 +2008,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "resp-copd-oxygen",
         condition: "respiratory-center",
-        step: 2,
+        kind: "memory",
         stem: "A 70-year-old man with a COPD exacerbation is given high-flow oxygen, and his PaCO2 rises.",
         leadIn: "Which explanation is most accepted?",
         options: [
@@ -2025,7 +2024,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "resp-ohs",
         condition: "respiratory-center",
-        step: 1,
+        kind: "reasoning",
         stem: "A 52-year-old woman with a BMI of 48 has daytime sleepiness and a chronically raised PaCO2 with a high bicarbonate.",
         leadIn: "Why does her hypercapnia persist?",
         options: [
@@ -2041,7 +2040,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "resp-hering",
         condition: "respiratory-center",
-        step: 1,
+        kind: "memory",
         stem: "During a deep breath, slowly adapting stretch receptors in the airways fire increasingly.",
         leadIn: "What reflex do they mediate?",
         options: [
@@ -2057,7 +2056,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "resp-preb",
         condition: "respiratory-center",
-        step: 1,
+        kind: "memory",
         stem: "A physiologist isolates the brainstem region that generates the breathing rhythm.",
         leadIn: "Where is it?",
         options: [
@@ -2078,7 +2077,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "resp-peripheral",
         condition: "respiratory-center",
-        step: 1,
+        kind: "memory",
         stem: "A climber at high altitude breathes faster within seconds of arriving.",
         leadIn: "Which receptors and nerve drive this rapid response?",
         options: [
@@ -2098,7 +2097,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "resp-kussmaul",
         condition: "respiratory-center",
-        step: 1,
+        kind: "memory",
         stem: "A 19-year-old woman with type 1 diabetes and vomiting has deep, rapid, continuous breathing. Her bicarbonate is 8 mmol/L.",
         leadIn: "Which breathing pattern is this?",
         options: [
@@ -2118,7 +2117,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "resp-rem",
         condition: "respiratory-center",
-        step: 1,
+        kind: "reasoning",
         stem: "A man with obstructive sleep apnea has his worst events during dreaming.",
         leadIn: "Which change in REM sleep explains this?",
         options: [
@@ -2139,7 +2138,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "resp-asthma-co2",
         condition: "respiratory-center",
-        step: 2,
+        kind: "memory",
         stem: "A 25-year-old woman has had a severe asthma attack for 6 hours. Her PaCO2, low on arrival, is now 42 mmHg.",
         leadIn: "What does this normal PaCO2 indicate?",
         options: [
@@ -2161,7 +2160,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cv-baroreflex",
         condition: "cardiovascular-center",
-        step: 1,
+        kind: "memory",
         stem: "A healthy volunteer is given an infusion that raises his BP, and his HR falls.",
         leadIn: "Which pathway lowers sympathetic output?",
         options: [
@@ -2177,7 +2176,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cv-carotid-nerve",
         condition: "cardiovascular-center",
-        step: 1,
+        kind: "memory",
         stem: "A surgeon operating near the carotid bifurcation warns that stretching the carotid sinus can slow the heart.",
         leadIn: "Which nerve carries the afferent signal?",
         options: [
@@ -2193,7 +2192,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cv-csh",
         condition: "cardiovascular-center",
-        step: 2,
+        kind: "reasoning",
         stem: "An 81-year-old man faints when he turns his head while shaving. Monitored carotid sinus massage reproduces his symptoms with 5 seconds of asystole.",
         leadIn: "Which treatment is most appropriate?",
         options: [
@@ -2209,7 +2208,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cv-dysreflexia",
         condition: "cardiovascular-center",
-        step: 2,
+        kind: "memory",
         stem: "A 30-year-old man with a complete C6 spinal cord injury has a sudden pounding headache, flushing above the injury, and a BP of 210/120 mm Hg with HR 48/min.",
         leadIn: "Which is the most appropriate first step?",
         options: [
@@ -2225,7 +2224,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cv-orthostatic",
         condition: "cardiovascular-center",
-        step: 2,
+        kind: "reasoning",
         stem: "A 72-year-old man with Parkinson disease feels faint on standing. His BP is 138/82 lying and 112/70 mm Hg after 2 minutes standing, with little change in HR.",
         leadIn: "How is this best described?",
         options: [
@@ -2244,7 +2243,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cv-cushing",
         condition: "cardiovascular-center",
-        step: 1,
+        kind: "reasoning",
         stem: "A man with an expanding intracerebral hemorrhage develops a BP of 220/90 mm Hg, HR 44/min, and irregular breathing.",
         leadIn: "Why does his BP rise?",
         options: [
@@ -2260,7 +2259,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cv-vasovagal",
         condition: "cardiovascular-center",
-        step: 1,
+        kind: "reasoning",
         stem: "A 19-year-old woman faints while having blood taken. She was pale and sweaty beforehand, and her HR was 42/min as she fell.",
         leadIn: "What mechanism explains her faint?",
         options: [
@@ -2276,7 +2275,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cv-ganglia",
         condition: "cardiovascular-center",
-        step: 1,
+        kind: "memory",
         stem: "A student traces baroreceptor afferents to their cell bodies.",
         leadIn: "Where are the cell bodies of the carotid and aortic afferents?",
         options: [
@@ -2296,7 +2295,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cv-rvlm",
         condition: "cardiovascular-center",
-        step: 1,
+        kind: "memory",
         stem: "Neurons in the medulla tonically drive sympathetic preganglionic neurons and maintain baseline BP.",
         leadIn: "Which nucleus is this?",
         options: [
@@ -2317,7 +2316,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cv-anp",
         condition: "cardiovascular-center",
-        step: 1,
+        kind: "memory",
         stem: "A volume load stretches the atria of a healthy volunteer.",
         leadIn: "What response follows?",
         options: [
@@ -2337,7 +2336,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cv-pots",
         condition: "cardiovascular-center",
-        step: 2,
+        kind: "memory",
         stem: "A 24-year-old woman feels lightheaded on standing. Her HR rises from 68 to 112/min within 10 minutes of standing, and her BP does not fall.",
         leadIn: "What is the most likely diagnosis?",
         options: [
@@ -2358,7 +2357,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "cv-sympathetic-outflow",
         condition: "cardiovascular-center",
-        step: 1,
+        kind: "memory",
         stem: "A student maps where autonomic preganglionic neurons leave the CNS.",
         leadIn: "From which levels do sympathetic preganglionic neurons arise?",
         options: [
@@ -2380,7 +2379,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-tpa-bp",
         condition: "neuro-pharm-clots",
-        step: 2,
+        kind: "reasoning",
         stem: "A 68-year-old woman arrives 2 hours after sudden right arm weakness and aphasia. CT shows no hemorrhage, and she meets criteria for thrombolysis, but her BP is 202/116 mm Hg.",
         leadIn: "What is the most appropriate next step?",
         options: [
@@ -2399,7 +2398,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-tpa-inr",
         condition: "neuro-pharm-clots",
-        step: 1,
+        kind: "memory",
         stem: "A 74-year-old man presents 90 minutes after the onset of left hemiparesis. CT shows no hemorrhage.",
         leadIn: "Which finding contraindicates thrombolysis?",
         options: [
@@ -2415,7 +2414,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-aspirin-after-tpa",
         condition: "neuro-pharm-clots",
-        step: 1,
+        kind: "memory",
         stem: "A 61-year-old woman receives alteplase for an acute ischemic stroke.",
         leadIn: "When should aspirin be started?",
         options: [
@@ -2431,7 +2430,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-clopidogrel-omeprazole",
         condition: "neuro-pharm-clots",
-        step: 2,
+        kind: "memory",
         stem: "A 66-year-old man on clopidogrel after a stroke is started on omeprazole for dyspepsia. Two months later, he has a recurrent stroke.",
         leadIn: "Which interaction may have contributed?",
         options: [
@@ -2447,7 +2446,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-dapt-minor",
         condition: "neuro-pharm-clots",
-        step: 1,
+        kind: "memory",
         stem: "A 59-year-old man has a minor ischemic stroke with mild hand weakness. He was not given thrombolysis, and there is no cardioembolic source.",
         leadIn: "Which antiplatelet regimen is most appropriate?",
         options: [
@@ -2463,7 +2462,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-warfarin-reversal",
         condition: "neuro-pharm-clots",
-        step: 1,
+        kind: "reasoning",
         stem: "A 78-year-old woman on warfarin for A-fib has an ICH. Her INR is 3.6.",
         leadIn: "Which treatment reverses her anticoagulation fastest and most fully?",
         options: [
@@ -2483,7 +2482,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-dabigatran-reversal",
         condition: "neuro-pharm-clots",
-        step: 1,
+        kind: "memory",
         stem: "An 81-year-old man taking dabigatran falls and has a large ICH.",
         leadIn: "Which agent specifically reverses his anticoagulant?",
         options: [
@@ -2499,7 +2498,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-protamine-fish",
         condition: "neuro-pharm-clots",
-        step: 2,
+        kind: "memory",
         stem: "A 63-year-old man on an IV heparin infusion has an ICH. He has a fish allergy and uses an insulin preparation that contains protamine.",
         leadIn: "Which risk of the reversal agent is increased in him?",
         options: [
@@ -2515,7 +2514,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-valve-warfarin",
         condition: "neuro-pharm-clots",
-        step: 1,
+        kind: "memory",
         stem: "A 57-year-old woman with a mechanical mitral valve and A-fib has a cardioembolic stroke.",
         leadIn: "Which anticoagulant should she take for secondary prevention?",
         options: [
@@ -2531,7 +2530,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-warfarin-necrosis",
         condition: "neuro-pharm-clots",
-        step: 2,
+        kind: "reasoning",
         stem: "Three days after starting warfarin without a heparin bridge, a 45-year-old woman develops painful, darkening skin over her thighs.",
         leadIn: "Which mechanism explains this?",
         options: [
@@ -2547,7 +2546,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-statin-clarithromycin",
         condition: "neuro-pharm-clots",
-        step: 2,
+        kind: "reasoning",
         stem: "A 70-year-old man on high-intensity atorvastatin after a large vessel stroke is treated for pneumonia with clarithromycin. He develops muscle pain and dark urine.",
         leadIn: "Which mechanism explains this?",
         options: [
@@ -2563,7 +2562,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-nimodipine-purpose",
         condition: "neuro-pharm-pressure",
-        step: 1,
+        kind: "memory",
         stem: "A 49-year-old woman with aneurysmal SAH is started on oral nimodipine for 21 days.",
         leadIn: "What is the main purpose of nimodipine?",
         options: [
@@ -2579,7 +2578,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-status-first",
         condition: "neuro-pharm-seizures",
-        step: 1,
+        kind: "reasoning",
         stem: "A 33-year-old man has been seizing continuously for 7 minutes. He has IV access, and his glucose is normal.",
         leadIn: "Which drug should be given first?",
         options: [
@@ -2595,7 +2594,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-phenytoin-zero-order",
         condition: "neuro-pharm-seizures",
-        step: 2,
+        kind: "reasoning",
         stem: "A 40-year-old woman's phenytoin dose is increased slightly for breakthrough seizures. A week later, she has nystagmus and ataxia, and her level has risen far more than expected.",
         leadIn: "Which property explains this?",
         options: [
@@ -2614,7 +2613,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-carbamazepine-hla",
         condition: "neuro-pharm-seizures",
-        step: 1,
+        kind: "memory",
         stem: "A 28-year-old woman of Han Chinese ancestry with trigeminal neuralgia is to start carbamazepine.",
         leadIn: "Which test should be done first?",
         options: [
@@ -2633,7 +2632,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-carbamazepine-sodium",
         condition: "neuro-pharm-seizures",
-        step: 2,
+        kind: "reasoning",
         stem: "A 72-year-old man with focal seizures started oxcarbazepine 6 weeks ago. He is now confused, and his sodium is 121 mmol/L with concentrated urine.",
         leadIn: "Which mechanism is most likely?",
         options: [
@@ -2649,7 +2648,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-jme-pregnancy",
         condition: "neuro-pharm-seizures",
-        step: 1,
+        kind: "reasoning",
         stem: "A 19-year-old woman has juvenile myoclonic epilepsy. She uses no contraception and may want children in a few years.",
         leadIn: "Which drug is preferred?",
         options: [
@@ -2668,7 +2667,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-lamotrigine-valproate",
         condition: "neuro-pharm-seizures",
-        step: 2,
+        kind: "memory",
         stem: "A 24-year-old man on valproate has lamotrigine added at the usual starting dose. Two weeks later, he has fever, mucosal ulcers, and a blistering rash.",
         leadIn: "Which interaction contributed?",
         options: [
@@ -2684,7 +2683,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-ethosuximide-mechanism",
         condition: "neuro-pharm-seizures",
-        step: 1,
+        kind: "memory",
         stem: "An 8-year-old girl has dozens of brief staring spells a day, with 3 Hz spike-and-wave discharges on EEG. She is started on the first-line drug.",
         leadIn: "Which target does it block?",
         options: [
@@ -2700,7 +2699,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-vigabatrin-fields",
         condition: "neuro-pharm-seizures",
-        step: 2,
+        kind: "memory",
         stem: "A 7-month-old boy with infantile spasms and hypsarrhythmia is started on vigabatrin.",
         leadIn: "Which adverse effect requires monitoring?",
         options: [
@@ -2716,7 +2715,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-topiramate-stones",
         condition: "neuro-pharm-seizures",
-        step: 2,
+        kind: "reasoning",
         stem: "A 35-year-old woman on an antiseizure drug has lost weight, has word-finding difficulty and tingling fingers, and now has a kidney stone with a low serum bicarbonate.",
         leadIn: "Which drug is she most likely taking?",
         options: [
@@ -2735,7 +2734,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-natalizumab-jcv",
         condition: "neuro-pharm-immune",
-        step: 1,
+        kind: "memory",
         stem: "A 30-year-old woman with highly active relapsing MS is to start natalizumab.",
         leadIn: "Which test should be checked first?",
         options: [
@@ -2751,7 +2750,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-fingolimod-bradycardia",
         condition: "neuro-pharm-immune",
-        step: 1,
+        kind: "reasoning",
         stem: "A 34-year-old man with relapsing MS has his heart rate monitored for 6 hours after his first oral dose of a disease-modifying drug, which traps lymphocytes in lymph nodes.",
         leadIn: "Why is he monitored?",
         options: [
@@ -2767,7 +2766,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-anticd20-hbv",
         condition: "neuro-pharm-immune",
-        step: 2,
+        kind: "memory",
         stem: "A 44-year-old woman with primary progressive MS is to start ocrelizumab.",
         leadIn: "Which infection must be screened for first?",
         options: [
@@ -2787,7 +2786,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-eculizumab-vaccine",
         condition: "neuro-pharm-immune",
-        step: 1,
+        kind: "memory",
         stem: "A 39-year-old woman with NMOSD with AQP4-IgG is to start eculizumab.",
         leadIn: "Which step must come before the first dose?",
         options: [
@@ -2803,7 +2802,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-nmosd-wrong-drug",
         condition: "neuro-pharm-immune",
-        step: 2,
+        kind: "reasoning",
         stem: "A 36-year-old woman thought to have MS worsened after starting interferon beta. Testing now shows AQP4-IgG, and her diagnosis is changed to NMOSD.",
         leadIn: "Which relapse-preventing drug is most appropriate?",
         options: [
@@ -2819,7 +2818,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-cholinesterase-bradycardia",
         condition: "neuro-pharm-dementia",
-        step: 1,
+        kind: "reasoning",
         stem: "An 82-year-old man with Alzheimer disease starts donepezil. A month later, he has two fainting episodes and a heart rate of 44.",
         leadIn: "Which mechanism explains this?",
         options: [
@@ -2835,7 +2834,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-memantine-mechanism",
         condition: "neuro-pharm-dementia",
-        step: 1,
+        kind: "reasoning",
         stem: "A 79-year-old woman with moderate to severe Alzheimer disease has memantine added to donepezil.",
         leadIn: "How does memantine act?",
         options: [
@@ -2851,7 +2850,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-lecanemab-aria",
         condition: "neuro-pharm-dementia",
-        step: 2,
+        kind: "memory",
         stem: "A 70-year-old man with early Alzheimer disease and confirmed amyloid is offered lecanemab. He carries two APOE4 alleles.",
         leadIn: "Which adverse effect is most increased by his genotype?",
         options: [
@@ -2867,7 +2866,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-carbidopa-role",
         condition: "neuro-pharm-movement",
-        step: 1,
+        kind: "memory",
         stem: "A 67-year-old man with Parkinson disease starts levodopa combined with carbidopa.",
         leadIn: "What is the role of carbidopa?",
         options: [
@@ -2886,7 +2885,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-pramipexole-gambling",
         condition: "neuro-pharm-movement",
-        step: 1,
+        kind: "reasoning",
         stem: "A 58-year-old man with Parkinson disease has lost large sums gambling online since his treatment changed 4 months ago.",
         leadIn: "Which change is most appropriate?",
         options: [
@@ -2902,7 +2901,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-tetrabenazine-mood",
         condition: "neuro-pharm-movement",
-        step: 2,
+        kind: "reasoning",
         stem: "A 45-year-old woman with Huntington disease starts the first-line drug for chorea. Her chorea improves, but she becomes withdrawn and tearful.",
         leadIn: "How does this drug act?",
         options: [
@@ -2918,7 +2917,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-dlb-antipsychotic",
         condition: "neuro-pharm-movement",
-        step: 1,
+        kind: "reasoning",
         stem: "A 76-year-old man with fluctuating cognition, visual hallucinations, and mild parkinsonism becomes severely rigid and confused after a dose of haloperidol.",
         leadIn: "Which drug is most appropriate for his hallucinations?",
         options: [
@@ -2934,7 +2933,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-opioid-co2",
         condition: "neuro-pharm-pain",
-        step: 2,
+        kind: "reasoning",
         stem: "Two patients after surgery have depressed breathing: one was given morphine, and the other propofol.",
         leadIn: "How do their CO2 response curves differ?",
         options: [
@@ -2950,7 +2949,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-timolol-asthma",
         condition: "neuro-pharm-eye",
-        step: 1,
+        kind: "memory",
         stem: "A 63-year-old woman with asthma starts eye drops for open-angle glaucoma. Within days, she has wheezing.",
         leadIn: "Which drop is most likely responsible?",
         options: [
@@ -2966,7 +2965,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-latanoprost-iris",
         condition: "neuro-pharm-eye",
-        step: 1,
+        kind: "reasoning",
         stem: "A 59-year-old man uses a once-daily drop for open-angle glaucoma. Months later, his treated eye has a darker iris and longer eyelashes.",
         leadIn: "How does this drug lower IOP?",
         options: [
@@ -2982,7 +2981,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-mannitol-icp",
         condition: "neuro-pharm-pressure",
-        step: 1,
+        kind: "reasoning",
         stem: "A 57-year-old man with a large ICH becomes drowsy, and his ICP is raised. Mannitol is given.",
         leadIn: "How does mannitol lower ICP?",
         options: [
@@ -2998,7 +2997,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-baclofen-withdrawal",
         condition: "neuro-pharm-symptoms",
-        step: 2,
+        kind: "reasoning",
         stem: "A 41-year-old woman with MS and severe spasticity runs out of her antispasticity drug. Two days later, she is confused, febrile, and has a seizure.",
         leadIn: "Which drug was most likely stopped?",
         options: [
@@ -3017,7 +3016,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-midodrine-supine",
         condition: "neuro-pharm-symptoms",
-        step: 1,
+        kind: "reasoning",
         stem: "A 66-year-old man with MSA faints on standing. He starts a short-acting α1 agonist prodrug, taken during the day only.",
         leadIn: "Why is it not taken at night?",
         options: [
@@ -3033,7 +3032,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-local-anesthetic-toxicity",
         condition: "neuro-pharm-pain",
-        step: 2,
+        kind: "memory",
         stem: "During a large regional block with lidocaine, a 39-year-old woman reports numbness around her mouth and then has a generalized seizure.",
         leadIn: "What is the most likely cause, and what follows if it progresses?",
         options: [
@@ -3049,7 +3048,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-vestibular-suppressant",
         condition: "neuro-pharm-ear",
-        step: 1,
+        kind: "reasoning",
         stem: "A 45-year-old man has vestibular neuritis with severe vertigo and nausea. He is given meclizine and asks to keep taking it for a month.",
         leadIn: "Why is it limited to about 3 days?",
         options: [
@@ -3068,7 +3067,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-meniere-gentamicin",
         condition: "neuro-pharm-ear",
-        step: 2,
+        kind: "reasoning",
         stem: "A 52-year-old woman with unilateral Ménière disease still has disabling attacks despite less salt, caffeine, and alcohol, a thiazide, and intratympanic steroids.",
         leadIn: "Which treatment is the next option, and what is its main risk?",
         options: [
@@ -3084,7 +3083,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-cause-seizure-drug",
         condition: "neuro-pharm-causes",
-        step: 1,
+        kind: "reasoning",
         stem: "A 34-year-old woman with no history of epilepsy has a first generalized seizure. She recently started a drug to help her stop smoking.",
         leadIn: "Which drug is most likely responsible?",
         options: [
@@ -3100,7 +3099,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "np-cause-parkinsonism",
         condition: "neuro-pharm-causes",
-        step: 2,
+        kind: "reasoning",
         stem: "A 61-year-old woman develops symmetric bradykinesia and rigidity weeks after starting a drug for chronic nausea. A DAT SPECT is normal.",
         leadIn: "Which drug is most likely responsible?",
         options: [

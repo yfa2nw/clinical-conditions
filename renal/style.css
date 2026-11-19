@@ -122,3 +122,134 @@ body {
         animation: none;
     }
 }
+
+/* =========================
+   Article diagrams: the gut, the blood, and one nephron
+========================= */
+
+.rn-gut {
+    fill: var(--color-surface);
+    stroke: var(--color-accent-line);
+    stroke-width: 3;
+    stroke-linejoin: round;
+}
+
+.rn-gut-tube {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-width: 9;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.rn-blood {
+    fill: var(--color-wrong-soft);
+    stroke: var(--color-wrong);
+    stroke-opacity: 0.45;
+    stroke-width: 2;
+}
+
+.rn-vessel {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-opacity: 0.55;
+    stroke-width: 5;
+    stroke-linecap: round;
+}
+
+.rn-tube {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-opacity: 0.55;
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.rn-capsule {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent);
+    stroke-width: 2.5;
+}
+
+.rn-tuft {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-opacity: 0.6;
+    stroke-width: 2;
+}
+
+.rn-gland {
+    fill: var(--color-up-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 2.5;
+    stroke-linejoin: round;
+}
+
+.rn-out {
+    fill: none;
+    stroke: var(--color-text-muted);
+    stroke-width: 2;
+    stroke-dasharray: 5 4;
+    stroke-linecap: round;
+}
+
+.rn-go {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.rn-go.is-k {
+    stroke: var(--color-up);
+}
+
+.rn-go.is-organic {
+    stroke-dasharray: 6 4;
+}
+
+.rn-cell {
+    fill: var(--color-surface-muted);
+    stroke: var(--color-accent-line);
+    stroke-width: 3;
+}
+
+.rn-albumin {
+    fill: var(--color-up-soft);
+    stroke: var(--color-up);
+    stroke-width: 2;
+}
+
+.rn-ion {
+    fill: var(--color-accent);
+}
+
+.rn-small {
+    fill: var(--color-text-muted);
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.rn-panel-title {
+    fill: var(--color-accent);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+/* A marker that covers a run of causes, such as 8–15 */
+.rn-range rect {
+    fill: var(--color-accent);
+    stroke: var(--color-surface);
+    stroke-width: 2;
+}
+
+.rn-range text {
+    fill: var(--color-on-accent);
+    font-size: 13px;
+    font-weight: 700;
+    text-anchor: middle;
+}

@@ -51,21 +51,10 @@
                 <!-- The neuron chain is drawn here by map.js and shared/map.js, lined up with the stations below -->
                 <svg class="map-svg" aria-hidden="true" focusable="false"></svg>
 
-                <div class="station" data-organ="fluid">
-                <p class="group-label" id="group-fluid">Fluid status</p>
-                <div class="condition-group" role="group" aria-labelledby="group-fluid">
-                    <button type="button" class="condition-item active" data-condition="acid-base" aria-current="true">Metabolic acidosis and alkalosis</button>
-                    <button type="button" class="condition-item" data-condition="volume">Hypovolemia and hypervolemia</button>
-                    <button type="button" class="condition-item" data-condition="sodium">Hyponatremia and hypernatremia</button>
-                    <button type="button" class="condition-item" data-condition="potassium">Hypokalemia and hyperkalemia</button>
-                    <button type="button" class="condition-item" data-condition="aldosterone">Hypoaldosteronism and hyperaldosteronism</button>
-                </div>
-                </div>
-
                 <div class="station" data-organ="aki">
                 <p class="group-label" id="group-aki">Acute kidney injury</p>
                 <div class="condition-group" role="group" aria-labelledby="group-aki">
-                    <button type="button" class="condition-item" data-condition="prerenal-aki">Prerenal AKI</button>
+                    <button type="button" class="condition-item active" data-condition="prerenal-aki" aria-current="true">Prerenal AKI</button>
                     <button type="button" class="condition-item" data-condition="atn">Acute tubular necrosis</button>
                     <button type="button" class="condition-item" data-condition="ain">Acute interstitial nephritis</button>
                     <button type="button" class="condition-item" data-condition="glomerulonephritis">Glomerulonephritis</button>
@@ -97,16 +86,20 @@
                 </div>
                 </div>
 
+                <div class="station" data-organ="fluid">
+                <p class="group-label" id="group-fluid">Fluids, electrolytes, and acid-base</p>
+                <div class="condition-group" role="group" aria-labelledby="group-fluid">
+                    <button type="button" class="condition-item" data-condition="acid-base">Metabolic acidosis and alkalosis</button>
+                    <button type="button" class="condition-item" data-condition="volume">Hypovolemia and hypervolemia</button>
+                    <button type="button" class="condition-item" data-condition="sodium">Hyponatremia and hypernatremia</button>
+                    <button type="button" class="condition-item" data-condition="potassium">Hypokalemia and hyperkalemia</button>
+                    <button type="button" class="condition-item" data-condition="aldosterone">Hypoaldosteronism and hyperaldosteronism</button>
+                </div>
+                </div>
+
                 <p class="no-results" id="no-results" hidden>No matches</p>
             </nav>
 
-            <button type="button" class="quiz-button" id="quiz-button">
-                <span class="quiz-button-icon" aria-hidden="true">?</span>
-                <span class="quiz-button-text">
-                    Practice quiz
-                    <span class="quiz-button-sub">USMLE-style questions</span>
-                </span>
-            </button>
         </aside>
 
         <!-- Announces the newly opened condition to screen readers -->
@@ -115,152 +108,7 @@
         <!-- Right content panel -->
         <section class="content-panel" id="content-panel" tabindex="0" aria-label="Condition details">
 
-            <article class="condition-content active" id="acid-base">
-                <h2>Metabolic Acidosis and Alkalosis</h2>
-
-                <section class="content-section">
-                    <h3>Pathophysiology</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Etiology</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Symptoms and complications</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Diagnosis</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Treatment</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-            </article>
-
-            <article class="condition-content" id="volume">
-                <h2>Hypovolemia and Hypervolemia</h2>
-
-                <section class="content-section">
-                    <h3>Pathophysiology</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Etiology</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Symptoms and complications</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Diagnosis</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Treatment</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-            </article>
-
-            <article class="condition-content" id="sodium">
-                <h2>Hyponatremia and Hypernatremia</h2>
-
-                <section class="content-section">
-                    <h3>Pathophysiology</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Etiology</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Symptoms and complications</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Diagnosis</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Treatment</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-            </article>
-
-            <article class="condition-content" id="potassium">
-                <h2>Hypokalemia and Hyperkalemia</h2>
-
-                <section class="content-section">
-                    <h3>Pathophysiology</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Etiology</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Symptoms and complications</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Diagnosis</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Treatment</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-            </article>
-
-            <article class="condition-content" id="aldosterone">
-                <h2>Hypoaldosteronism and Hyperaldosteronism</h2>
-
-                <section class="content-section">
-                    <h3>Pathophysiology</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Etiology</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Symptoms and complications</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Diagnosis</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Treatment</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-            </article>
-
-            <article class="condition-content" id="prerenal-aki">
+            <article class="condition-content active" id="prerenal-aki">
                 <h2>Prerenal Acute Kidney Injury</h2>
 
                 <section class="content-section">
@@ -579,7 +427,503 @@
                 </section>
             </article>
 
-            <!-- Practice quiz (filled in by quiz.js) -->
+            <article class="condition-content" id="acid-base" data-worksheet="worksheets/acid-base.pdf" data-quiz-pdf="quizzes/acid-base.pdf">
+                <h2>Metabolic Acidosis and Alkalosis</h2>
+
+                <!-- Pathophysiology -->
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+<p>A gain of acid or a loss of <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> lowers plasma <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> and pH (metabolic acidosis), and a loss of H+ or a gain of <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> raises them (metabolic alkalosis); the lungs then change <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> to pull the pH back toward normal.</p>
+<span class="formula-inline">H+ + <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> ⇌ H2CO3 ⇌ CO2 + H2O</span>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Feature</th><th scope="col">NAGMA</th><th scope="col">AGMA</th><th scope="col">Metabolic alkalosis</th></tr></thead><tbody>
+<tr><th scope="row">What happens</th><td><abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> is lost from the kidney or gut, or the kidney fails to make new <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr></td><td>An acid is added; H+ uses up <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, and the acid's anion stays in the blood</td><td>H+ is lost from the stomach or kidney, or <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> is gained</td></tr>
+<tr><th scope="row"><abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> is replaced by</th><td>Cl−, so it is also called hyperchloremic acidosis</td><td>An unmeasured anion: lactate, ketoanions, formate, glycolate, sulfate, or phosphate</td><td>Nothing is replaced; Cl− often falls too</td></tr>
+<tr><th scope="row">Anion gap</th><td>Normal</td><td>High</td><td>Normal</td></tr>
+<tr><th scope="row">Lungs</th><td>Hyperventilate to lower <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr></td><td>Hyperventilate to lower <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr></td><td>Hypoventilate to raise <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr></td></tr>
+<tr><th scope="row">Main sources</th><td>Kidney: <abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr>, <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr>. Gut: diarrhea, fistulas</td><td>GOLDMARK: glycols, oxoproline, L-lactate, D-lactate, methanol, aspirin, renal failure, ketoacidosis</td><td>Gut: vomiting, <abbr class="term" tabindex="0" data-definition="Nasogastric">NG</abbr> tube suction. Kidney: diuretics, aldosterone excess</td></tr>
+</tbody></table></div>
+<div class="subsection">
+<h4 class="sc-heading">What a change in pH does</h4>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="0 0 480 300" role="img" aria-label="Two cells. In acidosis, H+ enters the cell and K+ leaves it, while lactate or ketoacids enter together with their H+. In alkalosis, H+ leaves the cell and K+ enters it, and albumin in the blood binds more calcium"><text class="rn-panel-title" x="115" y="20" text-anchor="middle">Acidosis</text><text class="rn-panel-title" x="365" y="20" text-anchor="middle">Alkalosis</text><rect class="rn-cell" x="40" y="70" width="150" height="130" rx="36"/><rect class="rn-cell" x="290" y="70" width="150" height="130" rx="36"/><text class="site-label" x="115" y="140" text-anchor="middle">Cell</text><text class="site-label" x="365" y="140" text-anchor="middle">Cell</text><text class="site-label" x="96" y="40" text-anchor="middle">H+</text><path class="rn-go" d="M96 48V92M96 92L90 84M96 92L102 84"/><path class="rn-go is-k" d="M168 120H220M220 120L212 114M220 120L212 126"/><text class="site-label" x="196" y="108" text-anchor="middle">K+</text><path class="rn-go is-organic" d="M115 240V206M115 206L109 214M115 206L121 214"/><text class="site-label" x="115" y="262" text-anchor="middle">Lactate− with H+</text><text class="site-label" x="340" y="40" text-anchor="middle">H+</text><path class="rn-go" d="M340 92V48M340 48L334 56M340 48L346 56"/><path class="rn-go is-k" d="M472 120H442M442 120L450 114M442 120L450 126"/><text class="site-label" x="458" y="108" text-anchor="middle">K+</text><ellipse class="rn-albumin" cx="365" cy="256" rx="50" ry="18"/><text class="rn-small" x="365" y="260" text-anchor="middle">Albumin</text><circle class="rn-ion" cx="324" cy="242" r="5"/><circle class="rn-ion" cx="348" cy="237" r="5"/><circle class="rn-ion" cx="382" cy="237" r="5"/><circle class="rn-ion" cx="406" cy="242" r="5"/><text class="site-label" x="440" y="292" text-anchor="middle">Ca2+</text><g class="site-marker"><circle cx="70" cy="58" r="11"/><text x="70" y="62.5">A</text></g><g class="site-marker"><circle cx="196" cy="144" r="11"/><text x="196" y="148.5">B</text></g><g class="site-marker"><circle cx="56" cy="236" r="11"/><text x="56" y="240.5">C</text></g><g class="site-marker"><circle cx="314" cy="58" r="11"/><text x="314" y="62.5">D</text></g><g class="site-marker"><circle cx="298" cy="276" r="11"/><text x="298" y="280.5">E</text></g></svg></figure>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">A</span><span class="cause-text"><span class="cause-name">H+ moves into cells</span><span class="cause-detail">Cells buffer excess H+, which softens the fall in plasma pH</span></span></li>
+<li><span class="cause-number" aria-hidden="true">B</span><span class="cause-text"><span class="cause-name">K+ moves out</span><span class="cause-detail">K+ leaves cells to keep the charge balanced → hyperkalemia, most marked when the acid is a mineral acid such as <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> or <abbr class="term" tabindex="0" data-definition="Ammonium chloride">NH4Cl</abbr></span></span></li>
+<li><span class="cause-number" aria-hidden="true">C</span><span class="cause-text"><span class="cause-name">Organic acids enter with their anion</span><span class="cause-detail">Lactate and ketoanions cross into cells together with H+, so little K+ has to leave; organic acidoses shift less K+</span></span></li>
+<li><span class="cause-number" aria-hidden="true">D</span><span class="cause-text"><span class="cause-name">Alkalosis reverses the shift</span><span class="cause-detail">H+ leaves cells and K+ enters them → hypokalemia, made worse by K+ lost in urine</span></span></li>
+<li><span class="cause-number" aria-hidden="true">E</span><span class="cause-text"><span class="cause-name">Albumin binds more Ca2+</span><span class="cause-detail">In alkalosis, albumin gives up H+ and binds more Ca2+ in its place → ionized Ca2+ falls while total Ca2+ is unchanged → tetany</span></span></li>
+</ul>
+</div>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Exceptions to the H+ and K+ shift</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Organic acidoses</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Lactic acidosis and ketoacidosis raise K+ less than a mineral acid does, because the anion enters cells with its H+ (C)</span></li>
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Diabetic ketoacidosis">DKA</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">K+ is high mainly from insulin deficiency and high osmolality, although total body K+ is low; insulin moves K+ back into cells and can cause hypokalemia</span></li>
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> types 1 and 2, and diarrhea</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">K+ is low despite acidosis, because K+ is lost in urine or stool faster than it shifts out of cells</span></li>
+<li><span class="pair-from">Correcting acidosis</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">K+ moves back into cells, so treating acidosis can unmask a low total body K+</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Why metabolic alkalosis lasts</h4>
+<p>Healthy kidneys excrete extra <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> quickly, so an alkalosis lasts only while something keeps the kidney reabsorbing it.</p>
+<ol class="pathway">
+<li><span class="pathway-title">Generation</span><span class="pathway-detail">H+ lost from the stomach or kidney, or <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> added</span></li>
+<li><span class="pathway-title">Low volume</span><span class="pathway-detail">Angiotensin II increases proximal <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> reabsorption; aldosterone increases distal H+ and K+ secretion</span></li>
+<li><span class="pathway-title">Low Cl−</span><span class="pathway-detail">Too little Cl− reaches the collecting duct to swap for <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, so <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> cannot be secreted</span></li>
+<li><span class="pathway-title">Low K+</span><span class="pathway-detail">Increases H+ secretion and NH4+ production, which makes new <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr></span></li>
+<li><span class="pathway-title">Maintained alkalosis</span><span class="pathway-detail">Lasts until volume, Cl−, and K+ are replaced</span></li>
+</ol>
+</div>
+                </section>
+
+                <!-- Etiology -->
+                <section class="content-section">
+                    <h3>Etiology</h3>
+<div class="subsection">
+<h4 class="sc-heading">Metabolic acidosis</h4>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="0 0 480 440" role="img" aria-label="The gut, the blood, and one nephron. Numbered sites: 1 the whole kidney, 2 and 4 the collecting duct, 3 the proximal tubule, 5 the intestine, 6 a pancreatic fistula, 7 saline entering the blood, and 8 to 15 acids added to the blood"><path class="rn-gut-tube" d="M80 6V40"/><path class="rn-gut" d="M80 38C50 44 44 98 76 112C106 126 146 104 140 72C136 52 116 46 100 52C92 55 84 48 82 38Z"/><path class="rn-gut-tube" d="M126 110C150 124 150 156 126 164C98 170 52 162 52 188C52 212 146 204 146 228C146 252 52 244 52 268C52 292 146 284 146 308C146 332 70 324 70 348V372"/><ellipse class="rn-gland" cx="98" cy="138" rx="22" ry="7"/><path class="rn-out" d="M76 142Q42 152 24 176"/><text class="site-label" x="150" y="66" text-anchor="start">Stomach</text><text class="rn-small" x="4" y="128" text-anchor="start">Pancreas</text><text class="site-label" x="108" y="398" text-anchor="middle">Intestine</text><rect class="rn-gland" x="208" y="16" width="24" height="30" rx="5"/><path class="rn-out" d="M220 46V70"/><rect class="rn-blood" x="206" y="70" width="28" height="340" rx="14"/><text class="site-label" x="220" y="430" text-anchor="middle">Blood</text><path class="rn-vessel" d="M234 96H272"/><circle class="rn-capsule" cx="292" cy="96" r="20"/><path class="rn-tuft" d="M282 98c0-9 6-9 6-2c0-9 7-8 6 0c4 6-3 9-6 5c-2 5-7 3-6-3"/><path class="rn-tube" d="M311 102C346 88 362 122 338 136C314 150 354 166 332 178V352Q347 384 362 352V214C374 196 398 222 406 196C414 172 394 160 424 156V410"/><text class="rn-small" x="292" y="66" text-anchor="middle">Glomerulus</text><text class="rn-small" x="366" y="120" text-anchor="start">Proximal tubule</text><text class="rn-small" x="372" y="330" text-anchor="start"><tspan x="372" dy="0">Loop of</tspan><tspan x="372" dy="14">Henle</tspan></text><text class="rn-small" x="432" y="200" text-anchor="start"><tspan x="432" dy="0">Distal</tspan><tspan x="432" dy="14">tubule</tspan></text><text class="rn-small" x="432" y="366" text-anchor="start"><tspan x="432" dy="0">Collecting</tspan><tspan x="432" dy="14">duct</tspan></text><text class="rn-small" x="248" y="246" text-anchor="start">Acids</text><g class="site-marker"><circle cx="256" cy="120" r="11"/><text x="256" y="124.5">1</text></g><g class="site-marker"><circle cx="424" cy="250" r="11"/><text x="424" y="254.5">2</text></g><g class="site-marker"><circle cx="338" cy="136" r="11"/><text x="338" y="140.5">3</text></g><g class="site-marker"><circle cx="424" cy="286" r="11"/><text x="424" y="290.5">4</text></g><g class="site-marker"><circle cx="99" cy="248" r="11"/><text x="99" y="252.5">5</text></g><g class="site-marker"><circle cx="22" cy="186" r="11"/><text x="22" y="190.5">6</text></g><g class="site-marker"><circle cx="190" cy="30" r="11"/><text x="190" y="34.5">7</text></g><g class="rn-range"><rect x="196" y="230" width="48" height="22" rx="11"/><text x="220" y="245.5">8–15</text></g></svg></figure>
+<ul class="cause-list">
+<li class="cause-group"><abbr class="term" tabindex="0" data-definition="Normal anion gap metabolic acidosis">NAGMA</abbr>: kidney, low <abbr class="term" tabindex="0" data-definition="Glomerular filtration rate">GFR</abbr></li>
+<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name"><abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr></span><span class="cause-detail">Fewer nephrons make less NH4+, so less acid is excreted and less new <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> is made; a <abbr class="term" tabindex="0" data-definition="Normal anion gap metabolic acidosis">NAGMA</abbr> in earlier <abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr> becomes an <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr> (14) as <abbr class="term" tabindex="0" data-definition="Glomerular filtration rate">GFR</abbr> falls further</span></span></li>
+<li class="cause-group"><abbr class="term" tabindex="0" data-definition="Normal anion gap metabolic acidosis">NAGMA</abbr>: kidney, normal <abbr class="term" tabindex="0" data-definition="Glomerular filtration rate">GFR</abbr></li>
+<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name"><abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 1 (distal)</span><span class="cause-detail">α-intercalated cells cannot secrete H+, so urine cannot be acidified; autoimmune disease (Sjögren syndrome, <abbr class="term" tabindex="0" data-definition="Systemic lupus erythematosus">SLE</abbr>), lithium, amphotericin B, and toluene</span></span></li>
+<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name"><abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 2 (proximal)</span><span class="cause-detail">The proximal tubule, which normally reclaims 85–90% of filtered <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, reclaims less, so <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> spills into urine until plasma <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> falls below the lowered threshold; multiple myeloma, carbonic anhydrase inhibitors (acetazolamide, topiramate), tenofovir, and Fanconi syndrome</span></span></li>
+<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name"><abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 4 (hypoaldosteronism) <span class="badge">Most common <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr></span></span><span class="cause-detail">Too little aldosterone, or resistance to it, cuts H+ and K+ secretion, and the high K+ suppresses NH4+ production; diabetic nephropathy, <abbr class="term" tabindex="0" data-definition="Angiotensin-converting enzyme inhibitors">ACEi</abbr>, <abbr class="term" tabindex="0" data-definition="Angiotensin II receptor blockers">ARBs</abbr>, potassium-sparing diuretics, <abbr class="term" tabindex="0" data-definition="Nonsteroidal anti-inflammatory drugs">NSAIDs</abbr>, heparin, trimethoprim, and adrenal insufficiency</span></span></li>
+<li class="cause-group"><abbr class="term" tabindex="0" data-definition="Normal anion gap metabolic acidosis">NAGMA</abbr>: gut and other</li>
+<li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">Diarrhea</span><span class="cause-detail">Intestinal fluid beyond the stomach is rich in <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, so losing it lowers <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, and the kidney keeps Cl− in its place; K+ is lost too; secretory diarrhea loses more <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> than inflammatory diarrhea</span></span></li>
+<li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name">Pancreatic fistulas and other bicarbonate-rich losses</span><span class="cause-detail">Pancreatic, biliary, and small bowel fluid drains outside the body; a ureterosigmoidostomy lets the colon swap urinary Cl− for <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr></span></span></li>
+<li><span class="cause-number" aria-hidden="true">7</span><span class="cause-text"><span class="cause-name">Cl− load and drugs</span><span class="cause-detail">Large volumes of 0.9% saline, which has 154 mmol/L Cl− and no <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>; <abbr class="term" tabindex="0" data-definition="Total parenteral nutrition">TPN</abbr> without acetate; cholestyramine</span></span></li>
+<li class="cause-group"><abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr>: GOLDMARK</li>
+<li><span class="cause-number" aria-hidden="true">8</span><span class="cause-text"><span class="cause-name">Glycols</span><span class="cause-detail">Ethylene glycol in antifreeze is made into glycolic acid, which causes the acidosis, and oxalic acid, which forms calcium oxalate crystals in the tubules → <abbr class="term" tabindex="0" data-definition="Acute kidney injury">AKI</abbr> and hypocalcemia; propylene glycol is made into lactate</span></span></li>
+<li><span class="cause-number" aria-hidden="true">9</span><span class="cause-text"><span class="cause-name">Oxoproline</span><span class="cause-detail">5-oxoproline (pyroglutamic acid) builds up with chronic paracetamol use, especially with malnutrition or chronic illness</span></span></li>
+<li><span class="cause-number" aria-hidden="true">10</span><span class="cause-text"><span class="cause-name">L-lactate</span><span class="cause-detail">Type A: too little oxygen delivered (shock, sepsis, ischemia) → anaerobic glycolysis. Type B: no hypoxia, but mitochondria cannot use pyruvate (metformin, liver failure, thiamine deficiency)</span></span></li>
+<li><span class="cause-number" aria-hidden="true">11</span><span class="cause-text"><span class="cause-name">D-lactate</span><span class="cause-detail">In short bowel syndrome, colonic bacteria ferment unabsorbed carbohydrate into D-lactate, which humans metabolize poorly</span></span></li>
+<li><span class="cause-number" aria-hidden="true">12</span><span class="cause-text"><span class="cause-name">Methanol</span><span class="cause-detail">Windscreen washer fluid, solvents, and contaminated spirits; made into formic acid, which damages the retina and basal ganglia</span></span></li>
+<li><span class="cause-number" aria-hidden="true">13</span><span class="cause-text"><span class="cause-name">Aspirin</span><span class="cause-detail">Salicylates stimulate the respiratory center first (respiratory alkalosis), then uncouple oxidative phosphorylation → lactate and ketoacids</span></span></li>
+<li><span class="cause-number" aria-hidden="true">14</span><span class="cause-text"><span class="cause-name">Renal failure (uremic acidosis)</span><span class="cause-detail">Advanced <abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr> or <abbr class="term" tabindex="0" data-definition="Acute kidney injury">AKI</abbr> retains sulfate, phosphate, urate, and hippurate; rhabdomyolysis releases acids and phosphate</span></span></li>
+<li><span class="cause-number" aria-hidden="true">15</span><span class="cause-text"><span class="cause-name">Ketoacidosis</span><span class="cause-detail">Low insulin and high glucagon → lipolysis → β-hydroxybutyrate and acetoacetate; <abbr class="term" tabindex="0" data-definition="Diabetic ketoacidosis">DKA</abbr>, <abbr class="term" tabindex="0" data-definition="Alcoholic ketoacidosis">AKA</abbr> after a binge followed by vomiting and poor intake, and starvation</span></span></li>
+</ul>
+</div>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Metabolic alkalosis</h4>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="0 0 480 440" role="img" aria-label="The gut, the blood, and one nephron. Numbered sites: 16 the stomach, 17 and 21 the loop of Henle and distal tubule, 18 the adrenal gland, 19 the renal artery, 20 the collecting duct, 22 alkali entering the blood, and 23 the lungs"><path class="rn-gut-tube" d="M80 6V40"/><path class="rn-gut" d="M80 38C50 44 44 98 76 112C106 126 146 104 140 72C136 52 116 46 100 52C92 55 84 48 82 38Z"/><path class="rn-gut-tube" d="M126 110C150 124 150 156 126 164C98 170 52 162 52 188C52 212 146 204 146 228C146 252 52 244 52 268C52 292 146 284 146 308C146 332 70 324 70 348V372"/><ellipse class="rn-gland" cx="98" cy="138" rx="22" ry="7"/><path class="rn-out" d="M66 66Q30 40 34 6"/><text class="site-label" x="150" y="66" text-anchor="start">Stomach</text><text class="site-label" x="108" y="398" text-anchor="middle">Intestine</text><ellipse class="rn-gut" cx="211" cy="34" rx="9" ry="20"/><ellipse class="rn-gut" cx="229" cy="34" rx="9" ry="20"/><text class="rn-small" x="246" y="30" text-anchor="start">Lungs</text><rect class="rn-blood" x="206" y="70" width="28" height="340" rx="14"/><text class="site-label" x="220" y="430" text-anchor="middle">Blood</text><path class="rn-vessel" d="M234 96H272"/><circle class="rn-capsule" cx="292" cy="96" r="20"/><path class="rn-tuft" d="M282 98c0-9 6-9 6-2c0-9 7-8 6 0c4 6-3 9-6 5c-2 5-7 3-6-3"/><path class="rn-tube" d="M311 102C346 88 362 122 338 136C314 150 354 166 332 178V352Q347 384 362 352V214C374 196 398 222 406 196C414 172 394 160 424 156V410"/><path class="rn-gland" d="M444 30L470 64H418Z"/><path class="rn-out" d="M440 68L428 146"/><text class="rn-small" x="444" y="22" text-anchor="middle">Adrenal</text><text class="rn-small" x="292" y="66" text-anchor="middle">Glomerulus</text><text class="rn-small" x="372" y="330" text-anchor="start"><tspan x="372" dy="0">Loop of</tspan><tspan x="372" dy="14">Henle</tspan></text><text class="rn-small" x="432" y="200" text-anchor="start"><tspan x="432" dy="0">Distal</tspan><tspan x="432" dy="14">tubule</tspan></text><text class="rn-small" x="432" y="366" text-anchor="start"><tspan x="432" dy="0">Collecting</tspan><tspan x="432" dy="14">duct</tspan></text><text class="rn-small" x="248" y="245" text-anchor="start">Alkali</text><g class="site-marker"><circle cx="100" cy="84" r="11"/><text x="100" y="88.5">16</text></g><g class="site-marker"><circle cx="362" cy="292" r="11"/><text x="362" y="296.5">17</text></g><g class="site-marker"><circle cx="374" cy="206" r="11"/><text x="374" y="210.5">17</text></g><g class="site-marker"><circle cx="404" cy="52" r="11"/><text x="404" y="56.5">18</text></g><g class="site-marker"><circle cx="256" cy="120" r="11"/><text x="256" y="124.5">19</text></g><g class="site-marker"><circle cx="424" cy="280" r="11"/><text x="424" y="284.5">20</text></g><g class="site-marker"><circle cx="362" cy="252" r="11"/><text x="362" y="256.5">21</text></g><g class="site-marker"><circle cx="412" cy="184" r="11"/><text x="412" y="188.5">21</text></g><g class="site-marker"><circle cx="220" cy="241" r="11"/><text x="220" y="245.5">22</text></g><g class="site-marker"><circle cx="190" cy="34" r="11"/><text x="190" y="38.5">23</text></g></svg></figure>
+<ul class="cause-list">
+<li class="cause-group">Gut</li>
+<li><span class="cause-number" aria-hidden="true">16</span><span class="cause-text"><span class="cause-name">Vomiting and <abbr class="term" tabindex="0" data-definition="Nasogastric">NG</abbr> tube suction</span><span class="cause-detail">Losing <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> leaves the <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> made by parietal cells in the blood; the volume and Cl− loss then keeps the kidney reabsorbing <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>; also chloride-losing diarrhea (villous adenoma, congenital chloridorrhea) and Cl− lost in the sweat of cystic fibrosis</span></span></li>
+<li class="cause-group">Kidney</li>
+<li><span class="cause-number" aria-hidden="true">17</span><span class="cause-text"><span class="cause-name">Loop and thiazide diuretics</span><span class="cause-detail">More Na+ reaches the collecting duct, where aldosterone, raised by the volume loss, swaps it for H+ and K+; the extracellular fluid also shrinks around the same amount of <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> (contraction alkalosis)</span></span></li>
+<li><span class="cause-number" aria-hidden="true">18</span><span class="cause-text"><span class="cause-name">Primary hyperaldosteronism</span><span class="cause-detail">An adrenal adenoma (Conn syndrome) or bilateral adrenal hyperplasia makes aldosterone regardless of renin → Na+ retention, hypertension, H+ and K+ loss</span></span></li>
+<li><span class="cause-number" aria-hidden="true">19</span><span class="cause-text"><span class="cause-name">Secondary hyperaldosteronism</span><span class="cause-detail">High renin drives aldosterone: renal artery stenosis and renin-secreting tumors; low effective volume (heart failure, cirrhosis) does the same and keeps other alkaloses going</span></span></li>
+<li><span class="cause-number" aria-hidden="true">20</span><span class="cause-text"><span class="cause-name">Apparent mineralocorticoid excess</span><span class="cause-detail">The collecting duct acts as if aldosterone were high: Cushing syndrome (cortisol on the mineralocorticoid receptor), licorice (blocks <abbr class="term" tabindex="0" data-definition="11β-hydroxysteroid dehydrogenase type 2">11β-HSD2</abbr>, which normally inactivates cortisol), and Liddle syndrome (overactive <abbr class="term" tabindex="0" data-definition="Epithelial sodium channel">ENaC</abbr>)</span></span></li>
+<li><span class="cause-number" aria-hidden="true">21</span><span class="cause-text"><span class="cause-name">Bartter and Gitelman syndromes</span><span class="cause-detail">Inherited loss of <abbr class="term" tabindex="0" data-definition="Na+/K+/2Cl− cotransporter of the thick ascending limb">NKCC2</abbr> in the loop (Bartter, like a lifelong loop diuretic) or <abbr class="term" tabindex="0" data-definition="Na+/Cl− cotransporter of the distal tubule">NCC</abbr> in the distal tubule (Gitelman, like a lifelong thiazide)</span></span></li>
+<li class="cause-group">Other</li>
+<li><span class="cause-number" aria-hidden="true">22</span><span class="cause-text"><span class="cause-name">Alkali load</span><span class="cause-detail">Milk-alkali syndrome from calcium carbonate, <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> tablets or infusions, citrate from massive transfusion, and acetate in <abbr class="term" tabindex="0" data-definition="Total parenteral nutrition">TPN</abbr>; lasts mainly when the kidney cannot excrete <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> (<abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr>, low volume)</span></span></li>
+<li><span class="cause-number" aria-hidden="true">23</span><span class="cause-text"><span class="cause-name">After hypercapnia</span><span class="cause-detail">In chronic respiratory acidosis (<abbr class="term" tabindex="0" data-definition="Chronic obstructive pulmonary disease">COPD</abbr>), the kidney retains <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>; when ventilation lowers <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> quickly, the extra <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> is left behind</span></span></li>
+</ul>
+</div>
+</div>
+                </section>
+
+                <!-- Symptoms and complications -->
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Effect</th><th scope="col">Metabolic acidosis</th><th scope="col">Metabolic alkalosis</th></tr></thead><tbody>
+<tr><th scope="row">Breathing</th><td>Kussmaul breathing: deep, rapid breaths to blow off CO2; the respiratory muscles can tire</td><td>Shallow, slow breathing, usually mild; can worsen hypercapnia and hypoxemia in <abbr class="term" tabindex="0" data-definition="Chronic obstructive pulmonary disease">COPD</abbr> or obesity hypoventilation</td></tr>
+<tr><th scope="row">Potassium</th><td>Often hyperkalemia (B), but not always: organic acidoses shift less K+, and <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> types 1 and 2 and diarrhea cause hypokalemia</td><td>Hypokalemia (D) → muscle weakness and arrhythmias</td></tr>
+<tr><th scope="row">Calcium</th><td>More ionized Ca2+; chronic acidosis draws on bone to buffer acid → osteomalacia, rickets, and stones</td><td>Less ionized Ca2+ (E) → perioral numbness, paresthesias, carpopedal spasm, Chvostek and Trousseau signs, tetany</td></tr>
+<tr><th scope="row">Heart and vessels</th><td>Weaker contraction, vasodilation, and poor response to catecholamines → hypotension; arrhythmias</td><td>Arrhythmias from low K+ and low Ca2+; vasoconstriction, including in the brain</td></tr>
+<tr><th scope="row">Oxygen</th><td>Dissociation curve shifts right: more O2 released to tissues</td><td>Dissociation curve shifts left: less O2 released to tissues</td></tr>
+<tr><th scope="row">Brain</th><td>Headache, lethargy, confusion, and coma</td><td>Confusion, delirium, and seizures</td></tr>
+<tr><th scope="row">Other</th><td>Nausea, vomiting, anorexia, and fatigue; insulin resistance; long term, muscle wasting and faster <abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr> progression</td><td>Muscle cramps and weakness</td></tr>
+</tbody></table></div>
+<div class="subsection">
+<h4 class="sc-heading">Clues to the cause</h4>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">If there is</th><th scope="col">Points to</th></tr></thead><tbody>
+<tr><th scope="row">Hypotension, tachycardia, and dry mucous membranes</th><td>Volume loss from diarrhea (5), vomiting (16), or diuretics (17); adrenal insufficiency (4)</td></tr>
+<tr><th scope="row">Hypertension with low K+</th><td>Aldosterone excess or its mimics (18–20)</td></tr>
+<tr><th scope="row">Fruity breath, polyuria, and polydipsia</th><td><abbr class="term" tabindex="0" data-definition="Diabetic ketoacidosis">DKA</abbr> (15)</td></tr>
+<tr><th scope="row">Blurred vision after drinking</th><td>Methanol (12)</td></tr>
+<tr><th scope="row">Inebriation, flank pain, hematuria, and tetany</th><td>Ethylene glycol (8)</td></tr>
+<tr><th scope="row">Tinnitus and fast breathing</th><td>Aspirin (13)</td></tr>
+<tr><th scope="row">Calcium phosphate stones and nephrocalcinosis</th><td><abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 1 (2): alkaline urine, high urine Ca2+, and low urine citrate</td></tr>
+<tr><th scope="row">Bone pain and osteomalacia with glycosuria</th><td><abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 2 with Fanconi syndrome (3)</td></tr>
+<tr><th scope="row">Pruritus, nocturia, oliguria, and asterixis</th><td>Renal failure (1, 14)</td></tr>
+<tr><th scope="row">Failure to thrive, polyuria, and vomiting in a child</th><td>Bartter or Gitelman syndrome (21)</td></tr>
+</tbody></table></div>
+</div>
+                </section>
+
+                <!-- Diagnosis -->
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+<div class="subsection">
+<h4 class="sc-heading">Workup</h4>
+<ul class="chip-list"><li>pH 7.35–7.45</li><li><abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> 35–45 mmHg</li><li><abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> 22–26 mmol/L</li><li><abbr class="term" tabindex="0" data-definition="Anion gap">AG</abbr> 12–16 mmol/L</li></ul>
+<div class="flow">
+<div class="flow-step"><span class="flow-condition">1. Is the pH low or high? (<abbr class="term" tabindex="0" data-definition="Arterial blood gas">ABG</abbr> or <abbr class="term" tabindex="0" data-definition="Venous blood gas">VBG</abbr>)</span><span class="flow-action">Acidemia below 7.35, alkalemia above 7.45</span></div>
+<div class="arrow-down" aria-hidden="true"></div>
+<div class="flow-step"><span class="flow-condition">2. Which value explains the pH?</span><span class="flow-action"><abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> moved the same way as pH → metabolic; <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> moved the opposite way → respiratory</span></div>
+<div class="arrow-down" aria-hidden="true"></div>
+<div class="flow-step"><span class="flow-condition">3. Is the compensation what is expected?</span><span class="flow-action">If not, a second disorder is present</span></div>
+<div class="branch-grid flow-branches">
+<div class="branch"><div class="arrow-down" aria-hidden="true"></div><span class="branch-label">Metabolic acidosis</span><div class="flow-step"><span class="flow-condition">4. Calculate</span><span class="flow-action">Anion gap</span></div><div class="branch-grid"><div class="branch"><div class="arrow-down" aria-hidden="true"></div><div class="flow-step"><span class="flow-condition">Normal (<abbr class="term" tabindex="0" data-definition="Normal anion gap metabolic acidosis">NAGMA</abbr>)</span><span class="flow-action">Urine <abbr class="term" tabindex="0" data-definition="Anion gap">AG</abbr>, K+, and urine pH</span></div></div><div class="branch"><div class="arrow-down" aria-hidden="true"></div><div class="flow-step"><span class="flow-condition">High (<abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr>)</span><span class="flow-action">Delta-delta, osmolal gap, lactate, ketones, creatinine</span></div></div></div></div>
+<div class="branch"><div class="arrow-down" aria-hidden="true"></div><span class="branch-label">Metabolic alkalosis</span><div class="flow-step"><span class="flow-condition">4. Measure</span><span class="flow-action">Urine Cl−</span></div><div class="branch-grid"><div class="branch"><div class="arrow-down" aria-hidden="true"></div><div class="flow-step"><span class="flow-condition">Below 20 mmol/L</span><span class="flow-action">Chloride-responsive: vomiting, <abbr class="term" tabindex="0" data-definition="Nasogastric">NG</abbr> tube, past diuretics</span></div></div><div class="branch"><div class="arrow-down" aria-hidden="true"></div><div class="flow-step"><span class="flow-condition">Above 20 mmol/L</span><span class="flow-action">Chloride-resistant: check <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr>, renin, and aldosterone</span></div></div></div></div>
+</div>
+</div>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">1–2. The primary disorder</h4>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Primary disorder</th><th scope="col">pH</th><th scope="col">Primary change</th><th scope="col">Compensation</th></tr></thead><tbody>
+<tr><th scope="row">Metabolic acidosis</th><td>Low</td><td><abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> low</td><td><abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> falls within hours (hyperventilation)</td></tr>
+<tr><th scope="row">Metabolic alkalosis</th><td>High</td><td><abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> high</td><td><abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> rises within hours (hypoventilation)</td></tr>
+<tr><th scope="row">Respiratory acidosis</th><td>Low</td><td><abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> high</td><td><abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> rises over days as the kidney retains it</td></tr>
+<tr><th scope="row">Respiratory alkalosis</th><td>High</td><td><abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> low</td><td><abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> falls over days as the kidney excretes it</td></tr>
+</tbody></table></div>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">3. Expected compensation</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Metabolic acidosis</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline">Expected <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> = 1.5 × <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> + 8 (± 2)</span>The Winter formula. Other rules: <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> is about the last two digits of the pH, or falls about 1.2 mmHg for each 1 mmol/L fall in <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr></span></li>
+<li><span class="pair-from">Metabolic alkalosis</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline">Expected <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> = 0.7 × <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> + 20 (± 5)</span>Another rule: <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> rises 0.6–0.7 mmHg for each 1 mmol/L rise in <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> above 24. It rarely passes 55 mmHg, because hypoxia drives breathing</span></li>
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> higher than expected</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">A respiratory acidosis as well</span></li>
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> lower than expected</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">A respiratory alkalosis as well, as in aspirin poisoning (13)</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">4. Anion gap</h4>
+<p>Plasma has as many positive as negative charges; the gap is the negative charge that is not measured, mostly albumin. An acid with an unmeasured anion widens it, while <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> lost and replaced by Cl− leaves it unchanged.</p>
+<span class="formula-inline"><abbr class="term" tabindex="0" data-definition="Anion gap">AG</abbr> = (Na+ + K+) − (Cl− + <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>); normal 12–16 mmol/L</span>
+<ul class="pair-list">
+<li><span class="pair-from">Without K+</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Anion gap">AG</abbr> = Na+ − (Cl− + <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>); normal 8–12 mmol/L</span></li>
+<li><span class="pair-from">Low albumin</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Each 10 g/L fall in albumin lowers the gap by about 2.5, which can hide an <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr>; some add 2.5 for each 10 g/L below 40</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading"><abbr class="term" tabindex="0" data-definition="Normal anion gap metabolic acidosis">NAGMA</abbr>: kidney or gut?</h4>
+<span class="formula-inline">Urine <abbr class="term" tabindex="0" data-definition="Anion gap">AG</abbr> = urine Na+ + urine K+ − urine Cl−</span>
+<ul class="pair-list">
+<li><span class="pair-from">Negative urine <abbr class="term" tabindex="0" data-definition="Anion gap">AG</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">The kidney is excreting plenty of NH4+, which leaves with Cl− → a normal renal response to <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> lost elsewhere: diarrhea (5), fistulas (6), or saline (7)</span></li>
+<li><span class="pair-from">Positive urine <abbr class="term" tabindex="0" data-definition="Anion gap">AG</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">The kidney cannot excrete NH4+ → <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> types 1 and 4 (2, 4) or <abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr> (1)</span></li>
+</ul>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Finding</th><th scope="col">RTA type 1 (2)</th><th scope="col">RTA type 2 (3)</th><th scope="col">RTA type 4 (4)</th><th scope="col">CKD (1)</th></tr></thead><tbody>
+<tr><th scope="row">Defect</th><td>Distal H+ secretion</td><td>Proximal <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> reabsorption</td><td>Aldosterone deficiency or resistance</td><td>Too few nephrons to make NH4+</td></tr>
+<tr><th scope="row"><abbr class="term" tabindex="0" data-definition="Glomerular filtration rate">GFR</abbr></th><td>Normal</td><td>Normal</td><td>Normal or mildly low</td><td>Low</td></tr>
+<tr><th scope="row">Plasma K+</th><td>Low</td><td>Low</td><td>High</td><td>Normal or high</td></tr>
+<tr><th scope="row">Urine pH</th><td>Above 5.5, even in severe acidosis</td><td>Below 5.5 once <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> is below the threshold; above 5.5 when <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> is given</td><td>Below 5.5</td><td>Usually below 5.5</td></tr>
+<tr><th scope="row">Plasma <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr></th><td>Can fall below 10 mmol/L</td><td>Usually 12–18 mmol/L</td><td>Usually above 17 mmol/L</td><td>Falls as <abbr class="term" tabindex="0" data-definition="Glomerular filtration rate">GFR</abbr> falls</td></tr>
+<tr><th scope="row">Urine <abbr class="term" tabindex="0" data-definition="Anion gap">AG</abbr></th><td>Positive</td><td>Variable</td><td>Positive</td><td>Positive</td></tr>
+<tr><th scope="row">Other findings</th><td>High urine Ca2+, low urine citrate, calcium phosphate stones, nephrocalcinosis</td><td>Fanconi syndrome: glycosuria with normal blood glucose, phosphaturia, aminoaciduria, low urate; bone disease</td><td>Diabetes, culprit drugs; high urine Na+ despite a low-salt diet</td><td>High urea and creatinine</td></tr>
+</tbody></table></div>
+<p class="note"><strong>Note:</strong> Before diagnosing an <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr>, exclude a <abbr class="term" tabindex="0" data-definition="Urinary tract infection">UTI</abbr> with a urease-producing organism, which raises urine pH, and low volume, which limits distal H+ secretion (urine Na+ should be above 25 mmol/L).</p>
+</div>
+<div class="subsection">
+<h4 class="sc-heading"><abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr>: which acid?</h4>
+<span class="formula-inline">Delta-delta ratio = (<abbr class="term" tabindex="0" data-definition="Anion gap">AG</abbr> − 16) ÷ (24 − <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>)</span>
+<p>In a pure <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr>, each H+ that uses up one <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> leaves one unmeasured anion behind, so the rise in the gap roughly matches the fall in <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>. A mismatch shows a second metabolic disorder. Without K+ in the gap, use 12 in place of 16.</p>
+<ul class="pair-list">
+<li><span class="pair-from">Below 1</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> fell more than the gap rose → an <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr> with a <abbr class="term" tabindex="0" data-definition="Normal anion gap metabolic acidosis">NAGMA</abbr>, as in <abbr class="term" tabindex="0" data-definition="Diabetic ketoacidosis">DKA</abbr> with diarrhea</span></li>
+<li><span class="pair-from">1–2</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">A pure <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr></span></li>
+<li><span class="pair-from">Above 2</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> fell less than the gap rose → an <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr> with a metabolic alkalosis, as in <abbr class="term" tabindex="0" data-definition="Diabetic ketoacidosis">DKA</abbr> with vomiting, or a high <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> from before</span></li>
+</ul>
+<span class="formula-inline">Osmolal gap = measured osmolality − (2 × Na+ + glucose + urea); normal below 10, concerning above 15</span>
+<ul class="pair-list">
+<li><span class="pair-from">Other formulas</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">2 × (Na+ + K+) + glucose + urea; in US units, 2 × Na+ + glucose ÷ 18 + <abbr class="term" tabindex="0" data-definition="Blood urea nitrogen">BUN</abbr> ÷ 2.8; some add ethanol when it is present</span></li>
+<li><span class="pair-from">High osmolal gap with <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Toxic alcohol: methanol (12) or ethylene glycol (8)</span></li>
+<li><span class="pair-from">High osmolal gap without acidosis</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Early toxic alcohol, before it is metabolized; isopropyl alcohol, which is made into acetone, an uncharged ketone (ketosis without acidosis)</span></li>
+<li><span class="pair-from">Normal osmolal gap late after ingestion</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Does not exclude a toxic alcohol: as the alcohol becomes acid, the osmolal gap closes and the anion gap widens</span></li>
+</ul>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Cause</th><th scope="col">Blood</th><th scope="col">Urine</th><th scope="col">History</th></tr></thead><tbody>
+<tr><th scope="row">Glycols (8)</th><td>High osmolal gap early; low Ca2+; rising creatinine</td><td>Calcium oxalate crystals; hematuria</td><td>Antifreeze; inebriation, then flank pain and oliguria</td></tr>
+<tr><th scope="row">Oxoproline (9)</th><td>Normal lactate and no ketones</td><td>5-oxoproline</td><td>Chronic paracetamol use, malnutrition</td></tr>
+<tr><th scope="row">L-lactate (10)</th><td>Lactate above 4 mmol/L</td><td>No specific finding</td><td>Shock, sepsis, ischemia, metformin, liver failure</td></tr>
+<tr><th scope="row">D-lactate (11)</th><td>D-lactate high</td><td>No specific finding</td><td>Short bowel syndrome</td></tr>
+<tr><th scope="row">Methanol (12)</th><td>High osmolal gap early</td><td>No specific finding</td><td>Blurred vision, dilated pupils, and papilledema</td></tr>
+<tr><th scope="row">Aspirin (13)</th><td>Respiratory alkalosis with <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr>; salicylate level</td><td>No specific finding</td><td>Tinnitus, nausea, and fast breathing</td></tr>
+<tr><th scope="row">Renal failure (14)</th><td>High urea, creatinine, and phosphate</td><td>Reduced output</td><td>Known <abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr> or <abbr class="term" tabindex="0" data-definition="Acute kidney injury">AKI</abbr></td></tr>
+<tr><th scope="row"><abbr class="term" tabindex="0" data-definition="Diabetic ketoacidosis">DKA</abbr> (15)</th><td>High glucose and β-hydroxybutyrate; K+ normal or high</td><td>Ketones and glucose</td><td>Missed insulin, infection, or new diabetes</td></tr>
+<tr><th scope="row"><abbr class="term" tabindex="0" data-definition="Alcoholic ketoacidosis">AKA</abbr> and starvation (15)</th><td>Glucose low or normal; β-hydroxybutyrate high</td><td>Ketones, sometimes few on dipstick, which detects acetoacetate</td><td>Heavy drinking then vomiting; fasting</td></tr>
+</tbody></table></div>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Metabolic alkalosis: urine Cl−</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Urine Cl− below 20 mmol/L</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Chloride-responsive: the kidney is holding on to Cl− because volume and Cl− are low → vomiting and <abbr class="term" tabindex="0" data-definition="Nasogastric">NG</abbr> tube suction (16), diuretics that have worn off (17), chloride-losing diarrhea, cystic fibrosis, after hypercapnia (23)</span></li>
+<li><span class="pair-from">Urine Cl− above 20 mmol/L</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Chloride-resistant: diuretics still acting (17), aldosterone excess and its mimics (18–20), Bartter and Gitelman syndromes (21), severe hypokalemia</span></li>
+<li><span class="pair-from">Diuretics</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Urine Cl− is high while the drug acts and low once it wears off, so a changing result suggests hidden diuretic use</span></li>
+</ul>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Cause</th><th scope="col">BP</th><th scope="col">Renin</th><th scope="col">Aldosterone</th><th scope="col">Other findings</th></tr></thead><tbody>
+<tr><th scope="row">Vomiting, <abbr class="term" tabindex="0" data-definition="Nasogastric">NG</abbr> tube (16)</th><td>Low or normal</td><td>High</td><td>High</td><td>Urine Cl− low; K+ low, mostly lost in urine</td></tr>
+<tr><th scope="row">Diuretics (17)</th><td>Low or normal</td><td>High</td><td>High</td><td>Urine Cl− high while acting</td></tr>
+<tr><th scope="row">Primary hyperaldosteronism (18)</th><td>High</td><td>Low</td><td>High</td><td>High aldosterone-to-renin ratio</td></tr>
+<tr><th scope="row">Secondary hyperaldosteronism (19)</th><td>High</td><td>High</td><td>High</td><td>Renal artery stenosis, renin-secreting tumor</td></tr>
+<tr><th scope="row">Apparent mineralocorticoid excess (20)</th><td>High</td><td>Low</td><td>Low</td><td>Cushing syndrome, licorice, Liddle syndrome</td></tr>
+<tr><th scope="row">Bartter syndrome (21)</th><td>Low or normal</td><td>High</td><td>High</td><td>High urine Ca2+</td></tr>
+<tr><th scope="row">Gitelman syndrome (21)</th><td>Low or normal</td><td>High</td><td>High</td><td>Low urine Ca2+, low Mg2+</td></tr>
+<tr><th scope="row">Alkali load (22)</th><td>Variable</td><td>Variable</td><td>Variable</td><td>High Ca2+ in milk-alkali syndrome</td></tr>
+</tbody></table></div>
+</div>
+                </section>
+
+                <!-- Treatment -->
+                <section class="content-section">
+                    <h3>Treatment</h3>
+<p>Treat the cause, and replace volume, K+, and Cl− as needed; <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> or acid is given only in particular situations.</p>
+<div class="subsection">
+<h4 class="sc-heading">Giving <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr></h4>
+<ul class="pair-list">
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Normal anion gap metabolic acidosis">NAGMA</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> has truly been lost, so oral alkali (<abbr class="term" tabindex="0" data-definition="Sodium bicarbonate">NaHCO3</abbr> or potassium citrate) is used for <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> and <abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr></span></li>
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr> from lactate or ketoacids</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Not routine: once the cause is treated, lactate and ketoanions are metabolized back into <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, so added <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> can overshoot into alkalosis</span></li>
+<li><span class="pair-from">Risks</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Hypernatremia, fluid overload, low ionized Ca2+, and hypokalemia as K+ moves into cells</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Metabolic acidosis</h4>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Cause</th><th scope="col">Treatment</th></tr></thead><tbody>
+<tr><th scope="row"><abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr> (1)</th><td>Oral <abbr class="term" tabindex="0" data-definition="Sodium bicarbonate">NaHCO3</abbr> to protect bone and muscle and slow progression; dialysis when advanced (14)</td></tr>
+<tr><th scope="row"><abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 1 (2)</th><td>Oral alkali in modest doses; potassium citrate also replaces K+ and prevents stones; treat the cause</td></tr>
+<tr><th scope="row"><abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 2 (3)</th><td>Large doses of alkali with K+, because <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> given above the threshold is lost in urine and carries K+ with it; a thiazide can help by shrinking volume; phosphate and vitamin D for Fanconi bone disease</td></tr>
+<tr><th scope="row"><abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 4 (4)</th><td>Stop culprit drugs, low-potassium diet, and a loop or thiazide diuretic; fludrocortisone for aldosterone deficiency without hypertension or edema</td></tr>
+<tr><th scope="row">Diarrhea and fistulas (5, 6)</th><td>Treat the cause; replace fluid, K+, and <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, and control the fistula</td></tr>
+<tr><th scope="row">Saline (7)</th><td>Switch to a balanced crystalloid such as Hartmann solution or Plasma-Lyte</td></tr>
+<tr><th scope="row">Toxic alcohols (8, 12)</th><td>Fomepizole, or ethanol if it is unavailable, to block alcohol dehydrogenase; hemodialysis for severe acidosis, visual change, <abbr class="term" tabindex="0" data-definition="Acute kidney injury">AKI</abbr>, or instability; thiamine and pyridoxine for ethylene glycol</td></tr>
+<tr><th scope="row">Oxoproline (9)</th><td>Stop paracetamol</td></tr>
+<tr><th scope="row">L-lactate (10)</th><td>Type A: restore perfusion with fluids, vasopressors, <abbr class="term" tabindex="0" data-definition="Antibiotics">ABX</abbr>, and source control. Type B: thiamine; stop metformin, with hemodialysis if severe</td></tr>
+<tr><th scope="row">D-lactate (11)</th><td>Treat the short bowel cause and limit carbohydrate reaching the colon</td></tr>
+<tr><th scope="row">Aspirin (13)</th><td>Activated charcoal; <abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr> <abbr class="term" tabindex="0" data-definition="Sodium bicarbonate">NaHCO3</abbr> to alkalinize urine and trap salicylate there; hemodialysis if severe</td></tr>
+<tr><th scope="row">Renal failure (14)</th><td>Dialysis</td></tr>
+<tr><th scope="row"><abbr class="term" tabindex="0" data-definition="Diabetic ketoacidosis">DKA</abbr> (15)</th><td><abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr> fluids, then insulin once K+ is at least 3.5 mmol/L, with K+ replacement; continue insulin until the gap closes</td></tr>
+<tr><th scope="row"><abbr class="term" tabindex="0" data-definition="Alcoholic ketoacidosis">AKA</abbr> and starvation (15)</th><td><abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr> fluids with dextrose and thiamine; feed gradually and watch for refeeding syndrome</td></tr>
+</tbody></table></div>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Metabolic alkalosis</h4>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Cause</th><th scope="col">Treatment</th></tr></thead><tbody>
+<tr><th scope="row">Chloride-responsive (16, 23)</th><td>0.9% saline with <abbr class="term" tabindex="0" data-definition="Potassium chloride">KCl</abbr>, which restores volume and Cl− so the kidney can excrete <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>; treat the cause of vomiting</td></tr>
+<tr><th scope="row">Diuretics (17)</th><td>Stop or reduce the diuretic, replace <abbr class="term" tabindex="0" data-definition="Potassium chloride">KCl</abbr>, or add a potassium-sparing diuretic; acetazolamide if the patient is fluid overloaded</td></tr>
+<tr><th scope="row">Primary hyperaldosteronism (18)</th><td>Spironolactone or eplerenone; adrenalectomy for a unilateral adenoma</td></tr>
+<tr><th scope="row">Secondary hyperaldosteronism (19)</th><td>Treat the cause, such as renal artery stenosis or a renin-secreting tumor</td></tr>
+<tr><th scope="row">Apparent mineralocorticoid excess (20)</th><td>Treat Cushing syndrome, stop licorice, and give amiloride for Liddle syndrome, since its <abbr class="term" tabindex="0" data-definition="Epithelial sodium channel">ENaC</abbr> does not need aldosterone</td></tr>
+<tr><th scope="row">Bartter and Gitelman syndromes (21)</th><td><abbr class="term" tabindex="0" data-definition="Potassium chloride">KCl</abbr> and Mg2+; potassium-sparing diuretics, <abbr class="term" tabindex="0" data-definition="Nonsteroidal anti-inflammatory drugs">NSAIDs</abbr>, <abbr class="term" tabindex="0" data-definition="Angiotensin-converting enzyme inhibitors">ACEi</abbr>, or <abbr class="term" tabindex="0" data-definition="Angiotensin II receptor blockers">ARBs</abbr> if K+ stays low</td></tr>
+<tr><th scope="row">Alkali load (22)</th><td>Stop the source; saline for milk-alkali syndrome</td></tr>
+<tr><th scope="row">Saline cannot be given</th><td>Acetazolamide, as in heart failure</td></tr>
+<tr><th scope="row">Severe or refractory alkalosis</th><td>Dialysis with a low-bicarbonate bath, or dilute <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr></td></tr>
+</tbody></table></div>
+</div>
+                </section>
+
+                <p class="see-also">
+                    Related:
+                    <button type="button" class="link-button" data-goto="potassium">Hypokalemia and Hyperkalemia</button>
+                    <button type="button" class="link-button" data-goto="aldosterone">Hypoaldosteronism and Hyperaldosteronism</button>
+                    <button type="button" class="link-button" data-goto="volume">Hypovolemia and Hypervolemia</button>
+                    <button type="button" class="link-button" data-goto="ckd">Chronic Kidney Disease</button>
+                    <a class="link-button" href="physiology.html#renal-physiology">Renal Physiology</a>
+                    <a class="link-button" href="../gi/index.html#diarrhea">Diarrhea</a>
+                    <a class="link-button" href="../gi/index.html#gi-bleeding-obstruction">GI Bleeding and Obstruction</a>
+                    <a class="link-button" href="../endocrine/index.html#diabetes-mellitus">Diabetes Mellitus</a>
+                    <a class="link-button" href="../endocrine/index.html#cushing">Cushing Syndrome</a>
+                    <a class="link-button" href="../endocrine/index.html#adrenal-insufficiency">Adrenal Insufficiency</a>
+                </p>
+                <section class="references" aria-label="References">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Kharsa A, Vashisht R, Rout P, Meseeha M. Anion Gap and Non-Anion Gap Metabolic Acidosis. 2025. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK448090/" target="_blank" rel="noopener">NBK448090</a></li>
+                        <li>Mustaqeem R, Arif A. Renal Tubular Acidosis. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK519044/" target="_blank" rel="noopener">NBK519044</a></li>
+                        <li>Kharsa A, Rout P. Alkalosis. 2026. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK545269/" target="_blank" rel="noopener">NBK545269</a></li>
+                        <li>Castro D, Zubair M. Arterial Blood Gas Analysis: Fundamentals, Interpretation, and Clinical Utility. 2026. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK536919/" target="_blank" rel="noopener">NBK536919</a></li>
+                        <li>Baddam S, Tubben RE. Lactic Acidosis. 2025. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK470202/" target="_blank" rel="noopener">NBK470202</a></li>
+                        <li>Ghimire P, Dhamoon AS. Ketoacidosis. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK534848/" target="_blank" rel="noopener">NBK534848</a></li>
+                        <li>Lizzo JM, Goyal A, Kaur J. Adult Diabetic Ketoacidosis. 2025. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK560723/" target="_blank" rel="noopener">NBK560723</a></li>
+                        <li>Chen RJ, Glagola JJ, Nappe TM. Ethylene Glycol Toxicity. 2022. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK537009/" target="_blank" rel="noopener">NBK537009</a></li>
+                        <li>Ashurst JV, Schaffer DH, Nappe TM. Methanol Toxicity. 2025. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK482121/" target="_blank" rel="noopener">NBK482121</a></li>
+                        <li>Ashurst JV, Nappe TM. Isopropanol Toxicity. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK493181/" target="_blank" rel="noopener">NBK493181</a></li>
+                        <li>Runde TJ, Nappe TM. Salicylates Toxicity. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK499879/" target="_blank" rel="noopener">NBK499879</a></li>
+                        <li>Najem O, Shah MM, Zubair M, De Jesus O. Serum Osmolality. 2024. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK567764/" target="_blank" rel="noopener">NBK567764</a></li>
+                        <li>Parmar MS, Muppidi V, Bashir K. Gitelman Syndrome. 2024. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK459304/" target="_blank" rel="noopener">NBK459304</a></li>
+                        <li>Bokhari SRA, Zulfiqar H, Rauf N, Mansur A. Bartter Syndrome. 2026. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK442019/" target="_blank" rel="noopener">NBK442019</a></li>
+                        <li>Rout P, Hashmi MF, Patel C. Milk-Alkali Syndrome. 2024. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK557500/" target="_blank" rel="noopener">NBK557500</a></li>
+                        <li>Chia CYP, Poulose V, How CH. Approach to acid-base disorders in primary care. <em>Singapore Med J</em>. 2024;65(2):106–110. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10942139/" target="_blank" rel="noopener">PMC10942139</a></li>
+                    </ol>
+                </section>
+                <dialog class="quick-review" aria-labelledby="acid-base-review-title">
+                    <div class="quick-review-body">
+                        <p class="review-kicker">Review article</p>
+                        <h3 id="acid-base-review-title">Metabolic acidosis and alkalosis: the anion gap, the urine, and what keeps a disorder going</h3>
+
+                        <p class="review-abstract">Metabolic acidosis is a fall in plasma <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> from a gain of acid or a loss of <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, and metabolic alkalosis is a rise in <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> from a loss of H+ or a gain of <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>; in both, the lungs compensate by changing <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr>. The anion gap divides acidosis into a normal gap form (<abbr class="term" tabindex="0" data-definition="Normal anion gap metabolic acidosis">NAGMA</abbr>), in which <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> lost from the kidney or gut is replaced by Cl−, and a high gap form (<abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr>), in which an added acid leaves its anion in the blood. The urine anion gap, plasma K+, and urine pH separate the renal causes of <abbr class="term" tabindex="0" data-definition="Normal anion gap metabolic acidosis">NAGMA</abbr>, the delta-delta ratio and osmolal gap refine <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr>, and urine Cl− divides alkalosis into chloride-responsive and chloride-resistant forms. Here, we review the mechanisms, causes, consequences, diagnosis, and management of both disorders, and consider their relationship to disorders of potassium, aldosterone, volume, and kidney function.</p>
+
+                        <aside class="review-key-points">
+                            <h4>Key points</h4>
+                            <ul>
+                                <li>The anion gap, (Na+ + K+) − (Cl− + <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>), is normally 12–16 mmol/L; it is high when an acid adds an unmeasured anion and normal when <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> is replaced by Cl−.</li>
+                                <li>Expected compensation is <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> = 1.5 × <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> + 8 (± 2) in metabolic acidosis and 0.7 × <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> + 20 in metabolic alkalosis; a mismatch means a second, respiratory disorder.</li>
+                                <li>A negative urine anion gap points to gut losses, and a positive one to <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> types 1 and 4 or <abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr>; K+ is low in <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> types 1 and 2 and high in type 4, and urine pH stays above 5.5 only in type 1.</li>
+                                <li>The causes of <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr> follow GOLDMARK; an osmolal gap above 15 with an <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr> suggests methanol or ethylene glycol.</li>
+                                <li>Urine Cl− below 20 mmol/L marks a chloride-responsive alkalosis that corrects with saline and <abbr class="term" tabindex="0" data-definition="Potassium chloride">KCl</abbr>; above 20, <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr>, renin, and aldosterone separate the causes.</li>
+                                <li><abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> is replaced in <abbr class="term" tabindex="0" data-definition="Normal anion gap metabolic acidosis">NAGMA</abbr> but is not routine in lactic acidosis or ketoacidosis, whose anions are metabolized back into <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> once the cause is treated.</li>
+                            </ul>
+                        </aside>
+
+                        <h4>Pathophysiology</h4>
+                        <p>Plasma pH is set by the balance H+ + <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> ⇌ H2CO3 ⇌ CO2 + H2O, with the kidney regulating <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> and the lungs regulating CO2. In <abbr class="term" tabindex="0" data-definition="Normal anion gap metabolic acidosis">NAGMA</abbr>, <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> is lost from the kidney or gut, or the kidney fails to make new <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, and Cl− takes its place, giving a hyperchloremic acidosis with a normal anion gap. In <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr>, an added acid uses up <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, and its anion (lactate, ketoanions, formate, glycolate, sulfate, or phosphate) stays in the blood and widens the gap. In metabolic alkalosis, H+ is lost from the stomach or kidney, or <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> is gained, and Cl− often falls too. The lungs hyperventilate to lower <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> in acidosis and hypoventilate to raise it in alkalosis.</p>
+                        <p>A change in pH moves H+ and K+ across cell membranes. In acidosis, cells take up H+, which softens the fall in pH, and K+ leaves them to keep the charge balanced, causing hyperkalemia that is most marked with mineral acids such as <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr> and <abbr class="term" tabindex="0" data-definition="Ammonium chloride">NH4Cl</abbr>. Organic acids such as lactate and ketoacids enter cells together with their H+, so they shift less K+. Alkalosis reverses the shift, moving K+ into cells, and makes albumin give up H+ and bind more Ca2+, so ionized Ca2+ falls while total Ca2+ is unchanged. There are exceptions to the usual shift: in <abbr class="term" tabindex="0" data-definition="Diabetic ketoacidosis">DKA</abbr>, K+ is high mainly from insulin deficiency and high osmolality although total body K+ is low, and insulin moves K+ back into cells; in <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> types 1 and 2 and in diarrhea, K+ is low despite acidosis because it is lost in urine or stool faster than it shifts out of cells; and correcting any acidosis moves K+ back into cells and can unmask a low total body K+.</p>
+                        <p>Healthy kidneys excrete extra <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> quickly, so a metabolic alkalosis lasts only while something keeps the kidney reabsorbing it. After the alkalosis is generated, low volume raises angiotensin II, which increases proximal <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> reabsorption, and aldosterone, which increases distal H+ and K+ secretion. Low Cl− leaves too little Cl− in the collecting duct to exchange for <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, so <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> cannot be secreted, and low K+ increases H+ secretion and NH4+ production, which makes new <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>. The alkalosis lasts until volume, Cl−, and K+ are replaced.</p>
+
+                        <h4>Etiology and mechanisms</h4>
+                        <p><em><abbr class="term" tabindex="0" data-definition="Normal anion gap metabolic acidosis">NAGMA</abbr>.</em> In <abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr>, fewer nephrons make less NH4+, so less acid is excreted and less new <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> is made; the <abbr class="term" tabindex="0" data-definition="Normal anion gap metabolic acidosis">NAGMA</abbr> of earlier <abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr> becomes an <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr> as <abbr class="term" tabindex="0" data-definition="Glomerular filtration rate">GFR</abbr> falls further. With a normal <abbr class="term" tabindex="0" data-definition="Glomerular filtration rate">GFR</abbr>, the renal causes are the RTAs. In <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 1 (distal), α-intercalated cells cannot secrete H+, so urine cannot be acidified; causes include autoimmune disease (Sjögren syndrome and <abbr class="term" tabindex="0" data-definition="Systemic lupus erythematosus">SLE</abbr>), lithium, amphotericin B, and toluene. In <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 2 (proximal), the proximal tubule, which normally reclaims 85–90% of filtered <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, reclaims less, so <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> spills into urine until plasma <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> falls below the lowered threshold; causes include multiple myeloma, carbonic anhydrase inhibitors (acetazolamide and topiramate), tenofovir, and Fanconi syndrome. <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 4, the most common <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr>, results from too little aldosterone or resistance to it, which cuts H+ and K+ secretion, while the resulting high K+ suppresses NH4+ production; causes include diabetic nephropathy, <abbr class="term" tabindex="0" data-definition="Angiotensin-converting enzyme inhibitors">ACEi</abbr>, <abbr class="term" tabindex="0" data-definition="Angiotensin II receptor blockers">ARBs</abbr>, potassium-sparing diuretics, <abbr class="term" tabindex="0" data-definition="Nonsteroidal anti-inflammatory drugs">NSAIDs</abbr>, heparin, trimethoprim, and adrenal insufficiency. Among gut causes, intestinal fluid beyond the stomach is rich in <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, so diarrhea lowers <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, the kidney keeps Cl− in its place, and K+ is lost too; secretory diarrhea loses more <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> than inflammatory diarrhea. Pancreatic fistulas and other bicarbonate-rich losses act in the same way, as pancreatic, biliary, or small bowel fluid drains outside the body, and a ureterosigmoidostomy lets the colon swap urinary Cl− for <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>. A Cl− load causes <abbr class="term" tabindex="0" data-definition="Normal anion gap metabolic acidosis">NAGMA</abbr> when large volumes of 0.9% saline, with 154 mmol/L Cl− and no <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, are given, and <abbr class="term" tabindex="0" data-definition="Total parenteral nutrition">TPN</abbr> without acetate and cholestyramine can do the same.</p>
+                        <p><em><abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr>.</em> The causes follow GOLDMARK. Ethylene glycol in antifreeze is made into glycolic acid, which causes the acidosis, and oxalic acid, which forms calcium oxalate crystals in the tubules, causing <abbr class="term" tabindex="0" data-definition="Acute kidney injury">AKI</abbr> and hypocalcemia; propylene glycol is made into lactate. 5-oxoproline (pyroglutamic acid) builds up with chronic paracetamol use, especially with malnutrition or chronic illness. L-lactic acidosis is type A when too little oxygen is delivered, as in shock, sepsis, and ischemia, driving anaerobic glycolysis, and type B when there is no hypoxia but mitochondria cannot use pyruvate, as with metformin, liver failure, and thiamine deficiency. D-lactate forms in short bowel syndrome, when colonic bacteria ferment unabsorbed carbohydrate into an isomer that humans metabolize poorly. Methanol, found in windscreen washer fluid, solvents, and contaminated spirits, is made into formic acid, which damages the retina and basal ganglia. Salicylates first stimulate the respiratory center, causing a respiratory alkalosis, then uncouple oxidative phosphorylation, producing lactate and ketoacids. Renal failure, in advanced <abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr> or <abbr class="term" tabindex="0" data-definition="Acute kidney injury">AKI</abbr>, retains sulfate, phosphate, urate, and hippurate, and rhabdomyolysis releases acids and phosphate. In ketoacidosis, low insulin and high glucagon drive lipolysis and the production of β-hydroxybutyrate and acetoacetate, as in <abbr class="term" tabindex="0" data-definition="Diabetic ketoacidosis">DKA</abbr>, <abbr class="term" tabindex="0" data-definition="Alcoholic ketoacidosis">AKA</abbr> after a binge followed by vomiting and poor intake, and starvation.</p>
+                        <p><em>Metabolic alkalosis.</em> Vomiting and <abbr class="term" tabindex="0" data-definition="Nasogastric">NG</abbr> tube suction remove <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr>, leaving the <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> made by parietal cells in the blood, and the volume and Cl− loss then keeps the kidney reabsorbing <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>; chloride-losing diarrhea (villous adenoma and congenital chloridorrhea) and the Cl− lost in the sweat of cystic fibrosis act similarly. Loop and thiazide diuretics deliver more Na+ to the collecting duct, where aldosterone, raised by the volume loss, exchanges it for H+ and K+, and the extracellular fluid shrinks around the same amount of <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, a contraction alkalosis. In primary hyperaldosteronism, an adrenal adenoma (Conn syndrome) or bilateral adrenal hyperplasia makes aldosterone regardless of renin, causing Na+ retention, hypertension, and H+ and K+ loss. In secondary hyperaldosteronism, high renin drives aldosterone, as in renal artery stenosis and renin-secreting tumors, and low effective volume in heart failure and cirrhosis does the same and keeps other alkaloses going. In apparent mineralocorticoid excess, the collecting duct behaves as if aldosterone were high: in Cushing syndrome, cortisol acts on the mineralocorticoid receptor; licorice blocks <abbr class="term" tabindex="0" data-definition="11β-hydroxysteroid dehydrogenase type 2">11β-HSD2</abbr>, which normally inactivates cortisol; and in Liddle syndrome, <abbr class="term" tabindex="0" data-definition="Epithelial sodium channel">ENaC</abbr> is overactive. Bartter and Gitelman syndromes are inherited losses of <abbr class="term" tabindex="0" data-definition="Na+/K+/2Cl− cotransporter of the thick ascending limb">NKCC2</abbr> in the loop, like a lifelong loop diuretic, and of <abbr class="term" tabindex="0" data-definition="Na+/Cl− cotransporter of the distal tubule">NCC</abbr> in the distal tubule, like a lifelong thiazide. An alkali load, from calcium carbonate in milk-alkali syndrome, <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> tablets or infusions, citrate from massive transfusion, or acetate in <abbr class="term" tabindex="0" data-definition="Total parenteral nutrition">TPN</abbr>, lasts mainly when the kidney cannot excrete <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, as in <abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr> or low volume. Finally, in chronic respiratory acidosis from <abbr class="term" tabindex="0" data-definition="Chronic obstructive pulmonary disease">COPD</abbr>, the kidney retains <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, and when ventilation lowers <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> quickly, the extra <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> is left behind.</p>
+
+                        <h4>Clinical presentation and complications</h4>
+                        <p>Metabolic acidosis causes Kussmaul breathing, deep and rapid breaths that blow off CO2 and can tire the respiratory muscles. K+ is often high, but not always: organic acidoses shift less K+, and <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> types 1 and 2 and diarrhea cause hypokalemia. Ionized Ca2+ rises, and chronic acidosis draws on bone to buffer acid, causing osteomalacia, rickets, and stones. The heart contracts more weakly, vessels dilate, and the response to catecholamines is poor, causing hypotension, with arrhythmias. The oxygen dissociation curve shifts right, releasing more O2 to tissues. Patients have headache, lethargy, confusion, and coma, with nausea, vomiting, anorexia, and fatigue; acidosis causes insulin resistance, and in the long term, muscle wasting and faster <abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr> progression.</p>
+                        <p>Metabolic alkalosis causes shallow, slow breathing that is usually mild but can worsen hypercapnia and hypoxemia in <abbr class="term" tabindex="0" data-definition="Chronic obstructive pulmonary disease">COPD</abbr> or obesity hypoventilation. Hypokalemia causes muscle weakness and arrhythmias. Ionized Ca2+ falls, causing perioral numbness, paresthesias, carpopedal spasm, Chvostek and Trousseau signs, and tetany. Arrhythmias come from low K+ and low Ca2+, and vessels constrict, including in the brain. The oxygen dissociation curve shifts left, releasing less O2 to tissues, and patients may have confusion, delirium, seizures, muscle cramps, and weakness.</p>
+                        <p>Some findings point to the cause. Hypotension, tachycardia, and dry mucous membranes suggest volume loss from diarrhea, vomiting, or diuretics, or adrenal insufficiency, and hypertension with low K+ suggests aldosterone excess or its mimics. Fruity breath, polyuria, and polydipsia suggest <abbr class="term" tabindex="0" data-definition="Diabetic ketoacidosis">DKA</abbr>; blurred vision after drinking, methanol; inebriation, flank pain, hematuria, and tetany, ethylene glycol; and tinnitus with fast breathing, aspirin. Calcium phosphate stones and nephrocalcinosis suggest <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 1, with alkaline urine, high urine Ca2+, and low urine citrate, and bone pain and osteomalacia with glycosuria suggest <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 2 with Fanconi syndrome. Pruritus, nocturia, oliguria, and asterixis suggest renal failure, and failure to thrive, polyuria, and vomiting in a child suggest Bartter or Gitelman syndrome.</p>
+
+                        <h4>Diagnosis</h4>
+                        <p>Normal values are pH 7.35–7.45, <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> 35–45 mmHg, <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> 22–26 mmol/L, and an anion gap of 12–16 mmol/L. On an <abbr class="term" tabindex="0" data-definition="Arterial blood gas">ABG</abbr> or <abbr class="term" tabindex="0" data-definition="Venous blood gas">VBG</abbr>, the first step is whether the pH is low (acidemia, below 7.35) or high (alkalemia, above 7.45). The second is which value explains it: <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> moving the same way as pH means a metabolic disorder, and <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> moving the opposite way means a respiratory one. In metabolic disorders, <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> compensates within hours, falling in acidosis and rising in alkalosis, whereas in respiratory disorders <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> compensates over days, rising in respiratory acidosis as the kidney retains it and falling in respiratory alkalosis as the kidney excretes it.</p>
+                        <p>The third step is whether compensation is as expected. In metabolic acidosis, the Winter formula predicts <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> = 1.5 × <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> + 8 (± 2); other rules are that <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> is about the last two digits of the pH, or falls about 1.2 mmHg for each 1 mmol/L fall in <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>. In metabolic alkalosis, expected <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> = 0.7 × <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> + 20 (± 5), or rises 0.6–0.7 mmHg for each 1 mmol/L rise in <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> above 24; it rarely passes 55 mmHg, because hypoxia drives breathing. A <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> higher than expected means a respiratory acidosis as well, and one lower than expected a respiratory alkalosis as well, as in aspirin poisoning.</p>
+                        <p>In metabolic acidosis, the anion gap is calculated as (Na+ + K+) − (Cl− + <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>), normally 12–16 mmol/L. Plasma has as many positive as negative charges, and the gap is the negative charge that is not measured, mostly albumin, so an acid with an unmeasured anion widens it, while <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> lost and replaced by Cl− leaves it unchanged. Without K+, the gap is Na+ − (Cl− + <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>), normally 8–12 mmol/L. Each 10 g/L fall in albumin lowers the gap by about 2.5, which can hide an <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr>, and some add 2.5 for each 10 g/L below 40.</p>
+                        <p>In <abbr class="term" tabindex="0" data-definition="Normal anion gap metabolic acidosis">NAGMA</abbr>, the urine anion gap (urine Na+ + urine K+ − urine Cl−) separates kidney from gut. A negative gap means the kidney is excreting plenty of NH4+, which leaves with Cl−, a normal renal response to <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> lost elsewhere, as in diarrhea, fistulas, or saline. A positive gap means the kidney cannot excrete NH4+, as in <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> types 1 and 4 or <abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr>. <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 1 has a normal <abbr class="term" tabindex="0" data-definition="Glomerular filtration rate">GFR</abbr>, low K+, a urine pH above 5.5 even in severe acidosis, plasma <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> that can fall below 10 mmol/L, and a positive urine anion gap, with high urine Ca2+, low urine citrate, calcium phosphate stones, and nephrocalcinosis. <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 2 has a normal <abbr class="term" tabindex="0" data-definition="Glomerular filtration rate">GFR</abbr>, low K+, a urine pH below 5.5 once <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> is below the threshold but above 5.5 when <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> is given, plasma <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> usually 12–18 mmol/L, and a variable urine anion gap, with Fanconi syndrome (glycosuria with normal blood glucose, phosphaturia, aminoaciduria, and low urate) and bone disease. <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 4 has a normal or mildly low <abbr class="term" tabindex="0" data-definition="Glomerular filtration rate">GFR</abbr>, high K+, a urine pH below 5.5, plasma <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> usually above 17 mmol/L, and a positive urine anion gap, with diabetes or culprit drugs and high urine Na+ despite a low-salt diet. <abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr> has a low <abbr class="term" tabindex="0" data-definition="Glomerular filtration rate">GFR</abbr>, normal or high K+, a urine pH usually below 5.5, <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> that falls as <abbr class="term" tabindex="0" data-definition="Glomerular filtration rate">GFR</abbr> falls, a positive urine anion gap, and high urea and creatinine. Before diagnosing an <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr>, a <abbr class="term" tabindex="0" data-definition="Urinary tract infection">UTI</abbr> with a urease-producing organism, which raises urine pH, and low volume, which limits distal H+ secretion, are excluded; urine Na+ should be above 25 mmol/L.</p>
+                        <p>In <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr>, the delta-delta ratio, (<abbr class="term" tabindex="0" data-definition="Anion gap">AG</abbr> − 16) ÷ (24 − <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>), shows whether a second metabolic disorder is present, using 12 in place of 16 when K+ is left out of the gap. In a pure <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr>, each H+ that uses up one <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> leaves one unmeasured anion behind, so the rise in the gap roughly matches the fall in <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>. A ratio below 1 means <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> fell more than the gap rose, an <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr> with a <abbr class="term" tabindex="0" data-definition="Normal anion gap metabolic acidosis">NAGMA</abbr>, as in <abbr class="term" tabindex="0" data-definition="Diabetic ketoacidosis">DKA</abbr> with diarrhea; 1–2 is a pure <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr>; and above 2 means <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> fell less than the gap rose, an <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr> with a metabolic alkalosis, as in <abbr class="term" tabindex="0" data-definition="Diabetic ketoacidosis">DKA</abbr> with vomiting, or a high <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> from before. The osmolal gap is measured osmolality minus calculated osmolality, 2 × Na+ + glucose + urea, normally below 10 and concerning above 15; other formulas are 2 × (Na+ + K+) + glucose + urea and, in US units, 2 × Na+ + glucose ÷ 18 + <abbr class="term" tabindex="0" data-definition="Blood urea nitrogen">BUN</abbr> ÷ 2.8, and some add ethanol when it is present. A high osmolal gap with an <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr> suggests methanol or ethylene glycol. A high osmolal gap without acidosis suggests an early toxic alcohol, before it is metabolized, or isopropyl alcohol, which is made into acetone, an uncharged ketone that causes ketosis without acidosis. A normal osmolal gap late after ingestion does not exclude a toxic alcohol, because as the alcohol becomes acid, the osmolal gap closes and the anion gap widens.</p>
+                        <p>Each <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr> cause has its own findings. Glycols give a high osmolal gap early, low Ca2+, rising creatinine, calcium oxalate crystals, and hematuria, after inebriation followed by flank pain and oliguria. Oxoproline gives normal lactate, no ketones, and 5-oxoproline in urine, with chronic paracetamol use and malnutrition. L-lactate is above 4 mmol/L in shock, sepsis, ischemia, metformin use, and liver failure, and D-lactate is high in short bowel syndrome. Methanol gives a high osmolal gap early, with blurred vision, dilated pupils, and papilledema. Aspirin gives a respiratory alkalosis with an <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr> and a measurable salicylate level, with tinnitus, nausea, and fast breathing. Renal failure gives high urea, creatinine, and phosphate, with reduced urine output. <abbr class="term" tabindex="0" data-definition="Diabetic ketoacidosis">DKA</abbr> gives high glucose and β-hydroxybutyrate, with K+ normal or high, and ketones and glucose in urine, after missed insulin, infection, or new diabetes. <abbr class="term" tabindex="0" data-definition="Alcoholic ketoacidosis">AKA</abbr> and starvation give low or normal glucose with high β-hydroxybutyrate, and the urine dipstick, which detects acetoacetate, can show few ketones.</p>
+                        <p>In metabolic alkalosis, urine Cl− below 20 mmol/L marks a chloride-responsive alkalosis, in which the kidney holds on to Cl− because volume and Cl− are low: vomiting and <abbr class="term" tabindex="0" data-definition="Nasogastric">NG</abbr> tube suction, diuretics that have worn off, chloride-losing diarrhea, cystic fibrosis, and the period after hypercapnia. Urine Cl− above 20 mmol/L marks a chloride-resistant alkalosis: diuretics still acting, aldosterone excess and its mimics, Bartter and Gitelman syndromes, and severe hypokalemia. Urine Cl− is high while a diuretic acts and low once it wears off, so a changing result suggests hidden diuretic use. Vomiting and diuretics give low or normal <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr> with high renin and aldosterone and K+ lost mostly in urine. Primary hyperaldosteronism gives high <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr>, low renin, high aldosterone, and a high aldosterone-to-renin ratio; secondary hyperaldosteronism gives high <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr> with both high; and apparent mineralocorticoid excess gives high <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr> with both low. Bartter and Gitelman syndromes give low or normal <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr> with high renin and aldosterone, with high urine Ca2+ in Bartter syndrome and low urine Ca2+ with low Mg2+ in Gitelman syndrome. An alkali load gives variable values, with high Ca2+ in milk-alkali syndrome.</p>
+
+                        <h4>Management</h4>
+                        <p>Treatment is aimed at the cause, with volume, K+, and Cl− replaced as needed; <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> or acid is given only in particular situations. In <abbr class="term" tabindex="0" data-definition="Normal anion gap metabolic acidosis">NAGMA</abbr>, <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> has truly been lost, so oral alkali, <abbr class="term" tabindex="0" data-definition="Sodium bicarbonate">NaHCO3</abbr> or potassium citrate, is used for <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> and <abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr>. In <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr> from lactate or ketoacids, <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> is not routine: once the cause is treated, lactate and ketoanions are metabolized back into <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, so added <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> can overshoot into alkalosis. Its risks include hypernatremia, fluid overload, low ionized Ca2+, and hypokalemia as K+ moves into cells.</p>
+                        <p>In <abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr>, oral <abbr class="term" tabindex="0" data-definition="Sodium bicarbonate">NaHCO3</abbr> protects bone and muscle and slows progression, and dialysis is needed when the disease is advanced. <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 1 responds to oral alkali in modest doses, with potassium citrate also replacing K+ and preventing stones, alongside treatment of the cause. <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 2 needs large doses of alkali with K+, because <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> given above the threshold is lost in urine and carries K+ with it; a thiazide can help by shrinking volume, and phosphate and vitamin D treat Fanconi bone disease. <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 4 is managed by stopping culprit drugs, a low-potassium diet, and a loop or thiazide diuretic, with fludrocortisone for aldosterone deficiency without hypertension or edema. Diarrhea and fistulas are managed by treating the cause, replacing fluid, K+, and <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, and controlling the fistula, and saline-induced acidosis by switching to a balanced crystalloid such as Hartmann solution or Plasma-Lyte. Toxic alcohols are treated with fomepizole, or ethanol if it is unavailable, to block alcohol dehydrogenase, with hemodialysis for severe acidosis, visual change, <abbr class="term" tabindex="0" data-definition="Acute kidney injury">AKI</abbr>, or instability, and thiamine and pyridoxine for ethylene glycol. Oxoproline acidosis is treated by stopping paracetamol. Type A lactic acidosis is treated by restoring perfusion with fluids, vasopressors, <abbr class="term" tabindex="0" data-definition="Antibiotics">ABX</abbr>, and source control, and type B with thiamine and by stopping metformin, with hemodialysis if severe. D-lactic acidosis is treated by addressing the short bowel cause and limiting carbohydrate reaching the colon. Aspirin poisoning is treated with activated charcoal, <abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr> <abbr class="term" tabindex="0" data-definition="Sodium bicarbonate">NaHCO3</abbr> to alkalinize the urine and trap salicylate there, and hemodialysis if severe. Renal failure is treated with dialysis. <abbr class="term" tabindex="0" data-definition="Diabetic ketoacidosis">DKA</abbr> is treated with <abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr> fluids, then insulin once K+ is at least 3.5 mmol/L, with K+ replacement, continuing insulin until the gap closes, and <abbr class="term" tabindex="0" data-definition="Alcoholic ketoacidosis">AKA</abbr> and starvation with <abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr> fluids with dextrose and thiamine and gradual feeding, watching for refeeding syndrome.</p>
+                        <p>Chloride-responsive alkalosis, from vomiting, <abbr class="term" tabindex="0" data-definition="Nasogastric">NG</abbr> tube suction, or after hypercapnia, is treated with 0.9% saline with <abbr class="term" tabindex="0" data-definition="Potassium chloride">KCl</abbr>, which restores volume and Cl− so the kidney can excrete <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, and the cause of vomiting is treated. Diuretic-induced alkalosis is managed by stopping or reducing the diuretic, replacing <abbr class="term" tabindex="0" data-definition="Potassium chloride">KCl</abbr>, or adding a potassium-sparing diuretic, with acetazolamide if the patient is fluid overloaded. Primary hyperaldosteronism is treated with spironolactone or eplerenone, or adrenalectomy for a unilateral adenoma, and secondary hyperaldosteronism by treating its cause, such as renal artery stenosis or a renin-secreting tumor. In apparent mineralocorticoid excess, Cushing syndrome is treated, licorice is stopped, and Liddle syndrome is treated with amiloride, since its <abbr class="term" tabindex="0" data-definition="Epithelial sodium channel">ENaC</abbr> does not need aldosterone. Bartter and Gitelman syndromes need <abbr class="term" tabindex="0" data-definition="Potassium chloride">KCl</abbr> and Mg2+, with potassium-sparing diuretics, <abbr class="term" tabindex="0" data-definition="Nonsteroidal anti-inflammatory drugs">NSAIDs</abbr>, <abbr class="term" tabindex="0" data-definition="Angiotensin-converting enzyme inhibitors">ACEi</abbr>, or <abbr class="term" tabindex="0" data-definition="Angiotensin II receptor blockers">ARBs</abbr> if K+ stays low. An alkali load is treated by stopping the source, with saline for milk-alkali syndrome. When saline cannot be given, as in heart failure, acetazolamide is used, and severe or refractory alkalosis is treated with dialysis against a low-bicarbonate bath or dilute <abbr class="term" tabindex="0" data-definition="Hydrochloric acid">HCl</abbr>.</p>
+
+                        <h4>Relationships to other conditions</h4>
+                        <p><em><button type="button" class="review-link" data-goto="potassium">Hypokalemia and hyperkalemia</button>.</em> Acid-base and K+ disorders travel together: acidosis usually raises K+ and alkalosis lowers it, and hypokalemia itself maintains an alkalosis by increasing H+ secretion and NH4+ production. A low K+ in an acidosis points to <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> types 1 or 2 or diarrhea, whereas a high K+ points to <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 4, <abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr>, or <abbr class="term" tabindex="0" data-definition="Diabetic ketoacidosis">DKA</abbr> before insulin.</p>
+                        <p><em><button type="button" class="review-link" data-goto="aldosterone">Hypoaldosteronism and hyperaldosteronism</button>.</em> Aldosterone excess causes a hypokalemic, chloride-resistant alkalosis with hypertension, and renin separates primary from secondary causes, while too little aldosterone causes the hyperkalemic <abbr class="term" tabindex="0" data-definition="Normal anion gap metabolic acidosis">NAGMA</abbr> of <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 4. Apparent mineralocorticoid excess resembles primary hyperaldosteronism but has low aldosterone, and Bartter and Gitelman syndromes resemble diuretic use with high renin but normal or low <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr>.</p>
+                        <p><em><button type="button" class="review-link" data-goto="volume">Hypovolemia and hypervolemia</button>.</em> Volume loss maintains a metabolic alkalosis through angiotensin II and aldosterone, and saline corrects a chloride-responsive alkalosis by restoring it. In volume overload, where saline would worsen fluid retention, acetazolamide is used instead.</p>
+                        <p><em><button type="button" class="review-link" data-goto="ckd">Chronic kidney disease</button>.</em> <abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr> causes a <abbr class="term" tabindex="0" data-definition="Normal anion gap metabolic acidosis">NAGMA</abbr> early, as NH4+ production falls, and an <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr> late, as sulfate and phosphate are retained, so it appears on both sides of the anion gap; acidosis in turn speeds <abbr class="term" tabindex="0" data-definition="Chronic kidney disease">CKD</abbr> progression, and oral <abbr class="term" tabindex="0" data-definition="Sodium bicarbonate">NaHCO3</abbr> is used to slow it.</p>
+                        <p><em>Gastrointestinal and endocrine disorders.</em> Fluid lost below the stomach, as in diarrhea and pancreatic fistulas, causes a <abbr class="term" tabindex="0" data-definition="Normal anion gap metabolic acidosis">NAGMA</abbr>, whereas fluid lost from the stomach, as in vomiting and gastric outlet obstruction, causes a metabolic alkalosis, and both cause hypokalemia. <abbr class="term" tabindex="0" data-definition="Diabetic ketoacidosis">DKA</abbr> is an <abbr class="term" tabindex="0" data-definition="High anion gap metabolic acidosis">AGMA</abbr> with hyperkalemia despite total body K+ depletion, adrenal insufficiency gives the picture of <abbr class="term" tabindex="0" data-definition="Renal tubular acidosis">RTA</abbr> type 4, and Cushing syndrome gives a hypertensive, chloride-resistant alkalosis.</p>
+                    </div>
+                </dialog>
+            </article>
+
+            <article class="condition-content" id="volume">
+                <h2>Hypovolemia and Hypervolemia</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="sodium">
+                <h2>Hyponatremia and Hypernatremia</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="potassium">
+                <h2>Hypokalemia and Hyperkalemia</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="aldosterone">
+                <h2>Hypoaldosteronism and Hyperaldosteronism</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <!-- Page quiz (filled in by quiz.js) -->
             <section class="quiz-view" id="quiz" aria-labelledby="quiz-title"></section>
 
         </section>

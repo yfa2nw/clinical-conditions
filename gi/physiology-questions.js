@@ -10,7 +10,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-cephalic-path",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "reasoning",
         stem: "A 23-year-old medical student smells dinner cooking after a long shift. Before he takes a bite, his gastric acid output rises.",
         leadIn: "Which pathway best explains this rise?",
         options: [
@@ -31,7 +31,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-vagotomy",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "memory",
         stem: "A 61-year-old man has a vagotomy. His gastric secretion is later studied using the sight and smell of food alone.",
         leadIn: "Which phase of gastric secretion is abolished?",
         options: [
@@ -47,7 +47,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-vagovagal",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "memory",
         stem: "During a physiology experiment, a balloon gently stretches the stomach of a healthy volunteer. Sensory signals travel to the brainstem, and motor signals then return to the stomach along the same nerve.",
         leadIn: "Which best describes this loop?",
         options: [
@@ -66,7 +66,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-sympathetic",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "memory",
         stem: "A 30-year-old man has intense sympathetic activation immediately after a road crash.",
         leadIn: "Which effect on the stomach is expected, and through which fibers?",
         options: [
@@ -82,7 +82,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-phase-share",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "reasoning",
         stem: "A student charts how much HCl each phase contributes to the secretion that follows a meal.",
         leadIn: "Which phase contributes the most HCl, and about how much?",
         options: [
@@ -98,7 +98,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-antrectomy",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "memory",
         stem: "A 58-year-old man has surgery that removes the gastric antrum but leaves the body and fundus intact.",
         leadIn: "Which cell population is most reduced?",
         options: [
@@ -119,7 +119,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-parietal-loss",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "memory",
         stem: "A 62-year-old woman has megaloblastic anemia. Autoantibodies have destroyed a cell population in the gastric body and fundus.",
         leadIn: "Which pair of products has been lost?",
         options: [
@@ -141,7 +141,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-barrier-layer",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "memory",
         stem: "A pathology tutorial shows the mucosal barrier in section, with the epithelial cells at the bottom of the image and the lumen at the top.",
         leadIn: "What forms the bottom layer of the barrier?",
         options: [
@@ -162,7 +162,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-barrier-cells",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "memory",
         stem: "A researcher wants to study the cells that build the mucosal barrier in the human stomach.",
         leadIn: "Which cells form this barrier?",
         options: [
@@ -178,7 +178,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-gastrin-route",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "reasoning",
         stem: "A 40-year-old man has normal gastrin levels. After a dose of famotidine, his acid output after a meal falls substantially.",
         leadIn: "Which explains why an H2 blocker reduces acid in this setting?",
         options: [
@@ -194,7 +194,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-gastrin-receptor",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "memory",
         stem: "A pharmacology class traces how gastrin stimulates a parietal cell.",
         leadIn: "Which receptor and pathway does gastrin use?",
         options: [
@@ -210,7 +210,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-histamine-pathway",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "reasoning",
         stem: "A researcher measures second messengers in a parietal cell exposed to histamine.",
         leadIn: "Which change is expected?",
         options: [
@@ -226,7 +226,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-chief-signal",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "memory",
         stem: "A student blocks one receptor on chief cells, and vagally stimulated pepsinogen secretion falls.",
         leadIn: "Which signal and receptor were blocked?",
         options: [
@@ -242,7 +242,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-g-cell-signal",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "memory",
         stem: "CN X is stimulated in an experimental model, and serum gastrin rises within minutes.",
         leadIn: "Which signal and receptor act on G cells to produce this rise?",
         options: [
@@ -258,7 +258,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-d-cell",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "memory",
         stem: "After a protein meal is buffered and emptied, antral acidity rises and gastrin release begins to fall.",
         leadIn: "Which cell is responsible for this negative feedback?",
         options: [
@@ -274,7 +274,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-somatostatin-targets",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "memory",
         stem: "A 48-year-old man is given a somatostatin analog during a research study of gastric function.",
         leadIn: "Which cells does somatostatin inhibit?",
         options: [
@@ -290,7 +290,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-pepsin-ph",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "memory",
         stem: "A 55-year-old man taking omeprazole has an intragastric pH of 5 after a meal.",
         leadIn: "What is expected to happen to pepsinogen?",
         options: [
@@ -306,7 +306,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-secretin",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "memory",
         stem: "Acidic chyme enters the duodenum of a healthy volunteer. Gastrin falls, and pancreatic HCO3− output rises.",
         leadIn: "Which hormone is responsible?",
         options: [
@@ -322,7 +322,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-cck",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "reasoning",
         stem: "A 35-year-old woman eats a fatty meal. Her gallbladder contracts, pancreatic enzymes are released, and gastric emptying slows.",
         leadIn: "Which cell and hormone best explain these effects?",
         options: [
@@ -338,7 +338,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-pyy",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "reasoning",
         stem: "In a study of a healthy volunteer, chyme reaches the ileum. Parietal cell activity falls, and gastric emptying slows.",
         leadIn: "Which hormone and cell best explain this?",
         options: [
@@ -354,7 +354,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-entero-oxyntin",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "reasoning",
         stem: "Peptides and amino acids enter the duodenum, and parietal cell activity rises slightly, even though the intestinal phase mostly slows secretion.",
         leadIn: "Which intestinal hormone directly explains this stimulation?",
         options: [
@@ -370,7 +370,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-enterogastric",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "reasoning",
         stem: "A hyperosmolar drink distends the duodenum of a healthy volunteer, and gastric emptying slows within minutes.",
         leadIn: "Which mechanism is responsible?",
         options: [
@@ -386,7 +386,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-zes-feedback",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "reasoning",
         stem: "A 45-year-old man has multiple duodenal ulcers, a very high gastrin level, and a very low gastric pH. Imaging shows a gastrin-secreting tumor.",
         leadIn: "Why does gastrin remain high despite the low pH?",
         options: [
@@ -402,7 +402,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-achlorhydria-gastrin",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "reasoning",
         stem: "A 66-year-old woman with autoimmune gastritis has very little gastric acid and a markedly raised serum gastrin.",
         leadIn: "Which best explains the raised gastrin?",
         options: [
@@ -418,7 +418,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-cushing",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "reasoning",
         stem: "A 27-year-old man has raised ICP after a head injury and develops gastric erosions on day 2 in the ICU.",
         leadIn: "Which mechanism best explains the increased HCl?",
         options: [
@@ -434,7 +434,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-nsaid-barrier",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "reasoning",
         stem: "A 70-year-old woman takes ibuprofen every day for osteoarthritis and develops gastritis.",
         leadIn: "Which mechanism best explains how this drug harms the stomach?",
         options: [
@@ -450,7 +450,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-ppi",
         condition: "gastric-secretion",
-        step: 1,
+        kind: "reasoning",
         stem: "A 52-year-old man with erosive esophagitis is started on omeprazole and has a profound fall in both basal and stimulated acid secretion.",
         leadIn: "Which mechanism explains this?",
         options: [
@@ -466,7 +466,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-h2ra",
         condition: "gastric-secretion",
-        step: 2,
+        kind: "reasoning",
         stem: "A 45-year-old woman has heartburn that mainly wakes her at night. She is started on famotidine.",
         leadIn: "How does this drug reduce her symptoms?",
         options: [
@@ -482,7 +482,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-antacid",
         condition: "gastric-secretion",
-        step: 2,
+        kind: "reasoning",
         stem: "A 28-year-old man wants fast relief of occasional heartburn after large meals.",
         leadIn: "Which drug class acts on HCl already in the lumen?",
         options: [
@@ -498,7 +498,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-misoprostol",
         condition: "gastric-secretion",
-        step: 2,
+        kind: "reasoning",
         stem: "A 68-year-old woman needs long-term NSAIDs and is started on misoprostol to protect her stomach.",
         leadIn: "Which mechanism explains this protection?",
         options: [
@@ -514,7 +514,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-sucralfate",
         condition: "gastric-secretion",
-        step: 2,
+        kind: "reasoning",
         stem: "A 59-year-old man with a duodenal ulcer takes high-dose omeprazole. Sucralfate is added, but it provides little extra benefit.",
         leadIn: "Which best explains this?",
         options: [
@@ -530,7 +530,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gs-bismuth",
         condition: "gastric-secretion",
-        step: 2,
+        kind: "reasoning",
         stem: "A 50-year-old woman with a duodenal ulcer and confirmed H. pylori infection needs a drug that coats the ulcer base and also kills the organism.",
         leadIn: "Which drug is most appropriate?",
         options: [
@@ -548,7 +548,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-salivary-amylase",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "reasoning",
         stem: "A student chews a piece of bread and notices it begins to taste sweet. Once the bolus has mixed with gastric juice, this starch digestion stops.",
         leadIn: "Which best explains why it stops?",
         options: [
@@ -564,7 +564,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-amylase-products",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "memory",
         stem: "Starch reaches the duodenum of a healthy adult and is exposed to pancreatic juice.",
         leadIn: "Which products does pancreatic amylase form?",
         options: [
@@ -583,7 +583,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-sucrase",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "memory",
         stem: "A 25-year-old woman eats table sugar. Enzymes on the brush border of her enterocytes digest it before it can be absorbed.",
         leadIn: "Which enzyme acts, and what does it form?",
         options: [
@@ -599,7 +599,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-sglt1",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "memory",
         stem: "An oral rehydration solution contains both glucose and sodium, because the two are absorbed together across the apical membrane of enterocytes.",
         leadIn: "Which transporter is responsible?",
         options: [
@@ -621,7 +621,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-glut-route",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "memory",
         stem: "A researcher follows labeled fructose from the lumen of the jejunum into the blood.",
         leadIn: "Which route does it take?",
         options: [
@@ -637,7 +637,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-fiber",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "reasoning",
         stem: "A 42-year-old man sharply increases his fiber intake and develops bloating.",
         leadIn: "Which best explains what happens to the fiber?",
         options: [
@@ -653,7 +653,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-gastric-active",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "memory",
         stem: "A student compares the digestive enzymes that the stomach releases into its lumen.",
         leadIn: "Which enzyme is already active when secreted?",
         options: [
@@ -675,7 +675,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-enterokinase",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "reasoning",
         stem: "A 4-month-old infant has diarrhea, edema, and poor growth. Pancreatic juice contains normal amounts of trypsinogen, but no trypsin activity is detected in the duodenum.",
         leadIn: "Deficiency of which enzyme best explains these findings?",
         options: [
@@ -691,7 +691,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-trypsin-cascade",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "memory",
         stem: "Pancreatic juice reaches the duodenum, and chymotrypsinogen, proelastase, and procarboxypeptidases all become active.",
         leadIn: "What directly activates them?",
         options: [
@@ -712,7 +712,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-pancreas-active",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "memory",
         stem: "A student sorts pancreatic enzymes by the form in which the acinar cells release them.",
         leadIn: "Which enzyme is released in its active form?",
         options: [
@@ -728,7 +728,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-colipase",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "memory",
         stem: "In a laboratory, pancreatic lipase works poorly on triglycerides until procolipase has been converted to colipase.",
         leadIn: "What activates procolipase?",
         options: [
@@ -744,7 +744,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-why-inactive",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "reasoning",
         stem: "A 45-year-old man with acute pancreatitis has trypsin activated inside the pancreas, followed by autodigestion.",
         leadIn: "Why are pancreatic proteases normally secreted inactive?",
         options: [
@@ -760,7 +760,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-peptide-transport",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "reasoning",
         stem: "A researcher measures uptake of a dipeptide across the brush border and finds it depends on H+ rather than Na+.",
         leadIn: "Which transporter is responsible, and what happens next?",
         options: [
@@ -776,7 +776,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-bile-role",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "memory",
         stem: "A 50-year-old woman has a blocked common bile duct, and her stools become pale and greasy.",
         leadIn: "Which normal role of bile salts has been lost?",
         options: [
@@ -792,7 +792,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-pancreatic-lipase",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "memory",
         stem: "After bile salts emulsify dietary fat in the duodenum, pancreatic lipase and colipase act on the droplets.",
         leadIn: "Which products are formed?",
         options: [
@@ -808,7 +808,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-chylomicron",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "reasoning",
         stem: "Monoglycerides and fatty acids have just entered an enterocyte in the jejunum of a healthy adult.",
         leadIn: "What happens to them next?",
         options: [
@@ -824,7 +824,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-mct",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "reasoning",
         stem: "A 30-year-old man with a lymphatic disorder is given a diet rich in medium-chain fatty acids.",
         leadIn: "Why can these fats still be absorbed?",
         options: [
@@ -840,7 +840,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-bile-recycle",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "memory",
         stem: "A 34-year-old woman has her terminal ileum resected for Crohn disease and later has a smaller bile salt pool.",
         leadIn: "Which step in bile salt handling has been lost?",
         options: [
@@ -856,7 +856,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-iron-reduction",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "memory",
         stem: "A 60-year-old woman with long-term acid suppression develops iron-deficiency anemia, despite a normal diet.",
         leadIn: "Which step of iron absorption is most directly impaired?",
         options: [
@@ -872,7 +872,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-iron-transport",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "memory",
         stem: "A researcher follows labeled iron from the duodenal lumen into the blood.",
         leadIn: "Which sequence of proteins does it use?",
         options: [
@@ -888,7 +888,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-hepcidin",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "reasoning",
         stem: "A 45-year-old man has iron overload from an HFE mutation, which decreases hepcidin.",
         leadIn: "Why does less hepcidin increase iron absorption?",
         options: [
@@ -904,7 +904,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-b12-pancreas",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "memory",
         stem: "A 50-year-old man with severe pancreatic insufficiency is found to have low B12, and his IF is normal.",
         leadIn: "Which step of B12 absorption is most directly impaired?",
         options: [
@@ -920,7 +920,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-b12-site",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "reasoning",
         stem: "A 40-year-old man has had 80 cm of terminal ileum removed. His folate and iron levels stay normal, but his B12 level falls.",
         leadIn: "Which best explains this?",
         options: [
@@ -936,7 +936,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-site-pairs",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "memory",
         stem: "A student maps micronutrient absorption along the small intestine.",
         leadIn: "Which pairing of nutrient and site is correct?",
         options: [
@@ -952,7 +952,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-calcium",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "reasoning",
         stem: "A 70-year-old woman with vitamin D deficiency has low serum calcium despite a normal calcium intake.",
         leadIn: "Which best explains her low calcium?",
         options: [
@@ -968,7 +968,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-fat-soluble",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "reasoning",
         stem: "A 35-year-old woman with biliary obstruction has a prolonged PT that corrects after parenteral vitamin K.",
         leadIn: "Which best explains her vitamin deficiency?",
         options: [
@@ -984,7 +984,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-copper-route",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "memory",
         stem: "A researcher follows labeled copper from the duodenal lumen across an enterocyte and into the blood.",
         leadIn: "Which pair of transporters does it use?",
         options: [
@@ -1000,7 +1000,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-copper-liver",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "memory",
         stem: "A 19-year-old man has a tremor, low ceruloplasmin, and copper buildup in the liver from an inherited transporter defect.",
         leadIn: "Which normal step of copper handling has been lost?",
         options: [
@@ -1016,7 +1016,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-zinc",
         condition: "digestion-absorption",
-        step: 2,
+        kind: "reasoning",
         stem: "A 24-year-old woman with Wilson disease has finished initial copper chelation and needs maintenance treatment.",
         leadIn: "Which drug works by blocking intestinal copper absorption?",
         options: [
@@ -1032,7 +1032,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-lactose",
         condition: "digestion-absorption",
-        step: 2,
+        kind: "reasoning",
         stem: "A 27-year-old man has bloating, gas, and watery diarrhea within hours of drinking milk. His symptoms stop when he avoids dairy.",
         leadIn: "Which treatment most directly addresses the deficient step?",
         options: [
@@ -1048,7 +1048,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-pancreatic-insufficiency",
         condition: "digestion-absorption",
-        step: 2,
+        kind: "reasoning",
         stem: "A 52-year-old man with chronic pancreatitis has bulky, greasy stools and weight loss. Fecal elastase is very low.",
         leadIn: "Which treatment best replaces the missing step?",
         options: [
@@ -1064,7 +1064,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-zes",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "reasoning",
         stem: "A 48-year-old man with a gastrinoma has chronic diarrhea and steatorrhea along with his ulcers.",
         leadIn: "Which mechanism best explains his steatorrhea?",
         options: [
@@ -1080,7 +1080,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "dg-celiac",
         condition: "digestion-absorption",
-        step: 1,
+        kind: "reasoning",
         stem: "A 29-year-old woman with celiac disease has iron and folate deficiency. Biopsy of the proximal small bowel shows blunted villi.",
         leadIn: "How is this best classified?",
         options: [
@@ -1098,7 +1098,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-triad",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A histology student identifies a corner of a liver lobule under the microscope.",
         leadIn: "Which structures make up the portal triad?",
         options: [
@@ -1114,7 +1114,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-kupffer",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A 60-year-old man with gram-negative sepsis has LPS reaching the liver in portal blood. Cells lining the sinusoids sense it and release cytokines.",
         leadIn: "Which cells are these?",
         options: [
@@ -1133,7 +1133,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-stellate",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A 54-year-old man with chronic hepatitis C has progressive fibrosis on biopsy, with dense deposits of collagen I.",
         leadIn: "Which process produces this collagen?",
         options: [
@@ -1149,7 +1149,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-stellate-vita",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A student examines healthy liver tissue and sees quiescent stellate cells filled with lipid droplets.",
         leadIn: "Which vitamin do these cells store?",
         options: [
@@ -1165,7 +1165,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-flow",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A tutor asks students to trace flow through a lobule.",
         leadIn: "Which statement about flow is correct?",
         options: [
@@ -1181,7 +1181,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-zone3",
         condition: "liver-function",
-        step: 1,
+        kind: "reasoning",
         stem: "A 70-year-old man has a cardiac arrest. Biopsy shows necrosis around the central veins.",
         leadIn: "Why is this zone injured first?",
         options: [
@@ -1197,7 +1197,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-zones",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A researcher maps metabolic functions across the acinus.",
         leadIn: "Which function is concentrated in zone 1?",
         options: [
@@ -1213,7 +1213,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-g6pase",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "During an overnight fast, the liver keeps blood glucose stable.",
         leadIn: "Which enzyme lets it release free glucose into the blood?",
         options: [
@@ -1229,7 +1229,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-gluconeo",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "During prolonged fasting, hepatocytes make glucose from pyruvate.",
         leadIn: "Which enzyme catalyzes the first step of this pathway?",
         options: [
@@ -1245,7 +1245,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-glycogen",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "Soon after a fast begins, the liver breaks down stored glycogen.",
         leadIn: "Which enzyme releases glucose 1-P from glycogen?",
         options: [
@@ -1261,7 +1261,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-transamination",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A 40-year-old woman has a raised ALT on routine bloods.",
         leadIn: "Which reaction does this enzyme normally perform?",
         options: [
@@ -1277,7 +1277,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-urea-first",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "An infant has severe hyperammonemia from a defect in the first enzyme of the urea cycle.",
         leadIn: "Which enzyme is defective?",
         options: [
@@ -1293,7 +1293,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-urea-last",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A student traces the urea cycle to its final step.",
         leadIn: "Which enzyme releases urea, and what does it regenerate?",
         options: [
@@ -1309,7 +1309,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-globulins",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A student sorts the proteins made by the liver.",
         leadIn: "Which protein is an alpha or beta globulin?",
         options: [
@@ -1325,7 +1325,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-anticlotting",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A 58-year-old woman with cirrhosis has low levels of clotting factors, and also of proteins that normally limit clotting.",
         leadIn: "Which is an anti-clotting protein made by the liver?",
         options: [
@@ -1341,7 +1341,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-hormones",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A student lists hormones and hormone precursors made by the liver.",
         leadIn: "Which belongs on this list?",
         options: [
@@ -1357,7 +1357,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-cpt1",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "During fasting, hepatocytes break down long-chain fatty acids for energy.",
         leadIn: "Which protein lets these fatty acids enter mitochondria?",
         options: [
@@ -1373,7 +1373,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-ketones",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A 30-year-old man fasts for three days, and acetoacetate and β-hydroxybutyrate rise in his blood.",
         leadIn: "Which pathway in the liver forms these molecules?",
         options: [
@@ -1389,7 +1389,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-vldl",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "After a high-carbohydrate meal, hepatocytes export the triglycerides they have made.",
         leadIn: "In which particle do these leave the liver?",
         options: [
@@ -1405,7 +1405,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-statin",
         condition: "liver-function",
-        step: 2,
+        kind: "reasoning",
         stem: "A 55-year-old man with high LDL cholesterol starts atorvastatin.",
         leadIn: "Which enzyme does this drug block?",
         options: [
@@ -1421,7 +1421,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-vitd",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A student traces cholecalciferol from the skin to its active form.",
         leadIn: "What is the correct order?",
         options: [
@@ -1437,7 +1437,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-warfarin",
         condition: "liver-function",
-        step: 2,
+        kind: "reasoning",
         stem: "A 72-year-old woman with A-fib takes warfarin, and her INR rises as expected.",
         leadIn: "Which mechanism explains this?",
         options: [
@@ -1453,7 +1453,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-cyp7a1",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A researcher studies how hepatocytes turn cholesterol into bile salts.",
         leadIn: "Which enzyme performs the key first step?",
         options: [
@@ -1469,7 +1469,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-cyp8b1",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A mouse lacks CYP8B1 but has normal CYP7A1.",
         leadIn: "Which primary bile salt will it fail to make?",
         options: [
@@ -1485,7 +1485,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-secondary",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "Colonic bacteria act on bile salts that escape the terminal ileum.",
         leadIn: "Which pairing of primary and secondary bile salt is correct?",
         options: [
@@ -1501,7 +1501,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-conjugation",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "Hepatocytes join bile salts to an amino acid before secreting them into bile.",
         leadIn: "Which amino acids are used, and what is the effect?",
         options: [
@@ -1517,7 +1517,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-heme",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A Kupffer cell has broken down an old RBC into heme and globin.",
         leadIn: "Which enzyme converts heme, and what does it form?",
         options: [
@@ -1533,7 +1533,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-reductase",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A student traces bilirubin from heme to the blood.",
         leadIn: "Which enzyme forms unconjugated bilirubin?",
         options: [
@@ -1549,7 +1549,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-stool",
         condition: "liver-function",
-        step: 1,
+        kind: "reasoning",
         stem: "A student asks why stool is brown.",
         leadIn: "Which pigment is responsible, and how does it form?",
         options: [
@@ -1565,7 +1565,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-urine-yellow",
         condition: "liver-function",
-        step: 1,
+        kind: "reasoning",
         stem: "A student asks why normal urine is yellow.",
         leadIn: "Which pigment is responsible, and how does it get there?",
         options: [
@@ -1581,7 +1581,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-hemolysis",
         condition: "liver-function",
-        step: 2,
+        kind: "memory",
         stem: "A 24-year-old man with hemolytic anemia has jaundice. His urine and stool are normal in color.",
         leadIn: "Which type of hyperbilirubinemia is most likely?",
         options: [
@@ -1597,7 +1597,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-obstruction",
         condition: "liver-function",
-        step: 2,
+        kind: "reasoning",
         stem: "A 56-year-old woman has jaundice, dark urine, and pale stools.",
         leadIn: "Which finding best explains her dark urine?",
         options: [
@@ -1613,7 +1613,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-phases",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A drug is first oxidized by a CYP enzyme, then joined to glucuronic acid, and finally pumped into bile.",
         leadIn: "Which sequence of phases does this describe?",
         options: [
@@ -1629,7 +1629,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-phase2",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A student matches phase II enzymes with the group each adds to a molecule.",
         leadIn: "Which pairing is correct?",
         options: [
@@ -1645,7 +1645,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-cyp-substrates",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A student matches CYP enzymes with important substrates.",
         leadIn: "Which pairing is correct?",
         options: [
@@ -1661,7 +1661,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-2d6-ultrarapid",
         condition: "liver-function",
-        step: 2,
+        kind: "reasoning",
         stem: "A 30-year-old woman becomes very drowsy with slow breathing after a standard dose of codeine. Genotyping shows extra copies of CYP2D6.",
         leadIn: "Which best explains this?",
         options: [
@@ -1677,7 +1677,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-2d6-poor",
         condition: "liver-function",
-        step: 2,
+        kind: "reasoning",
         stem: "A 62-year-old man is a CYP2D6 poor metabolizer and takes metoprolol, an active drug.",
         leadIn: "How is his dose best adjusted?",
         options: [
@@ -1693,7 +1693,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-alcohol-main",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A 26-year-old man drinks two glasses of wine.",
         leadIn: "Which pathway handles most of this alcohol?",
         options: [
@@ -1709,7 +1709,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-alcohol-fat",
         condition: "liver-function",
-        step: 1,
+        kind: "reasoning",
         stem: "A 50-year-old man who drinks heavily has steatosis on ultrasound.",
         leadIn: "Which mechanism best explains his fatty liver?",
         options: [
@@ -1725,7 +1725,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-glutathione",
         condition: "liver-function",
-        step: 1,
+        kind: "reasoning",
         stem: "Hepatocytes neutralize peroxides with GSH, forming GSSG.",
         leadIn: "How is GSH restored?",
         options: [
@@ -1741,7 +1741,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-nac",
         condition: "liver-function",
-        step: 2,
+        kind: "reasoning",
         stem: "A 19-year-old woman has taken a large paracetamol overdose, and NAC is started.",
         leadIn: "How does NAC protect her liver?",
         options: [
@@ -1757,7 +1757,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-ntcp",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "Bile salts returning in the portal vein are taken up by hepatocytes along with Na+.",
         leadIn: "Which channel is responsible?",
         options: [
@@ -1773,7 +1773,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-channels-bile",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A student matches channels on the hepatocyte with the molecule each sends into bile.",
         leadIn: "Which pairing is correct?",
         options: [
@@ -1789,7 +1789,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-channels-blood",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "During cholestasis, a hepatocyte sends conjugates back into the blood rather than into bile.",
         leadIn: "Which channels do this?",
         options: [
@@ -1805,7 +1805,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-gilbert",
         condition: "liver-function",
-        step: 2,
+        kind: "memory",
         stem: "A 21-year-old man has mild jaundice after a two-day fast, with raised unconjugated bilirubin and normal LFTs otherwise.",
         leadIn: "Which is the most likely diagnosis?",
         options: [
@@ -1821,7 +1821,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-crigler",
         condition: "liver-function",
-        step: 2,
+        kind: "memory",
         stem: "A newborn has severe unconjugated hyperbilirubinemia and develops kernicterus. UGT activity is absent.",
         leadIn: "Which is the most likely diagnosis?",
         options: [
@@ -1837,7 +1837,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-dubin",
         condition: "liver-function",
-        step: 2,
+        kind: "memory",
         stem: "A 28-year-old man has conjugated hyperbilirubinemia, and a laparoscopy shows a black liver.",
         leadIn: "Which channel is defective?",
         options: [
@@ -1853,7 +1853,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-rotor",
         condition: "liver-function",
-        step: 2,
+        kind: "memory",
         stem: "A 25-year-old woman has benign conjugated hyperbilirubinemia, and her liver is normal in color.",
         leadIn: "Which is the most likely diagnosis?",
         options: [
@@ -1869,7 +1869,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-hbv-drugs",
         condition: "liver-function",
-        step: 1,
+        kind: "reasoning",
         stem: "A 41-year-old woman with chronic hepatitis B starts tenofovir, and her HBV DNA falls but HBsAg remains positive.",
         leadIn: "Why is HBV not cured?",
         options: [
@@ -1885,7 +1885,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-hbv-target",
         condition: "liver-function",
-        step: 1,
+        kind: "reasoning",
         stem: "A 39-year-old man with chronic hepatitis B starts entecavir.",
         leadIn: "Which step does this drug block?",
         options: [
@@ -1901,7 +1901,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-peginterferon",
         condition: "liver-function",
-        step: 1,
+        kind: "reasoning",
         stem: "A 35-year-old woman with chronic hepatitis B is offered a finite course of peginterferon-α.",
         leadIn: "How does this drug act?",
         options: [
@@ -1917,7 +1917,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-hcv-protease",
         condition: "liver-function",
-        step: 1,
+        kind: "reasoning",
         stem: "A 50-year-old man with hepatitis C takes glecaprevir as part of his regimen.",
         leadIn: "Which step does this drug block?",
         options: [
@@ -1933,7 +1933,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-hcv-ns5a",
         condition: "liver-function",
-        step: 1,
+        kind: "reasoning",
         stem: "A 47-year-old woman with hepatitis C takes velpatasvir in a combination regimen.",
         leadIn: "Which viral target does this drug bind?",
         options: [
@@ -1949,7 +1949,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-hcv-ns5b",
         condition: "liver-function",
-        step: 1,
+        kind: "reasoning",
         stem: "A pharmacology class examines how sofosbuvir stops HCV replication.",
         leadIn: "Which mechanism is correct?",
         options: [
@@ -1965,7 +1965,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-cholestyramine",
         condition: "liver-function",
-        step: 2,
+        kind: "reasoning",
         stem: "A 55-year-old woman with PBC has severe pruritus and starts cholestyramine.",
         leadIn: "How does this drug relieve her itch?",
         options: [
@@ -1981,7 +1981,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-cholestyramine-ldl",
         condition: "liver-function",
-        step: 1,
+        kind: "reasoning",
         stem: "A 48-year-old man takes cholestyramine, and his LDL cholesterol falls.",
         leadIn: "Which mechanism explains this?",
         options: [
@@ -1997,7 +1997,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-udca",
         condition: "liver-function",
-        step: 2,
+        kind: "reasoning",
         stem: "A 49-year-old woman with PBC starts ursodeoxycholic acid.",
         leadIn: "How does this drug help her?",
         options: [
@@ -2013,7 +2013,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "lv-udca-stones",
         condition: "liver-function",
-        step: 1,
+        kind: "memory",
         stem: "A 45-year-old woman who declines surgery is given ursodeoxycholic acid for small cholesterol gallstones.",
         leadIn: "Which action helps dissolve the stones?",
         options: [
@@ -2031,7 +2031,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "em-ctz-barrier",
         condition: "emetic-center",
-        step: 1,
+        kind: "reasoning",
         stem: "A pharmacology student asks why the area postrema can respond to toxins in the blood when most of the brainstem cannot.",
         leadIn: "Which feature of the area postrema explains this?",
         options: [
@@ -2051,7 +2051,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "em-cinv-delayed",
         condition: "emetic-center",
-        step: 2,
+        kind: "reasoning",
         stem: "A 56-year-old woman is about to start highly emetogenic chemotherapy. During her first cycle she received ondansetron alone, and her vomiting settled after the first day but returned on days 2–4.",
         leadIn: "Which drug added to her regimen best targets the vomiting on days 2–4?",
         options: [
@@ -2072,7 +2072,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "em-motion",
         condition: "emetic-center",
-        step: 1,
+        kind: "reasoning",
         stem: "A 30-year-old man becomes nauseated whenever he reads in a moving car. His brother, who lost all labyrinthine function after an infection, never does.",
         leadIn: "Which input explains why the brother is protected?",
         options: [
@@ -2091,7 +2091,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "em-opioid-dose",
         condition: "emetic-center",
-        step: 1,
+        kind: "memory",
         stem: "After surgery, a patient vomits after a small dose of IV morphine, yet another patient on a much higher fentanyl infusion has no nausea.",
         leadIn: "Which explanation fits these observations?",
         options: [
@@ -2110,7 +2110,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "em-metoclopramide",
         condition: "emetic-center",
-        step: 1,
+        kind: "reasoning",
         stem: "A 45-year-old woman with diabetic gastroparesis has early satiety and vomiting of undigested food. She starts a drug that relieves her nausea and also speeds gastric emptying.",
         leadIn: "Which pair of actions best explains both effects?",
         options: [
@@ -2129,7 +2129,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "em-aps",
         condition: "emetic-center",
-        step: 2,
+        kind: "reasoning",
         stem: "A 33-year-old woman has had 10 days of intractable hiccups, nausea, and vomiting. Endoscopy and abdominal imaging are normal. Six months ago she had severe optic neuritis that left poor vision in one eye.",
         leadIn: "Which test is most likely to explain her symptoms?",
         options: [
@@ -2149,7 +2149,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "em-chs",
         condition: "emetic-center",
-        step: 2,
+        kind: "reasoning",
         stem: "A 26-year-old man has his third episode in 6 months of severe nausea, vomiting, and abdominal cramps. He spends hours in hot showers, which help. He has used cannabis daily for 5 years. Between episodes he is well.",
         leadIn: "Which of the following is the most effective long-term treatment?",
         options: [
@@ -2169,7 +2169,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "em-vomit-alkalosis",
         condition: "emetic-center",
-        step: 1,
+        kind: "memory",
         stem: "A 31-year-old woman at 9 weeks of pregnancy has vomited many times a day for a week and has lost 6% of her weight. Urine shows ketones.",
         leadIn: "Which acid-base disturbance is her vomiting most likely to cause?",
         options: [
@@ -2188,7 +2188,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "em-scopolamine",
         condition: "emetic-center",
-        step: 2,
+        kind: "reasoning",
         stem: "A 40-year-old woman who becomes seasick on every boat trip is going on a 3-day cruise next week. She wants something to prevent it.",
         leadIn: "Which option is most appropriate, and how does it work?",
         options: [
@@ -2208,7 +2208,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "em-nts-convergence",
         condition: "emetic-center",
-        step: 1,
+        kind: "memory",
         stem: "A physiologist notes that toxins in the blood, gastric irritation, motion, and fear can all cause vomiting.",
         leadIn: "Where do these different inputs converge?",
         options: [
@@ -2226,7 +2226,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "imm-m-cell",
         condition: "gut-immunity",
-        step: 1,
+        kind: "memory",
         stem: "A histology slide of the distal ileum shows a dome of lymphoid tissue covered by epithelial cells with short, irregular microfolds instead of a brush border. Macrophages sit in pockets at their bases.",
         leadIn: "What is the main function of these epithelial cells?",
         options: [
@@ -2245,7 +2245,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "imm-pigr",
         condition: "gut-immunity",
-        step: 1,
+        kind: "memory",
         stem: "A researcher studies how IgA made by plasma cells in the lamina propria reaches the intestinal lumen.",
         leadIn: "Which step carries dimeric IgA across the epithelium?",
         options: [
@@ -2261,7 +2261,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "imm-iga-def",
         condition: "gut-immunity",
-        step: 2,
+        kind: "memory",
         stem: "A 24-year-old man has had recurrent sinusitis and two episodes of giardiasis. Serum IgA is undetectable, with normal IgG and IgM. He is booked for elective surgery.",
         leadIn: "Which precaution is most important if he needs a blood transfusion?",
         options: [
@@ -2280,7 +2280,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "imm-iga-celiac",
         condition: "gut-immunity",
-        step: 1,
+        kind: "memory",
         stem: "A woman with selective IgA deficiency asks which condition she is most likely to develop alongside it.",
         leadIn: "Which association is most common?",
         options: [
@@ -2296,7 +2296,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "imm-typhoid",
         condition: "gut-immunity",
-        step: 1,
+        kind: "memory",
         stem: "A 19-year-old traveler has had high fever for 3 weeks. He suddenly develops severe abdominal pain, and CT shows free air near the distal ileum.",
         leadIn: "Which structure is most likely to have perforated?",
         options: [
@@ -2312,7 +2312,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "imm-tolerance",
         condition: "gut-immunity",
-        step: 1,
+        kind: "memory",
         stem: "Most people eat many foreign proteins every day without mounting an immune response against them.",
         leadIn: "Which cytokines from Peyer patch T cells help maintain this tolerance?",
         options: [
@@ -2331,7 +2331,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "imm-vedolizumab",
         condition: "gut-immunity",
-        step: 1,
+        kind: "reasoning",
         stem: "A 32-year-old woman with ulcerative colitis starts a drug that blocks lymphocytes from entering the gut mucosa but has little effect on immunity elsewhere.",
         leadIn: "Which drug is this?",
         options: [
@@ -2350,7 +2350,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "imm-ustekinumab",
         condition: "gut-immunity",
-        step: 1,
+        kind: "reasoning",
         stem: "A man with Crohn disease is treated with an antibody against the p40 subunit shared by two cytokines.",
         leadIn: "Which effect does this drug have?",
         options: [
@@ -2366,7 +2366,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "imm-newborn",
         condition: "gut-immunity",
-        step: 1,
+        kind: "memory",
         stem: "A mother asks how breastfeeding protects her newborn from gut infections.",
         leadIn: "Which antibody does breast milk supply for this?",
         options: [
@@ -2387,7 +2387,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ens-plexus",
         condition: "enteric-nervous-system",
-        step: 1,
+        kind: "memory",
         stem: "A pathologist examines a full-thickness section of colon and finds a network of ganglia between the inner circular and outer longitudinal muscle layers.",
         leadIn: "What does this plexus mainly control?",
         options: [
@@ -2406,7 +2406,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ens-icc",
         condition: "enteric-nervous-system",
-        step: 1,
+        kind: "memory",
         stem: "A recording of gastric smooth muscle shows a rhythmic slow wave at about 3 per minute, even when the muscle is not contracting.",
         leadIn: "Which cells generate this rhythm?",
         options: [
@@ -2422,7 +2422,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ens-reflex",
         condition: "enteric-nervous-system",
-        step: 1,
+        kind: "reasoning",
         stem: "A bolus distends a segment of small intestine.",
         leadIn: "How does the gut respond?",
         options: [
@@ -2438,7 +2438,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ens-hirschsprung",
         condition: "enteric-nervous-system",
-        step: 2,
+        kind: "memory",
         stem: "A 3-day-old boy has not passed meconium and has a distended abdomen. A contrast enema suggests a narrow rectosigmoid with dilated bowel above.",
         leadIn: "Which test confirms the diagnosis?",
         options: [
@@ -2457,7 +2457,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ens-mmc",
         condition: "enteric-nervous-system",
-        step: 1,
+        kind: "memory",
         stem: "Between meals, a wave of regular, propulsive contractions sweeps through the small intestine about every 90–120 minutes.",
         leadIn: "What is this pattern?",
         options: [
@@ -2473,7 +2473,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ens-sympathetic",
         condition: "enteric-nervous-system",
-        step: 1,
+        kind: "memory",
         stem: "A student asks how sympathetic and parasympathetic input differ in their effects on the gut.",
         leadIn: "Which statement is correct?",
         options: [
@@ -2492,7 +2492,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ens-gastroparesis",
         condition: "enteric-nervous-system",
-        step: 2,
+        kind: "reasoning",
         stem: "A 34-year-old woman with type 1 diabetes has early satiety and vomiting of food eaten hours earlier. Endoscopy shows no obstruction, and 4-hour scintigraphy shows delayed emptying. Diet changes have not helped.",
         leadIn: "Which drug is first line?",
         options: [
@@ -2512,7 +2512,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ens-loperamide",
         condition: "enteric-nervous-system",
-        step: 1,
+        kind: "reasoning",
         stem: "A traveler takes loperamide for watery diarrhea and has no sedation.",
         leadIn: "How does loperamide slow the gut?",
         options: [
@@ -2528,7 +2528,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "ens-ogilvie",
         condition: "enteric-nervous-system",
-        step: 2,
+        kind: "reasoning",
         stem: "A 78-year-old man in the ICU after hip surgery develops marked colonic distension. CT shows a dilated cecum and colon with no mechanical obstruction. Bowel rest and decompression have not helped.",
         leadIn: "Which drug is first line?",
         options: [
@@ -2546,7 +2546,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "emb-layers",
         condition: "gi-embryology",
-        step: 1,
+        kind: "memory",
         stem: "A student is asked which germ layer gives rise to the epithelial lining of the gut and the liver.",
         leadIn: "Which layer is it?",
         options: [
@@ -2562,7 +2562,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "emb-regions",
         condition: "gi-embryology",
-        step: 1,
+        kind: "memory",
         stem: "An embolus blocks the SMA in an older woman.",
         leadIn: "Which embryologic region of the gut does this artery supply?",
         options: [
@@ -2578,7 +2578,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "emb-duodenal",
         condition: "gi-embryology",
-        step: 2,
+        kind: "reasoning",
         stem: "A newborn with flat facial features vomits after the first feed. An abdominal x-ray shows a double bubble with no gas beyond.",
         leadIn: "What is the mechanism of this defect?",
         options: [
@@ -2594,7 +2594,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "emb-pyloric",
         condition: "gi-embryology",
-        step: 2,
+        kind: "memory",
         stem: "A 4-week-old first-born boy has had projectile, nonbilious vomiting after every feed for 3 days and is hungry afterward. A firm mass is felt in the right upper quadrant.",
         leadIn: "Which metabolic picture is expected?",
         options: [
@@ -2610,7 +2610,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "emb-tef",
         condition: "gi-embryology",
-        step: 2,
+        kind: "memory",
         stem: "A newborn drools excessively and chokes with the first feed. A nasogastric tube cannot be passed into the stomach. The pregnancy was complicated by polyhydramnios.",
         leadIn: "Which anatomy is most likely?",
         options: [
@@ -2626,7 +2626,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "emb-meckel",
         condition: "gi-embryology",
-        step: 1,
+        kind: "memory",
         stem: "An 18-month-old boy has painless rectal bleeding. A technetium scan lights up a focus in the right lower abdomen.",
         leadIn: "Failure of which structure to obliterate caused this?",
         options: [
@@ -2642,7 +2642,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "emb-rotation",
         condition: "gi-embryology",
-        step: 1,
+        kind: "memory",
         stem: "A 2-week-old infant suddenly vomits green fluid and becomes unwell. Imaging suggests abnormal positioning of the bowel with a twisted mesentery.",
         leadIn: "Which developmental step failed?",
         options: [
@@ -2658,7 +2658,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "emb-wall",
         condition: "gi-embryology",
-        step: 1,
+        kind: "memory",
         stem: "A prenatal ultrasound shows bowel herniating through the base of the umbilical cord within a membrane-covered sac.",
         leadIn: "Which association should be looked for?",
         options: [
@@ -2677,7 +2677,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "emb-biliary",
         condition: "gi-embryology",
-        step: 2,
+        kind: "reasoning",
         stem: "A 6-week-old girl is still jaundiced, with pale stools, dark urine, and hepatomegaly. Her bilirubin is mainly conjugated.",
         leadIn: "Which treatment gives the best chance of preserving her liver?",
         options: [
@@ -2695,7 +2695,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-ppi-timing",
         condition: "gi-pharm-acid",
-        step: 1,
+        kind: "reasoning",
         stem: "A 46-year-old man with GERD takes omeprazole at bedtime, several hours after his evening meal. After 6 weeks, his heartburn has barely improved.",
         leadIn: "Which change would most improve the drug's effect?",
         options: [
@@ -2716,7 +2716,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-ppi-magnesium",
         condition: "gi-pharm-acid",
-        step: 1,
+        kind: "memory",
         stem: "A 71-year-old woman has taken omeprazole daily for 9 years. She presents with muscle cramps, tremor, and a prolonged QT interval.",
         leadIn: "Which electrolyte abnormality is most likely?",
         options: [
@@ -2736,7 +2736,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-cimetidine-warfarin",
         condition: "gi-pharm-acid",
-        step: 1,
+        kind: "reasoning",
         stem: "A 66-year-old man on warfarin buys an over-the-counter acid reducer for heartburn. Two weeks later, his INR has risen from 2.4 to 4.8. The drug also causes gynecomastia at high doses.",
         leadIn: "Which mechanism best explains the rise in INR?",
         options: [
@@ -2756,7 +2756,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-misoprostol-pregnancy",
         condition: "gi-pharm-acid",
-        step: 1,
+        kind: "reasoning",
         stem: "A 31-year-old woman with rheumatoid arthritis needs long-term NSAIDs and is planning a pregnancy. Her rheumatologist wants to protect her stomach.",
         leadIn: "Which gastroprotective drug should be avoided?",
         options: [
@@ -2772,7 +2772,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-sucralfate-acid",
         condition: "gi-pharm-acid",
-        step: 2,
+        kind: "reasoning",
         stem: "A 58-year-old man in the ICU is given an IV PPI for stress ulcer prophylaxis. A colleague suggests adding sucralfate.",
         leadIn: "Why is this combination a poor choice?",
         options: [
@@ -2791,7 +2791,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-clarithromycin-statin",
         condition: "gi-pharm-antibacterials",
-        step: 2,
+        kind: "reasoning",
         stem: "A 62-year-old man on simvastatin starts triple therapy for H. pylori. A week later, he has diffuse muscle pain and a raised CK.",
         leadIn: "Which drug in his regimen is most responsible?",
         options: [
@@ -2807,7 +2807,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-metronidazole-alcohol",
         condition: "gi-pharm-antibacterials",
-        step: 1,
+        kind: "reasoning",
         stem: "A 38-year-old man allergic to penicillin starts H. pylori treatment. After drinking wine at a wedding, he has flushing, throbbing headache, and vomiting.",
         leadIn: "Which drug most likely caused this reaction?",
         options: [
@@ -2823,7 +2823,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-fluoroquinolone-tendon",
         condition: "gi-pharm-antibacterials",
-        step: 1,
+        kind: "memory",
         stem: "A 77-year-old man taking prednisone for polymyalgia rheumatica is treated for diverticulitis with levofloxacin and metronidazole.",
         leadIn: "Which adverse effect is he at particular risk of?",
         options: [
@@ -2844,7 +2844,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-tetracycline-chelation",
         condition: "gi-pharm-antibacterials",
-        step: 1,
+        kind: "memory",
         stem: "A 52-year-old woman on bismuth quadruple therapy for H. pylori takes all her tablets together with a calcium and magnesium antacid. A breath test after treatment is still positive.",
         leadIn: "Which interaction most likely contributed?",
         options: [
@@ -2860,7 +2860,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-vancomycin-oral",
         condition: "gi-pharm-antibacterials",
-        step: 1,
+        kind: "reasoning",
         stem: "A 69-year-old woman develops C. difficile infection after clindamycin. Fidaxomicin is unavailable, and vancomycin is prescribed by mouth.",
         leadIn: "Why is vancomycin given by mouth rather than IV for this infection?",
         options: [
@@ -2876,7 +2876,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-rifaximin-he",
         condition: "gi-pharm-antibacterials",
-        step: 2,
+        kind: "reasoning",
         stem: "A 59-year-old man with alcoholic cirrhosis has a second episode of hepatic encephalopathy despite taking lactulose to 2–3 soft stools a day.",
         leadIn: "Which drug should be added?",
         options: [
@@ -2892,7 +2892,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-sofosbuvir-amiodarone",
         condition: "gi-pharm-hepatitis-bile",
-        step: 2,
+        kind: "memory",
         stem: "A 64-year-old man with chronic HCV takes amiodarone for atrial fibrillation. His hepatologist plans a sofosbuvir-based regimen.",
         leadIn: "Which risk is most important to consider?",
         options: [
@@ -2912,7 +2912,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-ns3-decompensated",
         condition: "gi-pharm-hepatitis-bile",
-        step: 2,
+        kind: "reasoning",
         stem: "A 55-year-old woman with chronic HCV has ascites and a Child-Pugh class C score. Her team is choosing a direct-acting antiviral regimen.",
         leadIn: "Which drug class should her regimen avoid?",
         options: [
@@ -2928,7 +2928,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-tenofovir-monitor",
         condition: "gi-pharm-hepatitis-bile",
-        step: 1,
+        kind: "reasoning",
         stem: "A 41-year-old man starts tenofovir disoproxil for chronic hepatitis B.",
         leadIn: "Which tests should be monitored during treatment?",
         options: [
@@ -2944,7 +2944,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-cholestyramine-spacing",
         condition: "gi-pharm-hepatitis-bile",
-        step: 1,
+        kind: "reasoning",
         stem: "A 57-year-old woman with PBC takes ursodeoxycholic acid and starts cholestyramine for pruritus.",
         leadIn: "How should her medications be timed?",
         options: [
@@ -2960,7 +2960,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-obeticholic-mechanism",
         condition: "gi-pharm-hepatitis-bile",
-        step: 2,
+        kind: "reasoning",
         stem: "A 52-year-old woman with PBC has a persistently raised alkaline phosphatase despite a year of ursodeoxycholic acid. She has no cirrhosis. A second drug is added.",
         leadIn: "How does this second drug act?",
         options: [
@@ -2981,7 +2981,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-metoclopramide-td",
         condition: "gi-pharm-nausea",
-        step: 1,
+        kind: "reasoning",
         stem: "A 63-year-old woman with diabetic gastroparesis has taken metoclopramide for 8 months. She now has repetitive lip smacking and tongue thrusting.",
         leadIn: "Which receptor action best explains this adverse effect?",
         options: [
@@ -2997,7 +2997,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-ondansetron-qt",
         condition: "gi-pharm-nausea",
-        step: 1,
+        kind: "memory",
         stem: "A 48-year-old woman is given ondansetron before her first cycle of chemotherapy. She takes citalopram and has a borderline long QT interval.",
         leadIn: "Which adverse effect of ondansetron is the main concern?",
         options: [
@@ -3017,7 +3017,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-aprepitant-dexamethasone",
         condition: "gi-pharm-nausea",
-        step: 2,
+        kind: "reasoning",
         stem: "A 55-year-old man receiving cisplatin is given aprepitant, ondansetron, and dexamethasone. The dexamethasone dose is lowered.",
         leadIn: "Why is the dexamethasone dose lowered?",
         options: [
@@ -3033,7 +3033,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-scopolamine-pupil",
         condition: "gi-pharm-nausea",
-        step: 1,
+        kind: "reasoning",
         stem: "A 34-year-old woman on a cruise wears a patch behind her ear to prevent seasickness. After adjusting it, she rubs her eye, and that pupil becomes dilated and unreactive.",
         leadIn: "Which receptor does the drug block?",
         options: [
@@ -3049,7 +3049,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-neostigmine-ogilvie",
         condition: "gi-pharm-motility",
-        step: 2,
+        kind: "memory",
         stem: "A 74-year-old man after hip surgery has acute colonic pseudo-obstruction, with a cecum of 11 cm and no mechanical cause. IV neostigmine is planned.",
         leadIn: "Which precaution is most important?",
         options: [
@@ -3065,7 +3065,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-loperamide-contra",
         condition: "gi-pharm-motility",
-        step: 1,
+        kind: "memory",
         stem: "A 26-year-old woman has had diarrhea for 2 days and asks for loperamide.",
         leadIn: "Which finding should stop loperamide being given?",
         options: [
@@ -3081,7 +3081,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-alosetron-colitis",
         condition: "gi-pharm-bowel",
-        step: 2,
+        kind: "memory",
         stem: "A 39-year-old woman with severe IBS-D has not responded to loperamide or a low FODMAP diet. Alosetron is considered.",
         leadIn: "Which serious adverse effect limits its use?",
         options: [
@@ -3100,7 +3100,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-eluxadoline-cholecystectomy",
         condition: "gi-pharm-bowel",
-        step: 2,
+        kind: "reasoning",
         stem: "A 44-year-old man with IBS-D had a cholecystectomy 3 years ago. Loperamide has not helped.",
         leadIn: "Which drug is contraindicated for him?",
         options: [
@@ -3116,7 +3116,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-lactulose-mechanism",
         condition: "gi-pharm-bowel",
-        step: 1,
+        kind: "reasoning",
         stem: "A 61-year-old woman with cirrhosis and hepatic encephalopathy is started on lactulose.",
         leadIn: "How does lactulose lower ammonia absorption?",
         options: [
@@ -3135,7 +3135,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-thiopurine-allopurinol",
         condition: "gi-pharm-immune",
-        step: 2,
+        kind: "reasoning",
         stem: "A 47-year-old man with Crohn disease, stable on azathioprine, develops gout and is started on allopurinol. A month later, he has pancytopenia.",
         leadIn: "Which mechanism best explains this?",
         options: [
@@ -3151,7 +3151,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-tpmt-testing",
         condition: "gi-pharm-immune",
-        step: 1,
+        kind: "memory",
         stem: "A 29-year-old woman with steroid-dependent Crohn disease is to start azathioprine for maintenance.",
         leadIn: "Which test should be done before the first dose?",
         options: [
@@ -3170,7 +3170,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-antitnf-screening",
         condition: "gi-pharm-immune",
-        step: 1,
+        kind: "memory",
         stem: "A 34-year-old man with fistulizing Crohn disease is to start infliximab.",
         leadIn: "Which infection must be screened for first?",
         options: [
@@ -3186,7 +3186,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-budesonide-firstpass",
         condition: "gi-pharm-immune",
-        step: 1,
+        kind: "reasoning",
         stem: "A 67-year-old woman with microscopic colitis is treated with oral budesonide for 6–8 weeks, which causes fewer systemic effects than prednisone.",
         leadIn: "Which property explains this?",
         options: [
@@ -3202,7 +3202,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-sulfasalazine-sperm",
         condition: "gi-pharm-immune",
-        step: 1,
+        kind: "reasoning",
         stem: "A 30-year-old man with ulcerative colitis in remission on sulfasalazine is investigated for infertility and has a low sperm count.",
         leadIn: "Which change is most likely to help?",
         options: [
@@ -3221,7 +3221,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-nac-mechanism",
         condition: "gi-pharm-liver",
-        step: 1,
+        kind: "reasoning",
         stem: "A 19-year-old woman presents 5 hours after taking a large overdose of paracetamol.",
         leadIn: "How does the antidote prevent liver injury?",
         options: [
@@ -3240,7 +3240,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-penicillamine-switch",
         condition: "gi-pharm-liver",
-        step: 2,
+        kind: "reasoning",
         stem: "A 17-year-old boy with Wilson disease started D-penicillamine 4 months ago. He now has a rash, proteinuria, and a loss of taste.",
         leadIn: "Which is the best replacement for initial treatment?",
         options: [
@@ -3260,7 +3260,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-deferoxamine-yersinia",
         condition: "gi-pharm-liver",
-        step: 2,
+        kind: "memory",
         stem: "A 49-year-old man with hemochromatosis cannot tolerate phlebotomy and receives SC deferoxamine. He presents with fever, diarrhea, and right lower quadrant pain.",
         leadIn: "Which organism is most likely?",
         options: [
@@ -3276,7 +3276,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-nsbb-varices",
         condition: "gi-pharm-cirrhosis",
-        step: 1,
+        kind: "reasoning",
         stem: "A 56-year-old man with cirrhosis has large esophageal varices that have never bled. He starts propranolol.",
         leadIn: "How does propranolol lower his bleeding risk?",
         options: [
@@ -3292,7 +3292,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-spironolactone-gynecomastia",
         condition: "gi-pharm-cirrhosis",
-        step: 1,
+        kind: "reasoning",
         stem: "A 60-year-old man with cirrhotic ascites is treated with sodium restriction and two diuretics. Months later, he has tender breast enlargement and a potassium of 5.9 mmol/L.",
         leadIn: "Which drug is responsible?",
         options: [
@@ -3308,7 +3308,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-terlipressin-hrs",
         condition: "gi-pharm-cirrhosis",
-        step: 2,
+        kind: "reasoning",
         stem: "A 52-year-old woman with cirrhosis has a rising creatinine and low urine sodium despite albumin. Hepatorenal syndrome is diagnosed, and a vasoconstrictor is added.",
         leadIn: "How does this vasoconstrictor improve kidney function?",
         options: [
@@ -3324,7 +3324,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-fluconazole-warfarin",
         condition: "gi-pharm-anti-infectives",
-        step: 2,
+        kind: "reasoning",
         stem: "A 58-year-old man on warfarin after a valve replacement has odynophagia, and endoscopy shows white plaques of Candida esophagitis. He starts a 14-day oral course of the first-line drug.",
         leadIn: "Which change in his warfarin therapy is most likely to be needed?",
         options: [
@@ -3343,7 +3343,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-acyclovir-hydration",
         condition: "gi-pharm-anti-infectives",
-        step: 1,
+        kind: "reasoning",
         stem: "A 44-year-old woman after a kidney transplant has HSV esophagitis and is treated with IV acyclovir.",
         leadIn: "Which measure best prevents the drug's main kidney toxicity?",
         options: [
@@ -3363,7 +3363,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-b12-oral",
         condition: "gi-pharm-replacement",
-        step: 1,
+        kind: "reasoning",
         stem: "A 63-year-old woman with autoimmune gastritis has finished 2 weeks of IM vitamin B12. She dislikes injections and asks about tablets.",
         leadIn: "Why can high-dose oral B12 work despite her lack of intrinsic factor?",
         options: [
@@ -3379,7 +3379,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-folate-b12",
         condition: "gi-pharm-replacement",
-        step: 2,
+        kind: "reasoning",
         stem: "A 70-year-old man with macrocytic anemia and numb feet is given folic acid alone. His hemoglobin improves, but his gait worsens.",
         leadIn: "What best explains this?",
         options: [
@@ -3398,7 +3398,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-paracetamol-diverticulitis",
         condition: "gi-pharm-pain",
-        step: 1,
+        kind: "memory",
         stem: "A 49-year-old woman with uncomplicated diverticulitis is managed as an outpatient with a liquid diet.",
         leadIn: "Which analgesic is preferred?",
         options: [
@@ -3414,7 +3414,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-pancreatitis-pain",
         condition: "gi-pharm-pain",
-        step: 2,
+        kind: "reasoning",
         stem: "A 52-year-old man with chronic pancreatitis has constant epigastric pain despite stopping alcohol and smoking. Paracetamol alone has not been enough.",
         leadIn: "Which drug is the best next step before opioids?",
         options: [
@@ -3433,7 +3433,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-pill-esophagitis",
         condition: "gi-pharm-causes",
-        step: 1,
+        kind: "memory",
         stem: "A 67-year-old woman takes her weekly bisphosphonate with a sip of water just before lying down. Days later, she has severe pain on swallowing.",
         leadIn: "Where are pills most likely to lodge and cause this injury?",
         options: [
@@ -3449,7 +3449,7 @@ const QUIZ_QUESTIONS = [
     {
         id: "gp-cdiff-antibiotic",
         condition: "gi-pharm-causes",
-        step: 1,
+        kind: "memory",
         stem: "A 72-year-old man develops profuse watery diarrhea a week after a course of an antibiotic for a dental abscess.",
         leadIn: "Which antibiotic is a classic cause of this complication?",
         options: [

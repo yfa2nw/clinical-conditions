@@ -1,6 +1,6 @@
 # Clinical Conditions
 
-An interactive study reference for clinical conditions, organized by organ system. Each condition covers its pathophysiology, etiology, symptoms and complications, diagnosis, and treatment. A built-in practice quiz has USMLE-style multiple-choice questions.
+An interactive study reference for clinical conditions, organized by organ system. Each condition covers its pathophysiology, etiology, symptoms and complications, diagnosis, and treatment. Each page has its own quiz, running from quick recall to cases and data, with an explanation for every option.
 
 > **For educational use only.** This is a study aid, not a clinical reference. Do not use it for patient care.
 

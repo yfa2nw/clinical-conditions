@@ -1,0 +1,275 @@
+// Worksheet for the Intestinal Ischemia page, built by tools/build-worksheet-pdf.mjs gi intestinal-ischemia.
+// Part 1 follows the page's sections; Part 2 asks for inference and avoids the quiz's questions.
+// Question types: blank (html with [[answer]] marks), match (items, options, and the option index for each item),
+// mc (options and answer; select: 2 or justify: <words>), sa, and order (items and the correct order of their indexes).
+
+const labs = (head, rows) => `<table><thead><tr>${head.map((h) => `<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+
+export const WORKSHEET = {
+    title: "Intestinal Ischemia",
+    // The first page: one flowchart of the whole page, with [[answer]] blanks to fill in
+    flowchart: {
+        title: "From lost flow to treatment",
+        top: "Arterial occlusion, venous occlusion, or [[hypoperfusion]] → decreased oxygen supply, worse with the demand of eating → [[infarction]] if flow is not restored",
+        rows: ["Cause", "Why it happens", "Diagnosis", "Treatment"],
+        columns: [
+            ["1. Acute arterial", "Embolism from A-fib or AAA ([[40–50]]%), thrombosis on atherosclerosis, or NOMI from [[vasopressors]]; the [[SMA]] most often", "[[CT angiogram]], even with renal impairment; lactate and LDH rise only late", "Heparin and revascularization; NOMI: treat the low-flow state and give [[papaverine]]"],
+            ["2. Acute venous", "Hypercoagulation (malignancy, OCP, pregnancy, factor V Leiden, protein C or S deficiency) or portal thrombosis in [[cirrhosis]] → venous congestion", "CT angiogram", "[[Anticoagulation]]"],
+            ["3. Chronic", "Atherosclerosis of [[2]] of the celiac trunk, SMA, and IMA → oxygen supply cannot meet demand after meals", "CT angiogram", "Revascularization: endovascular procedures or surgery"],
+            ["4. Ischemic colitis", "Shock or vasopressors → hypoperfusion of the IMA's [[watershed]] areas: Griffiths point and Sudeck point", "CT AP and [[colonoscopy]] with biopsy within 48 hours", "Mild: supportive. Moderate: ABX and surgical review. Severe: [[surgery]]"],
+        ],
+        span: "Every patient: NPO, IV fluids, and an NGT; ABX to prevent sepsis; avoid vasopressors and [[alpha-agonists]]",
+        chains: [
+            { label: "As ischemia deepens", steps: [["Decreased oxygen", "Pain out of proportion to examination"], ["Anaerobic respiration", "[[AGMA]] from lactate"], ["Leaky vessels", "[[Hematochezia]]"], ["Necrosis and perforation", "Pneumoperitoneum, peritonitis; AMI mortality [[60–80]]%"]] },
+            { label: "Chronic course", steps: [["Pain after meals", "15–30 minutes after eating, up to 4 hours"], ["Fear of eating", "[[Weight loss]]"], ["Thrombosis on plaque", "Acute mesenteric ischemia"]] },
+        ],
+    },
+    review: [
+        {
+            section: "Pathophysiology",
+            questions: [
+                { id: "r-path-blanks", type: "blank",
+                    html: "Arterial occlusion, [[venous]] occlusion, or hypoperfusion causes loss of [[blood supply]] to the intestines. Oxygen supply falls, and the shortfall is worse after [[eating]], when demand rises. If flow is not restored, the bowel undergoes [[infarction]] and necrosis." },
+                { id: "r-path-match", type: "match",
+                    stem: "Match each step of ischemia to what it causes.",
+                    items: ["Decreased oxygen supply", "Anaerobic respiration", "Increased vascular permeability", "Prolonged ischemia", "Full-thickness necrosis"],
+                    options: ["Hematochezia", "Pneumoperitoneum and peritonitis", "Abdominal pain", "AGMA", "Infarction, with out-of-proportion pain"],
+                    answer: [2, 3, 0, 4, 1],
+                    explanation: "Each deeper step adds a sign: pain, then acidosis, then bleeding, then necrosis and perforation." },
+                { id: "r-path-why", type: "sa", lines: 2,
+                    stem: "Why is ischemic pain worse after eating?",
+                    answer: "Digestion raises the bowel's oxygen demand, which reduced flow cannot meet.",
+                    explanation: "This is the mechanism of postprandial pain in chronic mesenteric ischemia." },
+            ],
+        },
+        {
+            section: "Etiology",
+            questions: [
+                { id: "r-cause-table", type: "blank",
+                    stem: "Complete the causes of acute arterial mesenteric ischemia.",
+                    html: `<table><thead><tr><th>Cause</th><th>Share</th><th>Setting</th></tr></thead><tbody>
+<tr><td>Embolism</td><td>[[40–50]]%</td><td>Usually cardiac: a history of [[A-fib]] or AAA</td></tr>
+<tr><td>Thrombosis</td><td>25–30%</td><td>[[Atherosclerosis]]</td></tr>
+<tr><td>NOMI</td><td>About [[20]]%</td><td>Vasospasm in critically ill patients on [[vasopressors]]</td></tr>
+</tbody></table>` },
+                { id: "r-cause-venous", type: "mc", select: 2,
+                    stem: "Which patients are at risk of mesenteric venous thrombosis?",
+                    options: ["A woman taking oral contraceptives with factor V Leiden", "A man with cirrhosis and portal vein thrombosis", "A man with A-fib who stopped apixaban", "A smoker with peripheral artery disease", "A patient in septic shock on noradrenaline"], answer: [0, 1],
+                    explanation: "Venous ischemia follows hypercoagulation or portal thrombosis in cirrhosis.",
+                    notes: { 2: "A-fib leads to an arterial embolus.", 3: "Atherosclerosis leads to arterial thrombosis or chronic ischemia.", 4: "Shock with vasopressors leads to NOMI or ischemic colitis." } },
+                { id: "r-cause-chronic", type: "sa", lines: 2,
+                    stem: "Why do patients with chronic mesenteric ischemia develop a fear of eating and weight loss?",
+                    answer: "Meals raise oxygen demand that narrowed arteries cannot meet, so eating causes pain for up to 4 hours.",
+                    explanation: "Pain starts 15–30 minutes after meals and lasts up to 4 hours." },
+                { id: "r-cause-watershed", type: "blank",
+                    html: "Ischemic colitis affects the watershed areas: the [[splenic flexure]] (Griffiths point), the descending colon, and the [[rectosigmoid]] junction (Sudeck point), which account for about [[70]]%. It causes [[LLQ]] pain and hematochezia." },
+                { id: "r-cause-whywater", type: "sa", lines: 2,
+                    stem: "Why are watershed areas the first to be injured in hypoperfusion?",
+                    answer: "They lie at the far ends of two arterial territories, where the branches are smallest, so they lose flow first when pressure falls.",
+                    explanation: "The splenic flexure lies between the territories of the SMA and IMA." },
+            ],
+        },
+        {
+            section: "Symptoms and complications",
+            questions: [
+                { id: "r-sx-match", type: "match",
+                    stem: "Match each presentation to its type of ischemia.",
+                    items: ["Pain out of proportion to examination", "Postprandial pain and weight loss", "LLQ pain and hematochezia after shock"],
+                    options: ["Ischemic colitis", "Acute mesenteric ischemia", "Chronic mesenteric ischemia"],
+                    answer: [1, 2, 0],
+                    explanation: "Acute ischemia hurts before the peritoneum is involved, chronic ischemia hurts with meals, and ischemic colitis bleeds from watershed areas." },
+                { id: "r-sx-mortality", type: "blank",
+                    html: "Mortality is [[60–80]]% in acute mesenteric ischemia but under [[5]]% in nongangrenous ischemic colitis." },
+                { id: "r-sx-peritonitis", type: "sa", lines: 2,
+                    stem: "Why is a rigid abdomen a late sign in acute mesenteric ischemia?",
+                    answer: "Guarding needs inflamed parietal peritoneum, which happens only with full-thickness necrosis or perforation.",
+                    explanation: "Early ischemia causes severe visceral pain with a soft abdomen." },
+            ],
+        },
+        {
+            section: "Diagnosis",
+            questions: [
+                { id: "r-dx-mc", type: "mc",
+                    stem: "Which statement about the diagnosis of acute mesenteric ischemia is correct?",
+                    options: ["CT angiogram is preferred even with renal impairment", "A normal lactate excludes the diagnosis", "Colonoscopy within 48 hours is the main test", "A plain abdominal x-ray is enough to decide on surgery", "LDH rises within the first hour"], answer: 0,
+                    explanation: "CT angiogram is preferred, even with renal impairment; lactate and LDH rise only late.",
+                    notes: { 1: "Lactate rises only late.", 2: "Colonoscopy is for ischemic colitis.", 3: "An x-ray is normal early and cannot show the vessels.", 4: "LDH, like lactate, rises only late." } },
+                { id: "r-dx-colitis", type: "sa", lines: 2,
+                    stem: "Which tests confirm ischemic colitis, and why is the timing important?",
+                    answer: "CT AP and colonoscopy with biopsy within 48 hours, before the mucosal changes heal.",
+                    explanation: "Ischemic colitis: CT AP and colonoscopy with biopsy, within 48 hours." },
+            ],
+        },
+        {
+            section: "Treatment",
+            questions: [
+                { id: "r-tx-match", type: "match",
+                    stem: "Match each treatment to its purpose.",
+                    items: ["NPO, IV fluids, and NGT", "ABX", "Heparin", "Endovascular procedures and surgery", "Avoiding vasopressors"],
+                    options: ["Prevent clotting", "Revascularization", "Bowel decompression", "Prevent vasospasm", "Prevent sepsis"],
+                    answer: [2, 4, 0, 1, 3],
+                    explanation: "Supportive care, sepsis prevention, and anticoagulation come alongside restoring flow." },
+                { id: "r-tx-cause", type: "blank",
+                    stem: "Complete the treatments by cause.",
+                    html: `<table><thead><tr><th>Cause</th><th>Treatment</th></tr></thead><tbody>
+<tr><td>NOMI</td><td>Treat the [[low-flow state]]; catheter-directed [[papaverine]]</td></tr>
+<tr><td>Venous thrombosis</td><td>[[Anticoagulation]]</td></tr>
+<tr><td>Mild ischemic colitis</td><td>[[Supportive]] care</td></tr>
+<tr><td>Moderate ischemic colitis</td><td>Broad-spectrum [[ABX]] and surgical review</td></tr>
+<tr><td>Severe ischemic colitis</td><td>[[Surgery]]</td></tr>
+</tbody></table>` },
+                { id: "r-tx-vaso", type: "sa", lines: 2,
+                    stem: "Why are vasopressors and alpha-agonists avoided in mesenteric ischemia?",
+                    answer: "They constrict the mesenteric arteries, further reducing flow to ischemic bowel; vasospasm is the cause of NOMI.",
+                    explanation: "Avoid vasopressors and alpha-agonists, which cause vasospasm." },
+            ],
+        },
+    ],
+    practice: {
+        scenarios: [
+            {
+                title: "A week of vague pain",
+                keyPoints: [
+                    "Venous ischemia builds over days, with poorly localized pain, in patients with hypercoagulation or portal thrombosis.",
+                    "Venous congestion raises pressure in the bowel wall until arterial blood cannot enter, so oxygen supply falls.",
+                    "CT angiogram shows the clot in the portal vein, SMV, or IMV and the state of the bowel wall.",
+                    "Venous thrombosis is treated with anticoagulation, with surgery if the bowel has died.",
+                    "The trigger of a venous clot shapes follow-up: stopping estrogen and looking for an inherited or acquired hypercoagulable state.",
+                ],
+                blocks: [
+                    { passage: `<p>A 31-year-old woman has 6 days of crampy, poorly localized abdominal pain that has slowly worsened, with nausea and loose stools. She started a combined oral contraceptive 4 months ago. Her mother had a DVT in pregnancy. Temperature 37.6 °C, heart rate 102, BP 118/76. Her abdomen is mildly distended and diffusely tender without guarding.</p>
+${labs(["Test", "Result", "Reference range"], [["WBC", "13.1 × 10⁹/L", "4–11"], ["Lactate", "1.6 mmol/L", "Under 2"], ["Lipase", "Normal", ""], ["β-hCG", "Negative", ""]])}<p><em>Illustrative data.</em></p>`,
+                        questions: [
+                            { id: "s1-type", type: "mc", justify: 15,
+                                stem: "Which type of intestinal ischemia does her history suggest most? Briefly justify your choice.",
+                                options: ["Mesenteric venous thrombosis", "Embolism of the superior mesenteric artery", "Chronic mesenteric ischemia", "NOMI", "Ischemic colitis"], answer: 0,
+                                justifyAnswer: "Pain building over days in a woman on estrogen with a family history of clots.",
+                                explanation: "Venous thrombosis follows hypercoagulation: malignancy, oral contraceptives, pregnancy, factor V Leiden, or protein C or S deficiency.",
+                                notes: { 1: "Embolism causes sudden pain and needs a source such as A-fib.", 2: "Chronic ischemia causes months of postprandial pain in older patients with atherosclerosis.", 3: "NOMI occurs in critically ill patients on vasopressors.", 4: "Ischemic colitis follows hypoperfusion and causes LLQ pain with hematochezia." } },
+                            { id: "s1-lactate", type: "sa", lines: 2,
+                                stem: "Her lactate is normal. Does that make ischemia unlikely? Explain.",
+                                answer: "No: lactate rises only late, once the bowel infarcts, so a normal value does not exclude early ischemia.",
+                                explanation: "Lactate and LDH rise only late." },
+                        ] },
+                    { passage: `<p>CT angiogram: thrombus filling the SMV, extending to the portal confluence. The arteries are patent. A 30 cm segment of jejunum has a thickened, edematous wall with surrounding fluid. The bowel wall enhances, and there is no pneumatosis or free air.</p>`,
+                        questions: [
+                            { id: "s1-mech", type: "sa", lines: 3,
+                                stem: "Explain how a clot in a vein causes ischemia of the bowel wall when the arteries are open.",
+                                answer: "Blocked outflow causes venous congestion and edema, raising wall pressure until arterial blood cannot get in, so oxygen supply falls.",
+                                explanation: "Venous occlusion of the portal vein, SMV, or IMV → venous congestion → decreased oxygen supply." },
+                            { id: "s1-tx", type: "mc", select: 2,
+                                stem: "Which treatments are appropriate now?",
+                                options: ["Anticoagulation with heparin", "NPO, IV fluids, and an NGT", "Catheter-directed papaverine into the SMA", "Emergency embolectomy of the SMA", "Noradrenaline to improve bowel perfusion"], answer: [0, 1],
+                                explanation: "Venous thrombosis is treated with anticoagulation, with bowel decompression and supportive care.",
+                                notes: { 2: "Papaverine treats the vasospasm of NOMI.", 3: "Her arteries are patent; there is no embolus.", 4: "Vasopressors cause vasospasm and are avoided." } },
+                            { id: "s1-surgery", type: "sa", lines: 2,
+                                stem: "Which new finding on examination or imaging would mean she needs surgery?",
+                                answer: "Signs of necrosis or perforation: peritonitis, free air, or a bowel wall that no longer enhances.",
+                                explanation: "Full-thickness necrosis → perforation → pneumoperitoneum and peritonitis." },
+                        ] },
+                    { passage: `<p>She improves on anticoagulation and is discharged on an oral anticoagulant. Testing later shows she is heterozygous for factor V Leiden.</p>`,
+                        questions: [
+                            { id: "s1-follow", type: "sa", lines: 3,
+                                stem: "What should change about her contraception, and why?",
+                                answer: "Stop the combined oral contraceptive: estrogen adds to the hypercoagulation of factor V Leiden; use a non-estrogen method.",
+                                explanation: "Oral contraceptives and factor V Leiden are both causes of hypercoagulation on the page." },
+                        ] },
+                ],
+            },
+            {
+                title: "Afraid to eat",
+                keyPoints: [
+                    "Pain 15–30 minutes after meals, fear of eating, and weight loss in a patient with atherosclerosis are chronic mesenteric ischemia.",
+                    "Collaterals compensate for one narrowed vessel, so symptoms need 2 of the celiac trunk, SMA, and IMA.",
+                    "CT angiogram confirms the diagnosis, and symptomatic disease is revascularized.",
+                    "A narrowed artery can thrombose, turning chronic into acute mesenteric ischemia, which needs heparin and urgent revascularization.",
+                ],
+                blocks: [
+                    { passage: `<p>A 71-year-old man who has smoked for 50 years has 8 months of dull central abdominal pain that starts about 20 minutes after meals and lasts 2–3 hours. He now eats one small meal a day and has lost 11 kg. He had a femoral artery stent for claudication 2 years ago. Upper endoscopy and an abdominal ultrasound last month were normal. His abdomen is soft and nontender, with an epigastric bruit.</p>`,
+                        questions: [
+                            { id: "s2-dx", type: "sa", lines: 3,
+                                stem: "What is the most likely diagnosis? Explain how his eating pattern relates to the mechanism.",
+                                answer: "Chronic mesenteric ischemia: narrowed arteries cannot meet the oxygen demand of digestion, so he eats less to avoid pain.",
+                                explanation: "Atherosclerosis → decreased oxygen supply with increased demand when eating → postprandial pain → fear of eating and weight loss." },
+                            { id: "s2-test", type: "mc",
+                                stem: "Which test should come next?",
+                                options: ["CT angiogram", "Colonoscopy with biopsy", "Serum lactate", "Repeat upper endoscopy", "Gastric emptying study"], answer: 0,
+                                explanation: "CT angiogram is preferred for acute and chronic mesenteric ischemia.",
+                                notes: { 1: "Colonoscopy is for ischemic colitis.", 2: "Lactate is normal in chronic ischemia between meals and rises late in acute ischemia.", 3: "Endoscopy was normal and does not show the vessels.", 4: "Gastric emptying studies test gastroparesis, which does not explain fear of eating with a bruit." } },
+                        ] },
+                    { passage: `<p>CT angiogram: severe narrowing at the origins of the celiac trunk and the SMA, with heavy calcified plaque. The IMA is open and enlarged, with large collateral vessels to the SMA territory. The bowel wall is normal.</p>`,
+                        questions: [
+                            { id: "s2-ima", type: "sa", lines: 3,
+                                stem: "Why is his IMA enlarged, and why has he had symptoms only after meals rather than all the time?",
+                                answer: "The IMA has enlarged as a collateral supply to the territories of the narrowed arteries; it is enough at rest but not for the extra demand of digestion.",
+                                explanation: "Chronic mesenteric ischemia needs 2 of the 3 vessels to be narrowed, because collaterals compensate." },
+                            { id: "s2-tx", type: "mc", justify: 12,
+                                stem: "Which treatment is most appropriate? Briefly justify your choice.",
+                                options: ["Endovascular revascularization", "Anticoagulation alone", "A low-fat diet and a PPI", "Catheter-directed papaverine", "Observation with smaller meals"], answer: 0,
+                                justifyAnswer: "Symptomatic narrowing needs restored flow, which also prevents acute thrombosis.",
+                                explanation: "Chronic mesenteric ischemia is treated with revascularization: endovascular procedures or surgery.",
+                                notes: { 1: "Anticoagulation treats venous thrombosis; it does not open plaque.", 2: "His pain is ischemic, not from acid or the gallbladder.", 3: "Papaverine treats vasospasm in NOMI.", 4: "Smaller meals do not treat the narrowing, and he is already losing weight." } },
+                        ] },
+                    { passage: `<p>While waiting for the procedure, he presents with 5 hours of constant, severe central abdominal pain that began after breakfast and has not settled. His abdomen is soft. Heart rate 112. Lactate 2.4 mmol/L.</p>`,
+                        questions: [
+                            { id: "s2-acute", type: "sa", lines: 3,
+                                stem: "What has most likely happened, and what does he need now?",
+                                answer: "Thrombosis on the SMA plaque, causing acute mesenteric ischemia; he needs CT angiogram, heparin, and urgent revascularization.",
+                                explanation: "Thrombosis on atherosclerosis causes 25–30% of acute mesenteric ischemia, often after a history of postprandial pain." },
+                            { id: "s2-order", type: "order",
+                                stem: "Number these steps in the order they should start.",
+                                items: ["Revascularization", "NPO, IV fluids, and an NGT", "Heparin and ABX", "Resection of any dead bowel"],
+                                order: [1, 2, 0, 3],
+                                explanation: "Supportive care and heparin start at once, revascularization follows, and dead bowel is resected at surgery." },
+                        ] },
+                ],
+            },
+            {
+                title: "After the sepsis",
+                keyPoints: [
+                    "Shock and vasopressors cause ischemic colitis in the watershed areas: the splenic flexure, the descending colon, and the rectosigmoid junction.",
+                    "Ischemic colitis presents with LLQ pain and hematochezia, from leaky vessels in the injured mucosa.",
+                    "It is confirmed with CT AP and colonoscopy with biopsy within 48 hours.",
+                    "Treatment follows severity: supportive when mild, ABX and surgical review when moderate, surgery when severe.",
+                    "Nongangrenous ischemic colitis has a mortality under 5%, unlike acute mesenteric ischemia.",
+                ],
+                blocks: [
+                    { passage: `<p>A 74-year-old woman was admitted 3 days ago with urosepsis and needed noradrenaline for 24 hours. She is now off vasopressors, with BP 124/72. This morning she developed crampy LLQ pain, followed by two episodes of bright red blood mixed with loose stool. Temperature 37.2 °C. Her abdomen is tender in the LLQ without guarding.</p>
+${labs(["Test", "Day 1", "Day 4"], [["Hb (g/L)", "128", "119"], ["WBC (× 10⁹/L)", "18.2", "9.8"], ["Lactate (mmol/L)", "4.1", "1.3"]])}<p><em>Illustrative data.</em></p>`,
+                        questions: [
+                            { id: "s3-dx", type: "sa", lines: 3,
+                                stem: "What is the most likely diagnosis, and how did her admission cause it?",
+                                answer: "Ischemic colitis: septic shock and noradrenaline reduced flow to the watershed areas of the colon.",
+                                explanation: "Shock or vasopressor use → decreased oxygen supply to the splenic flexure, descending colon, and rectosigmoid junction." },
+                            { id: "s3-blood", type: "mc",
+                                stem: "Why does she pass blood?",
+                                options: ["Ischemia makes the mucosal vessels leaky", "An ulcer in the stomach is bleeding", "A diverticulum has ruptured into an artery", "Her clotting has failed from sepsis", "Hemorrhoids have bled from straining"], answer: 0,
+                                explanation: "Increased vascular permeability in ischemic mucosa causes hematochezia.",
+                                notes: { 1: "Upper GI bleeding usually causes melena, and her pain is in the LLQ.", 2: "Diverticular bleeding is painless.", 3: "Her blood loss is small and matches LLQ pain from the colon.", 4: "Hemorrhoids do not explain crampy LLQ pain after shock." } },
+                            { id: "s3-tests", type: "sa", lines: 2,
+                                stem: "Which tests confirm the diagnosis, and when?",
+                                answer: "CT AP and colonoscopy with biopsy, within 48 hours.",
+                                explanation: "The mucosal changes heal quickly, so colonoscopy is done early." },
+                        ] },
+                    { passage: `<p>CT AP: wall thickening from the splenic flexure to the sigmoid colon, with no free air or pneumatosis. Colonoscopy the next day: patchy edema and erythema with small superficial erosions in the descending and sigmoid colon; normal rectum; no ulcers or gangrene. Biopsies show ischemic changes. She is afebrile, her WBC is normal, and the pain is easing.</p>`,
+                        questions: [
+                            { id: "s3-rectum", type: "sa", lines: 2,
+                                stem: "Why is her rectum normal, though the colon just above it is injured?",
+                                answer: "The rectum has a dual blood supply, including the internal iliac arteries, so it keeps its flow when the IMA territory fails.",
+                                explanation: "The watershed areas are at the splenic flexure and rectosigmoid junction; the distal rectum is usually spared." },
+                            { id: "s3-tx", type: "mc", justify: 12,
+                                stem: "Which management is most appropriate? Briefly justify your choice.",
+                                options: ["Supportive care", "Broad-spectrum ABX and surgical review", "Emergency left hemicolectomy", "Heparin and SMA revascularization", "IV corticosteroids"], answer: 0,
+                                justifyAnswer: "Mild disease: superficial erosions only, afebrile, normal WBC, improving pain.",
+                                explanation: "Mild ischemic colitis is treated supportively; moderate needs ABX and surgical review, and severe needs surgery.",
+                                notes: { 1: "ABX and surgical review are for moderate disease.", 2: "Surgery is for severe disease, with gangrene or perforation.", 3: "Ischemic colitis is a low-flow state, not an arterial occlusion.", 4: "Steroids treat IBD." } },
+                            { id: "s3-outlook", type: "sa", lines: 2,
+                                stem: "Her family asks whether this is as dangerous as the bowel ischemia a neighbor died from. How would you explain the difference?",
+                                answer: "Nongangrenous ischemic colitis has a mortality under 5%, while acute mesenteric ischemia has 60–80%.",
+                                explanation: "Ischemic colitis affects a short segment of mucosa that recovers once flow returns." },
+                        ] },
+                ],
+            },
+        ],
+    },
+};
