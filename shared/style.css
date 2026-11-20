@@ -1379,6 +1379,19 @@ body {
     background-color: currentColor;
 }
 
+/* No change, or within the normal range */
+.change.flat {
+    background-color: var(--color-surface-muted);
+    color: var(--color-text-muted);
+}
+
+.change.flat::before {
+    width: 9px;
+    height: 0;
+    border: 0;
+    border-top: 2px solid currentColor;
+}
+
 /* =========================
    Abbreviation popups
 ========================= */
@@ -2249,6 +2262,10 @@ button.mnemonic-item:hover:not(:disabled) {
 
 .mnemonic-list.cols-6 {
     grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+
+.mnemonic-list.cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 @media (max-width: 900px) {

@@ -1042,7 +1042,7 @@ const QUIZ_QUESTIONS = [
     /* ===== Headache and trauma ===== */
     {
         id: "mig-criteria",
-        condition: "migraine",
+        condition: "primary-headaches",
         kind: "memory",
         stem: "A 27-year-old woman has had recurrent left-sided throbbing headaches since her teens, each lasting about a day, with nausea and a wish to lie in a dark, quiet room. Walking up stairs makes them worse. Examination between attacks is normal.",
         leadIn: "What is the most likely diagnosis?",
@@ -1062,7 +1062,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "mig-aura",
-        condition: "migraine",
+        condition: "primary-headaches",
         kind: "memory",
         stem: "A 31-year-old man sees a shimmering zigzag line that spreads slowly across his left visual field over 20 minutes and then fades completely, followed by a throbbing headache.",
         leadIn: "What process is thought to cause his visual symptoms?",
@@ -1082,7 +1082,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "mig-cgrp",
-        condition: "migraine",
+        condition: "primary-headaches",
         kind: "reasoning",
         stem: "A new drug for migraine blocks a neuropeptide released from trigeminal nerve terminals that dilates dural vessels and causes neurogenic inflammation.",
         leadIn: "Which neuropeptide does the drug target?",
@@ -1098,7 +1098,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "mig-triptan-contra",
-        condition: "migraine",
+        condition: "primary-headaches",
         kind: "reasoning",
         stem: "A 58-year-old man with migraine had a myocardial infarction last year. His attacks are moderate to severe and do not respond to ibuprofen.",
         leadIn: "Which acute treatment should be avoided?",
@@ -1114,7 +1114,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "mig-prevention",
-        condition: "migraine",
+        condition: "primary-headaches",
         kind: "memory",
         stem: "A 34-year-old woman has 8 disabling migraine attacks a month despite acute treatment. She also has hypertension and wants to lose weight.",
         leadIn: "Which preventive option best fits?",
@@ -1134,7 +1134,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "mig-red-flag",
-        condition: "migraine",
+        condition: "primary-headaches",
         kind: "reasoning",
         stem: "A 45-year-old woman with lifelong migraine has the worst headache of her life, reaching full intensity within a minute while lifting a box.",
         leadIn: "What is the most appropriate next step?",
@@ -1150,7 +1150,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "mig-ocp",
-        condition: "migraine",
+        condition: "primary-headaches",
         kind: "reasoning",
         stem: "A 24-year-old woman who has migraine with aura asks to start a combined estrogen-progestin pill for contraception.",
         leadIn: "Why is this pill avoided?",
@@ -1166,7 +1166,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "mig-moh",
-        condition: "migraine",
+        condition: "primary-headaches",
         kind: "memory",
         stem: "A 40-year-old woman with migraine now has headaches on 20 days a month. She takes paracetamol or a triptan almost every day.",
         leadIn: "What is the most likely cause of the increase?",
@@ -1182,7 +1182,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "tth-features",
-        condition: "tension-headache",
+        condition: "primary-headaches",
         kind: "memory",
         stem: "A 38-year-old office worker has headaches most afternoons, described as a tight band around her head. They are mild to moderate, do not stop her working, and come without nausea. Her neck and scalp muscles are tender.",
         leadIn: "What is the most likely diagnosis?",
@@ -1198,7 +1198,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "tth-trigger",
-        condition: "tension-headache",
+        condition: "primary-headaches",
         kind: "memory",
         stem: "A 29-year-old student has frequent band-like headaches during exam weeks that ease on holidays.",
         leadIn: "Which factor most often triggers this type of headache?",
@@ -1214,7 +1214,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "tth-prevention",
-        condition: "tension-headache",
+        condition: "primary-headaches",
         kind: "reasoning",
         stem: "A 45-year-old man has bilateral pressing headaches on 18 days a month for a year. Neurologic examination is normal, and he uses ibuprofen often.",
         leadIn: "Which drug is best for prevention?",
@@ -1233,7 +1233,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "tth-vs-mig",
-        condition: "tension-headache",
+        condition: "primary-headaches",
         kind: "memory",
         stem: "Two patients have recurrent headaches. One has bilateral pressing pain that walking does not worsen; the other has unilateral throbbing pain worsened by activity, with nausea.",
         leadIn: "Which feature best separates the first patient's headache from migraine?",
@@ -1249,7 +1249,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "clu-features",
-        condition: "cluster-headache",
+        condition: "primary-headaches",
         kind: "memory",
         stem: "A 35-year-old man who smokes wakes at 2 am most nights for 3 weeks with excruciating pain behind his right eye lasting 45 minutes. He paces the room, and his right eye waters and his right nostril runs.",
         leadIn: "What is the most likely diagnosis?",
@@ -1265,7 +1265,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "clu-oxygen",
-        condition: "cluster-headache",
+        condition: "primary-headaches",
         kind: "reasoning",
         stem: "A 40-year-old man presents during a typical attack of cluster headache.",
         leadIn: "What is the most appropriate acute treatment?",
@@ -1285,7 +1285,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "clu-verapamil",
-        condition: "cluster-headache",
+        condition: "primary-headaches",
         kind: "reasoning",
         stem: "A 38-year-old man has a new bout of cluster headaches with 3 attacks a day.",
         leadIn: "Which drug is first line for prevention, and what should be monitored?",
@@ -1301,7 +1301,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "clu-horner",
-        condition: "cluster-headache",
+        condition: "primary-headaches",
         kind: "reasoning",
         stem: "During an attack of cluster headache, a man's right eyelid droops and his right pupil becomes small.",
         leadIn: "Which pathway explains these signs?",
@@ -1320,7 +1320,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "edh-lucid",
-        condition: "epidural-hematoma",
+        condition: "epidural-subdural-hematoma",
         kind: "memory",
         stem: "A 19-year-old man is hit on the side of the head by a baseball, briefly loses consciousness, then is alert and talking. An hour later he becomes drowsy, and his right pupil dilates.",
         leadIn: "Which vessel is most likely injured?",
@@ -1339,7 +1339,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "edh-ct",
-        condition: "epidural-hematoma",
+        condition: "epidural-subdural-hematoma",
         kind: "memory",
         stem: "A 22-year-old woman has a head CT after a fall from a horse.",
         leadIn: "Which CT appearance indicates an epidural hematoma?",
@@ -1355,7 +1355,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "edh-treatment",
-        condition: "epidural-hematoma",
+        condition: "epidural-subdural-hematoma",
         kind: "reasoning",
         stem: "A 20-year-old man with an epidural hematoma on CT has a falling GCS, a dilated left pupil, and midline shift.",
         leadIn: "What is the most appropriate management?",
@@ -1374,7 +1374,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "edh-age",
-        condition: "epidural-hematoma",
+        condition: "epidural-subdural-hematoma",
         kind: "reasoning",
         stem: "Epidural hematomas are much more common in adolescents and young adults than in older adults.",
         leadIn: "What best explains this?",
@@ -1390,7 +1390,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "sdh-chronic",
-        condition: "subdural-hematoma",
+        condition: "epidural-subdural-hematoma",
         kind: "memory",
         stem: "A 79-year-old man on warfarin has 3 weeks of headache, fluctuating confusion, and a new unsteady gait. His daughter recalls a minor fall a month ago.",
         leadIn: "What is the most likely diagnosis?",
@@ -1406,7 +1406,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "sdh-veins",
-        condition: "subdural-hematoma",
+        condition: "epidural-subdural-hematoma",
         kind: "memory",
         stem: "An 84-year-old woman with brain atrophy develops a subdural hematoma after a minor bump to the head.",
         leadIn: "Which structures most likely bled?",
@@ -1422,7 +1422,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "sdh-ct",
-        condition: "subdural-hematoma",
+        condition: "epidural-subdural-hematoma",
         kind: "memory",
         stem: "A head CT shows a crescent-shaped collection along the left convexity that crosses the coronal suture but stops at the falx.",
         leadIn: "What is this collection?",
@@ -1438,7 +1438,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "sdh-infant",
-        condition: "subdural-hematoma",
+        condition: "epidural-subdural-hematoma",
         kind: "reasoning",
         stem: "A 4-month-old boy is brought in drowsy and vomiting. His parents say he rolled off a sofa. CT shows bilateral subdural hematomas of different ages, and there are retinal hemorrhages.",
         leadIn: "What is the most appropriate next step?",
@@ -1454,7 +1454,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "sdh-burr",
-        condition: "subdural-hematoma",
+        condition: "epidural-subdural-hematoma",
         kind: "memory",
         stem: "A 76-year-old man has a symptomatic chronic subdural hematoma with mild midline shift. His anticoagulant has been reversed.",
         leadIn: "Which procedure is usually used?",

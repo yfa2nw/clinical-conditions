@@ -697,8 +697,9 @@
 }
 
 .renal-water.is-filtrate {
+    stroke-dasharray: 0.01 2.5;
     stroke-width: 8;
-    animation-duration: 2.4s;
+    animation-duration: 6s;
 }
 
 @keyframes water-flow {

@@ -8,6 +8,7 @@
 
 import { readFileSync, writeFileSync } from "node:fs";
 import vm from "node:vm";
+import { articleWords, quizGoal, quizTarget } from "./quiz-target.mjs";
 
 const APPLY = process.argv.includes("--apply");
 const BANKS = [
@@ -17,16 +18,13 @@ const BANKS = [
     { system: "Neurology", file: "neuro/physiology-questions.js", page: "neuro/physiology.html", kind: "physiology" },
     { system: "Renal", file: "renal/questions.js", page: "renal/index.html", kind: "clinical" },
 ];
-const SPECIAL = new Set(["abdominal-pain", "liver-tests", "localizing-lesions", "ruling-out-mimics", "neuroimaging"]);
-// Condition pages the site owner asked to have a special topic's 40 questions
-const LARGE = new Set(["acid-base"]);
 // Pages rewritten to the new style; add each page here once its quiz is done
-const DONE = new Set(["esophagitis", "abdominal-pain", "liver-tests", "pancreatitis", "appendicitis", "hepatic-metabolic", "hepatic-iatrogenic", "hepatic-neoplastic", "hepatic-other", "cholangitis", "biliary-fistula", "biliary-cancer", "esophageal-motility", "gerd", "gastritis", "pud", "gastric-tumors", "malabsorption", "diverticular-diseases", "ibd", "liver-failure", "biliary-stones", "cholecystitis", "choledocholithiasis", "ibs", "diarrhea", "intestinal-ischemia", "gi-bleeding-obstruction", "hepatic-vascular", "hepatic-infectious", "hepatic-traumatic", "hepatic-autoimmune", "acid-base"]);
+const DONE = new Set(["abdominal-pain", "liver-tests", "pancreatitis", "appendicitis", "hepatic-metabolic", "hepatic-iatrogenic", "hepatic-neoplastic", "hepatic-other", "biliary-cancer", "esophageal-motility", "gastric-tumors", "malabsorption", "diverticular-diseases", "ibd", "liver-failure", "ibs", "diarrhea", "intestinal-ischemia", "gi-bleeding-obstruction", "hepatic-vascular", "hepatic-infectious", "hepatic-traumatic", "hepatic-autoimmune", "metabolic-acidosis", "metabolic-alkalosis", "gerd-esophagitis", "gastritis-pud", "gallbladder-stones", "bile-duct-stones"]);
 
-function target(id, kind) {
-    if (SPECIAL.has(id) || LARGE.has(id)) return { memory: 15, reasoning: 15, analysis: 10 };
-    if (/-pharm-/.test(id)) return { memory: 6, reasoning: 6, analysis: 3 };
-    return { memory: 10, reasoning: 10, analysis: 5 };
+// Quiz length follows page size (tools/quiz-target.mjs). A rewritten page keeps its count while it is within 10 of its target.
+function target(id, system, current) {
+    const words = articleWords(system, id);
+    return DONE.has(id) ? quizGoal(words, current) : quizTarget(words);
 }
 
 const plain = (text = "") => text.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
@@ -86,7 +84,7 @@ for (const bank of BANKS) {
     const detail = [];
     for (const id of pages) {
         const onPage = questions.filter((q) => q.condition === id);
-        const want = target(id, bank.kind);
+        const want = target(id, bank.page.split("/")[0], onPage.length);
         const done = DONE.has(id);
         const level = (q) => q.kind || q.proposed;
         const have = Object.fromEntries(["memory", "reasoning", "analysis"].map((d) => [d, onPage.filter((q) => level(q) === d).length]));

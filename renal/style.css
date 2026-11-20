@@ -253,3 +253,8 @@ body {
     font-weight: 700;
     text-anchor: middle;
 }
+
+/* A gap in a capillary wall, drawn over its outline */
+.rn-gap {
+    fill: var(--color-surface);
+}

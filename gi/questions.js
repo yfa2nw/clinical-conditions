@@ -23,12 +23,12 @@
 
 const QUIZ_QUESTIONS = [
 
-    /* ===== Esophagitis ===== */
+    /* ===== GERD and Esophagitis ===== */
 
     /* --- Memory --- */
     {
         id: "eso-common-infection",
-        condition: "esophagitis",
+        condition: "gerd-esophagitis",
         kind: "memory",
         stem: "Which organism is the most common cause of infectious esophagitis?",
         options: ["Candida", "Herpes simplex virus", "Cytomegalovirus", "Helicobacter pylori", "Epstein-Barr virus"],
@@ -43,29 +43,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "eso-candida-path",
-        condition: "esophagitis",
-        kind: "memory",
-        stem: "Endoscopy shows adherent white plaques along the esophagus that do not wash off. What would a biopsy of the plaques most likely show?",
-        options: ["Pseudohyphae and budding yeast", "Multinucleated giant cells", "Intranuclear and cytoplasmic inclusions in endothelial cells", "15 or more eosinophils per high-power field", "Goblet cells in columnar epithelium"],
-        answer: 0,
-        explanation: `<p><strong>White plaques that cannot be washed off are Candida,</strong> and biopsy or brushings show pseudohyphae and budding yeast. The plaques are colonies of fungus and debris stuck to inflamed mucosa.</p>
-<p>Each infectious cause has its own endoscopic and histologic signature, which is why EGD with biopsy identifies the cause:</p>
-<ul>
-<li><strong>Candida:</strong> white plaques; yeast and pseudohyphae.</li>
-<li><strong>HSV:</strong> small, deep ulcers; multinucleated giant cells with Cowdry type A inclusions.</li>
-<li><strong>CMV:</strong> large, shallow ulcers; intranuclear and cytoplasmic inclusions.</li>
-</ul>`,
-        notes: {
-            1: "Multinucleated giant cells with Cowdry type A inclusions are the signature of HSV esophagitis.",
-            2: "Intranuclear and cytoplasmic inclusions point to CMV, which causes large, shallow ulcers rather than plaques.",
-            3: "15 or more eosinophils per high-power field defines eosinophilic esophagitis, which shows rings and furrows; its white exudates are eosinophil collections, not yeast.",
-            4: "Goblet cells in columnar epithelium are intestinal metaplasia: Barrett esophagus.",
-        },
-    },
-    {
         id: "eso-hsv",
-        condition: "esophagitis",
+        condition: "gerd-esophagitis",
         kind: "memory",
         stem: "A patient receiving chemotherapy has small, deep esophageal ulcers. Biopsy shows multinucleated giant cells with Cowdry type A inclusions. Which organism is responsible?",
         options: ["Herpes simplex virus", "Cytomegalovirus", "Candida", "Epstein-Barr virus", "Human papillomavirus type 16"],
@@ -80,24 +59,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "eso-ppi",
-        condition: "esophagitis",
-        kind: "memory",
-        stem: "Which treatment is given in esophagitis of every cause, alongside treating the cause itself?",
-        options: ["A PPI", "Oral fluconazole", "Swallowed topical steroids", "An H. pylori eradication regimen", "Esophageal dilation"],
-        answer: 0,
-        explanation: `<p><strong>Every patient with esophagitis gets a PPI,</strong> then the cause is treated. Whatever started the injury, acid refluxing onto inflamed mucosa makes it worse, so lowering acid prevents further damage while the cause is dealt with.</p>
-<p>In eosinophilic esophagitis the PPI is also the first treatment for the condition itself, before diet or topical steroids.</p>`,
-        notes: {
-            1: "Fluconazole treats Candida esophagitis only.",
-            2: "Swallowed topical steroids (fluticasone or budesonide) treat eosinophilic esophagitis only.",
-            3: "H. pylori eradication treats gastritis and peptic ulcer disease; H. pylori is not a cause of esophagitis.",
-            4: "Dilation treats strictures, a complication, and only once the inflammation is controlled.",
-        },
-    },
-    {
         id: "eso-pill-drugs",
-        condition: "esophagitis",
+        condition: "gerd-esophagitis",
         kind: "memory",
         stem: "Which of the following drugs is a classic cause of pill esophagitis?",
         options: ["Doxycycline", "Amlodipine", "Metformin", "Levothyroxine", "Atorvastatin"],
@@ -113,7 +76,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "eso-alkali",
-        condition: "esophagitis",
+        condition: "gerd-esophagitis",
         kind: "memory",
         stem: "What type of tissue injury does swallowing a strong alkali, such as drain cleaner, cause?",
         options: ["Liquefactive necrosis that penetrates deeply", "Coagulative necrosis that stays more superficial", "Caseous necrosis with granulomas", "Fat necrosis with saponification", "Fibrinoid necrosis of vessel walls"],
@@ -129,7 +92,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "eso-eoe-count",
-        condition: "esophagitis",
+        condition: "gerd-esophagitis",
         kind: "memory",
         stem: "How many eosinophils per high-power field on esophageal biopsy support a diagnosis of eosinophilic esophagitis?",
         options: ["15 or more", "1 or more", "5 or more", "50 or more", "Any number, if rings are seen"],
@@ -143,107 +106,11 @@ const QUIZ_QUESTIONS = [
             4: "Rings support the diagnosis, but histology confirms it, and up to 10% of patients have a normal-looking esophagus.",
         },
     },
-    {
-        id: "eso-barrett",
-        condition: "esophagitis",
-        kind: "memory",
-        stem: "Which cancer does Barrett esophagus increase the risk of?",
-        options: ["Esophageal adenocarcinoma", "Esophageal squamous cell carcinoma", "Gastric MALT lymphoma", "Gastrointestinal stromal tumor", "Small cell carcinoma"],
-        answer: 0,
-        explanation: `<p><strong>Barrett esophagus leads to adenocarcinoma.</strong> Chronic injury replaces the normal squamous lining with intestinal-type columnar epithelium with goblet cells (intestinal metaplasia). Glandular epithelium becomes dysplastic and then forms a glandular cancer, adenocarcinoma, in the distal esophagus.</p>
-<p>The sequence is: chronic injury → intestinal metaplasia → dysplasia → esophageal adenocarcinoma.</p>`,
-        notes: {
-            1: "Squamous cell carcinoma arises from the native squamous lining, linked to smoking and alcohol, not from Barrett metaplasia.",
-            2: "MALT lymphoma arises in the stomach, driven by H. pylori.",
-            3: "GIST arises from interstitial cells of Cajal in the wall, not from the mucosa.",
-            4: "Small cell carcinoma of the esophagus is rare and unrelated to Barrett esophagus.",
-        },
-    },
-    {
-        id: "eso-eoe",
-        condition: "esophagitis",
-        kind: "memory",
-        stem: "A 19-year-old man with asthma and atopic dermatitis has years of dysphagia to solids and now a piece of steak stuck in his esophagus. Endoscopy shows concentric rings and longitudinal furrows. What is the most likely diagnosis?",
-        options: ["Eosinophilic esophagitis", "Gastroesophageal reflux disease", "Achalasia", "Candida esophagitis", "Pill-induced esophagitis"],
-        answer: 0,
-        explanation: `<p><strong>Atopy, food impaction, and rings with furrows are eosinophilic esophagitis.</strong> It is an allergic reaction to food and air antigens, so it clusters with asthma, allergic rhinitis, and atopic dermatitis.</p>
-<p>Eosinophilic inflammation stiffens and narrows the esophagus, giving rings, furrows, white exudates, and strictures, which is why solid food sticks. Biopsy shows 15 or more eosinophils per high-power field.</p>`,
-        notes: {
-            1: "GERD causes heartburn and regurgitation, and reflux is worked up separately; rings, furrows, and atopy point to EoE.",
-            2: "Achalasia causes dysphagia to both solids and liquids, with a dilated esophagus and a tight LES, not rings and furrows.",
-            3: "Candida causes white plaques and odynophagia in immunocompromised patients.",
-            4: "Pill-induced esophagitis causes an ulcer in the middle third soon after starting a culprit drug.",
-        },
-    },
-    {
-        id: "eso-doxy",
-        condition: "esophagitis",
-        kind: "memory",
-        stem: "A 17-year-old started doxycycline for acne 10 days ago and takes it with a sip of water just before bed. She now has sharp retrosternal pain when swallowing. What is the most likely diagnosis?",
-        options: ["Pill-induced esophagitis", "Gastroesophageal reflux disease", "Eosinophilic esophagitis", "Candida esophagitis", "Esophageal perforation"],
-        answer: 0,
-        explanation: `<p><strong>A culprit drug, taken lying down with little water, followed by painful swallowing within days, is pill-induced esophagitis.</strong> The tablet lodges in the esophagus and injures the mucosa where it sits.</p>
-<p>Symptoms start within hours to 10 days of the pill, and EGD shows an ulcer in the middle third. Treatment is to stop the drug and take tablets with at least 6 oz of water, staying upright for 30 minutes.</p>`,
-        notes: {
-            1: "GERD causes heartburn and regurgitation over a longer time; she has no reflux history, and the timing fits the new drug.",
-            2: "Eosinophilic esophagitis occurs in atopic patients with dysphagia and food impaction, not acute pain after a new drug.",
-            3: "Candida esophagitis needs impaired cell-mediated immunity, which she does not have.",
-            4: "Perforation causes severe chest pain with pneumomediastinum and systemic illness; she is otherwise well.",
-        },
-    },
 
     /* --- Reasoning --- */
     {
-        id: "eso-candida",
-        condition: "esophagitis",
-        kind: "reasoning",
-        stem: "A 34-year-old man with HIV who stopped antiretroviral therapy a year ago has 2 weeks of painful swallowing. His CD4 count is 62/µL, and white plaques on his buccal mucosa scrape off, leaving a red base. He is stable and can drink. What is the most appropriate next step?",
-        options: ["Empiric oral fluconazole", "Oral acyclovir", "IV ganciclovir", "Topical nystatin", "EGD with biopsy before any treatment"],
-        answer: 0,
-        explanation: `<p><strong>Odynophagia with oral thrush in an immunocompromised patient is treated empirically with oral fluconazole.</strong> Candida causes most infectious esophagitis, and thrush makes it very likely, so treatment starts without waiting for endoscopy.</p>
-<p>Treatment is systemic, not topical, for 14–21 days, because topical agents reach only the mouth. Endoscopy with biopsy is kept for patients who do not improve.</p>`,
-        notes: {
-            1: "Acyclovir treats HSV esophagitis, which causes small, deep ulcers; oral thrush points to Candida.",
-            2: "Ganciclovir treats CMV esophagitis, which causes large, shallow ulcers.",
-            3: "Topical nystatin treats only oral thrush; esophageal candidiasis always needs systemic therapy.",
-            4: "EGD with biopsy is for patients who fail empiric antifungal treatment, or when the picture is unclear.",
-        },
-    },
-    {
-        id: "eso-pill",
-        condition: "esophagitis",
-        kind: "reasoning",
-        stem: "A 67-year-old woman started weekly alendronate 3 weeks ago and takes it with a sip of water just before lying down. She now has retrosternal pain when swallowing. Which instruction would most likely have prevented this?",
-        options: ["Full glass of water, then stay upright for 30 minutes", "Take it with a large meal so the food can carry it down", "Take it with a calcium supplement", "Crush it and mix it with food", "Take it with a glass of milk"],
-        answer: 0,
-        explanation: `<p><strong>Plenty of water and staying upright clear the tablet into the stomach,</strong> so it never sits against the esophageal wall. Pill esophagitis happens when a tablet lodges, usually in the mid-esophagus, and injures the mucosa by direct contact.</p>
-<p>The page's advice is at least 6 oz of water and 30 minutes upright. For bisphosphonates there is a second reason: they must be taken fasting, because food and calcium block their absorption.</p>`,
-        notes: {
-            1: "Food sharply reduces bisphosphonate absorption, so alendronate is taken fasting.",
-            2: "Calcium binds alendronate in the gut and blocks its absorption.",
-            3: "Alendronate must be swallowed whole; crushing exposes the mucosa to the drug and food blocks absorption.",
-            4: "Milk contains calcium, which binds alendronate.",
-        },
-    },
-    {
-        id: "eso-left-atrium",
-        condition: "esophagitis",
-        kind: "reasoning",
-        stem: "A 70-year-old woman with severe mitral stenosis develops pill esophagitis from KCl tablets. Endoscopy shows an ulcer in the middle third of the esophagus. Why did the tablet lodge there?",
-        options: ["The enlarged left atrium in front of it narrows it", "The right ventricle compresses the esophagus in front", "The esophagus passes through the pericardial sac", "The lower esophageal sphincter sits in the middle third", "Mid-esophageal mucosa secretes less mucus than elsewhere"],
-        answer: 0,
-        explanation: `<p><strong>The esophagus lies directly behind the left atrium,</strong> so when mitral stenosis enlarges the atrium, it narrows the mid-esophagus. The aortic arch crosses the esophagus at a similar level. Tablets slow down and lodge at these narrowings, so pill esophagitis is classically an ulcer in the middle third.</p>
-<p>The same relationship is why transesophageal echocardiography images the left atrium so well.</p>`,
-        notes: {
-            1: "The right ventricle is anterior and does not touch the esophagus; the left atrium is the chamber behind it.",
-            2: "The esophagus runs in the posterior mediastinum behind the pericardium, not through the pericardial sac.",
-            3: "The LES is at the gastroesophageal junction, in the distal esophagus.",
-            4: "Mucus secretion does not explain the site; extrinsic narrowing does.",
-        },
-    },
-    {
         id: "eso-pill-mechanism",
-        condition: "esophagitis",
+        condition: "gerd-esophagitis",
         kind: "reasoning",
         stem: "How does a tablet such as KCl or doxycycline cause pill esophagitis?",
         options: ["It sticks to the mucosa and injures it by contact", "It is absorbed and reaches the mucosa through the blood", "It triggers an IgE-mediated allergic infiltrate", "It weakens the LES, so acid refluxes onto the mucosa", "It suppresses immunity, allowing Candida to grow"],
@@ -259,7 +126,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "eso-caustic",
-        condition: "esophagitis",
+        condition: "gerd-esophagitis",
         kind: "reasoning",
         stem: "A 24-year-old man is brought in 1 hour after drinking liquid drain cleaner. He is drooling, with oropharyngeal burns, but is speaking clearly and stable. Which action should be avoided?",
         options: ["Inducing vomiting", "Keeping him NPO", "Assessing and securing the airway", "EGD within 24 hours to grade the injury", "IV fluids"],
@@ -274,24 +141,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "eso-stricture",
-        condition: "esophagitis",
-        kind: "reasoning",
-        stem: "Six weeks after recovering from an alkali ingestion, a man develops progressive dysphagia to solids. What is the most likely explanation?",
-        options: ["Healing scar has narrowed the lumen", "Barrett esophagus has developed", "The alkali has caused achalasia", "Candida has colonized the healed mucosa", "A new pill esophagitis has developed"],
-        answer: 0,
-        explanation: `<p><strong>Strictures are the main late complication of caustic injury.</strong> Deep injury heals by fibrosis, and the scar contracts, narrowing the lumen. A narrowed lumen catches solids first, so dysphagia to solids progresses over weeks.</p>
-<p>The same mechanism, healing that narrows the lumen, gives strictures after severe reflux or eosinophilic esophagitis.</p>`,
-        notes: {
-            1: "Barrett esophagus develops after years of chronic reflux injury, not weeks after one caustic burn.",
-            2: "Achalasia is a loss of inhibitory neurons in the esophageal wall, not a result of caustic injury.",
-            3: "Candida causes odynophagia with plaques in immunocompromised patients, not progressive narrowing.",
-            4: "Nothing suggests a new culprit drug; progressive narrowing after a deep burn is a stricture.",
-        },
-    },
-    {
         id: "eso-candida-systemic",
-        condition: "esophagitis",
+        condition: "gerd-esophagitis",
         kind: "reasoning",
         stem: "A patient with Candida esophagitis asks why he cannot use the antifungal mouthwash that cleared his oral thrush last year. What is the best explanation?",
         options: ["Topical agents reach only the mouth, so esophageal disease needs systemic fluconazole", "Mouthwash would be absorbed and become toxic", "Esophageal Candida is always resistant to all azoles", "Mouthwash would mask symptoms and delay the diagnosis", "Topical agents work only against HSV"],
@@ -306,24 +157,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "eso-eoe-diet",
-        condition: "esophagitis",
-        kind: "reasoning",
-        stem: "A 24-year-old man with allergic rhinitis is diagnosed with eosinophilic esophagitis after a food impaction. He has completed a PPI trial. Which treatment targets the trigger of his condition?",
-        options: ["Eliminating trigger foods such as cow's milk, wheat, and egg", "Laparoscopic Nissen fundoplication", "Long-term oral fluconazole", "Pneumatic dilation of the LES", "Stopping all oral medications for 2 weeks"],
-        answer: 0,
-        explanation: `<p><strong>Eosinophilic esophagitis is an allergic reaction to food and air antigens,</strong> so removing trigger foods removes the cause. The usual triggers are cow's milk, wheat, peanuts and tree nuts, egg, soy, and seafood.</p>
-<p>The page's order is a PPI first, then either food elimination or swallowed topical steroids (fluticasone or budesonide) for 8 weeks. Strictures are dilated once the inflammation is treated.</p>`,
-        notes: {
-            1: "Fundoplication treats refractory GERD; EoE is allergic, not reflux-driven.",
-            2: "Fluconazole treats Candida esophagitis.",
-            3: "Pneumatic dilation of the LES treats achalasia.",
-            4: "Medications are not the trigger here; that approach fits pill esophagitis, where one culprit drug is stopped.",
-        },
-    },
-    {
         id: "eso-perforation",
-        condition: "esophagitis",
+        condition: "gerd-esophagitis",
         kind: "reasoning",
         stem: "A 52-year-old man with erosive esophagitis develops sudden severe chest pain after forceful vomiting. He is febrile and tachycardic, with crepitus in the neck, and a CXR shows air in the mediastinum. How should the suspected diagnosis be confirmed?",
         options: ["Contrast esophagram", "Esophageal manometry", "24-hour pH monitoring", "Repeat EGD with biopsy", "Barium enema"],
@@ -339,7 +174,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "eso-eoe-ppi-first",
-        condition: "esophagitis",
+        condition: "gerd-esophagitis",
         kind: "reasoning",
         stem: "Why are biopsies for suspected eosinophilic esophagitis taken after an 8-week PPI trial?",
         options: ["To separate eosinophilic esophagitis from GERD, which can also bring eosinophils", "Because PPIs make eosinophils easier to count", "Because PPIs cure eosinophilic esophagitis in all patients", "To allow Candida to clear before biopsy", "Because biopsy is unsafe while the mucosa is inflamed"],
@@ -357,7 +192,7 @@ const QUIZ_QUESTIONS = [
     /* --- Analysis --- */
     {
         id: "eso-set-cmv-1",
-        condition: "esophagitis",
+        condition: "gerd-esophagitis",
         kind: "analysis",
         set: "eso-cmv",
         passage: `<p>A 58-year-old man who had a kidney transplant 4 months ago takes tacrolimus, mycophenolate, and prednisolone. He has had 1 week of severe pain on swallowing. There is no oral thrush. EGD shows several large, shallow ulcers in the distal esophagus, with no plaques. Biopsies are taken from the ulcer edges and bases.</p>
@@ -385,7 +220,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "eso-set-cmv-2",
-        condition: "esophagitis",
+        condition: "gerd-esophagitis",
         kind: "analysis",
         set: "eso-cmv",
         stem: "Which treatment plan is most appropriate for this patient?",
@@ -402,24 +237,8 @@ const QUIZ_QUESTIONS = [
         info: "Ganciclovir and valganciclovir are the usual CMV antivirals; reducing immunosuppression is sometimes considered alongside treatment by the transplant team.",
     },
     {
-        id: "eso-caustic-late",
-        condition: "esophagitis",
-        kind: "analysis",
-        stem: `<p>A 40-year-old woman swallowed an alkaline cleaning product 5 days ago. She was managed at a rural hospital without endoscopy and is now transferred, eating soft food and with mild odynophagia. Her vital signs are normal and a CXR shows no free air. The receiving team plans a routine EGD today "to grade the injury."</p><p>What is the best response to this plan?</p>`,
-        options: ["Defer EGD now, because healing tissue is most friable and perforation risk is high", "Proceed today, because grading is needed before any feeding", "Proceed today, because grading predicts strictures at any time", "Induce vomiting first to clear residual alkali", "Start swallowed topical steroids before EGD"],
-        answer: 0,
-        explanation: `<p><strong>EGD is safest within 24 hours; after 96 hours, friable healing tissue risks perforation.</strong> At day 5 she is past the window when grading is useful and safe, and she is clinically stable without signs of perforation.</p>
-<p>The timing follows from how caustic injury heals. Early on, the mucosa is injured but still holds together, so endoscopy can grade the burn and predict strictures. Over the following days, necrotic tissue sloughs and the wall is at its weakest before fibrosis strengthens it. Instrumenting it then can tear it. Her main future risk is a stricture, which presents later with dysphagia.</p>`,
-        notes: {
-            1: "She is already eating soft food; the danger of EGD at day 5 outweighs the benefit of grading.",
-            2: "Grading is useful in the first 24 hours; after 96 hours the risk of perforation dominates.",
-            3: "Vomiting is never induced after caustic ingestion, and there is no residual alkali at day 5.",
-            4: "Topical steroids treat eosinophilic esophagitis, not caustic injury.",
-        },
-    },
-    {
         id: "eso-eoe-normal-scope",
-        condition: "esophagitis",
+        condition: "gerd-esophagitis",
         kind: "analysis",
         stem: `<p>A 22-year-old man with asthma and allergic rhinitis has 2 years of intermittent dysphagia to meat and bread, with one episode of food impaction. He has completed an 8-week PPI trial without improvement. EGD today shows a normal-looking esophagus with no rings, furrows, exudates, or strictures.</p><p>What is the most appropriate next step during this EGD?</p>`,
         options: ["Take biopsies from the proximal, mid, and distal esophagus", "End the procedure, since a normal EGD excludes eosinophilic esophagitis", "Take a single biopsy from the gastroesophageal junction", "Dilate the esophagus empirically", "Arrange esophageal manometry instead of biopsy"],
@@ -433,20 +252,393 @@ const QUIZ_QUESTIONS = [
             4: "Manometry suits suspected motility disorders such as achalasia; his atopy and food impaction point to EoE, which needs histology.",
         },
     },
+
+    /* --- Memory --- */
     {
-        id: "eso-pill-bleed",
-        condition: "esophagitis",
-        kind: "analysis",
-        stem: `<p>A 78-year-old woman with A-fib and an enlarged left atrium takes KCl tablets at night, along with a DOAC. Over a week she has developed painful swallowing, and today she vomited blood twice. She is alert, with a heart rate of 104 and a BP of 118/72. Her hemoglobin has fallen from 128 to 104 g/L. A CXR shows no free air.</p><p>Which is the most appropriate next investigation?</p>`,
-        options: ["EGD with biopsy", "Contrast esophagram", "Oral fluconazole as a diagnostic trial", "Esophageal manometry", "CT angiogram of the chest"],
+        id: "gerd-barrett-def",
+        condition: "gerd-esophagitis",
+        kind: "memory",
+        stem: "Which finding defines Barrett esophagus?",
+        options: ["Salmon mucosa 1 cm or more above the junction, with goblet cells", "White plaques above the junction that do not wash off", "Rings and longitudinal furrows along the whole length of the esophagus", "A thin ring at the junction that narrows the lumen", "Squamous mucosa extending 1 cm into the gastric cardia"],
         answer: 0,
-        explanation: `<p><strong>Bleeding from esophagitis is investigated with EGD with biopsy.</strong> Several clues link her bleeding to pill esophagitis: a culprit drug (KCl), taken at night when lying down, and an enlarged left atrium that narrows the mid-esophagus where tablets lodge. A DOAC makes an ulcer more likely to bleed.</p>
-<p>EGD can see the ulcer, treat the bleeding point, and biopsy to confirm the cause. The complications of esophagitis each have their own test: bleeding needs EGD, while perforation needs a contrast esophagram and CXR.</p>`,
+        explanation: `<p><strong>Barrett esophagus is salmon-colored mucosa 1 cm or more above the gastroesophageal junction, with goblet cells on biopsy.</strong> Both parts matter:</p>
+<ul>
+<li><strong>Endoscopy</strong> shows the salmon-colored columnar lining reaching up into the pale squamous esophagus.</li>
+<li><strong>Biopsy</strong> confirms intestinal metaplasia, marked by goblet cells, the change that carries the cancer risk.</li>
+</ul>
+<p>The length of the segment, under or over 3 cm, then sets the surveillance interval.</p>`,
         notes: {
-            1: "A contrast esophagram is for suspected perforation; her CXR shows no free air and she has no signs of it.",
-            2: "Fluconazole treats Candida; nothing suggests infection, and a bleeding patient needs to have the source seen.",
-            3: "Manometry studies motility and has no role in bleeding.",
-            4: "CT angiography looks for active arterial bleeding elsewhere; EGD both finds and treats an esophageal source.",
+            1: "White plaques that do not wash off are Candida esophagitis.",
+            2: "Rings and furrows are eosinophilic esophagitis.",
+            3: "A thin ring at the junction is a Schatzki ring.",
+            4: "Barrett esophagus is columnar lining moving up into the esophagus, not squamous lining moving down.",
+        },
+    },
+    {
+        id: "gerd-les-drugs",
+        condition: "gerd-esophagitis",
+        kind: "memory",
+        stem: "Which of the following drugs promotes GERD by decreasing LES tone?",
+        options: ["Theophylline", "Omeprazole", "Metformin", "Levothyroxine", "Amoxicillin"],
+        answer: 0,
+        explanation: `<p><strong>Theophylline lowers LES tone,</strong> along with nitrates, CCBs, anticholinergics, and morphine. Most of these relax smooth muscle, and the LES is a ring of smooth muscle that must stay contracted between swallows to hold back HCl.</p>
+<p>Smoking, alcohol, and caffeine lower LES tone too, which is why stopping smoking and avoiding caffeine and alcohol are part of treatment. Aspirin and other NSAIDs are also risk factors for GERD.</p>`,
+        notes: {
+            1: "Omeprazole is a PPI that treats GERD by reducing acid.",
+            2: "Metformin causes GI upset and diarrhea, not reflux through a weak LES.",
+            3: "Levothyroxine is not a recognized cause of decreased LES tone.",
+            4: "Amoxicillin is an antibiotic, used in H. pylori eradication, with no effect on LES tone.",
+        },
+    },
+    {
+        id: "gerd-extraesophageal",
+        condition: "gerd-esophagitis",
+        kind: "memory",
+        stem: "Which of the following is an extraesophageal symptom of GERD?",
+        options: ["Dental erosions", "Raynaud phenomenon", "Halitosis from a pharyngeal pouch", "Pain on swallowing pills", "Dysphagia to liquids from the onset"],
+        answer: 0,
+        explanation: `<p><strong>Dental erosions are an extraesophageal symptom of GERD,</strong> along with chronic cough, asthma, laryngitis and hoarseness, and sore throat. They happen when refluxed HCl rises beyond the esophagus: acid dissolves tooth enamel, irritates the larynx and pharynx, and reaches the airway, where it triggers cough and bronchospasm.</p>
+<p>Refluxed HCl that is aspirated can also cause aspiration pneumonia, a complication of GERD.</p>`,
+        notes: {
+            1: "Raynaud phenomenon belongs to CREST, in which scleroderma causes reflux, but it is not a symptom of reflux.",
+            2: "Halitosis from a pharyngeal pouch is a Zenker diverticulum.",
+            3: "Pain on swallowing a pill suggests pill esophagitis.",
+            4: "Dysphagia to liquids from the onset suggests a motility disorder such as achalasia.",
+        },
+    },
+    {
+        id: "gerd-alarm-features",
+        condition: "gerd-esophagitis",
+        kind: "memory",
+        stem: "In a patient with reflux symptoms, which finding is an alarm feature that calls for EGD before a PPI trial?",
+        options: ["Weight loss", "Heartburn after large meals", "Regurgitation when lying flat", "Hoarseness in the mornings", "A chronic dry cough"],
+        answer: 0,
+        explanation: `<p><strong>Weight loss is an alarm feature,</strong> along with dysphagia, odynophagia, anemia, and hematemesis or melena. Each suggests something more than simple reflux, such as a stricture, an ulcer, bleeding, or cancer, so EGD comes first to see and biopsy the mucosa.</p>
+<p>Without alarm features, typical reflux is treated with an 8-week PPI trial, and EGD and pH monitoring follow only if it fails.</p>`,
+        notes: {
+            1: "Heartburn after meals is a typical GERD symptom; it calls for a PPI trial, not EGD first.",
+            2: "Regurgitation lying flat is a typical GERD symptom, not an alarm feature.",
+            3: "Hoarseness is an extraesophageal symptom of GERD, not an alarm feature.",
+            4: "Chronic cough is an extraesophageal symptom of GERD, not an alarm feature.",
+        },
+    },
+    {
+        id: "gerd-ph",
+        condition: "gerd-esophagitis",
+        kind: "memory",
+        stem: "Which is the only test that measures abnormal acid exposure of the esophagus?",
+        options: ["Ambulatory pH monitoring", "EGD with biopsy", "High-resolution manometry", "Barium swallow", "Urea breath test"],
+        answer: 0,
+        explanation: `<p><strong>Ambulatory pH monitoring is the only test of abnormal acid exposure,</strong> by a wireless capsule clipped to the esophagus for 48–96 hours, or a 24-hour pH-impedance catheter through the nose. It records how often and for how long the esophagus is acidic, and links episodes to symptoms.</p>
+<p>EGD shows damage but can be normal in reflux; manometry measures pressures before surgery; barium shows strictures, hernias, and tumors but has little role in uncomplicated reflux.</p>`,
+        notes: {
+            1: "EGD shows mucosal damage or Barrett esophagus, but a normal EGD does not exclude reflux.",
+            2: "Manometry measures pressures and peristalsis, done before antireflux surgery, not acid exposure.",
+            3: "Barium swallow shows strictures, hiatal hernias, and tumors, with little role in uncomplicated reflux.",
+            4: "The urea breath test detects H. pylori, which causes gastritis and peptic ulcers.",
+        },
+    },
+
+    /* --- Reasoning --- */
+    {
+        id: "gerd-ecg-first",
+        condition: "gerd-esophagitis",
+        kind: "reasoning",
+        stem: "A 58-year-old man with hypertension, type 2 diabetes, and a 30-pack-year smoking history has 2 days of burning chest pain that he calls heartburn. What should be done first?",
+        options: ["A 12-lead ECG", "Start a PPI", "Arrange EGD", "Give an antacid and review in 2 weeks", "Test for H. pylori"],
+        answer: 0,
+        explanation: `<p><strong>Chest pain is presumed cardiac until proven otherwise,</strong> especially with cardiovascular risk factors such as his. Burning retrosternal pain from myocardial ischemia can feel exactly like heartburn, and the cost of missing it is high.</p>
+<p>That is why the page's diagnostic pathway starts with an ECG when there is chest pain. Only once a cardiac cause is excluded does the GERD workup continue: alarm features lead to EGD, and otherwise a PPI trial.</p>`,
+        notes: {
+            1: "A PPI trial treats presumed reflux, but cardiac pain must be excluded first.",
+            2: "EGD is for alarm features or a failed PPI trial, after the heart is assessed.",
+            3: "Delaying 2 weeks could miss an acute coronary syndrome.",
+            4: "H. pylori testing is for dyspepsia and ulcers, and it would not exclude cardiac pain.",
+        },
+    },
+    {
+        id: "gerd-ppi-trial",
+        condition: "gerd-esophagitis",
+        kind: "reasoning",
+        stem: "A 41-year-old man has 3 months of burning retrosternal discomfort after large meals and when lying down. He has no dysphagia, odynophagia, weight loss, anemia, or bleeding, and his ECG is normal. What is the most appropriate next step?",
+        options: ["An 8-week PPI trial", "EGD with biopsy", "Ambulatory pH monitoring", "Barium swallow", "Laparoscopic Nissen fundoplication"],
+        answer: 0,
+        explanation: `<p><strong>Typical reflux without alarm features is treated with an 8-week PPI trial,</strong> with lifestyle changes. The trial is both treatment and test: improvement supports GERD, and failure prompts further investigation.</p>
+<p>Starting with a PPI makes sense because most such patients have reflux, and EGD would usually be normal or show only mild esophagitis. EGD and pH monitoring are kept for patients who do not improve, and EGD comes first only when alarm features suggest a stricture, ulcer, bleeding, or cancer.</p>`,
+        notes: {
+            1: "EGD comes first only with alarm features, which he does not have.",
+            2: "pH monitoring follows a failed PPI trial; it is not the first step in typical reflux.",
+            3: "Barium has little role in uncomplicated reflux.",
+            4: "Surgery is for disease refractory to treatment, after manometry.",
+        },
+    },
+    {
+        id: "gerd-ppi-mech",
+        condition: "gerd-esophagitis",
+        kind: "reasoning",
+        stem: "Why is a PPI taken before the first meal of the day?",
+        options: ["It blocks pumps the meal is about to switch on", "Food neutralizes the drug if taken afterward", "It coats the esophagus before food passes over it", "It tightens the LES before the meal arrives", "It blocks histamine released by the meal"],
+        answer: 0,
+        explanation: `<p><strong>PPIs irreversibly block only active proton pumps (H+/K+ ATPase),</strong> the final step of acid secretion in parietal cells. A PPI is a prodrug that is activated in acid, and pumps move to the cell surface when a meal stimulates secretion.</p>
+<p>Taken 30–60 minutes before breakfast, the drug is in the blood just as the meal switches the pumps on, so it blocks the most pumps. Taken after a meal or at bedtime, many pumps are inactive and escape.</p>`,
+        notes: {
+            1: "Timing is about pump activity, not the drug being neutralized by food.",
+            2: "PPIs act in parietal cells after absorption; coating the mucosa is how sucralfate works.",
+            3: "PPIs reduce acid; they do not change LES tone.",
+            4: "Blocking histamine at H2 receptors is how H2RAs such as famotidine work.",
+        },
+    },
+    {
+        id: "gerd-nissen",
+        condition: "gerd-esophagitis",
+        kind: "reasoning",
+        stem: "A 47-year-old woman has regurgitation despite twice-daily PPI and weight loss. pH monitoring confirms abnormal acid exposure, and manometry shows normal peristalsis. She wants to stop long-term medication. Which treatment is most appropriate?",
+        options: ["Laparoscopic Nissen fundoplication", "Heller myotomy", "Pneumatic dilation", "Botulinum toxin injection into the LES", "Adding a CCB"],
+        answer: 0,
+        explanation: `<p><strong>Refractory, confirmed GERD is treated with Nissen fundoplication.</strong> The gastric fundus is wrapped fully around the lower esophagus, rebuilding a high-pressure barrier against reflux.</p>
+<p>Manometry comes first because the esophagus must push food through the new wrap. It excludes achalasia, which can mimic refractory reflux, and a scleroderma-like esophagus, whose weak peristalsis could not overcome a tight wrap. Her normal peristalsis makes surgery safe.</p>`,
+        notes: {
+            1: "Heller myotomy cuts the LES; it treats achalasia and would worsen reflux.",
+            2: "Pneumatic dilation stretches the LES for achalasia, which would worsen reflux.",
+            3: "Botulinum lowers LES tone and is used in achalasia.",
+            4: "CCBs lower LES tone and are a cause of reflux.",
+        },
+    },
+    {
+        id: "gerd-paraesophageal",
+        condition: "gerd-esophagitis",
+        kind: "reasoning",
+        stem: "A paraesophageal hiatal hernia is found in a woman with few reflux symptoms. Why is it repaired surgically?",
+        options: ["The stomach can twist or strangulate", "It always causes Barrett esophagus", "It is the commonest cause of refractory reflux", "PPIs cannot be used with a hernia", "It is precancerous in itself"],
+        answer: 0,
+        explanation: `<p><strong>Paraesophageal hernias (types II–IV) are repaired because of volvulus and strangulation.</strong> The stomach rolls up through the hiatus beside the gastroesophageal junction, so it can twist on itself and lose its blood supply, a surgical emergency.</p>
+<p>Sliding hernias (type I), over 95% of the total, move the junction itself and mainly cause reflux, so they are managed like GERD. A paraesophageal hernia is repaired surgically, as an emergency for volvulus or incarceration.</p>`,
+        notes: {
+            1: "Barrett esophagus follows chronic reflux, and a paraesophageal hernia is not a guaranteed cause.",
+            2: "Sliding hernias, not paraesophageal ones, are the common hernias behind reflux.",
+            3: "PPIs can be used; the reason for surgery is the risk of volvulus.",
+            4: "The hernia is not itself precancerous.",
+        },
+    },
+
+    /* --- Analysis --- */
+    {
+        id: "gerd-set-barrett-1",
+        condition: "gerd-esophagitis",
+        kind: "analysis",
+        set: "gerd-barrett-case",
+        passage: `<p>A 57-year-old White man with central obesity, who smokes 20 cigarettes a day, has had reflux for 15 years. His father had esophageal cancer. He has no dysphagia or weight loss. Screening EGD shows tongues of salmon-colored mucosa extending 4 cm above the gastroesophageal junction.</p>
+<table><thead><tr><th>Biopsies</th><th>Finding</th></tr></thead><tbody>
+<tr><td>4 quadrants, every 2 cm</td><td>Columnar epithelium with goblet cells; no dysplasia</td></tr>
+</tbody></table>`,
+        stem: "When should his next EGD be?",
+        options: ["In 3 years", "In 5 years", "In 6 months, on twice-daily PPI", "Now, for radiofrequency ablation", "No further EGD while he takes a PPI"],
+        answer: 0,
+        explanation: `<p><strong>He has Barrett esophagus without dysplasia in a segment of 3 cm or more, so EGD is repeated every 3 years.</strong> The finding meets the definition: salmon-colored mucosa 1 cm or more above the junction, with goblet cells.</p>
+<p>His screening was justified: chronic reflux plus 3 or more risk factors (he has all six: male, White, over 50, central obesity, smoking, and a family history). A segment under 3 cm would be surveyed every 5 years. He should also stop smoking.</p>`,
+        notes: {
+            1: "Every 5 years is for a segment under 3 cm; his is 4 cm.",
+            2: "Six months on twice-daily PPI is for indefinite dysplasia.",
+            3: "Ablation is for low- or high-grade dysplasia, and he has none.",
+            4: "A PPI controls reflux but does not remove the cancer risk, so surveillance continues.",
+        },
+    },
+    {
+        id: "gerd-set-barrett-2",
+        condition: "gerd-esophagitis",
+        kind: "analysis",
+        set: "gerd-barrett-case",
+        stem: "At his next surveillance EGD, biopsies from the same segment show low-grade dysplasia, confirmed by a second pathologist. What is the most appropriate management?",
+        options: ["Endoscopic eradication, such as radiofrequency ablation", "Repeat EGD in 3 years as before", "Esophagectomy", "Nissen fundoplication to reverse the dysplasia", "Double his PPI dose and stop surveillance"],
+        answer: 0,
+        explanation: `<p><strong>Low- or high-grade dysplasia is treated by endoscopic eradication, such as radiofrequency ablation.</strong> Dysplasia is the step just before adenocarcinoma, so the aim is to destroy the abnormal epithelium while it is still confined to the mucosa.</p>
+<p>Ablation removes the metaplastic and dysplastic lining endoscopically, and with acid controlled, normal squamous epithelium grows back. Surveillance continues afterward, because Barrett mucosa can recur.</p>`,
+        notes: {
+            1: "Dysplasia changes the plan; routine intervals are for Barrett esophagus without dysplasia.",
+            2: "Esophagectomy is major surgery not needed for dysplasia that can be treated endoscopically.",
+            3: "Fundoplication controls reflux but does not remove dysplasia.",
+            4: "A PPI does not reverse dysplasia, and stopping surveillance would miss progression.",
+        },
+    },
+    {
+        id: "gerd-hernia",
+        condition: "gerd-esophagitis",
+        kind: "memory",
+        stem: "A barium study in an obese woman with long-standing heartburn shows the gastroesophageal junction and part of the stomach above the diaphragm. Which type of hernia is this?",
+        options: ["Sliding hiatal hernia (type I)", "Paraesophageal hiatal hernia (type II)", "Bochdalek hernia", "Morgagni hernia", "Incisional hernia"],
+        answer: 0,
+        explanation: `<p><strong>A sliding hiatal hernia (type I) moves the gastroesophageal junction itself above the diaphragm,</strong> and it makes up over 95% of hiatal hernias. Normally the crura of the diaphragm squeeze the LES from outside and add to the antireflux barrier. When the junction slides up into the chest, that support is lost, so HCl refluxes more easily.</p>
+<p>In paraesophageal hernias (types II–IV), part of the stomach rolls up beside the junction, which can twist (volvulus) or strangulate.</p>`,
+        notes: {
+            1: "In a type II paraesophageal hernia the junction stays below the diaphragm and the fundus rolls up beside it.",
+            2: "A Bochdalek hernia is a congenital posterolateral defect of the diaphragm, usually found in newborns.",
+            3: "A Morgagni hernia is a rare congenital anterior defect of the diaphragm.",
+            4: "An incisional hernia occurs through a surgical scar in the abdominal wall.",
+        },
+    },
+    {
+        id: "gerd-zes",
+        condition: "gerd-esophagitis",
+        kind: "memory",
+        stem: "A man has severe reflux, multiple duodenal ulcers, and diarrhea. A gastrin-secreting tumor is found. Which mechanism of reflux does it act through?",
+        options: ["Increased HCl production", "Decreased LES tone", "A sliding hiatal hernia", "Increased intragastric pressure", "Loss of esophageal peristalsis"],
+        answer: 0,
+        explanation: `<p><strong>Zollinger-Ellison syndrome causes reflux through increased HCl production.</strong> A gastrinoma drives the parietal cells to secrete large amounts of acid, so every reflux episode carries more HCl, and the esophageal mucosa is injured more.</p>
+<p>The same excess acid explains the rest: multiple or unusual duodenal ulcers, and diarrhea as acid inactivates pancreatic enzymes in the small intestine. Smoking and alcohol also raise HCl production. Zollinger-Ellison syndrome links GERD with PUD.</p>`,
+        notes: {
+            1: "Decreased LES tone comes from smoking, alcohol, caffeine, and drugs such as nitrates and CCBs.",
+            2: "A hiatal hernia weakens the barrier anatomically; gastrin acts on acid secretion.",
+            3: "Raised intragastric pressure comes from obesity, gastroparesis, and pregnancy.",
+            4: "Loss of peristalsis is a motility disorder such as scleroderma, not an effect of gastrin.",
+        },
+    },
+    {
+        id: "gerd-surveillance",
+        condition: "gerd-esophagitis",
+        kind: "memory",
+        stem: "A man with chronic GERD has a 2-cm segment of Barrett esophagus without dysplasia. When should EGD be repeated?",
+        options: ["In 5 years", "In 3 years", "In 6 months, on twice-daily PPI", "Every 3 months", "Never, if he takes a daily PPI"],
+        answer: 0,
+        explanation: `<p><strong>Barrett esophagus without dysplasia is surveyed every 5 years if the segment is under 3 cm, and every 3 years if it is 3 cm or more.</strong> A longer segment has more metaplastic tissue that could become dysplastic, so it is checked more often.</p>
+<p>Surveillance is looking for dysplasia, the step before adenocarcinoma. Indefinite dysplasia is rechecked in 6 months on twice-daily PPI, and low- or high-grade dysplasia is treated by endoscopic eradication, such as radiofrequency ablation.</p>`,
+        notes: {
+            1: "Every 3 years is for a segment of 3 cm or more; his is 2 cm.",
+            2: "Repeat EGD in 6 months on twice-daily PPI is for indefinite dysplasia.",
+            3: "Three-monthly EGD is far more often than any Barrett stage needs.",
+            4: "A PPI controls reflux but does not remove the cancer risk, so surveillance continues.",
+        },
+    },
+    {
+        id: "eso-candida-path",
+        condition: "gerd-esophagitis",
+        kind: "memory",
+        stem: "Endoscopy shows adherent white plaques along the esophagus that do not wash off. What would a biopsy of the plaques most likely show?",
+        options: ["Pseudohyphae and budding yeast", "Multinucleated giant cells", "Intranuclear and cytoplasmic inclusions in endothelial cells", "15 or more eosinophils per high-power field", "Goblet cells in columnar epithelium"],
+        answer: 0,
+        explanation: `<p><strong>White plaques that cannot be washed off are Candida,</strong> and biopsy or brushings show pseudohyphae and budding yeast. The plaques are colonies of fungus and debris stuck to inflamed mucosa.</p>
+<p>Each infectious cause has its own endoscopic and histologic signature, which is why EGD with biopsy identifies the cause:</p>
+<ul>
+<li><strong>Candida:</strong> white plaques; yeast and pseudohyphae.</li>
+<li><strong>HSV:</strong> small, deep ulcers; multinucleated giant cells with Cowdry type A inclusions.</li>
+<li><strong>CMV:</strong> large, shallow ulcers; intranuclear and cytoplasmic inclusions.</li>
+</ul>`,
+        notes: {
+            1: "Multinucleated giant cells with Cowdry type A inclusions are the signature of HSV esophagitis.",
+            2: "Intranuclear and cytoplasmic inclusions point to CMV, which causes large, shallow ulcers rather than plaques.",
+            3: "15 or more eosinophils per high-power field defines eosinophilic esophagitis, which shows rings and furrows; its white exudates are eosinophil collections, not yeast.",
+            4: "Goblet cells in columnar epithelium are intestinal metaplasia: Barrett esophagus.",
+        },
+    },
+    {
+        id: "gerd-h2",
+        condition: "gerd-esophagitis",
+        kind: "reasoning",
+        stem: "A man with GERD takes a PPI before breakfast but still wakes with heartburn at night. Why does adding a bedtime H2RA help?",
+        options: ["It blocks histamine-driven acid secretion overnight", "It irreversibly blocks the proton pumps the PPI missed", "It neutralizes acid already in the esophagus", "It increases LES tone during sleep", "It speeds gastric emptying before sleep"],
+        answer: 0,
+        explanation: `<p><strong>A bedtime H2RA blocks histamine at H2 receptors on parietal cells overnight,</strong> lowering cAMP and acid secretion. Overnight there is no meal to switch pumps on, so a morning PPI covers night acid poorly, while acid secretion at night depends heavily on histamine.</p>
+<p>The page's plan adds a bedtime H2RA for nighttime symptoms, alongside raising the head of the bed and no meals 2–3 hours before bed.</p>`,
+        notes: {
+            1: "Irreversible pump blockade is how PPIs work; H2RAs block a receptor competitively.",
+            2: "Neutralizing acid already present is how antacids work.",
+            3: "H2RAs do not change LES tone.",
+            4: "H2RAs do not change gastric emptying.",
+        },
+        info: "Tolerance to H2RAs can develop over weeks of continuous use, so they are often used as needed or for limited periods.",
+    },
+    {
+        id: "eso-left-atrium",
+        condition: "gerd-esophagitis",
+        kind: "reasoning",
+        stem: "A 70-year-old woman with severe mitral stenosis develops pill esophagitis from KCl tablets. Endoscopy shows an ulcer in the middle third of the esophagus. Why did the tablet lodge there?",
+        options: ["The enlarged left atrium in front of it narrows it", "The right ventricle compresses the esophagus in front", "The esophagus passes through the pericardial sac", "The lower esophageal sphincter sits in the middle third", "Mid-esophageal mucosa secretes less mucus than elsewhere"],
+        answer: 0,
+        explanation: `<p><strong>The esophagus lies directly behind the left atrium,</strong> so when mitral stenosis enlarges the atrium, it narrows the mid-esophagus. The aortic arch crosses the esophagus at a similar level. Tablets slow down and lodge at these narrowings, so pill esophagitis is classically an ulcer in the middle third.</p>
+<p>The same relationship is why transesophageal echocardiography images the left atrium so well.</p>`,
+        notes: {
+            1: "The right ventricle is anterior and does not touch the esophagus; the left atrium is the chamber behind it.",
+            2: "The esophagus runs in the posterior mediastinum behind the pericardium, not through the pericardial sac.",
+            3: "The LES is at the gastroesophageal junction, in the distal esophagus.",
+            4: "Mucus secretion does not explain the site; extrinsic narrowing does.",
+        },
+    },
+    {
+        id: "eso-stricture",
+        condition: "gerd-esophagitis",
+        kind: "reasoning",
+        stem: "Six weeks after recovering from an alkali ingestion, a man develops progressive dysphagia to solids. What is the most likely explanation?",
+        options: ["Healing scar has narrowed the lumen", "Barrett esophagus has developed", "The alkali has caused achalasia", "Candida has colonized the healed mucosa", "A new pill esophagitis has developed"],
+        answer: 0,
+        explanation: `<p><strong>Strictures are the main late complication of caustic injury.</strong> Deep injury heals by fibrosis, and the scar contracts, narrowing the lumen. A narrowed lumen catches solids first, so dysphagia to solids progresses over weeks.</p>
+<p>The same mechanism, healing that narrows the lumen, gives strictures after severe reflux or eosinophilic esophagitis.</p>`,
+        notes: {
+            1: "Barrett esophagus develops after years of chronic reflux injury, not weeks after one caustic burn.",
+            2: "Achalasia is a loss of inhibitory neurons in the esophageal wall, not a result of caustic injury.",
+            3: "Candida causes odynophagia with plaques in immunocompromised patients, not progressive narrowing.",
+            4: "Nothing suggests a new culprit drug; progressive narrowing after a deep burn is a stricture.",
+        },
+    },
+    {
+        id: "eso-eoe-diet",
+        condition: "gerd-esophagitis",
+        kind: "reasoning",
+        stem: "A 24-year-old man with allergic rhinitis is diagnosed with eosinophilic esophagitis after a food impaction. He has completed a PPI trial. Which treatment targets the trigger of his condition?",
+        options: ["Eliminating trigger foods such as cow's milk, wheat, and egg", "Laparoscopic Nissen fundoplication", "Long-term oral fluconazole", "Pneumatic dilation of the LES", "Stopping all oral medications for 2 weeks"],
+        answer: 0,
+        explanation: `<p><strong>Eosinophilic esophagitis is an allergic reaction to food and air antigens,</strong> so removing trigger foods removes the cause. The usual triggers are cow's milk, wheat, peanuts and tree nuts, egg, soy, and seafood.</p>
+<p>The page's order is a PPI first, then either food elimination or swallowed topical steroids (fluticasone or budesonide) for 8 weeks. Strictures are dilated once the inflammation is treated.</p>`,
+        notes: {
+            1: "Fundoplication treats refractory GERD; EoE is allergic, not reflux-driven.",
+            2: "Fluconazole treats Candida esophagitis.",
+            3: "Pneumatic dilation of the LES treats achalasia.",
+            4: "Medications are not the trigger here; that approach fits pill esophagitis, where one culprit drug is stopped.",
+        },
+    },
+    {
+        id: "gerd-set-surgery-1",
+        condition: "gerd-esophagitis",
+        kind: "analysis",
+        set: "gerd-surgery",
+        passage: `<p>A 49-year-old woman has had heartburn and regurgitation for 3 years. She has lost 8 kg and stopped smoking, and she takes pantoprazole 40 mg twice daily before meals, but her symptoms persist. EGD shows a small sliding hiatal hernia and no esophagitis or Barrett mucosa. Ambulatory pH monitoring is done off her PPI.</p>
+<table><thead><tr><th>Wireless pH monitoring (96 hours)</th><th>Result</th><th>Reference</th></tr></thead><tbody>
+<tr><td>Time with esophageal pH under 4</td><td>9.5%</td><td>Under 4%</td></tr>
+<tr><td>Heartburn episodes linked to a reflux event</td><td>21 of 24</td><td>—</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p>`,
+        stem: "How are these results best interpreted?",
+        options: ["Abnormal acid exposure that explains her symptoms: GERD is confirmed", "A normal study, so her symptoms are not caused by reflux", "Achalasia, since PPIs have failed", "Eosinophilic esophagitis, since EGD was normal", "The hernia is paraesophageal and needs emergency repair"],
+        answer: 0,
+        explanation: `<p><strong>The pH study confirms GERD.</strong> Her esophagus is acidic for 9.5% of the time, well above the reference, and almost all her heartburn episodes coincide with reflux events. Ambulatory pH monitoring is the only test of abnormal acid exposure, which is why it follows a failed PPI trial with a normal-looking EGD.</p>
+<p>A normal EGD does not exclude reflux: many patients have symptoms without visible damage. Her small sliding hernia helps explain why the barrier fails.</p>`,
+        notes: {
+            1: "Acid exposure of 9.5% is abnormal, and her symptoms track reflux events.",
+            2: "Achalasia can mimic refractory reflux, but abnormal acid exposure linked to symptoms points to true GERD; manometry would settle it.",
+            3: "Eosinophilic esophagitis needs biopsy evidence and typically causes dysphagia with food impaction.",
+            4: "The EGD shows a sliding hernia, the common type behind reflux, not a paraesophageal hernia.",
+        },
+        info: "Under 4% acid exposure time is widely used as normal, and over 6% as clearly abnormal, in current consensus criteria.",
+    },
+    {
+        id: "gerd-set-surgery-2",
+        condition: "gerd-esophagitis",
+        kind: "analysis",
+        set: "gerd-surgery",
+        stem: `<p>She asks about Nissen fundoplication. Manometry is done first.</p>
+<table><thead><tr><th>High-resolution manometry</th><th>Result</th><th>Reference</th></tr></thead><tbody>
+<tr><td>Resting LES pressure</td><td>3 mm Hg</td><td>10–35 mm Hg</td></tr>
+<tr><td>Distal peristalsis</td><td>Weak or absent in 10 of 10 swallows</td><td>Normal in 7 or more</td></tr>
+<tr><td>Proximal contractions</td><td>Normal</td><td>Normal</td></tr>
+</tbody></table>
+<p>On review, she mentions her fingers turn white in the cold, and the skin over them has tightened. <em>Illustrative data.</em></p><p>What is the best advice about surgery?</p>`,
+        options: ["Avoid Nissen fundoplication; continue PPIs", "Proceed with Nissen, since reflux is proven", "Perform Heller myotomy instead", "Proceed with Nissen once she has lost more weight", "Repeat the pH study on her PPI first"],
+        answer: 0,
+        explanation: `<p><strong>This is a scleroderma-like esophagus, and Nissen fundoplication is avoided.</strong> A very low LES pressure, absent distal peristalsis with normal proximal contractions, Raynaud phenomenon, and sclerodactyly point to systemic sclerosis: atrophy and fibrosis of the distal smooth muscle.</p>
+<p>A Nissen wrap rebuilds a high-pressure barrier, and her esophagus could not push food through it, so she would develop dysphagia. This is exactly why manometry comes before antireflux surgery. PPIs remain the treatment.</p>`,
+        notes: {
+            1: "Proven reflux is not enough; her weak peristalsis could not overcome a tight wrap.",
+            2: "Heller myotomy cuts the LES for achalasia and would worsen her reflux.",
+            3: "Weight loss does not fix weak peristalsis; the barrier to surgery is her esophagus.",
+            4: "Reflux is already confirmed; the question is whether her esophagus can tolerate a wrap.",
         },
     },
 
@@ -898,452 +1090,12 @@ const QUIZ_QUESTIONS = [
         info: "Endoscopy is usually done with care after barium, since the scope can enter the pouch rather than the esophagus.",
     },
 
-    /* ===== Gastroesophageal Reflux Disease (GERD) ===== */
-
-    /* --- Memory --- */
-    {
-        id: "gerd-barrett",
-        condition: "gerd",
-        kind: "memory",
-        stem: "A man with 20 years of poorly controlled GERD has salmon-colored mucosa above the gastroesophageal junction, and biopsies show columnar epithelium with goblet cells. Which cancer is he at greatest risk of?",
-        options: ["Esophageal adenocarcinoma", "Esophageal squamous cell carcinoma", "Gastric MALT lymphoma", "Esophageal leiomyoma", "Gastric signet ring cell carcinoma"],
-        answer: 0,
-        explanation: `<p><strong>Barrett esophagus leads to esophageal adenocarcinoma.</strong> Years of acid injury replace the normal stratified squamous lining with intestinal-type columnar epithelium with goblet cells, which resists acid better. That glandular epithelium can become dysplastic and then form a glandular cancer in the distal esophagus.</p>
-<p>The sequence is chronic injury → intestinal metaplasia → dysplasia → adenocarcinoma. Fewer than 5% of patients with Barrett esophagus develop cancer, which is why surveillance, not surgery, is the rule.</p>`,
-        notes: {
-            1: "Squamous cell carcinoma arises from squamous epithelium, linked to smoking and alcohol, not from Barrett metaplasia.",
-            2: "MALT lymphoma arises in the stomach, driven by H. pylori.",
-            3: "A leiomyoma is a benign smooth muscle tumor of the wall, unrelated to reflux.",
-            4: "Signet ring cell carcinoma is a diffuse gastric cancer, not a result of esophageal metaplasia.",
-        },
-    },
-    {
-        id: "gerd-barrett-def",
-        condition: "gerd",
-        kind: "memory",
-        stem: "Which finding defines Barrett esophagus?",
-        options: ["Salmon mucosa 1 cm or more above the junction, with goblet cells", "White plaques above the junction that do not wash off", "Rings and longitudinal furrows along the whole length of the esophagus", "A thin ring at the junction that narrows the lumen", "Squamous mucosa extending 1 cm into the gastric cardia"],
-        answer: 0,
-        explanation: `<p><strong>Barrett esophagus is salmon-colored mucosa 1 cm or more above the gastroesophageal junction, with goblet cells on biopsy.</strong> Both parts matter:</p>
-<ul>
-<li><strong>Endoscopy</strong> shows the salmon-colored columnar lining reaching up into the pale squamous esophagus.</li>
-<li><strong>Biopsy</strong> confirms intestinal metaplasia, marked by goblet cells, the change that carries the cancer risk.</li>
-</ul>
-<p>The length of the segment, under or over 3 cm, then sets the surveillance interval.</p>`,
-        notes: {
-            1: "White plaques that do not wash off are Candida esophagitis.",
-            2: "Rings and furrows are eosinophilic esophagitis.",
-            3: "A thin ring at the junction is a Schatzki ring.",
-            4: "Barrett esophagus is columnar lining moving up into the esophagus, not squamous lining moving down.",
-        },
-    },
-    {
-        id: "gerd-hernia",
-        condition: "gerd",
-        kind: "memory",
-        stem: "A barium study in an obese woman with long-standing heartburn shows the gastroesophageal junction and part of the stomach above the diaphragm. Which type of hernia is this?",
-        options: ["Sliding hiatal hernia (type I)", "Paraesophageal hiatal hernia (type II)", "Bochdalek hernia", "Morgagni hernia", "Incisional hernia"],
-        answer: 0,
-        explanation: `<p><strong>A sliding hiatal hernia (type I) moves the gastroesophageal junction itself above the diaphragm,</strong> and it makes up over 95% of hiatal hernias. Normally the crura of the diaphragm squeeze the LES from outside and add to the antireflux barrier. When the junction slides up into the chest, that support is lost, so HCl refluxes more easily.</p>
-<p>In paraesophageal hernias (types II–IV), part of the stomach rolls up beside the junction, which can twist (volvulus) or strangulate.</p>`,
-        notes: {
-            1: "In a type II paraesophageal hernia the junction stays below the diaphragm and the fundus rolls up beside it.",
-            2: "A Bochdalek hernia is a congenital posterolateral defect of the diaphragm, usually found in newborns.",
-            3: "A Morgagni hernia is a rare congenital anterior defect of the diaphragm.",
-            4: "An incisional hernia occurs through a surgical scar in the abdominal wall.",
-        },
-    },
-    {
-        id: "gerd-les-drugs",
-        condition: "gerd",
-        kind: "memory",
-        stem: "Which of the following drugs promotes GERD by decreasing LES tone?",
-        options: ["Theophylline", "Omeprazole", "Metformin", "Levothyroxine", "Amoxicillin"],
-        answer: 0,
-        explanation: `<p><strong>Theophylline lowers LES tone,</strong> along with nitrates, CCBs, anticholinergics, and morphine. Most of these relax smooth muscle, and the LES is a ring of smooth muscle that must stay contracted between swallows to hold back HCl.</p>
-<p>Smoking, alcohol, and caffeine lower LES tone too, which is why stopping smoking and avoiding caffeine and alcohol are part of treatment. Aspirin and other NSAIDs are also risk factors for GERD.</p>`,
-        notes: {
-            1: "Omeprazole is a PPI that treats GERD by reducing acid.",
-            2: "Metformin causes GI upset and diarrhea, not reflux through a weak LES.",
-            3: "Levothyroxine is not a recognized cause of decreased LES tone.",
-            4: "Amoxicillin is an antibiotic, used in H. pylori eradication, with no effect on LES tone.",
-        },
-    },
-    {
-        id: "gerd-zes",
-        condition: "gerd",
-        kind: "memory",
-        stem: "A man has severe reflux, multiple duodenal ulcers, and diarrhea. A gastrin-secreting tumor is found. Which mechanism of reflux does it act through?",
-        options: ["Increased HCl production", "Decreased LES tone", "A sliding hiatal hernia", "Increased intragastric pressure", "Loss of esophageal peristalsis"],
-        answer: 0,
-        explanation: `<p><strong>Zollinger-Ellison syndrome causes reflux through increased HCl production.</strong> A gastrinoma drives the parietal cells to secrete large amounts of acid, so every reflux episode carries more HCl, and the esophageal mucosa is injured more.</p>
-<p>The same excess acid explains the rest: multiple or unusual duodenal ulcers, and diarrhea as acid inactivates pancreatic enzymes in the small intestine. Smoking and alcohol also raise HCl production. Zollinger-Ellison syndrome links GERD with PUD.</p>`,
-        notes: {
-            1: "Decreased LES tone comes from smoking, alcohol, caffeine, and drugs such as nitrates and CCBs.",
-            2: "A hiatal hernia weakens the barrier anatomically; gastrin acts on acid secretion.",
-            3: "Raised intragastric pressure comes from obesity, gastroparesis, and pregnancy.",
-            4: "Loss of peristalsis is a motility disorder such as scleroderma, not an effect of gastrin.",
-        },
-    },
-    {
-        id: "gerd-extraesophageal",
-        condition: "gerd",
-        kind: "memory",
-        stem: "Which of the following is an extraesophageal symptom of GERD?",
-        options: ["Dental erosions", "Raynaud phenomenon", "Halitosis from a pharyngeal pouch", "Pain on swallowing pills", "Dysphagia to liquids from the onset"],
-        answer: 0,
-        explanation: `<p><strong>Dental erosions are an extraesophageal symptom of GERD,</strong> along with chronic cough, asthma, laryngitis and hoarseness, and sore throat. They happen when refluxed HCl rises beyond the esophagus: acid dissolves tooth enamel, irritates the larynx and pharynx, and reaches the airway, where it triggers cough and bronchospasm.</p>
-<p>Refluxed HCl that is aspirated can also cause aspiration pneumonia, a complication of GERD.</p>`,
-        notes: {
-            1: "Raynaud phenomenon belongs to CREST, in which scleroderma causes reflux, but it is not a symptom of reflux.",
-            2: "Halitosis from a pharyngeal pouch is a Zenker diverticulum.",
-            3: "Pain on swallowing a pill suggests pill esophagitis.",
-            4: "Dysphagia to liquids from the onset suggests a motility disorder such as achalasia.",
-        },
-    },
-    {
-        id: "gerd-alarm-features",
-        condition: "gerd",
-        kind: "memory",
-        stem: "In a patient with reflux symptoms, which finding is an alarm feature that calls for EGD before a PPI trial?",
-        options: ["Weight loss", "Heartburn after large meals", "Regurgitation when lying flat", "Hoarseness in the mornings", "A chronic dry cough"],
-        answer: 0,
-        explanation: `<p><strong>Weight loss is an alarm feature,</strong> along with dysphagia, odynophagia, anemia, and hematemesis or melena. Each suggests something more than simple reflux, such as a stricture, an ulcer, bleeding, or cancer, so EGD comes first to see and biopsy the mucosa.</p>
-<p>Without alarm features, typical reflux is treated with an 8-week PPI trial, and EGD and pH monitoring follow only if it fails.</p>`,
-        notes: {
-            1: "Heartburn after meals is a typical GERD symptom; it calls for a PPI trial, not EGD first.",
-            2: "Regurgitation lying flat is a typical GERD symptom, not an alarm feature.",
-            3: "Hoarseness is an extraesophageal symptom of GERD, not an alarm feature.",
-            4: "Chronic cough is an extraesophageal symptom of GERD, not an alarm feature.",
-        },
-    },
-    {
-        id: "gerd-ph",
-        condition: "gerd",
-        kind: "memory",
-        stem: "Which is the only test that measures abnormal acid exposure of the esophagus?",
-        options: ["Ambulatory pH monitoring", "EGD with biopsy", "High-resolution manometry", "Barium swallow", "Urea breath test"],
-        answer: 0,
-        explanation: `<p><strong>Ambulatory pH monitoring is the only test of abnormal acid exposure,</strong> by a wireless capsule clipped to the esophagus for 48–96 hours, or a 24-hour pH-impedance catheter through the nose. It records how often and for how long the esophagus is acidic, and links episodes to symptoms.</p>
-<p>EGD shows damage but can be normal in reflux; manometry measures pressures before surgery; barium shows strictures, hernias, and tumors but has little role in uncomplicated reflux.</p>`,
-        notes: {
-            1: "EGD shows mucosal damage or Barrett esophagus, but a normal EGD does not exclude reflux.",
-            2: "Manometry measures pressures and peristalsis, done before antireflux surgery, not acid exposure.",
-            3: "Barium swallow shows strictures, hiatal hernias, and tumors, with little role in uncomplicated reflux.",
-            4: "The urea breath test detects H. pylori, which causes gastritis and peptic ulcers.",
-        },
-    },
-    {
-        id: "gerd-barrett-screen",
-        condition: "gerd",
-        kind: "memory",
-        stem: "In a patient with chronic reflux, how many Barrett esophagus risk factors call for screening EGD?",
-        options: ["3 or more", "Any 1 at all", "2 or more", "5 or more", "All 6"],
-        answer: 0,
-        explanation: `<p><strong>Screening for Barrett esophagus is advised when chronic reflux comes with 3 or more risk factors.</strong> The risk factors are male sex, White race, age over 50, central obesity, smoking, and a family history.</p>
-<p>The threshold concentrates screening on the patients most likely to have Barrett esophagus, because most people with reflux never develop it, and fewer than 5% of those who do develop adenocarcinoma.</p>`,
-        notes: {
-            1: "Any single risk factor is too common to justify screening everyone with reflux.",
-            2: "Two risk factors fall below the page's threshold of 3.",
-            3: "5 or more is higher than the threshold and would miss patients at risk.",
-            4: "Requiring all 6 would screen almost no one.",
-        },
-    },
-    {
-        id: "gerd-surveillance",
-        condition: "gerd",
-        kind: "memory",
-        stem: "A man with chronic GERD has a 2-cm segment of Barrett esophagus without dysplasia. When should EGD be repeated?",
-        options: ["In 5 years", "In 3 years", "In 6 months, on twice-daily PPI", "Every 3 months", "Never, if he takes a daily PPI"],
-        answer: 0,
-        explanation: `<p><strong>Barrett esophagus without dysplasia is surveyed every 5 years if the segment is under 3 cm, and every 3 years if it is 3 cm or more.</strong> A longer segment has more metaplastic tissue that could become dysplastic, so it is checked more often.</p>
-<p>Surveillance is looking for dysplasia, the step before adenocarcinoma. Indefinite dysplasia is rechecked in 6 months on twice-daily PPI, and low- or high-grade dysplasia is treated by endoscopic eradication, such as radiofrequency ablation.</p>`,
-        notes: {
-            1: "Every 3 years is for a segment of 3 cm or more; his is 2 cm.",
-            2: "Repeat EGD in 6 months on twice-daily PPI is for indefinite dysplasia.",
-            3: "Three-monthly EGD is far more often than any Barrett stage needs.",
-            4: "A PPI controls reflux but does not remove the cancer risk, so surveillance continues.",
-        },
-    },
-
-    /* --- Reasoning --- */
-    {
-        id: "gerd-pregnancy",
-        condition: "gerd",
-        kind: "reasoning",
-        stem: "A 29-year-old woman at 32 weeks' gestation has new heartburn, worse after meals and lying flat. Which combination best explains it?",
-        options: ["Decreased LES tone and increased intragastric pressure", "Increased LES tone and decreased intragastric pressure", "Increased HCl production from H. pylori", "Loss of inhibitory myenteric neurons", "A paraesophageal hernia pushed up by the growing uterus"],
-        answer: 0,
-        explanation: `<p><strong>Pregnancy causes reflux in two ways.</strong> Progesterone relaxes smooth muscle and lowers LES tone, weakening the barrier, and the growing uterus raises intragastric pressure, pushing HCl upward. Lying flat removes gravity's help, and a full stomach after meals raises pressure further.</p>
-<p>The other causes of raised intragastric pressure are obesity and gastroparesis. Lifestyle measures, such as no meals 2–3 hours before bed and raising the head of the bed, target exactly these mechanisms.</p>`,
-        notes: {
-            1: "Both factors move the other way in pregnancy: LES tone falls and intragastric pressure rises.",
-            2: "H. pylori causes gastritis and peptic ulcers, not new heartburn in late pregnancy.",
-            3: "Loss of inhibitory neurons is achalasia, which tightens the LES.",
-            4: "Pregnancy raises intragastric pressure; it does not typically cause a paraesophageal hernia.",
-        },
-    },
-    {
-        id: "gerd-ecg-first",
-        condition: "gerd",
-        kind: "reasoning",
-        stem: "A 58-year-old man with hypertension, type 2 diabetes, and a 30-pack-year smoking history has 2 days of burning chest pain that he calls heartburn. What should be done first?",
-        options: ["A 12-lead ECG", "Start a PPI", "Arrange EGD", "Give an antacid and review in 2 weeks", "Test for H. pylori"],
-        answer: 0,
-        explanation: `<p><strong>Chest pain is presumed cardiac until proven otherwise,</strong> especially with cardiovascular risk factors such as his. Burning retrosternal pain from myocardial ischemia can feel exactly like heartburn, and the cost of missing it is high.</p>
-<p>That is why the page's diagnostic pathway starts with an ECG when there is chest pain. Only once a cardiac cause is excluded does the GERD workup continue: alarm features lead to EGD, and otherwise a PPI trial.</p>`,
-        notes: {
-            1: "A PPI trial treats presumed reflux, but cardiac pain must be excluded first.",
-            2: "EGD is for alarm features or a failed PPI trial, after the heart is assessed.",
-            3: "Delaying 2 weeks could miss an acute coronary syndrome.",
-            4: "H. pylori testing is for dyspepsia and ulcers, and it would not exclude cardiac pain.",
-        },
-    },
-    {
-        id: "gerd-ppi-trial",
-        condition: "gerd",
-        kind: "reasoning",
-        stem: "A 41-year-old man has 3 months of burning retrosternal discomfort after large meals and when lying down. He has no dysphagia, odynophagia, weight loss, anemia, or bleeding, and his ECG is normal. What is the most appropriate next step?",
-        options: ["An 8-week PPI trial", "EGD with biopsy", "Ambulatory pH monitoring", "Barium swallow", "Laparoscopic Nissen fundoplication"],
-        answer: 0,
-        explanation: `<p><strong>Typical reflux without alarm features is treated with an 8-week PPI trial,</strong> with lifestyle changes. The trial is both treatment and test: improvement supports GERD, and failure prompts further investigation.</p>
-<p>Starting with a PPI makes sense because most such patients have reflux, and EGD would usually be normal or show only mild esophagitis. EGD and pH monitoring are kept for patients who do not improve, and EGD comes first only when alarm features suggest a stricture, ulcer, bleeding, or cancer.</p>`,
-        notes: {
-            1: "EGD comes first only with alarm features, which he does not have.",
-            2: "pH monitoring follows a failed PPI trial; it is not the first step in typical reflux.",
-            3: "Barium has little role in uncomplicated reflux.",
-            4: "Surgery is for disease refractory to treatment, after manometry.",
-        },
-    },
-    {
-        id: "gerd-alarm",
-        condition: "gerd",
-        kind: "reasoning",
-        stem: "A 61-year-old man with years of heartburn now has 2 months of difficulty swallowing solids and has lost 6 kg. His hemoglobin is 108 g/L with a low MCV. What is the most appropriate next step?",
-        options: ["EGD with biopsy", "An 8-week PPI trial", "Ambulatory pH monitoring", "Esophageal manometry", "H. pylori stool antigen test"],
-        answer: 0,
-        explanation: `<p><strong>Dysphagia, weight loss, and iron-deficiency anemia are alarm features, so EGD with biopsy comes first.</strong> Together they suggest a stricture or a cancer, such as adenocarcinoma arising in Barrett esophagus after years of reflux, with chronic blood loss causing the anemia.</p>
-<p>A PPI trial would only delay the diagnosis. EGD can see and biopsy a mass, a stricture, or Barrett mucosa directly.</p>`,
-        notes: {
-            1: "A PPI trial is for typical reflux without alarm features; he has three.",
-            2: "pH monitoring measures acid exposure; it cannot find a stricture or cancer.",
-            3: "Manometry studies motility, after EGD has excluded a structural cause.",
-            4: "H. pylori testing does not explain dysphagia with weight loss and anemia.",
-        },
-    },
-    {
-        id: "gerd-ppi-mech",
-        condition: "gerd",
-        kind: "reasoning",
-        stem: "Why is a PPI taken before the first meal of the day?",
-        options: ["It blocks pumps the meal is about to switch on", "Food neutralizes the drug if taken afterward", "It coats the esophagus before food passes over it", "It tightens the LES before the meal arrives", "It blocks histamine released by the meal"],
-        answer: 0,
-        explanation: `<p><strong>PPIs irreversibly block only active proton pumps (H+/K+ ATPase),</strong> the final step of acid secretion in parietal cells. A PPI is a prodrug that is activated in acid, and pumps move to the cell surface when a meal stimulates secretion.</p>
-<p>Taken 30–60 minutes before breakfast, the drug is in the blood just as the meal switches the pumps on, so it blocks the most pumps. Taken after a meal or at bedtime, many pumps are inactive and escape.</p>`,
-        notes: {
-            1: "Timing is about pump activity, not the drug being neutralized by food.",
-            2: "PPIs act in parietal cells after absorption; coating the mucosa is how sucralfate works.",
-            3: "PPIs reduce acid; they do not change LES tone.",
-            4: "Blocking histamine at H2 receptors is how H2RAs such as famotidine work.",
-        },
-    },
-    {
-        id: "gerd-h2",
-        condition: "gerd",
-        kind: "reasoning",
-        stem: "A man with GERD takes a PPI before breakfast but still wakes with heartburn at night. Why does adding a bedtime H2RA help?",
-        options: ["It blocks histamine-driven acid secretion overnight", "It irreversibly blocks the proton pumps the PPI missed", "It neutralizes acid already in the esophagus", "It increases LES tone during sleep", "It speeds gastric emptying before sleep"],
-        answer: 0,
-        explanation: `<p><strong>A bedtime H2RA blocks histamine at H2 receptors on parietal cells overnight,</strong> lowering cAMP and acid secretion. Overnight there is no meal to switch pumps on, so a morning PPI covers night acid poorly, while acid secretion at night depends heavily on histamine.</p>
-<p>The page's plan adds a bedtime H2RA for nighttime symptoms, alongside raising the head of the bed and no meals 2–3 hours before bed.</p>`,
-        notes: {
-            1: "Irreversible pump blockade is how PPIs work; H2RAs block a receptor competitively.",
-            2: "Neutralizing acid already present is how antacids work.",
-            3: "H2RAs do not change LES tone.",
-            4: "H2RAs do not change gastric emptying.",
-        },
-        info: "Tolerance to H2RAs can develop over weeks of continuous use, so they are often used as needed or for limited periods.",
-    },
-    {
-        id: "gerd-lifestyle",
-        condition: "gerd",
-        kind: "reasoning",
-        stem: "Why are patients with GERD advised to raise the head of the bed and avoid meals 2–3 hours before bed?",
-        options: ["Gravity keeps HCl down, and an emptier stomach has lower pressure", "Lying flat increases HCl production", "Late meals cause a sliding hiatal hernia", "Raising the bed tightens the LES", "Late meals slow esophageal peristalsis"],
-        answer: 0,
-        explanation: `<p><strong>Both measures reduce the push of HCl upward.</strong> Lying flat removes gravity, so refluxed HCl stays in the esophagus longer, and raising the head of the bed brings gravity back. A meal fills and distends the stomach, raising intragastric pressure, so going to bed with an empty stomach leaves less to reflux.</p>
-<p>The other lifestyle measures target other mechanisms: weight loss lowers intragastric pressure, and stopping smoking and avoiding caffeine, alcohol, and chocolate protect LES tone.</p>`,
-        notes: {
-            1: "Posture does not change HCl production; it changes where HCl goes.",
-            2: "Meal timing does not cause hernias; a hernia is a structural problem.",
-            3: "Raising the bed uses gravity; it does not change LES tone.",
-            4: "The concern is reflux from a full stomach, not peristalsis.",
-        },
-    },
-    {
-        id: "gerd-nissen",
-        condition: "gerd",
-        kind: "reasoning",
-        stem: "A 47-year-old woman has regurgitation despite twice-daily PPI and weight loss. pH monitoring confirms abnormal acid exposure, and manometry shows normal peristalsis. She wants to stop long-term medication. Which treatment is most appropriate?",
-        options: ["Laparoscopic Nissen fundoplication", "Heller myotomy", "Pneumatic dilation", "Botulinum toxin injection into the LES", "Adding a CCB"],
-        answer: 0,
-        explanation: `<p><strong>Refractory, confirmed GERD is treated with Nissen fundoplication.</strong> The gastric fundus is wrapped fully around the lower esophagus, rebuilding a high-pressure barrier against reflux.</p>
-<p>Manometry comes first because the esophagus must push food through the new wrap. It excludes achalasia, which can mimic refractory reflux, and a scleroderma-like esophagus, whose weak peristalsis could not overcome a tight wrap. Her normal peristalsis makes surgery safe.</p>`,
-        notes: {
-            1: "Heller myotomy cuts the LES; it treats achalasia and would worsen reflux.",
-            2: "Pneumatic dilation stretches the LES for achalasia, which would worsen reflux.",
-            3: "Botulinum lowers LES tone and is used in achalasia.",
-            4: "CCBs lower LES tone and are a cause of reflux.",
-        },
-    },
-    {
-        id: "gerd-paraesophageal",
-        condition: "gerd",
-        kind: "reasoning",
-        stem: "A paraesophageal hiatal hernia is found in a woman with few reflux symptoms. Why is it repaired surgically?",
-        options: ["The stomach can twist or strangulate", "It always causes Barrett esophagus", "It is the commonest cause of refractory reflux", "PPIs cannot be used with a hernia", "It is precancerous in itself"],
-        answer: 0,
-        explanation: `<p><strong>Paraesophageal hernias (types II–IV) are repaired because of volvulus and strangulation.</strong> The stomach rolls up through the hiatus beside the gastroesophageal junction, so it can twist on itself and lose its blood supply, a surgical emergency.</p>
-<p>Sliding hernias (type I), over 95% of the total, move the junction itself and mainly cause reflux, so they are managed like GERD. A paraesophageal hernia is repaired surgically, as an emergency for volvulus or incarceration.</p>`,
-        notes: {
-            1: "Barrett esophagus follows chronic reflux, and a paraesophageal hernia is not a guaranteed cause.",
-            2: "Sliding hernias, not paraesophageal ones, are the common hernias behind reflux.",
-            3: "PPIs can be used; the reason for surgery is the risk of volvulus.",
-            4: "The hernia is not itself precancerous.",
-        },
-    },
-    {
-        id: "gerd-indefinite",
-        condition: "gerd",
-        kind: "reasoning",
-        stem: "Surveillance biopsies in Barrett esophagus are reported as indefinite for dysplasia. Why is EGD repeated in 6 months on twice-daily PPI?",
-        options: ["Active reflux inflammation can mimic dysplasia, so it is cleared first", "Twice-daily PPI reverses dysplasia", "Ablation cannot be done within 6 months of a biopsy", "Indefinite dysplasia always progresses to cancer within 6 months", "The PPI shortens the Barrett segment below 3 cm"],
-        answer: 0,
-        explanation: `<p><strong>Inflamed, regenerating mucosa can look atypical under the microscope,</strong> so the pathologist cannot always tell reactive change from true dysplasia. Twice-daily PPI controls the acid injury, the inflammation settles, and repeat biopsies at 6 months show whether dysplasia is really there.</p>
-<p>The result then sets the plan: no dysplasia returns to routine surveillance, while low- or high-grade dysplasia is treated by endoscopic eradication, such as radiofrequency ablation.</p>`,
-        notes: {
-            1: "PPIs control inflammation; they do not reverse true dysplasia.",
-            2: "There is no such rule; the delay is to clear inflammation before reassessing.",
-            3: "Indefinite dysplasia does not always progress, and fewer than 5% of Barrett patients develop cancer at all.",
-            4: "Segment length sets the routine interval and is not the aim of the PPI.",
-        },
-    },
-
-    /* --- Analysis --- */
-    {
-        id: "gerd-set-surgery-1",
-        condition: "gerd",
-        kind: "analysis",
-        set: "gerd-surgery",
-        passage: `<p>A 49-year-old woman has had heartburn and regurgitation for 3 years. She has lost 8 kg and stopped smoking, and she takes pantoprazole 40 mg twice daily before meals, but her symptoms persist. EGD shows a small sliding hiatal hernia and no esophagitis or Barrett mucosa. Ambulatory pH monitoring is done off her PPI.</p>
-<table><thead><tr><th>Wireless pH monitoring (96 hours)</th><th>Result</th><th>Reference</th></tr></thead><tbody>
-<tr><td>Time with esophageal pH under 4</td><td>9.5%</td><td>Under 4%</td></tr>
-<tr><td>Heartburn episodes linked to a reflux event</td><td>21 of 24</td><td>—</td></tr>
-</tbody></table>
-<p><em>Illustrative data.</em></p>`,
-        stem: "How are these results best interpreted?",
-        options: ["Abnormal acid exposure that explains her symptoms: GERD is confirmed", "A normal study, so her symptoms are not caused by reflux", "Achalasia, since PPIs have failed", "Eosinophilic esophagitis, since EGD was normal", "The hernia is paraesophageal and needs emergency repair"],
-        answer: 0,
-        explanation: `<p><strong>The pH study confirms GERD.</strong> Her esophagus is acidic for 9.5% of the time, well above the reference, and almost all her heartburn episodes coincide with reflux events. Ambulatory pH monitoring is the only test of abnormal acid exposure, which is why it follows a failed PPI trial with a normal-looking EGD.</p>
-<p>A normal EGD does not exclude reflux: many patients have symptoms without visible damage. Her small sliding hernia helps explain why the barrier fails.</p>`,
-        notes: {
-            1: "Acid exposure of 9.5% is abnormal, and her symptoms track reflux events.",
-            2: "Achalasia can mimic refractory reflux, but abnormal acid exposure linked to symptoms points to true GERD; manometry would settle it.",
-            3: "Eosinophilic esophagitis needs biopsy evidence and typically causes dysphagia with food impaction.",
-            4: "The EGD shows a sliding hernia, the common type behind reflux, not a paraesophageal hernia.",
-        },
-        info: "Under 4% acid exposure time is widely used as normal, and over 6% as clearly abnormal, in current consensus criteria.",
-    },
-    {
-        id: "gerd-set-surgery-2",
-        condition: "gerd",
-        kind: "analysis",
-        set: "gerd-surgery",
-        stem: `<p>She asks about Nissen fundoplication. Manometry is done first.</p>
-<table><thead><tr><th>High-resolution manometry</th><th>Result</th><th>Reference</th></tr></thead><tbody>
-<tr><td>Resting LES pressure</td><td>3 mm Hg</td><td>10–35 mm Hg</td></tr>
-<tr><td>Distal peristalsis</td><td>Weak or absent in 10 of 10 swallows</td><td>Normal in 7 or more</td></tr>
-<tr><td>Proximal contractions</td><td>Normal</td><td>Normal</td></tr>
-</tbody></table>
-<p>On review, she mentions her fingers turn white in the cold, and the skin over them has tightened. <em>Illustrative data.</em></p><p>What is the best advice about surgery?</p>`,
-        options: ["Avoid Nissen fundoplication; continue PPIs", "Proceed with Nissen, since reflux is proven", "Perform Heller myotomy instead", "Proceed with Nissen once she has lost more weight", "Repeat the pH study on her PPI first"],
-        answer: 0,
-        explanation: `<p><strong>This is a scleroderma-like esophagus, and Nissen fundoplication is avoided.</strong> A very low LES pressure, absent distal peristalsis with normal proximal contractions, Raynaud phenomenon, and sclerodactyly point to systemic sclerosis: atrophy and fibrosis of the distal smooth muscle.</p>
-<p>A Nissen wrap rebuilds a high-pressure barrier, and her esophagus could not push food through it, so she would develop dysphagia. This is exactly why manometry comes before antireflux surgery. PPIs remain the treatment.</p>`,
-        notes: {
-            1: "Proven reflux is not enough; her weak peristalsis could not overcome a tight wrap.",
-            2: "Heller myotomy cuts the LES for achalasia and would worsen her reflux.",
-            3: "Weight loss does not fix weak peristalsis; the barrier to surgery is her esophagus.",
-            4: "Reflux is already confirmed; the question is whether her esophagus can tolerate a wrap.",
-        },
-    },
-    {
-        id: "gerd-set-barrett-1",
-        condition: "gerd",
-        kind: "analysis",
-        set: "gerd-barrett-case",
-        passage: `<p>A 57-year-old White man with central obesity, who smokes 20 cigarettes a day, has had reflux for 15 years. His father had esophageal cancer. He has no dysphagia or weight loss. Screening EGD shows tongues of salmon-colored mucosa extending 4 cm above the gastroesophageal junction.</p>
-<table><thead><tr><th>Biopsies</th><th>Finding</th></tr></thead><tbody>
-<tr><td>4 quadrants, every 2 cm</td><td>Columnar epithelium with goblet cells; no dysplasia</td></tr>
-</tbody></table>`,
-        stem: "When should his next EGD be?",
-        options: ["In 3 years", "In 5 years", "In 6 months, on twice-daily PPI", "Now, for radiofrequency ablation", "No further EGD while he takes a PPI"],
-        answer: 0,
-        explanation: `<p><strong>He has Barrett esophagus without dysplasia in a segment of 3 cm or more, so EGD is repeated every 3 years.</strong> The finding meets the definition: salmon-colored mucosa 1 cm or more above the junction, with goblet cells.</p>
-<p>His screening was justified: chronic reflux plus 3 or more risk factors (he has all six: male, White, over 50, central obesity, smoking, and a family history). A segment under 3 cm would be surveyed every 5 years. He should also stop smoking.</p>`,
-        notes: {
-            1: "Every 5 years is for a segment under 3 cm; his is 4 cm.",
-            2: "Six months on twice-daily PPI is for indefinite dysplasia.",
-            3: "Ablation is for low- or high-grade dysplasia, and he has none.",
-            4: "A PPI controls reflux but does not remove the cancer risk, so surveillance continues.",
-        },
-    },
-    {
-        id: "gerd-set-barrett-2",
-        condition: "gerd",
-        kind: "analysis",
-        set: "gerd-barrett-case",
-        stem: "At his next surveillance EGD, biopsies from the same segment show low-grade dysplasia, confirmed by a second pathologist. What is the most appropriate management?",
-        options: ["Endoscopic eradication, such as radiofrequency ablation", "Repeat EGD in 3 years as before", "Esophagectomy", "Nissen fundoplication to reverse the dysplasia", "Double his PPI dose and stop surveillance"],
-        answer: 0,
-        explanation: `<p><strong>Low- or high-grade dysplasia is treated by endoscopic eradication, such as radiofrequency ablation.</strong> Dysplasia is the step just before adenocarcinoma, so the aim is to destroy the abnormal epithelium while it is still confined to the mucosa.</p>
-<p>Ablation removes the metaplastic and dysplastic lining endoscopically, and with acid controlled, normal squamous epithelium grows back. Surveillance continues afterward, because Barrett mucosa can recur.</p>`,
-        notes: {
-            1: "Dysplasia changes the plan; routine intervals are for Barrett esophagus without dysplasia.",
-            2: "Esophagectomy is major surgery not needed for dysplasia that can be treated endoscopically.",
-            3: "Fundoplication controls reflux but does not remove dysplasia.",
-            4: "A PPI does not reverse dysplasia, and stopping surveillance would miss progression.",
-        },
-    },
-    {
-        id: "gerd-meds-case",
-        condition: "gerd",
-        kind: "analysis",
-        stem: `<p>A 68-year-old woman has 6 months of heartburn, worse at night. She has no alarm features, and an ECG is normal. Her medicines are listed below. She smokes 5 cigarettes a day and drinks 3 cups of coffee daily.</p>
-<table><thead><tr><th>Medicine</th><th>For</th></tr></thead><tbody>
-<tr><td>Isosorbide mononitrate</td><td>Stable angina</td></tr>
-<tr><td>Amlodipine</td><td>Hypertension</td></tr>
-<tr><td>Ibuprofen 400 mg three times daily</td><td>Knee osteoarthritis</td></tr>
-<tr><td>Metformin</td><td>Type 2 diabetes</td></tr>
-</tbody></table><p>Along with a PPI, which change most directly addresses a drug cause of her reflux?</p>`,
-        options: ["Replace ibuprofen with paracetamol", "Stop isosorbide mononitrate", "Stop amlodipine without a replacement", "Stop metformin", "Add theophylline for her breathing"],
-        answer: 0,
-        explanation: `<p><strong>On NSAIDs, the page's rule is to stop the offending drug,</strong> and her ibuprofen has a safe substitute in paracetamol for osteoarthritis. NSAIDs are risk factors for GERD and add mucosal injury.</p>
-<p>Her nitrate and amlodipine also lower LES tone, but they treat angina and hypertension, so stopping them carries real risk. If needed, the antihypertensive could be switched to a class without that effect. Stopping smoking and cutting caffeine would protect LES tone further.</p>`,
-        notes: {
-            1: "Nitrates lower LES tone, but stopping hers would leave her angina untreated.",
-            2: "CCBs lower LES tone, but her BP still needs treatment; switching class would be the safer change.",
-            3: "Metformin does not cause reflux.",
-            4: "Theophylline lowers LES tone and would worsen reflux.",
-        },
-    },
-
-    /* ===== Gastritis ===== */
+    /* ===== Gastritis and Peptic Ulcer Disease ===== */
 
     /* --- Memory --- */
     {
         id: "gas-hpylori-site",
-        condition: "gastritis",
+        condition: "gastritis-pud",
         kind: "memory",
         stem: "Which region of the stomach does H. pylori gastritis typically affect first?",
         options: ["Antrum", "Fundus", "Body", "Cardia", "Greater curvature only"],
@@ -1358,24 +1110,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "gas-autoimmune-site",
-        condition: "gastritis",
-        kind: "memory",
-        stem: "A woman with Hashimoto thyroiditis has a macrocytic anemia and positive anti-intrinsic factor antibodies. Which region of her stomach is most likely to show atrophy?",
-        options: ["Body and fundus", "Antrum", "Pylorus", "Cardia and lower esophagus", "Duodenal bulb"],
-        answer: 0,
-        explanation: `<p><strong>Autoimmune gastritis causes atrophy of the body and fundus, sparing the antrum.</strong> Autoantibodies attack parietal cells, which sit in the body and fundus, so that is where the mucosa thins.</p>
-<p>Losing parietal cells decreases HCl and IF, which leads to B12 deficiency. The result is atrophy rather than inflammation or erosions, and it often comes with autoimmune thyroid disease, as here.</p>`,
-        notes: {
-            1: "The antrum is spared in autoimmune gastritis; it is the typical starting site of H. pylori gastritis.",
-            2: "The pylorus has no parietal cells to attack.",
-            3: "Atrophy follows the parietal cells through the body and fundus, not the cardia alone.",
-            4: "The duodenum is not part of autoimmune gastritis.",
-        },
-    },
-    {
         id: "gas-autoimmune-labs",
-        condition: "gastritis",
+        condition: "gastritis-pud",
         kind: "memory",
         stem: "Which pair of findings is expected in autoimmune gastritis?",
         options: ["Decreased gastric acid, increased serum gastrin", "Increased gastric acid, increased serum gastrin", "Decreased gastric acid, decreased serum gastrin", "Increased gastric acid, decreased serum gastrin", "Normal gastric acid, normal serum gastrin levels"],
@@ -1390,40 +1126,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "gas-nsaid",
-        condition: "gastritis",
-        kind: "memory",
-        stem: "A man taking daily ibuprofen has shallow erosions in his gastric antrum. Decreased synthesis of which substance is chiefly responsible?",
-        options: ["Prostaglandins", "Gastrin", "Histamine", "Somatostatin from D cells", "Leukotrienes"],
-        answer: 0,
-        explanation: `<p><strong>NSAIDs inhibit COX, which decreases PG.</strong> Prostaglandins protect the stomach in two ways: they stimulate mucus production and they restrain HCl secretion. With less PG, the mucus layer weakens and HCl production increases, so acid reaches and erodes the mucosa.</p>
-<p>Alcohol injures the stomach through the same pathway on this page. The erosions are shallow and do not pass the muscularis mucosae; deeper injury would be a peptic ulcer.</p>`,
-        notes: {
-            1: "NSAIDs do not lower gastrin; H. pylori raises it.",
-            2: "Histamine stimulates acid; NSAIDs do not act by lowering it.",
-            3: "Somatostatin inhibits acid; lowering it is not the NSAID mechanism.",
-            4: "COX inhibition shunts arachidonic acid toward leukotrienes rather than lowering them.",
-        },
-    },
-    {
-        id: "gas-urease",
-        condition: "gastritis",
-        kind: "memory",
-        stem: "How does H. pylori survive in the acid of the stomach?",
-        options: ["Urease makes ammonia, which shields it from acid", "It lives inside parietal cells, away from the lumen", "It secretes bicarbonate from its cell wall", "It forms spores that resist acid", "It switches off acid secretion completely"],
-        answer: 0,
-        explanation: `<p><strong>H. pylori's urease splits urea into ammonia,</strong> which buffers the acid around the organism and shields it while it lives in the mucus layer over the epithelium.</p>
-<p>The same enzyme is the basis of the urea breath test, the most accurate noninvasive test: the patient swallows labeled urea, and if H. pylori is present, its urease releases labeled CO2 that is breathed out.</p>`,
-        notes: {
-            1: "H. pylori lives in the mucus layer over the epithelium, not inside parietal cells.",
-            2: "The protection comes from ammonia made by urease, not bicarbonate.",
-            3: "H. pylori does not form spores.",
-            4: "H. pylori in the antrum increases acid by raising gastrin.",
-        },
-    },
-    {
         id: "gas-ubt",
-        condition: "gastritis",
+        condition: "gastritis-pud",
         kind: "memory",
         stem: "Which is the most accurate noninvasive test for H. pylori?",
         options: ["Urea breath test", "Stool antigen test", "Serum H. pylori IgG", "EGD with biopsy", "Anti-parietal cell antibodies"],
@@ -1439,7 +1143,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "gas-antibodies",
-        condition: "gastritis",
+        condition: "gastritis-pud",
         kind: "memory",
         stem: "In autoimmune gastritis, which antibody is the more specific?",
         options: ["Anti-intrinsic factor", "Anti-parietal cell", "Anti-thyroid peroxidase", "Anti-tissue transglutaminase", "Anti-smooth muscle"],
@@ -1455,7 +1159,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "gas-carcinoid",
-        condition: "gastritis",
+        condition: "gastritis-pud",
         kind: "memory",
         stem: "A woman with long-standing autoimmune gastritis has a persistently high serum gastrin. Which tumor is she at increased risk of?",
         options: ["Type 1 gastric carcinoid", "Esophageal squamous cell carcinoma", "Gastrointestinal stromal tumor", "Hepatocellular carcinoma", "Pancreatic adenocarcinoma"],
@@ -1471,7 +1175,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "gas-menetrier",
-        condition: "gastritis",
+        condition: "gastritis-pud",
         kind: "memory",
         stem: "Which mechanism causes the giant gastric folds of Ménétrier disease?",
         options: ["Excess TGF-α activating EGFR", "Excess gastrin from a gastrinoma", "Autoantibodies against parietal cells", "Chronic H. pylori infection of the antrum", "Infiltration by signet ring cells"],
@@ -1485,27 +1189,11 @@ const QUIZ_QUESTIONS = [
             4: "Signet ring cells infiltrating the wall give linitis plastica, a diffuse cancer.",
         },
     },
-    {
-        id: "gas-diffuse",
-        condition: "gastritis",
-        kind: "memory",
-        stem: "Which feature belongs to diffuse-type gastric adenocarcinoma rather than intestinal type?",
-        options: ["Signet ring cells infiltrating the wall", "Gland formation", "A strong link to H. pylori and atrophy", "A link to salt-preserved and smoked foods", "Origin from intestinal metaplasia"],
-        answer: 0,
-        explanation: `<p><strong>Diffuse-type adenocarcinoma has signet ring cells that infiltrate the wall.</strong> The cells lack adhesion, often from CDH1 mutations, so they do not form glands. Instead they spread singly through the wall and stiffen it into linitis plastica (leather bottle stomach). It is linked to blood group A.</p>
-<p>Intestinal type, the most common, forms glands and follows the sequence H. pylori → atrophy → intestinal metaplasia → dysplasia.</p>`,
-        notes: {
-            1: "Gland formation defines intestinal type.",
-            2: "H. pylori and atrophic gastritis are the risk factors for intestinal type.",
-            3: "Salt-preserved, smoked, and N-nitroso foods are linked to intestinal type.",
-            4: "Intestinal metaplasia is the precursor of intestinal type.",
-        },
-    },
 
     /* --- Reasoning --- */
     {
         id: "gas-curling",
-        condition: "gastritis",
+        condition: "gastritis-pud",
         kind: "reasoning",
         stem: "A 35-year-old man with full-thickness burns over 45% of his body has coffee-ground emesis on hospital day 3. Which mechanism best explains it?",
         options: ["Hypovolemia leading to gastric mucosal ischemia", "Increased CN X stimulation of the parietal cells", "COX inhibition decreasing prostaglandins", "A gastrin-secreting tumor", "Autoantibodies against parietal cells"],
@@ -1520,24 +1208,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "gas-cushing",
-        condition: "gastritis",
-        kind: "reasoning",
-        stem: "A 27-year-old woman in the ICU after a traumatic brain injury with raised ICP develops hematemesis, and EGD shows multiple gastric erosions. How does her brain injury increase acid production?",
-        options: ["Increased CN X activity", "Hypovolemia causes mucosal ischemia", "Steroids for brain swelling block prostaglandins", "Autoantibodies are released from damaged brain", "Raised ICP increases secretin release"],
-        answer: 0,
-        explanation: `<p><strong>Cushing ulcers follow raised ICP.</strong> Pressure on the brainstem increases CN X (vagal) activity, and vagal ACh stimulates the stomach to secrete more HCl, which erodes the mucosa.</p>
-<p>Curling ulcers after burns work differently, through hypovolemia and ischemia. Both are erosions rather than true ulcers, because they do not pass the muscularis mucosae, and both are prevented with a PPI as stress prophylaxis.</p>`,
-        notes: {
-            1: "Hypovolemia and ischemia are the mechanism of Curling ulcers after burns.",
-            2: "Steroids can add risk, but the page's mechanism for Cushing ulcers is increased CN X activity.",
-            3: "Autoantibodies cause autoimmune gastritis, not acute erosions.",
-            4: "Secretin inhibits acid secretion rather than increasing it.",
-        },
-    },
-    {
         id: "gas-not-ulcers",
-        condition: "gastritis",
+        condition: "gastritis-pud",
         kind: "reasoning",
         stem: "Why are Curling and Cushing ulcers said not to be true ulcers?",
         options: ["They stay above the muscularis mucosae", "They occur only in the first part of the duodenum", "They are not caused by acid", "They heal without any treatment", "They never bleed"],
@@ -1553,7 +1225,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "gas-stress-ppx",
-        condition: "gastritis",
+        condition: "gastritis-pud",
         kind: "reasoning",
         stem: "A 66-year-old man has been ventilated in the ICU for 4 days after a severe head injury, with a platelet count of 48 × 10⁹/L. Which intervention best reduces his risk of stress-related gastric bleeding?",
         options: ["A prophylactic PPI", "Prophylactic misoprostol", "Daily EGD", "H. pylori testing", "No intervention"],
@@ -1568,46 +1240,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "gas-nsaid-ppx",
-        condition: "gastritis",
-        kind: "reasoning",
-        stem: "A 72-year-old woman takes naproxen for knee osteoarthritis and drinks heavily at weekends. She has epigastric pain, and EGD shows shallow antral erosions. H. pylori biopsies are negative. What is the most appropriate management?",
-        options: ["Stop naproxen and alcohol, and start a PPI", "Continue naproxen and add prednisone", "H. pylori eradication therapy", "Take naproxen on an empty stomach", "Add low-dose aspirin"],
-        answer: 0,
-        explanation: `<p><strong>Gastritis from NSAIDs or alcohol is treated by stopping the cause and giving a PPI.</strong> Both act through COX inhibition and decreased PG, so mucus falls and HCl rises. Removing them stops the injury, and the PPI lowers acid while the erosions heal.</p>
-<p>Paracetamol is a safer analgesic for her osteoarthritis. NSAIDs and alcohol also cause peptic ulcers, the deeper version of the same injury.</p>`,
-        notes: {
-            1: "Corticosteroids with NSAIDs increase the risk of ulcers.",
-            2: "Her biopsies are negative for H. pylori, so eradication has no target.",
-            3: "An empty stomach does not prevent the effect of COX inhibition, which is systemic.",
-            4: "Aspirin is another NSAID and adds to the injury.",
-        },
-        info: "When an NSAID cannot be stopped, adding a PPI or using a COX-2 selective inhibitor reduces gastric injury.",
-    },
-    {
-        id: "gas-eradicate",
-        condition: "gastritis",
-        kind: "reasoning",
-        stem: "A 38-year-old man with mild dyspepsia has a positive urea breath test. His symptoms have settled. Why is H. pylori still eradicated?",
-        options: ["It can lead to adenocarcinoma and lymphoma", "It will otherwise cause autoimmune gastritis", "It causes pernicious anemia within months", "It spreads to cause Barrett esophagus", "It produces Curling ulcers"],
-        answer: 0,
-        explanation: `<p><strong>Chronic H. pylori gastritis is always eradicated because of its complications,</strong> even when symptoms settle:</p>
-<ul>
-<li><strong>Gastric adenocarcinoma:</strong> H. pylori → atrophy → intestinal metaplasia → dysplasia.</li>
-<li><strong>Gastric MALT lymphoma:</strong> driven by chronic infection.</li>
-<li><strong>Peptic ulcer:</strong> from increased gastrin and HCl.</li>
-</ul>
-<p>Eradication uses the regimens on the PUD page, and cure is confirmed by a noninvasive test 4–6 weeks after finishing ABX or PPI.</p>`,
-        notes: {
-            1: "Autoimmune gastritis is caused by autoantibodies, not H. pylori.",
-            2: "Pernicious anemia follows autoimmune gastritis, developing over years.",
-            3: "Barrett esophagus follows chronic reflux of HCl, not H. pylori spread.",
-            4: "Curling ulcers follow severe burns.",
-        },
-    },
-    {
         id: "gas-confirm-cure",
-        condition: "gastritis",
+        condition: "gastritis-pud",
         kind: "reasoning",
         stem: "After H. pylori eradication, why is the test of cure done at least 4–6 weeks after finishing ABX or PPI?",
         options: ["Both suppress it, so early tests can miss it", "Both cause false-positive breath tests for months", "The organism takes 6 weeks to die after treatment", "Gastrin must return to normal before testing", "Serology needs 6 weeks to become negative"],
@@ -1622,24 +1256,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "gas-egd-age",
-        condition: "gastritis",
-        kind: "reasoning",
-        stem: "A 64-year-old woman has 2 months of new dyspepsia, with no weight loss, bleeding, dysphagia, or vomiting. What is the most appropriate next step?",
-        options: ["EGD with biopsies from 5 sites", "Urea breath test, then treat if positive", "An empiric PPI for 8 weeks", "A prokinetic", "A tricyclic antidepressant"],
-        answer: 0,
-        explanation: `<p><strong>Age 60 or older calls for EGD with biopsies from 5 sites,</strong> like alarm features. The risk of gastric cancer rises with age, so new dyspepsia at her age needs to be seen and biopsied rather than treated blind.</p>
-<p>The alarm features are weight loss, bleeding, dysphagia, a mass, persistent vomiting, and a family history of gastric cancer. Younger patients without them are tested for H. pylori, and if negative, given an empiric PPI, then a prokinetic or a tricyclic antidepressant.</p>`,
-        notes: {
-            1: "Test-and-treat suits younger patients without alarm features; at 64 she needs EGD.",
-            2: "An empiric PPI is for H. pylori-negative dyspepsia under 60.",
-            3: "A prokinetic comes after a PPI in H. pylori-negative dyspepsia under 60.",
-            4: "A tricyclic is a later option in H. pylori-negative dyspepsia under 60.",
-        },
-    },
-    {
         id: "gas-b12-tx",
-        condition: "gastritis",
+        condition: "gastritis-pud",
         kind: "reasoning",
         stem: "A 64-year-old woman with autoimmune gastritis has a macrocytic anemia, low serum B12, and reduced vibration sense in her feet. Which treatment is most appropriate?",
         options: ["IM B12, frequently at first, then for life", "Oral folic acid alone", "Oral iron alone", "A PPI", "H. pylori eradication therapy"],
@@ -1653,27 +1271,11 @@ const QUIZ_QUESTIONS = [
             4: "Her gastritis is autoimmune; eradication treats H. pylori.",
         },
     },
-    {
-        id: "gas-malt",
-        condition: "gastritis",
-        kind: "reasoning",
-        stem: "A gastric MALT lymphoma is found in a man with chronic H. pylori gastritis. It is negative for t(11;18). Why is H. pylori eradication the first treatment?",
-        options: ["It depends on H. pylori, so it often regresses", "Eradication prevents spread to the liver", "Antibiotics are directly cytotoxic to lymphoma cells", "It must be done before any EGD", "The translocation makes radiotherapy ineffective"],
-        answer: 0,
-        explanation: `<p><strong>MALT lymphoma grows from lymphoid tissue that chronic H. pylori infection drives,</strong> and while it still depends on that stimulus, removing the infection takes away its growth signal. Eradication gives an 80% complete response when the tumor is t(11;18) negative.</p>
-<p>The t(11;18) translocation lets the lymphoma grow independently of H. pylori, so those tumors, and those that do not respond, are treated with radiotherapy or systemic therapy.</p>`,
-        notes: {
-            1: "The reason is removing the growth stimulus, not preventing spread to the liver.",
-            2: "The antibiotics act on the bacteria, not on lymphoma cells.",
-            3: "EGD with biopsy is how the lymphoma is diagnosed.",
-            4: "Radiotherapy is used for t(11;18)-positive tumors; the translocation predicts resistance to eradication.",
-        },
-    },
 
     /* --- Analysis --- */
     {
         id: "gas-set-pa-1",
-        condition: "gastritis",
+        condition: "gastritis-pud",
         kind: "analysis",
         set: "gas-pa",
         passage: `<p>A 58-year-old woman with Hashimoto thyroiditis has 6 months of fatigue and tingling in both feet. Examination shows reduced vibration sense at the ankles. She takes levothyroxine and no other medicines, and eats a mixed diet.</p>
@@ -1705,7 +1307,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "gas-set-pa-2",
-        condition: "gastritis",
+        condition: "gastritis-pud",
         kind: "analysis",
         set: "gas-pa",
         stem: "EGD shows advanced atrophy of the body and fundus with intestinal metaplasia, a normal antrum, and two small nodules in the body. Which explains the nodules best?",
@@ -1722,7 +1324,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "gas-set-pa-3",
-        condition: "gastritis",
+        condition: "gastritis-pud",
         kind: "analysis",
         set: "gas-pa",
         stem: "Which plan is most appropriate for her?",
@@ -1739,7 +1341,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "gas-menetrier-case",
-        condition: "gastritis",
+        condition: "gastritis-pud",
         kind: "analysis",
         stem: `<p>A 56-year-old man has 3 months of epigastric discomfort, early satiety, and swelling of both legs. He has lost 4 kg.</p>
 <table><thead><tr><th>Test</th><th>Result</th><th>Reference</th></tr></thead><tbody>
@@ -1759,45 +1361,11 @@ const QUIZ_QUESTIONS = [
             4: "A gastrinoma thickens folds but causes high acid and ulcers, not protein loss with low acid.",
         },
     },
-    {
-        id: "gas-dyspepsia-case",
-        condition: "gastritis",
-        kind: "analysis",
-        stem: `<p>A 34-year-old woman has 4 months of upper abdominal discomfort and bloating after meals. She has no weight loss, bleeding, dysphagia, vomiting, or family history of gastric cancer, and takes no NSAIDs. A urea breath test, done off PPIs and ABX, is negative. She has now taken an empiric PPI for 8 weeks with no improvement.</p><p>What is the most appropriate next step?</p>`,
-        options: ["A prokinetic or a tricyclic antidepressant", "H. pylori eradication therapy", "EGD with biopsies from 5 sites", "Stress prophylaxis with an H2RA", "IM B12"],
-        answer: 0,
-        explanation: `<p><strong>H. pylori-negative dyspepsia under 60 is treated with an empiric PPI, then a prokinetic or a tricyclic antidepressant.</strong> She has no alarm features and is under 60, so EGD is not needed, and her breath test was done properly, off drugs that suppress the organism, so it is reliable.</p>
-<p>When acid suppression fails, the symptoms are likely from impaired gastric motility or visceral hypersensitivity, which a prokinetic or a low-dose tricyclic targets.</p>`,
-        notes: {
-            1: "Her breath test is negative and was done correctly, so there is nothing to eradicate.",
-            2: "EGD is for alarm features or age 60 or older, and she has neither.",
-            3: "Stress prophylaxis is for critically ill patients.",
-            4: "IM B12 treats autoimmune gastritis with B12 deficiency, which nothing here suggests.",
-        },
-    },
-
-    /* ===== Peptic Ulcer Disease (PUD) ===== */
 
     /* --- Memory --- */
     {
-        id: "pud-urease",
-        condition: "pud",
-        kind: "memory",
-        stem: "A biopsy from a patient with a duodenal ulcer shows curved, flagellated, gram-negative rods in the mucus over the antral epithelium. Which enzyme lets this organism survive gastric acid?",
-        options: ["Urease", "Catalase", "Coagulase", "Lipase", "Beta-lactamase"],
-        answer: 0,
-        explanation: `<p><strong>H. pylori's urease splits urea into ammonia, which neutralizes the acid around it.</strong> The organism is gram-negative, urease-positive, and has multiple flagella, which it uses to swim into the mucus layer, where it lives over the gastric epithelium.</p>
-<p>Urease is also the basis of three of the four tests for H. pylori: the urea breath test and the rapid urease test detect its activity directly, while the stool antigen test and histology detect the organism itself.</p>`,
-        notes: {
-            1: "Catalase protects bacteria from oxidative damage, not from acid.",
-            2: "Coagulase is the virulence factor of Staphylococcus aureus.",
-            3: "Phospholipases and mucinases are H. pylori virulence factors that damage the mucosa, but urease is what protects it from acid.",
-            4: "Beta-lactamase destroys penicillins; it is a resistance mechanism, not acid protection.",
-        },
-    },
-    {
         id: "pud-hp-share",
-        condition: "pud",
+        condition: "gastritis-pud",
         kind: "memory",
         stem: "What proportion of duodenal ulcers does H. pylori cause?",
         options: ["About 90%", "About 10–20%", "About 30%", "About 50%", "Under 5%"],
@@ -1812,41 +1380,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "pud-caga",
-        condition: "pud",
-        kind: "memory",
-        stem: "Which of the following is a cytotoxin of H. pylori?",
-        options: ["CagA", "Protein A", "Shiga toxin", "Exotoxin A", "Toxic shock syndrome toxin"],
-        answer: 0,
-        explanation: `<p><strong>CagA and VacA are the cytotoxins of H. pylori.</strong> Its full set of virulence factors is ureases, cytotoxins (VacA, CagA), mucinases, phospholipases, and PAF. Together they let it survive acid, break down the mucus layer, and injure the epithelium.</p>
-<p>Weakening the mucus barrier while raising acid through gastrin is how H. pylori produces ulcers, and chronic infection leads to gastritis, atrophy, intestinal metaplasia, dysplasia, gastric cancer, and MALT lymphoma.</p>`,
-        notes: {
-            1: "Protein A is a virulence factor of Staphylococcus aureus.",
-            2: "Shiga toxin is made by Shigella and enterohemorrhagic E. coli.",
-            3: "Exotoxin A is made by Pseudomonas aeruginosa.",
-            4: "Toxic shock syndrome toxin is made by Staphylococcus aureus.",
-        },
-        info: "CagA-positive strains cause more intense inflammation and are linked to a higher risk of ulcers and gastric adenocarcinoma.",
-    },
-    {
-        id: "pud-duodenal",
-        condition: "pud",
-        kind: "memory",
-        stem: "A 40-year-old man has 3 months of burning epigastric pain that starts 2–3 hours after meals and wakes him at night. Eating relieves it, and he has gained 3 kg. What is the most likely diagnosis?",
-        options: ["Duodenal ulcer", "Gastric ulcer", "Biliary colic", "Chronic pancreatitis", "Gastric adenocarcinoma"],
-        answer: 0,
-        explanation: `<p><strong>Pain 2–3 hours after meals and at night, relieved by eating, is a duodenal ulcer,</strong> usually in the duodenal bulb. Food buffers acid and keeps the pylorus busy, so pain eases with a meal; once the stomach empties, unbuffered acid reaches the duodenum, and pain returns when fasting and at night.</p>
-<p>Because eating helps, patients may gain weight. Gastric ulcer pain is the reverse: worse with eating, 15–30 minutes after meals, often with weight loss.</p>`,
-        notes: {
-            1: "Gastric ulcer pain is worse with eating, 15–30 minutes after meals.",
-            2: "Biliary colic causes RUQ pain after fatty meals lasting hours, not pain relieved by eating.",
-            3: "Chronic pancreatitis causes pain radiating to the back, worse after eating, with steatorrhea.",
-            4: "Gastric cancer causes weight loss and early satiety, not weight gain with pain relieved by food.",
-        },
-    },
-    {
         id: "pud-gda",
-        condition: "pud",
+        condition: "gastritis-pud",
         kind: "memory",
         stem: "A man has massive hematemesis and hypotension. EGD shows a bleeding ulcer on the posterior wall of the duodenal bulb. Which artery is most likely bleeding?",
         options: ["Gastroduodenal artery", "Left gastric artery", "Splenic artery", "Superior mesenteric artery", "Short gastric arteries"],
@@ -1861,40 +1396,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "pud-lesser-curve",
-        condition: "pud",
-        kind: "memory",
-        stem: "Where are gastric ulcers usually found?",
-        options: ["The lesser curvature", "The greater curvature", "The fundus", "The cardia", "The posterior duodenal bulb"],
-        answer: 0,
-        explanation: `<p><strong>Gastric ulcers are usually on the lesser curvature,</strong> and duodenal ulcers in the duodenal bulb. The site sets the complications: a bleeding lesser curvature ulcer erodes the left gastric artery, and a posterior duodenal ulcer the gastroduodenal artery.</p>
-<p>Gastric ulcer pain comes 15–30 minutes after meals and is worse with eating. Gastric ulcers can be malignant, so they are biopsied.</p>`,
-        notes: {
-            1: "Greater curvature ulcers are less typical and raise concern for malignancy.",
-            2: "The fundus is not the usual site of peptic ulcers.",
-            3: "The cardia is not the usual site of gastric ulcers.",
-            4: "The duodenal bulb is the usual site of duodenal ulcers, not gastric ones.",
-        },
-    },
-    {
-        id: "pud-nsaid-risk",
-        condition: "pud",
-        kind: "memory",
-        stem: "Which NSAID carries the highest risk of upper GI complications?",
-        options: ["Piroxicam", "Ibuprofen", "Celecoxib", "Paracetamol", "Low-dose ibuprofen taken with food"],
-        answer: 0,
-        explanation: `<p><strong>Risk is highest with piroxicam and ketorolac and lowest with ibuprofen and celecoxib.</strong> All NSAIDs act by COX inhibition, decreasing PG, which increases HCl production and decreases mucus production, but they differ in potency, half-life, and COX selectivity.</p>
-<p>Celecoxib is COX-2 selective, so it spares much of the COX-1 that makes protective PG in the stomach. Piroxicam's long half-life means prolonged suppression.</p>`,
-        notes: {
-            1: "Ibuprofen is among the lowest-risk NSAIDs.",
-            2: "Celecoxib, a COX-2 selective drug, is among the lowest-risk NSAIDs.",
-            3: "Paracetamol is not an NSAID and does not cause ulcers.",
-            4: "Low-dose ibuprofen is among the lowest-risk options.",
-        },
-    },
-    {
         id: "pud-triple",
-        condition: "pud",
+        condition: "gastritis-pud",
         kind: "memory",
         stem: "A 45-year-old woman with a duodenal ulcer has a positive urea breath test. She has no drug allergies. What is first-line eradication?",
         options: ["PPI, amoxicillin, and clarithromycin", "PPI, amoxicillin, and levofloxacin bd for 7–14 days", "PPI, metronidazole, tetracycline, and bismuth", "PPI, amoxicillin, and rifabutin", "A PPI alone for 8 weeks"],
@@ -1911,7 +1414,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "pud-zes",
-        condition: "pud",
+        condition: "gastritis-pud",
         kind: "memory",
         stem: "In suspected Zollinger-Ellison syndrome, which test confirms the diagnosis when the fasting gastrin is equivocal?",
         options: ["Secretin stimulation test", "Urea breath test", "Serum calcium, PTH, and prolactin", "Serum chromogranin A", "Upright CXR"],
@@ -1925,27 +1428,11 @@ const QUIZ_QUESTIONS = [
             4: "An upright CXR looks for perforation.",
         },
     },
-    {
-        id: "pud-perf-test",
-        condition: "pud",
-        kind: "memory",
-        stem: "Which test is used first when a perforated peptic ulcer is suspected?",
-        options: ["Upright CXR", "EGD with biopsy", "Urea breath test", "Barium meal", "Fasting gastrin"],
-        answer: 0,
-        explanation: `<p><strong>Perforation is evaluated with an upright CXR,</strong> which shows free air under the diaphragm (pneumoperitoneum). Air escapes through the full-thickness hole and rises to the highest point when the patient sits up.</p>
-<p>Perforation is treated with IV fluids, IV PPI, IV ABX, and surgery. Bleeding, by contrast, is evaluated with EGD with biopsy. In the esophagus, perforation causes pneumomediastinum instead, assessed by contrast esophagram and CXR.</p>`,
-        notes: {
-            1: "EGD is the test for bleeding; insufflating air could worsen a perforation.",
-            2: "Breath testing finds H. pylori later, not perforation.",
-            3: "Barium leaking into the peritoneum causes a severe peritonitis.",
-            4: "Fasting gastrin looks for a gastrinoma when H. pylori is absent.",
-        },
-    },
 
     /* --- Reasoning --- */
     {
         id: "pud-pain-timing",
-        condition: "pud",
+        condition: "gastritis-pud",
         kind: "reasoning",
         stem: "Why is gastric ulcer pain worse with eating, while duodenal ulcer pain improves with eating?",
         options: ["Meals bring acid onto gastric ulcers but buffer duodenal acid", "Food scrapes the gastric ulcer but passes over the duodenal one", "Gastric ulcers are deeper than duodenal ulcers", "Eating lowers gastrin, which protects only the duodenum", "Duodenal ulcers have no nerve supply"],
@@ -1960,24 +1447,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "pud-celecoxib",
-        condition: "pud",
-        kind: "reasoning",
-        stem: "Why does celecoxib carry a lower risk of peptic ulcers than piroxicam?",
-        options: ["It spares COX-1, which makes gastric PG", "It neutralizes gastric acid in the stomach lumen", "It is not absorbed from the stomach", "It increases gastrin release", "It blocks H. pylori urease"],
-        answer: 0,
-        explanation: `<p><strong>Celecoxib selectively inhibits COX-2, the inflammatory isoform,</strong> and spares much of COX-1, which makes the PG that protect the stomach. With more PG, mucus production is preserved and HCl production stays restrained, so the mucosa is better defended.</p>
-<p>Piroxicam inhibits both isoforms and has a long half-life, so its risk is among the highest, with ketorolac. Ibuprofen and celecoxib carry the lowest risk.</p>`,
-        notes: {
-            1: "Celecoxib does not buffer acid.",
-            2: "NSAID injury is mainly systemic, through COX inhibition, not local absorption.",
-            3: "Increasing gastrin would raise acid and ulcer risk.",
-            4: "Celecoxib has no effect on H. pylori.",
-        },
-    },
-    {
         id: "pud-misoprostol",
-        condition: "pud",
+        condition: "gastritis-pud",
         kind: "reasoning",
         stem: "A 66-year-old man with rheumatoid arthritis has had a gastric ulcer and must continue an NSAID. Misoprostol is added. How does it prevent ulcers?",
         options: ["It replaces the PG that NSAIDs remove", "It irreversibly blocks the proton pump", "It coats the ulcer base", "It kills H. pylori", "It blocks histamine at H2 receptors"],
@@ -1993,7 +1464,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "pud-pcn-allergy",
-        condition: "pud",
+        condition: "gastritis-pud",
         kind: "reasoning",
         stem: "A 41-year-old woman with a positive H. pylori stool antigen had anaphylaxis to penicillin as a child. Which regimen is most appropriate?",
         options: ["PPI, metronidazole, and clarithromycin", "PPI, amoxicillin, and clarithromycin", "PPI, amoxicillin, and levofloxacin", "PPI, amoxicillin, and rifabutin", "A PPI alone, at high dose, for 8 weeks"],
@@ -2008,24 +1479,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "pud-test-prep",
-        condition: "pud",
-        kind: "reasoning",
-        stem: "A 52-year-old man has just finished 14 days of eradication therapy and still takes omeprazole daily. When should cure be tested?",
-        options: ["Breath test 4 weeks after ABX, 2 weeks off PPI", "Breath test tomorrow, continuing omeprazole", "H. pylori serology now", "No test is needed after a full course", "Breath test straight after adding bismuth for 4 weeks"],
-        answer: 0,
-        explanation: `<p><strong>PPIs, ABX, and bismuth suppress H. pylori,</strong> so testing too soon gives false-negative breath, stool antigen, and rapid urease tests. The page's rule is to stop PPIs 2 weeks before testing, and ABX and bismuth 4 weeks before.</p>
-<p>Cure is confirmed by urea breath test 4–6 weeks after treatment. Testing matters because a persisting infection keeps causing ulcers and carries the risk of cancer and MALT lymphoma.</p>`,
-        notes: {
-            1: "Omeprazole suppresses the organism and would give a false-negative result.",
-            2: "Serology stays positive after eradication, so it cannot confirm cure.",
-            3: "Eradication can fail, so cure is always confirmed.",
-            4: "Bismuth suppresses H. pylori and must be stopped 4 weeks before testing.",
-        },
-    },
-    {
         id: "pud-perforation",
-        condition: "pud",
+        condition: "gastritis-pud",
         kind: "reasoning",
         stem: "A 63-year-old woman who takes naproxen has sudden severe epigastric pain spreading across her abdomen. She is tachycardic, with a rigid abdomen, and an upright CXR shows air under the right hemidiaphragm. Alongside IV fluids, IV PPI, and IV ABX, what is needed?",
         options: ["Emergency surgery", "EGD to find the ulcer", "H. pylori eradication first", "Oral sucralfate", "Observation with repeat CXR in 24 hours"],
@@ -2041,7 +1496,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "pud-bleed",
-        condition: "pud",
+        condition: "gastritis-pud",
         kind: "reasoning",
         stem: "A 68-year-old woman taking daily ibuprofen has melena and light-headedness, with BP 96/60, heart rate 112, and hemoglobin 81 g/L. After resuscitation with IV fluids and blood, what is the most appropriate management?",
         options: ["IV PPI and EGD", "Upright CXR and surgery", "Oral PPI and outpatient EGD", "Urea breath test, then eradication", "Misoprostol and continued ibuprofen"],
@@ -2055,9 +1510,216 @@ const QUIZ_QUESTIONS = [
             4: "The NSAID is stopped after a bleeding ulcer.",
         },
     },
+
+    /* --- Analysis --- */
+    {
+        id: "pud-goo",
+        condition: "gastritis-pud",
+        kind: "analysis",
+        stem: `<p>A 60-year-old man with years of untreated duodenal ulcers has 2 weeks of early satiety and repeated vomiting of undigested food. A splash is heard over his epigastrium when his abdomen is gently shaken.</p>
+<table><thead><tr><th>Test</th><th>Result</th><th>Reference</th></tr></thead><tbody>
+<tr><td>Sodium</td><td>133 mmol/L</td><td>135–145</td></tr>
+<tr><td>Potassium</td><td>2.8 mmol/L</td><td>3.5–5.2</td></tr>
+<tr><td>Chloride</td><td>84 mmol/L</td><td>95–110</td></tr>
+<tr><td>Bicarbonate</td><td>36 mmol/L</td><td>22–32</td></tr>
+</tbody></table><p><em>Illustrative data.</em></p><p>Which explains the complication and these results?</p>`,
+        options: ["Outlet obstruction; HCl loss from vomiting causes alkalosis", "Perforation; peritonitis causes a metabolic acidosis", "Gastrinoma; diarrhea causes a hypokalemic acidosis", "Bleeding; blood loss causes a lactic acidosis", "Gastric cancer; hypercalcemia causes an alkalosis"],
+        answer: 0,
+        explanation: `<p><strong>Scarring from chronic ulcers near the pylorus causes gastric outlet obstruction,</strong> with vomiting, pain, malnutrition, and a succussion splash from fluid trapped in the stomach. Vomiting gastric juice loses HCl, so chloride falls and bicarbonate rises (metabolic alkalosis). Volume loss activates aldosterone, which makes the kidney excrete potassium, so potassium falls too.</p>
+<p>Treatment starts with IV saline and potassium, which correct both.</p>`,
+        notes: {
+            1: "Perforation causes sudden pain, peritonitis, and free air, not weeks of vomiting with a splash.",
+            2: "Gastrinoma diarrhea loses bicarbonate, causing acidosis, and his bicarbonate is high.",
+            3: "Bleeding causes melena or hematemesis, not vomiting of undigested food.",
+            4: "Gastric cancer can obstruct, but his biochemistry comes from vomiting, not calcium.",
+        },
+        info: "Gastric outlet obstruction can also come from malignancy, so EGD is done once the patient is resuscitated.",
+    },
+    {
+        id: "gas-nsaid",
+        condition: "gastritis-pud",
+        kind: "memory",
+        stem: "A man taking daily ibuprofen has shallow erosions in his gastric antrum. Decreased synthesis of which substance is chiefly responsible?",
+        options: ["Prostaglandins", "Gastrin", "Histamine", "Somatostatin from D cells", "Leukotrienes"],
+        answer: 0,
+        explanation: `<p><strong>NSAIDs inhibit COX, which decreases PG.</strong> Prostaglandins protect the stomach in two ways: they stimulate mucus production and they restrain HCl secretion. With less PG, the mucus layer weakens and HCl production increases, so acid reaches and erodes the mucosa.</p>
+<p>Alcohol injures the stomach through the same pathway on this page. The erosions are shallow and do not pass the muscularis mucosae; deeper injury would be a peptic ulcer.</p>`,
+        notes: {
+            1: "NSAIDs do not lower gastrin; H. pylori raises it.",
+            2: "Histamine stimulates acid; NSAIDs do not act by lowering it.",
+            3: "Somatostatin inhibits acid; lowering it is not the NSAID mechanism.",
+            4: "COX inhibition shunts arachidonic acid toward leukotrienes rather than lowering them.",
+        },
+    },
+    {
+        id: "gas-autoimmune-site",
+        condition: "gastritis-pud",
+        kind: "memory",
+        stem: "A woman with Hashimoto thyroiditis has a macrocytic anemia and positive anti-intrinsic factor antibodies. Which region of her stomach is most likely to show atrophy?",
+        options: ["Body and fundus", "Antrum", "Pylorus", "Cardia and lower esophagus", "Duodenal bulb"],
+        answer: 0,
+        explanation: `<p><strong>Autoimmune gastritis causes atrophy of the body and fundus, sparing the antrum.</strong> Autoantibodies attack parietal cells, which sit in the body and fundus, so that is where the mucosa thins.</p>
+<p>Losing parietal cells decreases HCl and IF, which leads to B12 deficiency. The result is atrophy rather than inflammation or erosions, and it often comes with autoimmune thyroid disease, as here.</p>`,
+        notes: {
+            1: "The antrum is spared in autoimmune gastritis; it is the typical starting site of H. pylori gastritis.",
+            2: "The pylorus has no parietal cells to attack.",
+            3: "Atrophy follows the parietal cells through the body and fundus, not the cardia alone.",
+            4: "The duodenum is not part of autoimmune gastritis.",
+        },
+    },
+    {
+        id: "gas-urease",
+        condition: "gastritis-pud",
+        kind: "memory",
+        stem: "How does H. pylori survive in the acid of the stomach?",
+        options: ["Urease makes ammonia, which shields it from acid", "It lives inside parietal cells, away from the lumen", "It secretes bicarbonate from its cell wall", "It forms spores that resist acid", "It switches off acid secretion completely"],
+        answer: 0,
+        explanation: `<p><strong>H. pylori's urease splits urea into ammonia,</strong> which buffers the acid around the organism and shields it while it lives in the mucus layer over the epithelium.</p>
+<p>The same enzyme is the basis of the urea breath test, the most accurate noninvasive test: the patient swallows labeled urea, and if H. pylori is present, its urease releases labeled CO2 that is breathed out.</p>`,
+        notes: {
+            1: "H. pylori lives in the mucus layer over the epithelium, not inside parietal cells.",
+            2: "The protection comes from ammonia made by urease, not bicarbonate.",
+            3: "H. pylori does not form spores.",
+            4: "H. pylori in the antrum increases acid by raising gastrin.",
+        },
+    },
+    {
+        id: "pud-caga",
+        condition: "gastritis-pud",
+        kind: "memory",
+        stem: "Which of the following is a cytotoxin of H. pylori?",
+        options: ["CagA", "Protein A", "Shiga toxin", "Exotoxin A", "Toxic shock syndrome toxin"],
+        answer: 0,
+        explanation: `<p><strong>CagA and VacA are the cytotoxins of H. pylori.</strong> Its full set of virulence factors is ureases, cytotoxins (VacA, CagA), mucinases, phospholipases, and PAF. Together they let it survive acid, break down the mucus layer, and injure the epithelium.</p>
+<p>Weakening the mucus barrier while raising acid through gastrin is how H. pylori produces ulcers, and chronic infection leads to gastritis, atrophy, intestinal metaplasia, dysplasia, gastric cancer, and MALT lymphoma.</p>`,
+        notes: {
+            1: "Protein A is a virulence factor of Staphylococcus aureus.",
+            2: "Shiga toxin is made by Shigella and enterohemorrhagic E. coli.",
+            3: "Exotoxin A is made by Pseudomonas aeruginosa.",
+            4: "Toxic shock syndrome toxin is made by Staphylococcus aureus.",
+        },
+        info: "CagA-positive strains cause more intense inflammation and are linked to a higher risk of ulcers and gastric adenocarcinoma.",
+    },
+    {
+        id: "pud-lesser-curve",
+        condition: "gastritis-pud",
+        kind: "memory",
+        stem: "Where are gastric ulcers usually found?",
+        options: ["The lesser curvature", "The greater curvature", "The fundus", "The cardia", "The posterior duodenal bulb"],
+        answer: 0,
+        explanation: `<p><strong>Gastric ulcers are usually on the lesser curvature,</strong> and duodenal ulcers in the duodenal bulb. The site sets the complications: a bleeding lesser curvature ulcer erodes the left gastric artery, and a posterior duodenal ulcer the gastroduodenal artery.</p>
+<p>Gastric ulcer pain comes 15–30 minutes after meals and is worse with eating. Gastric ulcers can be malignant, so they are biopsied.</p>`,
+        notes: {
+            1: "Greater curvature ulcers are less typical and raise concern for malignancy.",
+            2: "The fundus is not the usual site of peptic ulcers.",
+            3: "The cardia is not the usual site of gastric ulcers.",
+            4: "The duodenal bulb is the usual site of duodenal ulcers, not gastric ones.",
+        },
+    },
+    {
+        id: "pud-nsaid-risk",
+        condition: "gastritis-pud",
+        kind: "memory",
+        stem: "Which NSAID carries the highest risk of upper GI complications?",
+        options: ["Piroxicam", "Ibuprofen", "Celecoxib", "Paracetamol", "Low-dose ibuprofen taken with food"],
+        answer: 0,
+        explanation: `<p><strong>Risk is highest with piroxicam and ketorolac and lowest with ibuprofen and celecoxib.</strong> All NSAIDs act by COX inhibition, decreasing PG, which increases HCl production and decreases mucus production, but they differ in potency, half-life, and COX selectivity.</p>
+<p>Celecoxib is COX-2 selective, so it spares much of the COX-1 that makes protective PG in the stomach. Piroxicam's long half-life means prolonged suppression.</p>`,
+        notes: {
+            1: "Ibuprofen is among the lowest-risk NSAIDs.",
+            2: "Celecoxib, a COX-2 selective drug, is among the lowest-risk NSAIDs.",
+            3: "Paracetamol is not an NSAID and does not cause ulcers.",
+            4: "Low-dose ibuprofen is among the lowest-risk options.",
+        },
+    },
+    {
+        id: "gas-cushing",
+        condition: "gastritis-pud",
+        kind: "reasoning",
+        stem: "A 27-year-old woman in the ICU after a traumatic brain injury with raised ICP develops hematemesis, and EGD shows multiple gastric erosions. How does her brain injury increase acid production?",
+        options: ["Increased CN X activity", "Hypovolemia causes mucosal ischemia", "Steroids for brain swelling block prostaglandins", "Autoantibodies are released from damaged brain", "Raised ICP increases secretin release"],
+        answer: 0,
+        explanation: `<p><strong>Cushing ulcers follow raised ICP.</strong> Pressure on the brainstem increases CN X (vagal) activity, and vagal ACh stimulates the stomach to secrete more HCl, which erodes the mucosa.</p>
+<p>Curling ulcers after burns work differently, through hypovolemia and ischemia. Both are erosions rather than true ulcers, because they do not pass the muscularis mucosae, and both are prevented with a PPI as stress prophylaxis.</p>`,
+        notes: {
+            1: "Hypovolemia and ischemia are the mechanism of Curling ulcers after burns.",
+            2: "Steroids can add risk, but the page's mechanism for Cushing ulcers is increased CN X activity.",
+            3: "Autoantibodies cause autoimmune gastritis, not acute erosions.",
+            4: "Secretin inhibits acid secretion rather than increasing it.",
+        },
+    },
+    {
+        id: "gas-eradicate",
+        condition: "gastritis-pud",
+        kind: "reasoning",
+        stem: "A 38-year-old man with mild dyspepsia has a positive urea breath test. His symptoms have settled. Why is H. pylori still eradicated?",
+        options: ["It can lead to adenocarcinoma and lymphoma", "It will otherwise cause autoimmune gastritis", "It causes pernicious anemia within months", "It spreads to cause Barrett esophagus", "It produces Curling ulcers"],
+        answer: 0,
+        explanation: `<p><strong>Chronic H. pylori gastritis is always eradicated because of its complications,</strong> even when symptoms settle:</p>
+<ul>
+<li><strong>Gastric adenocarcinoma:</strong> H. pylori → atrophy → intestinal metaplasia → dysplasia.</li>
+<li><strong>Gastric MALT lymphoma:</strong> driven by chronic infection.</li>
+<li><strong>Peptic ulcer:</strong> from increased gastrin and HCl.</li>
+</ul>
+<p>Eradication uses the regimens on the PUD page, and cure is confirmed by a noninvasive test 4–6 weeks after finishing ABX or PPI.</p>`,
+        notes: {
+            1: "Autoimmune gastritis is caused by autoantibodies, not H. pylori.",
+            2: "Pernicious anemia follows autoimmune gastritis, developing over years.",
+            3: "Barrett esophagus follows chronic reflux of HCl, not H. pylori spread.",
+            4: "Curling ulcers follow severe burns.",
+        },
+    },
+    {
+        id: "gas-egd-age",
+        condition: "gastritis-pud",
+        kind: "reasoning",
+        stem: "A 64-year-old woman has 2 months of new dyspepsia, with no weight loss, bleeding, dysphagia, or vomiting. What is the most appropriate next step?",
+        options: ["EGD with biopsies from 5 sites", "Urea breath test, then treat if positive", "An empiric PPI for 8 weeks", "A prokinetic", "A tricyclic antidepressant"],
+        answer: 0,
+        explanation: `<p><strong>Age 60 or older calls for EGD with biopsies from 5 sites,</strong> like alarm features. The risk of gastric cancer rises with age, so new dyspepsia at her age needs to be seen and biopsied rather than treated blind.</p>
+<p>The alarm features are weight loss, bleeding, dysphagia, a mass, persistent vomiting, and a family history of gastric cancer. Younger patients without them are tested for H. pylori, and if negative, given an empiric PPI, then a prokinetic or a tricyclic antidepressant.</p>`,
+        notes: {
+            1: "Test-and-treat suits younger patients without alarm features; at 64 she needs EGD.",
+            2: "An empiric PPI is for H. pylori-negative dyspepsia under 60.",
+            3: "A prokinetic comes after a PPI in H. pylori-negative dyspepsia under 60.",
+            4: "A tricyclic is a later option in H. pylori-negative dyspepsia under 60.",
+        },
+    },
+    {
+        id: "pud-celecoxib",
+        condition: "gastritis-pud",
+        kind: "reasoning",
+        stem: "Why does celecoxib carry a lower risk of peptic ulcers than piroxicam?",
+        options: ["It spares COX-1, which makes gastric PG", "It neutralizes gastric acid in the stomach lumen", "It is not absorbed from the stomach", "It increases gastrin release", "It blocks H. pylori urease"],
+        answer: 0,
+        explanation: `<p><strong>Celecoxib selectively inhibits COX-2, the inflammatory isoform,</strong> and spares much of COX-1, which makes the PG that protect the stomach. With more PG, mucus production is preserved and HCl production stays restrained, so the mucosa is better defended.</p>
+<p>Piroxicam inhibits both isoforms and has a long half-life, so its risk is among the highest, with ketorolac. Ibuprofen and celecoxib carry the lowest risk.</p>`,
+        notes: {
+            1: "Celecoxib does not buffer acid.",
+            2: "NSAID injury is mainly systemic, through COX inhibition, not local absorption.",
+            3: "Increasing gastrin would raise acid and ulcer risk.",
+            4: "Celecoxib has no effect on H. pylori.",
+        },
+    },
+    {
+        id: "pud-test-prep",
+        condition: "gastritis-pud",
+        kind: "reasoning",
+        stem: "A 52-year-old man has just finished 14 days of eradication therapy and still takes omeprazole daily. When should cure be tested?",
+        options: ["Breath test 4 weeks after ABX, 2 weeks off PPI", "Breath test tomorrow, continuing omeprazole", "H. pylori serology now", "No test is needed after a full course", "Breath test straight after adding bismuth for 4 weeks"],
+        answer: 0,
+        explanation: `<p><strong>PPIs, ABX, and bismuth suppress H. pylori,</strong> so testing too soon gives false-negative breath, stool antigen, and rapid urease tests. The page's rule is to stop PPIs 2 weeks before testing, and ABX and bismuth 4 weeks before.</p>
+<p>Cure is confirmed by urea breath test 4–6 weeks after treatment. Testing matters because a persisting infection keeps causing ulcers and carries the risk of cancer and MALT lymphoma.</p>`,
+        notes: {
+            1: "Omeprazole suppresses the organism and would give a false-negative result.",
+            2: "Serology stays positive after eradication, so it cannot confirm cure.",
+            3: "Eradication can fail, so cure is always confirmed.",
+            4: "Bismuth suppresses H. pylori and must be stopped 4 weeks before testing.",
+        },
+    },
     {
         id: "pud-gastric-biopsy",
-        condition: "pud",
+        condition: "gastritis-pud",
         kind: "reasoning",
         stem: "EGD in a 63-year-old woman with epigastric pain worse after meals shows a 2-cm ulcer on the lesser curvature. What should be done during this EGD?",
         options: ["Biopsy the ulcer", "Nothing; treat with a PPI alone", "Inject adrenaline into the base", "Resect the ulcer endoscopically", "Measure the fasting gastrin"],
@@ -2072,42 +1734,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "pud-refractory",
-        condition: "pud",
-        kind: "reasoning",
-        stem: "A 7-mm duodenal ulcer has not healed after 10 weeks of a PPI. What should be done first?",
-        options: ["Look for persistent H. pylori, NSAIDs, gastrinoma, or cancer", "Proceed directly to vagotomy", "Double the PPI and repeat in 6 months", "Switch to an H2RA", "Add misoprostol and stop investigating"],
-        answer: 0,
-        explanation: `<p><strong>A refractory ulcer, over 5 mm and not healed after 8–12 weeks of PPI, prompts a search for its cause:</strong> persistent H. pylori, NSAIDs (including hidden or over-the-counter use), gastrinoma, or cancer. Each keeps the ulcer open despite acid suppression, and each has its own treatment.</p>
-<p>Only when no treatable cause is found is surgery considered: vagotomy or partial gastrectomy.</p>`,
-        notes: {
-            1: "Surgery follows the search for a treatable cause, not before it.",
-            2: "Waiting longer on the same treatment could miss a gastrinoma or cancer.",
-            3: "An H2RA is weaker than the PPI that has already failed.",
-            4: "Misoprostol helps only NSAID ulcers, and the cause is still unknown.",
-        },
-    },
-    {
-        id: "pud-malt",
-        condition: "pud",
-        kind: "reasoning",
-        stem: "A 58-year-old woman with chronic dyspepsia has a low-grade, localized gastric MALT lymphoma with H. pylori on histology, negative for t(11;18). What is the most appropriate initial treatment?",
-        options: ["H. pylori eradication", "Total gastrectomy", "Combination chemotherapy", "Radiotherapy", "A PPI alone"],
-        answer: 0,
-        explanation: `<p><strong>Localized, t(11;18)-negative MALT lymphoma is treated first with H. pylori eradication.</strong> Chronic infection drives the lymphoid tissue the lymphoma grows from, and while the tumor still depends on that stimulus, removing the infection often makes it regress, with an 80% complete response.</p>
-<p>Radiotherapy or systemic therapy is used for t(11;18)-positive tumors or those that do not respond. Chronic H. pylori infection is linked to both MALT lymphoma and gastric cancer.</p>`,
-        notes: {
-            1: "Surgery is not needed for a lymphoma that often regresses with eradication.",
-            2: "Systemic therapy is for tumors that do not respond, or t(11;18)-positive ones.",
-            3: "Radiotherapy is for t(11;18)-positive or unresponsive tumors.",
-            4: "A PPI suppresses but does not eradicate H. pylori.",
-        },
-    },
-
-    /* --- Analysis --- */
-    {
         id: "pud-set-zes-1",
-        condition: "pud",
+        condition: "gastritis-pud",
         kind: "analysis",
         set: "pud-zes-case",
         passage: `<p>A 44-year-old man has had three duodenal ulcers in 2 years despite PPIs, and EGD now shows an ulcer in the proximal jejunum. He has 6 months of watery diarrhea. Biopsies, a urea breath test, and a stool antigen are negative for H. pylori, and he takes no NSAIDs. His PPI was stopped 1 week before the tests below.</p>
@@ -2132,7 +1760,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "pud-set-zes-2",
-        condition: "pud",
+        condition: "gastritis-pud",
         kind: "analysis",
         set: "pud-zes-case",
         stem: "What do his calcium and PTH suggest, and which other test completes the screen?",
@@ -2149,7 +1777,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "pud-set-zes-3",
-        condition: "pud",
+        condition: "gastritis-pud",
         kind: "analysis",
         set: "pud-zes-case",
         stem: "Imaging shows a single 1.5-cm tumor in the duodenal wall with no metastases. What is the best treatment plan?",
@@ -2163,50 +1791,6 @@ const QUIZ_QUESTIONS = [
             3: "Vagotomy is for refractory ulcers without a treatable cause; his cause is treatable.",
             4: "A standard dose failed already; gastrinoma needs a high dose, and the tumor can be removed.",
         },
-    },
-    {
-        id: "pud-rut-case",
-        condition: "pud",
-        kind: "analysis",
-        stem: `<p>A 59-year-old man is admitted with melena. He has been taking a PPI he bought himself for 3 weeks, and was started on an IV PPI infusion on arrival. EGD 12 hours later shows a clean-based duodenal ulcer.</p>
-<table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody>
-<tr><td>Rapid urease test on antral biopsy</td><td>Negative</td></tr>
-<tr><td>Histology</td><td>Pending</td></tr>
-</tbody></table>
-<p>The team plans to record him as H. pylori-negative and look for a gastrinoma. What is the best response?</p>`,
-        options: ["The negative result is unreliable because of the PPI", "Agree, and measure fasting gastrin today", "Agree, and stop his PPI before a secretin test", "Start triple therapy despite the negative result", "Repeat the rapid urease test tomorrow"],
-        answer: 0,
-        explanation: `<p><strong>PPIs suppress H. pylori, so a rapid urease test on a PPI can be falsely negative.</strong> The page's rule is to stop PPIs 2 weeks before testing, which was impossible here, so the result cannot exclude infection. Since H. pylori causes 90% of duodenal ulcers, it remains the likely cause.</p>
-<p>Histology is less affected and is awaited, and a urea breath test can follow off PPI. Gastrin testing comes only once H. pylori is truly excluded, and would also be raised by his PPI.</p>`,
-        notes: {
-            1: "Gastrin is checked only when H. pylori is absent, and his PPI would raise it.",
-            2: "A secretin test is for equivocal gastrin, after H. pylori is excluded.",
-            3: "Treatment should follow a positive test, which pending histology or later breath testing can give.",
-            4: "He is still on an IV PPI, so a repeat would be equally unreliable.",
-        },
-    },
-    {
-        id: "pud-goo",
-        condition: "pud",
-        kind: "analysis",
-        stem: `<p>A 60-year-old man with years of untreated duodenal ulcers has 2 weeks of early satiety and repeated vomiting of undigested food. A splash is heard over his epigastrium when his abdomen is gently shaken.</p>
-<table><thead><tr><th>Test</th><th>Result</th><th>Reference</th></tr></thead><tbody>
-<tr><td>Sodium</td><td>133 mmol/L</td><td>135–145</td></tr>
-<tr><td>Potassium</td><td>2.8 mmol/L</td><td>3.5–5.2</td></tr>
-<tr><td>Chloride</td><td>84 mmol/L</td><td>95–110</td></tr>
-<tr><td>Bicarbonate</td><td>36 mmol/L</td><td>22–32</td></tr>
-</tbody></table><p><em>Illustrative data.</em></p><p>Which explains the complication and these results?</p>`,
-        options: ["Outlet obstruction; HCl loss from vomiting causes alkalosis", "Perforation; peritonitis causes a metabolic acidosis", "Gastrinoma; diarrhea causes a hypokalemic acidosis", "Bleeding; blood loss causes a lactic acidosis", "Gastric cancer; hypercalcemia causes an alkalosis"],
-        answer: 0,
-        explanation: `<p><strong>Scarring from chronic ulcers near the pylorus causes gastric outlet obstruction,</strong> with vomiting, pain, malnutrition, and a succussion splash from fluid trapped in the stomach. Vomiting gastric juice loses HCl, so chloride falls and bicarbonate rises (metabolic alkalosis). Volume loss activates aldosterone, which makes the kidney excrete potassium, so potassium falls too.</p>
-<p>Treatment starts with IV saline and potassium, which correct both.</p>`,
-        notes: {
-            1: "Perforation causes sudden pain, peritonitis, and free air, not weeks of vomiting with a splash.",
-            2: "Gastrinoma diarrhea loses bicarbonate, causing acidosis, and his bicarbonate is high.",
-            3: "Bleeding causes melena or hematemesis, not vomiting of undigested food.",
-            4: "Gastric cancer can obstruct, but his biochemistry comes from vomiting, not calcium.",
-        },
-        info: "Gastric outlet obstruction can also come from malignancy, so EGD is done once the patient is resuscitated.",
     },
 
     /* ===== Gastric tumors ===== */
@@ -2657,6 +2241,266 @@ const QUIZ_QUESTIONS = [
             2: "Staging laparoscopy comes after a diagnosis and CT, not before.",
             3: "Weight loss and anemia are alarm features, so an empiric PPI trial would delay the diagnosis.",
             4: "H. pylori testing can be done on biopsies; testing alone would miss a tumor.",
+        },
+    },
+    {
+        id: "gt-peutz-jeghers",
+        condition: "gastric-tumors",
+        kind: "memory",
+        stem: "Which inherited syndrome causes hamartomatous gastric polyps and carries about a 29% risk of gastric cancer?",
+        options: ["Peutz-Jeghers syndrome", "Lynch syndrome", "Multiple endocrine neoplasia type 1", "Neurofibromatosis type 1", "Carney triad"],
+        answer: 0,
+        explanation: `<p><strong>Peutz-Jeghers syndrome causes hamartomas and a gastric cancer risk of about 29%.</strong> Hamartomatous gastric polyps also occur in juvenile polyposis. Among inherited risks for gastric adenocarcinoma, the page lists CDH1 (hereditary diffuse gastric cancer), FAP (about 10%), Peutz-Jeghers syndrome (about 29%), and blood type A.</p>`,
+        notes: {
+            1: "Lynch syndrome is not among the inherited gastric cancer risks on this page, and it does not cause hamartomas.",
+            2: "MEN1 is linked to gastrinomas and type 2 gastric NETs, not hamartomatous polyps.",
+            3: "NF1 is linked to GIST, which arises beneath the mucosa rather than as a polyp.",
+            4: "Carney triad is linked to GIST, not hamartomatous polyps.",
+        },
+    },
+    {
+        id: "gt-gist-cell",
+        condition: "gastric-tumors",
+        kind: "memory",
+        stem: "From which cells do gastrointestinal stromal tumors (GISTs) arise?",
+        options: ["Interstitial cells of Cajal", "Enterochromaffin-like cells", "Parietal cells of the gastric body", "B cells of mucosal lymphoid tissue", "Chief cells of the fundic glands"],
+        answer: 0,
+        explanation: `<p><strong>GISTs arise from the interstitial cells of Cajal, the pacemaker cells of the muscularis propria.</strong> The stomach is the site in about 60%. Most carry a KIT (CD117) mutation (75–80%) or a PDGFRA mutation (5–10%), and DOG1 is the most specific stain. NF1 and Carney triad are associated syndromes.</p>`,
+        notes: {
+            1: "ECL cells give rise to gastric NETs.",
+            2: "Parietal cells are destroyed in autoimmune gastritis; they do not give rise to GISTs.",
+            3: "B cells of mucosal lymphoid tissue give rise to MALT lymphoma.",
+            4: "Chief cells are not the origin of any tumor on this page; adenocarcinoma arises from the epithelium through metaplasia.",
+        },
+    },
+    {
+        id: "gt-sister-mary-joseph",
+        condition: "gastric-tumors",
+        kind: "memory",
+        stem: "A man with gastric adenocarcinoma has a firm nodule at the umbilicus. What is this sign called?",
+        options: ["Sister Mary Joseph node", "Virchow node at the umbilicus", "Irish node", "Blumer shelf", "Krukenberg tumor of the umbilicus"],
+        answer: 0,
+        explanation: `<p><strong>A periumbilical nodule is a Sister Mary Joseph node,</strong> a sign of spread. The others are worth knowing as a set:</p>
+<ul>
+<li><strong>Virchow node:</strong> left supraclavicular, reached through the thoracic duct.</li>
+<li><strong>Irish node:</strong> left axillary.</li>
+<li><strong>Blumer shelf:</strong> a mass in the rectouterine or rectovesical pouch.</li>
+<li><strong>Krukenberg tumor:</strong> signet ring cell metastases to the ovaries, often bilateral.</li>
+</ul>`,
+        notes: {
+            1: "A Virchow node is in the left supraclavicular fossa.",
+            2: "An Irish node is in the left axilla.",
+            3: "A Blumer shelf is a pelvic mass felt on rectal examination.",
+            4: "A Krukenberg tumor is ovarian spread.",
+        },
+    },
+    {
+        id: "gt-malt-markers",
+        condition: "gastric-tumors",
+        kind: "memory",
+        stem: "A gastric biopsy shows small lymphoid cells invading the glands as lymphoepithelial lesions. Which immunohistochemistry profile fits MALT lymphoma?",
+        options: ["CD20 positive; CD5 and CD10 negative", "CD5 and cyclin D1 positive", "CD10 and CD20 both positive", "Chromogranin A and synaptophysin positive", "KIT (CD117) and DOG1 positive"],
+        answer: 0,
+        explanation: `<p><strong>MALT lymphoma cells are B cells (CD19, CD20, and CD79a positive) that are CD5, CD10, and cyclin D1 negative,</strong> with lymphoepithelial lesions. After the diagnosis, the workup tests for H. pylori and t(11;18) and stages the disease, because those results decide whether eradication alone is enough.</p>`,
+        notes: {
+            1: "MALT lymphoma is negative for CD5 and cyclin D1.",
+            2: "MALT lymphoma is negative for CD10.",
+            3: "Chromogranin A and synaptophysin mark a NET.",
+            4: "KIT and DOG1 mark a GIST.",
+        },
+    },
+    {
+        id: "gt-proximal-risk",
+        condition: "gastric-tumors",
+        kind: "memory",
+        stem: "Cancers of the proximal stomach and gastroesophageal junction are rising. Which risk factors are linked to them?",
+        options: ["Obesity and GERD", "High salt and smoked foods", "Pernicious anemia and atrophy", "Blood type A and CDH1 loss", "Hyperplastic gastric polyps"],
+        answer: 0,
+        explanation: `<p><strong>Obesity and GERD drive proximal and junctional cancers,</strong> along with bile reflux after gastric surgery, and EBV is linked to the proximal stomach. Distal, intestinal-type cancer has fallen with better diet and H. pylori treatment, while proximal and junctional cancers are rising.</p>`,
+        notes: {
+            1: "Salt and smoked or cured foods are dietary risks for distal, intestinal-type cancer.",
+            2: "Atrophic gastritis and pernicious anemia are stomach diseases that raise the risk of distal, intestinal-type cancer.",
+            3: "Blood type A and CDH1 loss are linked to diffuse-type cancer, which can arise anywhere in the stomach.",
+            4: "Hyperplastic polyps are linked to H. pylori and atrophic gastritis, not to junctional cancer.",
+        },
+    },
+    {
+        id: "gt-net-type3",
+        condition: "gastric-tumors",
+        kind: "memory",
+        stem: "Which gastric NET has a normal serum gastrin and behaves most aggressively?",
+        options: ["Type 3, which is sporadic", "Type 1, with autoimmune gastritis", "Type 2, with ZES and MEN1", "A NET in a fundic gland polyp", "A NET arising with PPI use"],
+        answer: 0,
+        explanation: `<p><strong>Type 3 NETs are sporadic, have a normal gastrin, and are aggressive,</strong> so they are treated by gastrectomy with lymphadenectomy. Types 1 and 2 are driven by high gastrin: type 1 with low acid from autoimmune gastritis (70–80% of gastric NETs) and type 2 with high acid from a gastrinoma in ZES, often with MEN1.</p>`,
+        notes: {
+            1: "Type 1 has a high gastrin, from loss of acid in autoimmune gastritis, and is usually indolent.",
+            2: "Type 2 has a high gastrin from a gastrinoma.",
+            3: "Fundic gland polyps are benign polyps linked to PPI use and FAP, not a NET type.",
+            4: "A PPI raises gastrin; the gastric NET types on the page are 1, 2, and 3, and type 3 has a normal gastrin.",
+        },
+    },
+    {
+        id: "gt-malt-hp-negative",
+        condition: "gastric-tumors",
+        kind: "reasoning",
+        stem: "A woman has a localized gastric MALT lymphoma, negative for t(11;18). Her H. pylori tests are negative. Why is H. pylori eradication still given first?",
+        options: ["Many MALT lymphomas regress after eradication even when tests are negative", "The ABX in the regimen kill lymphoma cells directly", "Eradication prevents the lymphoma from transforming into a GIST", "Eradication lowers gastrin, which drives the growth of lymphoma cells in the stomach", "Eradication is needed before radiotherapy can be planned"],
+        answer: 0,
+        explanation: `<p><strong>Over 90% of gastric MALT lymphomas are driven by H. pylori, and over 75% respond to eradication, so it is given even if testing is negative.</strong> The lymphoma grows on the chronic antigen stimulus of the infection, and removing it lets the lymphoma regress.</p>
+<p>Cure is confirmed at 6 weeks and EGD repeated in 3–6 months. Radiotherapy or rituximab is used if H. pylori is negative and the lymphoma persists, or if t(11;18) is positive, because that translocation makes the lymphoma independent of H. pylori.</p>`,
+        notes: {
+            1: "The ABX act on H. pylori, removing the stimulus; they do not kill lymphoma cells.",
+            2: "MALT lymphoma can transform into DLBCL, not GIST.",
+            3: "Gastrin drives ECL cells into NETs, not lymphoma.",
+            4: "Eradication is a treatment in its own right, not a step before radiotherapy.",
+        },
+    },
+    {
+        id: "gt-dlbcl",
+        condition: "gastric-tumors",
+        kind: "reasoning",
+        stem: "A man's gastric MALT lymphoma transforms into diffuse large B-cell lymphoma (DLBCL). Why is he treated with chemotherapy rather than H. pylori eradication?",
+        options: ["DLBCL grows independently of H. pylori", "DLBCL is a tumor of the muscularis propria", "Eradication ABX interact with chemotherapy", "DLBCL secretes gastrin, so ABX cannot work", "DLBCL arises only in patients without H. pylori"],
+        answer: 0,
+        explanation: `<p><strong>DLBCL no longer depends on the H. pylori stimulus, so removing the infection does not shrink it.</strong> MALT lymphoma transforms into DLBCL in 2–8%, and the high-grade lymphoma needs chemotherapy. Together, MALT lymphoma and DLBCL make up nearly 90% of gastric lymphomas.</p>`,
+        notes: {
+            1: "Tumors of the muscularis propria are GIST and leiomyoma; DLBCL is a B-cell lymphoma.",
+            2: "Drug interactions are not the reason; eradication simply does not treat DLBCL.",
+            3: "Gastrin secretion belongs to gastrinomas, not lymphoma.",
+            4: "DLBCL can arise from an H. pylori-driven MALT lymphoma, as here.",
+        },
+    },
+    {
+        id: "gt-signet-total",
+        condition: "gastric-tumors",
+        kind: "reasoning",
+        stem: "Why does a gastric adenocarcinoma with signet ring cell histology need a total rather than a subtotal gastrectomy?",
+        options: ["Its cells lose adhesion and spread through the wall beyond any visible mass", "Signet ring cells respond only to surgery and never to perioperative chemotherapy", "It always arises at the gastroesophageal junction", "A subtotal gastrectomy would leave the parietal cells that feed it", "It is always found with liver metastases"],
+        answer: 0,
+        explanation: `<p><strong>Diffuse-type cancer loses E-cadherin (CDH1), so its cells do not stick together and infiltrate the wall without forming a mass,</strong> producing linitis plastica. Because the tumor's edges cannot be seen, a partial resection risks leaving tumor behind, so total gastrectomy is needed for signet ring cell histology, as it is for proximal or extensive tumors.</p>`,
+        notes: {
+            1: "Deeper tumors receive perioperative chemotherapy whatever their histology.",
+            2: "Diffuse-type cancer can arise anywhere in the stomach.",
+            3: "The tumor does not depend on parietal cells; the issue is how far it infiltrates.",
+            4: "Many signet ring cancers are resected for cure; metastatic disease is treated with palliative chemotherapy instead.",
+        },
+    },
+    {
+        id: "gt-gist-rupture",
+        condition: "gastric-tumors",
+        kind: "reasoning",
+        stem: "A surgeon resecting a large gastric GIST takes particular care not to rupture it. Why?",
+        options: ["Rupture spills tumor cells and raises the risk of recurrence", "Rupture releases serotonin from the tumor and causes a carcinoid crisis", "Rupture releases gastrin and causes acute ulceration", "Rupture converts the GIST into a leiomyosarcoma", "Rupture makes KIT staining of the specimen impossible"],
+        answer: 0,
+        explanation: `<p><strong>A ruptured GIST seeds the peritoneum, so rupture raises recurrence.</strong> Treatment is complete (R0) resection without rupture, with adjuvant imatinib for high-risk tumors and imatinib first line if the tumor is unresectable or metastatic.</p>`,
+        notes: {
+            1: "Serotonin and carcinoid syndrome come from NETs with liver metastases, not GISTs.",
+            2: "Gastrin comes from gastrinomas.",
+            3: "GISTs do not convert into leiomyosarcoma, a separate and very rare tumor.",
+            4: "Staining is not the concern; rupture matters because of recurrence.",
+        },
+    },
+    {
+        id: "gt-eus-next",
+        condition: "gastric-tumors",
+        kind: "reasoning",
+        stem: "EGD shows a smooth bulge beneath normal gastric mucosa, and mucosal biopsies are normal. Why is EUS the next step?",
+        options: ["It shows which layer the lesion comes from and allows FNA for tissue", "It measures the gastrin output of the lesion", "It is the first-line test for spread to the liver and the peritoneum", "It can remove the lesion completely during the same diagnostic procedure", "It stains the lesion for KIT and DOG1"],
+        answer: 0,
+        explanation: `<p><strong>Lesions beneath the mucosa are out of reach of standard biopsies, and EUS shows their layer and texture:</strong></p>
+<ul>
+<li><strong>GIST and leiomyoma:</strong> hypoechoic, from the muscularis propria.</li>
+<li><strong>Lipoma:</strong> homogeneously hyperechoic, needing no biopsy when typical.</li>
+</ul>
+<p>EUS-guided FNA then provides tissue for staining, such as KIT and DOG1 for GIST.</p>`,
+        notes: {
+            1: "Gastrin is measured in the blood, with gastric pH, when a NET is suspected.",
+            2: "Contrast CT is the first-line imaging for spread.",
+            3: "EUS diagnoses and samples; resection is a separate decision.",
+            4: "Staining is done on the tissue EUS obtains, in the laboratory.",
+        },
+    },
+    {
+        id: "gt-trend",
+        condition: "gastric-tumors",
+        kind: "reasoning",
+        stem: "Why has distal, intestinal-type gastric cancer become less common in Western countries, while proximal and junctional cancer has become more common?",
+        options: ["Better diet and H. pylori treatment remove distal risks, while obesity and GERD rise", "Screening endoscopy finds and removes distal cancers early", "PPIs prevent distal cancer but cause proximal cancer", "Distal tumors are now classed as proximal tumors after better staging with EUS and CT", "CDH1 mutations have become more common in Western populations"],
+        answer: 0,
+        explanation: `<p><strong>Intestinal-type cancer follows the H. pylori sequence and dietary risks,</strong> such as salt, smoked and cured foods, and a lack of refrigeration, which have fallen. Proximal and junctional cancers are linked to obesity, GERD, and bile reflux, which are rising.</p>
+<p>Routine screening endoscopy is used in Japan and South Korea, not in Western countries, where only 10–20% of cancers are found early.</p>`,
+        notes: {
+            1: "Routine screening endoscopy is practiced in Japan and South Korea, not the West.",
+            2: "PPIs are linked to fundic gland polyps, not a change in cancer site.",
+            3: "The change is real, not a matter of classification.",
+            4: "CDH1 mutations cause hereditary diffuse cancer, which is uncommon and has not driven this trend.",
+        },
+    },
+    {
+        id: "gt-set-malt-1",
+        condition: "gastric-tumors",
+        kind: "analysis",
+        set: "gt-malt",
+        passage: `<p>A 61-year-old woman has 6 months of dyspepsia. EGD shows thickened folds and erosions in the antrum. Biopsies show a dense infiltrate of small lymphoid cells invading the glands.</p>
+<table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody>
+<tr><td>Immunohistochemistry</td><td>CD20 and CD79a positive; CD5, CD10, and cyclin D1 negative</td></tr>
+<tr><td>Urea breath test</td><td>Positive</td></tr>
+<tr><td>t(11;18)</td><td>Not detected</td></tr>
+<tr><td>Staging CT</td><td>Disease confined to the stomach</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p>`,
+        stem: "What is the diagnosis?",
+        options: ["Gastric MALT lymphoma", "Diffuse large B-cell lymphoma", "Mantle cell lymphoma", "Diffuse-type adenocarcinoma", "Ménétrier disease"],
+        answer: 0,
+        explanation: `<p><strong>Small B cells (CD20, CD79a) that are CD5, CD10, and cyclin D1 negative, invading the glands as lymphoepithelial lesions, are MALT lymphoma.</strong> The antrum is its most common site, and H. pylori drives over 90%.</p>`,
+        notes: {
+            1: "DLBCL is made of large cells; this infiltrate is of small lymphoid cells.",
+            2: "Mantle cell lymphoma is CD5 and cyclin D1 positive.",
+            3: "Diffuse-type adenocarcinoma is made of signet ring epithelial cells, not B cells.",
+            4: "Ménétrier disease causes giant folds with protein loss, not a lymphoid infiltrate.",
+        },
+    },
+    {
+        id: "gt-set-malt-2",
+        condition: "gastric-tumors",
+        kind: "analysis",
+        set: "gt-malt",
+        stem: "Which management plan is most appropriate?",
+        options: ["H. pylori eradication, cure confirmed at 6 weeks, and EGD in 3–6 months", "Radiotherapy to the whole stomach, then H. pylori eradication if she relapses", "Chemotherapy with rituximab, then surgery", "Total gastrectomy with D2 lymphadenectomy", "No treatment, with EGD every 3 years"],
+        answer: 0,
+        explanation: `<p><strong>A localized, H. pylori-positive, t(11;18)-negative MALT lymphoma is treated by eradication alone,</strong> because removing the infection removes the stimulus, and over 75% respond. Cure is confirmed at 6 weeks, and EGD is repeated in 3–6 months to check that the lymphoma has regressed.</p>
+<p>Radiotherapy or rituximab is kept for lymphoma that persists after eradication, H. pylori-negative disease, or t(11;18)-positive disease.</p>`,
+        notes: {
+            1: "Radiotherapy is for lymphoma that does not respond to eradication or is t(11;18) positive.",
+            2: "Chemotherapy is for DLBCL, which grows independently of H. pylori.",
+            3: "Gastrectomy with lymphadenectomy treats adenocarcinoma, not MALT lymphoma.",
+            4: "EGD every 3 years is surveillance for advanced atrophy; a lymphoma needs treatment.",
+        },
+    },
+    {
+        id: "gt-three-submucosal",
+        condition: "gastric-tumors",
+        kind: "analysis",
+        stem: `<p>Three patients have smooth lesions beneath normal gastric mucosa.</p>
+<table><thead><tr><th>Patient</th><th>EUS</th><th>EUS-guided FNA</th></tr></thead><tbody>
+<tr><td>1</td><td>Hypoechoic, from the muscularis propria, 5 cm</td><td>Spindle cells; KIT and DOG1 positive</td></tr>
+<tr><td>2</td><td>Homogeneously hyperechoic, in the submucosa; soft and yellow on EGD</td><td>Not done</td></tr>
+<tr><td>3</td><td>Hypoechoic, from the muscularis propria, 2 cm</td><td>Spindle cells; desmin and SMA positive, KIT and CD34 negative</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p><p>Which pairing of patient and lesion is correct?</p>`,
+        options: ["1 GIST, 2 lipoma, 3 leiomyoma", "1 leiomyoma, 2 lipoma, 3 GIST tumor", "1 GIST, 2 leiomyoma, 3 lipoma", "1 lipoma, 2 GIST, 3 leiomyoma", "1 GIST, 2 lipoma, 3 NET (carcinoid)"],
+        answer: 0,
+        explanation: `<p><strong>Staining and EUS texture separate the three:</strong></p>
+<ul>
+<li><strong>Patient 1, GIST:</strong> hypoechoic from the muscularis propria, KIT and DOG1 positive (DOG1 is the most specific). It needs complete resection without rupture.</li>
+<li><strong>Patient 2, lipoma:</strong> homogeneously hyperechoic submucosal fat, soft and yellow; no biopsy is needed when EUS is typical.</li>
+<li><strong>Patient 3, leiomyoma:</strong> also hypoechoic from the muscularis propria, but desmin and SMA positive and KIT and CD34 negative. It needs no treatment if small and silent.</li>
+</ul>`,
+        notes: {
+            1: "KIT and DOG1 positivity makes patient 1 a GIST, and desmin with SMA makes patient 3 a leiomyoma.",
+            2: "A homogeneously hyperechoic, yellow, soft lesion is a lipoma, not a leiomyoma.",
+            3: "Patient 1 stains for KIT and DOG1, so it is a GIST, not a lipoma.",
+            4: "A NET stains for chromogranin A and synaptophysin; patient 3's spindle cells with desmin and SMA are a leiomyoma.",
         },
     },
 
@@ -3138,22 +2982,6 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "div-incidence",
-        condition: "diverticular-diseases",
-        kind: "memory",
-        stem: "About what share of people with diverticulosis develop diverticulitis?",
-        options: ["About 4%", "About 30%", "About 50%", "About 75%", "Nearly all, given time"],
-        answer: 0,
-        explanation: `<p><strong>Only about 4% of people with diverticulosis develop diverticulitis,</strong> even though diverticulosis affects over half of people over 60. Most diverticula never cause symptoms and are found incidentally, on colonoscopy or CT.</p>
-<p>Diverticulitis needs an extra step: a fecalith blocks the neck of a diverticulum, and back pressure and bacteria cause inflammation. The 30% figure on the page is the recurrence rate after a first episode of diverticulitis.</p>`,
-        notes: {
-            1: "Up to 30% is the recurrence rate after a first episode of diverticulitis.",
-            2: "Over half of people over 60 have diverticulosis, but few develop diverticulitis.",
-            3: "Most people with diverticulosis never have symptoms.",
-            4: "Diverticulosis is usually silent for life.",
-        },
-    },
-    {
         id: "div-bleed",
         condition: "diverticular-diseases",
         kind: "memory",
@@ -3202,38 +3030,6 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "div-pylephlebitis",
-        condition: "diverticular-diseases",
-        kind: "memory",
-        stem: "Which complication of diverticulitis is a septic clot in the portal or mesenteric vein?",
-        options: ["Pylephlebitis", "Enterovesical fistula", "Pneumoperitoneum", "Budd-Chiari syndrome", "Ischemic colitis"],
-        answer: 0,
-        explanation: `<p><strong>Pylephlebitis is septic thrombophlebitis of the portal or mesenteric veins,</strong> and its mortality is up to 25%. The sigmoid drains through the inferior mesenteric vein into the portal system, so infection from an inflamed diverticulum can travel in the venous blood and clot it.</p>
-<p>It is one of the serious complications, alongside abscess, fistula, and perforation; recurrence after a first episode is up to 30%.</p>`,
-        notes: {
-            1: "An enterovesical fistula joins the colon and bladder.",
-            2: "Pneumoperitoneum is free air from perforation.",
-            3: "Budd-Chiari syndrome is obstruction of the hepatic veins, usually from a clotting tendency.",
-            4: "Ischemic colitis is arterial hypoperfusion of the colon, not a septic venous clot.",
-        },
-    },
-    {
-        id: "div-meckel-cause",
-        condition: "diverticular-diseases",
-        kind: "memory",
-        stem: "Failure of which structure to close causes Meckel diverticulum?",
-        options: ["Vitelline (omphalomesenteric) duct", "Urachus", "Ductus arteriosus", "Processus vaginalis", "Thyroglossal duct"],
-        answer: 0,
-        explanation: `<p><strong>Meckel diverticulum is a remnant of the vitelline (omphalomesenteric) duct,</strong> which joins the midgut to the yolk sac in the embryo and normally closes. It is the most common congenital GI anomaly.</p>
-<p>Because it is a remnant of the whole gut tube, it is a true diverticulum with all layers of the wall, unlike colonic diverticula. It sits in the ileum about 2 feet from the ileocecal valve and can contain ectopic tissue, such as gastric mucosa.</p>`,
-        notes: {
-            1: "A patent urachus joins the bladder to the umbilicus and leaks urine.",
-            2: "A patent ductus arteriosus is a heart and great vessel defect.",
-            3: "A patent processus vaginalis causes indirect inguinal hernias and hydroceles.",
-            4: "A thyroglossal duct remnant causes a midline neck cyst.",
-        },
-    },
-    {
         id: "div-meckel-rule",
         condition: "diverticular-diseases",
         kind: "memory",
@@ -3268,22 +3064,6 @@ const QUIZ_QUESTIONS = [
             2: "A tagged red cell scan finds active bleeding, not gastric mucosa.",
             3: "Free air on x-ray means perforation.",
             4: "A Meckel diverticulum arises on the antimesenteric border and is not usually shown by barium.",
-        },
-    },
-    {
-        id: "div-meckel-adult",
-        condition: "diverticular-diseases",
-        kind: "memory",
-        stem: "What is the most common complication of Meckel diverticulum in adults?",
-        options: ["Small bowel obstruction", "Painless rectal bleeding", "Pylephlebitis", "Enterovesical fistula", "Perforation with pneumoperitoneum"],
-        answer: 0,
-        explanation: `<p><strong>In adults, small bowel obstruction is the most common complication,</strong> and intussusception also occurs, with the diverticulum acting as a lead point that the bowel telescopes over.</p>
-<p>In children the picture is different: acid from ectopic gastric mucosa ulcerates the ileum, causing painless rectal bleeding, which accounts for about half of LGIB under age 2. A symptomatic Meckel diverticulum is excised.</p>`,
-        notes: {
-            1: "Painless bleeding is the typical presentation in children under 2.",
-            2: "Pylephlebitis is a complication of diverticulitis.",
-            3: "Enterovesical fistula is a complication of sigmoid diverticulitis and Crohn disease.",
-            4: "Perforation is a complication of colonic diverticulitis on this page.",
         },
     },
 
@@ -3321,22 +3101,6 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "div-fecalith",
-        condition: "diverticular-diseases",
-        kind: "reasoning",
-        stem: "How does a fecalith cause diverticulitis?",
-        options: ["It blocks the neck, so pressure rises and trapped bacteria multiply", "It erodes a vas rectum, causing bleeding into the wall", "It stretches the muscularis externa of the sigmoid until the muscle tears", "It triggers an autoimmune reaction in the mucosa", "It blocks the inferior mesenteric artery"],
-        answer: 0,
-        explanation: `<p><strong>A fecalith obstructs the neck of a diverticulum,</strong> so secretions build up behind it, back pressure rises, and bacteria trapped inside multiply. The pouch becomes inflamed, causing LLQ pain, fever, and leukocytosis.</p>
-<p>The mechanism mirrors appendicitis, where a fecalith blocks another blind pouch; the difference is the site, LLQ rather than RLQ. If inflammation continues, the thin wall, which has no muscle, can rupture into an abscess or free perforation.</p>`,
-        notes: {
-            1: "Bleeding comes from a vessel over a diverticulum, without inflammation.",
-            2: "Diverticula push through the muscle; the fecalith blocks the pouch rather than tearing the muscle.",
-            3: "Diverticulitis is obstruction and infection, not autoimmunity.",
-            4: "Arterial blockage causes intestinal ischemia, not diverticulitis.",
-        },
-    },
-    {
         id: "div-outpatient",
         condition: "diverticular-diseases",
         kind: "reasoning",
@@ -3353,39 +3117,6 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "div-abx-criteria",
-        condition: "diverticular-diseases",
-        kind: "reasoning",
-        stem: "Four outpatients have CT-confirmed uncomplicated diverticulitis and are drinking well. Which one should receive oral ABX?",
-        options: ["A 60-year-old on prednisolone for polymyalgia rheumatica", "A 45-year-old with a CRP of 60 and no other illness", "A 55-year-old whose pain is improving on paracetamol", "A 50-year-old with a first episode and normal vital signs", "A 48-year-old who eats nuts and seeds daily"],
-        answer: 0,
-        explanation: `<p><strong>ABX are given to outpatients who are immunocompromised, comorbid, or have a CRP over 140.</strong> Prednisolone impairs the immune response, so infection in the inflamed diverticulum is less likely to be contained, and complications are more likely.</p>
-<p>The regimen is amoxicillin-clavulanate, or a fluoroquinolone with metronidazole, for 7–10 days, covering gut gram-negative bacteria and anaerobes.</p>`,
-        notes: {
-            1: "A CRP of 60 is under the threshold of 140, and he has no other risk.",
-            2: "Improving pain on paracetamol supports managing without ABX.",
-            3: "A first episode with normal vital signs is not a reason for ABX.",
-            4: "Nuts and seeds are safe and do not change management.",
-        },
-    },
-    {
-        id: "div-nsaids",
-        condition: "diverticular-diseases",
-        kind: "reasoning",
-        stem: "Why is paracetamol, rather than an NSAID, used for pain in uncomplicated diverticulitis?",
-        options: ["NSAIDs are linked to perforation and bleeding in diverticular disease", "Paracetamol has antibacterial action against gut anaerobes", "NSAIDs cause constipation, which plugs the neck of the diverticulum with stool", "Paracetamol lowers sigmoid intraluminal pressure", "NSAIDs interact with amoxicillin-clavulanate"],
-        answer: 0,
-        explanation: `<p><strong>NSAIDs injure the gut mucosa and impair platelet function,</strong> and they are linked to complications of diverticular disease: perforation of an inflamed diverticulum and diverticular bleeding. Paracetamol relieves pain without these effects.</p>
-<p>Outpatient treatment is a liquid diet and paracetamol, with ABX only for patients who are immunocompromised, comorbid, or have a CRP over 140.</p>`,
-        notes: {
-            1: "Paracetamol has no antibacterial action.",
-            2: "NSAIDs are not avoided here because of constipation; opioids are the analgesics that constipate.",
-            3: "Paracetamol does not change colonic pressure.",
-            4: "There is no important interaction between NSAIDs and amoxicillin-clavulanate.",
-        },
-        info: "The page advises paracetamol rather than NSAIDs; the link between NSAIDs and diverticular perforation and bleeding is from StatPearls (Diverticular Disease of the Colon).",
-    },
-    {
         id: "div-colonoscopy",
         condition: "diverticular-diseases",
         kind: "reasoning",
@@ -3399,22 +3130,6 @@ const QUIZ_QUESTIONS = [
             2: "Colonoscopy does not prevent recurrence; fiber is the preventive advice.",
             3: "The delay relates to the inflamed colon, not to CT contrast.",
             4: "CT AP with contrast confirms diverticulitis; colonoscopy looks for other disease.",
-        },
-    },
-    {
-        id: "div-perforation-imaging",
-        condition: "diverticular-diseases",
-        kind: "reasoning",
-        stem: "In a patient with diverticulitis who suddenly develops diffuse abdominal pain and rigidity, why is an abdominal x-ray useful alongside CT AP?",
-        options: ["It can show free air from a perforated diverticulum", "It shows the fecalith blocking the diverticulum", "It measures the CRP response to ABX", "It shows the vasa recta bleeding", "It confirms pylephlebitis by showing gas in the portal vein"],
-        answer: 0,
-        explanation: `<p><strong>A perforated diverticulum lets gas escape into the peritoneal cavity,</strong> and free air (pneumoperitoneum) can be seen on an upright x-ray, often under the diaphragm. It is quick and available at the bedside, while CT AP shows smaller amounts of free air and the source.</p>
-<p>Diffuse pain with rigidity means peritonitis, and perforation is treated by laparotomy, with a Hartmann procedure or primary anastomosis.</p>`,
-        notes: {
-            1: "A fecalith is not usually visible on an x-ray of the colon.",
-            2: "CRP is a blood test.",
-            3: "Bleeding vessels are found by colonoscopy or angiography, not x-ray.",
-            4: "Pylephlebitis is a venous clot seen on contrast CT.",
         },
     },
     {
@@ -3499,28 +3214,6 @@ const QUIZ_QUESTIONS = [
         info: "Drainage is often reserved for abscesses larger than about 3–4 cm, with smaller ones treated by ABX alone; the page does not give a size.",
     },
     {
-        id: "div-lgib-colonoscopy",
-        condition: "diverticular-diseases",
-        kind: "analysis",
-        stem: `<p>An 81-year-old man has passed maroon and bright red blood three times since this morning, without pain. He had a CT 2 years ago showing extensive diverticulosis.</p>
-<table><thead><tr><th>Time</th><th>Heart rate</th><th>BP</th><th>Hemoglobin</th></tr></thead><tbody>
-<tr><td>Arrival</td><td>98</td><td>118/70</td><td>121 g/L</td></tr>
-<tr><td>After 1 L of fluid</td><td>84</td><td>130/78</td><td>112 g/L</td></tr>
-</tbody></table>
-<p><em>Illustrative data.</em></p>
-<p>His abdomen is soft and nontender. Which is the most appropriate next investigation?</p>`,
-        options: ["Colonoscopy after bowel preparation", "CT AP with contrast for diverticulitis", "Abdominal x-ray for free air", "Meckel scan with technetium-99m", "Barium enema of the colon"],
-        answer: 0,
-        explanation: `<p><strong>Painless hematochezia in an older man with diverticulosis is most likely diverticular bleeding,</strong> and colonoscopy is both the test and the treatment for bleeding: it finds the bleeding diverticulum and can stop it. He has responded to fluid and is stable enough for it.</p>
-<p>The bleeding comes from a vessel beside a diverticulum, often in the right colon (50–90%), so the whole colon is examined. Most bleeds stop on their own.</p>`,
-        notes: {
-            1: "CT AP with contrast is for suspected diverticulitis, which causes pain, fever, and tenderness.",
-            2: "An x-ray looks for free air from perforation, which a soft, nontender abdomen does not suggest.",
-            3: "A Meckel scan is for suspected Meckel bleeding, mostly in children under 2.",
-            4: "Barium would obscure the view at later colonoscopy and does not treat bleeding.",
-        },
-    },
-    {
         id: "div-meckel-child",
         condition: "diverticular-diseases",
         kind: "analysis",
@@ -3534,27 +3227,6 @@ const QUIZ_QUESTIONS = [
             2: "This is not an infection; ABX are for diverticulitis.",
             3: "Fiber is advice for diverticulosis in adults.",
             4: "He is symptomatic with significant anemia, so the diverticulum is removed.",
-        },
-    },
-    {
-        id: "div-fistula-ct",
-        condition: "diverticular-diseases",
-        kind: "analysis",
-        stem: `<p>A 72-year-old man had sigmoid diverticulitis 6 months ago. He now has a third UTI this year and says his urine sometimes looks cloudy with specks.</p>
-<table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody>
-<tr><td>Urine culture</td><td>Mixed growth: E. coli, Enterococcus, and Bacteroides</td></tr>
-<tr><td>CT AP with contrast</td><td>Thickened sigmoid adherent to the bladder dome; air in the bladder; no catheter history</td></tr>
-</tbody></table>
-<p>Which management will resolve the problem?</p>`,
-        options: ["Surgery to resect the sigmoid and repair the bladder", "Long-term prophylactic ABX for UTI", "Percutaneous drainage of the bladder", "Colonoscopy with clipping of the fistula", "Increase fiber and review in 6 months"],
-        answer: 0,
-        explanation: `<p><strong>Mixed gut organisms in the urine, including an anaerobe, and air in a bladder that has never been catheterized mean an enterovesical fistula,</strong> from sigmoid diverticulitis eroding into the adjacent bladder. Fecaluria explains the specks.</p>
-<p>The fistula is a fixed connection, so infections will keep recurring until it is removed: fistulas are treated surgically, by resecting the diseased sigmoid and closing the bladder defect.</p>`,
-        notes: {
-            1: "Prophylactic ABX cannot close the connection, so infections will recur.",
-            2: "Drainage treats an abscess, not a fistula.",
-            3: "The page treats fistulas with surgery; endoscopy is avoided in active disease and cannot remove the diseased colon.",
-            4: "Fiber does not close an established fistula.",
         },
     },
 
@@ -4011,26 +3683,6 @@ const QUIZ_QUESTIONS = [
 
     /* --- Memory --- */
     {
-        id: "ibs-dgbi",
-        condition: "ibs",
-        kind: "memory",
-        stem: "What kind of disorder is irritable bowel syndrome?",
-        options: ["A disorder of gut-brain interaction", "A chronic transmural inflammation of the bowel", "An immune reaction to dietary gluten", "A low-flow ischemia of the colon wall", "A chronic infection of the mucosa"],
-        answer: 0,
-        explanation: `<p><strong>IBS is a DGBI, a disorder of gut-brain interaction, with no structural damage.</strong> The bowel looks normal on colonoscopy and biopsy; the problem is in how the gut and brain handle normal signals. Three mechanisms drive it:</p>
-<ul>
-<li><strong>Visceral hypersensitivity:</strong> the CNS amplifies stretch signals into pain.</li>
-<li><strong>Altered microbiome:</strong> bacteria turn carbohydrates into gas.</li>
-<li><strong>Hypermotility:</strong> faster transit causes diarrhea.</li>
-</ul>`,
-        notes: {
-            1: "Transmural inflammation is Crohn disease, which damages the bowel and raises fecal calprotectin and CRP.",
-            2: "An immune reaction to gluten is celiac disease, which flattens the villi and must be excluded when symptoms suggest IBS.",
-            3: "Low-flow ischemia of the colon is ischemic colitis, which damages the mucosa and causes bloody diarrhea.",
-            4: "IBS is not an infection, although a chronic parasitic infection is excluded with O&P in patients with diarrhea.",
-        },
-    },
-    {
         id: "ibs-rome",
         condition: "ibs",
         kind: "memory",
@@ -4073,22 +3725,6 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "ibs-comorbid",
-        condition: "ibs",
-        kind: "memory",
-        stem: "A 32-year-old woman meets the criteria for IBS. Her abdominal pain partly reflects increased CNS amplification of signals from gut stretch receptors. Which other condition is she most likely to have?",
-        options: ["Fibromyalgia", "Celiac disease", "Primary biliary cholangitis", "Ulcerative colitis", "Hemochromatosis"],
-        answer: 0,
-        explanation: `<p><strong>Fibromyalgia, depression, anxiety, and other psychiatric disorders are linked to visceral hypersensitivity.</strong> In each, the CNS turns up the gain on incoming signals. In IBS, the ordinary stretch of the bowel by gas and the osmotic effects of carbohydrates is felt as pain.</p>
-<p>This shared central mechanism explains why IBS clusters with other pain disorders, and why TCAs and psychological therapy, which act centrally, help refractory pain.</p>`,
-        notes: {
-            1: "Celiac disease is a mimic to exclude with serology, not a condition linked to central amplification.",
-            2: "PBC is an autoimmune cholestatic liver disease with no link to visceral hypersensitivity.",
-            3: "Ulcerative colitis causes structural mucosal inflammation, which IBS by definition lacks.",
-            4: "Hemochromatosis is iron overload affecting the liver, pancreas, and heart, not gut sensation.",
-        },
-    },
-    {
         id: "ibs-fodmap",
         condition: "ibs",
         kind: "memory",
@@ -4109,22 +3745,6 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "ibs-fiber",
-        condition: "ibs",
-        kind: "memory",
-        stem: "Which type of fiber improves global symptoms in IBS?",
-        options: ["Soluble fiber, such as psyllium", "Insoluble fiber, such as wheat bran", "Fiber from fruit high in fructose", "No fiber: all fiber worsens IBS", "Fiber taken only during flares"],
-        answer: 0,
-        explanation: `<p><strong>Soluble fiber such as psyllium improves global symptoms; insoluble fiber does not.</strong> Soluble fiber absorbs water and forms a gel, which softens hard stool and firms loose stool, so it helps every bowel pattern.</p>
-<p>Insoluble fiber such as wheat bran adds bulk without forming a gel, and it often worsens bloating and pain in a bowel that is already sensitive to stretch.</p>`,
-        notes: {
-            1: "Insoluble fiber is the type to avoid; it tends to worsen bloating and pain.",
-            2: "Fructose is a FODMAP, which ferments to gas and worsens symptoms.",
-            3: "Soluble fiber helps, so fiber as a whole is not avoided.",
-            4: "Fiber is used regularly to normalize stool form, not only during flares.",
-        },
-    },
-    {
         id: "ibs-pain-first",
         condition: "ibs",
         kind: "memory",
@@ -4140,74 +3760,8 @@ const QUIZ_QUESTIONS = [
             4: "Opioids are not part of IBS treatment; they slow the gut and do not treat visceral hypersensitivity.",
         },
     },
-    {
-        id: "ibs-tca",
-        condition: "ibs",
-        kind: "memory",
-        stem: "A 33-year-old woman with IBS and persistent abdominal pain is started on low-dose amitriptyline at night. Which adverse effects is she most likely to have?",
-        options: ["Dry mouth and constipation", "Diarrhea and excess saliva", "Bradycardia and small pupils", "Weight loss and insomnia", "Hyperkalemia and gynecomastia"],
-        answer: 0,
-        explanation: `<p><strong>TCAs block muscarinic receptors, causing dry mouth, constipation, urinary retention, and blurred vision.</strong> They also block H1 receptors (sedation and weight gain) and alpha-1 receptors (orthostatic hypotension).</p>
-<p>In IBS, the low dose is used to dampen visceral hypersensitivity, the central amplification of gut signals. The constipating effect is a benefit when diarrhea is the main pattern and a drawback when constipation is.</p>`,
-        notes: {
-            1: "Diarrhea and excess saliva are cholinergic effects, the opposite of what an anticholinergic causes.",
-            2: "Bradycardia and miosis are also cholinergic; TCAs cause tachycardia and dilated pupils.",
-            3: "TCAs cause sedation and weight gain through H1 blockade, not weight loss and insomnia.",
-            4: "Hyperkalemia and gynecomastia are effects of spironolactone, not TCAs.",
-        },
-    },
-    {
-        id: "ibs-eluxadoline",
-        condition: "ibs",
-        kind: "memory",
-        stem: "Which drug for diarrhea in IBS is avoided in patients who have had a cholecystectomy?",
-        options: ["Eluxadoline", "Loperamide", "Rifaximin", "Psyllium", "Polyethylene glycol"],
-        answer: 0,
-        explanation: `<p><strong>Eluxadoline is avoided after cholecystectomy.</strong> It is an opioid receptor drug that slows the gut, but it can also cause spasm of the sphincter of Oddi. Without a gallbladder to buffer the pressure, that spasm can cause pancreatitis.</p>
-<p>The page's order for diarrhea is loperamide first, then rifaximin or eluxadoline, with alosetron for women with severe disease.</p>`,
-        notes: {
-            1: "Loperamide is the first drug for diarrhea and is not restricted after cholecystectomy.",
-            2: "Rifaximin is a nonabsorbed antibiotic and a safe alternative after cholecystectomy.",
-            3: "Psyllium is a soluble fiber for global symptoms with no restriction after cholecystectomy.",
-            4: "PEG is an osmotic laxative for constipation, so it would worsen diarrhea.",
-        },
-        info: "The mechanism (sphincter of Oddi spasm and pancreatitis) is from standard pharmacology rather than the page, which states only that eluxadoline is not used after cholecystectomy.",
-    },
-    {
-        id: "ibs-alosetron",
-        condition: "ibs",
-        kind: "memory",
-        stem: "Alosetron is reserved for women with severe diarrhea in IBS because of the risk of which complication?",
-        options: ["Ischemic colitis", "Acute pancreatitis", "Toxic megacolon", "Hepatic failure", "Serotonin syndrome"],
-        answer: 0,
-        explanation: `<p><strong>Alosetron carries a risk of ischemic colitis,</strong> so it is kept for women with severe diarrhea that has not responded to other treatment.</p>
-<p>It is a 5-HT3 antagonist. Serotonin acting on 5-HT3 receptors speeds transit and heightens gut sensation, so blocking it slows the bowel and dulls pain. The same slowing can cause severe constipation, and ischemic colitis is the serious reaction that limits its use.</p>`,
-        notes: {
-            1: "Pancreatitis is the concern with eluxadoline after cholecystectomy.",
-            2: "Toxic megacolon is a complication of severe colitis, such as ulcerative colitis or C. diff.",
-            3: "Hepatic failure is not the reason alosetron is restricted.",
-            4: "Alosetron blocks a serotonin receptor rather than adding serotonin, so serotonin syndrome is not the concern.",
-        },
-        info: "The 5-HT3 mechanism and the risk of severe constipation are from standard pharmacology; the page states the ischemic colitis risk.",
-    },
 
     /* --- Reasoning --- */
-    {
-        id: "ibs-initial",
-        condition: "ibs",
-        kind: "reasoning",
-        stem: "A 27-year-old woman has 8 months of recurrent lower abdominal cramps that ease after bowel movements, with alternating loose and hard stools. She has no weight loss, bleeding, or nocturnal symptoms. FBC, CRP, fecal calprotectin, and celiac serology with total IgA are normal. What is the most appropriate next step?",
-        options: ["Reassurance and a low FODMAP diet", "Colonoscopy with random left and right biopsies", "CT AP to look for a structural cause", "Empiric metronidazole", "Oral prednisone for presumed IBD"],
-        answer: 0,
-        explanation: `<p><strong>She meets the Rome V criteria, has no alarm features, and her tests are normal, so IBS can be diagnosed and treated.</strong> Her pain is recurrent, related to defecation, and comes with changes in stool frequency and form; her pattern is mixed.</p>
-<p>IBS is a positive diagnosis, not one reached by excluding everything. Treatment starts by reducing triggers with a low FODMAP diet, then targets the dominant symptom. Normal calprotectin and CRP make IBD unlikely, and normal celiac serology with total IgA excludes celiac disease.</p>`,
-        notes: {
-            1: "Colonoscopy with random biopsies is for alarm features, such as onset at 50 or older, bleeding, or anemia, which she lacks.",
-            2: "CT AP looks for structural disease, and IBS has none; it would expose her to radiation without benefit.",
-            3: "Antibiotics are not empiric first-line treatment; rifaximin is used later, for symptoms that do not respond.",
-            4: "Normal calprotectin and CRP argue against IBD, and steroids would be harmful without a diagnosis.",
-        },
-    },
     {
         id: "ibs-pain-mechanism",
         condition: "ibs",
@@ -4222,23 +3776,6 @@ const QUIZ_QUESTIONS = [
             2: "An altered microbiome makes more gas; the balloon supplies the stretch directly, bypassing gas production.",
             3: "IBS has no structural damage or mucosal inflammation.",
             4: "Bacterial overgrowth would change gas production, not the response to a balloon of fixed volume.",
-        },
-    },
-    {
-        id: "ibs-fodmap-why",
-        condition: "ibs",
-        kind: "reasoning",
-        stem: "How does reducing poorly absorbed carbohydrates in the diet improve IBS symptoms?",
-        options: ["Less gas and osmotic load to stretch the bowel", "Less gluten reaching and damaging the small bowel villi", "Less bile salt spilling into the colon from the ileum", "Less acid secreted by the stomach", "Less fat reaching the terminal ileum"],
-        answer: 0,
-        explanation: `<p><strong>Poorly absorbed carbohydrates reach the colon, where they draw in water and are fermented into gas.</strong> The extra volume stimulates stretch receptors, causing reflex contraction, and visceral hypersensitivity turns the signal into pain.</p>
-<p>A low FODMAP diet removes the trigger at the start of the pathway:</p>
-<p>Carbohydrates → gas and osmotic load → stretch receptor stimulation → CNS amplification → pain and altered bowel habit.</p>`,
-        notes: {
-            1: "Gluten matters in celiac disease, which damages villi; a low FODMAP diet works by reducing fermentation, not gluten.",
-            2: "Bile salts reaching the colon cause bile acid diarrhea, which is treated with a bile acid sequestrant.",
-            3: "Gastric acid plays no part in the IBS pathway.",
-            4: "Fat malabsorption causes steatorrhea, not the carbohydrate-driven symptoms of IBS.",
         },
     },
     {
@@ -4289,73 +3826,6 @@ const QUIZ_QUESTIONS = [
             3: "Alosetron slows the bowel and is used for severe diarrhea, so it would worsen constipation.",
             4: "IBS has no structural damage, and surgery has no role in its treatment.",
         },
-    },
-    {
-        id: "ibs-linaclotide",
-        condition: "ibs",
-        kind: "reasoning",
-        stem: "A patient with constipation in IBS starts linaclotide after PEG fails. How does linaclotide soften the stool?",
-        options: ["It raises cGMP, increasing chloride secretion into the lumen", "It blocks 5-HT3 receptors, slowing transit", "It activates mu-opioid receptors in the gut wall", "It is fermented by bacteria into short-chain fatty acids", "It binds bile salts in the lumen"],
-        answer: 0,
-        explanation: `<p><strong>Linaclotide and plecanitide activate guanylate cyclase C on the intestinal lining, raising cGMP.</strong> This opens the CFTR channel, so chloride and bicarbonate are secreted into the lumen and water follows. The stool softens and transit speeds up.</p>
-<p>Lubiprostone reaches the same end by a different channel: it activates the ClC-2 chloride channel. That is why all three are grouped as secretagogues, the step after PEG.</p>`,
-        notes: {
-            1: "Blocking 5-HT3 receptors is how alosetron slows the bowel in severe diarrhea.",
-            2: "Mu-opioid activation is how loperamide slows the bowel.",
-            3: "Fermentation into gas would worsen bloating; linaclotide acts on the lining and is not fermented.",
-            4: "Binding bile salts is how a bile acid sequestrant treats bile acid diarrhea.",
-        },
-        info: "The mechanisms (guanylate cyclase C, CFTR, and ClC-2) are standard pharmacology rather than page content.",
-    },
-    {
-        id: "ibs-rifaximin",
-        condition: "ibs",
-        kind: "reasoning",
-        stem: "Rifaximin is used in IBS when other treatments for pain or diarrhea fail. How does it work in IBS?",
-        options: ["It alters the microbiome, so less gas is made", "It kills an infection that causes IBS", "It slows transit through opioid receptors", "It reduces central amplification of pain", "It reduces inflammation in the colonic mucosa"],
-        answer: 0,
-        explanation: `<p><strong>Rifaximin is an antibiotic that is barely absorbed, so it acts in the gut lumen.</strong> In IBS it targets the altered microbiome, the cause that turns carbohydrates into gas. With less fermentation, there is less stretch receptor stimulation, reflex contraction, and pain.</p>
-<p>It appears twice in the page's treatment: for pain after antispasmodics, peppermint oil, and TCAs, and for diarrhea after loperamide.</p>`,
-        notes: {
-            1: "IBS is not an infection; rifaximin changes the bacterial population rather than clearing a pathogen.",
-            2: "Slowing transit through opioid receptors is how loperamide and eluxadoline work.",
-            3: "Reducing central amplification is how TCAs and psychological therapy help.",
-            4: "IBS has no mucosal inflammation to reduce.",
-        },
-        info: "That rifaximin is minimally absorbed is from standard pharmacology rather than the page.",
-    },
-    {
-        id: "ibs-insoluble",
-        condition: "ibs",
-        kind: "reasoning",
-        stem: "A man with IBS added large amounts of wheat bran to his breakfast to help his bowels and now has more bloating and pain. What is the best advice?",
-        options: ["Switch to soluble fiber, such as psyllium", "Double the bran to reach a full effect", "Stop all fiber permanently", "Add a stimulant laxative to the bran", "Arrange a colonoscopy, since bran should help"],
-        answer: 0,
-        explanation: `<p><strong>Soluble fiber such as psyllium improves global symptoms in IBS; insoluble fiber such as bran does not.</strong> Wheat is also rich in fermentable carbohydrates, so it adds gas.</p>
-<p>Psyllium forms a gel that holds water, softening hard stool and firming loose stool. Bran adds rough bulk and gas to a bowel that is hypersensitive to stretch, which is why it worsened his bloating and pain. Worsening on bran is expected in IBS and is not an alarm feature.</p>`,
-        notes: {
-            1: "More bran would add more bulk and gas and worsen his symptoms.",
-            2: "Soluble fiber helps, so he does not need to avoid fiber altogether.",
-            3: "A stimulant laxative does not address the cause: the type of fiber.",
-            4: "He has no alarm features; worsening with insoluble fiber is typical of IBS.",
-        },
-    },
-    {
-        id: "ibs-older-onset",
-        condition: "ibs",
-        kind: "reasoning",
-        stem: "A 58-year-old woman has 4 months of new cramping abdominal pain and loose stools that improve after defecation. She has no bleeding, and her FBC and CRP are normal. She meets the Rome V criteria. What is the most appropriate next step?",
-        options: ["Colonoscopy with random biopsies of the left and right colon", "Diagnose IBS and start a low FODMAP diet", "Start loperamide and review in 6 months", "Start amitriptyline at night", "Reassure her that IBS is common at her age"],
-        answer: 0,
-        explanation: `<p><strong>Onset at 50 or older is an alarm feature, even when the Rome V criteria are met.</strong> New bowel symptoms later in life raise the chance of colorectal cancer, IBD, and other structural causes, so IBS is diagnosed only after colonoscopy.</p>
-<p>Random biopsies from both sides of the colon are taken even if the mucosa looks normal, because some causes of diarrhea change the tissue without a visible lesion. Normal bloods do not remove the need, because the alarm feature here is her age.</p>`,
-        notes: {
-            1: "Rome V criteria support IBS only once alarm features have been addressed; her age is one.",
-            2: "Treating her symptoms first would delay the diagnosis of a structural cause.",
-            3: "Amitriptyline is a third step for refractory pain, not a substitute for investigating an alarm feature.",
-            4: "New symptoms at 58 are a reason to investigate, not reassure.",
-        },
-        info: "That random biopsies detect causes with normal-looking mucosa, such as microscopic colitis, is standard practice; the page lists colonoscopy with random biopsies for alarm features.",
     },
 
     /* --- Analysis --- */
@@ -4411,79 +3881,6 @@ const QUIZ_QUESTIONS = [
             3: "Linaclotide increases intestinal secretion and treats constipation, so it would worsen her diarrhea.",
             4: "PEG is an osmotic laxative for constipation.",
         },
-    },
-    {
-        id: "ibs-set-diary-3",
-        condition: "ibs",
-        kind: "analysis",
-        set: "ibs-diary",
-        stem: "Her stools improve on rifaximin, but cramping pain persists despite dicyclomine and then peppermint oil. Which treatment is the most appropriate next step for her pain?",
-        options: ["Low-dose amitriptyline at night", "Linaclotide", "Insoluble fiber such as wheat bran", "A stimulant laxative", "An opioid analgesic such as codeine"],
-        answer: 0,
-        explanation: `<p><strong>Pain that persists after an antispasmodic and peppermint oil is treated with a TCA.</strong> A low dose of amitriptyline acts centrally on visceral hypersensitivity, damping the amplification of stretch signals into pain.</p>
-<p>It suits her well: its anticholinergic effect slows the gut, which helps a diarrhea pattern. In a patient with constipation the same effect would be a drawback. If pain is still refractory, psychological therapy also targets the central part of IBS.</p>`,
-        notes: {
-            1: "Linaclotide treats constipation and would worsen her diarrhea.",
-            2: "Insoluble fiber tends to worsen bloating and pain; soluble fiber such as psyllium is the type that helps.",
-            3: "A stimulant laxative would worsen diarrhea and cramping.",
-            4: "Opioids are not part of IBS treatment; they do not treat visceral hypersensitivity and risk dependence.",
-        },
-    },
-    {
-        id: "ibs-calprotectin",
-        condition: "ibs",
-        kind: "analysis",
-        stem: `<p>A 23-year-old man was told 1 year ago that he had IBS. He now has 3 months of looser stools, waking at night to open his bowels, and abdominal pain that eases after defecation. He has lost 4 kg.</p>
-<table><thead><tr><th>Test</th><th>Result</th><th>Reference range</th></tr></thead><tbody>
-<tr><td>Hb</td><td>112 g/L</td><td>130–180</td></tr>
-<tr><td>MCV</td><td>74 fL</td><td>80–100</td></tr>
-<tr><td>Ferritin</td><td>9 µg/L</td><td>30–300</td></tr>
-<tr><td>CRP</td><td>24 mg/L</td><td>Under 5</td></tr>
-<tr><td>Fecal calprotectin</td><td>640 µg/g</td><td>Under 50</td></tr>
-</tbody></table>
-<p><em>Illustrative data.</em></p>
-<p>What is the most appropriate next step?</p>`,
-        options: ["Colonoscopy with biopsy", "Increase his IBS treatment and review in 3 months", "Start a low FODMAP diet", "Start loperamide for the nocturnal diarrhea", "Refer him for psychological therapy"],
-        answer: 0,
-        explanation: `<p><strong>His new symptoms and results are alarm features that IBS cannot explain, because IBS has no structural damage.</strong></p>
-<ul>
-<li><strong>Nocturnal diarrhea and weight loss:</strong> IBS symptoms settle in sleep.</li>
-<li><strong>Iron deficiency anemia:</strong> low Hb, MCV, and ferritin mean blood loss.</li>
-<li><strong>Raised CRP and calprotectin:</strong> intestinal inflammation, pointing to IBD.</li>
-</ul>
-<p>Colonoscopy with biopsy is needed. A previous label of IBS should be revisited whenever alarm features appear.</p>`,
-        notes: {
-            1: "Escalating IBS treatment would delay the diagnosis of an inflammatory cause.",
-            2: "A low FODMAP diet treats IBS triggers, but his raised calprotectin shows inflammation that diet will not treat.",
-            3: "Loperamide could mask symptoms, and in severe colitis slowing the bowel is dangerous.",
-            4: "Psychological therapy is for refractory IBS, and his results show disease that is not IBS.",
-        },
-    },
-    {
-        id: "ibs-iga-deficient",
-        condition: "ibs",
-        kind: "analysis",
-        stem: `<p>A 30-year-old woman has 8 months of bloating, cramps that ease after defecation, and loose stools. She has no alarm features. Her workup for diarrhea returns:</p>
-<table><thead><tr><th>Test</th><th>Result</th><th>Reference range</th></tr></thead><tbody>
-<tr><td>Anti-tTG IgA</td><td>Under 1 U/mL (negative)</td><td>Under 7</td></tr>
-<tr><td>Total IgA</td><td>Under 0.07 g/L</td><td>0.7–4.0</td></tr>
-<tr><td>CRP</td><td>3 mg/L</td><td>Under 5</td></tr>
-<tr><td>Fecal calprotectin</td><td>35 µg/g</td><td>Under 50</td></tr>
-<tr><td>O&amp;P and C. diff</td><td>Negative</td><td>Negative</td></tr>
-</tbody></table>
-<p><em>Illustrative data.</em></p>
-<p>What is the best interpretation of these results?</p>`,
-        options: ["Celiac disease is not yet excluded", "Celiac disease is excluded, so IBS can be diagnosed", "The negative anti-tTG rules out IBD", "The low IgA confirms celiac disease", "The normal calprotectin rules out celiac disease"],
-        answer: 0,
-        explanation: `<p><strong>She makes almost no IgA, so an IgA antibody test cannot be positive, and the negative anti-tTG IgA tells us nothing.</strong> This is why celiac serology is always sent with total IgA.</p>
-<p>An IgG-based celiac test, or duodenal biopsy, is needed before IBS is diagnosed. Celiac disease matters here because it mimics IBS closely: both cause bloating, cramps, and loose stools, and both have carbohydrates driving symptoms. Her normal CRP and calprotectin do argue against IBD.</p>`,
-        notes: {
-            1: "With undetectable IgA, a negative IgA antibody is uninterpretable, so celiac disease is not excluded.",
-            2: "Anti-tTG is a celiac test; IBD is assessed with calprotectin and CRP.",
-            3: "IgA deficiency is more common in celiac disease but does not confirm it.",
-            4: "Calprotectin reflects colonic inflammation and can be normal in celiac disease, which affects the small bowel.",
-        },
-        info: "IgG-based celiac serology (tTG-IgG or DGP-IgG) or duodenal biopsy in IgA deficiency is standard practice rather than page content.",
     },
 
     /* ===== Diarrhea ===== */
@@ -5038,22 +4435,6 @@ const QUIZ_QUESTIONS = [
         info: "The dual blood supply of the distal rectum is standard anatomy rather than page content.",
     },
     {
-        id: "isch-acidosis",
-        condition: "intestinal-ischemia",
-        kind: "memory",
-        stem: "A 69-year-old man with acute mesenteric ischemia becomes hypotensive while awaiting surgery. Which acid-base disturbance is most likely?",
-        options: ["High anion gap metabolic acidosis", "Normal anion gap metabolic acidosis", "Metabolic alkalosis", "Respiratory acidosis", "Primary respiratory alkalosis"],
-        answer: 0,
-        explanation: `<p><strong>Ischemic bowel switches to anaerobic respiration, producing lactate and an AGMA.</strong> Without oxygen, cells make energy by glycolysis alone, and the lactic acid it produces adds unmeasured anions to the blood, widening the anion gap.</p>
-<p>The rise comes late. A lactate that is climbing suggests the bowel is infarcting, which is why the diagnosis rests on CT angiogram, not on waiting for the lactate.</p>`,
-        notes: {
-            1: "A normal anion gap acidosis follows bicarbonate loss, as in diarrhea, not lactate production.",
-            2: "Metabolic alkalosis follows vomiting or diuretics.",
-            3: "Respiratory acidosis needs hypoventilation; he would breathe faster to compensate.",
-            4: "Faster breathing here compensates for a metabolic acidosis rather than being the primary problem.",
-        },
-    },
-    {
         id: "isch-cmi-timing",
         condition: "intestinal-ischemia",
         kind: "memory",
@@ -5067,54 +4448,6 @@ const QUIZ_QUESTIONS = [
             2: "Night pain is typical of a duodenal ulcer, not of a demand-driven ischemia.",
             3: "The demand that triggers it is digestion, not exercise.",
             4: "Constant pain without relation to meals points away from chronic mesenteric ischemia.",
-        },
-    },
-    {
-        id: "isch-avoid",
-        condition: "intestinal-ischemia",
-        kind: "memory",
-        stem: "Which drugs should be avoided where possible in a patient with mesenteric ischemia?",
-        options: ["Vasopressors and alpha-agonists", "Heparin and other anticoagulants", "Broad-spectrum ABX", "IV crystalloid fluids", "Papaverine and other vasodilators"],
-        answer: 0,
-        explanation: `<p><strong>Vasopressors and alpha-agonists constrict the mesenteric arteries,</strong> cutting flow to bowel that is already short of oxygen. Vasospasm from vasopressors is the mechanism of NOMI, so these drugs can cause mesenteric ischemia as well as worsen it.</p>
-<p>When blood pressure must be supported, fluids come first and the lowest effective dose is used. The rest of treatment aims at the opposite: restoring flow with revascularization, heparin, and, in NOMI, papaverine.</p>`,
-        notes: {
-            1: "Heparin is part of treatment, to prevent clotting.",
-            2: "ABX are given to prevent sepsis from bacteria crossing the damaged bowel wall.",
-            3: "IV fluids are part of supportive care, with NPO and an NGT.",
-            4: "Papaverine is a vasodilator given into the mesenteric arteries to treat NOMI.",
-        },
-    },
-    {
-        id: "isch-mortality",
-        condition: "intestinal-ischemia",
-        kind: "memory",
-        stem: "Which form of intestinal ischemia carries the highest risk of death?",
-        options: ["Acute mesenteric ischemia", "Nongangrenous ischemic colitis", "Chronic mesenteric ischemia", "Mild ischemic colitis managed supportively", "Postprandial pain from a single narrowed artery"],
-        answer: 0,
-        explanation: `<p><strong>Acute mesenteric ischemia has a mortality of 60–80%; nongangrenous ischemic colitis, under 5%.</strong></p>
-<p>The difference reflects how much bowel is at risk and how fast it dies. A blocked SMA starves most of the small bowel, which infarcts within hours, and early signs are subtle: pain out of proportion to the examination, with lactate rising only late. Ischemic colitis usually affects a short watershed segment of mucosa that recovers once flow returns.</p>`,
-        notes: {
-            1: "Nongangrenous ischemic colitis has a mortality under 5% and usually recovers with supportive care.",
-            2: "Chronic mesenteric ischemia causes pain and weight loss; its danger is progression to an acute event.",
-            3: "Mild ischemic colitis is managed supportively and usually resolves.",
-            4: "One narrowed artery is usually compensated by collaterals; chronic ischemia needs 2 of the 3 vessels.",
-        },
-    },
-    {
-        id: "isch-colitis-dx",
-        condition: "intestinal-ischemia",
-        kind: "memory",
-        stem: "Which investigations confirm suspected ischemic colitis?",
-        options: ["CT AP and colonoscopy with biopsy within 48 hours", "CT angiogram alone, then catheter angiography of the IMA", "Serial lactate and LDH every 6 hours", "Barium enema after the bleeding settles", "Stool culture and C. diff testing alone"],
-        answer: 0,
-        explanation: `<p><strong>Ischemic colitis is diagnosed with CT AP and colonoscopy with biopsy, within 48 hours.</strong> CT shows a thickened segment of colon in a watershed distribution. Colonoscopy shows the injured mucosa directly and grades it, and biopsy confirms ischemia rather than IBD or infection.</p>
-<p>Early colonoscopy matters because mucosal changes heal quickly once flow returns, so a late examination may miss them. In ischemic colitis, the arteries are usually open, so angiography adds little.</p>`,
-        notes: {
-            1: "CT angiogram is for acute and chronic mesenteric ischemia, where the problem is a vessel blockage.",
-            2: "Lactate and LDH rise only late and do not confirm the diagnosis.",
-            3: "A barium enema is not the test for ischemic colitis, and changes heal before it would be done.",
-            4: "Stool tests help exclude infectious colitis but do not confirm ischemia.",
         },
     },
 
@@ -5153,22 +4486,6 @@ const QUIZ_QUESTIONS = [
         info: "Hepatic clearance of portal lactate is standard physiology rather than page content.",
     },
     {
-        id: "isch-cta-renal",
-        condition: "intestinal-ischemia",
-        kind: "reasoning",
-        stem: "A 78-year-old man with suspected acute mesenteric ischemia has an eGFR of 32 mL/min. A resident suggests avoiding contrast. What is the best response?",
-        options: ["Proceed with the CT angiogram, since delay risks infarction", "Use an abdominal x-ray to avoid contrast", "Wait for the lactate result before deciding", "Give IV fluids for 24 hours, then do the scan if still unwell", "Do a non-contrast CT instead"],
-        answer: 0,
-        explanation: `<p><strong>CT angiogram is preferred even with renal impairment,</strong> because the danger of missing or delaying the diagnosis far outweighs the risk from contrast. Acute mesenteric ischemia has a mortality of 60–80%, and every hour of delay lets more bowel infarct.</p>
-<p>Ischemic bowel also worsens kidney function itself, through hypovolemia, sepsis, and acidosis, so restoring flow quickly protects the kidneys too.</p>`,
-        notes: {
-            1: "An x-ray is normal early and cannot show the vessels.",
-            2: "Lactate rises late, so waiting for it delays the diagnosis.",
-            3: "A 24-hour delay could allow infarction; fluids are given alongside urgent imaging.",
-            4: "Without contrast, the mesenteric vessels and the clot cannot be seen.",
-        },
-    },
-    {
         id: "isch-chronic",
         condition: "intestinal-ischemia",
         kind: "reasoning",
@@ -5183,23 +4500,6 @@ const QUIZ_QUESTIONS = [
             3: "Biliary colic causes RUQ pain after fatty meals, without fear of eating and large weight loss.",
             4: "PUD causes epigastric pain, and duodenal ulcer pain often eases with food.",
         },
-    },
-    {
-        id: "isch-collaterals",
-        condition: "intestinal-ischemia",
-        kind: "reasoning",
-        stem: "Why does chronic mesenteric ischemia usually require narrowing of 2 of the celiac trunk, SMA, and IMA, rather than one?",
-        options: ["Collaterals let the others supply a narrowed vessel's territory", "A single artery supplies the whole bowel", "Narrowing of one artery always causes an acute event instead", "The IMA alone supplies the small bowel", "Pain arises only once the venous drainage is also blocked by clot"],
-        answer: 0,
-        explanation: `<p><strong>The three gut arteries are joined by collaterals,</strong> such as the pancreaticoduodenal arcades between the celiac trunk and SMA, and the marginal artery between the SMA and IMA. When one narrows slowly, the collaterals enlarge and the others take over its territory.</p>
-<p>Only when 2 are narrowed is the remaining supply too small to meet the extra demand after meals. Slow narrowing allows this adaptation, which is why sudden embolism, with no time to form collaterals, is so much more dangerous.</p>`,
-        notes: {
-            1: "The bowel has three arteries with overlapping territories joined by collaterals.",
-            2: "Slow narrowing of one artery is usually compensated without symptoms.",
-            3: "The IMA supplies the distal colon; the SMA supplies the small bowel.",
-            4: "Chronic mesenteric ischemia is arterial; venous outflow is not the problem.",
-        },
-        info: "The named collateral pathways are standard anatomy rather than page content; the page states that 2 of the 3 vessels are involved.",
     },
     {
         id: "isch-ami-tx",
@@ -5221,23 +4521,6 @@ const QUIZ_QUESTIONS = [
             3: "A rising lactate already suggests infarction is beginning; observation would let the bowel die.",
             4: "Papaverine treats the vasospasm of NOMI; an embolus has to be removed.",
         },
-    },
-    {
-        id: "isch-abx",
-        condition: "intestinal-ischemia",
-        kind: "reasoning",
-        stem: "Why are ABX given as part of the treatment of acute mesenteric ischemia?",
-        options: ["Bacteria can cross the damaged wall into the blood", "The ischemia itself is caused by a bacterial infection", "ABX dissolve the clot in the mesenteric artery", "ABX reduce vasospasm in the mesenteric arteries", "ABX treat the lactic acidosis directly"],
-        answer: 0,
-        explanation: `<p><strong>ABX prevent sepsis.</strong> The mucosa is the first layer to suffer when blood supply falls, and once it breaks down, gut bacteria and their products can cross the wall into the blood and the peritoneum. With necrosis and perforation, peritonitis follows.</p>
-<p>ABX sit alongside the other supportive steps, NPO, IV fluids, and an NGT, while heparin and revascularization treat the cause.</p>`,
-        notes: {
-            1: "The cause is loss of blood supply, not infection; infection is a consequence.",
-            2: "Heparin prevents clot extension, and revascularization removes the clot; ABX have no effect on it.",
-            3: "Vasospasm is treated by correcting the low-flow state and giving papaverine.",
-            4: "Lactic acidosis comes from anaerobic respiration and improves only when flow is restored.",
-        },
-        info: "Bacterial translocation as the reason for ABX is standard teaching; the page states that ABX prevent sepsis.",
     },
     {
         id: "isch-venous",
@@ -5274,22 +4557,6 @@ const QUIZ_QUESTIONS = [
             2: "Ischemic colitis is a low-flow state, not a clot, so thrombolysis has no target.",
             3: "Steroids treat IBD and would worsen healing and infection risk here.",
             4: "Oral vancomycin treats C. difficile, which would need a positive test.",
-        },
-    },
-    {
-        id: "isch-cmi-tx",
-        condition: "intestinal-ischemia",
-        kind: "reasoning",
-        stem: "A 67-year-old woman with postprandial pain, fear of eating, and a 10 kg weight loss has severe atherosclerotic narrowing of the SMA and celiac trunk on CT angiogram. Which is the most appropriate treatment?",
-        options: ["Endovascular revascularization", "A PPI and review in 3 months", "Cholecystectomy", "Small, frequent meals alone", "Long-term warfarin alone, without stenting"],
-        answer: 0,
-        explanation: `<p><strong>Symptomatic chronic mesenteric ischemia is treated by revascularization,</strong> usually endovascular (angioplasty and stenting), or by surgery. Restoring flow lets the arteries meet the demand of digestion, relieving the pain so she can eat and regain weight.</p>
-<p>It also matters for the future: narrowed arteries can thrombose, turning chronic ischemia into acute mesenteric ischemia, with a mortality of 60–80%.</p>`,
-        notes: {
-            1: "A PPI treats acid disease and does not improve flow.",
-            2: "Her pain is from ischemia, confirmed on CT angiogram, not from the gallbladder.",
-            3: "Small meals may reduce the demand but do not treat the narrowing or prevent thrombosis.",
-            4: "Anticoagulation does not open an atherosclerotic narrowing; it is used for venous thrombosis.",
         },
     },
 
@@ -5372,60 +4639,6 @@ const QUIZ_QUESTIONS = [
             2: "Ischemic colitis affects colonic watershed areas; she has SMA occlusion with free air.",
             3: "Nothing points to a urinary source; ABX are needed, but alongside surgery.",
             4: "Her CT showed an arterial embolus, and perforation needs surgery.",
-        },
-    },
-    {
-        id: "isch-colitis-aaa",
-        condition: "intestinal-ischemia",
-        kind: "analysis",
-        stem: `<p>A 72-year-old man is 2 days after an open repair of a ruptured AAA, during which he needed noradrenaline. He now has LLQ pain and three episodes of bloody diarrhea.</p>
-<table><thead><tr><th>Finding</th><th>Result</th></tr></thead><tbody>
-<tr><td>Temperature, heart rate, BP</td><td>38.4 °C, 108, 112/70 off vasopressors</td></tr>
-<tr><td>WBC</td><td>16.4 × 10⁹/L</td></tr>
-<tr><td>Abdomen</td><td>Tender in the LLQ, no guarding</td></tr>
-<tr><td>CT AP</td><td>Wall thickening of the descending and sigmoid colon; no free air or pneumatosis</td></tr>
-<tr><td>Colonoscopy (day 2)</td><td>Edematous mucosa with ulcers from the splenic flexure to the rectosigmoid junction; no black or gangrenous mucosa; rectum normal</td></tr>
-</tbody></table>
-<p><em>Illustrative data.</em></p>
-<p>Which management is most appropriate?</p>`,
-        options: ["Broad-spectrum ABX and surgical review", "Supportive care alone", "Emergency colectomy", "IV heparin and revascularization of the SMA", "Restart noradrenaline to improve flow"],
-        answer: 0,
-        explanation: `<p><strong>This is ischemic colitis of moderate severity.</strong> During the repair, hypoperfusion and vasopressors reduced flow through the IMA territory, and the watershed areas, from Griffiths point to Sudeck point, were injured.</p>
-<ul>
-<li><strong>Not mild:</strong> fever, a raised WBC, and ulcers on colonoscopy go beyond mild mucosal injury, so ABX are needed.</li>
-<li><strong>Not severe:</strong> no gangrene, perforation, or peritonitis, so surgery is not yet indicated.</li>
-</ul>
-<p>Surgical review is needed because moderate disease can progress to gangrene.</p>`,
-        notes: {
-            1: "Supportive care alone is for mild disease; his fever, WBC, and ulcers make it moderate.",
-            2: "Colectomy is for severe disease, with gangrene or perforation, which he does not have.",
-            3: "Ischemic colitis is a low-flow state, and heparin with SMA revascularization treats arterial occlusion.",
-            4: "Vasopressors cause vasospasm and should be avoided where possible.",
-        },
-        info: "The criteria used here to grade severity (fever, raised WBC, ulcers, absence of gangrene) are inferred from standard teaching; the page gives the treatment for each grade but not the definitions.",
-    },
-    {
-        id: "isch-nomi-icu",
-        condition: "intestinal-ischemia",
-        kind: "analysis",
-        stem: `<p>A 69-year-old man in the ICU with cardiogenic shock after a myocardial infarction has been on rising doses of noradrenaline for 2 days. He develops abdominal distension and a rising lactate.</p>
-<table><thead><tr><th>Day</th><th>Noradrenaline (µg/min)</th><th>Lactate (mmol/L)</th></tr></thead><tbody>
-<tr><td>1</td><td>8</td><td>2.1</td></tr>
-<tr><td>2</td><td>18</td><td>3.4</td></tr>
-<tr><td>3</td><td>26</td><td>5.6</td></tr>
-</tbody></table>
-<p>CT angiogram: diffuse narrowing of the SMA and its branches, with no embolus or thrombus. Patent mesenteric veins. Thickened small bowel with no free air.</p>
-<p><em>Illustrative data.</em></p>
-<p>Which management is most appropriate?</p>`,
-        options: ["Treat the low-flow state and give papaverine into the SMA", "Emergency embolectomy of the SMA", "Anticoagulation for a presumed mesenteric venous thrombosis", "Increase noradrenaline to raise the pressure", "Colonoscopy with biopsy within 48 hours"],
-        answer: 0,
-        explanation: `<p><strong>Diffuse narrowing of open mesenteric arteries in a patient in shock on vasopressors is NOMI.</strong> There is no clot to remove: the arteries are in spasm because of low cardiac output and noradrenaline, which rise together with his lactate.</p>
-<p>Treatment targets the cause. The low-flow state is improved by supporting cardiac output and reducing vasopressors and alpha-agonists where possible, and catheter-directed papaverine, a vasodilator, relaxes the spasm. Surgery is needed if bowel has died.</p>`,
-        notes: {
-            1: "Embolectomy removes a clot, and the CT shows none.",
-            2: "The mesenteric veins are patent, so anticoagulation for venous thrombosis does not apply.",
-            3: "More noradrenaline would deepen the vasospasm causing the ischemia.",
-            4: "Colonoscopy is for ischemic colitis; his CT shows small bowel ischemia from vasospasm.",
         },
     },
 
@@ -6440,26 +5653,212 @@ const QUIZ_QUESTIONS = [
             4: "Acyclovir treats HSV hepatitis, which causes very high aminotransferases, not a focal lesion.",
         },
     },
+    {
+        id: "hi-vowels",
+        condition: "hepatic-infectious",
+        kind: "memory",
+        stem: "Which two hepatitis viruses are spread by the fecal-oral route, cause acute infection only in healthy hosts, and have no envelope?",
+        options: ["Hepatitis A and E", "Hepatitis B and D, which share an envelope", "Hepatitis C and E", "Hepatitis A and C", "Hepatitis B and E"],
+        answer: 0,
+        explanation: `<p><strong>"The vowels hit your bowels": hepatitis A and E</strong> are fecal-oral, acute only, and naked. HAV spreads through contaminated food and water; HEV through contaminated water and undercooked pork. HEV becomes chronic only in immunocompromised patients, and in the third trimester of pregnancy it can cause fulminant hepatitis.</p>`,
+        notes: {
+            1: "HBV and HDV spread by sex, blood, and perinatally, cause chronic infection, and are enveloped.",
+            2: "HCV spreads by blood, becomes chronic in 75–85%, and is enveloped.",
+            3: "HCV is blood-borne and enveloped, unlike HAV.",
+            4: "HBV is blood-borne and enveloped, unlike HEV.",
+        },
+    },
+    {
+        id: "hi-hbv-genome",
+        condition: "hepatic-infectious",
+        kind: "memory",
+        stem: "What kind of genome does the hepatitis B virus have?",
+        options: ["Partially double-stranded, circular DNA", "Positive-sense, single-stranded RNA", "Negative-sense, circular, single-stranded RNA", "Linear, double-stranded DNA", "Segmented, double-stranded RNA"],
+        answer: 0,
+        explanation: `<p><strong>HBV is a hepadnavirus with a partially double-stranded, circular DNA genome.</strong> In the nucleus it is repaired into cccDNA, which host RNA polymerase II transcribes; the viral reverse transcriptase then turns pregenomic RNA back into new DNA. That reverse transcription is the target of tenofovir and entecavir, and the persisting cccDNA is why HBV is hard to cure.</p>`,
+        notes: {
+            1: "Positive-sense, single-stranded RNA is the genome of HAV, HCV, and HEV.",
+            2: "Negative-sense, circular RNA is the genome of HDV.",
+            3: "HBV's DNA is circular and only partially double-stranded.",
+            4: "None of the hepatitis viruses has a segmented, double-stranded RNA genome.",
+        },
+    },
+    {
+        id: "hi-hbv-age",
+        condition: "hepatic-infectious",
+        kind: "memory",
+        stem: "Who is most likely to develop chronic hepatitis B after infection?",
+        options: ["A baby infected at birth", "A healthy adult infected through sex", "An adult health care worker after a needlestick", "A healthy adolescent infected through sex", "An older adult infected through a transfusion"],
+        answer: 0,
+        explanation: `<p><strong>About 90% of infected infants develop chronic hepatitis B, against under 5% of adults.</strong> This is why newborns of HBsAg-positive mothers receive the vaccine plus HBIG at birth, and why all infants are vaccinated.</p>`,
+        notes: {
+            1: "Under 5% of adults infected with HBV develop chronic infection.",
+            2: "Most adults clear HBV, whatever the route of infection.",
+            3: "Adolescents behave like adults, and most clear the virus.",
+            4: "Age, not the route, is what sets the risk, and most adults clear HBV.",
+        },
+    },
+    {
+        id: "hi-anchovy",
+        condition: "hepatic-infectious",
+        kind: "memory",
+        stem: "What does aspiration of an amebic liver abscess typically yield?",
+        options: ["Odorless, brown fluid like anchovy paste", "Foul-smelling pus that grows mixed bacteria", "Clear fluid containing daughter cysts", "Bile-stained fluid with crystals", "Bright red blood that does not clot"],
+        answer: 0,
+        explanation: `<p><strong>An amebic abscess yields odorless, brown "anchovy paste".</strong> Aspiration is often unnecessary, because imaging and E. histolytica serology make the diagnosis, and treatment is metronidazole followed by a luminal agent such as paromomycin.</p>`,
+        notes: {
+            1: "Pus that grows mixed bacteria fits a pyogenic abscess.",
+            2: "Daughter cysts belong to a hydatid cyst, which should not be aspirated without precautions against spillage.",
+            3: "Bile-stained fluid is not the aspirate of an amebic abscess.",
+            4: "Fresh blood is not what an amebic abscess contains.",
+        },
+    },
+    {
+        id: "hi-owl-eye",
+        condition: "hepatic-infectious",
+        kind: "memory",
+        stem: "A transplant recipient's liver biopsy shows enlarged cells with large \"owl's eye\" inclusions. Which virus is responsible?",
+        options: ["Cytomegalovirus", "Herpes simplex virus", "Epstein-Barr virus", "Hepatitis E virus", "Hepatitis C virus"],
+        answer: 0,
+        explanation: `<p><strong>"Owl's eye" inclusions are the biopsy sign of CMV.</strong> CMV hepatitis affects immunocompromised patients, such as after transplantation or in AIDS, and is usually mild. It is diagnosed by CMV PCR on blood and treated with ganciclovir if the patient is immunocompromised.</p>`,
+        notes: {
+            1: "HSV hepatitis is diagnosed by HSV PCR on blood and treated at once with IV acyclovir.",
+            2: "EBV causes mild hepatitis in infectious mononucleosis and is diagnosed by heterophile antibody and serology.",
+            3: "HEV is diagnosed by serology, or HEV RNA if immunocompromised.",
+            4: "HCV is diagnosed by anti-HCV antibody and HCV RNA.",
+        },
+    },
+    {
+        id: "hi-anicteric-child",
+        condition: "hepatic-infectious",
+        kind: "reasoning",
+        stem: "A daycare center has an outbreak of hepatitis A. Several staff become jaundiced, but none of the infected toddlers do. What explains this?",
+        options: ["HAV infection is often anicteric in young children", "Toddlers have been immunized by maternal IgG", "Toddlers clear HAV before it reaches the liver", "Only adults absorb HAV from the gut", "Toddlers develop chronic HAV without symptoms"],
+        answer: 0,
+        explanation: `<p><strong>Many viral hepatitis infections are anicteric, especially HAV in young children</strong> and acute HCV. The children are still infected and can spread the virus by the fecal-oral route, which is why outbreaks are traced through child care. Post-exposure, contacts receive the vaccine or immunoglobulin.</p>`,
+        notes: {
+            1: "Maternal antibody would prevent infection altogether, and the toddlers were infected.",
+            2: "HAV infects hepatocytes in children as in adults; the infection is simply milder.",
+            3: "HAV spreads by the fecal-oral route in all ages.",
+            4: "HAV never becomes chronic and has no carrier state.",
+        },
+    },
+    {
+        id: "hi-coinfection-igm",
+        condition: "hepatic-infectious",
+        kind: "reasoning",
+        stem: "A man has acute hepatitis with IgM anti-HDV and a positive HBsAg. How does IgM anti-HBc tell whether he has an HDV coinfection or a superinfection?",
+        options: ["It is positive only if he acquired HBV at the same time as HDV", "It is positive only if he has had chronic HBV for several years before HDV", "It is positive only after HBV vaccination", "It is positive only if HDV has become chronic", "It is positive only during the HBV window period"],
+        answer: 0,
+        explanation: `<p><strong>IgM anti-HBc marks a recent HBV infection.</strong> In coinfection, HBV and HDV arrive together, so IgM anti-HBc is positive; in superinfection, HDV infects someone with long-standing HBV, so anti-HBc is IgG and IgM anti-HBc is negative.</p>
+<p>The difference matters: coinfection is usually acute and self-limited, while superinfection is more severe, risks fulminant hepatitis, and usually becomes chronic, with faster progression to cirrhosis.</p>`,
+        notes: {
+            1: "Long-standing HBV gives IgG anti-HBc; IgM is negative in superinfection.",
+            2: "Vaccination never produces anti-HBc of either class.",
+            3: "IgM anti-HBc reflects recent HBV, not the course of HDV.",
+            4: "The window period is a phase of acute HBV in which HBsAg has gone; here HBsAg is positive.",
+        },
+    },
+    {
+        id: "hi-anti-hcv-cured",
+        condition: "hepatic-infectious",
+        kind: "reasoning",
+        stem: "A man was cured of hepatitis C with direct-acting antivirals 3 years ago. A routine screen now shows a positive anti-HCV antibody. How should this be interpreted?",
+        options: ["Anti-HCV stays positive after cure, so only HCV RNA shows active infection", "The positive antibody shows that the antiviral treatment failed and the virus persisted", "The antibody shows he is now immune to reinfection", "He needs a second course of antivirals now", "The result is a false positive from the antiviral drugs"],
+        answer: 0,
+        explanation: `<p><strong>Anti-HCV stays positive for life, even after cure,</strong> so it cannot separate cure from reinfection. HCV RNA by PCR answers the question: negative means no current infection, positive means current infection (here, reinfection), which is assessed for fibrosis and treated.</p>`,
+        notes: {
+            1: "Treatment failure is shown by detectable HCV RNA, not by the antibody.",
+            2: "Anti-HCV does not protect; high antigenic variation allows reinfection.",
+            3: "Treatment depends on a positive HCV RNA, which has not been checked.",
+            4: "The antibody persists from the original infection; it is a true positive.",
+        },
+    },
+    {
+        id: "hi-hev-chronic",
+        condition: "hepatic-infectious",
+        kind: "reasoning",
+        stem: "A kidney transplant recipient has had raised ALT and detectable HEV RNA for 6 months. Why does he need ribavirin, when most HEV infections need only supportive care?",
+        options: ["HEV can become chronic in immunocompromised patients, and chronic HEV is treated", "HEV after transplantation is always fulminant and needs urgent antiviral treatment", "Ribavirin prevents rejection of the transplanted kidney", "Supportive care is never used for HEV in men", "HEV RNA shows a coinfection with HDV"],
+        answer: 0,
+        explanation: `<p><strong>HEV is acute in healthy hosts but can persist in immunocompromised patients,</strong> such as transplant recipients. In them, HEV RNA is used for diagnosis, and chronic infection is treated with ribavirin to prevent ongoing inflammation, fibrosis, and cirrhosis. In healthy hosts, HEV resolves with supportive care.</p>`,
+        notes: {
+            1: "Fulminant HEV is a risk in pregnancy; his course is chronic, not fulminant.",
+            2: "Ribavirin is an antiviral for chronic HEV, not an anti-rejection drug.",
+            3: "Supportive care suits acute HEV in healthy hosts of either sex.",
+            4: "HDV needs HBV; HEV RNA shows HEV infection.",
+        },
+    },
+    {
+        id: "hi-schisto-varices",
+        condition: "hepatic-infectious",
+        kind: "reasoning",
+        stem: "How does chronic infection with Schistosoma mansoni lead to esophageal varices?",
+        options: ["Eggs lodge in the portal tracts, and the granulomas and fibrosis raise portal pressure", "Adult worms block the hepatic veins at their outflow", "Eggs destroy hepatocytes, causing cirrhosis with nodules", "The worms secrete a toxin that dilates esophageal veins", "Snail antigens cause an autoimmune hepatitis"],
+        answer: 0,
+        explanation: `<p><strong>Schistosome eggs carried to the liver in portal blood lodge in the portal tracts,</strong> where they cause granulomas and Symmers pipe-stem periportal fibrosis. The fibrosis obstructs portal flow, causing portal hypertension, splenomegaly, and varices. Diagnosis is by eggs or antigen in stool with periportal fibrosis on imaging, and treatment is praziquantel.</p>`,
+        notes: {
+            1: "Hepatic vein outflow block is Budd-Chiari syndrome; schistosome eggs lodge in the portal tracts.",
+            2: "The fibrosis is periportal (pipe-stem), not the nodular cirrhosis of hepatocyte injury.",
+            3: "The varices come from portal hypertension, not a toxin.",
+            4: "Freshwater snails are the intermediate host; the disease is a reaction to eggs, not autoimmunity.",
+        },
+    },
+    {
+        id: "hi-three-serologies",
+        condition: "hepatic-infectious",
+        kind: "analysis",
+        stem: `<p>Three adults have hepatitis B serology.</p>
+<table><thead><tr><th>Marker</th><th>Patient 1</th><th>Patient 2</th><th>Patient 3</th></tr></thead><tbody>
+<tr><td>HBsAg</td><td>Positive</td><td>Negative</td><td>Positive</td></tr>
+<tr><td>HBeAg</td><td>Positive</td><td>Negative</td><td>Negative</td></tr>
+<tr><td>HBV DNA</td><td>High</td><td>Undetectable</td><td>Low</td></tr>
+<tr><td>Anti-HBs</td><td>Negative</td><td>Positive</td><td>Negative</td></tr>
+<tr><td>Anti-HBe</td><td>Negative</td><td>Positive</td><td>Positive</td></tr>
+<tr><td>Anti-HBc</td><td>IgM</td><td>IgG</td><td>IgG</td></tr>
+</tbody></table>
+<p>Patient 3's HBsAg has been positive for 2 years. <em>Illustrative data.</em></p><p>Which interpretation is correct?</p>`,
+        options: ["1 acute infection, 2 recovery, 3 chronic low-replicative infection", "1 chronic high-replicative infection, 2 vaccination, 3 window period", "1 acute infection, 2 vaccination, 3 chronic high-replicative infection", "1 window period, 2 recovery, 3 acute infection", "1 acute infection, 2 window period, 3 recovery"],
+        answer: 0,
+        explanation: `<p><strong>Read anti-HBc first, then HBsAg and HBeAg:</strong></p>
+<ul>
+<li><strong>Patient 1, acute infection:</strong> HBsAg, HBeAg, and DNA positive with IgM anti-HBc.</li>
+<li><strong>Patient 2, recovery:</strong> anti-HBs with IgG anti-HBc. Anti-HBc comes only from natural infection, so this is not vaccination.</li>
+<li><strong>Patient 3, chronic low-replicative infection:</strong> HBsAg for 6 months or more, HBeAg negative with anti-HBe, and low DNA, so low infectivity.</li>
+</ul>`,
+        notes: {
+            1: "IgM anti-HBc in patient 1 marks acute infection, anti-HBc in patient 2 rules out vaccination alone, and patient 3 has HBsAg, so it is not the window period.",
+            2: "Vaccination never gives anti-HBc, and patient 3 is HBeAg negative with low DNA, so replication is low.",
+            3: "The window period has no HBsAg, and patient 3 has had HBsAg for 2 years, which is chronic, not acute.",
+            4: "Patient 2 has anti-HBs, which appears in recovery, not the window period, and patient 3 still has HBsAg, so has not recovered.",
+        },
+    },
+    {
+        id: "hi-hydatid-case",
+        condition: "hepatic-infectious",
+        kind: "analysis",
+        stem: `<p>A 38-year-old man who grew up on a sheep farm with working dogs has 3 months of dull RUQ discomfort. He is afebrile.</p>
+<table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody>
+<tr><td>WCC</td><td>Normal, with eosinophilia</td></tr>
+<tr><td>LFTs</td><td>Normal</td></tr>
+<tr><td>Ultrasound</td><td>An 8 cm cyst in the right lobe with several smaller cysts inside it</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p><p>What is the most appropriate management?</p>`,
+        options: ["Albendazole, with PAIR or surgery, avoiding spillage", "Metronidazole, then a luminal agent such as paromomycin", "Percutaneous drainage and broad-spectrum ABX", "Praziquantel and a repeat ultrasound in a year", "Diagnostic aspiration of the cyst, then observation"],
+        answer: 0,
+        explanation: `<p><strong>Daughter cysts and eosinophilia in someone exposed to sheep and dogs point to a hydatid cyst</strong> of Echinococcus granulosus. The dog is the definitive host, and sheep and other livestock are intermediate hosts; cysts grow slowly and form daughter cysts.</p>
+<p>Treatment is albendazole, with PAIR or surgery for larger cysts. Spillage of cyst fluid is avoided because it is antigenic and can cause anaphylaxis.</p>`,
+        notes: {
+            1: "Metronidazole then paromomycin treats an amebic abscess, which has no daughter cysts.",
+            2: "Drainage with ABX treats a pyogenic abscess; he is afebrile with daughter cysts.",
+            3: "Praziquantel treats schistosomiasis.",
+            4: "Aspiration without the precautions of PAIR risks spillage and anaphylaxis, and the cyst needs treatment.",
+        },
+    },
 
     /* ===== Hepatocellular Injury: Traumatic Causes ===== */
 
     /* --- Memory --- */
-    {
-        id: "ht-shoulder",
-        condition: "hepatic-traumatic",
-        kind: "memory",
-        stem: "A footballer with a liver laceration has pain at the tip of his right shoulder. Which nerve carries this referred pain?",
-        options: ["Phrenic nerve", "Vagus nerve", "Intercostal nerve", "Long thoracic nerve", "Greater splanchnic nerve"],
-        answer: 0,
-        explanation: `<p><strong>Blood under the right hemidiaphragm irritates the diaphragmatic peritoneum, which is supplied by the phrenic nerve (C3–C5).</strong> The brain cannot tell where along the C4 segment the signal began, so the pain is felt over the shoulder, which shares the C4 dermatome.</p>
-<p>Right shoulder pain after RUQ trauma is therefore a clue to blood or bile collecting under the diaphragm, and a reason to look for a liver injury even when the abdomen seems only mildly tender.</p>`,
-        notes: {
-            1: "The vagus carries visceral afferents from the gut but does not refer pain to the shoulder.",
-            2: "Intercostal nerves supply the chest wall and the peripheral diaphragm, referring pain to the chest and abdominal wall, not the shoulder.",
-            3: "The long thoracic nerve is a motor nerve to serratus anterior.",
-            4: "The greater splanchnic nerve carries visceral pain from the foregut, felt in the epigastrium.",
-        },
-    },
     {
         id: "ht-hemobilia",
         condition: "hepatic-traumatic",
@@ -6481,91 +5880,6 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "ht-blunt",
-        condition: "hepatic-traumatic",
-        kind: "memory",
-        stem: "Which injury is an example of blunt rather than penetrating liver trauma?",
-        options: ["A fall from a ladder", "A stab wound to the RUQ", "A gunshot wound to the flank", "A nail-gun injury to the abdomen", "A shard of glass in the RUQ"],
-        answer: 0,
-        explanation: `<p><strong>Blunt trauma comes from force without a breach of the skin:</strong> motor vehicle collisions, falls, and assault. Penetrating trauma comes from objects entering the body, such as stab wounds and gunshot wounds.</p>
-<p>The liver is large, sits under the lower right ribs, and is fixed below the diaphragm, so a blow or sudden deceleration can tear it. Whatever the mechanism, the force causes lacerations and hematomas that bleed, and management then depends on whether the patient is hemodynamically stable.</p>`,
-        notes: {
-            1: "A stab wound breaches the skin and is penetrating trauma.",
-            2: "A gunshot wound is penetrating trauma.",
-            3: "A nail driven into the abdomen breaches the skin, so it is penetrating.",
-            4: "Glass entering the abdomen is penetrating trauma.",
-        },
-    },
-    {
-        id: "ht-distention",
-        condition: "hepatic-traumatic",
-        kind: "memory",
-        stem: "After blunt liver trauma, a patient's abdomen becomes increasingly distended. What does this most likely reflect?",
-        options: ["Hemoperitoneum", "Ascites from portal hypertension", "Ileus from opioid analgesia", "Air from a perforated bowel", "A subcapsular biloma"],
-        answer: 0,
-        explanation: `<p><strong>Torn liver vessels bleed into the peritoneal cavity, causing hemoperitoneum.</strong> The liver has a rich blood supply from the portal vein and hepatic artery, so bleeding can be fast.</p>
-<p>A distending abdomen after trauma therefore means blood until proved otherwise, and it comes with the signs of hypovolemic shock: tachycardia, hypotension, and poor perfusion. In an unstable patient, a FAST exam looks for this free fluid.</p>`,
-        notes: {
-            1: "Ascites from portal hypertension builds over weeks in chronic liver disease, not after acute trauma.",
-            2: "Opioids can cause ileus, but progressive distention after liver trauma means bleeding until proved otherwise.",
-            3: "Bowel perforation can occur with trauma, but bleeding is the expected complication of a liver injury.",
-            4: "A biloma is a localized bile collection that develops more slowly and does not usually distend the whole abdomen.",
-        },
-    },
-    {
-        id: "ht-bile-leak",
-        condition: "hepatic-traumatic",
-        kind: "memory",
-        stem: "A liver laceration tears an intrahepatic bile duct. Which complications can follow?",
-        options: ["Biloma and bile peritonitis", "Portal hypertension and varices", "Hemoperitoneum and shock", "Budd-Chiari syndrome", "Cholangiocarcinoma"],
-        answer: 0,
-        explanation: `<p><strong>A torn bile duct leaks bile,</strong> which can collect in or around the liver as a biloma or spread through the peritoneum as bile peritonitis.</p>
-<p>Each structure torn by the injury gives its own complication:</p>
-<ul>
-<li><strong>Vessels:</strong> hemorrhage, hemoperitoneum, and shock.</li>
-<li><strong>Ducts:</strong> biloma and bile peritonitis.</li>
-<li><strong>Vessel connecting to a duct:</strong> hemobilia.</li>
-</ul>`,
-        notes: {
-            1: "Portal hypertension is a feature of cirrhosis or portal vein thrombosis, not a bile duct tear.",
-            2: "Hemoperitoneum and shock come from torn vessels, not torn ducts.",
-            3: "Budd-Chiari syndrome is a hepatic vein clot.",
-            4: "Cholangiocarcinoma is a tumor and not a complication of trauma.",
-        },
-    },
-    {
-        id: "ht-fast",
-        condition: "hepatic-traumatic",
-        kind: "memory",
-        stem: "In an unstable trauma patient, what does a FAST exam look for?",
-        options: ["Free fluid in the abdomen", "The grade of a liver laceration", "Active contrast extravasation", "A bile duct injury", "Fractures of the lower ribs"],
-        answer: 0,
-        explanation: `<p><strong>FAST (focused assessment with sonography for trauma) looks for free fluid,</strong> which after trauma means blood. It is done at the bedside in minutes, so an unstable patient never leaves the resuscitation area.</p>
-<p>FAST answers one question, whether there is blood in the abdomen, but it does not show which organ is injured or how badly. In an unstable patient that is enough: a positive FAST leads to emergency laparotomy. Grading the injury is left to CT in stable patients.</p>`,
-        notes: {
-            1: "Grading is done by CT with IV contrast in stable patients.",
-            2: "Contrast extravasation is seen on contrast CT, not ultrasound.",
-            3: "FAST does not image the bile ducts; bile leaks show later as a biloma.",
-            4: "Rib fractures are seen on x-ray or CT.",
-        },
-    },
-    {
-        id: "ht-aast",
-        condition: "hepatic-traumatic",
-        kind: "memory",
-        stem: "How are liver injuries graded, and which grades are most common?",
-        options: ["AAST scale I–VI; grades I and II are over half", "AAST scale I–VI; grades V and VI make up over half", "Child-Pugh A–C; class A is most common", "MELD score; scores under 10 are most common", "AAST scale I–III; grade III is most common"],
-        answer: 0,
-        explanation: `<p><strong>Liver injuries are graded on the AAST scale, from grade I to VI,</strong> using CT with IV contrast in stable patients. The grade reflects the size of hematomas and lacerations and whether major vessels are torn.</p>
-<p>Grades I and II, small hematomas and shallow lacerations, make up over half of injuries. This is one reason most stable liver injuries heal without surgery.</p>`,
-        notes: {
-            1: "The highest grades, with major vascular injury, are the least common.",
-            2: "Child-Pugh grades the severity of cirrhosis, not an injury.",
-            3: "MELD scores chronic liver disease for transplant priority.",
-            4: "The AAST liver scale runs from I to VI, and low grades are most common.",
-        },
-    },
-    {
         id: "ht-nom",
         condition: "hepatic-traumatic",
         kind: "memory",
@@ -6579,22 +5893,6 @@ const QUIZ_QUESTIONS = [
             2: "Resection is reserved for severe injuries, not routine stable ones.",
             3: "Angioembolization is for stable patients with active bleeding, not every injury.",
             4: "ERCP can treat a bile leak but is not the first management of a liver injury.",
-        },
-    },
-    {
-        id: "ht-shock-type",
-        condition: "hepatic-traumatic",
-        kind: "memory",
-        stem: "A patient with a major liver laceration is pale, cold, and tachycardic, with a BP of 80/50. Which type of shock is this?",
-        options: ["Hypovolemic (hemorrhagic)", "Septic", "Cardiogenic", "Neurogenic", "Anaphylactic"],
-        answer: 0,
-        explanation: `<p><strong>Bleeding from torn liver vessels causes hypovolemic shock.</strong> Blood lost into the peritoneum lowers venous return, so cardiac output falls.</p>
-<p>The body compensates by raising the heart rate and constricting skin vessels, which makes the patient pale and cold, until blood pressure itself falls. The liver's large blood supply is why its injuries can bleed so much, and why stability, not the mechanism, decides the next step.</p>`,
-        notes: {
-            1: "Septic shock causes warm peripheries early and follows infection, not acute trauma.",
-            2: "Cardiogenic shock comes from pump failure, such as myocardial infarction.",
-            3: "Neurogenic shock follows spinal cord injury and causes bradycardia with warm skin.",
-            4: "Anaphylaxis follows an allergen and causes urticaria and bronchospasm.",
         },
     },
 
@@ -6631,6 +5929,67 @@ const QUIZ_QUESTIONS = [
             4: "The FAST is already positive, and waiting lets her keep bleeding.",
         },
     },
+
+    /* --- Analysis --- */
+    {
+        id: "ht-ct-report",
+        condition: "hepatic-traumatic",
+        kind: "analysis",
+        stem: `<p>A 19-year-old cyclist hit a car and has RUQ tenderness. His observations stay normal after 1 L of crystalloid.</p>
+<table><thead><tr><th>Finding</th><th>Result</th></tr></thead><tbody>
+<tr><td>CT abdomen with IV contrast</td><td>2 cm laceration of the right lobe with a small subcapsular hematoma (AAST grade II); no contrast extravasation; small amount of perihepatic fluid; spleen, kidneys, and bowel normal</td></tr>
+<tr><td>Hemoglobin at 0, 6, and 12 hours (g/L)</td><td>142, 139, 140</td></tr>
+<tr><td>Heart rate at 0, 6, and 12 hours</td><td>84, 80, 76</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p><p>What is the most appropriate management?</p>`,
+        options: ["Nonoperative management with close monitoring", "Emergency laparotomy for the perihepatic fluid", "Angioembolization of the right hepatic artery", "Discharge home today without follow-up", "Repeat CT every 6 hours until the fluid clears"],
+        answer: 0,
+        explanation: `<p><strong>A stable patient with a low-grade injury and no active bleeding is managed nonoperatively with close monitoring.</strong> Each part of the data supports it:</p>
+<ul>
+<li><strong>Grade II:</strong> among the low grades that make up over half of injuries.</li>
+<li><strong>No extravasation:</strong> no active bleeding, so no need for angioembolization.</li>
+<li><strong>Stable trends:</strong> hemoglobin and heart rate are steady over 12 hours.</li>
+</ul>
+<p>Monitoring continues because bleeding can restart, and late complications such as bile leak, abscess, or hemobilia can appear.</p>`,
+        notes: {
+            1: "A small amount of perihepatic blood is expected; laparotomy is for instability.",
+            2: "Angioembolization is for active bleeding, which CT does not show.",
+            3: "He needs monitoring for renewed bleeding before discharge.",
+            4: "Routine repeated CT is not needed while he is stable; his trends guide care.",
+        },
+    },
+    {
+        id: "ht-fast",
+        condition: "hepatic-traumatic",
+        kind: "memory",
+        stem: "In an unstable trauma patient, what does a FAST exam look for?",
+        options: ["Free fluid in the abdomen", "The grade of a liver laceration", "Active contrast extravasation", "A bile duct injury", "Fractures of the lower ribs"],
+        answer: 0,
+        explanation: `<p><strong>FAST (focused assessment with sonography for trauma) looks for free fluid,</strong> which after trauma means blood. It is done at the bedside in minutes, so an unstable patient never leaves the resuscitation area.</p>
+<p>FAST answers one question, whether there is blood in the abdomen, but it does not show which organ is injured or how badly. In an unstable patient that is enough: a positive FAST leads to emergency laparotomy. Grading the injury is left to CT in stable patients.</p>`,
+        notes: {
+            1: "Grading is done by CT with IV contrast in stable patients.",
+            2: "Contrast extravasation is seen on contrast CT, not ultrasound.",
+            3: "FAST does not image the bile ducts; bile leaks show later as a biloma.",
+            4: "Rib fractures are seen on x-ray or CT.",
+        },
+    },
+    {
+        id: "ht-aast",
+        condition: "hepatic-traumatic",
+        kind: "memory",
+        stem: "How are liver injuries graded, and which grades are most common?",
+        options: ["AAST scale I–VI; grades I and II are over half", "AAST scale I–VI; grades V and VI make up over half", "Child-Pugh A–C; class A is most common", "MELD score; scores under 10 are most common", "AAST scale I–III; grade III is most common"],
+        answer: 0,
+        explanation: `<p><strong>Liver injuries are graded on the AAST scale, from grade I to VI,</strong> using CT with IV contrast in stable patients. The grade reflects the size of hematomas and lacerations and whether major vessels are torn.</p>
+<p>Grades I and II, small hematomas and shallow lacerations, make up over half of injuries. This is one reason most stable liver injuries heal without surgery.</p>`,
+        notes: {
+            1: "The highest grades, with major vascular injury, are the least common.",
+            2: "Child-Pugh grades the severity of cirrhosis, not an injury.",
+            3: "MELD scores chronic liver disease for transplant priority.",
+            4: "The AAST liver scale runs from I to VI, and low grades are most common.",
+        },
+    },
     {
         id: "ht-blush",
         condition: "hepatic-traumatic",
@@ -6648,106 +6007,6 @@ const QUIZ_QUESTIONS = [
         },
         info: "A contrast blush on CT as the sign of active bleeding is from the StatPearls chapter Liver Trauma.",
     },
-    {
-        id: "ht-ct-not-fast",
-        condition: "hepatic-traumatic",
-        kind: "reasoning",
-        stem: "Why do stable trauma patients have CT with IV contrast rather than relying on FAST alone?",
-        options: ["FAST finds free fluid but cannot grade the injury", "FAST is unsafe in stable patients", "CT is quicker than FAST at the bedside", "FAST cannot detect blood in the abdomen", "CT must always be done first, before any FAST can be performed"],
-        answer: 0,
-        explanation: `<p><strong>FAST answers whether there is blood in the abdomen, but not where it came from or how bad the injury is.</strong> CT with IV contrast shows which organ is injured, grades it on the AAST scale, and shows active bleeding.</p>
-<p>In a stable patient, that detail changes management: observation for a low-grade injury, angioembolization for active bleeding. In an unstable patient, FAST is enough, because a positive result already means laparotomy.</p>`,
-        notes: {
-            1: "FAST is a safe bedside ultrasound in any patient.",
-            2: "FAST is the quick bedside test; CT means moving the patient to a scanner.",
-            3: "Detecting free blood is exactly what FAST does.",
-            4: "FAST is done first in the resuscitation area; CT follows in stable patients.",
-        },
-    },
-    {
-        id: "ht-mechanism",
-        condition: "hepatic-traumatic",
-        kind: "reasoning",
-        stem: "A man with a small stab wound in the RUQ has a normal BP and heart rate that stay stable, and no peritonitis. What decides the next step in his management?",
-        options: ["His hemodynamic stability", "The fact that the wound is penetrating", "The length of the knife", "His AST and ALT", "Whether he has right shoulder pain"],
-        answer: 0,
-        explanation: `<p><strong>Hemodynamic stability, rather than the mechanism alone, is the decision point.</strong> A stable patient has CT with IV contrast to grade the injury and is managed nonoperatively when appropriate, while an unstable patient with a positive FAST goes to laparotomy.</p>
-<p>A stab wound sounds more dangerous than a fall, but what matters is whether the patient is bleeding faster than the body can compensate, and that shows in the vital signs.</p>`,
-        notes: {
-            1: "Penetrating and blunt injuries follow the same rule: stability decides.",
-            2: "The weapon gives a clue to depth, but stability decides the next step.",
-            3: "Enzymes rise with liver injury but do not decide between CT and laparotomy.",
-            4: "Shoulder pain suggests blood under the diaphragm, but stability decides what happens next.",
-        },
-    },
-    {
-        id: "ht-monitor",
-        condition: "hepatic-traumatic",
-        kind: "reasoning",
-        stem: "A stable patient with a grade II liver laceration is managed nonoperatively. Why does he need close monitoring of vital signs and hemoglobin?",
-        options: ["He may start bleeding again and need intervention", "Nonoperative management always fails within a day", "The laceration will need surgery once it heals", "Monitoring is needed only to decide when he can go home", "Grade II injuries always cause hemobilia"],
-        answer: 0,
-        explanation: `<p><strong>Nonoperative management works only while the patient stays stable,</strong> so close monitoring watches for renewed bleeding: a rising heart rate, falling BP, or falling hemoglobin.</p>
-<p>If bleeding recurs, treatment steps up: angioembolization for a stable patient with active bleeding, and laparotomy if he becomes unstable. Monitoring also picks up later complications, such as a bile leak, abscess, or hemobilia.</p>`,
-        notes: {
-            1: "Most stable liver injuries heal without surgery.",
-            2: "A healed laceration needs no surgery.",
-            3: "Monitoring is for safety, to catch bleeding or complications.",
-            4: "Hemobilia is an uncommon complication, not an expected one.",
-        },
-    },
-    {
-        id: "ht-hemobilia-mech",
-        condition: "hepatic-traumatic",
-        kind: "reasoning",
-        stem: "Why does hemobilia cause jaundice as well as GI bleeding?",
-        options: ["Clots in the bile ducts block bile flow", "Swallowed blood is broken down into bilirubin", "Blood loss destroys hepatocytes", "Bleeding causes hemolysis inside the gut", "Shock blocks bilirubin conjugation"],
-        answer: 0,
-        explanation: `<p><strong>Blood in the bile ducts clots, and the clots block bile flow,</strong> so conjugated bilirubin backs up into the blood. Distention of the ducts behind the clots causes RUQ pain.</p>
-<p>The same blood that clots in the ducts also drains through the ampulla into the duodenum, causing melena or hematemesis. So one lesion, a torn vessel connected to a bile duct, explains all three parts of the triad.</p>`,
-        notes: {
-            1: "Blood in the gut adds protein but does not produce jaundice; the bile ducts are blocked.",
-            2: "Bleeding into the ducts does not destroy hepatocytes.",
-            3: "Blood in the gut is digested, not hemolyzed into jaundice.",
-            4: "Shock causes ischemic injury, but hemobilia's jaundice comes from blocked ducts.",
-        },
-        info: "Clot blocking the bile ducts in hemobilia is described in the StatPearls chapter Liver Trauma.",
-    },
-    {
-        id: "ht-ischemic",
-        condition: "hepatic-traumatic",
-        kind: "reasoning",
-        stem: "A man with a grade IV liver injury was in hemorrhagic shock for 2 hours before surgery. On day 2, his AST and ALT are over 3000 U/L, far more than the laceration alone would explain. What is the most likely reason?",
-        options: ["Ischemic hepatitis from the period of shock", "Hepatitis B acquired from the blood transfusions", "Hemobilia blocking the bile ducts", "A bile leak causing bile peritonitis", "Alcohol withdrawal"],
-        answer: 0,
-        explanation: `<p><strong>Hypovolemic shock from hemorrhage can itself cause ischemic hepatitis.</strong> Low blood pressure reduces hepatic perfusion, and zone 3 hepatocytes, which receive the least oxygen, die across the whole liver, not just at the laceration.</p>
-<p>The enzymes rise within 1–3 days of the hypotension, often over 1000 U/L, and fall within 7–10 days once perfusion is restored. The liver injury here therefore has two causes: the tear and the shock.</p>`,
-        notes: {
-            1: "Transfusion-acquired hepatitis B would take 1–6 months to appear, not 2 days.",
-            2: "Hemobilia causes jaundice and GI bleeding, usually days to weeks later, not a massive enzyme rise.",
-            3: "A bile leak causes biloma or peritonitis, not aminotransferases in the thousands.",
-            4: "Alcohol does not cause a sudden rise in the thousands, and nothing suggests withdrawal.",
-        },
-    },
-    {
-        id: "ht-abscess",
-        condition: "hepatic-traumatic",
-        kind: "reasoning",
-        stem: "Ten days after nonoperative management of a liver laceration, a woman develops fever and RUQ pain. Her WCC is raised, and CT shows a rim-enhancing collection at the site of the injury. What is the most appropriate treatment?",
-        options: ["Drainage and antibiotics", "Emergency laparotomy for bleeding", "Angioembolization", "Antibiotics alone, without imaging", "Albendazole"],
-        answer: 0,
-        explanation: `<p><strong>A liver abscess is a recognized complication of liver trauma,</strong> and it is treated like any pyogenic abscess, with drainage and antibiotics.</p>
-<p>Damaged or dead liver tissue and collections of blood or bile give bacteria a place to grow. Drainage is needed because antibiotics penetrate a walled-off collection of pus poorly, and the fluid can be cultured to guide antibiotic choice.</p>`,
-        notes: {
-            1: "She is not bleeding; fever with a rim-enhancing collection means infection.",
-            2: "Angioembolization stops bleeding and can itself lead to abscesses.",
-            3: "Antibiotics alone penetrate a large collection poorly, and imaging has already shown it.",
-            4: "Albendazole treats hydatid cysts, not post-traumatic abscesses.",
-        },
-        info: "Drainage of post-traumatic abscesses by interventional radiology is described in the StatPearls chapter Liver Trauma.",
-    },
-
-    /* --- Analysis --- */
     {
         id: "ht-set-crash-1",
         condition: "hepatic-traumatic",
@@ -6795,61 +6054,6 @@ const QUIZ_QUESTIONS = [
             3: "Waiting while he deteriorates lets him keep bleeding.",
             4: "Ward observation suits stable low-grade injuries, not shock.",
         },
-    },
-    {
-        id: "ht-ct-report",
-        condition: "hepatic-traumatic",
-        kind: "analysis",
-        stem: `<p>A 19-year-old cyclist hit a car and has RUQ tenderness. His observations stay normal after 1 L of crystalloid.</p>
-<table><thead><tr><th>Finding</th><th>Result</th></tr></thead><tbody>
-<tr><td>CT abdomen with IV contrast</td><td>2 cm laceration of the right lobe with a small subcapsular hematoma (AAST grade II); no contrast extravasation; small amount of perihepatic fluid; spleen, kidneys, and bowel normal</td></tr>
-<tr><td>Hemoglobin at 0, 6, and 12 hours (g/L)</td><td>142, 139, 140</td></tr>
-<tr><td>Heart rate at 0, 6, and 12 hours</td><td>84, 80, 76</td></tr>
-</tbody></table>
-<p><em>Illustrative data.</em></p><p>What is the most appropriate management?</p>`,
-        options: ["Nonoperative management with close monitoring", "Emergency laparotomy for the perihepatic fluid", "Angioembolization of the right hepatic artery", "Discharge home today without follow-up", "Repeat CT every 6 hours until the fluid clears"],
-        answer: 0,
-        explanation: `<p><strong>A stable patient with a low-grade injury and no active bleeding is managed nonoperatively with close monitoring.</strong> Each part of the data supports it:</p>
-<ul>
-<li><strong>Grade II:</strong> among the low grades that make up over half of injuries.</li>
-<li><strong>No extravasation:</strong> no active bleeding, so no need for angioembolization.</li>
-<li><strong>Stable trends:</strong> hemoglobin and heart rate are steady over 12 hours.</li>
-</ul>
-<p>Monitoring continues because bleeding can restart, and late complications such as bile leak, abscess, or hemobilia can appear.</p>`,
-        notes: {
-            1: "A small amount of perihepatic blood is expected; laparotomy is for instability.",
-            2: "Angioembolization is for active bleeding, which CT does not show.",
-            3: "He needs monitoring for renewed bleeding before discharge.",
-            4: "Routine repeated CT is not needed while he is stable; his trends guide care.",
-        },
-    },
-    {
-        id: "ht-hemobilia-case",
-        condition: "hepatic-traumatic",
-        kind: "analysis",
-        stem: `<p>A 36-year-old woman was managed nonoperatively for a grade III liver laceration after a car crash and went home on day 6. On day 21 she returns with colicky RUQ pain, jaundice, and black stools.</p>
-<table><thead><tr><th>Test</th><th>Day 6</th><th>Day 21</th></tr></thead><tbody>
-<tr><td>Hemoglobin (g/L)</td><td>118</td><td>88</td></tr>
-<tr><td>Bilirubin (µmol/L)</td><td>14</td><td>82</td></tr>
-<tr><td>ALP (U/L)</td><td>95</td><td>310</td></tr>
-</tbody></table>
-<p>EGD: no ulcers or varices; fresh blood seen coming from the ampulla. CT angiography: a small arterial pseudoaneurysm at the site of the healing laceration, next to a bile duct. <em>Illustrative data.</em></p><p>What is the most appropriate treatment?</p>`,
-        options: ["Selective angioembolization of the pseudoaneurysm", "ERCP with sphincterotomy to clear the stones", "Endoscopic banding of the ampulla", "High-dose PPI and repeat EGD", "Emergency liver transplant"],
-        answer: 0,
-        explanation: `<p><strong>This is hemobilia from a post-traumatic arterial pseudoaneurysm,</strong> and it is treated with selective angioembolization.</p>
-<ul>
-<li><strong>The triad:</strong> RUQ pain, jaundice, and GI bleeding, weeks after a liver injury.</li>
-<li><strong>The source:</strong> blood from the ampulla, with no ulcer, and a pseudoaneurysm beside a bile duct.</li>
-<li><strong>The cholestasis:</strong> bilirubin and ALP rise as clots block the ducts.</li>
-</ul>
-<p>Blocking the feeding artery from inside stops the bleeding without surgery.</p>`,
-        notes: {
-            1: "There are no stones; the ducts are blocked by blood clot, and ERCP does not treat the bleeding artery.",
-            2: "Banding treats varices; the bleeding is from an artery inside the liver.",
-            3: "A PPI treats peptic ulcers, which EGD has excluded.",
-            4: "Her liver function is not failing; the problem is one bleeding vessel.",
-        },
-        info: "Treatment of hemobilia with selective angioembolization, and its origin in arterial pseudoaneurysms or arteriobiliary fistulas, are from the StatPearls chapter Liver Trauma.",
     },
 
     /* ===== Hepatocellular Injury: Autoimmune Causes ===== */
@@ -8259,22 +7463,6 @@ const QUIZ_QUESTIONS = [
         info: "That aflatoxin comes from Aspergillus on stored grain and nuts is standard teaching beyond the page.",
     },
     {
-        id: "hn-angiosarcoma",
-        condition: "hepatic-neoplastic",
-        kind: "memory",
-        stem: "A 62-year-old man who worked for decades making PVC plastics has weight loss and hepatomegaly. Biopsy shows a malignant tumor of endothelial cells. Which exposure most likely caused it?",
-        options: ["Vinyl chloride", "Aflatoxin", "Asbestos", "Benzene", "Aniline dyes"],
-        answer: 0,
-        explanation: `<p><strong>Hepatic angiosarcoma, a rare malignant tumor of blood vessel lining, is linked to vinyl chloride,</strong> arsenic, and Thorotrast. Vinyl chloride is the building block of PVC, so plastics workers exposed for years carry the risk.</p>
-<p>Each primary liver cancer has its own exposures: HCC follows cirrhosis, HBV, HCV, and aflatoxin; cholangiocarcinoma follows PSC and liver flukes; angiosarcoma follows these chemicals.</p>`,
-        notes: {
-            1: "Aflatoxin is linked to HCC, a tumor of hepatocytes, not endothelium.",
-            2: "Asbestos is linked to mesothelioma and lung cancer.",
-            3: "Benzene is linked to leukemia.",
-            4: "Aniline dyes are linked to bladder cancer.",
-        },
-    },
-    {
         id: "hn-fnh-scar",
         condition: "hepatic-neoplastic",
         kind: "memory",
@@ -8308,39 +7496,6 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "hn-fibrolamellar",
-        condition: "hepatic-neoplastic",
-        kind: "memory",
-        stem: "A 22-year-old woman with no liver disease is found to have a primary liver cancer. Which tumor is most likely?",
-        options: ["Fibrolamellar variant of HCC", "Classic HCC in a cirrhotic liver", "Angiosarcoma", "Cholangiocarcinoma from PSC", "Focal nodular hyperplasia"],
-        answer: 0,
-        explanation: `<p><strong>The fibrolamellar variant of HCC affects young patients without cirrhosis.</strong> Classic HCC develops on a background of cirrhosis, HBV, HCV, or aflatoxin, mostly in older adults.</p>
-<p>The distinction matters because the fibrolamellar variant arises in a healthy liver, so the usual risk factors and cirrhosis surveillance would not find it.</p>`,
-        notes: {
-            1: "Classic HCC needs a background such as cirrhosis or HBV, which she does not have.",
-            2: "Angiosarcoma is rare and linked to chemical exposures such as vinyl chloride.",
-            3: "She has no liver disease, so PSC-related cholangiocarcinoma is unlikely.",
-            4: "FNH is common in young women but is benign, with no malignant potential.",
-        },
-    },
-    {
-        id: "hn-paraneoplastic",
-        condition: "hepatic-neoplastic",
-        kind: "memory",
-        stem: "Which set of paraneoplastic effects is associated with hepatocellular carcinoma?",
-        options: ["Polycythemia, hypoglycemia, and hypercalcemia", "Anemia, hyperglycemia, and hypocalcemia", "Cushing syndrome, SIADH, and myasthenia", "Hyponatremia, hyperkalemia, and acidosis", "Carcinoid flushing, diarrhea, and wheeze"],
-        answer: 0,
-        explanation: `<p><strong>HCC can cause polycythemia, hypoglycemia, and hypercalcemia.</strong> The tumor cells can make hormone-like substances: erythropoietin (raising red cells), factors that lower glucose, and a PTH-related protein (raising calcium).</p>
-<p>These effects can be the first clue, for example a rising hemoglobin in a patient with cirrhosis, who would usually be anemic.</p>`,
-        notes: {
-            1: "These are the opposite of the effects of HCC.",
-            2: "Cushing syndrome and SIADH are classic paraneoplastic effects of small cell lung cancer.",
-            3: "This is not a paraneoplastic pattern of HCC; it suggests adrenal insufficiency or kidney disease.",
-            4: "Carcinoid syndrome comes from neuroendocrine tumors that have spread to the liver, not from HCC.",
-        },
-        info: "The hormone-like mediators named here (erythropoietin, PTH-related protein) are standard teaching beyond the page.",
-    },
-    {
         id: "hn-surveillance",
         condition: "hepatic-neoplastic",
         kind: "memory",
@@ -8354,22 +7509,6 @@ const QUIZ_QUESTIONS = [
             2: "Biopsy is invasive and is not a surveillance test.",
             3: "AFP alone misses many tumors, and 2 years is too long an interval.",
             4: "Waiting for symptoms means finding HCC late, when it is often advanced.",
-        },
-    },
-    {
-        id: "hn-adenoma",
-        condition: "hepatic-neoplastic",
-        kind: "memory",
-        stem: "A 28-year-old woman who has taken oral contraceptives for 10 years has sudden RUQ pain and hypotension. CT shows a 7-cm liver mass with surrounding blood. Which lesion is most likely?",
-        options: ["Hepatic adenoma", "Hemangioma", "Focal nodular hyperplasia", "Cholangiocarcinoma", "Angiosarcoma"],
-        answer: 0,
-        explanation: `<p><strong>Hepatic adenoma affects young women on oral contraceptives and anabolic steroid users, and it can rupture and bleed.</strong> A ruptured adenoma causes hemoperitoneum: sudden pain and hypotension.</p>
-<p>Rupture and malignant transformation are why adenomas are resected in all men, and in women if over 5 cm or bleeding. Her adenoma is both, and the oral contraceptive must be stopped.</p>`,
-        notes: {
-            1: "Hemangioma is common and rarely bleeds spontaneously; it is avoided at biopsy because a needle can make it bleed.",
-            2: "FNH has a central stellate scar and no tendency to rupture.",
-            3: "Cholangiocarcinoma presents with obstructive jaundice, not rupture in a young woman.",
-            4: "Angiosarcoma is rare, follows chemical exposure, and does not fit a young woman on oral contraceptives.",
         },
     },
 
@@ -8408,22 +7547,6 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "hn-fnh-tx",
-        condition: "hepatic-neoplastic",
-        kind: "reasoning",
-        stem: "A 34-year-old woman has a 4-cm liver lesion with a central stellate scar, found on imaging for another reason. Why does it usually need no treatment?",
-        options: ["It has no malignant potential and does not tend to rupture", "It always shrinks once oral contraceptives are stopped", "It is too vascular to resect safely", "It responds better to systemic therapy than surgery", "It is a metastasis, so the primary is treated instead"],
-        answer: 0,
-        explanation: `<p><strong>FNH is benign with no malignant potential,</strong> and unlike an adenoma it does not tend to rupture. The central stellate scar identifies it, in a woman of the typical age (20–50), so it can be left alone.</p>
-<p>Treatment follows risk: hemangioma and FNH usually need none, while hepatic adenoma is resected when large or bleeding because of rupture and malignant transformation.</p>`,
-        notes: {
-            1: "Stopping oral contraceptives is the treatment for adenoma; FNH needs no treatment either way.",
-            2: "Vascularity is a reason not to biopsy a hemangioma; FNH is left alone because it is harmless.",
-            3: "Systemic therapy treats advanced HCC, not a benign lesion.",
-            4: "A central scar points to FNH, not a metastasis.",
-        },
-    },
-    {
         id: "hn-adenoma-stop",
         condition: "hepatic-neoplastic",
         kind: "reasoning",
@@ -8441,23 +7564,6 @@ const QUIZ_QUESTIONS = [
         info: "Monitoring with repeat imaging after stopping the hormone is the usual practice; the page states that the hormone is stopped and resection kept for large or bleeding adenomas in women.",
     },
     {
-        id: "hn-adenoma-men",
-        condition: "hepatic-neoplastic",
-        kind: "reasoning",
-        stem: "A 31-year-old bodybuilder who uses anabolic steroids has a 3-cm hepatic adenoma that has not bled. What is the best management?",
-        options: ["Stop the steroids and resect the adenoma", "Stop the steroids and observe, as it is under 5 cm", "Observe and continue the steroids", "Biopsy, then decide", "Start oral contraceptives to shrink it"],
-        answer: 0,
-        explanation: `<p><strong>Hepatic adenomas are resected in all men, whatever their size,</strong> and in women only if over 5 cm or bleeding. The reasons for resection are rupture and malignant transformation, a risk the page treats as high enough in men to remove every adenoma.</p>
-<p>The steroids are stopped as well, because anabolic steroids, like oral contraceptives, drive adenoma growth.</p>`,
-        notes: {
-            1: "The 5-cm threshold applies to women; men are resected at any size.",
-            2: "Continuing steroids keeps driving the adenoma.",
-            3: "Biopsy is not needed to decide; the imaging and history identify the adenoma, and resection is indicated in men.",
-            4: "Hormones drive adenoma growth; oral contraceptives would make it worse.",
-        },
-        info: "The higher rate of malignant transformation of adenomas in men is standard teaching (see the StatPearls chapter on hepatocellular adenoma); the page states only that all men are resected.",
-    },
-    {
         id: "hn-jaundice",
         condition: "hepatic-neoplastic",
         kind: "reasoning",
@@ -8471,38 +7577,6 @@ const QUIZ_QUESTIONS = [
             2: "Hemolysis raises unconjugated bilirubin, with dark stool and no bilirubin in the urine.",
             3: "Paraneoplastic effects belong to HCC and do not block conjugation.",
             4: "Rupture causes hemoperitoneum in adenoma and HCC, not obstructive jaundice.",
-        },
-    },
-    {
-        id: "hn-cirrhosis-worse",
-        condition: "hepatic-neoplastic",
-        kind: "reasoning",
-        stem: "A 64-year-old man with HBV cirrhosis, stable for years, develops new ascites, weight loss, and a rising AFP. Which test should come next?",
-        options: ["Multiphase contrast CT or MRI of the liver", "Random percutaneous biopsy of the right lobe of the liver", "Repeat AFP in 6 months", "Colonoscopy", "Upper GI endoscopy alone"],
-        answer: 0,
-        explanation: `<p><strong>Worsening of known cirrhosis, with weight loss and a rising AFP, suggests HCC,</strong> which replaces working liver tissue and can tip a compensated liver into decompensation.</p>
-<p>Any liver mass is evaluated with multiphase contrast CT or MRI. In cirrhosis, arterial-phase enhancement with washout diagnoses HCC without a biopsy, so imaging is the decisive test.</p>`,
-        notes: {
-            1: "Random biopsy is not a way to find a tumor, and a characteristic mass in cirrhosis does not need one.",
-            2: "His AFP is already rising; waiting 6 months would delay diagnosis.",
-            3: "Colonoscopy looks for a primary when metastases are suspected; his background points to HCC.",
-            4: "Endoscopy looks for varices; it does not explain a rising AFP and weight loss.",
-        },
-    },
-    {
-        id: "hn-biopsy-unclear",
-        condition: "hepatic-neoplastic",
-        kind: "reasoning",
-        stem: "A 52-year-old woman without cirrhosis has a single 4-cm liver mass whose multiphase MRI fits none of the typical patterns. CEA, colonoscopy, and mammography are normal. What is the most appropriate next step?",
-        options: ["Biopsy of the mass", "Reassurance, as it is probably a hemangioma", "Ultrasound every 6 months", "Transplant evaluation under the Milan criteria", "Stop any hormone therapy and repeat MRI in 5 years"],
-        answer: 0,
-        explanation: `<p><strong>When imaging is unclear, the lesion is biopsied,</strong> as long as it is not a hemangioma. The typical patterns (washout for HCC in cirrhosis, peripheral fill-in for hemangioma, a central scar for FNH) allow a diagnosis without tissue; without one of them, only histology can tell benign from malignant.</p>
-<p>She has no cirrhosis, so the rule that imaging alone diagnoses HCC does not apply, and the search for a primary has been negative.</p>`,
-        notes: {
-            1: "A hemangioma has a typical pattern of peripheral fill-in, which this mass lacks.",
-            2: "Six-monthly ultrasound is surveillance for cirrhosis or chronic HBV, not a plan for an unexplained mass.",
-            3: "Transplant is for early HCC, which has not been diagnosed.",
-            4: "Waiting 5 years could let a malignancy progress.",
         },
     },
     {
@@ -8598,57 +7672,8 @@ const QUIZ_QUESTIONS = [
             4: "Bleeding from a needle is the concern with hemangioma; adenomas can bleed on their own.",
         },
     },
-    {
-        id: "hn-paraneo-case",
-        condition: "hepatic-neoplastic",
-        kind: "analysis",
-        stem: `<p>A 63-year-old man with alcohol-related cirrhosis has missed surveillance for 3 years. He has lost 6 kg and has new RUQ pain.</p>
-<table><thead><tr><th>Test</th><th>Result</th><th>A year ago</th><th>Reference</th></tr></thead><tbody>
-<tr><td>Hemoglobin</td><td>182 g/L</td><td>128 g/L</td><td>130–180</td></tr>
-<tr><td>Calcium (corrected)</td><td>2.95 mmol/L</td><td>2.30 mmol/L</td><td>2.10–2.60</td></tr>
-<tr><td>Fasting glucose</td><td>3.0 mmol/L</td><td>5.2 mmol/L</td><td>3.5–6.0</td></tr>
-<tr><td>AFP</td><td>1200 µg/L</td><td>Not tested</td><td>&lt;10</td></tr>
-</tbody></table>
-<p><em>Illustrative data.</em></p>
-<p>What best explains his blood results?</p>`,
-        options: ["Paraneoplastic effects of HCC", "Dehydration from diuretics", "Decompensated cirrhosis alone", "Metastases from a lung primary", "Primary hyperparathyroidism"],
-        answer: 0,
-        explanation: `<p><strong>Polycythemia, hypercalcemia, and hypoglycemia together are the paraneoplastic effects of HCC.</strong> With cirrhosis, weight loss, RUQ pain, and an AFP of 1200, HCC is very likely.</p>
-<p>The hemoglobin trend is the telling clue: cirrhosis usually lowers hemoglobin, so a rise from 128 to 182 means something is driving red cell production. Missed surveillance explains why the tumor has grown large enough to cause symptoms. The next step is multiphase contrast CT or MRI.</p>`,
-        notes: {
-            1: "Dehydration can concentrate hemoglobin, but it does not cause hypoglycemia or a very high AFP.",
-            2: "Cirrhosis alone tends to cause anemia, not polycythemia, and does not explain the high calcium or AFP.",
-            3: "Lung cancer causes its own paraneoplastic effects, but a high AFP in cirrhosis points to HCC.",
-            4: "Hyperparathyroidism raises calcium but not hemoglobin, AFP, or glucose-lowering effects.",
-        },
-    },
-    {
-        id: "hn-mets-case",
-        condition: "hepatic-neoplastic",
-        kind: "analysis",
-        stem: `<p>A 69-year-old man without known liver disease has lost 8 kg over 4 months. CT shows many round liver lesions of different sizes scattered through both lobes, in a liver with a smooth outline.</p>
-<table><thead><tr><th>Test</th><th>Result</th><th>Reference</th></tr></thead><tbody>
-<tr><td>Hemoglobin</td><td>98 g/L</td><td>130–180</td></tr>
-<tr><td>MCV</td><td>72 fL</td><td>80–100</td></tr>
-<tr><td>Ferritin</td><td>9 µg/L</td><td>30–300</td></tr>
-<tr><td>CEA</td><td>86 µg/L</td><td>&lt;5</td></tr>
-<tr><td>AFP</td><td>4 µg/L</td><td>&lt;10</td></tr>
-</tbody></table>
-<p><em>Illustrative data.</em></p>
-<p>Which investigation is most likely to find the source?</p>`,
-        options: ["Colonoscopy", "Biopsy of the largest liver lesion for HCC", "HCC surveillance ultrasound in 6 months", "MRCP for cholangiocarcinoma", "HBV and HCV serology alone"],
-        answer: 0,
-        explanation: `<p><strong>Many lesions of different sizes in a non-cirrhotic liver suggest metastases,</strong> the most common liver malignancy. His iron deficiency anemia (low MCV and ferritin) suggests chronic blood loss from the gut, and a high CEA points to a colorectal primary, so colonoscopy is the next step.</p>
-<p>The page's rule for metastases is to look for the primary tumor (e.g. colonoscopy, CEA). His normal AFP and lack of cirrhosis argue against HCC, and treatment will depend on the primary and its stage, with resection if possible.</p>`,
-        notes: {
-            1: "HCC usually arises in cirrhosis with a raised AFP; he has neither, and finding the primary comes first.",
-            2: "Surveillance is for cirrhosis or chronic HBV; these lesions need explaining now.",
-            3: "Cholangiocarcinoma presents with obstructive jaundice, often with PSC, not with many scattered lesions and iron deficiency.",
-            4: "Viral serology looks for risks of HCC, which does not fit multiple lesions with a high CEA and normal AFP.",
-        },
-    },
 
-    /* ===== Hepatocellular Injury: Acute Fatty Liver of Pregnancy ===== */
+    /* ===== Liver Disease in Pregnancy ===== */
 
     /* --- Memory --- */
     {
@@ -9084,6 +8109,288 @@ const QUIZ_QUESTIONS = [
             2: "A week's delay could let liver failure develop at home.",
             3: "Hyperemesis is a first-trimester condition and does not cause these results at 33 weeks.",
             4: "Cholestasis of pregnancy causes itching and raised bile salts, not low glucose and high uric acid.",
+        },
+    },
+    {
+        id: "hot-hg-timing",
+        condition: "hepatic-other",
+        kind: "memory",
+        stem: "When in pregnancy does hyperemesis gravidarum occur?",
+        options: ["The first trimester", "The second or third trimester", "After 20 weeks, with hypertension", "The third trimester, at 30–38 weeks", "In the weeks after delivery"],
+        answer: 0,
+        explanation: `<p><strong>Hyperemesis gravidarum is a first-trimester disease,</strong> unlike the other liver diseases unique to pregnancy:</p>
+<ul>
+<li><strong>Intrahepatic cholestasis:</strong> second or third trimester.</li>
+<li><strong>HELLP syndrome:</strong> after 20 weeks.</li>
+<li><strong>AFLP:</strong> third trimester, usually 30–38 weeks.</li>
+</ul>
+<p>Timing is the first clue to which one a pregnant woman with abnormal LFTs has.</p>`,
+        notes: {
+            1: "The second or third trimester is when intrahepatic cholestasis of pregnancy appears.",
+            2: "After 20 weeks, with hypertension, is HELLP syndrome, a variant of preeclampsia.",
+            3: "The third trimester at 30–38 weeks is the time of AFLP.",
+            4: "Hyperemesis is a disease of early pregnancy, not the puerperium.",
+        },
+    },
+    {
+        id: "hot-icp-itch",
+        condition: "hepatic-other",
+        kind: "memory",
+        stem: "Which symptom is typical of intrahepatic cholestasis of pregnancy?",
+        options: ["Itching of the palms and soles, worse at night", "RUQ pain with a high BP and a low platelet count", "Polyuria and polydipsia with malaise", "Confusion with deep jaundice", "Intractable vomiting with ketonuria"],
+        answer: 0,
+        explanation: `<p><strong>Pruritus of the palms and soles, worse at night, is the hallmark of intrahepatic cholestasis of pregnancy.</strong> Jaundice is rare and follows about 2 weeks of itching, and steatorrhea can occur. Encephalopathy and abdominal pain are not part of it, so either one prompts a search for another cause.</p>`,
+        notes: {
+            1: "RUQ pain with hypertension and low platelets suggests HELLP syndrome.",
+            2: "Polyuria and polydipsia are a clue to AFLP.",
+            3: "Confusion means encephalopathy, which is not part of intrahepatic cholestasis and suggests liver failure, as in AFLP.",
+            4: "Intractable vomiting with ketonuria is hyperemesis gravidarum.",
+        },
+    },
+    {
+        id: "hot-bile-acids",
+        condition: "hepatic-other",
+        kind: "memory",
+        stem: "Which test supports intrahepatic cholestasis of pregnancy and can be its only abnormal result?",
+        options: ["Serum bile acids", "Platelet count", "Blood glucose", "Serum ammonia", "Blood film for schistocytes"],
+        answer: 0,
+        explanation: `<p><strong>Raised total and fasting serum bile acids</strong> can be the only abnormality in intrahepatic cholestasis of pregnancy. It is a diagnosis of exclusion: ALT is rarely over 250 U/L, ALP and bilirubin rise, ultrasound excludes biliary obstruction, and viral hepatitis is excluded.</p>`,
+        notes: {
+            1: "Low platelets point to HELLP syndrome.",
+            2: "Low glucose points to AFLP.",
+            3: "Raised ammonia reflects liver failure, as in AFLP.",
+            4: "Schistocytes show the hemolysis of HELLP syndrome.",
+        },
+    },
+    {
+        id: "hot-hellp-preeclampsia",
+        condition: "hepatic-other",
+        kind: "memory",
+        stem: "HELLP syndrome is a severe variant of which condition?",
+        options: ["Preeclampsia", "Acute fatty liver of pregnancy", "Intrahepatic cholestasis of pregnancy", "Gestational diabetes", "Hyperemesis gravidarum"],
+        answer: 0,
+        explanation: `<p><strong>HELLP syndrome (hemolysis, elevated liver enzymes, and low platelets) is a severe variant of preeclampsia,</strong> which is hypertension after 20 weeks with proteinuria or end-organ dysfunction. Abnormal placental vessels cause endothelial injury, platelets and fibrin deposit in the sinusoids, and periportal (zone 1) necrosis raises the liver enzymes.</p>`,
+        notes: {
+            1: "AFLP is a separate disease from fetal LCHAD deficiency, although preeclampsia is one of its risk factors.",
+            2: "Intrahepatic cholestasis comes from altered bile transport, not endothelial injury.",
+            3: "Gestational diabetes is not among the causes of liver disease in pregnancy on this page.",
+            4: "Hyperemesis is a first-trimester vomiting disorder.",
+        },
+    },
+    {
+        id: "hot-normal-alp",
+        condition: "hepatic-other",
+        kind: "memory",
+        stem: "Which result can be normal in the third trimester of pregnancy?",
+        options: ["ALP 3 times the upper limit of normal", "ALT twice the upper limit of the normal range", "Bilirubin of 45 µmol/L", "AST 3 times the upper limit of normal", "GGT rising together with ALP"],
+        answer: 0,
+        explanation: `<p><strong>ALP rises up to 4 times normal in the third trimester, from the placenta,</strong> so on its own it does not show liver disease. Cholesterol, triglycerides, fibrinogen, and ceruloplasmin also rise, and albumin falls from hemodilution. Any rise in ALT, AST, or bilirubin, or a GGT rising with ALP, needs evaluation.</p>`,
+        notes: {
+            1: "Any rise in ALT in pregnancy needs evaluation.",
+            2: "A raised bilirubin is abnormal in pregnancy.",
+            3: "Any rise in AST in pregnancy needs evaluation.",
+            4: "GGT rising with ALP points to the liver rather than the placenta.",
+        },
+    },
+    {
+        id: "hot-wilson-zinc",
+        condition: "hepatic-other",
+        kind: "memory",
+        stem: "A woman with Wilson disease becomes pregnant. How is her Wilson disease managed?",
+        options: ["Continue treatment without a break; zinc is the safest", "Stop all treatment until after delivery", "Switch to a low-copper diet alone", "Start prednisone with azathioprine", "Refer for liver transplantation before the third trimester begins"],
+        answer: 0,
+        explanation: `<p><strong>Chelation continues without interruption, and zinc is the safest choice in pregnancy.</strong> Untreated Wilson disease causes miscarriage, stillbirth, and prematurity, so stopping treatment is more dangerous than continuing it.</p>`,
+        notes: {
+            1: "Stopping treatment risks miscarriage, stillbirth, and prematurity.",
+            2: "Diet alone does not control Wilson disease.",
+            3: "Prednisone with azathioprine is the treatment for autoimmune hepatitis in pregnancy.",
+            4: "Treated Wilson disease does not need transplantation because of pregnancy.",
+        },
+    },
+    {
+        id: "hot-hg-thyroid",
+        condition: "hepatic-other",
+        kind: "memory",
+        stem: "Up to 60% of women with hyperemesis gravidarum have transient hyperthyroidism. What causes it?",
+        options: ["hCG", "Thyroid autoantibodies", "A TSH-secreting pituitary adenoma", "Iodine from IV fluids", "Raised estrogen"],
+        answer: 0,
+        explanation: `<p><strong>hCG stimulates the thyroid, causing transient hyperthyroidism in up to 60% of women with hyperemesis gravidarum.</strong> Other features are intractable nausea and vomiting, weight loss, and ketonuria, and complications include Wernicke encephalopathy, esophageal rupture, pneumomediastinum, and retinal hemorrhage.</p>`,
+        notes: {
+            1: "Thyroid autoantibodies cause Graves disease, which is not the cause of this transient change.",
+            2: "A pituitary adenoma would not appear and resolve with early pregnancy.",
+            3: "IV fluids are not the source of the hyperthyroidism.",
+            4: "Raised estrogen is linked to intrahepatic cholestasis of pregnancy.",
+        },
+    },
+    {
+        id: "hot-hg-thiamine",
+        condition: "hepatic-other",
+        kind: "reasoning",
+        stem: "A woman at 11 weeks has vomited for 3 weeks and is admitted for IV fluids. Why is thiamine given before glucose-containing fluids?",
+        options: ["Prolonged vomiting depletes thiamine, risking Wernicke encephalopathy", "Thiamine is an antiemetic that stops the vomiting", "Thiamine lowers the hCG that drives the vomiting in the first trimester", "Thiamine corrects the hypokalemia from vomiting", "Thiamine protects the liver from steatosis"],
+        answer: 0,
+        explanation: `<p><strong>Weeks of vomiting leave thiamine stores depleted, and Wernicke encephalopathy is a complication of hyperemesis gravidarum.</strong> Treatment is bowel rest, antiemetics, IV fluids, and correction of electrolytes, with thiamine when vomiting is prolonged.</p>`,
+        notes: {
+            1: "Thiamine is a vitamin replacement, not an antiemetic; antiemetics are given separately.",
+            2: "Thiamine does not change hCG.",
+            3: "Potassium is replaced separately as part of electrolyte correction.",
+            4: "Steatosis is a feature of AFLP, not hyperemesis.",
+        },
+    },
+    {
+        id: "hot-icp-vitk",
+        condition: "hepatic-other",
+        kind: "reasoning",
+        stem: "A woman with intrahepatic cholestasis of pregnancy has a prolonged PT. Why is vitamin K given at least 6 hours before delivery?",
+        options: ["Less bile reaches the gut, so vitamin K is malabsorbed", "The liver fails to make enough clotting factors, as it does in AFLP", "Ursodeoxycholic acid blocks the action of vitamin K", "Consumption in DIC uses up her vitamin K", "Raised estrogen breaks down vitamin K in the liver"],
+        answer: 0,
+        explanation: `<p><strong>In cholestasis, fewer bile salts reach the gut, so fat-soluble vitamin K is malabsorbed and PT is prolonged.</strong> Giving vitamin K before delivery lowers the risk of bleeding. The same lack of bile salts causes steatorrhea.</p>`,
+        notes: {
+            1: "Synthetic failure belongs to AFLP; liver function is preserved in intrahepatic cholestasis.",
+            2: "Ursodeoxycholic acid relieves itch and improves fetal outcome; it does not block vitamin K.",
+            3: "DIC is not part of intrahepatic cholestasis.",
+            4: "Estrogen alters bile transport; the vitamin K deficit comes from malabsorption.",
+        },
+    },
+    {
+        id: "hot-icp-delivery",
+        condition: "hepatic-other",
+        kind: "reasoning",
+        stem: "Why is delivery planned at 38 weeks in intrahepatic cholestasis of pregnancy, rather than waiting for labor?",
+        options: ["It risks prematurity, fetal respiratory distress, and intrauterine death", "The mother will develop acute liver failure if the pregnancy continues past term", "Ursodeoxycholic acid cannot be given after 38 weeks", "The itch will become jaundice within days of 38 weeks", "Delivery prevents the condition from recurring in later pregnancies"],
+        answer: 0,
+        explanation: `<p><strong>The danger of intrahepatic cholestasis is to the fetus:</strong> prematurity, fetal respiratory distress, and intrauterine death. Delivery is planned at 38 weeks, or 36 if severe. The mother's disease is mild, with itch, and resolves 4–6 weeks after delivery.</p>`,
+        notes: {
+            1: "Acute liver failure is a feature of AFLP, not intrahepatic cholestasis.",
+            2: "Ursodeoxycholic acid continues until delivery; the timing is about fetal risk.",
+            3: "Jaundice is rare in intrahepatic cholestasis.",
+            4: "It recurs in later pregnancies whatever the timing of delivery.",
+        },
+    },
+    {
+        id: "hot-hellp-bilirubin",
+        condition: "hepatic-other",
+        kind: "reasoning",
+        stem: "Why is the bilirubin rise in HELLP syndrome mainly unconjugated, while in AFLP it is over 90% conjugated?",
+        options: ["HELLP destroys red cells; in AFLP the failing liver cannot excrete bilirubin", "HELLP blocks the bile ducts; AFLP destroys red cells", "HELLP inhibits bilirubin conjugation; AFLP increases bilirubin production from heme", "Both destroy red cells, but AFLP conjugates faster", "HELLP is cholestatic; AFLP has a hemolytic cause"],
+        answer: 0,
+        explanation: `<p><strong>The type of bilirubin points to the mechanism.</strong> HELLP causes intravascular hemolysis, with schistocytes, so the bilirubin rise is unconjugated. In AFLP, hepatocytes conjugate bilirubin but fail to excrete it, so over 90% is conjugated, and hemolysis is uncommon.</p>`,
+        notes: {
+            1: "HELLP does not block the ducts, and hemolysis is uncommon in AFLP.",
+            2: "HELLP raises bilirubin through hemolysis, not by blocking conjugation.",
+            3: "Hemolysis is uncommon in AFLP.",
+            4: "HELLP is hemolytic, and AFLP is not.",
+        },
+    },
+    {
+        id: "hot-hellp-steroids",
+        condition: "hepatic-other",
+        kind: "reasoning",
+        stem: "A woman at 31 weeks has HELLP syndrome. She is given magnesium sulfate and antihypertensives, and delivery is planned. Why are steroids given for 24–48 hours first?",
+        options: ["To mature the fetal lungs before 34 weeks", "To raise her platelet count before surgery", "To treat the autoimmune cause of HELLP", "To prevent eclamptic seizures", "To reverse the periportal necrosis"],
+        answer: 0,
+        explanation: `<p><strong>Steroids mature the fetal lungs when delivery is needed before 34 weeks.</strong> Early delivery is the cornerstone of HELLP treatment, with antihypertensives and magnesium sulfate, and a 24–48 hour course of steroids improves the outcome for a premature baby.</p>`,
+        notes: {
+            1: "The page gives steroids for the fetal lungs, not the platelets.",
+            2: "HELLP is a variant of preeclampsia, not an autoimmune disease.",
+            3: "Magnesium sulfate prevents eclamptic seizures.",
+            4: "Delivery, not steroids, ends the process.",
+        },
+    },
+    {
+        id: "hot-budd-lmwh",
+        condition: "hepatic-other",
+        kind: "reasoning",
+        stem: "A woman at 22 weeks with factor V Leiden develops Budd-Chiari syndrome. Why is she treated with low-molecular-weight heparin rather than an oral anticoagulant?",
+        options: ["Oral anticoagulants are teratogenic", "LMWH dissolves the clot, while oral drugs only prevent growth", "Oral anticoagulants worsen preeclampsia", "LMWH also lowers portal pressure", "Oral anticoagulants are ineffective in factor V Leiden"],
+        answer: 0,
+        explanation: `<p><strong>Oral anticoagulants are teratogenic, so LMWH is used in pregnancy.</strong> Pregnancy raises procoagulant and lowers anticoagulant factors, and Budd-Chiari syndrome or portal vein thrombosis usually occurs with another thrombotic risk, such as factor V Leiden or protein S deficiency.</p>`,
+        notes: {
+            1: "Neither drug dissolves clots; the choice is about safety for the fetus.",
+            2: "The reason is teratogenicity, not preeclampsia.",
+            3: "LMWH is an anticoagulant and does not lower portal pressure directly.",
+            4: "Factor V Leiden is a reason to anticoagulate; the drug choice is about the fetus.",
+        },
+    },
+    {
+        id: "hot-gallstones",
+        condition: "hepatic-other",
+        kind: "reasoning",
+        stem: "Why are gallstones and sludge more common in pregnancy?",
+        options: ["The gallbladder empties more slowly and holds more bile", "Hemolysis in pregnancy raises unconjugated bilirubin, which forms pigment stones", "Fetal fatty acids crystallize in the gallbladder", "Estrogen blocks the cystic duct", "Pregnancy causes ileal bile salt loss"],
+        answer: 0,
+        explanation: `<p><strong>Pregnancy slows gallbladder motility and increases its volume,</strong> so bile stands still and forms stones and sludge, which usually resolve after delivery. Ultrasound shows a larger, slower-emptying gallbladder even in normal pregnancy. Cholecystitis is treated with ABX and IV fluids, with cholecystectomy after delivery unless conservative treatment fails, and ERCP is possible from the second trimester.</p>`,
+        notes: {
+            1: "Pregnancy does not cause hemolysis; that is a cause of black pigment stones.",
+            2: "Fetal fatty acids injure the maternal liver in AFLP; they do not form stones.",
+            3: "Estrogen affects bile transport, but it does not block the cystic duct.",
+            4: "Ileal bile salt loss is a cause of gallstones in ileal disease, not pregnancy.",
+        },
+    },
+    {
+        id: "hot-set-hg-1",
+        condition: "hepatic-other",
+        kind: "analysis",
+        set: "hot-hg",
+        passage: `<p>A 24-year-old woman at 10 weeks has vomited many times a day for 3 weeks and cannot keep fluids down. Her weight has fallen from 62 to 58 kg. Her pulse is 112.</p>
+<table><thead><tr><th>Test</th><th>Result</th><th>Reference</th></tr></thead><tbody>
+<tr><td>Urine ketones</td><td>3+</td><td>Negative</td></tr>
+<tr><td>Potassium</td><td>3.0 mmol/L</td><td>3.5–5.0</td></tr>
+<tr><td>ALT</td><td>140 U/L</td><td>&lt;35</td></tr>
+<tr><td>Bilirubin</td><td>16 µmol/L</td><td>&lt;20</td></tr>
+<tr><td>TSH</td><td>Low</td><td></td></tr>
+<tr><td>Free T4</td><td>Mildly raised</td><td></td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p>`,
+        stem: "How are these findings best interpreted?",
+        options: ["Hyperemesis gravidarum with transient hyperthyroidism", "Graves disease causing vomiting and weight loss in early pregnancy", "Acute fatty liver of pregnancy", "Acute viral hepatitis", "Intrahepatic cholestasis of pregnancy"],
+        answer: 0,
+        explanation: `<p><strong>First-trimester vomiting with over 5% weight loss (6.5%) and ketonuria is hyperemesis gravidarum.</strong> ALT is usually raised under 250 U/L. The low TSH and mildly raised free T4 are the transient hyperthyroidism of up to 60% of cases, driven by hCG.</p>`,
+        notes: {
+            1: "The thyroid change is transient and driven by hCG; vomiting with ketonuria at 10 weeks is hyperemesis.",
+            2: "AFLP occurs in the third trimester, with liver failure.",
+            3: "Viral hepatitis is not suggested by the timing and an ALT of 140; hyperemesis explains every finding.",
+            4: "Intrahepatic cholestasis occurs later and causes itch, not vomiting.",
+        },
+    },
+    {
+        id: "hot-set-hg-2",
+        condition: "hepatic-other",
+        kind: "analysis",
+        set: "hot-hg",
+        stem: "Which management is most appropriate?",
+        options: ["IV fluids, electrolyte correction, antiemetics, and thiamine", "Antithyroid drugs and discharge home", "Ursodeoxycholic acid at home, with repeat LFTs and thyroid tests in a week", "Oral fluids and review in a week", "Urgent delivery after correcting clotting"],
+        answer: 0,
+        explanation: `<p><strong>Hyperemesis gravidarum is treated with bowel rest, antiemetics, IV fluids, and correction of electrolytes, with thiamine when vomiting is prolonged,</strong> as hers has been for 3 weeks. Her potassium of 3.0 mmol/L needs replacing. The thyroid change resolves as hCG falls and needs no specific treatment here.</p>`,
+        notes: {
+            1: "The hyperthyroidism is transient, driven by hCG, and she needs admission for fluids.",
+            2: "Ursodeoxycholic acid treats intrahepatic cholestasis of pregnancy.",
+            3: "She cannot keep fluids down and needs IV fluids.",
+            4: "Delivery treats HELLP and AFLP, not hyperemesis.",
+        },
+    },
+    {
+        id: "hot-icp-case",
+        condition: "hepatic-other",
+        kind: "analysis",
+        stem: `<p>A 32-year-old woman at 34 weeks has 2 weeks of itching of her palms and soles, worse at night. She has no abdominal pain or confusion, and her BP is 116/72. Ultrasound shows no biliary dilation, and viral hepatitis serology is negative.</p>
+<table><thead><tr><th>Test</th><th>Result</th><th>Reference (nonpregnant)</th></tr></thead><tbody>
+<tr><td>Fasting serum bile acids</td><td>42 µmol/L</td><td>&lt;10</td></tr>
+<tr><td>ALT</td><td>150 U/L</td><td>&lt;35</td></tr>
+<tr><td>Bilirubin</td><td>22 µmol/L</td><td>&lt;20</td></tr>
+<tr><td>Platelets</td><td>240 × 10⁹/L</td><td>150–400</td></tr>
+<tr><td>Glucose</td><td>4.9 mmol/L</td><td>3.5–6.0</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p><p>What is the most appropriate management?</p>`,
+        options: ["Ursodeoxycholic acid, vitamin K before delivery, and delivery at 38 weeks", "Emergency delivery today after correcting glucose", "Magnesium sulfate and antihypertensives, then early delivery after steroids for the fetal lungs", "IV acyclovir until HSV PCR returns", "An antihistamine alone, with labor awaited at term"],
+        answer: 0,
+        explanation: `<p><strong>Night itching of the palms and soles with raised bile acids, after biliary obstruction and viral hepatitis are excluded, is intrahepatic cholestasis of pregnancy.</strong> Her normal BP, platelets, and glucose make HELLP and AFLP unlikely.</p>
+<p>Ursodeoxycholic acid relieves itch and improves fetal outcome, vitamin K is given at least 6 hours before delivery, and delivery is planned at 38 weeks (36 if severe) because of the fetal risks. Cholestyramine or hydroxyzine is added if ursodeoxycholic acid fails.</p>`,
+        notes: {
+            1: "Emergency delivery whatever the gestation is for AFLP; her glucose is normal.",
+            2: "Magnesium, antihypertensives, and early delivery treat HELLP; her BP and platelets are normal.",
+            3: "IV acyclovir is for suspected HSV hepatitis, with AST and ALT in the thousands.",
+            4: "Waiting for labor at term leaves the fetal risks of cholestasis untreated.",
         },
     },
 
@@ -9572,12 +8879,12 @@ const QUIZ_QUESTIONS = [
         },
     },
 
-    /* ===== Cholelithiasis and Biliary Colic ===== */
+    /* ===== Gallstones, Cholecystitis, and Biliary Fistulas ===== */
 
     /* --- Memory --- */
     {
         id: "bs-cholesterol-common",
-        condition: "biliary-stones",
+        condition: "gallbladder-stones",
         kind: "memory",
         stem: "Which type of gallstone is the most common?",
         options: ["Cholesterol stones", "Black pigment stones", "Brown pigment stones", "Calcium oxalate stones", "Uric acid stones"],
@@ -9596,24 +8903,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "bs-brown-site",
-        condition: "biliary-stones",
-        kind: "memory",
-        stem: "Which type of stone forms in the bile ducts themselves, after infection with bacteria or parasites such as Clonorchis?",
-        options: ["Brown pigment stones", "Black pigment stones", "Cholesterol stones", "Mixed cholesterol stones", "Calcium carbonate stones"],
-        answer: 0,
-        explanation: `<p><strong>Brown pigment stones form in the bile ducts,</strong> where infection or a stricture lets bile stagnate. Bacteria and parasites such as the liver fluke Clonorchis are the usual triggers, which is why these stones are more common in East Asia.</p>
-<p>The other two types form in the gallbladder. That matters clinically: a brown stone can appear in the common bile duct long after the gallbladder is removed, because it formed there.</p>`,
-        notes: {
-            1: "Black pigment stones form in the gallbladder, from excess unconjugated bilirubin.",
-            2: "Cholesterol stones form in the gallbladder, from supersaturated bile.",
-            3: "Cholesterol stones of any composition form in the gallbladder, not the ducts.",
-            4: "Calcium carbonate is not one of the three gallstone types on the page; brown stones are the duct stones.",
-        },
-    },
-    {
         id: "bs-triad",
-        condition: "biliary-stones",
+        condition: "gallbladder-stones",
         kind: "memory",
         stem: "Which three processes make up the triad behind cholesterol gallstones?",
         options: ["Supersaturation, nucleation, and hypomotility", "Hemolysis, infection, and duct stricture", "Supersaturation, infection, and ampullary spasm", "Bile salt excess, nucleation, and rapid gallbladder emptying", "Hemolysis, nucleation, and cystic duct block"],
@@ -9634,7 +8925,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "bs-6fs",
-        condition: "biliary-stones",
+        condition: "gallbladder-stones",
         kind: "memory",
         stem: "The 6 Fs are risk factors for gallstones. Which list gives them?",
         options: ["Female, fat, fertile, forty, fair, and family history", "Female, fever, fatty food, forty, fair, and fibrosis", "Fat, fasting, fibrates, fistula, fever, and family history", "Female, fat, fertile, fifty, flatulence, and fever", "Fair, fat, fibrosis, fistula, forty, and food allergy"],
@@ -9655,24 +8946,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "bs-xray",
-        condition: "biliary-stones",
-        kind: "memory",
-        stem: "About what proportion of gallstones contain enough calcium to show on a plain x-ray?",
-        options: ["About 10%", "About 50%", "About 75%", "About 90%", "All of them"],
-        answer: 0,
-        explanation: `<p><strong>Only about 10% of gallstones show on a plain x-ray,</strong> depending on how much calcium they contain. Cholesterol, which makes up most stones, is not radiopaque.</p>
-<p>That is why a plain x-ray misses most stones and RUQ ultrasound is first line. On ultrasound, stones reflect sound strongly, so they appear bright with an acoustic shadow behind them, and they move when the patient changes position.</p>`,
-        notes: {
-            1: "Most gallstones are cholesterol, which does not show on x-ray; half is far too high.",
-            2: "About 75% is the share of cholesterol stones, which are mostly radiolucent.",
-            3: "Most stones are invisible on x-ray, which is why ultrasound is used.",
-            4: "A plain x-ray misses most stones.",
-        },
-    },
-    {
         id: "bs-us-first",
-        condition: "biliary-stones",
+        condition: "gallbladder-stones",
         kind: "memory",
         stem: "What is the first-line test for suspected gallstones, and what does it show?",
         options: ["RUQ ultrasound, showing mobile, shadowing stones", "Plain abdominal x-ray, showing radiopaque stones", "HIDA scan, showing a gallbladder that does not fill", "CT of the abdomen, showing calcified stones", "ERCP, showing filling defects in the duct"],
@@ -9688,7 +8963,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "bs-colic-features",
-        condition: "biliary-stones",
+        condition: "gallbladder-stones",
         kind: "memory",
         stem: "Which features separate biliary colic from cholecystitis?",
         options: ["Pain resolving within 6 hours, with no fever and normal LFTs", "Pain lasting over 6 hours, with fever and a raised white cell count", "Pain with jaundice and a raised ALP", "Pain with fever, jaundice, and confusion", "Pain radiating to the back with a raised lipase"],
@@ -9702,75 +8977,11 @@ const QUIZ_QUESTIONS = [
             4: "A raised lipase points to gallstone pancreatitis, from a stone at the ampulla.",
         },
     },
-    {
-        id: "bs-porcelain",
-        condition: "biliary-stones",
-        kind: "memory",
-        stem: "What is a porcelain gallbladder?",
-        options: ["A calcified gallbladder wall after chronic cholecystitis", "A gallbladder packed full of pale, white cholesterol stones", "A gallbladder distended with clear mucus", "A gallbladder wall thickened by acute inflammation", "Gas in the gallbladder wall from infection"],
-        answer: 0,
-        explanation: `<p><strong>A porcelain gallbladder has a calcified wall,</strong> the end result of chronic cholecystitis. Repeated attacks of colic inflame the wall again and again, and it scars and calcifies.</p>
-<p>The calcified wall can show on a plain x-ray as a curved line in the RUQ, even though most stones do not. Its cancer risk is lower than once thought, so the Cholecystitis page removes it if it causes symptoms or shows selective mucosal calcification, and otherwise discusses observation.</p>`,
-        notes: {
-            1: "The name refers to the calcified wall, not the stones inside.",
-            2: "A gallbladder full of clear mucus results from a long-blocked cystic duct, not calcification.",
-            3: "A thickened, inflamed wall is acute cholecystitis; porcelain is chronic.",
-            4: "Gas in the wall is emphysematous cholecystitis, an acute infection.",
-        },
-    },
-    {
-        id: "bs-cancer-size",
-        condition: "biliary-stones",
-        kind: "memory",
-        stem: "Above what stone size is the risk of gallbladder carcinoma highest?",
-        options: ["3 cm", "3 mm", "1 cm", "5 mm", "10 cm"],
-        answer: 0,
-        explanation: `<p><strong>Gallbladder carcinoma risk rises with stone size and is highest with stones over 3 cm.</strong> A large stone irritates the gallbladder wall for years, and chronic inflammation is the soil for dysplasia and carcinoma.</p>
-<p>Gallbladder carcinoma is the last complication on the page's list, after cholecystitis, chronic cholecystitis with porcelain gallbladder, choledocholithiasis, gallstone pancreatitis, and gallstone ileus.</p>`,
-        notes: {
-            1: "Stones of a few millimeters are the ones that pass into the duct and cause pancreatitis, not the highest cancer risk.",
-            2: "Risk rises with size, but the page's threshold is 3 cm.",
-            3: "Small stones are not the highest-risk group for carcinoma.",
-            4: "Stones this large are not the threshold; risk is already highest over 3 cm.",
-        },
-    },
-    {
-        id: "bs-ileus",
-        condition: "biliary-stones",
-        kind: "memory",
-        stem: "How does gallstone ileus occur?",
-        options: ["A large stone passes through a fistula into the bowel and blocks it", "A small stone passes down the common bile duct and blocks the ampulla", "A stone in the cystic duct paralyzes the bowel by reflex", "Bile salts lost in stones cause the bowel to stop moving", "A stone blocks the pancreatic duct, causing an ileus"],
-        answer: 0,
-        explanation: `<p><strong>Gallstone ileus is a bowel obstruction from a large gallstone that has passed through a fistula.</strong> Chronic inflammation fuses the gallbladder to the adjacent bowel, and a large stone erodes through into it.</p>
-<p>Despite the name, it is a mechanical obstruction, not a paralytic ileus. The stone travels until the bowel is too narrow, often near the end of the small intestine. Small stones pass harmlessly; only a large one obstructs.</p>`,
-        notes: {
-            1: "A stone at the ampulla causes gallstone pancreatitis, not bowel obstruction.",
-            2: "The obstruction is mechanical; the stone itself blocks the bowel.",
-            3: "Bile salt loss promotes stones; it does not paralyze the bowel.",
-            4: "A blocked pancreatic duct causes pancreatitis.",
-        },
-    },
 
     /* --- Reasoning --- */
     {
-        id: "bs-colic",
-        condition: "biliary-stones",
-        kind: "reasoning",
-        stem: "A 42-year-old woman with obesity has had three episodes of epigastric pain radiating to her back, each starting about an hour after a large fried meal and settling within 3 hours. She is pain-free today and afebrile, with a soft, nontender abdomen. LFTs and white cell count are normal. Ultrasound shows several mobile, shadowing gallstones and a normal gallbladder wall. What is the most appropriate management?",
-        options: ["Elective laparoscopic cholecystectomy", "ERCP with sphincterotomy", "IV ABX and admission for emergency surgery", "No treatment; reassure her", "HIDA scan"],
-        answer: 0,
-        explanation: `<p><strong>Recurrent biliary colic is treated with pain relief, then elective laparoscopic cholecystectomy.</strong> Her story is classic: a fatty meal, pain that settles within 6 hours, normal LFTs, no fever, and stones on ultrasound.</p>
-<p>Once stones cause symptoms, attacks tend to recur, and the same stones can go on to cause cholecystitis, choledocholithiasis, or pancreatitis. Removing the gallbladder removes the source. Surgery is planned rather than urgent, because nothing is inflamed now.</p>`,
-        notes: {
-            1: "ERCP removes common bile duct stones; her normal LFTs argue against choledocholithiasis.",
-            2: "ABX and urgent surgery suit acute cholecystitis; she is pain-free with no fever.",
-            3: "Reassurance alone is for asymptomatic gallstones; hers cause recurrent pain.",
-            4: "A HIDA scan helps when ultrasound is unclear; hers already shows stones.",
-        },
-    },
-    {
         id: "bs-black",
-        condition: "biliary-stones",
+        condition: "gallbladder-stones",
         kind: "reasoning",
         stem: "A 14-year-old boy with sickle cell disease has recurrent RUQ pain after meals. Ultrasound shows several gallstones in the gallbladder. Which mechanism best explains his stones?",
         options: ["More unconjugated bilirubin from hemolysis", "Cholesterol supersaturation of bile", "Bacterial infection of the bile ducts by gut flora", "Increased bile salt secretion", "Calcium oxalate precipitation"],
@@ -9785,24 +8996,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "bs-estrogen",
-        condition: "biliary-stones",
-        kind: "reasoning",
-        stem: "A 34-year-old woman who takes combined oral contraceptives and has had three pregnancies has cholesterol gallstones. How does estrogen promote these stones?",
-        options: ["It raises cholesterol secretion into bile", "It raises bile salt synthesis", "It speeds gallbladder emptying", "It causes hemolysis", "It deconjugates bilirubin in bile"],
-        answer: 0,
-        explanation: `<p><strong>Estrogen raises cholesterol secretion into bile,</strong> pushing bile toward supersaturation, the first step of the cholesterol triad. This is the "female" of the 6 Fs, and it is why oral contraceptives and estrogen therapy are risk factors.</p>
-<p>Pregnancy, the "fertile" F, adds a second step: the gallbladder empties more slowly, so crystals have time to grow. Her contraceptives and three pregnancies have pushed her bile on more than one step.</p>`,
-        notes: {
-            1: "More bile salts would dissolve cholesterol and protect against stones.",
-            2: "Faster emptying would prevent stasis; pregnancy slows emptying instead.",
-            3: "Hemolysis forms black pigment stones, and estrogen does not cause it.",
-            4: "Bacterial deconjugation of bilirubin forms brown stones in infected ducts.",
-        },
-    },
-    {
         id: "bs-asymptomatic",
-        condition: "biliary-stones",
+        condition: "gallbladder-stones",
         kind: "reasoning",
         stem: "A 50-year-old man has several gallstones found by chance on an ultrasound done for kidney stones. He has never had abdominal pain, and his LFTs are normal. What is the most appropriate management of his gallstones?",
         options: ["No treatment; return if symptoms develop", "Elective laparoscopic cholecystectomy", "ERCP with sphincterotomy", "Ursodeoxycholic acid for 2 years", "Ultrasound and LFTs every 6 months"],
@@ -9818,7 +9013,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "bs-cck",
-        condition: "biliary-stones",
+        condition: "gallbladder-stones",
         kind: "reasoning",
         stem: "Why does biliary colic typically begin soon after a heavy, fatty meal?",
         options: ["CCK contracts the gallbladder against an impacted stone", "Fat releases secretin, which makes the gallbladder secrete more bile", "Fat stretches the stomach, which presses on the gallbladder", "Fat is absorbed and raises cholesterol in bile within an hour", "Fat relaxes the gallbladder so a stone falls into the duct"],
@@ -9834,7 +9029,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "bs-ileal",
-        condition: "biliary-stones",
+        condition: "gallbladder-stones",
         kind: "reasoning",
         stem: "A 31-year-old man with Crohn disease had 60 cm of terminal ileum resected 3 years ago. Why is he at increased risk of gallstones?",
         options: ["Lost bile salts leave cholesterol undissolved", "He absorbs more fat, raising cholesterol secretion into bile", "Inflammation spreads up the bile ducts and forms brown stones", "His gallbladder empties too quickly after meals", "He makes antibodies against gallbladder mucin"],
@@ -9848,180 +9043,11 @@ const QUIZ_QUESTIONS = [
             4: "Mucin is a nucleation factor, but antibodies against it are not a mechanism of stones.",
         },
     },
-    {
-        id: "bs-tpn",
-        condition: "biliary-stones",
-        kind: "reasoning",
-        stem: "A patient on TPN in ICU for 5 weeks, with nothing by mouth, develops gallstones. Which step of stone formation does TPN mainly promote?",
-        options: ["Hypomotility: without food, it rarely contracts", "Hemolysis: TPN lipids break down red cells", "Infection: bacteria from the central line seed the bile ducts", "Supersaturation: TPN contains cholesterol", "Nucleation: TPN delivers mucin to the gallbladder"],
-        answer: 0,
-        explanation: `<p><strong>Fasting and TPN cause gallbladder hypomotility.</strong> With no food in the duodenum, CCK is not released, so the gallbladder does not contract. Bile sits there for weeks, thickens, and crystals have time to grow into stones.</p>
-<p>The same step explains other risk factors on the page: fasting, rapid weight loss, and octreotide, which reduces gallbladder contraction. Stasis is the third part of the cholesterol triad.</p>`,
-        notes: {
-            1: "TPN does not cause hemolysis; black stones follow hemolysis from conditions such as sickle cell disease.",
-            2: "Infected ducts form brown stones; the risk here is that the gallbladder never empties.",
-            3: "The problem is that bile is never emptied, not what TPN contains.",
-            4: "Mucin is made by the gallbladder itself, not delivered by TPN.",
-        },
-        info: "Octreotide, a somatostatin analog, inhibits CCK release and gallbladder contraction; this mechanism is standard teaching rather than stated on the page.",
-    },
-    {
-        id: "bs-long-pain",
-        condition: "biliary-stones",
-        kind: "reasoning",
-        stem: "A woman with known gallstones has had RUQ pain for 10 hours, and her temperature is 38.3 °C. Why is this no longer simple biliary colic?",
-        options: ["Pain over 6 hours with fever means cholecystitis", "Colic always causes fever once pain lasts over 6 hours", "Fever shows the stone has moved into the common bile duct", "Long pain means the stone has perforated the gallbladder", "Fever shows that a black pigment stone is forming"],
-        answer: 0,
-        explanation: `<p><strong>Biliary colic resolves within 6 hours, with no fever and normal LFTs.</strong> Its pain is from a brief block that ends when the stone dislodges.</p>
-<p>When the stone stays impacted in the cystic duct, the trapped bile and distended wall become inflamed: pain persists beyond 6 hours and fever appears. That is acute cholecystitis, which needs ultrasound and admission rather than elective surgery.</p>`,
-        notes: {
-            1: "Colic does not cause fever; fever means inflammation.",
-            2: "A common bile duct stone typically adds jaundice and raised LFTs, not fever alone.",
-            3: "Perforation is a later complication of cholecystitis; prolonged pain first means inflammation.",
-            4: "Stone type does not cause fever; fever reflects inflammation.",
-        },
-    },
-    {
-        id: "bs-urso",
-        condition: "biliary-stones",
-        kind: "reasoning",
-        stem: "An 84-year-old woman with severe heart failure has recurrent biliary colic and is not fit for surgery. Ursodeoxycholic acid is considered. Which statement about it is correct?",
-        options: ["It dissolves only some small cholesterol stones", "It dissolves any type of stone within a few weeks", "It is first-line treatment for all patients with biliary colic", "It works best on large, calcified stones", "It dissolves black pigment stones from hemolysis"],
-        answer: 0,
-        explanation: `<p><strong>Ursodeoxycholic acid is a bile acid that helps dissolve cholesterol,</strong> so it can only work on cholesterol stones, and only small ones. Even then it dissolves fewer than half.</p>
-<p>That is why it is kept for patients not fit for surgery. Pigment stones and calcified stones are not made of cholesterol, so it cannot dissolve them, and surgery remains the definitive treatment for anyone who can have it.</p>`,
-        notes: {
-            1: "It works only on small cholesterol stones, and slowly.",
-            2: "Elective laparoscopic cholecystectomy is first line; ursodeoxycholic acid is for those unfit for surgery.",
-            3: "Calcium does not dissolve in bile acids; small cholesterol stones respond best.",
-            4: "Pigment stones are calcium bilirubinate, which it cannot dissolve.",
-        },
-    },
-    {
-        id: "bs-location",
-        condition: "biliary-stones",
-        kind: "reasoning",
-        stem: "A gallstone leaves the gallbladder. Which pairing of where it lodges and what it causes is correct?",
-        options: ["Ampulla: gallstone pancreatitis", "Cystic duct, briefly: cholangitis", "Common bile duct: biliary colic only", "Cystic duct, persistently: gallstone ileus", "Gallbladder: choledocholithiasis"],
-        answer: 0,
-        explanation: `<p><strong>Where a stone lodges decides the disease:</strong></p>
-<ul>
-<li><strong>Gallbladder:</strong> cholelithiasis.</li>
-<li><strong>Cystic duct:</strong> biliary colic with a brief block, cholecystitis with a persistent one.</li>
-<li><strong>Common bile duct:</strong> choledocholithiasis, which can lead to cholangitis.</li>
-<li><strong>Ampulla:</strong> gallstone pancreatitis, because the bile and pancreatic ducts share it.</li>
-</ul>`,
-        notes: {
-            1: "A brief cystic duct block causes biliary colic; cholangitis follows a common bile duct stone.",
-            2: "A common bile duct stone is choledocholithiasis, with jaundice and raised LFTs.",
-            3: "A persistent cystic duct block causes cholecystitis; ileus follows a stone through a fistula.",
-            4: "Stones in the gallbladder are cholelithiasis; choledocholithiasis is in the duct.",
-        },
-    },
 
     /* --- Analysis --- */
     {
-        id: "bs-set-hs-1",
-        condition: "biliary-stones",
-        kind: "analysis",
-        set: "bs-hs",
-        passage: `<p>A 16-year-old girl with hereditary spherocytosis has had two episodes of RUQ pain after meals, each lasting 2 hours. She is pain-free and afebrile today, with mild scleral icterus that her mother says is always there.</p>
-<table><thead><tr><th>Test</th><th>Result</th><th>Reference</th></tr></thead><tbody>
-<tr><td>Hemoglobin</td><td>108 g/L</td><td>120–160</td></tr>
-<tr><td>Reticulocytes</td><td>9%</td><td>0.5–2.5</td></tr>
-<tr><td>Bilirubin, total</td><td>44 µmol/L</td><td>Under 21</td></tr>
-<tr><td>Bilirubin, conjugated</td><td>3 µmol/L</td><td>Under 5</td></tr>
-<tr><td>ALP</td><td>90 U/L</td><td>40–130</td></tr>
-<tr><td>ALT</td><td>22 U/L</td><td>Under 35</td></tr>
-</tbody></table>
-<p>Ultrasound shows several small, mobile, shadowing stones in the gallbladder and a normal common bile duct.</p>
-<p><em>Illustrative data.</em></p>`,
-        stem: "Which type of gallstone is she most likely to have?",
-        options: ["Black pigment stones", "Brown pigment stones", "Cholesterol stones", "Stones in the common bile duct", "Calcium oxalate stones"],
-        answer: 0,
-        explanation: `<p><strong>Her bloods show chronic hemolysis, which forms black pigment stones.</strong> The clues fit together:</p>
-<ul>
-<li>Low hemoglobin with high reticulocytes: red cells are being destroyed and replaced.</li>
-<li>Raised bilirubin that is almost all unconjugated, with normal ALP and ALT: overproduction, not liver disease or obstruction.</li>
-</ul>
-<p>The extra unconjugated bilirubin precipitates with calcium in the gallbladder. Her lifelong mild icterus is from hemolysis, not from the stones.</p>`,
-        notes: {
-            1: "Brown stones form in infected or strictured ducts; her ducts are normal.",
-            2: "Cholesterol stones are most common overall, but a teenager with hemolysis fits black stones.",
-            3: "The common bile duct is normal, and her jaundice is unconjugated, not obstructive.",
-            4: "Calcium oxalate forms kidney stones.",
-        },
-    },
-    {
-        id: "bs-set-hs-2",
-        condition: "biliary-stones",
-        kind: "analysis",
-        set: "bs-hs",
-        stem: "What is the most appropriate treatment of her gallstones?",
-        options: ["Elective laparoscopic cholecystectomy", "Ursodeoxycholic acid to dissolve the stones", "ERCP to clear the common bile duct", "No treatment, because pigment stones never cause symptoms", "IV ABX and emergency surgery today"],
-        answer: 0,
-        explanation: `<p><strong>Her stones are symptomatic, so she is offered elective laparoscopic cholecystectomy.</strong> Two episodes of pain lasting 2 hours, with no fever and normal ALP and ALT, are biliary colic, and colic tends to recur and lead to complications.</p>
-<p>Ursodeoxycholic acid is not an option for her: it dissolves only small cholesterol stones, and black stones are calcium bilirubinate. Her hemolysis will keep producing bilirubin, so new stones would form even if these dissolved.</p>`,
-        notes: {
-            1: "Ursodeoxycholic acid works only on small cholesterol stones; black stones do not dissolve.",
-            2: "Her common bile duct is normal and her ALP is normal; there is no duct stone to clear.",
-            3: "She has already had biliary colic twice, so her stones are symptomatic.",
-            4: "She is pain-free and afebrile; nothing suggests cholecystitis.",
-        },
-    },
-    {
-        id: "bs-three-patients",
-        condition: "biliary-stones",
-        kind: "analysis",
-        stem: `<p>Three patients with known gallstones present with RUQ pain.</p>
-<table><thead><tr><th></th><th>Patient 1</th><th>Patient 2</th><th>Patient 3</th></tr></thead><tbody>
-<tr><td>Pain</td><td>2 hours, now settled</td><td>14 hours, constant</td><td>8 hours, constant</td></tr>
-<tr><td>Temperature</td><td>36.8 °C</td><td>38.4 °C</td><td>37.2 °C</td></tr>
-<tr><td>White cells (× 10<sup>9</sup>/L)</td><td>7.2</td><td>15.8</td><td>9.0</td></tr>
-<tr><td>Bilirubin (µmol/L)</td><td>10</td><td>15</td><td>72</td></tr>
-<tr><td>ALP (U/L)</td><td>80</td><td>110</td><td>410</td></tr>
-</tbody></table>
-<p><em>Illustrative data.</em></p>
-<p>Where is the stone most likely to be in each patient?</p>`,
-        options: ["1: cystic duct, briefly; 2: cystic duct, persistently; 3: common bile duct", "1: gallbladder only; 2: common bile duct; 3: ampulla", "1: common bile duct; 2: cystic duct, briefly; 3: gallbladder", "1: cystic duct, briefly; 2: ampulla; 3: cystic duct, persistently", "1: ampulla; 2: cystic duct, persistently; 3: gallbladder only"],
-        answer: 0,
-        explanation: `<p><strong>The pattern of pain, fever, and LFTs places the stone:</strong></p>
-<ul>
-<li><strong>Patient 1:</strong> pain under 6 hours, no fever, normal LFTs: biliary colic, a brief cystic duct block.</li>
-<li><strong>Patient 2:</strong> pain over 6 hours, fever, and raised white cells, with normal LFTs: cholecystitis, a persistent cystic duct block.</li>
-<li><strong>Patient 3:</strong> raised bilirubin and ALP: a stone blocking bile flow in the common bile duct, choledocholithiasis.</li>
-</ul>`,
-        notes: {
-            1: "Stones in the gallbladder alone are silent, and patient 2's normal LFTs argue against a duct stone.",
-            2: "Patient 1's normal LFTs exclude a duct stone, and patient 3's cholestatic LFTs are not a gallbladder pattern.",
-            3: "Patient 2's normal LFTs do not suggest the ampulla, and patient 3's LFTs mean bile flow is blocked.",
-            4: "Patient 1's colic is from the cystic duct, and patient 3's raised bilirubin and ALP point to the duct, not the gallbladder.",
-        },
-    },
-    {
-        id: "bs-tpn-ileal",
-        condition: "biliary-stones",
-        kind: "analysis",
-        stem: `<p>A 45-year-old woman had an emergency resection of most of her terminal ileum for Crohn disease 6 weeks ago. Since then she has been fed by TPN, with nothing by mouth. She had a normal gallbladder on CT before surgery. A new ultrasound shows thick sludge and several small stones in a distended gallbladder.</p>
-<p>Which two mechanisms best explain her new stones?</p>`,
-        options: ["Bile salt loss and gallbladder stasis", "Chronic hemolysis and bile duct infection", "Estrogen excess and rapid gallbladder emptying", "Bile duct stricture and parasitic infection", "Excess bile salts and increased CCK release"],
-        answer: 0,
-        explanation: `<p><strong>She has two separate pushes toward stones:</strong></p>
-<ul>
-<li><strong>Ileal resection:</strong> the terminal ileum reabsorbs bile salts, so losing it drains the pool, and bile can no longer keep cholesterol dissolved.</li>
-<li><strong>TPN and fasting:</strong> without food, no CCK is released, the gallbladder does not contract, and bile stagnates, thickening into sludge.</li>
-</ul>
-<p>A normal gallbladder 6 weeks ago shows how quickly stasis can produce stones when supersaturation is added.</p>`,
-        notes: {
-            1: "Nothing suggests hemolysis, and duct infection forms brown stones in the ducts, not the gallbladder.",
-            2: "She has no estrogen exposure, and her gallbladder is not emptying at all.",
-            3: "Strictures and parasites form brown stones in the ducts; her stones are in the gallbladder.",
-            4: "She has too few bile salts, and fasting reduces CCK release.",
-        },
-    },
-    {
         id: "bs-curved-calcification",
-        condition: "biliary-stones",
+        condition: "gallbladder-stones",
         kind: "analysis",
         stem: `<p>A 71-year-old woman has had attacks of RUQ pain after meals for over 20 years, never treated. A plain abdominal x-ray for constipation shows a smooth, curved rim of calcification in the RUQ, outlining an oval shape about 8 cm long. No separate stones are visible.</p>
 <p>What does the x-ray most likely show?</p>`,
@@ -10037,12 +9063,10 @@ const QUIZ_QUESTIONS = [
         },
     },
 
-    /* ===== Cholecystitis ===== */
-
     /* --- Memory --- */
     {
         id: "bc-hida",
-        condition: "cholecystitis",
+        condition: "gallbladder-stones",
         kind: "memory",
         stem: "When ultrasound is unclear, which HIDA scan finding confirms acute cholecystitis?",
         options: ["The gallbladder does not fill with tracer", "Tracer fills the gallbladder within 30 minutes", "Tracer does not reach the duodenum", "Tracer leaks into the peritoneum", "Tracer is taken up by the spleen"],
@@ -10057,61 +9081,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "bc-us-findings",
-        condition: "cholecystitis",
-        kind: "memory",
-        stem: "Which RUQ ultrasound findings support acute cholecystitis?",
-        options: ["Thick wall, pericholecystic fluid, sonographic Murphy", "Mobile, shadowing stones in a thin-walled, normal gallbladder", "A dilated common bile duct with stones", "Gas in the gallbladder wall and lumen", "A small, contracted gallbladder with a calcified rim"],
-        answer: 0,
-        explanation: `<p><strong>Ultrasound shows a thick wall, fluid around the gallbladder, and a sonographic Murphy sign,</strong> each a sign of inflammation:</p>
-<ul>
-<li>The inflamed wall swells, so it thickens.</li>
-<li>Inflammation leaks fluid into the surrounding tissue.</li>
-<li>Pressing the probe directly over the gallbladder is maximally tender.</li>
-</ul>
-<p>Stones alone, in a thin wall, are cholelithiasis or biliary colic, not cholecystitis.</p>`,
-        notes: {
-            1: "Stones in a thin-walled gallbladder show cholelithiasis without inflammation.",
-            2: "A dilated duct with stones points to choledocholithiasis.",
-            3: "Gas in the wall is emphysematous cholecystitis, best shown on CT.",
-            4: "A calcified rim is porcelain gallbladder, from chronic inflammation.",
-        },
-    },
-    {
-        id: "bc-organisms",
-        condition: "cholecystitis",
-        kind: "memory",
-        stem: "Which organisms typically colonize the obstructed gallbladder in acute cholecystitis?",
-        options: ["E. coli, Klebsiella, and Enterococcus", "Staphylococcus aureus and Streptococcus pyogenes", "Clonorchis and Ascaris", "Candida and Aspergillus", "Pseudomonas and Mycobacterium tuberculosis"],
-        answer: 0,
-        explanation: `<p><strong>E. coli, Klebsiella, and Enterococcus colonize the gallbladder,</strong> because they are gut organisms that reach bile from the duodenum. Once the cystic duct is blocked, bile stagnates in a distended gallbladder and these bacteria multiply.</p>
-<p>Colonization is what brings fever and sepsis, and it is why IV ABX that cover gut organisms are part of first-line treatment, with surgery to follow.</p>`,
-        notes: {
-            1: "Skin and throat organisms do not usually reach bile.",
-            2: "These parasites are linked to brown pigment stones and duct disease, not acute cholecystitis.",
-            3: "Fungi are not the usual organisms in cholecystitis.",
-            4: "These are not the typical organisms; gut gram-negatives and Enterococcus are.",
-        },
-    },
-    {
-        id: "bc-calculous-share",
-        condition: "cholecystitis",
-        kind: "memory",
-        stem: "About what proportion of acute cholecystitis is caused by a stone in the cystic duct?",
-        options: ["About 90–95%", "About 50–55%", "About 25–30%", "About 10%", "About 70–75%"],
-        answer: 0,
-        explanation: `<p><strong>Calculous cholecystitis is about 90–95% of cases.</strong> A stone obstructs the cystic duct, back pressure distends the gallbladder, bacteria colonize it, and the wall becomes inflamed.</p>
-<p>The rest is mostly acalculous cholecystitis, about 10% of acute cases, in critically ill patients, where stasis and ischemia inflame the gallbladder without any stone. Mirizzi syndrome is a special case of calculous disease, with the stone also pressing on the common hepatic duct.</p>`,
-        notes: {
-            1: "Stones cause far more than half of cases.",
-            2: "Stones are the cause in the large majority.",
-            3: "About 10% is the share of acalculous cholecystitis.",
-            4: "Calculous disease is even more dominant, at about 90–95%.",
-        },
-    },
-    {
         id: "bc-murphy",
-        condition: "cholecystitis",
+        condition: "gallbladder-stones",
         kind: "memory",
         stem: "What is Murphy sign?",
         options: ["Breathing in stops when the RUQ is pressed", "Pain in the RUQ when the left lower quadrant is pressed", "Bruising around the umbilicus", "Pain when the right hip is extended", "Rebound pain after pressure is released anywhere"],
@@ -10127,7 +9098,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "bc-emphysematous",
-        condition: "cholecystitis",
+        condition: "gallbladder-stones",
         kind: "memory",
         stem: "Emphysematous cholecystitis is caused by gas-forming bacteria, most typically which organism, and in whom?",
         options: ["Clostridium perfringens, in men and diabetics", "E. coli, in pregnant women", "Clostridioides difficile, after a course of ABX", "Klebsiella, in young athletes", "Streptococcus pneumoniae, in children"],
@@ -10141,95 +9112,11 @@ const QUIZ_QUESTIONS = [
             4: "Pneumococcus is not a cause of emphysematous cholecystitis.",
         },
     },
-    {
-        id: "bc-ileus",
-        condition: "cholecystitis",
-        kind: "memory",
-        stem: "Where does a gallstone causing gallstone ileus usually lodge?",
-        options: ["Terminal ileum or ileocecal valve", "Pylorus and first part of the duodenum", "Ampulla of Vater", "Sigmoid colon at the rectosigmoid junction", "Duodenojejunal flexure"],
-        answer: 0,
-        explanation: `<p><strong>Gallstone ileus usually lodges at the terminal ileum or ileocecal valve,</strong> the narrowest part of the small bowel. A chronically inflamed gallbladder containing a large stone fuses to the bowel and forms a cholecystoenteric fistula, and the stone passes through it.</p>
-<p>The stone travels with peristalsis until the lumen is too narrow, causing small bowel obstruction: colicky pain, abdominal distention, vomiting, and obstipation (CAVO).</p>`,
-        notes: {
-            1: "A stone at the pylorus or duodenum causes gastric outlet obstruction, which is rarer.",
-            2: "A stone at the ampulla causes gallstone pancreatitis, not bowel obstruction.",
-            3: "A stone large enough to pass the ileocecal valve usually passes through the wider colon.",
-            4: "The jejunum is wider than the terminal ileum, so stones rarely stop there.",
-        },
-    },
-    {
-        id: "bc-rigler",
-        condition: "cholecystitis",
-        kind: "memory",
-        stem: "Which three CT findings make up Rigler triad in gallstone ileus?",
-        options: ["Pneumobilia, small bowel obstruction, and an ectopic stone", "Thick gallbladder wall, pericholecystic fluid, and gallstones", "Gas in the gallbladder wall, free air, and ascites", "Dilated common bile duct, pancreatic swelling, and gallstones", "Calcified gallbladder wall, stones, and a dilated duct"],
-        answer: 0,
-        explanation: `<p><strong>Rigler triad is pneumobilia, small bowel obstruction, and a gallstone outside the gallbladder.</strong> Each finding traces one step of the story:</p>
-<ul>
-<li>Air in the bile ducts: the fistula lets bowel gas into the biliary tree.</li>
-<li>Small bowel obstruction: dilated loops above the stone.</li>
-<li>Ectopic gallstone: the stone itself, often at the ileocecal valve.</li>
-</ul>`,
-        notes: {
-            1: "These are the ultrasound findings of acute cholecystitis.",
-            2: "Gas in the wall is emphysematous cholecystitis; free air suggests perforation.",
-            3: "These suggest gallstone pancreatitis or a duct stone.",
-            4: "A calcified wall is porcelain gallbladder.",
-        },
-    },
-    {
-        id: "bc-rokitansky",
-        condition: "cholecystitis",
-        kind: "memory",
-        stem: "What are Rokitansky-Aschoff sinuses?",
-        options: ["Mucosa herniated into a thickened gallbladder wall", "Gas pockets in the wall in emphysematous cholecystitis", "Fistulas between the gallbladder and duodenum", "Abscesses around a perforated gallbladder", "Calcium deposits in the mucosa of a porcelain gallbladder"],
-        answer: 0,
-        explanation: `<p><strong>Rokitansky-Aschoff sinuses are pockets of mucosa herniated into a thickened gallbladder wall.</strong> They are found in about 90% of specimens of chronic cholecystitis.</p>
-<p>Repeated biliary colic causes ongoing inflammation and fibrosis of the wall, and raised pressure in the gallbladder pushes mucosa outward into it. They are a sign of long-standing disease, not an acute complication.</p>`,
-        notes: {
-            1: "Gas in the wall is emphysematous cholecystitis, an acute infection.",
-            2: "Fistulas to the bowel are cholecystoenteric fistulas, which lead to gallstone ileus.",
-            3: "Abscesses follow gangrene and perforation.",
-            4: "Calcium in the wall is porcelain gallbladder, a different finding.",
-        },
-    },
-    {
-        id: "bc-chronic-hida",
-        condition: "cholecystitis",
-        kind: "memory",
-        stem: "In suspected chronic cholecystitis, which HIDA scan with CCK result supports the diagnosis?",
-        options: ["A gallbladder ejection fraction under 35%", "A gallbladder that fills within 30 minutes", "Tracer that does not reach the duodenum", "A gallbladder ejection fraction over 80%", "Tracer that leaks into the peritoneum"],
-        answer: 0,
-        explanation: `<p><strong>A gallbladder ejection fraction under 35% after CCK supports chronic cholecystitis.</strong> CCK makes a healthy gallbladder contract and empty. A fibrosed, chronically inflamed wall cannot contract well, so little tracer leaves.</p>
-<p>This is a different use of HIDA from acute cholecystitis, where the gallbladder does not fill at all because the cystic duct is blocked. Ultrasound in chronic disease shows a thick wall and stones.</p>`,
-        notes: {
-            1: "Normal filling shows an open cystic duct; it says nothing about emptying.",
-            2: "Tracer that does not reach the duodenum suggests a blocked common bile duct.",
-            3: "A high ejection fraction is normal emptying.",
-            4: "A leak suggests a bile duct injury.",
-        },
-    },
 
     /* --- Reasoning --- */
     {
-        id: "bc-acute",
-        condition: "cholecystitis",
-        kind: "reasoning",
-        stem: "A 48-year-old woman has 18 hours of constant RUQ pain radiating to her right shoulder, with nausea. Her temperature is 38.4 °C, and Murphy sign is positive. White cells are 15.8 × 10<sup>9</sup>/L; bilirubin, ALP, and lipase are normal. Ultrasound shows gallstones, a 5 mm wall, and pericholecystic fluid. What is the most appropriate management?",
-        options: ["IV ABX, then early laparoscopic cholecystectomy", "ERCP to remove the stones from the bile duct", "Oral ursodeoxycholic acid", "Outpatient review in 6 weeks", "Percutaneous cholecystostomy"],
-        answer: 0,
-        explanation: `<p><strong>Acute calculous cholecystitis is treated with NPO, IV fluids, pain relief, and IV ABX, then early laparoscopic cholecystectomy within 72 hours.</strong> Her pain over 6 hours, fever, Murphy sign, raised white cells, and ultrasound findings fit, and normal LFTs show the common bile duct is clear.</p>
-<p>ABX treat the bacteria colonizing the obstructed gallbladder, and early surgery removes the source during the same admission, before complications such as gangrene or empyema develop.</p>`,
-        notes: {
-            1: "ERCP is for common bile duct stones; her normal bilirubin and ALP make that unlikely.",
-            2: "Ursodeoxycholic acid dissolves only small cholesterol stones slowly and does not treat inflammation.",
-            3: "Waiting leaves an infected gallbladder untreated.",
-            4: "Cholecystostomy is for patients too unwell for surgery or with acalculous disease.",
-        },
-    },
-    {
         id: "bc-acalculous",
-        condition: "cholecystitis",
+        condition: "gallbladder-stones",
         kind: "reasoning",
         stem: "A 66-year-old man in ICU after major burns, on TPN and vasopressors, develops fever and raised white cells. Ultrasound shows a distended gallbladder with a thick wall and pericholecystic fluid, but no stones. He is too unstable for surgery. What is the most appropriate management?",
         options: ["IV ABX and percutaneous cholecystostomy", "Oral ursodeoxycholic acid", "ERCP with sphincterotomy", "Observation, since there are no stones", "Elective cholecystectomy in 6 weeks' time"],
@@ -10244,24 +9131,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "bc-fever-why",
-        condition: "cholecystitis",
-        kind: "reasoning",
-        stem: "Why does acute cholecystitis cause fever, while biliary colic does not?",
-        options: ["Bacteria colonize the blocked gallbladder", "The stone itself releases pyrogens as it dissolves", "Colic pain is too brief for the body to sense", "Fever comes from bile leaking into the blood", "Cholecystitis always involves the common bile duct"],
-        answer: 0,
-        explanation: `<p><strong>In cholecystitis the cystic duct stays blocked,</strong> so back pressure distends the gallbladder and stagnant bile is colonized by gut bacteria (E. coli, Klebsiella, Enterococcus). The inflamed wall and infection bring fever, and can lead to sepsis.</p>
-<p>In colic, the stone dislodges within 6 hours, the gallbladder drains, and there is no time for colonization or inflammation. That is why fever, or pain beyond 6 hours, moves the diagnosis from colic to cholecystitis.</p>`,
-        notes: {
-            1: "Stones do not release pyrogens; inflammation and bacteria cause fever.",
-            2: "Fever reflects inflammation, which a brief block does not cause.",
-            3: "Bile entering the blood causes jaundice, not fever.",
-            4: "LFTs are usually normal in cholecystitis, because the common bile duct is clear.",
-        },
-    },
-    {
         id: "bc-lfts-normal",
-        condition: "cholecystitis",
+        condition: "gallbladder-stones",
         kind: "reasoning",
         stem: "Why are LFTs usually normal in acute cholecystitis, and what does jaundice suggest?",
         options: ["Only the cystic duct is blocked; jaundice means a duct is blocked", "The inflamed gallbladder makes extra bilirubin; jaundice suggests sepsis alone", "LFTs fall in cholecystitis; jaundice suggests hemolysis", "The liver is protected by ABX; jaundice suggests drug toxicity", "Bile flow stops completely; jaundice is expected in every case"],
@@ -10277,7 +9148,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "bc-mirizzi",
-        condition: "cholecystitis",
+        condition: "gallbladder-stones",
         kind: "reasoning",
         stem: "In Mirizzi syndrome, how does a stone that never leaves the gallbladder neck cause obstructive jaundice?",
         options: ["It presses on the common hepatic duct from outside", "It releases bilirubin into the blood as it erodes", "It blocks the ampulla through the cystic duct", "It causes hemolysis in the inflamed gallbladder", "It spreads infection to the liver, causing hepatitis"],
@@ -10292,24 +9163,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "bc-acalc-why",
-        condition: "cholecystitis",
-        kind: "reasoning",
-        stem: "Why does acalculous cholecystitis develop in critically ill patients, such as those in ICU, after burns, or on TPN?",
-        options: ["Stasis and ischemia inflame the wall", "Sedation relaxes the cystic duct so bacteria enter", "TPN contains bacteria that seed the gallbladder", "Burns release bilirubin that forms invisible stones", "Vasopressors directly dissolve the gallbladder mucosa"],
-        answer: 0,
-        explanation: `<p><strong>Critical illness causes gallbladder stasis and ischemia.</strong> Fasting and TPN mean no CCK release, so the gallbladder does not empty, and bile stagnates. Shock, sepsis, and vasopressors reduce blood flow to the wall.</p>
-<p>The stagnant bile irritates a wall already short of blood, so it inflames without any stone. Because the wall is ischemic from the start, acalculous cholecystitis carries a high risk of gangrene and perforation.</p>`,
-        notes: {
-            1: "Sedation does not open the cystic duct; stasis is the problem.",
-            2: "TPN is not contaminated; it causes stasis by removing the CCK stimulus.",
-            3: "By definition there is no stone, visible or not.",
-            4: "Vasopressors reduce wall blood flow, contributing to ischemia; they do not dissolve mucosa.",
-        },
-    },
-    {
         id: "bc-cholecystostomy",
-        condition: "cholecystitis",
+        condition: "gallbladder-stones",
         kind: "reasoning",
         stem: "A 91-year-old woman with severe heart failure has acute calculous cholecystitis and is too unwell for an anesthetic. Why is a percutaneous cholecystostomy used?",
         options: ["It drains the infected gallbladder", "It dissolves the stones with a bile acid infusion", "It removes the gallbladder through a small skin incision", "It clears stones from the common bile duct", "It prevents all future attacks without surgery"],
@@ -10323,59 +9178,11 @@ const QUIZ_QUESTIONS = [
             4: "The gallbladder and stones remain, so attacks can recur.",
         },
     },
-    {
-        id: "bc-emph-surgery",
-        condition: "cholecystitis",
-        kind: "reasoning",
-        stem: "A 67-year-old man with diabetes has cholecystitis, and CT shows gas in the gallbladder wall. Why is emergency cholecystectomy needed rather than ABX and early elective surgery?",
-        options: ["The ischemic, infected wall soon becomes gangrenous", "Gas in the wall means a stone has already passed into the bowel", "ABX cannot reach the gallbladder in diabetics", "The gas will cause a pneumothorax if left", "Gas shows Mirizzi syndrome, which needs open surgery"],
-        answer: 0,
-        explanation: `<p><strong>Gas in the wall means emphysematous cholecystitis:</strong> gas-forming bacteria, especially Clostridium perfringens, growing in an ischemic wall. Men and diabetics are most at risk, and mortality is high.</p>
-<p>The wall is already dying, so it can quickly become gangrenous and perforate, causing abscess and peritonitis. Emergency cholecystectomy removes the necrotic organ, as for gangrene or perforation.</p>`,
-        notes: {
-            1: "A stone in the bowel causes gallstone ileus, with air in the bile ducts, not in the wall.",
-            2: "ABX are given, but they cannot rescue a necrotic wall.",
-            3: "Gallbladder gas does not cause a pneumothorax.",
-            4: "Mirizzi syndrome causes jaundice from duct compression, not gas.",
-        },
-    },
-    {
-        id: "bc-chronic-diet",
-        condition: "cholecystitis",
-        kind: "reasoning",
-        stem: "A patient with chronic cholecystitis is not fit for surgery. Why does a low-fat diet help?",
-        options: ["Less fat means less CCK, so fewer painful contractions", "Fat is the main component of gallstones, so the stones dissolve", "A low-fat diet lowers bilirubin and so prevents jaundice", "Fat directly irritates the gallbladder mucosa as it passes", "It reverses the fibrosis in the gallbladder wall"],
-        answer: 0,
-        explanation: `<p><strong>Fat in the duodenum releases CCK, which makes the gallbladder contract.</strong> In chronic cholecystitis, contraction of a fibrosed gallbladder full of stones causes the dull RUQ or epigastric pain after meals.</p>
-<p>Less dietary fat means fewer and weaker contractions, so fewer attacks. It is a fallback: elective laparoscopic cholecystectomy is the treatment for anyone fit for surgery, because diet does not remove the stones or the scarred wall.</p>`,
-        notes: {
-            1: "Diet does not dissolve existing stones.",
-            2: "Jaundice is not a feature of chronic cholecystitis; the aim is fewer painful contractions.",
-            3: "Food does not pass through the gallbladder; it acts through CCK.",
-            4: "Fibrosis does not reverse; the diet only reduces triggers.",
-        },
-    },
-    {
-        id: "bc-gangrene",
-        condition: "cholecystitis",
-        kind: "reasoning",
-        stem: "How does untreated acute cholecystitis progress to perforation and peritonitis?",
-        options: ["Pressure and inflammation make the wall necrotic", "The stone erodes through the wall within hours of obstruction", "ABX weaken the wall as they kill bacteria", "Bile salts digest the wall from outside", "The inflamed gallbladder twists on its stalk"],
-        answer: 0,
-        explanation: `<p><strong>Back pressure distends the gallbladder, and inflammation swells the wall.</strong> As pressure rises, blood flow to the wall falls, and the wall becomes necrotic: gangrenous cholecystitis.</p>
-<p>A necrotic wall gives way, causing perforation, then an abscess or peritonitis. Pus can also fill the gallbladder (empyema). Gangrene or perforation needs emergency cholecystectomy, and the risk is highest in acalculous disease, where the wall is ischemic from the start.</p>`,
-        notes: {
-            1: "Stones erode slowly over years to form fistulas; perforation is from necrosis.",
-            2: "ABX treat the infection; they do not weaken the wall.",
-            3: "The damage comes from within, through pressure and ischemia.",
-            4: "Torsion is not the mechanism of gangrene on this page.",
-        },
-    },
 
     /* --- Analysis --- */
     {
         id: "bc-set-mirizzi-1",
-        condition: "cholecystitis",
+        condition: "gallbladder-stones",
         kind: "analysis",
         set: "bc-mirizzi",
         passage: `<p>A 58-year-old woman has 2 days of RUQ pain, fever of 38.6 °C, and yellow eyes. Murphy sign is positive.</p>
@@ -10407,7 +9214,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "bc-set-mirizzi-2",
-        condition: "cholecystitis",
+        condition: "gallbladder-stones",
         kind: "analysis",
         set: "bc-mirizzi",
         stem: "Which is the most appropriate plan?",
@@ -10422,32 +9229,381 @@ const QUIZ_QUESTIONS = [
             4: "A large impacted stone will not dissolve, and the patient is septic.",
         },
     },
+
+    /* --- Memory --- */
     {
-        id: "bc-ileus-case",
-        condition: "cholecystitis",
-        kind: "analysis",
-        stem: `<p>A 79-year-old woman with years of untreated gallstone attacks has 3 days of colicky abdominal pain, distention, vomiting, and no passage of stool or gas.</p>
-<table><thead><tr><th>CT finding</th><th>Result</th></tr></thead><tbody>
-<tr><td>Biliary tree</td><td>Air in the intrahepatic ducts</td></tr>
-<tr><td>Small bowel</td><td>Dilated loops with air-fluid levels down to the right lower quadrant</td></tr>
-<tr><td>Right lower quadrant</td><td>A 3 cm laminated stone in the lumen at the ileocecal valve</td></tr>
-<tr><td>Gallbladder</td><td>Shrunken, with a thick wall, fused to the duodenum</td></tr>
-</tbody></table>
-<p>What is the most appropriate treatment?</p>`,
-        options: ["Enterolithotomy, repairing the fistula later", "Emergency laparoscopic cholecystectomy alone", "ERCP to clear the biliary tree", "Percutaneous cholecystostomy", "IV ABX and observation"],
+        id: "bf-type",
+        condition: "gallbladder-stones",
+        kind: "memory",
+        stem: "Which type of biliary fistula is the most common?",
+        options: ["Cholecystoduodenal", "Cholecystocolic", "Cholecystogastric", "Choledochoduodenal", "Cholecystocholedochal"],
         answer: 0,
-        explanation: `<p><strong>This is gallstone ileus, and the CT shows Rigler triad:</strong> air in the biliary tree, small bowel obstruction, and an ectopic gallstone. Her symptoms are CAVO: colicky pain, abdominal distention, vomiting, and obstipation.</p>
-<p>The urgent problem is the obstruction, so the stone is removed from the bowel (enterolithotomy). The cholecystoenteric fistula is repaired later if needed, because a long operation on an inflamed, fused gallbladder adds risk to a frail, obstructed patient.</p>`,
+        explanation: `<p><strong>Cholecystoduodenal fistulas are the most common, at about 68%.</strong> The gallbladder lies against the duodenum, so when chronic inflammation and a large stone erode through its wall, the duodenum is usually the organ it opens into.</p>
+<ul>
+<li><strong>Cholecystoduodenal:</strong> ~68%; the main route for gallstone ileus.</li>
+<li><strong>Cholecystocolic:</strong> ~17%; bile acid diarrhea.</li>
+<li><strong>Cholecystogastric:</strong> ~5%; gastric outlet obstruction.</li>
+</ul>`,
         notes: {
-            1: "Removing the gallbladder does not relieve the bowel obstruction.",
-            2: "The air in the ducts comes from the fistula, not a duct stone, and ERCP cannot reach the stone.",
-            3: "Draining the gallbladder does not treat a stone in the ileum.",
-            4: "A stone blocking the bowel will not resolve with ABX.",
+            1: "Cholecystocolic fistulas are second, at about 17%.",
+            2: "Cholecystogastric fistulas are about 5%.",
+            3: "Choledochoduodenal fistulas join the CBD to the duodenum, usually from a penetrating duodenal ulcer, and are less common.",
+            4: "Cholecystocholedochal fistulas are the advanced stage of Mirizzi syndrome and are uncommon.",
+        },
+    },
+    {
+        id: "bf-pneumobilia",
+        condition: "gallbladder-stones",
+        kind: "memory",
+        stem: "Which CT finding suggests a biliary-enteric fistula?",
+        options: ["Pneumobilia", "Pericholecystic fluid", "A calcified gallbladder wall", "A double duct sign", "Pancreatic necrosis"],
+        answer: 0,
+        explanation: `<p><strong>Pneumobilia, air in the biliary tree, suggests a fistula.</strong> The bile ducts normally contain no air, because the sphincter of Oddi keeps the gut closed off from them. A fistula opens a direct path, so gas from the bowel enters the gallbladder and ducts.</p>
+<p>CT abdomen is the test for a suspected fistula. The opening itself is then seen by ERCP or upper endoscopy. The same open path lets gut bacteria in, which is why fistulas cause recurrent cholangitis.</p>`,
+        notes: {
+            1: "Pericholecystic fluid is a sign of acute cholecystitis.",
+            2: "A calcified wall is a porcelain gallbladder, linked to gallbladder carcinoma.",
+            3: "The double duct sign, with both the CBD and pancreatic duct dilated, suggests a periampullary tumor.",
+            4: "Necrosis is a finding in severe acute pancreatitis.",
+        },
+    },
+
+    /* --- Reasoning --- */
+    {
+        id: "bf-ileus-tx",
+        condition: "gallbladder-stones",
+        kind: "reasoning",
+        stem: "A 79-year-old woman with heart failure has small bowel obstruction. CT shows pneumobilia, dilated small bowel, and a 3.5-cm gallstone in the terminal ileum. She is resuscitated. Which operation is most appropriate?",
+        options: ["Enterolithotomy now, with fistula repair later if needed", "Cholecystectomy and fistula repair as the only procedure", "Right hemicolectomy", "Colonoscopic removal of the stone", "Enterolithotomy, cholecystectomy, and fistula repair together"],
+        answer: 0,
+        explanation: `<p><strong>Gallstone ileus is treated by enterolithotomy first, usually open:</strong> the bowel is opened over the stone, the stone removed, and the bowel closed. This relieves the obstruction, which is what threatens her.</p>
+<p>The fistula is left for later, and repaired only if needed. Patients are mostly older and unwell from the obstruction, so adding cholecystectomy and fistula repair to an emergency operation in an inflamed right upper quadrant adds risk for little immediate gain. Many fistulas cause no further trouble.</p>`,
+        notes: {
+            1: "Repairing the fistula without removing the stone leaves the bowel obstructed.",
+            2: "Hemicolectomy removes bowel unnecessarily; the stone can be removed through a small enterotomy.",
+            3: "The stone is in the small bowel above the ileocecal valve, beyond reach from the colon in an obstructed patient.",
+            4: "A one-stage operation adds risk in an older patient with heart failure; the fistula is repaired later if needed.",
+        },
+    },
+    {
+        id: "bf-mechanism",
+        condition: "gallbladder-stones",
+        kind: "reasoning",
+        stem: "How does a gallstone create a fistula between the gallbladder and the duodenum?",
+        options: ["Chronic inflammation weakens the wall, and a large stone erodes through it", "A small stone passes through the cystic duct and pierces the CBD", "Acid from the duodenum digests the gallbladder wall", "A stone blocks the ampulla, and the rising pressure bursts through the duodenal wall", "Bacteria from the duodenum dissolve the stone and the wall"],
+        answer: 0,
+        explanation: `<p><strong>Fistulas come from chronic inflammation and pressure from a large stone.</strong> The steps on the page are:</p>
+<ul>
+<li><strong>Chronic inflammation</strong> weakens the gallbladder wall and sticks it to the organ alongside.</li>
+<li><strong>Pressure from a large stone</strong> presses on the weakened wall.</li>
+<li><strong>A tract opens</strong> into the neighboring organ, usually the duodenum.</li>
+</ul>
+<p>Through the tract, the stone can enter the bowel (gallstone ileus), and gut bacteria can enter the bile ducts (ascending cholangitis).</p>`,
+        notes: {
+            1: "Small stones pass along the ducts; fistulas come from large stones eroding through an inflamed wall.",
+            2: "The erosion runs from the gallbladder outward, from inflammation and pressure, not from duodenal acid.",
+            3: "An ampullary stone causes jaundice or pancreatitis, not a fistula from the gallbladder.",
+            4: "Bacteria enter after the fistula forms; they do not create it.",
+        },
+    },
+
+    /* --- Analysis --- */
+    {
+        id: "bf-set-ileus-1",
+        condition: "gallbladder-stones",
+        kind: "analysis",
+        set: "bf-ileus",
+        passage: `<p>A 78-year-old woman has had 4 days of colicky central abdominal pain that comes and goes, then 1 day of vomiting and no stool or flatus. She has had RUQ pain after fatty meals for years and has never had abdominal surgery. Her abdomen is distended and tympanic, with no hernias.</p>
+<p><strong>CT abdomen:</strong> Air in the gallbladder and intrahepatic bile ducts. Dilated small bowel loops to 4.5 cm, with a transition point in the right iliac fossa where a 3.2-cm laminated, partly calcified stone lies within the terminal ileum. The colon is collapsed. The gallbladder is contracted and sits against the duodenum, with a short tract between them. No free air.</p>`,
+        stem: "Which interpretation best fits the CT?",
+        options: ["Gallstone ileus through a cholecystoduodenal fistula", "Bouveret syndrome from a cholecystogastric fistula", "Adhesional obstruction with incidental gallbladder air", "Gallstone ileus through a cholecystocolic fistula", "Ascending cholangitis with a reactive ileus"],
+        answer: 0,
+        explanation: `<p><strong>This is Rigler triad, through a cholecystoduodenal fistula:</strong></p>
+<ul>
+<li><strong>Pneumobilia:</strong> air in the gallbladder and ducts.</li>
+<li><strong>Small bowel obstruction:</strong> dilated loops with a collapsed colon.</li>
+<li><strong>Ectopic gallstone:</strong> a 3.2-cm stone at the transition point.</li>
+</ul>
+<p>The tract from the gallbladder to the duodenum is the most common fistula and the main route for gallstone ileus. The stone traveled the small bowel and stuck at the terminal ileum, its narrowest point. She also fits the usual patient: an older woman, with a stone over 2 cm and no previous surgery.</p>`,
+        notes: {
+            1: "Bouveret syndrome is a stone stuck at the pylorus or duodenum, with vomiting and a distended stomach, not distal small bowel obstruction.",
+            2: "She has never had surgery, and the stone at the transition point explains the obstruction.",
+            3: "A stone entering the colon would lie beyond the ileocecal valve and could pass in the stool; this tract opens into the duodenum.",
+            4: "Cholangitis causes fever and jaundice, and the stone in the ileum is a mechanical cause of obstruction.",
+        },
+    },
+    {
+        id: "bf-set-ileus-2",
+        condition: "gallbladder-stones",
+        kind: "analysis",
+        set: "bf-ileus",
+        stem: "She has an open enterolithotomy and recovers. Over the next 8 months she has two admissions with fever, RUQ pain, and jaundice, each settling with ABX. Repeat CT still shows pneumobilia and the tract to the duodenum. What is the most appropriate plan now?",
+        options: ["Cholecystectomy with fistula repair", "Long-term ABX to prevent further episodes", "No action, since the fistula decompresses the biliary tree", "Repeat enterolithotomy", "Endoscopic removal of a stone from the duodenal bulb"],
+        answer: 0,
+        explanation: `<p><strong>The fistula is now symptomatic, so it is repaired: cholecystectomy with fistula repair.</strong> Her episodes are ascending cholangitis, because gut bacteria enter the bile ducts through the open tract.</p>
+<p>This is the two-step plan on the page. Enterolithotomy came first, to relieve the life-threatening obstruction, with fistula repair later if needed. Recurrent cholangitis is the reason it is needed now: removing the gallbladder and closing the tract shuts the path for bacteria.</p>`,
+        notes: {
+            1: "ABX treat each episode but leave the path for bacteria open.",
+            2: "The open path lets bacteria into the ducts; that is the cause of her cholangitis.",
+            3: "Her bowel is no longer obstructed, so there is no stone to remove from it.",
+            4: "Endoscopic removal treats Bouveret syndrome; nothing shows a stone in the duodenum.",
+        },
+    },
+    {
+        id: "bs-xray",
+        condition: "gallbladder-stones",
+        kind: "memory",
+        stem: "About what proportion of gallstones contain enough calcium to show on a plain x-ray?",
+        options: ["About 10%", "About 50%", "About 75%", "About 90%", "All of them"],
+        answer: 0,
+        explanation: `<p><strong>Only about 10% of gallstones show on a plain x-ray,</strong> depending on how much calcium they contain. Cholesterol, which makes up most stones, is not radiopaque.</p>
+<p>That is why a plain x-ray misses most stones and RUQ ultrasound is first line. On ultrasound, stones reflect sound strongly, so they appear bright with an acoustic shadow behind them, and they move when the patient changes position.</p>`,
+        notes: {
+            1: "Most gallstones are cholesterol, which does not show on x-ray; half is far too high.",
+            2: "About 75% is the share of cholesterol stones, which are mostly radiolucent.",
+            3: "Most stones are invisible on x-ray, which is why ultrasound is used.",
+            4: "A plain x-ray misses most stones.",
+        },
+    },
+    {
+        id: "bs-porcelain",
+        condition: "gallbladder-stones",
+        kind: "memory",
+        stem: "What is a porcelain gallbladder?",
+        options: ["A calcified gallbladder wall after chronic cholecystitis", "A gallbladder packed full of pale, white cholesterol stones", "A gallbladder distended with clear mucus", "A gallbladder wall thickened by acute inflammation", "Gas in the gallbladder wall from infection"],
+        answer: 0,
+        explanation: `<p><strong>A porcelain gallbladder has a calcified wall,</strong> the end result of chronic cholecystitis. Repeated attacks of colic inflame the wall again and again, and it scars and calcifies.</p>
+<p>The calcified wall can show on a plain x-ray as a curved line in the RUQ, even though most stones do not. Its cancer risk is lower than once thought, so the Cholecystitis page removes it if it causes symptoms or shows selective mucosal calcification, and otherwise discusses observation.</p>`,
+        notes: {
+            1: "The name refers to the calcified wall, not the stones inside.",
+            2: "A gallbladder full of clear mucus results from a long-blocked cystic duct, not calcification.",
+            3: "A thickened, inflamed wall is acute cholecystitis; porcelain is chronic.",
+            4: "Gas in the wall is emphysematous cholecystitis, an acute infection.",
+        },
+    },
+    {
+        id: "bs-brown-site",
+        condition: "gallbladder-stones",
+        kind: "memory",
+        stem: "Which type of stone forms in the bile ducts themselves, after infection with bacteria or parasites such as Clonorchis?",
+        options: ["Brown pigment stones", "Black pigment stones", "Cholesterol stones", "Mixed cholesterol stones", "Calcium carbonate stones"],
+        answer: 0,
+        explanation: `<p><strong>Brown pigment stones form in the bile ducts,</strong> where infection or a stricture lets bile stagnate. Bacteria and parasites such as the liver fluke Clonorchis are the usual triggers, which is why these stones are more common in East Asia.</p>
+<p>The other two types form in the gallbladder. That matters clinically: a brown stone can appear in the common bile duct long after the gallbladder is removed, because it formed there.</p>`,
+        notes: {
+            1: "Black pigment stones form in the gallbladder, from excess unconjugated bilirubin.",
+            2: "Cholesterol stones form in the gallbladder, from supersaturated bile.",
+            3: "Cholesterol stones of any composition form in the gallbladder, not the ducts.",
+            4: "Calcium carbonate is not one of the three gallstone types on the page; brown stones are the duct stones.",
+        },
+    },
+    {
+        id: "bc-us-findings",
+        condition: "gallbladder-stones",
+        kind: "memory",
+        stem: "Which RUQ ultrasound findings support acute cholecystitis?",
+        options: ["Thick wall, pericholecystic fluid, sonographic Murphy", "Mobile, shadowing stones in a thin-walled, normal gallbladder", "A dilated common bile duct with stones", "Gas in the gallbladder wall and lumen", "A small, contracted gallbladder with a calcified rim"],
+        answer: 0,
+        explanation: `<p><strong>Ultrasound shows a thick wall, fluid around the gallbladder, and a sonographic Murphy sign,</strong> each a sign of inflammation:</p>
+<ul>
+<li>The inflamed wall swells, so it thickens.</li>
+<li>Inflammation leaks fluid into the surrounding tissue.</li>
+<li>Pressing the probe directly over the gallbladder is maximally tender.</li>
+</ul>
+<p>Stones alone, in a thin wall, are cholelithiasis or biliary colic, not cholecystitis.</p>`,
+        notes: {
+            1: "Stones in a thin-walled gallbladder show cholelithiasis without inflammation.",
+            2: "A dilated duct with stones points to choledocholithiasis.",
+            3: "Gas in the wall is emphysematous cholecystitis, best shown on CT.",
+            4: "A calcified rim is porcelain gallbladder, from chronic inflammation.",
+        },
+    },
+    {
+        id: "bc-rokitansky",
+        condition: "gallbladder-stones",
+        kind: "memory",
+        stem: "What are Rokitansky-Aschoff sinuses?",
+        options: ["Mucosa herniated into a thickened gallbladder wall", "Gas pockets in the wall in emphysematous cholecystitis", "Fistulas between the gallbladder and duodenum", "Abscesses around a perforated gallbladder", "Calcium deposits in the mucosa of a porcelain gallbladder"],
+        answer: 0,
+        explanation: `<p><strong>Rokitansky-Aschoff sinuses are pockets of mucosa herniated into a thickened gallbladder wall.</strong> They are found in about 90% of specimens of chronic cholecystitis.</p>
+<p>Repeated biliary colic causes ongoing inflammation and fibrosis of the wall, and raised pressure in the gallbladder pushes mucosa outward into it. They are a sign of long-standing disease, not an acute complication.</p>`,
+        notes: {
+            1: "Gas in the wall is emphysematous cholecystitis, an acute infection.",
+            2: "Fistulas to the bowel are cholecystoenteric fistulas, which lead to gallstone ileus.",
+            3: "Abscesses follow gangrene and perforation.",
+            4: "Calcium in the wall is porcelain gallbladder, a different finding.",
+        },
+    },
+    {
+        id: "bf-bouveret",
+        condition: "gallbladder-stones",
+        kind: "memory",
+        stem: "An 80-year-old man with untreated gallstones has 2 days of repeated vomiting and epigastric fullness. CT shows pneumobilia, a distended stomach, and a large gallstone impacted in the duodenal bulb. What is the diagnosis?",
+        options: ["Bouveret syndrome", "Mirizzi syndrome", "Gallstone ileus at the terminal ileum", "Ascending cholangitis", "Gallstone pancreatitis"],
+        answer: 0,
+        explanation: `<p><strong>Bouveret syndrome is gastric outlet obstruction from a gallstone</strong> that has passed through a cholecystoduodenal fistula and lodged in the pylorus or duodenum. Because the blockage is high, the picture is vomiting and epigastric fullness, not the distended abdomen of a distal small bowel obstruction.</p>
+<p>Pneumobilia shows that the biliary tree now connects with the gut. It is treated by endoscopic stone removal first, with surgery if that fails.</p>`,
+        notes: {
+            1: "Mirizzi syndrome is a stone in the cystic duct or gallbladder neck compressing the common hepatic duct, causing jaundice rather than vomiting.",
+            2: "Gallstone ileus is the same process with the stone lodged lower, at the terminal ileum, causing small bowel obstruction.",
+            3: "Cholangitis causes fever, RUQ pain, and jaundice, not gastric outlet obstruction.",
+            4: "Gallstone pancreatitis causes epigastric pain radiating to the back with raised lipase, not a stone in the duodenal bulb.",
+        },
+    },
+    {
+        id: "bs-estrogen",
+        condition: "gallbladder-stones",
+        kind: "reasoning",
+        stem: "A 34-year-old woman who takes combined oral contraceptives and has had three pregnancies has cholesterol gallstones. How does estrogen promote these stones?",
+        options: ["It raises cholesterol secretion into bile", "It raises bile salt synthesis", "It speeds gallbladder emptying", "It causes hemolysis", "It deconjugates bilirubin in bile"],
+        answer: 0,
+        explanation: `<p><strong>Estrogen raises cholesterol secretion into bile,</strong> pushing bile toward supersaturation, the first step of the cholesterol triad. This is the "female" of the 6 Fs, and it is why oral contraceptives and estrogen therapy are risk factors.</p>
+<p>Pregnancy, the "fertile" F, adds a second step: the gallbladder empties more slowly, so crystals have time to grow. Her contraceptives and three pregnancies have pushed her bile on more than one step.</p>`,
+        notes: {
+            1: "More bile salts would dissolve cholesterol and protect against stones.",
+            2: "Faster emptying would prevent stasis; pregnancy slows emptying instead.",
+            3: "Hemolysis forms black pigment stones, and estrogen does not cause it.",
+            4: "Bacterial deconjugation of bilirubin forms brown stones in infected ducts.",
+        },
+    },
+    {
+        id: "bs-tpn",
+        condition: "gallbladder-stones",
+        kind: "reasoning",
+        stem: "A patient on TPN in ICU for 5 weeks, with nothing by mouth, develops gallstones. Which step of stone formation does TPN mainly promote?",
+        options: ["Hypomotility: without food, it rarely contracts", "Hemolysis: TPN lipids break down red cells", "Infection: bacteria from the central line seed the bile ducts", "Supersaturation: TPN contains cholesterol", "Nucleation: TPN delivers mucin to the gallbladder"],
+        answer: 0,
+        explanation: `<p><strong>Fasting and TPN cause gallbladder hypomotility.</strong> With no food in the duodenum, CCK is not released, so the gallbladder does not contract. Bile sits there for weeks, thickens, and crystals have time to grow into stones.</p>
+<p>The same step explains other risk factors on the page: fasting, rapid weight loss, and octreotide, which reduces gallbladder contraction. Stasis is the third part of the cholesterol triad.</p>`,
+        notes: {
+            1: "TPN does not cause hemolysis; black stones follow hemolysis from conditions such as sickle cell disease.",
+            2: "Infected ducts form brown stones; the risk here is that the gallbladder never empties.",
+            3: "The problem is that bile is never emptied, not what TPN contains.",
+            4: "Mucin is made by the gallbladder itself, not delivered by TPN.",
+        },
+        info: "Octreotide, a somatostatin analog, inhibits CCK release and gallbladder contraction; this mechanism is standard teaching rather than stated on the page.",
+    },
+    {
+        id: "bc-fever-why",
+        condition: "gallbladder-stones",
+        kind: "reasoning",
+        stem: "Why does acute cholecystitis cause fever, while biliary colic does not?",
+        options: ["Bacteria colonize the blocked gallbladder", "The stone itself releases pyrogens as it dissolves", "Colic pain is too brief for the body to sense", "Fever comes from bile leaking into the blood", "Cholecystitis always involves the common bile duct"],
+        answer: 0,
+        explanation: `<p><strong>In cholecystitis the cystic duct stays blocked,</strong> so back pressure distends the gallbladder and stagnant bile is colonized by gut bacteria (E. coli, Klebsiella, Enterococcus). The inflamed wall and infection bring fever, and can lead to sepsis.</p>
+<p>In colic, the stone dislodges within 6 hours, the gallbladder drains, and there is no time for colonization or inflammation. That is why fever, or pain beyond 6 hours, moves the diagnosis from colic to cholecystitis.</p>`,
+        notes: {
+            1: "Stones do not release pyrogens; inflammation and bacteria cause fever.",
+            2: "Fever reflects inflammation, which a brief block does not cause.",
+            3: "Bile entering the blood causes jaundice, not fever.",
+            4: "LFTs are usually normal in cholecystitis, because the common bile duct is clear.",
+        },
+    },
+    {
+        id: "bc-acalc-why",
+        condition: "gallbladder-stones",
+        kind: "reasoning",
+        stem: "Why does acalculous cholecystitis develop in critically ill patients, such as those in ICU, after burns, or on TPN?",
+        options: ["Stasis and ischemia inflame the wall", "Sedation relaxes the cystic duct so bacteria enter", "TPN contains bacteria that seed the gallbladder", "Burns release bilirubin that forms invisible stones", "Vasopressors directly dissolve the gallbladder mucosa"],
+        answer: 0,
+        explanation: `<p><strong>Critical illness causes gallbladder stasis and ischemia.</strong> Fasting and TPN mean no CCK release, so the gallbladder does not empty, and bile stagnates. Shock, sepsis, and vasopressors reduce blood flow to the wall.</p>
+<p>The stagnant bile irritates a wall already short of blood, so it inflames without any stone. Because the wall is ischemic from the start, acalculous cholecystitis carries a high risk of gangrene and perforation.</p>`,
+        notes: {
+            1: "Sedation does not open the cystic duct; stasis is the problem.",
+            2: "TPN is not contaminated; it causes stasis by removing the CCK stimulus.",
+            3: "By definition there is no stone, visible or not.",
+            4: "Vasopressors reduce wall blood flow, contributing to ischemia; they do not dissolve mucosa.",
+        },
+    },
+    {
+        id: "bc-emph-surgery",
+        condition: "gallbladder-stones",
+        kind: "reasoning",
+        stem: "A 67-year-old man with diabetes has cholecystitis, and CT shows gas in the gallbladder wall. Why is emergency cholecystectomy needed rather than ABX and early elective surgery?",
+        options: ["The ischemic, infected wall soon becomes gangrenous", "Gas in the wall means a stone has already passed into the bowel", "ABX cannot reach the gallbladder in diabetics", "The gas will cause a pneumothorax if left", "Gas shows Mirizzi syndrome, which needs open surgery"],
+        answer: 0,
+        explanation: `<p><strong>Gas in the wall means emphysematous cholecystitis:</strong> gas-forming bacteria, especially Clostridium perfringens, growing in an ischemic wall. Men and diabetics are most at risk, and mortality is high.</p>
+<p>The wall is already dying, so it can quickly become gangrenous and perforate, causing abscess and peritonitis. Emergency cholecystectomy removes the necrotic organ, as for gangrene or perforation.</p>`,
+        notes: {
+            1: "A stone in the bowel causes gallstone ileus, with air in the bile ducts, not in the wall.",
+            2: "ABX are given, but they cannot rescue a necrotic wall.",
+            3: "Gallbladder gas does not cause a pneumothorax.",
+            4: "Mirizzi syndrome causes jaundice from duct compression, not gas.",
+        },
+    },
+    {
+        id: "bf-why-duodenum",
+        condition: "gallbladder-stones",
+        kind: "reasoning",
+        stem: "Why is a cholecystoduodenal fistula the main route for gallstone ileus?",
+        options: ["Stones entering the duodenum must travel the whole small bowel", "The duodenum is narrower than the ileum, so stones lodge there first", "Duodenal acid enlarges the stone", "The duodenum has no peristalsis to move stones", "Stones in the duodenum always pass into the CBD"],
+        answer: 0,
+        explanation: `<p><strong>The fistula most often opens into the duodenum, at the start of the small bowel,</strong> so a stone that passes through it has to travel the full length of the small bowel. A large stone lodges where the lumen is narrowest, at the terminal ileum, causing gallstone ileus.</p>
+<p>The site of entry decides the result:</p>
+<ul>
+<li><strong>Duodenum:</strong> gallstone ileus, or Bouveret syndrome if the stone stops at the pylorus or duodenum.</li>
+<li><strong>Colon:</strong> stones may pass in the stool.</li>
+<li><strong>Stomach:</strong> gastric outlet obstruction.</li>
+</ul>`,
+        notes: {
+            1: "The duodenum is wider than the terminal ileum; that is why stones stop lower down.",
+            2: "Acid does not enlarge gallstones.",
+            3: "The duodenum has normal peristalsis, which carries the stone onward.",
+            4: "Stones in the duodenum travel down the bowel; they do not go back up into the CBD.",
+        },
+    },
+    {
+        id: "bs-set-hs-1",
+        condition: "gallbladder-stones",
+        kind: "analysis",
+        set: "bs-hs",
+        passage: `<p>A 16-year-old girl with hereditary spherocytosis has had two episodes of RUQ pain after meals, each lasting 2 hours. She is pain-free and afebrile today, with mild scleral icterus that her mother says is always there.</p>
+<table><thead><tr><th>Test</th><th>Result</th><th>Reference</th></tr></thead><tbody>
+<tr><td>Hemoglobin</td><td>108 g/L</td><td>120–160</td></tr>
+<tr><td>Reticulocytes</td><td>9%</td><td>0.5–2.5</td></tr>
+<tr><td>Bilirubin, total</td><td>44 µmol/L</td><td>Under 21</td></tr>
+<tr><td>Bilirubin, conjugated</td><td>3 µmol/L</td><td>Under 5</td></tr>
+<tr><td>ALP</td><td>90 U/L</td><td>40–130</td></tr>
+<tr><td>ALT</td><td>22 U/L</td><td>Under 35</td></tr>
+</tbody></table>
+<p>Ultrasound shows several small, mobile, shadowing stones in the gallbladder and a normal common bile duct.</p>
+<p><em>Illustrative data.</em></p>`,
+        stem: "Which type of gallstone is she most likely to have?",
+        options: ["Black pigment stones", "Brown pigment stones", "Cholesterol stones", "Stones in the common bile duct", "Calcium oxalate stones"],
+        answer: 0,
+        explanation: `<p><strong>Her bloods show chronic hemolysis, which forms black pigment stones.</strong> The clues fit together:</p>
+<ul>
+<li>Low hemoglobin with high reticulocytes: red cells are being destroyed and replaced.</li>
+<li>Raised bilirubin that is almost all unconjugated, with normal ALP and ALT: overproduction, not liver disease or obstruction.</li>
+</ul>
+<p>The extra unconjugated bilirubin precipitates with calcium in the gallbladder. Her lifelong mild icterus is from hemolysis, not from the stones.</p>`,
+        notes: {
+            1: "Brown stones form in infected or strictured ducts; her ducts are normal.",
+            2: "Cholesterol stones are most common overall, but a teenager with hemolysis fits black stones.",
+            3: "The common bile duct is normal, and her jaundice is unconjugated, not obstructive.",
+            4: "Calcium oxalate forms kidney stones.",
+        },
+    },
+    {
+        id: "bs-set-hs-2",
+        condition: "gallbladder-stones",
+        kind: "analysis",
+        set: "bs-hs",
+        stem: "What is the most appropriate treatment of her gallstones?",
+        options: ["Elective laparoscopic cholecystectomy", "Ursodeoxycholic acid to dissolve the stones", "ERCP to clear the common bile duct", "No treatment, because pigment stones never cause symptoms", "IV ABX and emergency surgery today"],
+        answer: 0,
+        explanation: `<p><strong>Her stones are symptomatic, so she is offered elective laparoscopic cholecystectomy.</strong> Two episodes of pain lasting 2 hours, with no fever and normal ALP and ALT, are biliary colic, and colic tends to recur and lead to complications.</p>
+<p>Ursodeoxycholic acid is not an option for her: it dissolves only small cholesterol stones, and black stones are calcium bilirubinate. Her hemolysis will keep producing bilirubin, so new stones would form even if these dissolved.</p>`,
+        notes: {
+            1: "Ursodeoxycholic acid works only on small cholesterol stones; black stones do not dissolve.",
+            2: "Her common bile duct is normal and her ALP is normal; there is no duct stone to clear.",
+            3: "She has already had biliary colic twice, so her stones are symptomatic.",
+            4: "She is pain-free and afebrile; nothing suggests cholecystitis.",
         },
     },
     {
         id: "bc-chronic-case",
-        condition: "cholecystitis",
+        condition: "gallbladder-stones",
         kind: "analysis",
         stem: `<p>A 52-year-old woman has had dull RUQ and epigastric pain after most meals for 5 months, never with fever. She is well between episodes, and her bloods are normal.</p>
 <table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody>
@@ -10467,31 +9623,13 @@ const QUIZ_QUESTIONS = [
             4: "Emphysematous cholecystitis is an acute, gas-forming infection with high mortality.",
         },
     },
-    {
-        id: "bc-porcelain-case",
-        condition: "cholecystitis",
-        kind: "analysis",
-        stem: `<p>A 70-year-old man has a CT for kidney stones. It shows a gallbladder with a thin, continuous rim of calcification around its whole wall. He has never had abdominal pain, and his LFTs are normal.</p>
-<p>What is the most appropriate approach?</p>`,
-        options: ["Discuss observation with him", "Emergency cholecystectomy for impending perforation", "Urgent ERCP to clear the ducts", "IV ABX for chronic infection", "Percutaneous cholecystostomy"],
-        answer: 0,
-        explanation: `<p><strong>This is a porcelain gallbladder: a wall calcified by chronic inflammation,</strong> often found by chance on x-ray or CT, as here.</p>
-<p>Its cancer risk is lower than once thought. Cholecystectomy is advised if it causes symptoms or shows selective mucosal calcification; otherwise, observation is discussed. He has no symptoms and a continuous rim, so observation is a reasonable choice for him to weigh.</p>`,
-        notes: {
-            1: "A calcified wall is chronic, not a sign of impending perforation.",
-            2: "His LFTs are normal, and there is no duct stone.",
-            3: "There is no active infection to treat.",
-            4: "A drain is for acute cholecystitis in patients too unwell for surgery.",
-        },
-        info: "Older teaching advised removing every porcelain gallbladder because of a high cancer risk; the page follows the newer, selective approach.",
-    },
 
-    /* ===== Choledocholithiasis and Gallstone Pancreatitis ===== */
+    /* ===== Choledocholithiasis and Ascending Cholangitis ===== */
 
     /* --- Memory --- */
     {
         id: "bd-pancreatitis",
-        condition: "choledocholithiasis",
+        condition: "bile-duct-stones",
         kind: "memory",
         stem: "Where does the stone lodge in gallstone pancreatitis?",
         options: ["Hepatopancreatic ampulla (of Vater)", "Cystic duct", "Gallbladder fundus", "Common hepatic duct near the liver hilum", "Right hepatic duct"],
@@ -10507,7 +9645,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "bd-secondary",
-        condition: "choledocholithiasis",
+        condition: "bile-duct-stones",
         kind: "memory",
         stem: "Where do most common bile duct stones form?",
         options: ["In the gallbladder", "In the common bile duct itself", "In the pancreatic duct", "In the intrahepatic ducts", "In the duodenum, then pass up the ampulla"],
@@ -10523,7 +9661,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "bd-pattern",
-        condition: "choledocholithiasis",
+        condition: "bile-duct-stones",
         kind: "memory",
         stem: "Which LFT pattern does a stone in the common bile duct produce?",
         options: ["Raised ALP, GGT, and conjugated bilirubin", "Raised AST and ALT above 1000 with normal ALP", "Raised unconjugated bilirubin with normal ALP", "Isolated raised ALP with normal GGT", "Normal LFTs with a raised lipase"],
@@ -10539,7 +9677,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "bd-us-dilated",
-        condition: "choledocholithiasis",
+        condition: "bile-duct-stones",
         kind: "memory",
         stem: "Above what width is the common bile duct considered dilated on ultrasound in a patient who still has a gallbladder?",
         options: ["6 mm", "3 mm", "12 mm", "15 mm", "20 mm"],
@@ -10554,40 +9692,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "bd-us-sensitivity",
-        condition: "choledocholithiasis",
-        kind: "memory",
-        stem: "In about what proportion of patients does RUQ ultrasound show the CBD stone itself?",
-        options: ["15–40%", "60–80%", "90–100%", "Under 5%", "50–60%"],
-        answer: 0,
-        explanation: `<p><strong>Ultrasound shows the stone itself in only 15–40% of patients.</strong> The lower CBD lies behind the duodenum, and bowel gas blocks the sound waves.</p>
-<p>So ultrasound is used mainly for indirect signs: a dilated duct and stones in the gallbladder. When the likelihood is intermediate, MRCP or endoscopic ultrasound looks directly at the duct; when it is high, ERCP diagnoses and removes the stone.</p>`,
-        notes: {
-            1: "Ultrasound is not this sensitive for duct stones, because bowel gas hides the lower duct.",
-            2: "No test is this good at seeing CBD stones on ultrasound.",
-            3: "It is poor, but not this poor; it sees the stone in 15–40%.",
-            4: "This overstates it; the page's range is 15–40%.",
-        },
-    },
-    {
-        id: "bd-high",
-        condition: "choledocholithiasis",
-        kind: "memory",
-        stem: "Which finding puts a patient at high likelihood of a CBD stone, so ERCP comes next?",
-        options: ["Bilirubin over 4 with a dilated CBD", "Age over 55, with no other findings", "A mildly raised ALP alone", "Gallstones in the gallbladder alone", "A dilated CBD with normal LFTs"],
-        answer: 0,
-        explanation: `<p><strong>High likelihood means a stone seen on ultrasound, cholangitis, or bilirubin over 68 µmol/L with a dilated CBD.</strong> In these patients a stone is so likely that ERCP, which both diagnoses and removes it, goes first.</p>
-<p>Abnormal LFTs, a dilated CBD, or age over 55 alone give intermediate likelihood, assessed with MRCP or endoscopic ultrasound, because ERCP carries risks such as pancreatitis and should be used where it will treat something.</p>`,
-        notes: {
-            1: "Age over 55 is an intermediate predictor.",
-            2: "Abnormal LFTs alone give intermediate likelihood.",
-            3: "Gallbladder stones alone, with no predictors, are low likelihood.",
-            4: "A dilated duct alone is an intermediate predictor.",
-        },
-    },
-    {
         id: "bd-lipase",
-        condition: "choledocholithiasis",
+        condition: "bile-duct-stones",
         kind: "memory",
         stem: "Which result separates gallstone pancreatitis from choledocholithiasis alone?",
         options: ["Lipase 3 or more times normal", "A raised ALP", "A raised conjugated bilirubin", "A dilated CBD on ultrasound", "Gallstones in the gallbladder"],
@@ -10601,59 +9707,11 @@ const QUIZ_QUESTIONS = [
             4: "Gallstones are the source in both.",
         },
     },
-    {
-        id: "bd-cirrhosis",
-        condition: "choledocholithiasis",
-        kind: "memory",
-        stem: "Which complication follows long-standing obstruction of the common bile duct?",
-        options: ["Secondary biliary cirrhosis", "Primary biliary cholangitis", "Porcelain gallbladder", "Gallstone ileus", "Hepatocellular adenoma"],
-        answer: 0,
-        explanation: `<p><strong>Long-standing obstruction causes secondary biliary cirrhosis.</strong> Bile backing up under pressure injures the liver over months, and repeated injury leads to fibrosis and nodules.</p>
-<p>It is "secondary" because the cause is outside the liver, a blocked duct, unlike PBC, an autoimmune destruction of small ducts inside the liver. The page's other complications are ascending cholangitis and gallstone pancreatitis.</p>`,
-        notes: {
-            1: "PBC is autoimmune destruction of small intrahepatic ducts, not caused by a stone.",
-            2: "Porcelain gallbladder follows chronic cholecystitis.",
-            3: "Gallstone ileus follows a fistula from the gallbladder to the bowel.",
-            4: "Hepatocellular adenoma is a benign tumor linked to estrogen, not obstruction.",
-        },
-    },
-    {
-        id: "bd-common-cause",
-        condition: "choledocholithiasis",
-        kind: "memory",
-        stem: "What is the most common cause of acute pancreatitis?",
-        options: ["Gallstones", "Alcohol", "Hypertriglyceridemia", "ERCP", "Hypercalcemia"],
-        answer: 0,
-        explanation: `<p><strong>Gallstones are the most common cause of acute pancreatitis.</strong> A small stone migrates from the gallbladder down the CBD and lodges at the ampulla, blocking the pancreatic duct, so enzymes activate inside the pancreas.</p>
-<p>That is why every patient with pancreatitis has an RUQ ultrasound and LFTs: gallstones with a cholestatic pattern point to a gallstone cause, which changes management, with cholecystectomy during the same admission if the attack is mild.</p>`,
-        notes: {
-            1: "Alcohol is the second most common cause.",
-            2: "Very high triglycerides cause a minority of cases.",
-            3: "ERCP can cause pancreatitis, but it is an uncommon cause overall.",
-            4: "Hypercalcemia is a rare cause.",
-        },
-    },
-    {
-        id: "bd-low",
-        condition: "choledocholithiasis",
-        kind: "memory",
-        stem: "A patient with symptomatic gallstones has normal LFTs, a normal-width CBD, and is 42. How is the duct assessed?",
-        options: ["Straight to cholecystectomy", "ERCP before surgery", "MRCP before surgery", "Endoscopic ultrasound before surgery", "HIDA scan"],
-        answer: 0,
-        explanation: `<p><strong>With no predictors, the likelihood of a CBD stone is low,</strong> so she goes straight to cholecystectomy. If a duct stone is suspected during surgery, intraoperative cholangiography (contrast injected into the duct) checks for it.</p>
-<p>The stepped approach matches the test to the risk: no predictors, surgery; intermediate, MRCP or endoscopic ultrasound; high, ERCP. That spares most patients an extra procedure.</p>`,
-        notes: {
-            1: "ERCP is for high likelihood, because it carries risks such as pancreatitis.",
-            2: "MRCP is for intermediate likelihood: abnormal LFTs, a dilated CBD, or age over 55.",
-            3: "Endoscopic ultrasound, like MRCP, is for intermediate likelihood.",
-            4: "HIDA assesses the cystic duct and gallbladder, not CBD stones.",
-        },
-    },
 
     /* --- Reasoning --- */
     {
         id: "bd-ercp",
-        condition: "choledocholithiasis",
+        condition: "bile-duct-stones",
         kind: "reasoning",
         stem: "A 56-year-old man has 2 days of RUQ pain, jaundice, dark urine, and itching. He is afebrile. Bilirubin is 99 µmol/L and ALP 410 U/L, with mildly raised AST and ALT and a normal lipase. Ultrasound shows gallstones and a CBD of 10 mm. What is the most appropriate next step?",
         options: ["ERCP with stone extraction", "Laparoscopic cholecystectomy alone", "HIDA scan", "Repeat LFTs in 2 weeks", "Liver biopsy"],
@@ -10668,24 +9726,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "bd-primary",
-        condition: "choledocholithiasis",
-        kind: "reasoning",
-        stem: "A 58-year-old man had a cholecystectomy 6 years ago. He now has jaundice from a soft, brown CBD stone, and bile culture grows E. coli. Which best explains how this stone formed?",
-        options: ["Infected bile formed it in the duct", "Cholesterol supersaturation in the gallbladder", "Chronic hemolysis raising unconjugated bilirubin", "Calcium oxalate precipitation in the duct", "Excess bile salt secretion by the liver"],
-        answer: 0,
-        explanation: `<p><strong>This is a primary CBD stone: a brown pigment stone formed in the duct itself,</strong> where bile stasis and infection come together. Bacteria such as E. coli break down conjugated bilirubin, which then precipitates with calcium as a soft, brown stone.</p>
-<p>Because it forms in the duct, it can appear years after the gallbladder is removed. Primary stones are more common in Asia and cause recurrent cholangitis.</p>`,
-        notes: {
-            1: "Cholesterol stones form in the gallbladder, which he no longer has.",
-            2: "Hemolysis forms black pigment stones in the gallbladder.",
-            3: "Calcium oxalate forms kidney stones.",
-            4: "Bile salts dissolve cholesterol; an excess does not form stones.",
-        },
-    },
-    {
         id: "bd-intermediate",
-        condition: "choledocholithiasis",
+        condition: "bile-duct-stones",
         kind: "reasoning",
         stem: "A 62-year-old woman has gallstones on ultrasound and recent RUQ pain. ALP and GGT are mildly raised, bilirubin is 31 µmol/L, and the CBD measures 7 mm. No stone is seen in the duct, and she has no fever. What is the most appropriate next step?",
         options: ["MRCP or endoscopic ultrasound", "Immediate ERCP", "Cholecystectomy without further imaging", "HIDA scan", "Repeat LFTs in 6 months"],
@@ -10701,7 +9743,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "bd-pale-stools",
-        condition: "choledocholithiasis",
+        condition: "bile-duct-stones",
         kind: "reasoning",
         stem: "Why does a CBD stone cause pale stools?",
         options: ["Less bilirubin reaches the gut", "Fat malabsorption bleaches the stool pigment", "Conjugated bilirubin is excreted in urine instead of stool", "The stone releases calcium into the bowel", "Bacteria in the bile duct destroy stool pigment"],
@@ -10716,24 +9758,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "bd-dark-urine",
-        condition: "choledocholithiasis",
-        kind: "reasoning",
-        stem: "Why does obstructive jaundice cause dark urine, while jaundice from hemolysis does not?",
-        options: ["Conjugated bilirubin is water-soluble and filtered by the kidney", "Unconjugated bilirubin is water-soluble and filtered by the kidney", "Bile salts color the urine dark", "Obstruction damages the kidneys", "Hemolysis lowers urine production"],
-        answer: 0,
-        explanation: `<p><strong>Only conjugated bilirubin can enter urine.</strong> The liver conjugates bilirubin to make it water-soluble. When a CBD stone blocks its exit, conjugated bilirubin backs up into the blood, and the kidneys filter it, darkening the urine.</p>
-<p>In hemolysis the excess is unconjugated bilirubin, which is bound to albumin and not water-soluble, so it does not reach urine. That is why dark urine points to a problem after conjugation, such as a blocked duct.</p>`,
-        notes: {
-            1: "Unconjugated bilirubin is fat-soluble and carried on albumin, so it is not filtered.",
-            2: "Bile salts cause pruritus, not dark urine.",
-            3: "The kidneys work normally; they are simply filtering conjugated bilirubin.",
-            4: "Hemolysis does not stop urine; unconjugated bilirubin just cannot enter it.",
-        },
-    },
-    {
         id: "bd-same-admission",
-        condition: "choledocholithiasis",
+        condition: "bile-duct-stones",
         kind: "reasoning",
         stem: "After ERCP clears a CBD stone, why is cholecystectomy done during the same admission?",
         options: ["The gallbladder still holds stones", "ERCP damages the gallbladder, which must then be removed", "The gallbladder becomes infected by the ERCP", "The sphincterotomy stops the gallbladder from emptying", "Cholecystectomy dissolves any stones left in the liver"],
@@ -10748,40 +9774,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "bd-pruritus",
-        condition: "choledocholithiasis",
-        kind: "reasoning",
-        stem: "A patient with a CBD stone is scratching his arms. What causes the itch?",
-        options: ["Bile salts build up in the blood and skin", "Unconjugated bilirubin deposits in the skin", "Histamine release from the inflamed duct", "Dry skin from dehydration", "An allergic reaction to the stone"],
-        answer: 0,
-        explanation: `<p><strong>Pruritus in obstruction comes from bile salts that cannot leave the liver.</strong> Back pressure behind the stone raises both conjugated bilirubin and bile salts in the blood. Bilirubin yellows the skin, and the bile salts cause the itch.</p>
-<p>That is why itch is a feature of cholestasis, such as a blocked duct or PBC, and not of hemolysis, where only unconjugated bilirubin rises.</p>`,
-        notes: {
-            1: "Unconjugated bilirubin rises in hemolysis, which does not itch.",
-            2: "Histamine is not the cause; bile salts are.",
-            3: "Dehydration is not part of the picture.",
-            4: "Stones do not cause allergy.",
-        },
-    },
-    {
-        id: "bd-fever",
-        condition: "choledocholithiasis",
-        kind: "reasoning",
-        stem: "A man with a known CBD stone awaiting ERCP develops a temperature of 39 °C and rigors. Why does this change his management?",
-        options: ["It means cholangitis, which needs urgent drainage", "Fever means the stone has passed, so ERCP is no longer needed", "Fever shows gallstone pancreatitis, so ERCP is avoided", "Fever means acute cholecystitis, so a cholecystostomy is needed", "Fever is expected with a duct stone and changes nothing"],
-        answer: 0,
-        explanation: `<p><strong>Fever in an obstructed duct means ascending cholangitis:</strong> bacteria multiply in the stagnant bile behind the stone and enter the blood. It needs ABX and urgent drainage.</p>
-<p>Cholangitis also puts him in the high-likelihood group, so ERCP proceeds, now as an urgent treatment that both removes the stone and lets the infected bile drain. Without drainage, pressure keeps pushing bacteria into the blood.</p>`,
-        notes: {
-            1: "A passed stone relieves obstruction; fever and rigors suggest infection behind it.",
-            2: "Pancreatitis gives epigastric pain and a raised lipase; in it, ERCP is used when there is cholangitis.",
-            3: "His stone is in the CBD; fever here means the duct is infected.",
-            4: "A duct stone alone does not cause fever; fever means infection.",
-        },
-    },
-    {
         id: "bd-gp-jaundice",
-        condition: "choledocholithiasis",
+        condition: "bile-duct-stones",
         kind: "reasoning",
         stem: "Why can a patient with gallstone pancreatitis also be jaundiced?",
         options: ["Its stone blocks both ducts", "Pancreatic enzymes digest the liver", "Pancreatitis causes hemolysis", "Vomiting concentrates the bilirubin", "The inflamed pancreas makes bilirubin"],
@@ -10797,7 +9791,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "bd-painless",
-        condition: "choledocholithiasis",
+        condition: "bile-duct-stones",
         kind: "reasoning",
         stem: "A 70-year-old man has jaundice, dark urine, and pale stools, but no pain, and his gallbladder is palpable. Why does this point away from a CBD stone?",
         options: ["It fits a tumor, which narrows the duct slowly", "Stones never cause dark urine, only tumors do", "A palpable gallbladder proves acute cholecystitis", "Stones cause jaundice only when the patient is febrile", "Pale stools are not seen with stones in the duct"],
@@ -10816,7 +9810,7 @@ const QUIZ_QUESTIONS = [
     /* --- Analysis --- */
     {
         id: "bd-set-mrcp-1",
-        condition: "choledocholithiasis",
+        condition: "bile-duct-stones",
         kind: "analysis",
         set: "bd-mrcp",
         passage: `<p>A 61-year-old woman has had two episodes of RUQ pain this week, each lasting several hours. She is afebrile and not jaundiced.</p>
@@ -10843,7 +9837,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "bd-set-mrcp-2",
-        condition: "choledocholithiasis",
+        condition: "bile-duct-stones",
         kind: "analysis",
         set: "bd-mrcp",
         stem: "MRCP shows an 8 mm stone in the distal CBD. What is the most appropriate plan?",
@@ -10860,7 +9854,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "bd-trend",
-        condition: "choledocholithiasis",
+        condition: "bile-duct-stones",
         kind: "analysis",
         stem: `<p>A 47-year-old man with sudden RUQ pain has serial bloods:</p>
 <table><thead><tr><th>Test</th><th>Day 1</th><th>Day 2</th><th>Day 3</th></tr></thead><tbody>
@@ -10882,60 +9876,11 @@ const QUIZ_QUESTIONS = [
             4: "Paracetamol toxicity gives transaminases in the thousands, without a rising ALP.",
         },
     },
-    {
-        id: "bd-gp-case",
-        condition: "choledocholithiasis",
-        kind: "analysis",
-        stem: `<p>A 52-year-old woman has severe epigastric pain radiating to her back, with vomiting. She rarely drinks alcohol. Ultrasound shows gallstones and a CBD of 7 mm.</p>
-<table><thead><tr><th>Test</th><th>Admission</th><th>48 hours</th></tr></thead><tbody>
-<tr><td>Lipase (U/L, reference under 60)</td><td>1850</td><td>420</td></tr>
-<tr><td>Bilirubin (µmol/L)</td><td>41</td><td>19</td></tr>
-<tr><td>ALP (U/L)</td><td>210</td><td>150</td></tr>
-<tr><td>Temperature</td><td>37.1 °C</td><td>36.8 °C</td></tr>
-</tbody></table>
-<p><em>Illustrative data.</em> Her pain is settling and she wants to eat.</p>
-<p>What is the most appropriate plan?</p>`,
-        options: ["Supportive care, early feeding, cholecystectomy this admission", "Urgent ERCP for every gallstone pancreatitis", "Keep her NPO until lipase is normal, then discharge", "Discharge now with elective cholecystectomy in 6 months", "Percutaneous cholecystostomy and ABX"],
-        answer: 0,
-        explanation: `<p><strong>This is mild gallstone pancreatitis with a stone that has passed,</strong> treated with IV fluids, pain relief, and early feeding, then cholecystectomy during the same admission.</p>
-<p>Her lipase is over 3 times normal, and gallstones with a cholestatic pattern point to the cause. Her bilirubin and ALP are falling and she has no fever, so there is no ongoing obstruction or cholangitis, the two reasons for ERCP. Removing the gallbladder now prevents the next stone from causing another attack.</p>`,
-        notes: {
-            1: "ERCP is only for cholangitis or ongoing obstruction; her bilirubin is falling and she is afebrile.",
-            2: "Early feeding is part of treatment; there is no need to wait for lipase to normalize.",
-            3: "Delaying cholecystectomy leaves the source in place for another attack.",
-            4: "Cholecystostomy drains an inflamed gallbladder; she has pancreatitis, not cholecystitis.",
-        },
-    },
-    {
-        id: "bd-post-chole",
-        condition: "choledocholithiasis",
-        kind: "analysis",
-        stem: `<p>Two patients have an RUQ ultrasound for vague upper abdominal discomfort. Both are afebrile, with normal bilirubin, ALP, and GGT.</p>
-<table><thead><tr><th></th><th>Patient 1</th><th>Patient 2</th></tr></thead><tbody>
-<tr><td>Gallbladder</td><td>Present, with stones</td><td>Removed 5 years ago</td></tr>
-<tr><td>CBD width</td><td>7.5 mm</td><td>7.5 mm</td></tr>
-<tr><td>Stone seen in the CBD</td><td>No</td><td>No</td></tr>
-</tbody></table>
-<p><em>Illustrative data.</em></p>
-<p>How should the duct widths be interpreted?</p>`,
-        options: ["Dilated in patient 1 only", "Normal in both, since no stone is seen in either duct", "Dilated in both, so both need ERCP", "Dilated in patient 2 only, because he has no gallbladder", "Neither can be judged without a HIDA scan"],
-        answer: 0,
-        explanation: `<p><strong>The threshold for a dilated CBD is over 6 mm with a gallbladder, and over 8 mm after cholecystectomy.</strong> So 7.5 mm is dilated in patient 1, but acceptable in patient 2, whose duct has widened after losing the gallbladder.</p>
-<p>Patient 1 therefore has a predictor of a CBD stone (a dilated duct), giving intermediate likelihood and MRCP or endoscopic ultrasound, even though no stone is seen: ultrasound shows the stone in only 15–40%.</p>`,
-        notes: {
-            1: "Ultrasound misses most duct stones, so a dilated duct matters even when no stone is seen.",
-            2: "Patient 2 is within normal limits, and dilation alone is intermediate likelihood, not ERCP.",
-            3: "The higher threshold after cholecystectomy makes patient 2 the normal one.",
-            4: "HIDA assesses the gallbladder, not duct width.",
-        },
-    },
-
-    /* ===== Ascending Cholangitis ===== */
 
     /* --- Memory --- */
     {
         id: "bch-charcot",
-        condition: "cholangitis",
+        condition: "bile-duct-stones",
         kind: "memory",
         stem: "Which three findings make up Charcot triad?",
         options: ["Fever, RUQ pain, and jaundice", "Fever, hypotension, and confusion", "Jaundice, pruritus, and pale stools", "RUQ pain, Murphy sign, and fever", "Painless jaundice, a palpable gallbladder, and weight loss"],
@@ -10956,7 +9901,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "bch-organism",
-        condition: "cholangitis",
+        condition: "bile-duct-stones",
         kind: "memory",
         stem: "A 75-year-old man with a CBD stone has fever, RUQ pain, and jaundice. Blood cultures are drawn before ABX are started. Which organism is most likely to grow?",
         options: ["Escherichia coli", "Staphylococcus aureus", "Streptococcus pneumoniae", "Candida albicans", "Neisseria meningitidis"],
@@ -10971,30 +9916,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "bch-common-cause",
-        condition: "cholangitis",
-        kind: "memory",
-        stem: "What is the most common cause of the bile duct obstruction behind ascending cholangitis?",
-        options: ["A CBD stone", "A malignant stricture", "A blocked biliary stent", "Primary sclerosing cholangitis", "A benign postoperative stricture"],
-        answer: 0,
-        explanation: `<p><strong>A CBD stone is the most common cause.</strong> Most CBD stones form in the gallbladder and pass into the duct (choledocholithiasis), where they block the flow of bile.</p>
-<p>The other causes all work the same way, by obstructing the duct and letting bile stagnate:</p>
-<ul>
-<li>Benign or malignant strictures.</li>
-<li>A blocked biliary stent, after ERCP.</li>
-<li>PSC, whose strictures hold bile behind them.</li>
-</ul>
-<p>Obstruction is the common step; infection follows because still bile lets bacteria ascend and multiply.</p>`,
-        notes: {
-            1: "Malignant strictures, such as pancreatic head cancer or cholangiocarcinoma, cause cholangitis, but less often than stones.",
-            2: "A blocked stent is a cause after ERCP, but it requires a stent to have been placed first.",
-            3: "PSC causes recurrent cholangitis behind its strictures, but it is far less common than stones.",
-            4: "Benign strictures, such as after surgery, are a recognized cause but less common than stones.",
-        },
-    },
-    {
         id: "bch-reynolds-adds",
-        condition: "cholangitis",
+        condition: "bile-duct-stones",
         kind: "memory",
         stem: "Which two findings does Reynolds pentad add to Charcot triad?",
         options: ["Hypotension and confusion", "Tachycardia and vomiting", "Pruritus and pale stools", "Hypotension and a palpable gallbladder", "Confusion and Murphy sign"],
@@ -11013,29 +9936,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "bch-charcot-freq",
-        condition: "cholangitis",
-        kind: "memory",
-        stem: "About what proportion of patients with ascending cholangitis have all three features of Charcot triad?",
-        options: ["About 25%", "About 5%", "About 50%", "About 75%", "Nearly 100%"],
-        answer: 0,
-        explanation: `<p><strong>Only about 25% of patients have the full triad.</strong> Charcot triad is specific, so when all three are present cholangitis is likely, but it is insensitive, so many patients are missed if the triad is required.</p>
-<p>This is why the diagnosis rests on the Tokyo Guidelines, which combine three kinds of evidence instead:</p>
-<ul>
-<li>Inflammation (fever, leukocytosis, CRP).</li>
-<li>Cholestasis (jaundice or cholestatic LFTs).</li>
-<li>Obstruction on imaging (dilated ducts, a stone, stricture, or stent).</li>
-</ul>`,
-        notes: {
-            1: "The triad is not that rare; about a quarter of patients have all three features.",
-            2: "Half overstates it; most patients lack at least one feature.",
-            3: "Three quarters overstates it; the triad's weakness is its low sensitivity.",
-            4: "If nearly every patient had the triad, the Tokyo Guidelines would not be needed to make the diagnosis.",
-        },
-    },
-    {
         id: "bch-definitive",
-        condition: "cholangitis",
+        condition: "bile-duct-stones",
         kind: "memory",
         stem: "What is the definitive treatment of ascending cholangitis caused by a CBD stone?",
         options: ["ERCP with stone removal or stent", "Broad-spectrum IV ABX for 14 days", "Laparoscopic cholecystectomy", "Ursodeoxycholic acid until the stone dissolves", "Percutaneous cholecystostomy"],
@@ -11050,24 +9952,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "bch-abx",
-        condition: "cholangitis",
-        kind: "memory",
-        stem: "Which is an appropriate empiric ABX for ascending cholangitis, as given on the page?",
-        options: ["IV piperacillin-tazobactam", "Oral amoxicillin for 5 days", "IV vancomycin as a single agent", "Oral nitrofurantoin twice daily", "IV fluconazole as a single agent"],
-        answer: 0,
-        explanation: `<p><strong>Broad-spectrum IV ABX, such as piperacillin-tazobactam,</strong> are started once blood cultures are taken. The choice follows the organisms: E. coli, Klebsiella, and Enterococcus ascend from the duodenum, so the drug must cover gram-negative rods, enterococci, and gut anaerobes.</p>
-<p>IV rather than oral treatment is used because the patient is septic or at risk of becoming so. ABX control the bacteremia while the obstruction is drained.</p>`,
-        notes: {
-            1: "Oral amoxicillin is too narrow for gut gram-negatives and too slow for a septic patient.",
-            2: "Vancomycin alone covers gram-positive organisms only and misses E. coli and Klebsiella.",
-            3: "Nitrofurantoin concentrates in urine and treats cystitis; it gives no useful levels in blood or bile.",
-            4: "Fluconazole is an antifungal; cholangitis is bacterial.",
-        },
-    },
-    {
         id: "bch-tokyo",
-        condition: "cholangitis",
+        condition: "bile-duct-stones",
         kind: "memory",
         stem: "The Tokyo Guidelines diagnose and grade cholangitis by combining which three kinds of evidence?",
         options: ["Inflammation, cholestasis, and obstruction on imaging", "Fever, Murphy sign, and gallbladder wall thickening", "Pain, amylase or lipase, and pancreatic necrosis on CT", "Jaundice, a palpable gallbladder, and CA 19-9", "Hypotension, lactate, and positive blood cultures"],
@@ -11087,43 +9973,11 @@ const QUIZ_QUESTIONS = [
         },
         info: "In the 2018 Tokyo Guidelines, cholangitis is definite with evidence of inflammation plus both cholestasis and imaging findings, and is graded mild (grade I), moderate (grade II), or severe (grade III, with organ dysfunction).",
     },
-    {
-        id: "bch-psc",
-        condition: "cholangitis",
-        kind: "memory",
-        stem: "A 32-year-old man with ulcerative colitis has a third episode of fever and jaundice this year. MRCP shows multiple strictures with a beaded appearance and no stones. Which condition is the cause of his obstruction?",
-        options: ["Primary sclerosing cholangitis", "Primary biliary cholangitis", "Choledocholithiasis", "Cholangiocarcinoma", "Autoimmune hepatitis with cirrhosis"],
-        answer: 0,
-        explanation: `<p><strong>Beaded strictures in a patient with ulcerative colitis are PSC.</strong> Inflammation and fibrosis narrow the bile ducts in many places, and bile stagnates behind each stricture, so bacteria can ascend and infect it. This is why PSC causes recurrent bacterial cholangitis.</p>
-<p>PSC is one of the four causes of obstruction on the page, alongside CBD stones, strictures, and a blocked stent. It also raises the risk of cholangiocarcinoma, so a new dominant stricture needs investigation.</p>`,
-        notes: {
-            1: "PBC destroys small intrahepatic ducts in middle-aged women with AMA; it does not cause beaded large-duct strictures.",
-            2: "MRCP shows no stones, and stones would not explain multiple beaded strictures.",
-            3: "Cholangiocarcinoma usually forms one dominant stricture or mass; it is a complication of PSC rather than this picture.",
-            4: "Autoimmune hepatitis causes a hepatocellular pattern of injury, not duct strictures.",
-        },
-    },
-    {
-        id: "bch-mild-response",
-        condition: "cholangitis",
-        kind: "memory",
-        stem: "In mild ascending cholangitis, about what proportion of patients respond to ABX alone at first?",
-        options: ["80–90%", "10–20%", "30–40%", "50–60%", "Under 5%"],
-        answer: 0,
-        explanation: `<p><strong>80–90% of mild cases respond to ABX,</strong> so drainage can be planned rather than done urgently. The infection settles once ABX control the bacteria, as long as the obstruction is partial and pressure in the duct is not high.</p>
-<p>Response does not remove the cause, so the bile is still drained, usually by ERCP, before discharge. Severe cholangitis, with shock or organ failure, is different: it needs urgent drainage.</p>`,
-        notes: {
-            1: "Most mild cases respond; a 10–20% response would make urgent drainage necessary for everyone.",
-            2: "30–40% understates it; the large majority of mild cases settle with ABX.",
-            3: "50–60% understates it; the figure on the page is 80–90%.",
-            4: "If almost no one responded, ABX would have no role before drainage.",
-        },
-    },
 
     /* --- Reasoning --- */
     {
         id: "bch-reynolds",
-        condition: "cholangitis",
+        condition: "bile-duct-stones",
         kind: "reasoning",
         stem: "A 71-year-old woman has fever of 39.2 °C, RUQ pain, and jaundice. Over several hours she becomes confused, and her BP falls to 82/48 despite IV fluids. Ultrasound shows a dilated CBD with a stone. IV ABX and vasopressors are started. Which is the most important next step?",
         options: ["Urgent ERCP for biliary drainage", "Elective cholecystectomy in 6 weeks", "Continue ABX and drain once she has stabilized", "HIDA scan to confirm obstruction", "Ursodeoxycholic acid to dissolve the stone"],
@@ -11143,47 +9997,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "bch-recurrence",
-        condition: "cholangitis",
-        kind: "reasoning",
-        stem: "A 59-year-old woman recovered from ascending cholangitis after ERCP with removal of a CBD stone. Ultrasound shows more stones in her gallbladder. Which step best prevents another episode?",
-        options: ["Cholecystectomy once she has recovered", "Long-term oral ABX", "Repeat ERCP every 6 months", "Ursodeoxycholic acid taken long term", "Repeat ultrasound every year to watch for stones"],
-        answer: 0,
-        explanation: `<p><strong>Cholecystectomy prevents recurrence when gallstones were the cause.</strong> Most CBD stones form in the gallbladder and pass into the duct, so while her gallbladder holds stones, another can pass, obstruct the CBD, and cause cholangitis again.</p>
-<p>ERCP cleared the duct, which treated this episode, but it left the source behind. Removing the gallbladder once she has recovered removes the source. The same reasoning applies after gallstone pancreatitis and choledocholithiasis.</p>`,
-        notes: {
-            1: "Long-term ABX would not stop a stone from obstructing the duct, and they promote resistance.",
-            2: "Repeated ERCP carries risks each time and does not stop stones forming in the gallbladder.",
-            3: "Ursodeoxycholic acid dissolves few stones, works slowly, and stones recur when it stops; it is not a substitute for surgery.",
-            4: "Watching leaves the source of stones in place, so another obstruction is likely.",
-        },
-    },
-    {
-        id: "bch-mech-stasis",
-        condition: "cholangitis",
-        kind: "reasoning",
-        stem: "Bacteria from the duodenum reach the bile duct from time to time in healthy people without causing cholangitis. Why does obstruction allow infection to take hold?",
-        options: ["Still bile lets ascending bacteria multiply instead of being flushed out", "Obstruction makes bile acidic, which favors gram-negative growth", "Obstruction lets bacteria reach the bile from the portal vein only", "A blocked duct stops IgA reaching the duodenum", "Stones carry bacteria with them from the gallbladder"],
-        answer: 0,
-        explanation: `<p><strong>Flowing bile flushes bacteria back into the duodenum; a blocked duct holds bile still,</strong> so bacteria that ascend can multiply in it.</p>
-<p>The page's steps follow from there:</p>
-<ul>
-<li><strong>Obstruction and stasis:</strong> bile stops moving.</li>
-<li><strong>Ascending bacteria:</strong> E. coli, Klebsiella, and Enterococcus reach the stagnant bile.</li>
-<li><strong>Raised pressure:</strong> infected bile under pressure causes fever, RUQ pain, and jaundice.</li>
-<li><strong>Bacteremia:</strong> bacteria and toxins enter the blood, causing sepsis.</li>
-</ul>
-<p>This is why treatment centers on drainage: restoring flow removes the condition the infection depends on.</p>`,
-        notes: {
-            1: "The problem is that bile stops moving, not a change in its acidity.",
-            2: "The page describes bacteria ascending from the duodenum, not arriving only from the portal vein.",
-            3: "Bile does carry IgA, but the key mechanism on the page is stasis, which lets bacteria multiply.",
-            4: "Stones cause obstruction; the bacteria come up from the duodenum into the still bile.",
-        },
-    },
-    {
         id: "bch-vs-cholecystitis",
-        condition: "cholangitis",
+        condition: "bile-duct-stones",
         kind: "reasoning",
         stem: "A 52-year-old woman with gallstones has fever and RUQ pain. Bilirubin and ALP are normal, and ultrasound shows a thickened gallbladder wall with a normal-caliber CBD. Why is cholangitis unlikely?",
         options: ["Nothing shows bile duct obstruction: no jaundice and a normal CBD", "Cholangitis never causes fever above 38 °C", "RUQ pain occurs only in cholecystitis", "A thickened gallbladder wall rules out any CBD disease", "Cholangitis is unlikely in women under 60"],
@@ -11202,29 +10017,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "bch-new-fever",
-        condition: "cholangitis",
-        kind: "reasoning",
-        stem: "A 66-year-old man admitted with jaundice and RUQ pain from a CBD stone is waiting for ERCP. Overnight he develops a temperature of 38.8 °C with rigors. His BP is 128/76. What is the most appropriate response?",
-        options: ["Take blood cultures and start IV ABX, and bring the ERCP forward", "Give paracetamol and keep the ERCP on its planned day", "Arrange cholecystectomy for the next list", "Start oral ABX and discharge him to return for ERCP", "Repeat ultrasound before changing anything"],
-        answer: 0,
-        explanation: `<p><strong>New fever in a patient with a CBD stone means the obstructed bile has become infected:</strong> choledocholithiasis has become cholangitis.</p>
-<p>An uninfected CBD stone causes jaundice and pain without fever, so fever marks the step to infection. He now needs:</p>
-<ul>
-<li>Blood cultures, then broad-spectrum IV ABX.</li>
-<li>Drainage by ERCP; he is not in shock, so it is planned soon rather than as an emergency, but waiting for a routine list is no longer appropriate.</li>
-</ul>
-<p>Watching for hypotension and confusion matters, because they mean septic shock and urgent drainage.</p>`,
-        notes: {
-            1: "Treating the fever without ABX ignores the infection in obstructed bile.",
-            2: "Cholecystectomy prevents recurrence later; it does not drain the infected CBD.",
-            3: "Discharging a febrile patient with an obstructed, infected duct risks septic shock.",
-            4: "The cause is already known; repeating imaging delays ABX and drainage.",
-        },
-    },
-    {
         id: "bch-mild-timing",
-        condition: "cholangitis",
+        condition: "bile-duct-stones",
         kind: "reasoning",
         stem: "A 58-year-old woman with mild cholangitis from a CBD stone improves on IV ABX: after 48 hours she is afebrile, her pain has settled, and her bilirubin is falling. What should happen before discharge?",
         options: ["Drainage, usually by ERCP with stone removal", "No further treatment, since the infection has resolved", "A 6-month course of oral ABX", "Discharge with repeat ultrasound in 3 months", "Percutaneous transhepatic drainage as first choice"],
@@ -11239,24 +10033,8 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "bch-imaging",
-        condition: "cholangitis",
-        kind: "reasoning",
-        stem: "A 70-year-old man has fever, jaundice, and cholestatic LFTs. Ultrasound shows a dilated CBD, but bowel gas hides its lower end and no cause is seen. He is stable. Which test best shows the cause of the obstruction?",
-        options: ["MRCP", "HIDA scan", "Plain abdominal x-ray", "Repeat ultrasound in 2 weeks", "Upper GI endoscopy"],
-        answer: 0,
-        explanation: `<p><strong>MRCP is used when ultrasound or CT leaves the cause of obstruction unclear.</strong> It shows the whole biliary tree without instrumentation, so it can show a stone, a stricture, or a mass at the lower end of the duct that bowel gas hid on ultrasound.</p>
-<p>The order of imaging follows the page: ultrasound or CT first to show dilated bile ducts, then MRCP if the cause is not clear. Knowing the cause decides the drainage: a stone can be removed at ERCP, while a stricture may need brushings and a stent.</p>`,
-        notes: {
-            1: "A HIDA scan tests cystic duct patency in cholecystitis; it does not show what is blocking the CBD.",
-            2: "Plain x-ray misses most gallstones and does not show the ducts.",
-            3: "Waiting 2 weeks delays drainage in an infected, obstructed duct.",
-            4: "Upper GI endoscopy views the duodenal lumen but not the bile duct.",
-        },
-    },
-    {
         id: "bch-blocked-stent",
-        condition: "cholangitis",
+        condition: "bile-duct-stones",
         kind: "reasoning",
         stem: "A 74-year-old man had a plastic biliary stent placed at ERCP 4 months ago for a malignant stricture. He now has fever, rigors, and returning jaundice. What is the most likely cause of his cholangitis?",
         options: ["The stent has blocked, obstructing bile flow again", "The stent has introduced Staphylococcus aureus from the skin", "The tumor has spread to the liver, causing hepatitis", "Cholecystitis from the stent covering the cystic duct", "An allergic reaction to the stent material"],
@@ -11270,53 +10048,11 @@ const QUIZ_QUESTIONS = [
             4: "Stents do not cause allergic cholangitis; occlusion is the expected problem.",
         },
     },
-    {
-        id: "bch-triad-absent",
-        condition: "cholangitis",
-        kind: "reasoning",
-        stem: "An 86-year-old woman is admitted with confusion and fever. She has no abdominal pain, but bilirubin and ALP are raised, and ultrasound shows a dilated CBD with a stone. A colleague says cholangitis is unlikely because she does not have Charcot triad. Why is this reasoning wrong?",
-        options: ["The triad is incomplete in most patients; inflammation, cholestasis, and duct dilation make the diagnosis", "Charcot triad applies only to patients under 65", "The triad requires a positive blood culture to be complete", "Confusion replaces RUQ pain in Charcot triad in older patients", "Cholangitis is diagnosed by ERCP alone, never by clinical features"],
-        answer: 0,
-        explanation: `<p><strong>All three features of Charcot triad appear in only about 25% of patients,</strong> so missing one does not exclude cholangitis. The Tokyo Guidelines diagnose it from the evidence she has:</p>
-<ul>
-<li><strong>Inflammation:</strong> fever.</li>
-<li><strong>Cholestasis:</strong> raised bilirubin and ALP.</li>
-<li><strong>Obstruction:</strong> a dilated CBD with a stone on ultrasound.</li>
-</ul>
-<p>Her confusion is a warning sign. With hypotension it would complete Reynolds pentad, which means septic shock.</p>`,
-        notes: {
-            1: "The triad has no age limit; older patients are simply more likely to present without all three.",
-            2: "Blood cultures are part of the workup, not part of Charcot triad.",
-            3: "Confusion is part of Reynolds pentad, not a substitute within the triad.",
-            4: "The diagnosis is clinical, laboratory, and radiological; ERCP is treatment.",
-        },
-    },
-    {
-        id: "bch-vasopressors",
-        condition: "cholangitis",
-        kind: "reasoning",
-        stem: "A 68-year-old man with cholangitis has a BP of 78/44 after 2 L of IV fluids, with a lactate of 5.2 mmol/L. Blood cultures are taken and IV ABX are given. Urgent ERCP is being arranged. What should be done for his BP while he waits?",
-        options: ["Start vasopressors", "Give no more treatment until after ERCP", "Give a further 6 L of fluid rapidly before anything else", "Start a beta blocker for his tachycardia", "Give IV albumin and stop the ABX"],
-        answer: 0,
-        explanation: `<p><strong>Hypotension that persists after fluid resuscitation is septic shock, and it needs vasopressors.</strong> Treatment runs in parallel, not one step at a time:</p>
-<ul>
-<li><strong>Resuscitate:</strong> IV fluids, then vasopressors if he remains in shock.</li>
-<li><strong>Treat infection:</strong> broad-spectrum IV ABX.</li>
-<li><strong>Drain the bile:</strong> urgent ERCP, because shock means severe cholangitis.</li>
-</ul>
-<p>Supporting perfusion keeps him alive until drainage removes the source.</p>`,
-        notes: {
-            1: "Shock must be treated while drainage is arranged; waiting risks organ failure.",
-            2: "More fluid can be given if he is fluid responsive, but persisting shock after 2 L needs vasopressors rather than unlimited fluid.",
-            3: "Tachycardia compensates for septic shock; a beta blocker would worsen hypotension.",
-            4: "ABX are essential in cholangitis; albumin is no substitute for vasopressors.",
-        },
-    },
 
     /* --- Analysis --- */
     {
         id: "bch-set-shock-1",
-        condition: "cholangitis",
+        condition: "bile-duct-stones",
         kind: "analysis",
         set: "bch-shock",
         passage: `<p>A 79-year-old woman with known gallstones is brought in with 1 day of rigors and RUQ pain. Her family says she has become yellow and muddled. Temperature 39.4 °C, heart rate 122, BP 84/50 after 2 L of IV fluids, and she is confused. Ultrasound shows a CBD of 13 mm with a stone at its lower end.</p>
@@ -11350,7 +10086,7 @@ const QUIZ_QUESTIONS = [
     },
     {
         id: "bch-set-shock-2",
-        condition: "cholangitis",
+        condition: "bile-duct-stones",
         kind: "analysis",
         set: "bch-shock",
         stem: "She is started on vasopressors and IV piperacillin-tazobactam. At ERCP the endoscopist cannot reach the bile duct, because a large duodenal diverticulum distorts the ampulla. Which is the most appropriate next step?",
@@ -11363,535 +10099,6 @@ const QUIZ_QUESTIONS = [
             2: "Surgery in a patient on vasopressors carries high risk and is not the first alternative to failed ERCP; cholecystectomy is for after recovery.",
             3: "Cholecystostomy drains the gallbladder, which is above the cystic duct; it does not relieve a stone at the lower end of the CBD.",
             4: "Oral ABX are inadequate in septic shock, and the obstruction is untreated.",
-        },
-    },
-    {
-        id: "bch-three-patients",
-        condition: "cholangitis",
-        kind: "analysis",
-        stem: `<p>Three patients with gallstones have RUQ pain.</p>
-<table><thead><tr><th>Patient</th><th>Temperature</th><th>WCC (× 10⁹/L)</th><th>Bilirubin (µmol/L)</th><th>ALP (IU/L)</th><th>Ultrasound</th></tr></thead><tbody>
-<tr><td>A</td><td>38.6 °C</td><td>14.2</td><td>12</td><td>95</td><td>Thick-walled gallbladder; CBD 5 mm</td></tr>
-<tr><td>B</td><td>36.9 °C</td><td>8.1</td><td>68</td><td>390</td><td>CBD 11 mm with a stone</td></tr>
-<tr><td>C</td><td>39.1 °C</td><td>17.8</td><td>82</td><td>440</td><td>CBD 12 mm with a stone</td></tr>
-</tbody></table>
-<p><em>Illustrative data.</em></p><p>Which interpretation is correct?</p>`,
-        options: ["A has cholecystitis, B choledocholithiasis, and C cholangitis", "A has cholangitis, B cholecystitis, and C choledocholithiasis", "A has cholecystitis, while B and C both have cholangitis of differing severity", "All three have cholangitis of differing severity", "A has choledocholithiasis, B cholangitis, and C cholecystitis"],
-        answer: 0,
-        explanation: `<p><strong>Cholangitis needs both obstruction and infection,</strong> and only patient C has both.</p>
-<ul>
-<li><strong>A:</strong> fever and leukocytosis, but normal bilirubin and ALP and a normal CBD. The stone blocks the cystic duct: cholecystitis.</li>
-<li><strong>B:</strong> a stone in a dilated CBD with cholestatic LFTs, but no fever or leukocytosis. The duct is blocked but not infected: choledocholithiasis.</li>
-<li><strong>C:</strong> the same obstruction with fever and leukocytosis: cholangitis, which needs ABX and drainage.</li>
-</ul>
-<p>Fever marks the step from choledocholithiasis to cholangitis.</p>`,
-        notes: {
-            1: "A has no cholestasis or duct dilation, so it cannot be cholangitis, and B has no signs of inflammation.",
-            2: "B has an obstructed CBD but no fever or leukocytosis, so the bile is not shown to be infected.",
-            3: "A has normal bilirubin and a normal CBD, and B has no inflammation.",
-            4: "A has no CBD obstruction, and C, with fever and leukocytosis, is the infected one rather than an uncomplicated stone.",
-        },
-    },
-    {
-        id: "bch-no-response",
-        condition: "cholangitis",
-        kind: "analysis",
-        stem: `<p>A 64-year-old man is admitted with mild cholangitis from a CBD stone and started on IV piperacillin-tazobactam, with ERCP planned before discharge. He stays alert, with a BP above 120 systolic.</p>
-<table><thead><tr><th></th><th>Admission</th><th>24 hours</th><th>48 hours</th></tr></thead><tbody>
-<tr><td>Temperature</td><td>38.4 °C</td><td>38.9 °C</td><td>39.2 °C</td></tr>
-<tr><td>WCC (× 10⁹/L)</td><td>13.1</td><td>15.4</td><td>17.9</td></tr>
-<tr><td>Bilirubin (µmol/L)</td><td>48</td><td>66</td><td>85</td></tr>
-<tr><td>Creatinine (µmol/L)</td><td>78</td><td>80</td><td>84</td></tr>
-</tbody></table>
-<p><em>Illustrative data.</em></p><p>What is the most appropriate next step?</p>`,
-        options: ["Drain the bile duct now, by ERCP", "Keep the ERCP for the day of discharge", "Add oral metronidazole and reassess in a week", "Arrange MRCP to confirm the diagnosis first", "Proceed directly to cholecystectomy"],
-        answer: 0,
-        explanation: `<p><strong>He has not responded to ABX, so drainage cannot wait.</strong> 80–90% of mild cases respond to ABX; he is in the other 10–20%. His fever, WCC, and bilirubin are all rising, which shows that infected bile is still trapped behind the stone.</p>
-<p>The rule on the page is that response allows drainage before discharge; failure to respond removes that option. ERCP now relieves the obstruction before he reaches septic shock or organ failure, which would make drainage an emergency.</p>`,
-        notes: {
-            1: "Waiting suits patients who are improving; he is getting worse on ABX.",
-            2: "The ABX already cover gut anaerobes; the problem is undrained obstruction, not coverage.",
-            3: "The cause is already known, and MRCP would delay drainage in a patient who is getting worse.",
-            4: "Cholecystectomy prevents recurrence after recovery; it does not clear the stone in the CBD.",
-        },
-    },
-    {
-        id: "bch-psc-recurrent",
-        condition: "cholangitis",
-        kind: "analysis",
-        stem: `<p>A 38-year-old woman with ulcerative colitis has had four episodes of fever and jaundice in 18 months, each settling on IV ABX. Ultrasound shows no gallstones. MRCP shows several short strictures of the intrahepatic and extrahepatic ducts with dilated segments between them, and no stones. Bilirubin is 52 µmol/L and ALP 380 IU/L between episodes.</p><p>Which explanation best fits her recurrent episodes?</p>`,
-        options: ["Bile stagnates behind PSC strictures, so bacteria repeatedly ascend into it", "Small stones keep passing from her gallbladder into the CBD", "Each course of ABX selects resistant organisms that persist in the gallbladder", "Her colitis spreads bacteria to the bile through the bloodstream", "A blocked biliary stent from earlier ERCP is the cause"],
-        answer: 0,
-        explanation: `<p><strong>PSC strictures hold bile still behind them,</strong> which is the condition for cholangitis: obstruction and stasis, then bacteria ascending from the duodenum. Because the strictures stay, the episodes keep coming back, and ABX settle each one without removing the cause.</p>
-<p>The clues are ulcerative colitis, multiple strictures with dilated segments between them (the beaded pattern), cholestatic LFTs between attacks, and no stones. A dominant new stricture in PSC would need tissue sampling, because PSC raises the risk of cholangiocarcinoma.</p>`,
-        notes: {
-            1: "Ultrasound shows no gallstones, and MRCP shows strictures rather than stones.",
-            2: "The bacteria ascend from the duodenum into stagnant bile; the gallbladder is not the reservoir here.",
-            3: "The page describes bacteria ascending from the duodenum, and the strictures explain why the bile is stagnant.",
-            4: "Nothing in her history mentions a stent, and multiple strictures explain the picture.",
-        },
-    },
-
-    /* ===== Biliary Fistulas ===== */
-
-    /* --- Memory --- */
-    {
-        id: "bf-type",
-        condition: "biliary-fistula",
-        kind: "memory",
-        stem: "Which type of biliary fistula is the most common?",
-        options: ["Cholecystoduodenal", "Cholecystocolic", "Cholecystogastric", "Choledochoduodenal", "Cholecystocholedochal"],
-        answer: 0,
-        explanation: `<p><strong>Cholecystoduodenal fistulas are the most common, at about 68%.</strong> The gallbladder lies against the duodenum, so when chronic inflammation and a large stone erode through its wall, the duodenum is usually the organ it opens into.</p>
-<ul>
-<li><strong>Cholecystoduodenal:</strong> ~68%; the main route for gallstone ileus.</li>
-<li><strong>Cholecystocolic:</strong> ~17%; bile acid diarrhea.</li>
-<li><strong>Cholecystogastric:</strong> ~5%; gastric outlet obstruction.</li>
-</ul>`,
-        notes: {
-            1: "Cholecystocolic fistulas are second, at about 17%.",
-            2: "Cholecystogastric fistulas are about 5%.",
-            3: "Choledochoduodenal fistulas join the CBD to the duodenum, usually from a penetrating duodenal ulcer, and are less common.",
-            4: "Cholecystocholedochal fistulas are the advanced stage of Mirizzi syndrome and are uncommon.",
-        },
-    },
-    {
-        id: "bf-bouveret",
-        condition: "biliary-fistula",
-        kind: "memory",
-        stem: "An 80-year-old man with untreated gallstones has 2 days of repeated vomiting and epigastric fullness. CT shows pneumobilia, a distended stomach, and a large gallstone impacted in the duodenal bulb. What is the diagnosis?",
-        options: ["Bouveret syndrome", "Mirizzi syndrome", "Gallstone ileus at the terminal ileum", "Ascending cholangitis", "Gallstone pancreatitis"],
-        answer: 0,
-        explanation: `<p><strong>Bouveret syndrome is gastric outlet obstruction from a gallstone</strong> that has passed through a cholecystoduodenal fistula and lodged in the pylorus or duodenum. Because the blockage is high, the picture is vomiting and epigastric fullness, not the distended abdomen of a distal small bowel obstruction.</p>
-<p>Pneumobilia shows that the biliary tree now connects with the gut. It is treated by endoscopic stone removal first, with surgery if that fails.</p>`,
-        notes: {
-            1: "Mirizzi syndrome is a stone in the cystic duct or gallbladder neck compressing the common hepatic duct, causing jaundice rather than vomiting.",
-            2: "Gallstone ileus is the same process with the stone lodged lower, at the terminal ileum, causing small bowel obstruction.",
-            3: "Cholangitis causes fever, RUQ pain, and jaundice, not gastric outlet obstruction.",
-            4: "Gallstone pancreatitis causes epigastric pain radiating to the back with raised lipase, not a stone in the duodenal bulb.",
-        },
-    },
-    {
-        id: "bf-rigler",
-        condition: "biliary-fistula",
-        kind: "memory",
-        stem: "Which three findings make up Rigler triad?",
-        options: ["Pneumobilia, small bowel obstruction, and a gallstone outside the gallbladder", "Fever, RUQ pain, and jaundice", "Pneumobilia, a distended stomach, and pancreatitis", "Gallbladder wall thickening, pericholecystic fluid, and a stone in the neck of the gallbladder", "Free air, colonic dilation, and a calcified gallbladder"],
-        answer: 0,
-        explanation: `<p><strong>Rigler triad is pneumobilia, small bowel obstruction, and an ectopic gallstone:</strong> the imaging signature of gallstone ileus.</p>
-<ul>
-<li><strong>Pneumobilia:</strong> air from the bowel enters the biliary tree through the fistula.</li>
-<li><strong>Small bowel obstruction:</strong> the stone blocks the lumen, usually at the terminal ileum.</li>
-<li><strong>Ectopic gallstone:</strong> the stone itself, in the bowel.</li>
-</ul>
-<p>CT detects the triad with a sensitivity of about 93%; a plain x-ray may also show it.</p>`,
-        notes: {
-            1: "Fever, RUQ pain, and jaundice are Charcot triad of cholangitis.",
-            2: "A distended stomach with a stone higher up suggests Bouveret syndrome, and pancreatitis is not part of the triad.",
-            3: "These are ultrasound signs of acute cholecystitis.",
-            4: "Free air suggests perforation, and a calcified wall is a porcelain gallbladder.",
-        },
-    },
-    {
-        id: "bf-ileus-site",
-        condition: "biliary-fistula",
-        kind: "memory",
-        stem: "Where does the stone usually impact in gallstone ileus?",
-        options: ["Terminal ileum", "Duodenal bulb", "Duodenojejunal flexure", "Sigmoid colon", "Gastric antrum"],
-        answer: 0,
-        explanation: `<p><strong>Gallstone ileus usually impacts at the terminal ileum.</strong> A stone that enters the duodenum through a fistula travels down the small bowel until it meets a lumen too narrow to pass, and the terminal ileum, at the ileocecal valve, is the narrowest part of the small bowel.</p>
-<p>The result is small bowel obstruction with CAVO: colicky pain, abdominal distention, vomiting, and obstipation. A stone that lodges higher, in the pylorus or duodenum, causes Bouveret syndrome instead.</p>`,
-        notes: {
-            1: "A stone impacted in the duodenal bulb is Bouveret syndrome, a gastric outlet obstruction.",
-            2: "The proximal small bowel is wider, so stones usually pass it.",
-            3: "Most stones that reach the colon have already passed the narrowest point and can pass in the stool.",
-            4: "A stone in the stomach or antrum, from a cholecystogastric fistula, can cause gastric outlet obstruction, but this is not gallstone ileus.",
-        },
-    },
-    {
-        id: "bf-colic-pct",
-        condition: "biliary-fistula",
-        kind: "memory",
-        stem: "Which biliary fistula is the second most common, and can cause diarrhea?",
-        options: ["Cholecystocolic", "Cholecystogastric", "Cholecystoduodenal", "Choledochoduodenal", "Cholecystocholedochal"],
-        answer: 0,
-        explanation: `<p><strong>Cholecystocolic fistulas make up about 17% and cause bile acid diarrhea.</strong> The tract joins the gallbladder to the colon, usually the hepatic flexure, which lies close to it.</p>
-<p>Bile then drains straight into the colon, bypassing the terminal ileum where bile salts are normally reabsorbed. Bile salts in the colon drive water secretion, causing diarrhea. Stones may also pass in the stool, because the colon is wide enough for them.</p>`,
-        notes: {
-            1: "Cholecystogastric fistulas are about 5% and can cause gastric outlet obstruction.",
-            2: "Cholecystoduodenal fistulas are the most common, not the second, and are linked to gallstone ileus rather than diarrhea.",
-            3: "Choledochoduodenal fistulas come from a penetrating duodenal ulcer or CBD stones.",
-            4: "Cholecystocholedochal fistulas are advanced Mirizzi syndrome and drain into the CBD, not the colon.",
-        },
-    },
-    {
-        id: "bf-pneumobilia",
-        condition: "biliary-fistula",
-        kind: "memory",
-        stem: "Which CT finding suggests a biliary-enteric fistula?",
-        options: ["Pneumobilia", "Pericholecystic fluid", "A calcified gallbladder wall", "A double duct sign", "Pancreatic necrosis"],
-        answer: 0,
-        explanation: `<p><strong>Pneumobilia, air in the biliary tree, suggests a fistula.</strong> The bile ducts normally contain no air, because the sphincter of Oddi keeps the gut closed off from them. A fistula opens a direct path, so gas from the bowel enters the gallbladder and ducts.</p>
-<p>CT abdomen is the test for a suspected fistula. The opening itself is then seen by ERCP or upper endoscopy. The same open path lets gut bacteria in, which is why fistulas cause recurrent cholangitis.</p>`,
-        notes: {
-            1: "Pericholecystic fluid is a sign of acute cholecystitis.",
-            2: "A calcified wall is a porcelain gallbladder, linked to gallbladder carcinoma.",
-            3: "The double duct sign, with both the CBD and pancreatic duct dilated, suggests a periampullary tumor.",
-            4: "Necrosis is a finding in severe acute pancreatitis.",
-        },
-    },
-    {
-        id: "bf-main-cause",
-        condition: "biliary-fistula",
-        kind: "memory",
-        stem: "What is the most common cause of biliary fistulas?",
-        options: ["Gallstones, especially large ones", "Peptic ulcer disease of the duodenum", "Crohn disease of the terminal ileum", "Malignancy", "Trauma or surgery"],
-        answer: 0,
-        explanation: `<p><strong>Gallstones cause most biliary fistulas, especially large stones.</strong> Repeated inflammation weakens the gallbladder wall, and a large stone pressing on it erodes through into an organ alongside, usually the duodenum.</p>
-<p>The other causes on the page are peptic ulcer disease (a penetrating duodenal ulcer can form a choledochoduodenal fistula), malignancy, trauma or surgery, and Crohn disease, which forms fistulas through transmural inflammation.</p>`,
-        notes: {
-            1: "A penetrating duodenal ulcer can form a choledochoduodenal fistula, but this is much less common than gallstones.",
-            2: "Crohn disease forms fistulas by transmural inflammation, but rarely into the biliary tree.",
-            3: "Tumors can erode between organs, but they cause a minority of biliary fistulas.",
-            4: "Trauma or surgery is a recognized cause, but less common than gallstones.",
-        },
-    },
-    {
-        id: "bf-choledochoduodenal",
-        condition: "biliary-fistula",
-        kind: "memory",
-        stem: "A penetrating ulcer on the posterior wall of the duodenum erodes into the bile duct. Which fistula forms?",
-        options: ["Choledochoduodenal", "Cholecystoduodenal", "Cholecystocolic", "Cholecystocholedochal", "Cholecystogastric"],
-        answer: 0,
-        explanation: `<p><strong>A fistula between the CBD and the duodenum is choledochoduodenal.</strong> The distal CBD runs behind the first and second parts of the duodenum, so a penetrating posterior duodenal ulcer can erode straight into it. CBD stones are the other cause on the page.</p>
-<p>The names describe the two ends: "cholecysto" is the gallbladder and "choledocho" the common bile duct. The gallbladder is not involved here, so the fistula cannot be cholecysto-anything.</p>`,
-        notes: {
-            1: "A cholecystoduodenal fistula starts in the gallbladder, not the CBD; it is the usual result of a large gallstone.",
-            2: "A cholecystocolic fistula joins the gallbladder and colon.",
-            3: "A cholecystocholedochal fistula joins the gallbladder and CBD, in advanced Mirizzi syndrome.",
-            4: "A cholecystogastric fistula joins the gallbladder and stomach.",
-        },
-    },
-    {
-        id: "bf-mirizzi",
-        condition: "biliary-fistula",
-        kind: "memory",
-        stem: "Advanced Mirizzi syndrome, in which a stone erodes from the gallbladder into the bile duct, produces which fistula?",
-        options: ["Cholecystocholedochal", "Choledochoduodenal", "Cholecystoduodenal", "Cholecystogastric", "Cholecystocolic"],
-        answer: 0,
-        explanation: `<p><strong>Advanced Mirizzi syndrome forms a cholecystocholedochal fistula,</strong> between the gallbladder and the CBD.</p>
-<p>In Mirizzi syndrome a stone impacted in the gallbladder neck or cystic duct presses on the common hepatic duct alongside it, causing obstructive jaundice. With chronic inflammation and pressure, the stone can erode through the shared wall, which follows the page's mechanism for every fistula: inflammation weakens the wall, and a large stone erodes through it.</p>`,
-        notes: {
-            1: "A choledochoduodenal fistula joins the CBD to the duodenum, usually from a penetrating duodenal ulcer.",
-            2: "A cholecystoduodenal fistula joins the gallbladder to the duodenum; it is the most common type, but not the Mirizzi one.",
-            3: "A cholecystogastric fistula joins the gallbladder and stomach.",
-            4: "A cholecystocolic fistula joins the gallbladder and colon.",
-        },
-    },
-    {
-        id: "bf-ileus-patient",
-        condition: "biliary-fistula",
-        kind: "memory",
-        stem: "Which patient is most typical of gallstone ileus?",
-        options: ["An older woman with a gallstone over 2 cm", "A young man with Crohn disease", "A middle-aged man after a recent ERCP", "A young woman with small gallbladder stones", "A child with a choledochal cyst"],
-        answer: 0,
-        explanation: `<p><strong>Gallstone ileus mostly affects older women with stones over 2 cm.</strong> Both facts follow from how it happens:</p>
-<ul>
-<li><strong>Older women:</strong> gallstones are more common in women, and a fistula takes years of chronic inflammation to form.</li>
-<li><strong>Stones over 2 cm:</strong> a large stone both erodes the wall and is too big to pass the terminal ileum. Smaller stones usually pass through the bowel.</li>
-</ul>
-<p>It presents as small bowel obstruction (CAVO), often in a patient with no previous abdominal surgery.</p>`,
-        notes: {
-            1: "Crohn disease causes fistulas and obstruction through transmural inflammation, but not gallstone ileus.",
-            2: "ERCP and sphincterotomy can let air into the ducts, but not cause a gallstone to obstruct the bowel.",
-            3: "Small stones are the ones that usually pass through the bowel without obstructing it.",
-            4: "Choledochal cysts are a risk factor for cholangiocarcinoma, not gallstone ileus.",
-        },
-    },
-
-    /* --- Reasoning --- */
-    {
-        id: "bf-colic-diarrhea",
-        condition: "biliary-fistula",
-        kind: "reasoning",
-        stem: "An 81-year-old woman with long-standing gallstones has chronic watery diarrhea and weight loss. Imaging shows pneumobilia and a tract between the gallbladder and the hepatic flexure of the colon. Which best explains her diarrhea?",
-        options: ["Bile salts entering the colon without passing the ileum", "Bacterial overgrowth in the stomach", "Pancreatic enzyme deficiency", "Partial small bowel obstruction", "Lactose intolerance after injury to the lining of the colon"],
-        answer: 0,
-        explanation: `<p><strong>A cholecystocolic fistula delivers bile straight into the colon,</strong> bypassing the terminal ileum where bile salts are normally reabsorbed.</p>
-<ul>
-<li><strong>Bile salts in the colon</strong> stimulate water and electrolyte secretion, causing bile acid diarrhea.</li>
-<li><strong>Less bile reaching the small bowel</strong> means fats are absorbed less well, adding to weight loss.</li>
-</ul>
-<p>This is a rare cause of chronic diarrhea to remember in older patients with gallstones. Stones may also pass in the stool.</p>`,
-        notes: {
-            1: "Bacterial overgrowth affects the small intestine, and nothing here points to it; the fistula explains the diarrhea.",
-            2: "Pancreatic insufficiency causes steatorrhea, but her pancreas is not involved.",
-            3: "Obstruction causes vomiting, distention, and obstipation rather than chronic watery diarrhea.",
-            4: "Nothing suggests lactose intolerance; the fistula sends bile salts into the colon.",
-        },
-    },
-    {
-        id: "bf-ileus-tx",
-        condition: "biliary-fistula",
-        kind: "reasoning",
-        stem: "A 79-year-old woman with heart failure has small bowel obstruction. CT shows pneumobilia, dilated small bowel, and a 3.5-cm gallstone in the terminal ileum. She is resuscitated. Which operation is most appropriate?",
-        options: ["Enterolithotomy now, with fistula repair later if needed", "Cholecystectomy and fistula repair as the only procedure", "Right hemicolectomy", "Colonoscopic removal of the stone", "Enterolithotomy, cholecystectomy, and fistula repair together"],
-        answer: 0,
-        explanation: `<p><strong>Gallstone ileus is treated by enterolithotomy first, usually open:</strong> the bowel is opened over the stone, the stone removed, and the bowel closed. This relieves the obstruction, which is what threatens her.</p>
-<p>The fistula is left for later, and repaired only if needed. Patients are mostly older and unwell from the obstruction, so adding cholecystectomy and fistula repair to an emergency operation in an inflamed right upper quadrant adds risk for little immediate gain. Many fistulas cause no further trouble.</p>`,
-        notes: {
-            1: "Repairing the fistula without removing the stone leaves the bowel obstructed.",
-            2: "Hemicolectomy removes bowel unnecessarily; the stone can be removed through a small enterotomy.",
-            3: "The stone is in the small bowel above the ileocecal valve, beyond reach from the colon in an obstructed patient.",
-            4: "A one-stage operation adds risk in an older patient with heart failure; the fistula is repaired later if needed.",
-        },
-    },
-    {
-        id: "bf-mechanism",
-        condition: "biliary-fistula",
-        kind: "reasoning",
-        stem: "How does a gallstone create a fistula between the gallbladder and the duodenum?",
-        options: ["Chronic inflammation weakens the wall, and a large stone erodes through it", "A small stone passes through the cystic duct and pierces the CBD", "Acid from the duodenum digests the gallbladder wall", "A stone blocks the ampulla, and the rising pressure bursts through the duodenal wall", "Bacteria from the duodenum dissolve the stone and the wall"],
-        answer: 0,
-        explanation: `<p><strong>Fistulas come from chronic inflammation and pressure from a large stone.</strong> The steps on the page are:</p>
-<ul>
-<li><strong>Chronic inflammation</strong> weakens the gallbladder wall and sticks it to the organ alongside.</li>
-<li><strong>Pressure from a large stone</strong> presses on the weakened wall.</li>
-<li><strong>A tract opens</strong> into the neighboring organ, usually the duodenum.</li>
-</ul>
-<p>Through the tract, the stone can enter the bowel (gallstone ileus), and gut bacteria can enter the bile ducts (ascending cholangitis).</p>`,
-        notes: {
-            1: "Small stones pass along the ducts; fistulas come from large stones eroding through an inflamed wall.",
-            2: "The erosion runs from the gallbladder outward, from inflammation and pressure, not from duodenal acid.",
-            3: "An ampullary stone causes jaundice or pancreatitis, not a fistula from the gallbladder.",
-            4: "Bacteria enter after the fistula forms; they do not create it.",
-        },
-    },
-    {
-        id: "bf-why-duodenum",
-        condition: "biliary-fistula",
-        kind: "reasoning",
-        stem: "Why is a cholecystoduodenal fistula the main route for gallstone ileus?",
-        options: ["Stones entering the duodenum must travel the whole small bowel", "The duodenum is narrower than the ileum, so stones lodge there first", "Duodenal acid enlarges the stone", "The duodenum has no peristalsis to move stones", "Stones in the duodenum always pass into the CBD"],
-        answer: 0,
-        explanation: `<p><strong>The fistula most often opens into the duodenum, at the start of the small bowel,</strong> so a stone that passes through it has to travel the full length of the small bowel. A large stone lodges where the lumen is narrowest, at the terminal ileum, causing gallstone ileus.</p>
-<p>The site of entry decides the result:</p>
-<ul>
-<li><strong>Duodenum:</strong> gallstone ileus, or Bouveret syndrome if the stone stops at the pylorus or duodenum.</li>
-<li><strong>Colon:</strong> stones may pass in the stool.</li>
-<li><strong>Stomach:</strong> gastric outlet obstruction.</li>
-</ul>`,
-        notes: {
-            1: "The duodenum is wider than the terminal ileum; that is why stones stop lower down.",
-            2: "Acid does not enlarge gallstones.",
-            3: "The duodenum has normal peristalsis, which carries the stone onward.",
-            4: "Stones in the duodenum travel down the bowel; they do not go back up into the CBD.",
-        },
-    },
-    {
-        id: "bf-cholangitis",
-        condition: "biliary-fistula",
-        kind: "reasoning",
-        stem: "A 76-year-old woman has a known cholecystoduodenal fistula and three episodes of ascending cholangitis in a year. Why does the fistula predispose her to cholangitis?",
-        options: ["Gut bacteria enter the biliary tree through the fistula", "The fistula blocks the CBD with scar tissue", "Bile leaks into the peritoneum and becomes infected", "Air in the biliary tree is itself an infection", "Pancreatic enzymes reflux through the fistula"],
-        answer: 0,
-        explanation: `<p><strong>A fistula is an open path from the gut into the biliary tree,</strong> so gut bacteria and food can enter the bile ducts directly. Normally the sphincter of Oddi keeps the duodenal contents out.</p>
-<p>The page lists recurrent cholangitis as one of the symptoms of a fistula and ascending cholangitis as one of its complications. Pneumobilia is the visible sign of the same open path: air gets in by the route the bacteria use. A symptomatic fistula like hers is treated by cholecystectomy with fistula repair.</p>`,
-        notes: {
-            1: "The problem is an abnormal opening, not obstruction by scar.",
-            2: "The fistula joins two hollow organs; bile does not leak into the peritoneum.",
-            3: "Pneumobilia is a sign of the open path, not an infection in itself.",
-            4: "The fistula connects the gallbladder and duodenum; pancreatic enzymes are not the issue.",
-        },
-    },
-    {
-        id: "bf-size",
-        condition: "biliary-fistula",
-        kind: "reasoning",
-        stem: "Two patients have cholecystoduodenal fistulas. One passes a 1-cm stone without symptoms; the other develops small bowel obstruction from a 3-cm stone. What best explains the difference?",
-        options: ["Stones over 2 cm are too large to pass the narrow terminal ileum", "Larger stones are more often infected", "Smaller stones dissolve in the duodenum", "Larger stones trigger spasm of the pylorus and duodenum, trapping them", "Smaller stones are diverted into the colon"],
-        answer: 0,
-        explanation: `<p><strong>Size decides whether a stone passes.</strong> Gallstone ileus mostly involves stones over 2 cm, which cannot pass the terminal ileum, the narrowest part of the small bowel. Smaller stones travel through the bowel and leave in the stool, often unnoticed.</p>
-<p>Large stones matter twice: they are also the stones whose pressure erodes the inflamed gallbladder wall and creates the fistula in the first place.</p>`,
-        notes: {
-            1: "Obstruction is mechanical; infection does not decide it.",
-            2: "Gallstones do not dissolve in the duodenum; small ones simply pass.",
-            3: "A stone stuck at the pylorus would be Bouveret syndrome, but spasm is not the mechanism of either.",
-            4: "Both stones entered the duodenum; the small one passed through the whole bowel.",
-        },
-    },
-    {
-        id: "bf-bouveret-tx",
-        condition: "biliary-fistula",
-        kind: "reasoning",
-        stem: "An 84-year-old woman with Bouveret syndrome has a gallstone impacted in the duodenal bulb. She is frail, with severe COPD. What is the first treatment to try?",
-        options: ["Endoscopic stone removal", "Open enterolithotomy of the terminal ileum", "Cholecystectomy with fistula repair", "Nasogastric drainage alone until the stone passes", "Percutaneous transhepatic biliary drainage"],
-        answer: 0,
-        explanation: `<p><strong>Bouveret syndrome is treated by endoscopic stone removal first,</strong> with surgery if this fails. The stone sits in the duodenum or pylorus, within reach of an upper endoscope, so it can be removed without an operation in an older, frail patient.</p>
-<p>Surgery is kept for stones that are too large or too firmly impacted to remove endoscopically. The fistula itself can be repaired later if it causes symptoms.</p>`,
-        notes: {
-            1: "Enterolithotomy treats a stone in the small bowel lower down; this stone is in the duodenal bulb.",
-            2: "Fistula surgery does not relieve the obstruction and is a larger operation in a frail patient.",
-            3: "A stone large enough to obstruct the duodenum is unlikely to pass on its own.",
-            4: "Biliary drainage treats obstructed bile ducts; her obstruction is in the bowel.",
-        },
-    },
-    {
-        id: "bf-crohn",
-        condition: "biliary-fistula",
-        kind: "reasoning",
-        stem: "Both a large gallstone and Crohn disease can create fistulas. How does the mechanism differ?",
-        options: ["Crohn fistulas come from transmural bowel inflammation", "Crohn fistulas form only after surgery", "Crohn fistulas always involve the gallbladder", "Gallstone fistulas start in the bowel wall and spread to the gallbladder", "Both come from mucosal ulcers alone"],
-        answer: 0,
-        explanation: `<p><strong>Crohn disease forms fistulas through transmural inflammation:</strong> inflammation through the full thickness of the bowel wall lets it penetrate into a neighboring organ.</p>
-<p>A gallstone fistula runs the other way. Chronic inflammation weakens the gallbladder wall, and pressure from a large stone erodes from the gallbladder into the duodenum, colon, or stomach. Crohn disease is one of the causes of biliary fistulas on the page, but gallstones cause most of them.</p>`,
-        notes: {
-            1: "Crohn fistulas form spontaneously from transmural disease; surgery is a separate cause.",
-            2: "Crohn fistulas usually join loops of bowel, skin, or bladder, and rarely the biliary tree.",
-            3: "Gallstone fistulas start in the gallbladder wall, eroded by the stone.",
-            4: "Mucosal ulcers alone, as in ulcerative colitis, do not form fistulas; transmural injury is needed.",
-        },
-    },
-    {
-        id: "bf-ct-first",
-        condition: "biliary-fistula",
-        kind: "reasoning",
-        stem: "A 77-year-old woman with gallstones has colicky pain, abdominal distention, vomiting, and obstipation. Her abdominal x-ray shows dilated small bowel loops only. Why is CT the next test?",
-        options: ["CT shows Rigler triad in about 93%, and an x-ray often misses it", "CT is needed only to plan cholecystectomy", "An x-ray cannot show small bowel obstruction", "CT is the only way to see the fistula opening", "CT treats the obstruction by insufflation"],
-        answer: 0,
-        explanation: `<p><strong>CT detects Rigler triad with a sensitivity of about 93%,</strong> so it confirms gallstone ileus when an x-ray is not conclusive. An x-ray may show the triad, but small amounts of air in the ducts and stones that are not calcified are easy to miss.</p>
-<p>CT also shows where the stone sits and whether the bowel is at risk, which guides enterolithotomy. The fistula opening itself is seen later, if needed, by ERCP or upper endoscopy.</p>`,
-        notes: {
-            1: "The urgent question is the cause of the obstruction, not the cholecystectomy.",
-            2: "Her x-ray already shows obstruction; what it may miss is the stone and pneumobilia.",
-            3: "CT shows pneumobilia; the opening itself is seen by ERCP or upper endoscopy.",
-            4: "CT is diagnostic only; enterolithotomy treats the obstruction.",
-        },
-    },
-    {
-        id: "bf-opening",
-        condition: "biliary-fistula",
-        kind: "reasoning",
-        stem: "CT in a 73-year-old woman with recurrent cholangitis shows pneumobilia, suggesting a fistula, but the tract itself is not clearly seen. Which test best shows the fistula opening, and why?",
-        options: ["ERCP or upper endoscopy, which view the duodenum and ducts directly", "Ultrasound, which shows air in the ducts best", "A HIDA scan, which shows bile flow into the gallbladder", "Repeat CT in 6 months, to watch the air", "Colonoscopy, because most fistulas open into the colon"],
-        answer: 0,
-        explanation: `<p><strong>The fistula opening is seen by ERCP or upper endoscopy.</strong> CT shows an indirect sign, air in the biliary tree, which tells you a path exists but not where it opens. Endoscopy looks at the duodenal or gastric wall directly, and ERCP can fill the ducts with contrast to show the tract.</p>
-<p>The diagnosis on the page moves from suspicion to detail: CT for pneumobilia, CT for Rigler triad if gallstone ileus is suspected, then ERCP or upper endoscopy for the opening. Most fistulas open into the duodenum, within reach of both.</p>`,
-        notes: {
-            1: "Ultrasound can show air in the ducts, but it does not show the opening of the tract.",
-            2: "A HIDA scan tests cystic duct patency in cholecystitis; it does not define a fistula opening.",
-            3: "Waiting adds nothing, and her recurrent cholangitis needs the fistula defined.",
-            4: "Cholecystocolic fistulas are second at about 17%; most open into the duodenum.",
-        },
-    },
-
-    /* --- Analysis --- */
-    {
-        id: "bf-set-ileus-1",
-        condition: "biliary-fistula",
-        kind: "analysis",
-        set: "bf-ileus",
-        passage: `<p>A 78-year-old woman has had 4 days of colicky central abdominal pain that comes and goes, then 1 day of vomiting and no stool or flatus. She has had RUQ pain after fatty meals for years and has never had abdominal surgery. Her abdomen is distended and tympanic, with no hernias.</p>
-<p><strong>CT abdomen:</strong> Air in the gallbladder and intrahepatic bile ducts. Dilated small bowel loops to 4.5 cm, with a transition point in the right iliac fossa where a 3.2-cm laminated, partly calcified stone lies within the terminal ileum. The colon is collapsed. The gallbladder is contracted and sits against the duodenum, with a short tract between them. No free air.</p>`,
-        stem: "Which interpretation best fits the CT?",
-        options: ["Gallstone ileus through a cholecystoduodenal fistula", "Bouveret syndrome from a cholecystogastric fistula", "Adhesional obstruction with incidental gallbladder air", "Gallstone ileus through a cholecystocolic fistula", "Ascending cholangitis with a reactive ileus"],
-        answer: 0,
-        explanation: `<p><strong>This is Rigler triad, through a cholecystoduodenal fistula:</strong></p>
-<ul>
-<li><strong>Pneumobilia:</strong> air in the gallbladder and ducts.</li>
-<li><strong>Small bowel obstruction:</strong> dilated loops with a collapsed colon.</li>
-<li><strong>Ectopic gallstone:</strong> a 3.2-cm stone at the transition point.</li>
-</ul>
-<p>The tract from the gallbladder to the duodenum is the most common fistula and the main route for gallstone ileus. The stone traveled the small bowel and stuck at the terminal ileum, its narrowest point. She also fits the usual patient: an older woman, with a stone over 2 cm and no previous surgery.</p>`,
-        notes: {
-            1: "Bouveret syndrome is a stone stuck at the pylorus or duodenum, with vomiting and a distended stomach, not distal small bowel obstruction.",
-            2: "She has never had surgery, and the stone at the transition point explains the obstruction.",
-            3: "A stone entering the colon would lie beyond the ileocecal valve and could pass in the stool; this tract opens into the duodenum.",
-            4: "Cholangitis causes fever and jaundice, and the stone in the ileum is a mechanical cause of obstruction.",
-        },
-    },
-    {
-        id: "bf-set-ileus-2",
-        condition: "biliary-fistula",
-        kind: "analysis",
-        set: "bf-ileus",
-        stem: "She has an open enterolithotomy and recovers. Over the next 8 months she has two admissions with fever, RUQ pain, and jaundice, each settling with ABX. Repeat CT still shows pneumobilia and the tract to the duodenum. What is the most appropriate plan now?",
-        options: ["Cholecystectomy with fistula repair", "Long-term ABX to prevent further episodes", "No action, since the fistula decompresses the biliary tree", "Repeat enterolithotomy", "Endoscopic removal of a stone from the duodenal bulb"],
-        answer: 0,
-        explanation: `<p><strong>The fistula is now symptomatic, so it is repaired: cholecystectomy with fistula repair.</strong> Her episodes are ascending cholangitis, because gut bacteria enter the bile ducts through the open tract.</p>
-<p>This is the two-step plan on the page. Enterolithotomy came first, to relieve the life-threatening obstruction, with fistula repair later if needed. Recurrent cholangitis is the reason it is needed now: removing the gallbladder and closing the tract shuts the path for bacteria.</p>`,
-        notes: {
-            1: "ABX treat each episode but leave the path for bacteria open.",
-            2: "The open path lets bacteria into the ducts; that is the cause of her cholangitis.",
-            3: "Her bowel is no longer obstructed, so there is no stone to remove from it.",
-            4: "Endoscopic removal treats Bouveret syndrome; nothing shows a stone in the duodenum.",
-        },
-    },
-    {
-        id: "bf-three-ct",
-        condition: "biliary-fistula",
-        kind: "analysis",
-        stem: `<p>Three older patients with long-standing gallstones have CT scans.</p>
-<table><thead><tr><th>Patient</th><th>Main symptom</th><th>CT findings</th></tr></thead><tbody>
-<tr><td>A</td><td>Repeated vomiting and epigastric fullness</td><td>Pneumobilia; distended stomach; 4-cm stone in the duodenal bulb</td></tr>
-<tr><td>B</td><td>Colicky pain, distention, obstipation</td><td>Pneumobilia; dilated small bowel; 3-cm stone in the terminal ileum</td></tr>
-<tr><td>C</td><td>Chronic watery diarrhea</td><td>Pneumobilia; tract from the gallbladder to the hepatic flexure</td></tr>
-</tbody></table>
-<p>Which matches each patient with the right first treatment?</p>`,
-        options: ["A endoscopic stone removal; B enterolithotomy; C cholecystectomy with fistula repair", "A enterolithotomy; B endoscopic stone removal; C cholecystectomy with fistula repair", "A cholecystectomy with fistula repair; B enterolithotomy; C endoscopic stone removal", "A endoscopic stone removal; B cholecystectomy with fistula repair; C enterolithotomy", "All three: cholecystectomy with fistula repair as the first operation"],
-        answer: 0,
-        explanation: `<p><strong>Each fistula's complication sets its first treatment:</strong></p>
-<ul>
-<li><strong>A, Bouveret syndrome:</strong> a stone in the duodenal bulb causing gastric outlet obstruction, within endoscopic reach. Endoscopic removal first; surgery if it fails.</li>
-<li><strong>B, gallstone ileus:</strong> Rigler triad with the stone at the terminal ileum. Enterolithotomy first; fistula repair later if needed.</li>
-<li><strong>C, cholecystocolic fistula:</strong> bile acid diarrhea from bile entering the colon. A symptomatic fistula is treated by cholecystectomy with fistula repair.</li>
-</ul>`,
-        notes: {
-            1: "Enterolithotomy is for a stone in the small bowel; A's stone is in the duodenal bulb, within reach of an endoscope, and B's is beyond it.",
-            2: "A needs the obstruction relieved first, and C has no stone to remove endoscopically.",
-            3: "B's obstruction must be relieved by removing the stone, not by fistula repair, and C has no bowel stone.",
-            4: "In A and B, the obstruction is relieved first; fistula surgery alone would leave the stone in place.",
-        },
-    },
-    {
-        id: "bf-pud-fistula",
-        condition: "biliary-fistula",
-        kind: "analysis",
-        stem: `<p>A 64-year-old man takes ibuprofen daily for arthritis and has had years of epigastric pain relieved by food. Ultrasound shows no gallstones. CT shows air in the CBD and intrahepatic ducts. He has never had ERCP or biliary surgery.</p>
-<p><strong>Upper endoscopy:</strong> A deep ulcer on the posterior wall of the duodenal bulb, with a small opening in its base through which bile is seen to drain. The ampulla looks normal.</p>
-<p>Which fistula and cause best explain these findings?</p>`,
-        options: ["Choledochoduodenal, from a penetrating duodenal ulcer", "Cholecystoduodenal, from a large gallstone", "Cholecystocholedochal, from Mirizzi syndrome", "Cholecystogastric, from a gastric ulcer", "Choledochoduodenal, from a CBD stone eroding through the wall"],
-        answer: 0,
-        explanation: `<p><strong>A penetrating duodenal ulcer has eroded into the CBD,</strong> forming a choledochoduodenal fistula. The clues fit together:</p>
-<ul>
-<li>NSAID use and pain relieved by food suggest a duodenal ulcer.</li>
-<li>The CBD runs behind the duodenum, so a deep posterior ulcer can reach it.</li>
-<li>Bile draining through an opening in the ulcer base, seen at endoscopy, shows the tract.</li>
-<li>No gallstones makes a stone fistula unlikely, and no instrumentation makes the pneumobilia meaningful.</li>
-</ul>`,
-        notes: {
-            1: "He has no gallstones, and the opening is in an ulcer base rather than from the gallbladder.",
-            2: "Mirizzi syndrome needs a gallstone in the gallbladder neck or cystic duct.",
-            3: "The ulcer is in the duodenal bulb, not the stomach, and the gallbladder is not involved.",
-            4: "CBD stones can cause this fistula, but he has no stones and has a deep ulcer at the opening.",
-        },
-    },
-    {
-        id: "bf-bouveret-fails",
-        condition: "biliary-fistula",
-        kind: "analysis",
-        stem: `<p>An 82-year-old woman has 3 days of vomiting. CT shows pneumobilia, a distended stomach, and a 5-cm stone in the duodenal bulb. Endoscopy is attempted.</p>
-<p><strong>Endoscopy report:</strong> Large food residue in the stomach, cleared by suction. A smooth stone fills the duodenal bulb and is firmly impacted. Net and basket retrieval fail; the stone cannot be moved or broken. A fistula opening is seen in the bulb wall above it. No bleeding.</p>
-<p>What is the most appropriate next step?</p>`,
-        options: ["Surgery to remove the stone", "Repeat the same endoscopy every week until it passes", "Push the stone down to the terminal ileum and wait", "IV ABX and discharge on a liquid diet", "ERCP with a biliary stent"],
-        answer: 0,
-        explanation: `<p><strong>When endoscopic removal fails, Bouveret syndrome is treated surgically.</strong> The stone is firmly impacted and too large to retrieve or break, and she has gastric outlet obstruction that will not resolve on its own.</p>
-<p>The page's plan is endoscopic stone removal first, because it avoids an operation in an older patient, and surgery if this fails. The report also shows the fistula opening, which the page lists ERCP or upper endoscopy as the way to see. Fistula repair can be considered at the same time or later, depending on her condition.</p>`,
-        notes: {
-            1: "Repeating a failed retrieval leaves her obstructed and vomiting.",
-            2: "A 5-cm stone pushed down the bowel would lodge again at the terminal ileum as gallstone ileus.",
-            3: "Her obstruction is mechanical; ABX and a liquid diet do not relieve it.",
-            4: "A biliary stent drains the bile ducts; her problem is a stone blocking the duodenum.",
         },
     },
 
@@ -12004,82 +10211,6 @@ const QUIZ_QUESTIONS = [
             4: "A tail tumor can dilate the pancreatic duct beyond it, but it does not reach the CBD.",
         },
     },
-    {
-        id: "bm-pnet-men1",
-        condition: "biliary-cancer",
-        kind: "memory",
-        stem: "Which inherited syndrome is the risk factor for pancreatic neuroendocrine tumors?",
-        options: ["MEN1", "FAP", "Lynch syndrome", "MEN2", "Peutz-Jeghers syndrome"],
-        answer: 0,
-        explanation: `<p><strong>MEN1 is the risk factor for pancreatic neuroendocrine tumors.</strong> These arise from islet cells, so they can secrete hormones:</p>
-<ul>
-<li><strong>Insulinoma:</strong> fasting hypoglycemia.</li>
-<li><strong>Gastrinoma:</strong> recurrent peptic ulcers and diarrhea.</li>
-<li><strong>Vipoma:</strong> watery diarrhea with hypokalemia.</li>
-<li><strong>Glucagonoma:</strong> diabetes and a rash.</li>
-</ul>
-<p>MEN1 also causes parathyroid and pituitary tumors.</p>`,
-        notes: {
-            1: "FAP raises the risk of ampullary and duodenal adenocarcinoma.",
-            2: "Lynch syndrome is linked to ampullary and duodenal adenocarcinoma.",
-            3: "MEN2 causes medullary thyroid cancer and pheochromocytoma, not pancreatic islet tumors.",
-            4: "Peutz-Jeghers syndrome causes hamartomatous polyps and raises the risk of several cancers, but it is not the page's risk factor.",
-        },
-    },
-    {
-        id: "bm-gb-incidental",
-        condition: "biliary-cancer",
-        kind: "memory",
-        stem: "How is gallbladder carcinoma most often found?",
-        options: ["By chance, after cholecystectomy", "Through screening with CA 19-9", "With early painless jaundice", "As a palpable mass on routine examination", "On colonoscopy for weight loss"],
-        answer: 0,
-        explanation: `<p><strong>More than half of gallbladder carcinomas are found by chance after cholecystectomy,</strong> when the pathologist examines a gallbladder removed for gallstones. Otherwise it tends to present late, because a tumor in the gallbladder causes few symptoms until it spreads into the liver or blocks the bile ducts.</p>
-<p>This also explains the treatment. A tumor confined to the mucosa needs only the cholecystectomy already done; one that has gone deeper needs liver resection and lymph node removal as well.</p>`,
-        notes: {
-            1: "CA 19-9 and CEA are not used for screening.",
-            2: "Jaundice is a late sign, once the tumor blocks the ducts.",
-            3: "A palpable mass usually means advanced disease.",
-            4: "Colonoscopy views the colon, not the gallbladder.",
-        },
-    },
-    {
-        id: "bm-tissue",
-        condition: "biliary-cancer",
-        kind: "memory",
-        stem: "Which tests provide a tissue diagnosis of a biliary or periampullary tumor?",
-        options: ["ERCP brushings or endoscopic ultrasound biopsy", "CA 19-9 and CEA levels", "Ultrasound followed by CT or MRCP of the abdomen", "LFTs and a coagulation screen", "Plain x-ray and HIDA scan"],
-        answer: 0,
-        explanation: `<p><strong>Tissue comes from ERCP brushings or endoscopic ultrasound biopsy.</strong> ERCP reaches the bile duct and can brush a stricture for cells, often while placing a stent; endoscopic ultrasound sits in the duodenum next to the pancreatic head and can guide a needle into a mass.</p>
-<p>The page's workup runs in order:</p>
-<ul>
-<li><strong>Cholestasis:</strong> LFTs.</li>
-<li><strong>Tumor markers:</strong> CA 19-9 and CEA, not for screening.</li>
-<li><strong>Imaging:</strong> ultrasound, then CT or MRCP.</li>
-<li><strong>Tissue:</strong> ERCP brushings or endoscopic ultrasound biopsy.</li>
-</ul>`,
-        notes: {
-            1: "Tumor markers support a diagnosis but give no tissue.",
-            2: "Imaging shows the obstruction and mass but does not sample it.",
-            3: "LFTs show cholestasis, not its cause.",
-            4: "Neither shows the tumor or samples it.",
-        },
-    },
-    {
-        id: "bm-duodenal-risk",
-        condition: "biliary-cancer",
-        kind: "memory",
-        stem: "Besides FAP and Lynch syndrome, which condition raises the risk of duodenal adenocarcinoma?",
-        options: ["Celiac disease", "Chronic pancreatitis", "Primary sclerosing cholangitis", "Liver fluke infection", "Porcelain gallbladder"],
-        answer: 0,
-        explanation: `<p><strong>Celiac disease raises the risk of duodenal adenocarcinoma,</strong> along with FAP and Lynch syndrome. Chronic injury of the small bowel mucosa, or an inherited tendency to polyps and mismatch repair failure, underlies each of them.</p>
-<p>Duodenal adenocarcinoma is rare. It can cause GI bleeding or obstruction as well as jaundice, because it grows into the lumen of the duodenum rather than only around the bile duct. A resectable tumor is treated by pancreaticoduodenectomy, as for the other periampullary cancers.</p>`,
-        notes: {
-            1: "Chronic pancreatitis is a risk factor for pancreatic head adenocarcinoma.",
-            2: "PSC raises the risk of cholangiocarcinoma and gallbladder carcinoma.",
-            3: "Liver flukes such as Clonorchis raise the risk of cholangiocarcinoma.",
-            4: "Porcelain gallbladder is linked to gallbladder carcinoma.",
-        },
-    },
 
     /* --- Reasoning --- */
     {
@@ -12096,26 +10227,6 @@ const QUIZ_QUESTIONS = [
             2: "Distal pancreatectomy removes the body and tail; this tumor is in the head.",
             3: "A stent relieves jaundice but is for unresectable disease, not cure.",
             4: "Waiting allows a resectable cancer to become unresectable.",
-        },
-    },
-    {
-        id: "bm-courvoisier-mech",
-        condition: "biliary-cancer",
-        kind: "reasoning",
-        stem: "Why does a pancreatic head tumor cause an enlarged gallbladder, while a CBD stone usually does not?",
-        options: ["The gallbladder is healthy and stretchy, and fills slowly behind a steady block", "Tumors secrete hormones that relax the gallbladder", "Stones block the duct for too short a time for the gallbladder to fill and enlarge", "Tumors grow into the gallbladder wall itself", "Stones dissolve the gallbladder mucosa"],
-        answer: 0,
-        explanation: `<p><strong>The difference lies in the gallbladder wall, not the blockage alone.</strong></p>
-<ul>
-<li><strong>Tumor below the cystic duct:</strong> a slow, steady block in a patient whose gallbladder has not been inflamed. The healthy, stretchy wall distends as bile backs up, giving an enlarged, palpable, nontender gallbladder.</li>
-<li><strong>CBD stone:</strong> the stones came from the gallbladder, where repeated inflammation has already scarred it. A fibrotic gallbladder is shrunken and cannot distend.</li>
-</ul>
-<p>This is the basis of Courvoisier law.</p>`,
-        notes: {
-            1: "Hormones play no part in Courvoisier law; pancreatic adenocarcinoma does not secrete gallbladder-relaxing hormones.",
-            2: "CBD stones can block the duct for days, but the scarred gallbladder still cannot distend.",
-            3: "The tumor obstructs the CBD below the cystic duct; it does not invade the gallbladder.",
-            4: "Stones scar the gallbladder through repeated inflammation, not by dissolving it.",
         },
     },
     {
@@ -12172,27 +10283,6 @@ const QUIZ_QUESTIONS = [
         info: "StatPearls notes that CA 19-9 and CEA lack the sensitivity and specificity to diagnose gallbladder cancer, and are used to monitor response to treatment.",
     },
     {
-        id: "bm-stools-urine",
-        condition: "biliary-cancer",
-        kind: "reasoning",
-        stem: "A patient with a pancreatic head tumor has pale stools and dark urine. What explains both?",
-        options: ["Conjugated bilirubin cannot reach the gut and spills into the urine", "Unconjugated bilirubin is filtered by the kidney", "Hemolysis makes excess bilirubin", "The tumor secretes a pigment into the urine", "Fat malabsorption from damage to the pancreas turns the urine dark brown"],
-        answer: 0,
-        explanation: `<p><strong>Obstruction stops conjugated bilirubin reaching the gut and pushes it back into the blood.</strong></p>
-<ul>
-<li><strong>Pale stools:</strong> bile cannot reach the gut, so the bacterial pigments that color stool are not made.</li>
-<li><strong>Dark urine:</strong> conjugated bilirubin is water-soluble, so it passes into the urine.</li>
-<li><strong>Pruritus:</strong> bile salts build up in the blood.</li>
-</ul>
-<p>This is the obstructive, cholestatic pattern on LFTs.</p>`,
-        notes: {
-            1: "Unconjugated bilirubin is bound to albumin and not filtered, which is why hemolysis does not darken the urine.",
-            2: "Hemolysis causes unconjugated hyperbilirubinemia with normal stools and urine.",
-            3: "The dark color is conjugated bilirubin, not a tumor product.",
-            4: "Fat malabsorption causes pale, greasy stools but does not darken urine.",
-        },
-    },
-    {
         id: "bm-unresectable",
         condition: "biliary-cancer",
         kind: "reasoning",
@@ -12209,26 +10299,6 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "bm-gb-mucosa",
-        condition: "biliary-cancer",
-        kind: "reasoning",
-        stem: "Pathology after a routine cholecystectomy for gallstones shows gallbladder carcinoma that has grown through the muscle layer. What is the next treatment step, and why?",
-        options: ["Liver resection and lymph node removal", "No further treatment, because the gallbladder is out", "A biliary stent, because jaundice will follow", "Repeat cholecystectomy to clear the margins", "Chemotherapy only, because surgery cannot help"],
-        answer: 0,
-        explanation: `<p><strong>Gallbladder carcinoma beyond the mucosa is treated with liver resection and lymph node removal.</strong> The gallbladder lies in a bed on the liver, so a tumor that has grown through the wall may already involve that bed and the nearby nodes.</p>
-<p>Depth decides the plan on the page:</p>
-<ul>
-<li><strong>Confined to the mucosa:</strong> cholecystectomy alone.</li>
-<li><strong>Deeper:</strong> cholecystectomy with liver resection and lymph node removal.</li>
-</ul>`,
-        notes: {
-            1: "Cholecystectomy alone is enough only when the tumor is confined to the mucosa.",
-            2: "She is not jaundiced; a stent is for unresectable disease causing obstruction.",
-            3: "The gallbladder is already removed; the concern is the liver bed and lymph nodes.",
-            4: "The tumor may still be resectable, so surgery is the treatment.",
-        },
-    },
-    {
         id: "bm-psc-stricture",
         condition: "biliary-cancer",
         kind: "reasoning",
@@ -12242,27 +10312,6 @@ const QUIZ_QUESTIONS = [
             2: "Waiting a year risks missing a resectable cancer.",
             3: "Colonoscopy surveillance matters in PSC with colitis, but it does not explain the stricture.",
             4: "Ursodeoxycholic acid does not treat a dominant stricture or exclude cancer.",
-        },
-    },
-    {
-        id: "bm-hilar-resection",
-        condition: "biliary-cancer",
-        kind: "reasoning",
-        stem: "Why does resection of a perihilar cholangiocarcinoma often include part of the liver?",
-        options: ["The tumor sits where the hepatic ducts enter the liver", "Cholangiocarcinoma always spreads to the liver first", "Removing liver tissue prevents bile leaks", "Part of the liver must be removed to reach the pancreas beneath it", "Liver resection treats the PSC that caused it"],
-        answer: 0,
-        explanation: `<p><strong>A perihilar tumor sits where the right and left hepatic ducts join,</strong> right at the hilum of the liver. Clearing the tumor means removing the involved ducts as they run into the liver, so part of the liver is removed with the bile duct.</p>
-<p>Treatment on the page follows the tumor:</p>
-<ul>
-<li><strong>Periampullary (1–3):</strong> pancreaticoduodenectomy.</li>
-<li><strong>Cholangiocarcinoma (5):</strong> resection of the bile duct, often with part of the liver; transplant in selected cases.</li>
-<li><strong>Gallbladder (6):</strong> cholecystectomy, with liver resection if beyond the mucosa.</li>
-</ul>`,
-        notes: {
-            1: "The reason is anatomical; spread to the liver would often make the tumor unresectable.",
-            2: "Bile leaks are a risk of any biliary surgery; they are not the reason.",
-            3: "Perihilar tumors are away from the pancreas; that is the Whipple procedure for distal tumors.",
-            4: "Partial liver resection does not cure PSC, which affects the whole biliary tree.",
         },
     },
 
@@ -12346,57 +10395,6 @@ const QUIZ_QUESTIONS = [
             2: "B has no stones and painless, progressive jaundice with weight loss.",
             3: "A's pain, stones, and stable weight favor gallstones.",
             4: "A has stones and pain, and B's palpable gallbladder places the block below the cystic duct, unlike a perihilar tumor.",
-        },
-    },
-    {
-        id: "bm-vipoma",
-        condition: "biliary-cancer",
-        kind: "analysis",
-        stem: `<p>A 49-year-old woman has 3 months of large-volume watery diarrhea, about 3 L a day, which continues when she fasts. She has weakness and muscle cramps. Her mother had hyperparathyroidism and a pituitary tumor.</p>
-<table><thead><tr><th>Test</th><th>Result</th><th>Reference</th></tr></thead><tbody>
-<tr><td>Potassium</td><td>2.6 mmol/L</td><td>3.5–5.2</td></tr>
-<tr><td>Bicarbonate</td><td>16 mmol/L</td><td>22–32</td></tr>
-<tr><td>Calcium (corrected)</td><td>2.78 mmol/L</td><td>2.10–2.60</td></tr>
-<tr><td>Stool osmotic gap</td><td>30 mOsm/kg</td><td>Secretory if under 50</td></tr>
-</tbody></table>
-<p><em>Illustrative data.</em></p><p>CT shows a 3-cm enhancing mass in the pancreatic tail. Which diagnosis best fits?</p>`,
-        options: ["Vipoma, a pancreatic neuroendocrine tumor, in MEN1", "Pancreatic head adenocarcinoma", "Gastrinoma in MEN2", "Insulinoma", "Bile acid diarrhea from a cholecystocolic biliary fistula"],
-        answer: 0,
-        explanation: `<p><strong>Secretory diarrhea with hypokalemia and acidosis is a vipoma,</strong> a pancreatic neuroendocrine tumor that secretes vasoactive intestinal peptide, driving water and potassium secretion into the gut.</p>
-<ul>
-<li><strong>Secretory:</strong> it continues when fasting, with a low stool osmotic gap.</li>
-<li><strong>Hypokalemia and low bicarbonate:</strong> potassium and bicarbonate lost in stool.</li>
-<li><strong>MEN1:</strong> her hypercalcemia and family history of parathyroid and pituitary tumors.</li>
-</ul>
-<p>Pancreatic neuroendocrine tumors arise from islet cells and may secrete insulin, gastrin, VIP, or glucagon.</p>`,
-        notes: {
-            1: "Adenocarcinoma causes painless jaundice and weight loss, not hormonal secretory diarrhea, and the mass is in the tail.",
-            2: "Gastrinoma belongs to MEN1, not MEN2, and causes recurrent peptic ulcers more than this degree of hypokalemic diarrhea.",
-            3: "Insulinoma causes fasting hypoglycemia, not diarrhea.",
-            4: "Bile acid diarrhea comes from a cholecystocolic fistula and would not explain hypercalcemia or the pancreatic mass.",
-        },
-    },
-    {
-        id: "bm-outlet",
-        condition: "biliary-cancer",
-        kind: "analysis",
-        stem: `<p>A 70-year-old man has unresectable pancreatic head cancer. A metal biliary stent was placed 3 months ago, and he is having chemotherapy. He now has 1 week of vomiting undigested food several hours after meals, with early fullness. There is a succussion splash.</p>
-<table><thead><tr><th></th><th>3 months ago</th><th>Today</th></tr></thead><tbody>
-<tr><td>Bilirubin (µmol/L)</td><td>24</td><td>26</td></tr>
-<tr><td>ALP (IU/L)</td><td>180</td><td>190</td></tr>
-<tr><td>Temperature</td><td>36.8 °C</td><td>36.9 °C</td></tr>
-<tr><td>Potassium (mmol/L)</td><td>4.2</td><td>3.1</td></tr>
-</tbody></table>
-<p><em>Illustrative data.</em></p><p>Which complication best explains his new symptoms?</p>`,
-        options: ["Gastric outlet obstruction from tumor growing into the duodenum", "Ascending cholangitis from a blocked stent", "Liver metastases causing liver failure", "Bouveret syndrome from a gallstone", "Chemotherapy-induced pancreatitis"],
-        answer: 0,
-        explanation: `<p><strong>Vomiting of undigested food hours after meals, early fullness, and a succussion splash mean gastric outlet obstruction.</strong> The pancreatic head wraps around the duodenum, so a growing tumor can narrow it. The page lists this, with ascending cholangitis and liver metastases, as the complications of these cancers.</p>
-<p>The data rule out the other two: his stent is working, with stable bilirubin and ALP and no fever. His low potassium comes from vomiting.</p>`,
-        notes: {
-            1: "A blocked stent would bring back jaundice and fever; his bilirubin is stable and he is afebrile.",
-            2: "Liver failure would raise bilirubin and cause other signs; his LFTs are stable.",
-            3: "Bouveret syndrome needs a gallstone through a fistula; his tumor explains the obstruction.",
-            4: "Pancreatitis causes epigastric pain radiating to the back, not delayed vomiting of undigested food.",
         },
     },
 
@@ -12887,22 +10885,6 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "ap-carcinoid",
-        condition: "appendicitis",
-        kind: "memory",
-        stem: "Which tumor is a classic cause of appendiceal obstruction in older adults?",
-        options: ["Carcinoid tumor", "Gastrointestinal stromal tumor", "Lipoma", "Lymphoma of the terminal ileum", "Cecal hemangioma"],
-        answer: 0,
-        explanation: `<p><strong>A neoplasm, such as a carcinoid tumor, can block the appendix lumen,</strong> and this cause becomes more likely in older adults. The tumor narrows the lumen just as a fecalith does, so it produces the same sequence of rising pressure, infection, and ischemia.</p>
-<p>This is why the appendix is examined under the microscope after appendectomy: a small carcinoid is often found only on histology. A carcinoid that spreads to the liver can also cause carcinoid syndrome, with secretory diarrhea.</p>`,
-        notes: {
-            1: "GIST arises in the wall of the stomach or small bowel and is not the classic appendiceal tumor.",
-            2: "Lipomas are benign fatty tumors and are not a classic cause of appendicitis.",
-            3: "Lymphoma of the ileum is not the page's neoplastic cause of appendiceal obstruction.",
-            4: "Hemangiomas are vascular lesions and are not a recognized cause of appendicitis.",
-        },
-    },
-    {
         id: "ap-hcg",
         condition: "appendicitis",
         kind: "memory",
@@ -12935,22 +10917,6 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "ap-psoas",
-        condition: "appendicitis",
-        kind: "memory",
-        stem: "In suspected appendicitis, pain on extending the right hip with the patient lying on the left side suggests which appendix position?",
-        options: ["Retrocecal", "Pelvic", "Anterior, under McBurney point", "Subhepatic", "Preileal"],
-        answer: 0,
-        explanation: `<p><strong>The psoas sign means a retrocecal appendix is irritating the iliopsoas.</strong> A retrocecal appendix lies behind the cecum, against the psoas muscle. Extending the hip stretches the psoas, pressing it against the inflamed appendix, which causes pain.</p>
-<p>A retrocecal appendix lies away from the anterior abdominal wall, so tenderness at McBurney point can be mild. The obturator sign is the equivalent for a pelvic appendix.</p>`,
-        notes: {
-            1: "A pelvic appendix irritates the obturator internus, giving a positive obturator sign.",
-            2: "An anterior appendix under McBurney point gives tenderness there rather than a psoas sign.",
-            3: "A subhepatic appendix is rare and gives higher pain; it does not lie on the psoas.",
-            4: "A preileal appendix lies in front of the ileum, away from the psoas.",
-        },
-    },
-    {
         id: "ap-ct-findings",
         condition: "appendicitis",
         kind: "memory",
@@ -12964,70 +10930,6 @@ const QUIZ_QUESTIONS = [
             2: "A small appendix with no stranding is normal.",
             3: "Sigmoid wall thickening with stranding points to diverticulitis.",
             4: "A dilated common bile duct points to a stone or tumor in the duct.",
-        },
-    },
-    {
-        id: "ap-perforation-time",
-        condition: "appendicitis",
-        kind: "memory",
-        stem: "Perforation of the appendix typically occurs how long after symptoms begin?",
-        options: ["48–72 hours", "1–2 hours", "Within 6–8 hours", "7–10 days", "2–3 weeks"],
-        answer: 0,
-        explanation: `<p><strong>Perforation typically occurs 48–72 hours after symptoms begin.</strong> By then pressure has compressed the wall long enough to cause infarction, and the dead wall ruptures, causing an abscess or peritonitis.</p>
-<p>This is the window for treatment: appendicitis diagnosed early is treated before the wall dies. Young children and older adults are at highest risk, because their appendicitis is often recognized late.</p>`,
-        notes: {
-            1: "1–2 hours is far too early; the wall has not yet become ischemic.",
-            2: "At 6–8 hours the pain is usually still visceral and periumbilical.",
-            3: "7–10 days is well past the usual time of perforation.",
-            4: "2–3 weeks would be an indolent course; a contained abscess can present late, but perforation happens much earlier.",
-        },
-    },
-    {
-        id: "ap-visceral-level",
-        condition: "appendicitis",
-        kind: "memory",
-        stem: "The early periumbilical pain of appendicitis is visceral pain carried at which spinal levels?",
-        options: ["T8–T10", "C3–C5", "T4–T6", "L1–L2", "S2–S4"],
-        answer: 0,
-        explanation: `<p><strong>Visceral afferents from the appendix enter the spinal cord at T8–T10,</strong> the levels that also supply the skin around the umbilicus. The brain cannot tell which midgut organ is stretched, so the pain is felt vaguely around the umbilicus.</p>
-<p>The appendix is midgut, and midgut visceral pain is referred to the periumbilical region, as foregut pain is to the epigastrium and hindgut pain to the suprapubic region.</p>`,
-        notes: {
-            1: "C3–C5 supply the diaphragm, which is why diaphragmatic irritation refers pain to the shoulder.",
-            2: "T4–T6 carry pain from the heart and esophagus, felt in the chest and upper epigastrium.",
-            3: "L1–L2 supply the groin region and lower ureter, not the appendix.",
-            4: "S2–S4 carry parasympathetic and pelvic visceral fibers from the bladder and rectum.",
-        },
-    },
-    {
-        id: "ap-symptom-order",
-        condition: "appendicitis",
-        kind: "memory",
-        stem: "In appendicitis, how do nausea and vomiting typically relate to the pain?",
-        options: ["They follow the onset of pain", "They precede the pain by a day", "They occur only after perforation", "They replace pain in most adults", "They are absent unless the appendix is pelvic"],
-        answer: 0,
-        explanation: `<p><strong>In appendicitis, pain comes first, followed by anorexia, nausea, and vomiting,</strong> along with a low-grade fever. The distended, inflamed appendix triggers the pain, and nausea and vomiting follow as the visceral stimulus builds.</p>
-<p>The order is a useful clue: vomiting that starts before the pain fits gastroenteritis better than appendicitis.</p>`,
-        notes: {
-            1: "Vomiting a day before the pain fits gastroenteritis better than appendicitis.",
-            2: "Nausea and vomiting occur early, not only after perforation.",
-            3: "Pain is the main symptom; nausea and vomiting accompany it.",
-            4: "Nausea and vomiting occur whatever the appendix position.",
-        },
-    },
-    {
-        id: "ap-bloods",
-        condition: "appendicitis",
-        kind: "memory",
-        stem: "Which blood finding is typical of appendicitis?",
-        options: ["Leukocytosis with a left shift", "Lymphocytosis with atypical lymphocytes", "Eosinophilia", "Neutropenia", "Lipase over 3 times normal"],
-        answer: 0,
-        explanation: `<p><strong>Appendicitis typically causes leukocytosis with a left shift,</strong> meaning more neutrophils, including immature band forms. Bacteria multiplying behind the obstruction cause acute inflammation, and the marrow releases neutrophils to fight it. CRP rises too.</p>
-<p>The workup also includes β-hCG in anyone who could be pregnant, to rule out ectopic pregnancy, and urinalysis. The diagnosis is often clinical, and scores such as the Alvarado score combine these findings.</p>`,
-        notes: {
-            1: "Atypical lymphocytes suggest a viral infection, such as infectious mononucleosis.",
-            2: "Eosinophilia suggests parasites, allergy, or drug reactions.",
-            3: "Neutropenia is not a feature of appendicitis.",
-            4: "Lipase over 3 times normal is a criterion for acute pancreatitis.",
         },
     },
 
@@ -13053,59 +10955,6 @@ const QUIZ_QUESTIONS = [
         },
     },
     {
-        id: "ap-ischemia",
-        condition: "appendicitis",
-        kind: "reasoning",
-        stem: "In an obstructed appendix, why does the wall become ischemic?",
-        options: ["Rising pressure in the lumen compresses the vessels in the wall", "A thrombus forms in the superior mesenteric artery", "Bacterial toxins cause vasospasm of the ileocolic artery", "Hypovolemia from vomiting reduces blood flow", "The fecalith erodes directly through the appendiceal artery wall"],
-        answer: 0,
-        explanation: `<p><strong>Mucus and bacteria build up behind the obstruction, raising intraluminal pressure until it compresses the vessels in the wall.</strong> Thin-walled veins collapse first, so the wall becomes congested and swollen, and then arterial inflow fails, causing infarction.</p>
-<p>The sequence is obstruction → distention and infection → ischemia and infarction → perforation. That is why perforation follows within 48–72 hours: once the wall dies, it ruptures.</p>`,
-        notes: {
-            1: "SMA thrombosis causes acute mesenteric ischemia of the whole midgut, not appendicitis.",
-            2: "The problem is compression from inside the lumen, not vasospasm.",
-            3: "Vomiting can cause dehydration but does not cause focal ischemia of the appendix.",
-            4: "The fecalith obstructs the lumen; the ischemia comes from the pressure that builds behind it.",
-        },
-    },
-    {
-        id: "ap-lymphoid",
-        condition: "appendicitis",
-        kind: "reasoning",
-        stem: "An 8-year-old develops appendicitis 2 weeks after a viral upper respiratory infection. How does the infection explain his appendicitis?",
-        options: ["Lymphoid tissue in the wall enlarges and blocks the lumen", "The virus infects the appendix and causes necrosis directly", "Swallowed mucus forms a fecalith within days", "Coughing raises intra-abdominal pressure and ruptures the appendix", "The virus triggers an autoimmune attack on the appendix"],
-        answer: 0,
-        explanation: `<p><strong>The appendix wall is rich in lymphoid tissue, which enlarges in response to an infection (lymphoid hyperplasia) and narrows the lumen.</strong> This is the leading cause in children, who have the most lymphoid tissue, and it often follows a viral infection.</p>
-<p>Once the lumen is blocked, the sequence is the same as for a fecalith: rising pressure, infection, ischemia, and perforation.</p>`,
-        notes: {
-            1: "The virus does not destroy the appendix; obstruction by enlarged lymphoid tissue starts the process.",
-            2: "Fecaliths are hardened stool and are the leading cause in adults, not a result of swallowed mucus.",
-            3: "Coughing does not rupture a healthy appendix; perforation follows ischemia of an obstructed one.",
-            4: "Appendicitis is not autoimmune; it begins with obstruction of the lumen.",
-        },
-    },
-    {
-        id: "ap-pelvic",
-        condition: "appendicitis",
-        kind: "reasoning",
-        stem: "A woman with appendicitis has little tenderness at McBurney point, but internally rotating her flexed right hip causes pain. What explains this?",
-        options: ["A pelvic appendix is irritating the obturator internus", "A retrocecal appendix is irritating the iliopsoas", "The appendix has already perforated", "The inflammation has not yet reached any of the peritoneum", "An anterior appendix is irritating the abdominal wall"],
-        answer: 0,
-        explanation: `<p><strong>The obturator sign shows a pelvic appendix irritating the obturator internus.</strong> Internal rotation of the flexed hip stretches the obturator internus, which lines the side wall of the pelvis, so it presses against an inflamed appendix hanging down into the pelvis.</p>
-<p>McBurney point marks the typical position; when the appendix lies elsewhere, tenderness there can be mild. Each sign points to a position:</p>
-<ul>
-<li><strong>McBurney point:</strong> typical position.</li>
-<li><strong>Psoas sign:</strong> retrocecal.</li>
-<li><strong>Obturator sign:</strong> pelvic.</li>
-</ul>`,
-        notes: {
-            1: "A retrocecal appendix gives the psoas sign, on extending the right hip.",
-            2: "Perforation causes rebound tenderness, guarding, and peritonitis, not a single positional sign.",
-            3: "A positive obturator sign means the inflammation has reached the tissue next to the appendix.",
-            4: "An anterior appendix would cause tenderness at McBurney point.",
-        },
-    },
-    {
         id: "ap-imaging",
         condition: "appendicitis",
         kind: "reasoning",
@@ -13119,22 +10968,6 @@ const QUIZ_QUESTIONS = [
             2: "An abdominal x-ray rarely shows the appendix and does not diagnose appendicitis.",
             3: "A barium enema has no role and adds radiation.",
             4: "Colonoscopy has no role in acute appendicitis and could worsen an inflamed appendix.",
-        },
-    },
-    {
-        id: "ap-pregnancy",
-        condition: "appendicitis",
-        kind: "reasoning",
-        stem: "A 28-year-old woman at 20 weeks of pregnancy has 1 day of abdominal pain, now worst on the right, with nausea and a temperature of 38.0 °C. Her WCC is 15 × 10<sup>9</sup>/L. Which imaging plan is most appropriate?",
-        options: ["Ultrasound first, then MRI if unclear", "CT AP with contrast first", "Abdominal x-ray, then CT if unclear", "No imaging; repeat the WCC in 48 hours", "Barium enema, then ultrasound"],
-        answer: 0,
-        explanation: `<p><strong>In pregnancy, ultrasound comes first to avoid radiation to the fetus, followed by MRI if the ultrasound is unclear.</strong> MRI uses no ionizing radiation, so it can image the appendix safely when ultrasound cannot see it.</p>
-<p>Imaging should not be delayed. Perforation typically happens after 48–72 hours, and peritonitis and sepsis threaten both mother and fetus, so waiting is more dangerous than investigating.</p>`,
-        notes: {
-            1: "CT exposes the fetus to radiation; it is the adult test, but ultrasound and MRI come first in pregnancy.",
-            2: "An x-ray adds radiation and does not diagnose appendicitis.",
-            3: "Waiting 48 hours risks perforation, which threatens the mother and fetus.",
-            4: "A barium enema has no role and adds radiation.",
         },
     },
     {
@@ -13168,38 +11001,6 @@ const QUIZ_QUESTIONS = [
             2: "A perforated appendix with an abscess needs IV ABX and drainage, not oral ABX alone.",
             3: "An abscess will not resolve without ABX and drainage.",
             4: "Colonoscopy is not part of acute management and could worsen the perforation.",
-        },
-    },
-    {
-        id: "ap-rebound",
-        condition: "appendicitis",
-        kind: "reasoning",
-        stem: "On day 3 of untreated RLQ pain, a man develops rebound tenderness and guarding across the whole abdomen, and lies very still. What has most likely happened?",
-        options: ["Perforation with generalized peritonitis", "A contained abscess around the appendix", "The pain has become visceral again", "A retrocecal appendix irritating the psoas", "Resolution of the inflammation"],
-        answer: 0,
-        explanation: `<p><strong>Rebound tenderness and guarding across the whole abdomen mean generalized peritonitis, after perforation.</strong> The dead wall of the appendix has ruptured, spilling bacteria and pus across the peritoneum. Any movement of the inflamed peritoneum hurts, so the patient lies still and the abdominal wall tenses.</p>
-<p>The timing fits: perforation typically follows 48–72 hours after symptoms begin. Generalized peritonitis needs emergency appendectomy with IV ABX.</p>`,
-        notes: {
-            1: "A contained abscess gives localized RLQ signs, not rebound across the whole abdomen.",
-            2: "Visceral pain is vague and early; rebound and guarding are parietal signs.",
-            3: "A retrocecal appendix gives a psoas sign, a localized finding.",
-            4: "Spreading peritoneal signs mean worsening, not resolution.",
-        },
-    },
-    {
-        id: "ap-perforation-risk",
-        condition: "appendicitis",
-        kind: "reasoning",
-        stem: "Why are young children and older adults the groups most likely to have a perforated appendix?",
-        options: ["Their appendicitis is often recognized late", "Their appendix wall is thicker than in young adults", "They rarely develop luminal obstruction", "They are more often treated with ABX alone", "Their pain localizes to the RLQ earlier"],
-        answer: 0,
-        explanation: `<p><strong>Perforation follows when appendicitis goes untreated for 48–72 hours, and these groups are often diagnosed late.</strong> Young children cannot describe where the pain is or how it moved, and older adults often have milder or atypical symptoms and signs. By the time the diagnosis is made, the wall may already have died.</p>
-<p>A low threshold for imaging in these groups shortens the delay: ultrasound first in children, and CT AP in older adults.</p>`,
-        notes: {
-            1: "A thicker wall would resist perforation; the problem is delay.",
-            2: "Obstruction starts appendicitis at any age: lymphoid hyperplasia in children and neoplasms in older adults.",
-            3: "ABX alone is used in selected uncomplicated cases, not mainly in these groups.",
-            4: "Early localization would make diagnosis easier, not harder.",
         },
     },
 
@@ -13246,93 +11047,16 @@ const QUIZ_QUESTIONS = [
             4: "McBurney point overlies the typical position of the appendix base, not the pelvis.",
         },
     },
-    {
-        id: "ap-set-retrocecal-3",
-        condition: "appendicitis",
-        kind: "analysis",
-        set: "ap-retrocecal",
-        stem: "What is the most appropriate treatment for her?",
-        options: ["Laparoscopic appendectomy with perioperative ABX", "IV ABX and percutaneous drainage", "Emergency open laparotomy for generalized peritonitis", "Oral ABX and review in 6 weeks", "Elective appendectomy in 3 months"],
-        answer: 0,
-        explanation: `<p><strong>Her CT shows uncomplicated appendicitis: no free air and no collection.</strong> Uncomplicated appendicitis is treated by laparoscopic appendectomy with perioperative ABX, which removes the obstructed appendix before it becomes ischemic and perforates.</p>
-<p>Treatment depends on the stage:</p>
-<ul>
-<li><strong>Uncomplicated:</strong> laparoscopic appendectomy with perioperative ABX; ABX alone in selected cases.</li>
-<li><strong>Perforated with generalized peritonitis:</strong> emergency appendectomy with IV ABX.</li>
-<li><strong>Perforated with a contained abscess:</strong> IV ABX and percutaneous drainage; appendectomy later if needed.</li>
-</ul>`,
-        notes: {
-            1: "Drainage is for a contained abscess, and she has no collection.",
-            2: "She has no generalized peritonitis or free air.",
-            3: "Delaying definitive treatment for weeks risks perforation within 48–72 hours.",
-            4: "Waiting months leaves an inflamed appendix with an appendicolith that can perforate.",
-        },
-    },
-    {
-        id: "ap-older-peritonitis",
-        condition: "appendicitis",
-        kind: "analysis",
-        stem: `<p>A 79-year-old man has had 4 days of vague lower abdominal discomfort and poor appetite, which he put down to constipation. Today he is confused, with a temperature of 39.1 °C, heart rate 124, and BP 88/54. His abdomen is rigid, with rebound tenderness everywhere.</p>
-<table><thead><tr><th>Test</th><th>Result</th><th>Reference</th></tr></thead><tbody>
-<tr><td>WCC</td><td>22 × 10<sup>9</sup>/L, with left shift</td><td>4–11</td></tr>
-<tr><td>CRP</td><td>310 mg/L</td><td>Under 5</td></tr>
-<tr><td>Lactate</td><td>4.2 mmol/L</td><td>Under 2.0</td></tr>
-</tbody></table>
-<p>CT AP: <em>"Perforated appendix with free fluid throughout the abdomen and pelvis and small bubbles of free air. No discrete, walled-off collection. A 2 cm mass at the appendiceal base."</em></p>
-<p><em>Illustrative data.</em></p><p>What is the most appropriate management?</p>`,
-        options: ["Emergency appendectomy with IV ABX and resuscitation", "IV ABX and percutaneous drainage", "IV ABX alone, with appendectomy in 6–8 weeks", "Colonoscopy to biopsy the mass first", "Laparoscopic appendectomy next week once stable"],
-        answer: 0,
-        explanation: `<p><strong>A perforated appendix with generalized peritonitis and sepsis needs emergency appendectomy with IV ABX,</strong> with fluids for his shock. Free fluid and air throughout the abdomen, with no walled-off collection, mean the infection is not contained, so nothing short of surgery controls the source.</p>
-<p>Several features fit the page:</p>
-<ul>
-<li><strong>Age:</strong> older adults are a high-risk group for perforation, because symptoms are vague and diagnosis comes late.</li>
-<li><strong>Timing:</strong> 4 days is past the 48–72 hours when perforation typically occurs.</li>
-<li><strong>The mass:</strong> a neoplasm, such as carcinoid, is a cause of obstruction in older adults, and the specimen will show it.</li>
-</ul>`,
-        notes: {
-            1: "Percutaneous drainage is for a contained abscess in a stable patient; he has no walled-off collection and is in shock.",
-            2: "ABX alone cannot control generalized peritonitis from an open perforation.",
-            3: "Colonoscopy would delay source control and could worsen the perforation; the mass is examined after removal.",
-            4: "Waiting a week in septic shock with generalized peritonitis would be life threatening.",
-        },
-    },
-    {
-        id: "ap-hcg-positive",
-        condition: "appendicitis",
-        kind: "analysis",
-        stem: `<p>A 27-year-old woman has 10 hours of RLQ pain. Her last period was 7 weeks ago, and she has had light vaginal spotting today. Temperature 37.2 °C, heart rate 106, BP 108/70. She is tender in the RLQ, with no psoas or obturator sign.</p>
-<table><thead><tr><th>Test</th><th>Result</th><th>Reference</th></tr></thead><tbody>
-<tr><td>WCC</td><td>10.8 × 10<sup>9</sup>/L</td><td>4–11</td></tr>
-<tr><td>CRP</td><td>8 mg/L</td><td>Under 5</td></tr>
-<tr><td>Serum β-hCG</td><td>2400 IU/L</td><td>Under 5 (not pregnant)</td></tr>
-<tr><td>Hemoglobin</td><td>118 g/L</td><td>115–160</td></tr>
-</tbody></table>
-<p><em>Illustrative data.</em></p><p>What is the most appropriate next step?</p>`,
-        options: ["Transvaginal ultrasound to locate the pregnancy", "CT AP with contrast for appendicitis", "Laparoscopic appendectomy now", "Repeat β-hCG in 1 week", "MRI of the abdomen in the morning"],
-        answer: 0,
-        explanation: `<p><strong>A positive β-hCG with RLQ pain and spotting 7 weeks after her last period makes ectopic pregnancy the diagnosis to exclude first,</strong> and transvaginal ultrasound shows whether the pregnancy is in the uterus. This is exactly why the page orders β-hCG in anyone who could be pregnant: ectopic pregnancy mimics appendicitis and can rupture and bleed.</p>
-<p>Her findings also fit appendicitis poorly: no fever, a normal WCC, a barely raised CRP, and no migrating pain. Her tachycardia is a warning of possible bleeding.</p>`,
-        notes: {
-            1: "CT exposes a possible pregnancy to radiation and does not answer the urgent question of where the pregnancy is.",
-            2: "Operating for appendicitis before excluding ectopic pregnancy risks missing the real diagnosis.",
-            3: "Waiting a week risks rupture of an ectopic pregnancy.",
-            4: "MRI is for appendicitis in pregnancy when ultrasound is unclear; the first step is locating the pregnancy, today.",
-        },
-    },
 
     /* ======================================================
        Second set of questions
        ====================================================== */
 
-    /* ===== Esophagitis ===== */
+    /* ===== GERD and Esophagitis ===== */
 
     /* ===== Esophageal motility disorders ===== */
 
-    /* ===== Gastroesophageal Reflux Disease (GERD) ===== */
-
-    /* ===== Gastritis ===== */
-
-    /* ===== Peptic Ulcer Disease (PUD) ===== */
+    /* ===== Gastritis and Peptic Ulcer Disease ===== */
 
     /* ===== Malabsorption ===== */
 
@@ -13360,19 +11084,13 @@ const QUIZ_QUESTIONS = [
 
     /* ===== Liver tumors ===== */
 
-    /* ===== AFLP ===== */
+    /* ===== Liver disease in pregnancy ===== */
 
     /* ===== Acute liver failure and cirrhosis ===== */
 
-    /* ===== Cholelithiasis ===== */
+    /* ===== Gallstones, cholecystitis, and biliary fistulas ===== */
 
-    /* ===== Cholecystitis ===== */
-
-    /* ===== Choledocholithiasis and Gallstone Pancreatitis ===== */
-
-    /* ===== Ascending cholangitis ===== */
-
-    /* ===== Biliary fistulas ===== */
+    /* ===== Choledocholithiasis and ascending cholangitis ===== */
 
     /* ===== Biliary malignancies ===== */
 
@@ -13856,6 +11574,250 @@ const QUIZ_QUESTIONS = [
             2: "Colorectal cancer would show a mass with a transition point.",
             3: "His small bowel is not the problem; the dilation is colonic, and there is no transition point.",
             4: "Cecal volvulus shows a twist of the right colon, typically in middle age.",
+        },
+    },
+    {
+        id: "bo-aortoenteric",
+        condition: "gi-bleeding-obstruction",
+        kind: "memory",
+        stem: "A 74-year-old man who had an aortic graft 6 years ago has hematemesis and back pain. Which source of bleeding must be considered?",
+        options: ["Aortoenteric fistula", "Mallory-Weiss tear", "Dieulafoy lesion", "Hemosuccus pancreaticus", "Portal hypertensive gastropathy"],
+        answer: 0,
+        explanation: `<p><strong>An aortic aneurysm or graft can erode into the bowel, usually the duodenum, as an aortoenteric fistula.</strong> A prior graft or aneurysm with back pain and an upper GI bleed must raise this diagnosis, because the bleeding can quickly become catastrophic.</p>`,
+        notes: {
+            1: "A Mallory-Weiss tear follows retching or vomiting and is not linked to aortic grafts.",
+            2: "A Dieulafoy lesion is a cause to consider when no source is found on first look, not a graft complication.",
+            3: "Hemosuccus pancreaticus is bleeding through the pancreatic duct, also considered when no source is found.",
+            4: "Portal hypertensive gastropathy occurs with cirrhosis and portal hypertension.",
+        },
+    },
+    {
+        id: "bo-oakland",
+        condition: "gi-bleeding-obstruction",
+        kind: "memory",
+        stem: "Which risk score is used to assess a lower GI bleed?",
+        options: ["Oakland score", "Glasgow-Blatchford score", "Child-Pugh score", "MELD score", "Tokyo criteria"],
+        answer: 0,
+        explanation: `<p><strong>The Oakland score assesses lower GI bleeding,</strong> with a score of 8 or less meaning low risk. The Glasgow-Blatchford score is its counterpart for upper bleeding: 0–1 can go home, while 6 or more needs intervention in over 50%.</p>`,
+        notes: {
+            1: "Glasgow-Blatchford is the risk score for upper GI bleeding.",
+            2: "Child-Pugh grades the severity of cirrhosis.",
+            3: "MELD estimates mortality in liver disease.",
+            4: "The Tokyo criteria grade acute cholangitis.",
+        },
+    },
+    {
+        id: "bo-fissure-infant",
+        condition: "gi-bleeding-obstruction",
+        kind: "memory",
+        stem: "What is the most common cause of rectal bleeding in infants and toddlers?",
+        options: ["Anal fissure", "Meckel diverticulum", "Intussusception", "Juvenile polyp", "Inflammatory bowel disease"],
+        answer: 0,
+        explanation: `<p><strong>Anal fissure is the most common cause of rectal bleeding in infants and toddlers,</strong> often with pain on defecation, constipation, or straining. Other causes in children have their own clues: painless bleeding suggests Meckel diverticulum, and red currant jelly stool with colicky pain at 6–36 months suggests intussusception.</p>`,
+        notes: {
+            1: "Meckel diverticulum causes painless bleeding but is less common than a fissure.",
+            2: "Intussusception causes red currant jelly stool with colicky pain, and is less common.",
+            3: "Juvenile polyps are not the commonest cause on this page.",
+            4: "IBD causes bloody diarrhea with tenesmus, typically in young adults.",
+        },
+    },
+    {
+        id: "bo-capsule",
+        condition: "gi-bleeding-obstruction",
+        kind: "memory",
+        stem: "A 72-year-old has recurrent melena, but EGD and colonoscopy find no source. Which test looks for a small bowel source?",
+        options: ["Capsule endoscopy", "Repeat colonoscopy", "Barium enema", "HIDA scan", "Upright CXR"],
+        answer: 0,
+        explanation: `<p><strong>Capsule endoscopy looks for small bowel bleeding when EGD and colonoscopy are normal.</strong> The small bowel causes 5–10% of bleeds, most often angiodysplasia in people over 50; others are tumors, Crohn disease, NSAID ulcers, and Meckel diverticulum. CTA is used if bleeding is ongoing or severe.</p>`,
+        notes: {
+            1: "Colonoscopy has already been done, and it cannot reach most of the small bowel.",
+            2: "A barium enema examines only the colon.",
+            3: "A HIDA scan tests gallbladder filling.",
+            4: "An upright CXR looks for free air from perforation.",
+        },
+    },
+    {
+        id: "bo-cecal-volvulus",
+        condition: "gi-bleeding-obstruction",
+        kind: "memory",
+        stem: "A 45-year-old has a large bowel obstruction from a cecal volvulus. What is the treatment?",
+        options: ["Right hemicolectomy or ileocolic resection", "Endoscopic decompression alone", "Stopping opioids and correcting potassium", "Colonoscopic decompression, then a low-fiber diet", "Neostigmine and observation"],
+        answer: 0,
+        explanation: `<p><strong>Cecal volvulus is treated by right hemicolectomy or ileocolic resection.</strong> It typically affects people in their fifth decade and shows as a distended right colon. Sigmoid volvulus, by contrast, affects bedbound older adults and is first decompressed endoscopically, then resected electively because it recurs.</p>`,
+        notes: {
+            1: "Endoscopic decompression is the first step for sigmoid volvulus, not cecal volvulus.",
+            2: "Stopping opioids and correcting potassium treat ileus.",
+            3: "Decompression and diet do not correct a cecal volvulus.",
+            4: "Neostigmine is not the page's treatment for volvulus.",
+        },
+    },
+    {
+        id: "bo-malrotation",
+        condition: "gi-bleeding-obstruction",
+        kind: "memory",
+        stem: "A 3-day-old baby has bilious vomiting. Which cause of obstruction must be excluded?",
+        options: ["Malrotation with volvulus", "Intussusception of the ileum into the colon", "Sigmoid volvulus", "Postoperative adhesions", "Gallstone ileus"],
+        answer: 0,
+        explanation: `<p><strong>Bilious vomiting in a newborn suggests malrotation with volvulus,</strong> a surgical emergency because the twisted bowel can strangulate: venous outflow fails, then arterial inflow, leading to ischemia and necrosis. Bile in the vomit places the blockage beyond the ampulla. Age is the main clue to the other causes of obstruction in this list.</p>`,
+        notes: {
+            1: "Intussusception affects children aged 6–36 months, with red currant jelly stool.",
+            2: "Sigmoid volvulus affects bedbound older adults.",
+            3: "Adhesions follow abdominal surgery.",
+            4: "Gallstone ileus affects older adults with a biliary fistula.",
+        },
+    },
+    {
+        id: "bo-vomiting-level",
+        condition: "gi-bleeding-obstruction",
+        kind: "reasoning",
+        stem: "Why does vomiting start early in proximal small bowel obstruction but late in colonic obstruction?",
+        options: ["Contents back up to the stomach quickly from a high block, but only through an incompetent ileocecal valve from the colon", "Colonic obstruction paralyzes the vomiting center until the colon perforates", "Proximal obstruction always strangulates, and strangulation causes vomiting", "The colon absorbs the fluid that would otherwise be vomited, for as long as it remains distended and the valve stays closed", "Small bowel obstruction stimulates gastric acid, which causes vomiting"],
+        answer: 0,
+        explanation: `<p><strong>The level of the blockage decides how soon contents reach the stomach.</strong> A proximal block fills the stomach quickly, so vomiting is early, gastric at first and bilious as the block lies further down. In the colon, a competent ileocecal valve holds contents back, so vomiting is late, appearing once the valve lets them through.</p>`,
+        notes: {
+            1: "The vomiting center is not paralyzed; the ileocecal valve explains the delay.",
+            2: "Most proximal obstructions do not strangulate, yet vomiting is still early.",
+            3: "The difference is the distance to the stomach and the valve, not absorption.",
+            4: "Vomiting comes from the backup of contents, not acid secretion.",
+        },
+    },
+    {
+        id: "bo-rectal-gas",
+        condition: "gi-bleeding-obstruction",
+        kind: "reasoning",
+        stem: "In complete bowel obstruction, why does the x-ray show no gas in the rectum?",
+        options: ["The bowel beyond the blockage empties and nothing new reaches it", "Gas in the rectum is absorbed faster when the bowel is obstructed", "The rectum contracts tightly and squeezes out its gas", "Swallowed air is vomited before it reaches the colon", "The obstruction always lies in the rectum itself"],
+        answer: 0,
+        explanation: `<p><strong>Distal to the blockage, the bowel empties and collapses,</strong> causing obstipation, with no stool or flatus and no gas in the rectum on x-ray. Above the blockage, gas and fluid build up and distend the bowel. Partial obstruction may still let some gas and stool through.</p>`,
+        notes: {
+            1: "Absorption is not the reason; the distal bowel empties and is not refilled.",
+            2: "The rectum empties because nothing new arrives, not because it contracts.",
+            3: "Vomiting does not explain the absent rectal gas in colonic obstruction, where vomiting is late.",
+            4: "Most obstructions lie well above the rectum; the rectum empties beyond them.",
+        },
+    },
+    {
+        id: "bo-bowel-sounds",
+        condition: "gi-bleeding-obstruction",
+        kind: "reasoning",
+        stem: "How do bowel sounds help separate ileus from early mechanical obstruction?",
+        options: ["Ileus gives sparse or absent sounds; obstruction gives loud, high-pitched sounds", "Ileus gives loud, high-pitched sounds; obstruction gives none", "Both give loud sounds at first, and only mechanical obstruction is painful", "Sounds are normal in both until perforation", "Ileus gives sounds only on the left; obstruction only on the right"],
+        answer: 0,
+        explanation: `<p><strong>Ileus is a functional obstruction:</strong> the bowel is not contracting, so sounds are sparse or absent and there is no transition point. In early mechanical obstruction, peristalsis works against the blockage, producing loud, high-pitched sounds. Ileus follows surgery, opioids, or low potassium and is treated by addressing the cause.</p>`,
+        notes: {
+            1: "This reverses the pattern: loud, high-pitched sounds belong to early mechanical obstruction.",
+            2: "Ileus gives sparse or absent sounds, not loud ones.",
+            3: "Bowel sounds change early in both, in opposite directions.",
+            4: "Bowel sounds are not separated by side.",
+        },
+    },
+    {
+        id: "bo-strangulation-mechanism",
+        condition: "gi-bleeding-obstruction",
+        kind: "reasoning",
+        stem: "How does a strangulated bowel progress to perforation?",
+        options: ["Venous outflow fails first, then arterial inflow, causing ischemia and necrosis", "Arterial inflow fails first, then the veins rupture under pressure", "Bacteria from the lumen dissolve the wall directly", "Acid refluxing from the stomach erodes the wall", "Distention stretches the wall until it tears, without ischemia"],
+        answer: 0,
+        explanation: `<p><strong>Strangulation first compresses the low-pressure veins, so blood flows in but cannot leave;</strong> the wall swells until arterial inflow also fails. Ischemia then leads to necrosis, perforation, and sepsis. The clues are constant pain, fever, tachycardia, leukocytosis, acidosis, or peritonitis, and they mean surgery.</p>`,
+        notes: {
+            1: "Venous outflow, at lower pressure, fails before arterial inflow.",
+            2: "Bacteria and sepsis follow necrosis; they do not start it.",
+            3: "Acid reflux plays no part in strangulation.",
+            4: "Strangulation is defined by loss of blood supply; ischemia is the route to perforation.",
+        },
+    },
+    {
+        id: "bo-ct-sbo",
+        condition: "gi-bleeding-obstruction",
+        kind: "reasoning",
+        stem: "Why is CT the preferred imaging test in suspected small bowel obstruction?",
+        options: ["It shows the transition point, ischemia, and perforation", "It is the only test that shows dilated loops of small bowel", "It removes the need for an NGT", "It treats the obstruction with contrast", "It is safer than an x-ray in pregnancy"],
+        answer: 0,
+        explanation: `<p><strong>CT is the gold standard for small bowel obstruction</strong> because it shows where the obstruction is (the transition point), and whether the bowel is ischemic or perforated, which decides between surgery and a trial of conservative treatment.</p>`,
+        notes: {
+            1: "An x-ray also shows dilated loops; CT adds the transition point and complications.",
+            2: "An NGT decompresses the bowel whatever the imaging.",
+            3: "Imaging diagnoses; it does not treat the obstruction.",
+            4: "CT gives a higher radiation dose than an x-ray; safety in pregnancy is not why it is used.",
+        },
+    },
+    {
+        id: "bo-dual-antiplatelet",
+        condition: "gi-bleeding-obstruction",
+        kind: "reasoning",
+        stem: "An 80-year-old on aspirin and clopidogrel after a coronary stent has a large bleed from a small gastric erosion. Why was the bleed so severe?",
+        options: ["Combined antiplatelet treatment makes any lesion bleed more", "Clopidogrel directly erodes the gastric mucosa", "Aspirin raises portal pressure", "Clopidogrel causes varices", "Age alone causes erosions to bleed heavily"],
+        answer: 0,
+        explanation: `<p><strong>Antiplatelet and anticoagulant drugs make any lesion bleed more,</strong> especially at 75 or older, with a bleeding risk of up to 17% a year on combined treatment. A small erosion that would ooze briefly can then cause a large bleed.</p>`,
+        notes: {
+            1: "Clopidogrel impairs platelet function; it does not erode the mucosa directly.",
+            2: "Aspirin does not raise portal pressure.",
+            3: "Varices come from portal hypertension.",
+            4: "Age raises the risk, but the combined treatment is the main reason here.",
+        },
+    },
+    {
+        id: "bo-set-anemia-1",
+        condition: "gi-bleeding-obstruction",
+        kind: "analysis",
+        set: "bo-anemia",
+        passage: `<p>An 81-year-old woman with severe aortic stenosis has had three admissions for iron deficiency anemia with intermittent dark stools over a year. She takes no NSAIDs or anticoagulants.</p>
+<table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody>
+<tr><td>Hemoglobin</td><td>82 g/L (MCV 72 fL)</td></tr>
+<tr><td>EGD</td><td>Normal</td></tr>
+<tr><td>Colonoscopy</td><td>Diverticulosis without stigmata of bleeding; no other lesion</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p>`,
+        stem: "What is the most likely source, and which test comes next?",
+        options: ["Small bowel angiodysplasia; capsule endoscopy", "Diverticular bleeding; repeat colonoscopy", "Occult colorectal cancer; CT colonography", "Missed peptic ulcer; repeat EGD in a year", "Meckel diverticulum; Meckel scan"],
+        answer: 0,
+        explanation: `<p><strong>Angiodysplasia is the most common cause of small bowel bleeding over 50, and aortic stenosis (Heyde syndrome) is a classic association.</strong> When EGD and colonoscopy find no source, capsule endoscopy examines the small bowel.</p>`,
+        notes: {
+            1: "Diverticular bleeding is large and painless, and no stigmata were seen; slow recurrent loss fits angiodysplasia.",
+            2: "The colonoscopy found no lesion, and the aortic stenosis points to angiodysplasia.",
+            3: "EGD was normal, and waiting a year is not appropriate with recurrent anemia.",
+            4: "Meckel diverticulum causes painless bleeding in children.",
+        },
+    },
+    {
+        id: "bo-set-anemia-2",
+        condition: "gi-bleeding-obstruction",
+        kind: "analysis",
+        set: "bo-anemia",
+        stem: "Before the capsule study, she passes a large amount of maroon blood. Her pulse is 124 and BP 86/52. After resuscitation, she is still bleeding. What is the most appropriate next step?",
+        options: ["CTA", "Capsule endoscopy as planned", "Colonoscopy after bowel preparation in 48 hours", "Oakland score and discharge if low", "Upright CXR"],
+        answer: 0,
+        explanation: `<p><strong>Ongoing or severe bleeding calls for CTA,</strong> which can locate active bleeding anywhere in the gut and guide treatment. Capsule endoscopy and planned colonoscopy suit stable patients. With massive hematochezia and shock, a brisk upper source is also kept in mind.</p>`,
+        notes: {
+            1: "A capsule study is too slow for a patient in shock with ongoing bleeding.",
+            2: "Colonoscopy at 24–72 hours suits a stable patient; she is unstable.",
+            3: "She is in shock; a risk score does not replace locating the bleeding.",
+            4: "An upright CXR looks for perforation, not a bleeding source.",
+        },
+    },
+    {
+        id: "bo-three-obstructions",
+        condition: "gi-bleeding-obstruction",
+        kind: "analysis",
+        stem: `<p>Three patients have abdominal distention and vomiting.</p>
+<table><thead><tr><th>Patient</th><th>History</th><th>Findings</th></tr></thead><tbody>
+<tr><td>A</td><td>Day 2 after a hip replacement, on oxycodone</td><td>Sparse bowel sounds; potassium 3.1 mmol/L; CT shows dilated bowel without a transition point</td></tr>
+<tr><td>B</td><td>Appendectomy 12 years ago</td><td>Loud, high-pitched bowel sounds; CT shows dilated small bowel with a transition point</td></tr>
+<tr><td>C</td><td>82 years old, bedbound, chronic constipation</td><td>Massive distention; x-ray shows a large, bent loop shaped like a coffee bean</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p><p>Which pairing of diagnosis and first treatment is correct?</p>`,
+        options: ["A ileus, stop opioids; B adhesions, NGT; C sigmoid volvulus, endoscopy", "A adhesions, surgery; B ileus, stop opioids; C cecal volvulus, colectomy", "A ileus, surgery; B adhesions, stop opioids; C sigmoid volvulus, NGT", "A pseudo-obstruction, colectomy; B hernia, surgery; C ileus, NGT", "A adhesions, NGT; B volvulus, endoscopy; C ileus, stop opioids"],
+        answer: 0,
+        explanation: `<ul>
+<li><strong>A, ileus:</strong> after surgery, on opioids, with low potassium, sparse sounds, and no transition point. Stop opioids and correct electrolytes.</li>
+<li><strong>B, adhesive small bowel obstruction:</strong> prior surgery, loud high-pitched sounds, and a transition point. IV fluids and an NGT, with surgery if it strangulates or does not settle.</li>
+<li><strong>C, sigmoid volvulus:</strong> a bedbound older adult with constipation and a coffee bean sign. Endoscopic decompression, then elective sigmoid resection because it recurs.</li>
+</ul>`,
+        notes: {
+            1: "A has no transition point, which means ileus, and C's coffee bean sign means sigmoid, not cecal, volvulus.",
+            2: "Ileus is not treated with surgery, and B's mechanical obstruction is not treated by stopping opioids.",
+            3: "A has a functional ileus without a blockage, B has a transition point after prior surgery, and C's coffee bean sign is volvulus, not ileus.",
+            4: "A has no transition point, so it is not adhesions, and C's coffee bean sign is sigmoid volvulus, not ileus.",
         },
     },
 

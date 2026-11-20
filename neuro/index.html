@@ -65,18 +65,15 @@
                 <div class="station" data-organ="headache">
                 <p class="group-label" id="group-headache">Headache</p>
                 <div class="condition-group" role="group" aria-labelledby="group-headache">
-                    <button type="button" class="condition-item" data-condition="migraine">Migraine</button>
-                    <button type="button" class="condition-item" data-condition="tension-headache">Tension-type headache</button>
-                    <button type="button" class="condition-item" data-condition="cluster-headache">Cluster headache</button>
+                    <button type="button" class="condition-item" data-condition="primary-headaches">Primary headaches</button>
                 </div>
                 </div>
 
                 <div class="station" data-organ="trauma">
                 <p class="group-label" id="group-trauma">Trauma</p>
                 <div class="condition-group" role="group" aria-labelledby="group-trauma">
-                    <button type="button" class="condition-item" data-condition="epidural-hematoma">Epidural hematoma</button>
-                    <button type="button" class="condition-item" data-condition="subdural-hematoma">Subdural hematoma</button>
-                    <button type="button" class="condition-item" data-condition="herniation">Herniation syndromes</button>
+                    <button type="button" class="condition-item" data-condition="epidural-subdural-hematoma">Epidural and subdural hematoma</button>
+                    <button type="button" class="condition-item" data-condition="herniation">Raised ICP and herniation</button>
                 </div>
                 </div>
 
@@ -1576,12 +1573,23 @@
                 </dialog>
             </article>
 
-            <article class="condition-content" id="migraine">
-                <h2>Migraine</h2>
+            <article class="condition-content" id="primary-headaches" data-aliases="migraine tension-headache cluster-headache">
+                <h2>Primary Headaches</h2>
 
                 <section class="content-section">
                     <h3>Pathophysiology</h3>
-<p>Cortical spreading depression and activation of trigeminal afferents release <abbr class="term" tabindex="0" data-definition="Calcitonin gene-related peptide">CGRP</abbr> and substance P, which dilate dural vessels and cause neurogenic inflammation, producing a recurrent, throbbing headache.</p>
+<p>In migraine, cortical spreading depression and trigeminal release of <abbr class="term" tabindex="0" data-definition="Calcitonin gene-related peptide">CGRP</abbr> cause a throbbing unilateral headache; in tension-type headache, tender pericranial muscles and central sensitization cause a pressing bilateral one; and in cluster headache, hypothalamic activation of the trigeminal autonomic reflex causes brief, excruciating orbital pain with autonomic signs.</p>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Feature</th><th scope="col">Migraine</th><th scope="col">Tension-type</th><th scope="col">Cluster</th></tr></thead><tbody>
+<tr><th scope="row">Mechanism</th><td>Cortical spreading depression; <abbr class="term" tabindex="0" data-definition="Calcitonin gene-related peptide">CGRP</abbr> and substance P from trigeminal afferents</td><td>Tender pericranial muscles; central sensitization</td><td>Hypothalamus drives the trigeminal autonomic reflex</td></tr>
+<tr><th scope="row">Where</th><td>Unilateral</td><td>Bilateral, like a band</td><td>Strictly unilateral, orbital or temporal</td></tr>
+<tr><th scope="row">Character</th><td>Pulsating, moderate to severe</td><td>Pressing or tightening, mild to moderate</td><td>Excruciating</td></tr>
+<tr><th scope="row">Duration</th><td>4–72 hours</td><td>30 minutes to 7 days</td><td>15–180 minutes, up to 8 a day</td></tr>
+<tr><th scope="row">With it</th><td>Nausea, photophobia, phonophobia; aura in about 25%</td><td>No nausea; at most one of photophobia or phonophobia</td><td>Tearing, red eye, nasal congestion, ptosis, and miosis on the same side</td></tr>
+<tr><th scope="row">During an attack</th><td>Lies still; worse with activity</td><td>Carries on; not worse with activity</td><td>Restless and pacing</td></tr>
+<tr><th scope="row">Who</th><td>More common in women</td><td>The most common primary headache</td><td>About three times more common in men</td></tr>
+</tbody></table></div>
+<div class="subsection">
+<h4 class="sc-heading">Migraine</h4>
 <ol class="pathway">
 <li><span class="pathway-title">Cortical spreading depression</span><span class="pathway-detail">A wave of neuronal and glial depolarization; causes the aura</span></li>
 <li><span class="pathway-title">Trigeminal activation</span><span class="pathway-detail">Trigeminovascular afferents</span></li>
@@ -1589,8 +1597,6 @@
 <li><span class="pathway-title">Vasodilation and inflammation</span><span class="pathway-detail">Dural vessels; sensitized nerves</span></li>
 <li><span class="pathway-title">Headache</span><span class="pathway-detail">Unilateral and pulsating</span></li>
 </ol>
-<div class="subsection">
-<h4 class="sc-heading">The four phases</h4>
 <figure class="cause-map is-wide"><svg viewBox="0 0 560 200" role="img" aria-label="The four phases of a migraine attack in order: A, prodrome, up to 24–48 hours before; B, aura, 5–60 minutes, in about 25%; C, headache, 4–72 hours; D, postdrome"><rect class="tr-box" x="10" y="70" width="120" height="60" rx="14"/><text class="site-label" x="70" y="97" text-anchor="middle"><tspan x="70" dy="0">Prodrome</tspan><tspan x="70" dy="16">24–48 h</tspan></text><path class="sah-press" d="M132 100L148 100M148 100L139.0 104.3M148 100L139.0 95.7"/><rect class="tr-box" x="150" y="70" width="120" height="60" rx="14"/><text class="site-label" x="210" y="97" text-anchor="middle"><tspan x="210" dy="0">Aura</tspan><tspan x="210" dy="16">5–60 min</tspan></text><path class="sah-press" d="M272 100L288 100M288 100L279.0 104.3M288 100L279.0 95.7"/><rect class="tr-box" x="290" y="70" width="120" height="60" rx="14"/><text class="site-label" x="350" y="97" text-anchor="middle"><tspan x="350" dy="0">Headache</tspan><tspan x="350" dy="16">4–72 h</tspan></text><path class="sah-press" d="M412 100L428 100M428 100L419.0 104.3M428 100L419.0 95.7"/><rect class="tr-box" x="430" y="70" width="120" height="60" rx="14"/><text class="site-label" x="490" y="97" text-anchor="middle"><tspan x="490" dy="0">Postdrome</tspan><tspan x="490" dy="16">Hours</tspan></text><g class="site-marker"><circle cx="70" cy="52" r="11"/><text x="70" y="56.5">A</text></g><g class="site-marker"><circle cx="210" cy="52" r="11"/><text x="210" y="56.5">B</text></g><g class="site-marker"><circle cx="350" cy="52" r="11"/><text x="350" y="56.5">C</text></g><g class="site-marker"><circle cx="490" cy="52" r="11"/><text x="490" y="56.5">D</text></g></svg></figure>
 <ul class="cause-list is-two-column">
 <li><span class="cause-number" aria-hidden="true">A</span><span class="cause-text"><span class="cause-name">Prodrome</span><span class="cause-detail">In about 77%, up to 24–48 hours before: yawning, mood change, neck stiffness, cravings, and sensitivity to light and sound; hypothalamic</span></span></li>
@@ -1599,20 +1605,64 @@
 <li><span class="cause-number" aria-hidden="true">D</span><span class="cause-text"><span class="cause-name">Postdrome</span><span class="cause-detail">Fatigue and poor concentration as the headache resolves</span></span></li>
 </ul>
 </div>
+<div class="subsection">
+<h4 class="sc-heading">Tension-type headache</h4>
+<ol class="pathway">
+<li><span class="pathway-title">Stress, posture, and muscle tension</span><span class="pathway-detail">Peripheral input</span></li>
+<li><span class="pathway-title">Tender pericranial muscles</span><span class="pathway-detail">Peripheral sensitization</span></li>
+<li><span class="pathway-title">Central sensitization</span><span class="pathway-detail">Lower pain threshold in frequent or chronic forms</span></li>
+<li><span class="pathway-title">Bilateral pressing headache</span><span class="pathway-detail">Band-like</span></li>
+</ol>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="0 0 300 300" role="img" aria-label="A head with a tight band around it at the level of the forehead and the back of the head, and numbered sites: E, the band of bilateral pressing pain; F, tender pericranial and neck muscles"><ellipse class="sah-brain" cx="150" cy="160" rx="120" ry="140"/><path class="sah-press" d="M32 130C70 100 230 100 268 130M32 130C70 160 230 160 268 130" stroke-width="10"/><path class="sah-csf" d="M100 286C110 250 190 250 200 286Z"/><g class="site-marker"><circle cx="150" cy="112" r="11"/><text x="150" y="116.5">E</text></g><g class="site-marker"><circle cx="150" cy="270" r="11"/><text x="150" y="274.5">F</text></g></svg></figure>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">E</span><span class="cause-text"><span class="cause-name">A tight band</span><span class="cause-detail">Bilateral, pressing or tightening pain</span></span></li>
+<li><span class="cause-number" aria-hidden="true">F</span><span class="cause-text"><span class="cause-name">Tender muscles</span><span class="cause-detail">Pericranial and neck muscle tenderness, which rises with headache frequency</span></span></li>
+</ul>
+</div>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Cluster headache</h4>
+<ol class="pathway">
+<li><span class="pathway-title">Hypothalamus</span><span class="pathway-detail">Circadian and seasonal timing; activated in attacks</span></li>
+<li><span class="pathway-title">Trigeminovascular activation</span><span class="pathway-detail">Orbital and temporal pain</span></li>
+<li><span class="pathway-title">Trigeminal autonomic reflex</span><span class="pathway-detail">Parasympathetic outflow on the same side</span></li>
+<li><span class="pathway-title">Autonomic signs</span><span class="pathway-detail">Tearing, red eye, nasal congestion, and Horner signs</span></li>
+</ol>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="0 0 300 300" role="img" aria-label="A face with severe pain around one eye, numbered: G, orbital and temporal pain on one side; H, tearing and a red eye; I, a drooping lid and small pupil; J, a blocked or runny nostril on the same side"><ellipse class="sah-brain" cx="150" cy="150" rx="120" ry="140"/><ellipse class="sah-csf" cx="105" cy="130" rx="26" ry="16"/><ellipse class="sah-csf" cx="195" cy="130" rx="26" ry="16"/><circle class="bleed" cx="105" cy="130" r="6"/><circle class="bleed" cx="195" cy="130" r="9"/><path class="sah-press" d="M140 150V200M135 200C140 212 160 212 165 200"/><path class="bleed" d="M78 92C90 72 132 72 140 96" opacity="0.5"/><g class="site-marker"><circle cx="70" cy="86" r="11"/><text x="70" y="90.5">G</text></g><g class="site-marker"><circle cx="76" cy="160" r="11"/><text x="76" y="164.5">H</text></g><g class="site-marker"><circle cx="124" cy="106" r="11"/><text x="124" y="110.5">I</text></g><g class="site-marker"><circle cx="118" cy="214" r="11"/><text x="118" y="218.5">J</text></g></svg></figure>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">G</span><span class="cause-text"><span class="cause-name">Pain</span><span class="cause-detail">Severe orbital, supraorbital, or temporal pain on one side</span></span></li>
+<li><span class="cause-number" aria-hidden="true">H</span><span class="cause-text"><span class="cause-name">Eye</span><span class="cause-detail">Lacrimation and conjunctival injection</span></span></li>
+<li><span class="cause-number" aria-hidden="true">I</span><span class="cause-text"><span class="cause-name">Horner signs</span><span class="cause-detail">Ptosis and miosis</span></span></li>
+<li><span class="cause-number" aria-hidden="true">J</span><span class="cause-text"><span class="cause-name">Nose</span><span class="cause-detail">Nasal congestion or rhinorrhea</span></span></li>
+</ul>
+</div>
+</div>
 <p class="note"><strong>Note:</strong> The old vascular theory, that vasoconstriction causes the aura and vasodilation the pain, is no longer accepted.</p>
                 </section>
 
                 <section class="content-section">
                     <h3>Etiology</h3>
-<ul class="cause-list is-two-column">
-<li class="cause-group">Risk</li>
+<ul class="cause-list">
+<li class="cause-group">Migraine: risk</li>
 <li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Genetics</span><span class="cause-detail">Three times the risk in relatives of affected people; familial hemiplegic migraine</span></span></li>
 <li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Female sex</span><span class="cause-detail">More common in women; hormones trigger attacks</span></span></li>
-<li class="cause-group">Triggers</li>
+<li class="cause-group">Migraine: triggers</li>
 <li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Stress</span><span class="cause-detail">About 80%</span></span></li>
 <li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Hormonal change</span><span class="cause-detail">About 65%: menstruation, ovulation, pregnancy, and oral contraceptives</span></span></li>
 <li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">Skipped meals</span><span class="cause-detail">About 57%</span></span></li>
 <li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name">Other</span><span class="cause-detail">Weather change, too little or too much sleep, alcohol, strong smells, and bright light</span></span></li>
+<li class="cause-group">Tension-type headache</li>
+<li><span class="cause-number" aria-hidden="true">7</span><span class="cause-text"><span class="cause-name">Stress and posture</span><span class="cause-detail">Stress is the most significant trigger, with poor posture and pericranial and neck muscle tension</span></span></li>
+<li><span class="cause-number" aria-hidden="true">8</span><span class="cause-text"><span class="cause-name">Central factors</span><span class="cause-detail">Sensitized pain pathways sustain frequent and chronic forms</span></span></li>
+<li class="cause-group">Cluster headache: a trigeminal autonomic cephalalgia</li>
+<li><span class="cause-number" aria-hidden="true">9</span><span class="cause-text"><span class="cause-name">Male sex</span><span class="cause-detail">Men are affected about three times as often as women, though the gap is narrowing</span></span></li>
+<li><span class="cause-number" aria-hidden="true">10</span><span class="cause-text"><span class="cause-name">Hypothalamic clock</span><span class="cause-detail">Attacks at the same time of day, often at night, and in seasonal bouts</span></span></li>
+<li><span class="cause-number" aria-hidden="true">11</span><span class="cause-text"><span class="cause-name">Genetics</span><span class="cause-detail">Familial cases occur</span></span></li>
+<li><span class="cause-number" aria-hidden="true">12</span><span class="cause-text"><span class="cause-name">Triggers in a bout</span><span class="cause-detail">Alcohol and smoking</span></span></li>
+<li class="cause-group">Medication overuse headache</li>
+<li><span class="cause-number" aria-hidden="true">13</span><span class="cause-text"><span class="cause-name">Frequent acute treatment</span><span class="cause-detail">Simple analgesics on 15 or more days a month, or triptans, ergots, opioids, or combination analgesics on 10 or more; about two thirds of patients have chronic migraine</span></span></li>
 </ul>
 <p class="note"><strong>Note:</strong> Migraine with aura raises the risk of ischemic stroke, so estrogen contraceptives are avoided in women who have it.</p>
                 </section>
@@ -1620,7 +1670,7 @@
                 <section class="content-section">
                     <h3>Symptoms and complications</h3>
 <div class="subsection">
-<h4 class="sc-heading"><abbr class="term" tabindex="0" data-definition="Pulsating, One day (4–72 hours), Unilateral, Nausea, Disabling">POUND</abbr></h4>
+<h4 class="sc-heading">Migraine: <abbr class="term" tabindex="0" data-definition="Pulsating, One day (4–72 hours), Unilateral, Nausea, Disabling">POUND</abbr></h4>
 <ul class="pair-list">
 <li><span class="pair-from">P</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Pulsating</span></li>
 <li><span class="pair-from">O</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">One day: 4–72 hours</span></li>
@@ -1628,39 +1678,56 @@
 <li><span class="pair-from">N</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Nausea and vomiting</span></li>
 <li><span class="pair-from">D</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Disabling, worse with routine activity</span></li>
 </ul>
+<ul class="chip-list"><li>Photophobia</li><li>Phonophobia</li><li>Osmophobia</li><li>Allodynia</li><li>Aura: visual, sensory, or speech</li><li>Motor weakness in hemiplegic migraine</li></ul>
 </div>
 <div class="subsection">
-<h4 class="sc-heading">Other symptoms</h4>
-<ul class="chip-list"><li>Photophobia</li><li>Phonophobia</li><li>Osmophobia</li><li>Allodynia</li><li>Aura: visual, sensory, or speech</li><li>Motor weakness in hemiplegic migraine</li></ul>
+<h4 class="sc-heading">Tension-type headache</h4>
+<ul class="chip-list"><li>Bilateral</li><li>Band-like, pressing, or tightening</li><li>Mild to moderate</li><li>30 minutes to 7 days</li><li>Not worse with routine activity</li><li>No nausea or vomiting</li><li>At most one of photophobia or phonophobia</li></ul>
+<ul class="pair-list">
+<li><span class="pair-from">Infrequent episodic</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Less than 1 day a month</span></li>
+<li><span class="pair-from">Frequent episodic</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">1–14 days a month</span></li>
+<li><span class="pair-from">Chronic</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">15 or more days a month</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Cluster headache</h4>
+<ul class="chip-list"><li>Excruciating, unilateral orbital pain</li><li>15–180 minutes</li><li>Up to 8 attacks a day</li><li>Often at night, at the same time</li><li>Restless and agitated</li><li>Tearing and a red eye</li><li>Ptosis and miosis</li><li>Nasal congestion or rhinorrhea</li></ul>
+<ul class="pair-list">
+<li><span class="pair-from">Episodic</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Bouts of weeks to months, then remission</span></li>
+<li><span class="pair-from">Chronic</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Attacks without lasting remission</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Medication overuse headache</h4>
+<p>Headache on 15 or more days a month in someone with a headache disorder who has overused acute treatment for 3 or more months; it can turn episodic migraine or tension-type headache into a chronic one.</p>
+<ul class="chip-list"><li>Worse in the morning</li><li>Neck pain</li><li>Poor sleep</li><li>Anxiety and depression</li><li>Autonomic symptoms with opioids</li><li>Every headache treatment works less well</li></ul>
 </div>
 <div class="subsection">
 <h4 class="sc-heading">Complications</h4>
 <ul class="complication-grid">
 <li><span class="cause-name">Chronic migraine</span><span class="cause-detail">15 or more headache days a month</span></li>
-<li><span class="cause-name">Medication overuse headache</span><span class="cause-detail">From frequent acute treatment</span></li>
 <li><span class="cause-name">Migrainous infarction</span><span class="cause-detail">Aura with ischemia on imaging</span></li>
 <li><span class="cause-name">Persistent aura without infarction</span><span class="cause-detail">Aura over 1 week, normal imaging</span></li>
 <li><span class="cause-name">Status migrainosus</span><span class="cause-detail">An attack lasting over 72 hours</span></li>
+<li><span class="cause-name">Chronic tension-type headache</span><span class="cause-detail">15 or more days a month</span></li>
+<li><span class="cause-name">Chronic cluster headache</span><span class="cause-detail">Attacks without lasting remission</span></li>
+<li><span class="cause-name">Medication overuse headache</span><span class="cause-detail">From frequent acute treatment of any primary headache (13)</span></li>
 </ul>
 </div>
                 </section>
 
                 <section class="content-section">
                     <h3>Diagnosis</h3>
+<p>Primary headaches are diagnosed clinically from the pattern of attacks with a normal neurologic examination; imaging is kept for red flags, and a headache that may be secondary is worked up as on <button type="button" class="link-button" data-goto="localizing-lesions">Localizing a Lesion</button>.</p>
 <div class="subsection">
-<h4 class="sc-heading">Criteria for migraine without aura</h4>
-<ol class="pathway">
-<li><span class="pathway-title">At least 5 attacks</span></li>
-<li><span class="pathway-title">4–72 hours</span><span class="pathway-detail">Untreated</span></li>
-<li><span class="pathway-title">2 of 4 features</span><span class="pathway-detail">Unilateral, pulsating, moderate to severe, worse with activity</span></li>
-<li><span class="pathway-title">1 of 2</span><span class="pathway-detail">Nausea or vomiting, or photophobia with phonophobia</span></li>
-</ol>
-</div>
-<div class="subsection">
-<h4 class="sc-heading">Migraine with aura</h4>
-<ul class="pair-list">
-<li><span class="pair-from">Aura</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Spreads over 5 minutes or more; each symptom lasts 5–60 minutes; at least 1 is unilateral and 1 positive; followed by headache within 60 minutes</span></li>
-</ul>
+<h4 class="sc-heading">Criteria</h4>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Headache</th><th scope="col">Criteria</th></tr></thead><tbody>
+<tr><th scope="row">Migraine without aura</th><td>At least 5 attacks of 4–72 hours untreated, with 2 of: unilateral, pulsating, moderate to severe, worse with activity; and 1 of: nausea or vomiting, or photophobia with phonophobia</td></tr>
+<tr><th scope="row">Migraine with aura</th><td>Aura spreads over 5 minutes or more; each symptom lasts 5–60 minutes; at least 1 is unilateral and 1 positive; headache follows within 60 minutes</td></tr>
+<tr><th scope="row">Tension-type headache</th><td>Typical features with a normal examination: bilateral, pressing, not worse with activity, without nausea</td></tr>
+<tr><th scope="row">Cluster headache</th><td>At least 5 attacks of severe unilateral orbital, supraorbital, or temporal pain lasting 15–180 minutes, with ipsilateral autonomic signs or restlessness; <abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr> for a first attack or atypical features, to exclude a structural cause such as a pituitary lesion</td></tr>
+<tr><th scope="row">Medication overuse headache</th><td>Headache on 15 or more days a month, overuse of acute treatment for 3 or more months, and no better explanation; there is no test, so it rests on a careful medication history</td></tr>
+</tbody></table></div>
 </div>
 <div class="subsection">
 <h4 class="sc-heading">Image only with red flags</h4>
@@ -1670,8 +1737,14 @@
 
                 <section class="content-section">
                     <h3>Treatment</h3>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Headache</th><th scope="col">Acute</th><th scope="col">Prevention</th></tr></thead><tbody>
+<tr><th scope="row">Migraine</th><td><abbr class="term" tabindex="0" data-definition="Nonsteroidal anti-inflammatory drugs">NSAIDs</abbr> or paracetamol; triptans for moderate to severe attacks; antiemetics; gepants or ergots if triptans fail</td><td>Propranolol, topiramate, or amitriptyline; <abbr class="term" tabindex="0" data-definition="Calcitonin gene-related peptide">CGRP</abbr> antibodies and botulinum toxin for chronic migraine</td></tr>
+<tr><th scope="row">Tension-type headache</th><td><abbr class="term" tabindex="0" data-definition="Nonsteroidal anti-inflammatory drugs">NSAIDs</abbr> or paracetamol</td><td>Amitriptyline; stress reduction, physical therapy, and posture correction</td></tr>
+<tr><th scope="row">Cluster headache</th><td>100% oxygen by face mask; subcutaneous or intranasal sumatriptan</td><td>Verapamil (monitor <abbr class="term" tabindex="0" data-definition="Electrocardiogram">ECG</abbr> for heart block); lithium; prednisone or an occipital nerve block to bridge</td></tr>
+<tr><th scope="row">Medication overuse headache</th><td>Stop the overused drug and use a different class</td><td>Start prevention for the underlying headache</td></tr>
+</tbody></table></div>
 <div class="subsection">
-<h4 class="sc-heading">Acute attack</h4>
+<h4 class="sc-heading">Migraine: acute attack</h4>
 <ul class="pair-list">
 <li><span class="pair-from">Mild to moderate</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Nonsteroidal anti-inflammatory drugs">NSAIDs</abbr> or paracetamol, early and at a full dose</span></li>
 <li><span class="pair-from">Moderate to severe</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Triptans (<abbr class="term" tabindex="0" data-definition="Serotonin receptors 1B and 1D">5-HT1B/1D</abbr> agonists), with or without naproxen; a non-responder may respond to another triptan</span></li>
@@ -1684,7 +1757,7 @@
 <ul class="chip-list"><li>Coronary or cerebrovascular disease</li><li>Prinzmetal angina</li><li>Uncontrolled hypertension</li><li>Hemiplegic or brainstem aura</li><li><abbr class="term" tabindex="0" data-definition="Monoamine oxidase inhibitor">MAOI</abbr> use; caution with <abbr class="term" tabindex="0" data-definition="Selective serotonin reuptake inhibitors">SSRIs</abbr> (serotonin syndrome)</li></ul>
 </div>
 <div class="subsection">
-<h4 class="sc-heading">Prevention</h4>
+<h4 class="sc-heading">Migraine: prevention</h4>
 <ul class="pair-list">
 <li><span class="pair-from">When</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Frequent or disabling attacks, failure of acute treatment, or overuse</span></li>
 <li><span class="pair-from">First line</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">β-blockers (propranolol), topiramate, or amitriptyline</span></li>
@@ -1692,322 +1765,119 @@
 <li><span class="pair-from">Lifestyle</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Regular sleep and meals, and avoiding triggers</span></li>
 </ul>
 </div>
+<div class="subsection">
+<h4 class="sc-heading">Cluster headache</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Why not oral triptans</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">They act too slowly for attacks that last under an hour, so injected or nasal forms are used</span></li>
+<li><span class="pair-from">Avoid in a bout</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Alcohol</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Medication overuse headache</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Educate</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">The most important first step, for the patient and family</span></li>
+<li><span class="pair-from">Withdraw</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Stopping the overused drug completely works better than restricting it; abruptly or over several weeks, usually as an outpatient</span></li>
+<li><span class="pair-from">Expect</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Headache often worsens for the first few days; withdrawal symptoms last up to 10 days, then improve</span></li>
+<li><span class="pair-from">Prevent and follow up</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Preventive drugs or <abbr class="term" tabindex="0" data-definition="Cognitive behavioral therapy">CBT</abbr>, relaxation, and trigger avoidance; treat anxiety and depression; about half relapse within 5 years</span></li>
+</ul>
+</div>
 <p class="note"><strong>Limit acute drugs</strong> to fewer than 10–15 days a month to avoid medication overuse headache.</p>
                 </section>
 
                 <p class="see-also">
                     Related:
-                    <button type="button" class="link-button" data-goto="tension-headache">Tension-Type Headache</button>
-                    <button type="button" class="link-button" data-goto="cluster-headache">Cluster Headache</button>
-                    <button type="button" class="link-button" data-goto="vertigo">Vertigo</button>
+                    <button type="button" class="link-button" data-goto="localizing-lesions">Localizing a Lesion</button>
                     <button type="button" class="link-button" data-goto="subarachnoid-hemorrhage">Subarachnoid Hemorrhage</button>
+                    <button type="button" class="link-button" data-goto="vertigo">Vertigo</button>
                     <a class="link-button" href="physiology.html#pain-pathways">Pain Pathways and Descending Modulation</a>
-                </p>
-                <section class="references" aria-label="References">
-                    <h3>References</h3>
-                    <ol>
-                        <li>Pescador Ruschel MA, De Jesus O. Migraine Headache. 2024. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK560787/" target="_blank" rel="noopener">NBK560787</a></li>
-                    </ol>
-                </section>
-                <dialog class="quick-review" aria-labelledby="migraine-review-title">
-                    <div class="quick-review-body">
-                        <p class="review-kicker">Review article</p>
-                        <h3 id="migraine-review-title">Migraine: a recurrent trigeminovascular headache with prodrome, aura, and postdrome</h3>
-
-                        <p class="review-abstract">Migraine is a recurrent primary headache in which cortical spreading depression and trigeminal activation release <abbr class="term" tabindex="0" data-definition="Calcitonin gene-related peptide">CGRP</abbr> and substance P, causing unilateral, pulsating pain with nausea and sensitivity to light and sound. Attacks pass through a prodrome, an aura in about a quarter of patients, the headache, and a postdrome. Here, we review its pathophysiology, triggers, diagnostic criteria, red flags, and treatment, and consider how it relates to other headaches and to stroke.</p>
-
-                        <aside class="review-key-points">
-                            <h4>Key points</h4>
-                            <ul>
-                                <li>Cortical spreading depression causes the aura and activates trigeminal afferents, which release <abbr class="term" tabindex="0" data-definition="Calcitonin gene-related peptide">CGRP</abbr> and substance P.</li>
-                                <li>Migraine without aura needs at least 5 attacks of 4–72 hours with 2 of unilateral, pulsating, moderate to severe, and activity-worsened pain, plus nausea or photophobia with phonophobia.</li>
-                                <li>Aura is gradual, fully reversible, mostly visual, and lasts 5–60 minutes.</li>
-                                <li>Acute attacks are treated with <abbr class="term" tabindex="0" data-definition="Nonsteroidal anti-inflammatory drugs">NSAIDs</abbr> or triptans, which are avoided in coronary and cerebrovascular disease, and prevented with propranolol, topiramate, or amitriptyline.</li>
-                                <li>Frequent acute treatment causes medication overuse headache.</li>
-                            </ul>
-                        </aside>
-
-                        <h4>Pathophysiology</h4>
-                        <p>Cortical spreading depression, a wave of neuronal and glial depolarization, causes the aura and activates trigeminovascular afferents, whose terminals release <abbr class="term" tabindex="0" data-definition="Calcitonin gene-related peptide">CGRP</abbr> and substance P. These dilate dural vessels and cause neurogenic inflammation, sensitizing nerves and producing a unilateral, pulsating headache; the older vascular theory, in which vasoconstriction causes the aura and vasodilation the pain, is no longer accepted. Attacks pass through four phases. A prodrome in about 77%, up to 24–48 hours before, brings yawning, mood change, neck stiffness, cravings, and sensitivity to light and sound, reflecting hypothalamic activity. An aura in about 25% is gradual, fully reversible, mostly visual, and lasts 5–60 minutes, with positive symptoms such as zigzag lines and negative ones such as a scotoma. The headache lasts 4–72 hours, and a postdrome of fatigue and poor concentration follows.</p>
-
-                        <h4>Etiology</h4>
-                        <p>Relatives of affected people have three times the risk, and familial hemiplegic migraine is inherited; migraine is more common in women. Attacks are triggered by stress in about 80%, hormonal change in about 65% (menstruation, ovulation, pregnancy, and oral contraceptives), skipped meals in about 57%, and by weather change, too little or too much sleep, alcohol, strong smells, and bright light. Migraine with aura raises the risk of ischemic stroke, so estrogen contraceptives are avoided in women who have it.</p>
-
-                        <h4>Symptoms and complications</h4>
-                        <p>The headache follows <abbr class="term" tabindex="0" data-definition="Pulsating, One day (4–72 hours), Unilateral, Nausea, Disabling">POUND</abbr>: pulsating, lasting one day (4–72 hours), unilateral, with nausea and vomiting, and disabling, worse with routine activity. Photophobia, phonophobia, osmophobia, and allodynia are common, the aura can be visual, sensory, or affect speech, and hemiplegic migraine causes motor weakness. Complications include chronic migraine, with 15 or more headache days a month; medication overuse headache from frequent acute treatment; migrainous infarction, in which an aura comes with ischemia on imaging; persistent aura without infarction, lasting over a week with normal imaging; and status migrainosus, an attack lasting over 72 hours.</p>
-
-                        <h4>Diagnosis</h4>
-                        <p>Migraine without aura needs at least 5 attacks lasting 4–72 hours untreated, with 2 of 4 features (unilateral, pulsating, moderate to severe, worse with activity) and either nausea or vomiting, or photophobia with phonophobia. In migraine with aura, the aura spreads over 5 minutes or more, each symptom lasts 5–60 minutes, at least one is unilateral and one positive, and headache follows within 60 minutes. Imaging is reserved for red flags: a sudden, severe thunderclap headache calls for non-contrast <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> for <abbr class="term" tabindex="0" data-definition="Subarachnoid hemorrhage">SAH</abbr> and then <abbr class="term" tabindex="0" data-definition="Lumbar puncture">LP</abbr> if negative; a new headache at 50 or older or with immunosuppression calls for <abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr>, with <abbr class="term" tabindex="0" data-definition="Erythrocyte sedimentation rate">ESR</abbr> for giant cell arteritis over 50; fever, weight loss, or meningism call for imaging and <abbr class="term" tabindex="0" data-definition="Lumbar puncture">LP</abbr>; and a change in the usual pattern or a focal deficit calls for <abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr>.</p>
-
-                        <h4>Treatment</h4>
-                        <p>Mild to moderate attacks are treated early with full doses of <abbr class="term" tabindex="0" data-definition="Nonsteroidal anti-inflammatory drugs">NSAIDs</abbr> or paracetamol, and moderate to severe attacks with triptans, <abbr class="term" tabindex="0" data-definition="Serotonin receptors 1B and 1D">5-HT1B/1D</abbr> agonists, with or without naproxen; a patient who does not respond to one triptan may respond to another. Antiemetics such as metoclopramide or prochlorperazine treat nausea, parenteral drugs are used when gastric stasis prevents absorption, and gepants (<abbr class="term" tabindex="0" data-definition="Calcitonin gene-related peptide">CGRP</abbr> receptor antagonists) or ergots are used when triptans fail or are contraindicated. Triptans are avoided in coronary or cerebrovascular disease, Prinzmetal angina, uncontrolled hypertension, and hemiplegic or brainstem aura, and with <abbr class="term" tabindex="0" data-definition="Monoamine oxidase inhibitors">MAOIs</abbr>, with caution alongside <abbr class="term" tabindex="0" data-definition="Selective serotonin reuptake inhibitors">SSRIs</abbr> because of serotonin syndrome.</p>
-                        <p>Prevention is offered for frequent or disabling attacks, failure of acute treatment, or overuse. First-line options are β-blockers such as propranolol, topiramate, and amitriptyline, with valproate, venlafaxine, <abbr class="term" tabindex="0" data-definition="Calcitonin gene-related peptide">CGRP</abbr> monoclonal antibodies, and botulinum toxin for chronic migraine as alternatives, alongside regular sleep and meals and avoidance of triggers. Acute drugs are limited to fewer than 10–15 days a month to avoid medication overuse headache.</p>
-
-                        <h4>Relationships to other conditions</h4>
-                        <p><em><button type="button" class="review-link" data-goto="tension-headache">Tension-type headache</button>.</em> Both are common primary headaches, but tension-type headache is bilateral, band-like, pressing, mild to moderate, and not worsened by activity, without nausea, whereas migraine is unilateral, pulsating, worse with activity, and comes with nausea, photophobia, and phonophobia.</p>
-                        <p><em><button type="button" class="review-link" data-goto="cluster-headache">Cluster headache</button>.</em> Both are unilateral, but cluster headache is shorter (15–180 minutes), orbital, excruciating, and accompanied by ipsilateral autonomic signs, with restlessness rather than the stillness of migraine.</p>
-                        <p><em><button type="button" class="review-link" data-goto="ischemic-stroke">Stroke</button> and <button type="button" class="review-link" data-goto="subarachnoid-hemorrhage">SAH</button>.</em> An aura is gradual, spreading, positive, and fully reversible, whereas a <abbr class="term" tabindex="0" data-definition="Transient ischemic attack">TIA</abbr> or stroke is sudden and mostly negative; a thunderclap headache suggests <abbr class="term" tabindex="0" data-definition="Subarachnoid hemorrhage">SAH</abbr> rather than migraine and needs <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr>.</p>
-                    </div>
-                </dialog>
-            </article>
-
-            <article class="condition-content" id="tension-headache">
-                <h2>Tension-Type Headache</h2>
-
-                <section class="content-section">
-                    <h3>Pathophysiology</h3>
-<p>Peripheral muscle tenderness and central sensitization of pain pathways, often driven by stress and poor posture, produce a recurrent bilateral, pressing headache.</p>
-<ol class="pathway">
-<li><span class="pathway-title">Stress, posture, and muscle tension</span><span class="pathway-detail">Peripheral input</span></li>
-<li><span class="pathway-title">Tender pericranial muscles</span><span class="pathway-detail">Peripheral sensitization</span></li>
-<li><span class="pathway-title">Central sensitization</span><span class="pathway-detail">Lower pain threshold in frequent or chronic forms</span></li>
-<li><span class="pathway-title">Bilateral pressing headache</span><span class="pathway-detail">Band-like</span></li>
-</ol>
-<div class="subsection">
-<h4 class="sc-heading">Where it hurts</h4>
-<div class="etiology-map">
-<figure class="cause-map"><svg viewBox="0 0 300 300" role="img" aria-label="A head with a tight band around it at the level of the forehead and the back of the head, and numbered sites: 1, the band of bilateral pressing pain; 2, tender pericranial and neck muscles"><ellipse class="sah-brain" cx="150" cy="160" rx="120" ry="140"/><path class="sah-press" d="M32 130C70 100 230 100 268 130M32 130C70 160 230 160 268 130" stroke-width="10"/><path class="sah-csf" d="M100 286C110 250 190 250 200 286Z"/><g class="site-marker"><circle cx="150" cy="112" r="11"/><text x="150" y="116.5">1</text></g><g class="site-marker"><circle cx="150" cy="270" r="11"/><text x="150" y="274.5">2</text></g></svg></figure>
-<ul class="cause-list">
-<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">A tight band</span><span class="cause-detail">Bilateral, pressing or tightening pain</span></span></li>
-<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Tender muscles</span><span class="cause-detail">Pericranial and neck muscle tenderness, which rises with headache frequency</span></span></li>
-</ul>
-</div>
-</div>
-                </section>
-
-                <section class="content-section">
-                    <h3>Etiology</h3>
-<ul class="cause-list">
-<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Stress</span><span class="cause-detail">The most significant trigger, with poor posture</span></span></li>
-<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Muscle tension</span><span class="cause-detail">Pericranial and neck muscles</span></span></li>
-<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Poor posture</span><span class="cause-detail"></span></span></li>
-<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Central factors</span><span class="cause-detail">Sensitized pain pathways in frequent and chronic forms</span></span></li>
-</ul>
-<p class="note"><strong>Tension-type headache is the most common primary headache.</strong></p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Symptoms and complications</h3>
-<div class="subsection">
-<h4 class="sc-heading">Symptoms</h4>
-<ul class="chip-list"><li>Bilateral</li><li>Band-like, pressing, or tightening</li><li>Mild to moderate</li><li>30 minutes to 7 days</li><li>Not worse with routine activity</li><li>No nausea or vomiting</li><li>At most one of photophobia or phonophobia</li></ul>
-</div>
-<div class="subsection">
-<h4 class="sc-heading">Forms</h4>
-<ul class="pair-list">
-<li><span class="pair-from">Infrequent episodic</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Less than 1 day a month</span></li>
-<li><span class="pair-from">Frequent episodic</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">1–14 days a month</span></li>
-<li><span class="pair-from">Chronic</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">15 or more days a month</span></li>
-</ul>
-</div>
-<div class="subsection">
-<h4 class="sc-heading">Complications</h4>
-<ul class="complication-grid">
-<li><span class="cause-name">Chronic tension-type headache</span></li>
-<li><span class="cause-name">Medication overuse headache</span><span class="cause-detail">From frequent analgesics</span></li>
-</ul>
-</div>
-                </section>
-
-                <section class="content-section">
-                    <h3>Diagnosis</h3>
-<ul class="pair-list">
-<li><span class="pair-from">Clinical diagnosis</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Typical features with a normal neurologic examination</span></li>
-<li><span class="pair-from">Red flags</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">As for any headache: sudden onset, new after 50, fever, focal deficits, or a changed pattern call for imaging</span></li>
-<li><span class="pair-from">Versus migraine</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Bilateral, pressing, not worse with activity, and without nausea</span></li>
-</ul>
-                </section>
-
-                <section class="content-section">
-                    <h3>Treatment</h3>
-<ul class="pair-list">
-<li><span class="pair-from">Acute</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Nonsteroidal anti-inflammatory drugs">NSAIDs</abbr> or paracetamol</span></li>
-<li><span class="pair-from">Chronic or frequent</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Amitriptyline for prevention</span></li>
-<li><span class="pair-from">Nondrug</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Stress reduction, physical therapy, and posture correction</span></li>
-</ul>
-<p class="note"><strong>Note:</strong> Frequent analgesic use risks medication overuse headache.</p>
-                </section>
-
-                <p class="see-also">
-                    Related:
-                    <button type="button" class="link-button" data-goto="migraine">Migraine</button>
-                    <button type="button" class="link-button" data-goto="cluster-headache">Cluster Headache</button>
-                    <a class="link-button" href="physiology.html#pain-pathways">Pain Pathways and Descending Modulation</a>
-                </p>
-                <section class="references" aria-label="References">
-                    <h3>References</h3>
-                    <ol>
-                        <li>Shah N, Asuncion RMD, Hameed S. Muscle Contraction Tension Headache. 2024. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK562274/" target="_blank" rel="noopener">NBK562274</a></li>
-                    </ol>
-                </section>
-                <dialog class="quick-review" aria-labelledby="tension-headache-review-title">
-                    <div class="quick-review-body">
-                        <p class="review-kicker">Review article</p>
-                        <h3 id="tension-headache-review-title">Tension-type headache: the most common primary headache</h3>
-
-                        <p class="review-abstract">Tension-type headache is the most common primary headache, a recurrent, bilateral, band-like, pressing pain of mild to moderate intensity without nausea. It arises from muscle tenderness and central sensitization, often triggered by stress and poor posture. Here, we review its mechanism, causes, presentation, diagnosis, and treatment, and how it differs from migraine and cluster headache.</p>
-
-                        <aside class="review-key-points">
-                            <h4>Key points</h4>
-                            <ul>
-                                <li>Tension-type headache is bilateral, band-like, pressing, mild to moderate, lasts 30 minutes to 7 days, and is not worsened by routine activity.</li>
-                                <li>It lacks nausea and vomiting and has at most one of photophobia or phonophobia.</li>
-                                <li>Stress and poor posture are the main triggers, with pericranial muscle tenderness.</li>
-                                <li>Acute attacks respond to <abbr class="term" tabindex="0" data-definition="Nonsteroidal anti-inflammatory drugs">NSAIDs</abbr> or paracetamol, and amitriptyline prevents chronic forms.</li>
-                            </ul>
-                        </aside>
-
-                        <h4>Pathophysiology</h4>
-                        <p>Stress, poor posture, and muscle tension provide peripheral input, making pericranial muscles tender, and in frequent or chronic forms central sensitization lowers the pain threshold, producing a bilateral, band-like, pressing headache. Pericranial and neck muscle tenderness rises with headache frequency.</p>
-
-                        <h4>Etiology</h4>
-                        <p>Stress is the most significant trigger, with poor posture and muscle tension, and sensitized central pain pathways sustain frequent and chronic forms. Tension-type headache is the most common primary headache.</p>
-
-                        <h4>Symptoms and complications</h4>
-                        <p>The pain is bilateral, band-like, pressing or tightening, and mild to moderate, lasts 30 minutes to 7 days, and is not worsened by routine activity; there is no nausea or vomiting, and at most one of photophobia or phonophobia. It is infrequent episodic when present less than 1 day a month, frequent episodic at 1–14 days, and chronic at 15 or more days a month. Chronic headache and medication overuse headache from frequent analgesics are the main complications.</p>
-
-                        <h4>Diagnosis</h4>
-                        <p>The diagnosis is clinical, resting on typical features with a normal neurologic examination. Red flags, as for any headache, call for imaging: sudden onset, a new headache after 50, fever, focal deficits, or a changed pattern. Unlike migraine, it is bilateral, pressing, not worsened by activity, and free of nausea.</p>
-
-                        <h4>Treatment</h4>
-                        <p>Acute headaches respond to <abbr class="term" tabindex="0" data-definition="Nonsteroidal anti-inflammatory drugs">NSAIDs</abbr> or paracetamol, amitriptyline prevents chronic or frequent headaches, and stress reduction, physical therapy, and posture correction help. Frequent analgesic use risks medication overuse headache.</p>
-
-                        <h4>Relationships to other conditions</h4>
-                        <p><em><button type="button" class="review-link" data-goto="migraine">Migraine</button>.</em> Migraine is unilateral, pulsating, moderate to severe, worse with activity, and accompanied by nausea and sensitivity to light and sound, whereas tension-type headache is bilateral, pressing, milder, and free of these features.</p>
-                        <p><em><button type="button" class="review-link" data-goto="cluster-headache">Cluster headache</button>.</em> Cluster headache is strictly unilateral, orbital, excruciating, and short, with autonomic signs, in contrast to the diffuse, mild pressure of tension-type headache.</p>
-                    </div>
-                </dialog>
-            </article>
-
-            <article class="condition-content" id="cluster-headache">
-                <h2>Cluster Headache</h2>
-
-                <section class="content-section">
-                    <h3>Pathophysiology</h3>
-<p>Hypothalamic activation triggers the trigeminal autonomic reflex, causing excruciating unilateral orbital pain with parasympathetic and sympathetic signs on the same side.</p>
-<ol class="pathway">
-<li><span class="pathway-title">Hypothalamus</span><span class="pathway-detail">Circadian and seasonal timing; activated in attacks</span></li>
-<li><span class="pathway-title">Trigeminovascular activation</span><span class="pathway-detail">Orbital and temporal pain</span></li>
-<li><span class="pathway-title">Trigeminal autonomic reflex</span><span class="pathway-detail">Parasympathetic outflow on the same side</span></li>
-<li><span class="pathway-title">Autonomic signs</span><span class="pathway-detail">Tearing, red eye, nasal congestion, and Horner signs</span></li>
-</ol>
-<div class="subsection">
-<h4 class="sc-heading">Signs on the side of the pain</h4>
-<div class="etiology-map">
-<figure class="cause-map"><svg viewBox="0 0 300 300" role="img" aria-label="A face with severe pain around one eye, numbered: 1, orbital and temporal pain on one side; 2, tearing and a red eye; 3, a drooping lid and small pupil; 4, a blocked or runny nostril on the same side"><ellipse class="sah-brain" cx="150" cy="150" rx="120" ry="140"/><ellipse class="sah-csf" cx="105" cy="130" rx="26" ry="16"/><ellipse class="sah-csf" cx="195" cy="130" rx="26" ry="16"/><circle class="bleed" cx="105" cy="130" r="6"/><circle class="bleed" cx="195" cy="130" r="9"/><path class="sah-press" d="M140 150V200M135 200C140 212 160 212 165 200"/><path class="bleed" d="M78 92C90 72 132 72 140 96" opacity="0.5"/><g class="site-marker"><circle cx="70" cy="86" r="11"/><text x="70" y="90.5">1</text></g><g class="site-marker"><circle cx="76" cy="160" r="11"/><text x="76" y="164.5">2</text></g><g class="site-marker"><circle cx="124" cy="106" r="11"/><text x="124" y="110.5">3</text></g><g class="site-marker"><circle cx="118" cy="214" r="11"/><text x="118" y="218.5">4</text></g></svg></figure>
-<ul class="cause-list">
-<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Pain</span><span class="cause-detail">Severe orbital, supraorbital, or temporal pain on one side</span></span></li>
-<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Eye</span><span class="cause-detail">Lacrimation and conjunctival injection</span></span></li>
-<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Horner signs</span><span class="cause-detail">Ptosis and miosis</span></span></li>
-<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Nose</span><span class="cause-detail">Nasal congestion or rhinorrhea</span></span></li>
-</ul>
-</div>
-</div>
-                </section>
-
-                <section class="content-section">
-                    <h3>Etiology</h3>
-<ul class="cause-list">
-<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Male sex</span><span class="cause-detail">Men are affected about three times as often as women, though the gap is narrowing</span></span></li>
-<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Hypothalamic clock</span><span class="cause-detail">Attacks at the same time of day, often at night, and in seasonal bouts</span></span></li>
-<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Genetics</span><span class="cause-detail">Familial cases occur</span></span></li>
-<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Triggers in a bout</span><span class="cause-detail">Alcohol and smoking</span></span></li>
-</ul>
-<p class="note"><strong>Cluster headache is a trigeminal autonomic cephalalgia</strong>, a group of short, unilateral headaches with autonomic signs.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Symptoms and complications</h3>
-<div class="subsection">
-<h4 class="sc-heading">Symptoms</h4>
-<ul class="chip-list"><li>Excruciating, unilateral orbital pain</li><li>15–180 minutes</li><li>Up to 8 attacks a day</li><li>Often at night, at the same time</li><li>Restless and agitated</li><li>Tearing and a red eye</li><li>Ptosis and miosis</li><li>Nasal congestion or rhinorrhea</li></ul>
-</div>
-<div class="subsection">
-<h4 class="sc-heading">Pattern</h4>
-<ul class="pair-list">
-<li><span class="pair-from">Episodic</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Bouts of weeks to months, then remission</span></li>
-<li><span class="pair-from">Chronic</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Attacks without lasting remission</span></li>
-</ul>
-</div>
-                </section>
-
-                <section class="content-section">
-                    <h3>Diagnosis</h3>
-<ul class="pair-list">
-<li><span class="pair-from">Criteria</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">At least 5 attacks of severe unilateral orbital, supraorbital, or temporal pain lasting 15–180 minutes, with ipsilateral autonomic signs or restlessness</span></li>
-<li><span class="pair-from">Imaging</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr> for a first attack or atypical features, to exclude a structural cause, such as a pituitary lesion</span></li>
-<li><span class="pair-from">Versus migraine</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Shorter, orbital, with autonomic signs; patients pace rather than lie still</span></li>
-</ul>
-                </section>
-
-                <section class="content-section">
-                    <h3>Treatment</h3>
-<ul class="pair-list">
-<li><span class="pair-from">Acute</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">100% oxygen by face mask; subcutaneous or intranasal sumatriptan</span></li>
-<li><span class="pair-from">Bridging</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">A short course of prednisone or an occipital nerve block while prevention starts</span></li>
-<li><span class="pair-from">Prevention</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Verapamil, first line (monitor <abbr class="term" tabindex="0" data-definition="Electrocardiogram">ECG</abbr> for heart block); lithium as an alternative</span></li>
-<li><span class="pair-from">Avoid in a bout</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Alcohol</span></li>
-</ul>
-<p class="note"><strong>Note:</strong> Oral triptans act too slowly for attacks that last under an hour, so injected or nasal forms are used.</p>
-                </section>
-
-                <p class="see-also">
-                    Related:
-                    <button type="button" class="link-button" data-goto="migraine">Migraine</button>
-                    <button type="button" class="link-button" data-goto="tension-headache">Tension-Type Headache</button>
                     <a class="link-button" href="physiology.html#cn-face">Trigeminal and Facial Nerves</a>
                 </p>
                 <section class="references" aria-label="References">
                     <h3>References</h3>
                     <ol>
+                        <li>Pescador Ruschel MA, De Jesus O. Migraine Headache. 2024. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK560787/" target="_blank" rel="noopener">NBK560787</a></li>
+                        <li>Shah N, Asuncion RMD, Hameed S. Muscle Contraction Tension Headache. 2024. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK562274/" target="_blank" rel="noopener">NBK562274</a></li>
                         <li>Kandel SA, Mandiga P. Cluster Headache. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK544241/" target="_blank" rel="noopener">NBK544241</a></li>
+                        <li>Aleksenko D, Lui F, Sánchez-Manso JC. Medication Overuse Headache. 2025. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK470171/" target="_blank" rel="noopener">NBK470171</a></li>
                     </ol>
                 </section>
-                <dialog class="quick-review" aria-labelledby="cluster-headache-review-title">
+                <dialog class="quick-review" aria-labelledby="primary-headaches-review-title">
                     <div class="quick-review-body">
                         <p class="review-kicker">Review article</p>
-                        <h3 id="cluster-headache-review-title">Cluster headache: a trigeminal autonomic cephalalgia with hypothalamic timing</h3>
+                        <h3 id="primary-headaches-review-title">Primary headaches: migraine, tension-type, and cluster headache, and the overuse of their treatment</h3>
 
-                        <p class="review-abstract">Cluster headache is an excruciating, strictly unilateral orbital headache lasting 15–180 minutes with ipsilateral autonomic signs. Its circadian and seasonal timing implicate the hypothalamus, which drives the trigeminal autonomic reflex. Here, we review its mechanism, presentation, diagnosis, and treatment with oxygen, triptans, and verapamil, and how it differs from migraine.</p>
+                        <p class="review-abstract">Migraine, tension-type headache, and cluster headache are the main primary headaches, separated by where the pain is, what it feels like, how long it lasts, and what accompanies it. Migraine arises from cortical spreading depression and trigeminal release of <abbr class="term" tabindex="0" data-definition="Calcitonin gene-related peptide">CGRP</abbr>, tension-type headache from tender pericranial muscles and central sensitization, and cluster headache from hypothalamic activation of the trigeminal autonomic reflex. Frequent use of acute treatment for any of them causes medication overuse headache. Here, we review their mechanisms, causes, presentation, diagnostic criteria, red flags, and treatment, and consider how they relate to secondary headaches and to stroke.</p>
 
                         <aside class="review-key-points">
                             <h4>Key points</h4>
                             <ul>
-                                <li>Cluster headache causes severe unilateral orbital pain lasting 15–180 minutes, with tearing, red eye, nasal congestion, ptosis, and miosis on the same side.</li>
-                                <li>It affects men about three times as often as women and recurs at the same time of day, often at night, in seasonal bouts.</li>
-                                <li>Patients are restless and agitated, unlike in migraine.</li>
-                                <li>Attacks are treated with 100% oxygen or injected or nasal sumatriptan, and prevented with verapamil.</li>
+                                <li>Migraine is unilateral, pulsating, 4–72 hours, and worse with activity, with nausea, photophobia, and phonophobia; about 25% have an aura that is gradual, mostly visual, and lasts 5–60 minutes.</li>
+                                <li>Tension-type headache, the most common primary headache, is bilateral, band-like, pressing, and mild to moderate, without nausea, and is not worsened by activity.</li>
+                                <li>Cluster headache is excruciating, orbital, and 15–180 minutes, with tearing, red eye, nasal congestion, ptosis, and miosis on the same side; patients are restless, and men are affected about three times as often.</li>
+                                <li>Migraine is treated with <abbr class="term" tabindex="0" data-definition="Nonsteroidal anti-inflammatory drugs">NSAIDs</abbr> or triptans and prevented with propranolol, topiramate, or amitriptyline; cluster headache with oxygen or injected or nasal sumatriptan and prevented with verapamil.</li>
+                                <li>Medication overuse headache follows simple analgesics on 15 or more days a month, or triptans, ergots, opioids, or combinations on 10 or more, and is treated by stopping the overused drug and starting prevention.</li>
+                                <li>Thunderclap onset, a new headache at 50 or older, fever, weight loss, meningism, a focal deficit, or a change in pattern suggests a secondary headache and calls for imaging.</li>
                             </ul>
                         </aside>
 
                         <h4>Pathophysiology</h4>
-                        <p>The hypothalamus, which sets the circadian and seasonal timing of attacks and is activated during them, triggers trigeminovascular activation and the trigeminal autonomic reflex. Orbital and temporal pain is accompanied by parasympathetic outflow on the same side, causing lacrimation, conjunctival injection, and nasal congestion or rhinorrhea, and by Horner signs, ptosis and miosis.</p>
+                        <p>Cortical spreading depression, a wave of neuronal and glial depolarization, causes the aura and activates trigeminovascular afferents, whose terminals release <abbr class="term" tabindex="0" data-definition="Calcitonin gene-related peptide">CGRP</abbr> and substance P. These dilate dural vessels and cause neurogenic inflammation, sensitizing nerves and producing a unilateral, pulsating headache; the older vascular theory, in which vasoconstriction causes the aura and vasodilation the pain, is no longer accepted. Attacks pass through four phases. A prodrome in about 77%, up to 24–48 hours before, brings yawning, mood change, neck stiffness, cravings, and sensitivity to light and sound, reflecting hypothalamic activity. An aura in about 25% is gradual, fully reversible, mostly visual, and lasts 5–60 minutes, with positive symptoms such as zigzag lines and negative ones such as a scotoma. The headache lasts 4–72 hours, and a postdrome of fatigue and poor concentration follows.</p>
+                        <p>In tension-type headache, stress, poor posture, and muscle tension provide peripheral input, making pericranial muscles tender, and in frequent or chronic forms central sensitization lowers the pain threshold, producing a bilateral, band-like, pressing headache. Pericranial and neck muscle tenderness rises with headache frequency.</p>
+                        <p>In cluster headache, the hypothalamus, which sets the circadian and seasonal timing of attacks and is activated during them, triggers trigeminovascular activation and the trigeminal autonomic reflex. Orbital and temporal pain is accompanied by parasympathetic outflow on the same side, causing lacrimation, conjunctival injection, and nasal congestion or rhinorrhea, and by Horner signs, ptosis and miosis.</p>
 
                         <h4>Etiology</h4>
-                        <p>Men are affected about three times as often as women, though the gap is narrowing. Attacks occur at the same time of day, often at night, and in seasonal bouts, reflecting the hypothalamic clock, familial cases occur, and alcohol and smoking trigger attacks during a bout. Cluster headache is a trigeminal autonomic cephalalgia, one of a group of short, unilateral headaches with autonomic signs.</p>
+                        <p>Relatives of affected people have three times the risk, and familial hemiplegic migraine is inherited; migraine is more common in women. Attacks are triggered by stress in about 80%, hormonal change in about 65% (menstruation, ovulation, pregnancy, and oral contraceptives), skipped meals in about 57%, and by weather change, too little or too much sleep, alcohol, strong smells, and bright light. Migraine with aura raises the risk of ischemic stroke, so estrogen contraceptives are avoided in women who have it.</p>
+                        <p>Stress is the most significant trigger of tension-type headache, with poor posture and muscle tension, and sensitized central pain pathways sustain its frequent and chronic forms. Cluster headache, a trigeminal autonomic cephalalgia, affects men about three times as often as women, though the gap is narrowing; attacks occur at the same time of day, often at night, and in seasonal bouts, reflecting the hypothalamic clock, familial cases occur, and alcohol and smoking trigger attacks during a bout. Medication overuse headache follows the use of simple analgesics on 15 or more days a month, or of triptans, ergots, opioids, or combination analgesics on 10 or more, and about two thirds of patients have chronic migraine.</p>
 
                         <h4>Symptoms and complications</h4>
-                        <p>Patients have excruciating, unilateral orbital pain lasting 15–180 minutes, up to 8 times a day, often at night and at the same time, and become restless and agitated, with tearing, a red eye, ptosis, miosis, and nasal congestion or rhinorrhea on the painful side. Episodic cluster headache comes in bouts of weeks to months followed by remission, whereas chronic cluster headache lacks lasting remission.</p>
+                        <p>The headache follows <abbr class="term" tabindex="0" data-definition="Pulsating, One day (4–72 hours), Unilateral, Nausea, Disabling">POUND</abbr>: pulsating, lasting one day (4–72 hours), unilateral, with nausea and vomiting, and disabling, worse with routine activity. Photophobia, phonophobia, osmophobia, and allodynia are common, the aura can be visual, sensory, or affect speech, and hemiplegic migraine causes motor weakness. Complications include chronic migraine, with 15 or more headache days a month; medication overuse headache from frequent acute treatment; migrainous infarction, in which an aura comes with ischemia on imaging; persistent aura without infarction, lasting over a week with normal imaging; and status migrainosus, an attack lasting over 72 hours.</p>
+                        <p>Tension-type headache is bilateral, band-like, pressing or tightening, and mild to moderate, lasts 30 minutes to 7 days, and is not worsened by routine activity, with no nausea and at most one of photophobia or phonophobia; it is infrequent episodic below 1 day a month, frequent episodic at 1–14 days, and chronic at 15 or more. Cluster headache causes excruciating unilateral orbital pain lasting 15–180 minutes, up to 8 times a day, often at night and at the same time, with restlessness and tearing, a red eye, ptosis, miosis, and nasal congestion or rhinorrhea on the painful side; it is episodic, in bouts of weeks to months followed by remission, or chronic, without lasting remission.</p>
+                        <p>Medication overuse headache is headache on 15 or more days a month in someone with a headache disorder who has overused acute treatment for 3 or more months, turning an episodic headache into a chronic one. It is often worse in the morning, with neck pain, poor sleep, anxiety, and depression, autonomic symptoms when opioids are overused, and a poorer response to every headache treatment.</p>
 
                         <h4>Diagnosis</h4>
-                        <p>The diagnosis needs at least 5 attacks of severe unilateral orbital, supraorbital, or temporal pain lasting 15–180 minutes, with ipsilateral autonomic signs or restlessness. <abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr> is obtained for a first attack or atypical features to exclude a structural cause such as a pituitary lesion. Compared with migraine, attacks are shorter and orbital, with autonomic signs, and patients pace rather than lie still.</p>
+                        <p>Migraine without aura needs at least 5 attacks lasting 4–72 hours untreated, with 2 of 4 features (unilateral, pulsating, moderate to severe, worse with activity) and either nausea or vomiting, or photophobia with phonophobia. In migraine with aura, the aura spreads over 5 minutes or more, each symptom lasts 5–60 minutes, at least one is unilateral and one positive, and headache follows within 60 minutes. Tension-type headache is diagnosed from its typical features with a normal examination. Cluster headache needs at least 5 attacks of severe unilateral orbital, supraorbital, or temporal pain lasting 15–180 minutes with ipsilateral autonomic signs or restlessness, with <abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr> for a first attack or atypical features to exclude a structural cause such as a pituitary lesion. Medication overuse headache has no test and rests on a careful medication history. Imaging is reserved for red flags: a sudden, severe thunderclap headache calls for non-contrast <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> for <abbr class="term" tabindex="0" data-definition="Subarachnoid hemorrhage">SAH</abbr> and then <abbr class="term" tabindex="0" data-definition="Lumbar puncture">LP</abbr> if negative; a new headache at 50 or older or with immunosuppression calls for <abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr>, with <abbr class="term" tabindex="0" data-definition="Erythrocyte sedimentation rate">ESR</abbr> for giant cell arteritis over 50; fever, weight loss, or meningism call for imaging and <abbr class="term" tabindex="0" data-definition="Lumbar puncture">LP</abbr>; and a change in the usual pattern or a focal deficit calls for <abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr>.</p>
 
                         <h4>Treatment</h4>
-                        <p>Attacks are treated with 100% oxygen by face mask or with subcutaneous or intranasal sumatriptan, since oral triptans act too slowly for attacks lasting under an hour. A short course of prednisone or an occipital nerve block bridges while prevention starts, verapamil is the first-line preventive, with <abbr class="term" tabindex="0" data-definition="Electrocardiogram">ECG</abbr> monitoring for heart block, lithium is an alternative, and alcohol is avoided during a bout.</p>
+                        <p>Mild to moderate attacks are treated early with full doses of <abbr class="term" tabindex="0" data-definition="Nonsteroidal anti-inflammatory drugs">NSAIDs</abbr> or paracetamol, and moderate to severe attacks with triptans, <abbr class="term" tabindex="0" data-definition="Serotonin receptors 1B and 1D">5-HT1B/1D</abbr> agonists, with or without naproxen; a patient who does not respond to one triptan may respond to another. Antiemetics such as metoclopramide or prochlorperazine treat nausea, parenteral drugs are used when gastric stasis prevents absorption, and gepants (<abbr class="term" tabindex="0" data-definition="Calcitonin gene-related peptide">CGRP</abbr> receptor antagonists) or ergots are used when triptans fail or are contraindicated. Triptans are avoided in coronary or cerebrovascular disease, Prinzmetal angina, uncontrolled hypertension, and hemiplegic or brainstem aura, and with <abbr class="term" tabindex="0" data-definition="Monoamine oxidase inhibitors">MAOIs</abbr>, with caution alongside <abbr class="term" tabindex="0" data-definition="Selective serotonin reuptake inhibitors">SSRIs</abbr> because of serotonin syndrome.</p>
+                        <p>Prevention is offered for frequent or disabling attacks, failure of acute treatment, or overuse. First-line options are β-blockers such as propranolol, topiramate, and amitriptyline, with valproate, venlafaxine, <abbr class="term" tabindex="0" data-definition="Calcitonin gene-related peptide">CGRP</abbr> monoclonal antibodies, and botulinum toxin for chronic migraine as alternatives, alongside regular sleep and meals and avoidance of triggers. Acute drugs are limited to fewer than 10–15 days a month to avoid medication overuse headache.</p>
+                        <p>Tension-type headache is treated with <abbr class="term" tabindex="0" data-definition="Nonsteroidal anti-inflammatory drugs">NSAIDs</abbr> or paracetamol, with amitriptyline to prevent frequent or chronic forms, alongside stress reduction, physical therapy, and posture correction. Cluster attacks are treated with 100% oxygen by face mask or with subcutaneous or intranasal sumatriptan, since oral triptans act too slowly for attacks lasting under an hour; a short course of prednisone or an occipital nerve block bridges while prevention starts, verapamil is the first-line preventive, with <abbr class="term" tabindex="0" data-definition="Electrocardiogram">ECG</abbr> monitoring for heart block, lithium is an alternative, and alcohol is avoided during a bout.</p>
+                        <p>Medication overuse headache is treated first by educating the patient and family, then by stopping the overused drug completely, abruptly or over several weeks and usually as an outpatient, which works better than restricting it, while starting prevention and using a different class for acute attacks. Headache often worsens for the first few days and withdrawal symptoms last up to 10 days; preventive drugs, cognitive behavioral therapy, relaxation, and trigger avoidance help, anxiety and depression are treated, and about half of patients relapse within 5 years.</p>
 
                         <h4>Relationships to other conditions</h4>
-                        <p><em><button type="button" class="review-link" data-goto="migraine">Migraine</button>.</em> Both are unilateral and treated acutely with triptans, but migraine lasts 4–72 hours with nausea and photophobia and makes patients lie still, whereas cluster headache lasts 15–180 minutes, is orbital with autonomic signs, and makes patients restless.</p>
+                        <p><em><button type="button" class="review-link" data-goto="localizing-lesions">Secondary headaches</button>.</em> A primary headache is diagnosed only when its pattern fits and the examination is normal. Thunderclap onset suggests <abbr class="term" tabindex="0" data-definition="Subarachnoid hemorrhage">SAH</abbr>, a new headache over 50 suggests giant cell arteritis or a mass, and fever, weight loss, meningism, a focal deficit, or a change in the usual pattern all call for imaging; medication overuse headache is itself a secondary headache that grows out of a primary one.</p>
+                        <p><em><button type="button" class="review-link" data-goto="ischemic-stroke">Stroke</button> and <button type="button" class="review-link" data-goto="subarachnoid-hemorrhage">SAH</button>.</em> An aura is gradual, spreading, positive, and fully reversible, whereas a <abbr class="term" tabindex="0" data-definition="Transient ischemic attack">TIA</abbr> or stroke is sudden and mostly negative; a thunderclap headache suggests <abbr class="term" tabindex="0" data-definition="Subarachnoid hemorrhage">SAH</abbr> rather than migraine and needs <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr>.</p>
                         <p><em>Trigeminal neuralgia.</em> Both involve the trigeminal nerve, but trigeminal neuralgia causes seconds-long electric shocks triggered by touch and is treated with carbamazepine, whereas cluster headache causes longer attacks with autonomic signs.</p>
                     </div>
                 </dialog>
             </article>
 
-            <article class="condition-content" id="epidural-hematoma">
-                <h2>Epidural Hematoma</h2>
+            <article class="condition-content" id="epidural-subdural-hematoma" data-aliases="epidural-hematoma subdural-hematoma">
+                <h2>Epidural and Subdural Hematoma</h2>
 
                 <section class="content-section">
                     <h3>Pathophysiology</h3>
-<p>A skull fracture tears an artery, usually the middle meningeal artery, and arterial blood strips the dura from the skull, forming a lens-shaped hematoma that expands fast and can cause herniation.</p>
+<p>Head trauma tears an artery above the dura or a bridging vein beneath it: arterial blood strips the dura from the skull as a fast, lens-shaped epidural hematoma, whereas venous blood spreads between dura and arachnoid as a slower, crescent-shaped subdural hematoma, and either can raise <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> and cause herniation.</p>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Feature</th><th scope="col">Epidural</th><th scope="col">Subdural</th></tr></thead><tbody>
+<tr><th scope="row">Vessel</th><td>Middle meningeal artery, torn by a temporal bone fracture</td><td>Bridging veins, torn by shearing forces</td></tr>
+<tr><th scope="row">Space</th><td>Between skull and dura</td><td>Between dura and arachnoid</td></tr>
+<tr><th scope="row">Shape on <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr></th><td>Biconvex, lens shaped</td><td>Crescent shaped</td></tr>
+<tr><th scope="row">Sutures and midline</th><td>Stops at sutures, where dura attaches; may cross the midline</td><td>Crosses sutures but not the midline</td></tr>
+<tr><th scope="row">Speed</th><td>Fast: arterial</td><td>Slow: venous, over hours to weeks</td></tr>
+<tr><th scope="row">Typical patient</th><td>Adolescents and young men after high-impact injury</td><td>Older adults, people who drink heavily, those on anticoagulants, and infants with abusive head trauma</td></tr>
+<tr><th scope="row">Classic course</th><td>Brief loss of consciousness, a lucid interval, then rapid decline</td><td>Acute after major trauma; chronic weeks after minor trauma, with fluctuating confusion</td></tr>
+</tbody></table></div>
+<div class="subsection">
+<h4 class="sc-heading">Epidural versus subdural</h4>
+<figure class="cause-map is-wide"><svg viewBox="0 0 560 300" role="img" aria-label="Two skulls in section. Left, an epidural hematoma: A, a biconvex, lens-shaped collection between skull and dura that stops at the sutures, from B, a torn middle meningeal artery. Right, a subdural hematoma: C, a crescent-shaped collection between dura and arachnoid that crosses the sutures, from D, torn bridging veins"><ellipse class="sah-press" cx="140" cy="150" rx="118" ry="132"/><ellipse class="sah-brain" cx="140" cy="150" rx="104" ry="118"/><path class="bleed" d="M30 110C20 150 26 190 44 214C70 190 76 140 52 96C44 98 36 102 30 110Z"/><path class="ich-midline" d="M30 74L46 92M24 226L42 214"/><text class="site-label" x="140" y="296" text-anchor="middle">Epidural</text><g class="site-marker"><circle cx="48" cy="155" r="11"/><text x="48" y="159.5">A</text></g><g class="site-marker"><circle cx="76" cy="92" r="11"/><text x="76" y="96.5">B</text></g><ellipse class="sah-press" cx="420" cy="150" rx="118" ry="132"/><ellipse class="sah-brain" cx="420" cy="150" rx="104" ry="118"/><path class="bleed" d="M326 80C300 130 300 180 326 230C334 226 338 222 342 216C322 172 322 132 344 86C338 82 332 80 326 80Z"/><text class="site-label" x="420" y="296" text-anchor="middle">Subdural</text><g class="site-marker"><circle cx="330" cy="155" r="11"/><text x="330" y="159.5">C</text></g><g class="site-marker"><circle cx="364" cy="70" r="11"/><text x="364" y="74.5">D</text></g></svg></figure>
+<ul class="cause-list is-two-column">
+<li><span class="cause-number" aria-hidden="true">A</span><span class="cause-text"><span class="cause-name">Epidural hematoma</span><span class="cause-detail">Biconvex, lens shaped; does not cross sutures</span></span></li>
+<li><span class="cause-number" aria-hidden="true">B</span><span class="cause-text"><span class="cause-name">Middle meningeal artery</span><span class="cause-detail">Arterial source; fast</span></span></li>
+<li><span class="cause-number" aria-hidden="true">C</span><span class="cause-text"><span class="cause-name">Subdural hematoma</span><span class="cause-detail">Crescent shaped; crosses sutures but not the midline</span></span></li>
+<li><span class="cause-number" aria-hidden="true">D</span><span class="cause-text"><span class="cause-name">Bridging veins</span><span class="cause-detail">Venous source; slower</span></span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Epidural hematoma</h4>
 <ol class="pathway">
 <li><span class="pathway-title">Temporal bone fracture</span><span class="pathway-detail">Often at the pterion</span></li>
 <li><span class="pathway-title">Torn middle meningeal artery</span><span class="pathway-detail">Arterial bleeding</span></li>
@@ -2015,128 +1885,15 @@
 <li><span class="pathway-title">Rapid expansion</span><span class="pathway-detail">Raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr></span></li>
 <li><span class="pathway-title">Herniation</span><span class="pathway-detail">Uncal herniation and death if untreated</span></li>
 </ol>
-<div class="subsection">
-<h4 class="sc-heading">Epidural versus subdural</h4>
-<figure class="cause-map is-wide"><svg viewBox="0 0 560 300" role="img" aria-label="Two skulls in section. Left, an epidural hematoma: 1, a biconvex, lens-shaped collection between skull and dura that stops at the sutures, from 2, a torn middle meningeal artery. Right, a subdural hematoma: 3, a crescent-shaped collection between dura and arachnoid that crosses the sutures, from 4, torn bridging veins"><ellipse class="sah-press" cx="140" cy="150" rx="118" ry="132"/><ellipse class="sah-brain" cx="140" cy="150" rx="104" ry="118"/><path class="bleed" d="M30 110C20 150 26 190 44 214C70 190 76 140 52 96C44 98 36 102 30 110Z"/><path class="ich-midline" d="M30 74L46 92M24 226L42 214"/><text class="site-label" x="140" y="296" text-anchor="middle">Epidural</text><g class="site-marker"><circle cx="48" cy="155" r="11"/><text x="48" y="159.5">1</text></g><g class="site-marker"><circle cx="76" cy="92" r="11"/><text x="76" y="96.5">2</text></g><ellipse class="sah-press" cx="420" cy="150" rx="118" ry="132"/><ellipse class="sah-brain" cx="420" cy="150" rx="104" ry="118"/><path class="bleed" d="M326 80C300 130 300 180 326 230C334 226 338 222 342 216C322 172 322 132 344 86C338 82 332 80 326 80Z"/><text class="site-label" x="420" y="296" text-anchor="middle">Subdural</text><g class="site-marker"><circle cx="330" cy="155" r="11"/><text x="330" y="159.5">3</text></g><g class="site-marker"><circle cx="364" cy="70" r="11"/><text x="364" y="74.5">4</text></g></svg></figure>
-<ul class="cause-list is-two-column">
-<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Epidural hematoma</span><span class="cause-detail">Biconvex, lens shaped; does not cross sutures</span></span></li>
-<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Middle meningeal artery</span><span class="cause-detail">Arterial source; fast</span></span></li>
-<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Subdural hematoma</span><span class="cause-detail">Crescent shaped; crosses sutures but not the midline</span></span></li>
-<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Bridging veins</span><span class="cause-detail">Venous source; slower</span></span></li>
-</ul>
-</div>
-                </section>
-
-                <section class="content-section">
-                    <h3>Etiology</h3>
-<ul class="cause-list">
-<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Head trauma with a skull fracture</span><span class="cause-detail">Temporal bone fracture tearing the middle meningeal artery; most cases</span></span></li>
-<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Venous sources</span><span class="cause-detail">Less often: dural sinuses or diploic veins</span></span></li>
-<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Nontraumatic</span><span class="cause-detail">Rarely vascular malformations or coagulopathy</span></span></li>
-</ul>
-<p class="note"><strong>Note:</strong> Adolescents and young men with high-impact injuries are affected most, because the dura is less firmly attached to the skull than in older adults.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Symptoms and complications</h3>
-<div class="subsection">
-<h4 class="sc-heading">Symptoms</h4>
-<ul class="chip-list"><li>Brief loss of consciousness</li><li>Lucid interval</li><li>Then rapid decline</li><li>Headache and vomiting</li><li>Focal deficits</li><li>Ipsilateral dilated pupil (<abbr class="term" tabindex="0" data-definition="Cranial nerve III (the oculomotor nerve)">CN III</abbr>)</li><li>Contralateral hemiparesis</li></ul>
 </div>
 <div class="subsection">
-<h4 class="sc-heading">Complications</h4>
-<ul class="complication-grid">
-<li><span class="cause-name">Uncal herniation</span><span class="cause-detail">Blown pupil and coma</span></li>
-<li><span class="cause-name">Death</span><span class="cause-detail">If not evacuated</span></li>
-</ul>
-</div>
-<p class="note"><strong>The lucid interval</strong> is classic but occurs in only a minority, so its absence does not exclude an epidural hematoma.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Diagnosis</h3>
-<ul class="pair-list">
-<li><span class="pair-from">Non-contrast <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Hyperdense, biconvex (lens-shaped) collection that stops at the sutures; may cross the midline; a skull fracture</span></li>
-<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Glasgow Coma Scale">GCS</abbr> and pupils</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Track decline</span></li>
-</ul>
-                </section>
-
-                <section class="content-section">
-                    <h3>Treatment</h3>
-<ul class="pair-list">
-<li><span class="pair-from">Large, symptomatic, or with midline shift</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Emergency craniotomy and evacuation</span></li>
-<li><span class="pair-from">Small and stable with a high <abbr class="term" tabindex="0" data-definition="Glasgow Coma Scale">GCS</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Close observation with repeat <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr></span></li>
-<li><span class="pair-from">Meanwhile</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Treat raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr>: head up, osmotic therapy, and reverse coagulopathy</span></li>
-</ul>
-                </section>
-
-                <p class="see-also">
-                    Related:
-                    <button type="button" class="link-button" data-goto="subdural-hematoma">Subdural Hematoma</button>
-                    <button type="button" class="link-button" data-goto="herniation">Herniation Syndromes</button>
-                    <button type="button" class="link-button" data-goto="neuroimaging">Choosing Imaging and EEG</button>
-                    <button type="button" class="link-button" data-goto="intracerebral-hemorrhage">Intracerebral Hemorrhage</button>
-                </p>
-                <section class="references" aria-label="References">
-                    <h3>References</h3>
-                    <ol>
-                        <li>Khairat A, Margetis K, Waseem M. Epidural Hematoma. 2025. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK518982/" target="_blank" rel="noopener">NBK518982</a></li>
-                        <li>Munakomi S, Das JM. Brain Herniation. 2026. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK542246/" target="_blank" rel="noopener">NBK542246</a></li>
-                    </ol>
-                </section>
-                <dialog class="quick-review" aria-labelledby="epidural-hematoma-review-title">
-                    <div class="quick-review-body">
-                        <p class="review-kicker">Review article</p>
-                        <h3 id="epidural-hematoma-review-title">Epidural hematoma: arterial bleeding between skull and dura</h3>
-
-                        <p class="review-abstract">Epidural hematoma is arterial bleeding between the skull and dura, usually from a middle meningeal artery torn by a temporal bone fracture. It forms a biconvex, lens-shaped collection limited by the sutures and can expand rapidly to cause uncal herniation. Here, we review its mechanism, causes, classic lucid interval, <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> appearance, and treatment, and how it differs from subdural hematoma.</p>
-
-                        <aside class="review-key-points">
-                            <h4>Key points</h4>
-                            <ul>
-                                <li>Epidural hematoma usually follows a temporal bone fracture that tears the middle meningeal artery.</li>
-                                <li>It is biconvex and lens shaped on <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> and does not cross sutures, where the dura attaches.</li>
-                                <li>A lucid interval between brief loss of consciousness and rapid decline is classic but occurs in only a minority.</li>
-                                <li>Expansion causes uncal herniation, with an ipsilateral dilated pupil, so large or symptomatic hematomas need emergency craniotomy.</li>
-                            </ul>
-                        </aside>
-
-                        <h4>Pathophysiology</h4>
-                        <p>A temporal bone fracture, often at the pterion, tears the middle meningeal artery, and arterial blood strips the dura from the skull. The collection stops at the sutures, where the dura attaches, so it is lens shaped, and because the bleeding is arterial it expands quickly, raising <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> and causing uncal herniation and death if untreated. A subdural hematoma, by contrast, comes from bridging veins, is crescent shaped, and crosses sutures but not the midline.</p>
-
-                        <h4>Etiology</h4>
-                        <p>Most epidural hematomas follow head trauma with a skull fracture that tears the middle meningeal artery; venous sources, such as dural sinuses or diploic veins, are less common, and vascular malformations or coagulopathy rarely cause nontraumatic cases. Adolescents and young men with high-impact injuries are affected most, because their dura is less firmly attached to the skull than in older adults.</p>
-
-                        <h4>Symptoms and complications</h4>
-                        <p>Classically, a brief loss of consciousness is followed by a lucid interval and then rapid decline, with headache, vomiting, focal deficits, an ipsilateral dilated pupil from compression of <abbr class="term" tabindex="0" data-definition="Cranial nerve III (the oculomotor nerve)">CN III</abbr>, and contralateral hemiparesis. The lucid interval occurs in only a minority, so its absence does not exclude the diagnosis. Without evacuation, uncal herniation causes a blown pupil, coma, and death.</p>
-
-                        <h4>Diagnosis</h4>
-                        <p>Non-contrast <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> shows a hyperdense, biconvex collection that stops at the sutures, may cross the midline, and often lies beneath a skull fracture, and the <abbr class="term" tabindex="0" data-definition="Glasgow Coma Scale">GCS</abbr> and pupils are followed to track decline.</p>
-
-                        <h4>Treatment</h4>
-                        <p>Large or symptomatic hematomas, or those with midline shift, need emergency craniotomy and evacuation, whereas small, stable hematomas with a high <abbr class="term" tabindex="0" data-definition="Glasgow Coma Scale">GCS</abbr> can be observed closely with repeat <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr>. Meanwhile, raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> is treated by raising the head, osmotic therapy, and reversing any coagulopathy.</p>
-
-                        <h4>Relationships to other conditions</h4>
-                        <p><em><button type="button" class="review-link" data-goto="subdural-hematoma">Subdural hematoma</button>.</em> Epidural hematoma is arterial, lens shaped, limited by sutures, and typical of young patients with skull fractures, whereas subdural hematoma is venous, crescent shaped, crosses sutures, and typical of older adults, people who drink heavily, and infants with abusive trauma.</p>
-                        <p><em><button type="button" class="review-link" data-goto="herniation">Herniation syndromes</button>.</em> A temporal epidural hematoma pushes the medial temporal lobe over the tentorium, causing uncal herniation with a blown pupil on the same side, the event that makes the lucid interval end.</p>
-                    </div>
-                </dialog>
-            </article>
-
-            <article class="condition-content" id="subdural-hematoma">
-                <h2>Subdural Hematoma</h2>
-
-                <section class="content-section">
-                    <h3>Pathophysiology</h3>
-<p>Shearing forces tear bridging veins crossing from the brain to the dural sinuses, and venous blood collects between the dura and arachnoid, forming a crescent that grows slowly over hours to weeks.</p>
+<h4 class="sc-heading">Subdural hematoma</h4>
 <ol class="pathway">
 <li><span class="pathway-title">Shearing force</span><span class="pathway-detail">Acceleration and deceleration, often minor in older adults</span></li>
 <li><span class="pathway-title">Torn bridging veins</span><span class="pathway-detail">Between the dura and arachnoid</span></li>
 <li><span class="pathway-title">Crescent of venous blood</span><span class="pathway-detail">Crosses sutures, not the midline</span></li>
 <li><span class="pathway-title">Mass effect</span><span class="pathway-detail">Midline shift and herniation</span></li>
 </ol>
-<div class="subsection">
-<h4 class="sc-heading">Why atrophy matters</h4>
 <ul class="pair-list">
 <li><span class="pair-from">Brain atrophy</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Older age and alcohol use enlarge the space, stretching bridging veins so minor trauma tears them</span></li>
 <li><span class="pair-from">Chronic subdural hematoma</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">An inflammatory membrane with new vessels and repeated small bleeds keeps it growing</span></li>
@@ -2146,132 +1903,179 @@
 
                 <section class="content-section">
                     <h3>Etiology</h3>
-<ul class="cause-list is-two-column">
-<li class="cause-group">Risk</li>
-<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Older age</span><span class="cause-detail">Atrophy stretches bridging veins</span></span></li>
-<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Alcohol use</span><span class="cause-detail">Atrophy and falls</span></span></li>
-<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Anticoagulants and antiplatelets</span><span class="cause-detail">Bleeding continues</span></span></li>
-<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Abusive head trauma in infants</span><span class="cause-detail">Shaking; often with retinal hemorrhages</span></span></li>
-<li class="cause-group">Mechanism</li>
-<li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">Falls and motor vehicle accidents</span><span class="cause-detail">Acute subdural</span></span></li>
-<li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name">Minor or forgotten trauma</span><span class="cause-detail">Chronic subdural in older adults</span></span></li>
+<ul class="cause-list">
+<li class="cause-group">Epidural hematoma</li>
+<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Head trauma with a skull fracture</span><span class="cause-detail">Temporal bone fracture tearing the middle meningeal artery; most cases</span></span></li>
+<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Venous sources</span><span class="cause-detail">Less often: dural sinuses or diploic veins</span></span></li>
+<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Nontraumatic</span><span class="cause-detail">Rarely vascular malformations or coagulopathy</span></span></li>
+<li class="cause-group">Subdural hematoma: risk</li>
+<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Older age</span><span class="cause-detail">Atrophy stretches bridging veins</span></span></li>
+<li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">Alcohol use</span><span class="cause-detail">Atrophy and falls</span></span></li>
+<li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name">Anticoagulants and antiplatelets</span><span class="cause-detail">Bleeding continues</span></span></li>
+<li><span class="cause-number" aria-hidden="true">7</span><span class="cause-text"><span class="cause-name">Abusive head trauma in infants</span><span class="cause-detail">Shaking; often with retinal hemorrhages</span></span></li>
+<li class="cause-group">Subdural hematoma: mechanism</li>
+<li><span class="cause-number" aria-hidden="true">8</span><span class="cause-text"><span class="cause-name">Falls and motor vehicle accidents</span><span class="cause-detail">Acute subdural</span></span></li>
+<li><span class="cause-number" aria-hidden="true">9</span><span class="cause-text"><span class="cause-name">Minor or forgotten trauma</span><span class="cause-detail">Chronic subdural in older adults</span></span></li>
 </ul>
+<p class="note"><strong>Note:</strong> Adolescents and young men with high-impact injuries are affected most, because the dura is less firmly attached to the skull than in older adults.</p>
                 </section>
 
                 <section class="content-section">
                     <h3>Symptoms and complications</h3>
 <div class="subsection">
-<h4 class="sc-heading">By timing</h4>
+<h4 class="sc-heading">Epidural hematoma</h4>
+<ul class="chip-list"><li>Brief loss of consciousness</li><li>Lucid interval</li><li>Then rapid decline</li><li>Headache and vomiting</li><li>Focal deficits</li><li>Ipsilateral dilated pupil (<abbr class="term" tabindex="0" data-definition="Cranial nerve III (the oculomotor nerve)">CN III</abbr>)</li><li>Contralateral hemiparesis</li></ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Subdural hematoma</h4>
 <ul class="pair-list">
 <li><span class="pair-from">Acute</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Within days of significant trauma: reduced consciousness and focal deficits</span></li>
 <li><span class="pair-from">Chronic</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Weeks later, after minor or forgotten trauma: headache, confusion, fluctuating consciousness, gait change, and gradual weakness, often mistaken for dementia</span></li>
+<li><span class="pair-from">Infants</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">A subdural hematoma with an inconsistent history suggests abusive head trauma (7)</span></li>
 </ul>
 </div>
 <div class="subsection">
 <h4 class="sc-heading">Complications</h4>
 <ul class="complication-grid">
-<li><span class="cause-name">Herniation</span><span class="cause-detail">With midline shift</span></li>
+<li><span class="cause-name">Uncal herniation</span><span class="cause-detail">Blown pupil on the side of the hematoma, then coma</span></li>
+<li><span class="cause-name">Death</span><span class="cause-detail">If a large hematoma is not evacuated</span></li>
 <li><span class="cause-name">Seizures</span></li>
 <li><span class="cause-name">Recurrence</span><span class="cause-detail">Common in chronic subdurals</span></li>
 </ul>
 </div>
-<p class="note"><strong>Note:</strong> A subdural hematoma in an infant with an inconsistent history suggests abusive head trauma.</p>
+<p class="note"><strong>The lucid interval</strong> is classic but occurs in only a minority, so its absence does not exclude an epidural hematoma.</p>
                 </section>
 
                 <section class="content-section">
                     <h3>Diagnosis</h3>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">On non-contrast CT</th><th scope="col">Epidural</th><th scope="col">Subdural</th></tr></thead><tbody>
+<tr><th scope="row">Shape</th><td>Biconvex, lens shaped</td><td>Crescent shaped</td></tr>
+<tr><th scope="row">Borders</th><td>Stops at sutures; may cross the midline</td><td>Crosses sutures, not the midline</td></tr>
+<tr><th scope="row">Density</th><td>Hyperdense</td><td>Hyperdense when acute, isodense at 1–3 weeks, hypodense when chronic</td></tr>
+<tr><th scope="row">Also look for</th><td>A skull fracture</td><td>Midline shift and effaced sulci</td></tr>
+</tbody></table></div>
 <ul class="pair-list">
-<li><span class="pair-from">Non-contrast <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Crescent-shaped collection that crosses sutures but not the midline; hyperdense when acute, isodense at 1–3 weeks, and hypodense when chronic</span></li>
-<li><span class="pair-from">Signs of mass effect</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Midline shift and effaced sulci</span></li>
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Glasgow Coma Scale">GCS</abbr> and pupils</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Track decline; a newly dilated pupil on the side of the hematoma signals uncal herniation</span></li>
 <li><span class="pair-from">Infants</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Skeletal survey and eye examination for retinal hemorrhages</span></li>
 </ul>
                 </section>
 
                 <section class="content-section">
                     <h3>Treatment</h3>
-<ul class="pair-list">
-<li><span class="pair-from">Large acute hematoma or midline shift</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Craniotomy and evacuation</span></li>
-<li><span class="pair-from">Chronic hematoma with symptoms</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Burr hole drainage</span></li>
-<li><span class="pair-from">Small without mass effect</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Observation with repeat <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr></span></li>
-<li><span class="pair-from">All</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Reverse anticoagulation</span></li>
-</ul>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">If there is</th><th scope="col">Treat with</th></tr></thead><tbody>
+<tr><th scope="row">Epidural: large, symptomatic, or with midline shift</th><td>Emergency craniotomy and evacuation</td></tr>
+<tr><th scope="row">Subdural: large acute hematoma or midline shift</th><td>Craniotomy and evacuation</td></tr>
+<tr><th scope="row">Subdural: chronic, with symptoms</th><td>Burr hole drainage</td></tr>
+<tr><th scope="row">Either: small and stable, without mass effect, with a high <abbr class="term" tabindex="0" data-definition="Glasgow Coma Scale">GCS</abbr></th><td>Close observation with repeat <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr></td></tr>
+<tr><th scope="row">Either: on anticoagulants or with coagulopathy</th><td>Reverse it</td></tr>
+<tr><th scope="row">Either: raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> while awaiting surgery</th><td>Head up and osmotic therapy</td></tr>
+</tbody></table></div>
                 </section>
 
                 <p class="see-also">
                     Related:
-                    <button type="button" class="link-button" data-goto="epidural-hematoma">Epidural Hematoma</button>
-                    <button type="button" class="link-button" data-goto="herniation">Herniation Syndromes</button>
+                    <button type="button" class="link-button" data-goto="herniation">Raised Intracranial Pressure and Herniation</button>
                     <button type="button" class="link-button" data-goto="neuroimaging">Choosing Imaging and EEG</button>
+                    <button type="button" class="link-button" data-goto="intracerebral-hemorrhage">Intracerebral Hemorrhage</button>
                     <button type="button" class="link-button" data-goto="alzheimers">Alzheimer Disease</button>
                 </p>
                 <section class="references" aria-label="References">
                     <h3>References</h3>
                     <ol>
+                        <li>Khairat A, Margetis K, Waseem M. Epidural Hematoma. 2025. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK518982/" target="_blank" rel="noopener">NBK518982</a></li>
                         <li>Pierre L, Julien C, Margetis K, Kondamudi NP. Subdural Hematoma. 2026. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK532970/" target="_blank" rel="noopener">NBK532970</a></li>
                         <li>Munakomi S, Das JM. Brain Herniation. 2026. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK542246/" target="_blank" rel="noopener">NBK542246</a></li>
                     </ol>
                 </section>
-                <dialog class="quick-review" aria-labelledby="subdural-hematoma-review-title">
+                <dialog class="quick-review" aria-labelledby="epidural-subdural-hematoma-review-title">
                     <div class="quick-review-body">
                         <p class="review-kicker">Review article</p>
-                        <h3 id="subdural-hematoma-review-title">Subdural hematoma: venous bleeding from torn bridging veins</h3>
+                        <h3 id="epidural-subdural-hematoma-review-title">Epidural and subdural hematoma: arterial and venous bleeding on either side of the dura</h3>
 
-                        <p class="review-abstract">Subdural hematoma is venous bleeding between the dura and arachnoid from bridging veins torn by shearing forces. Brain atrophy in older adults and people who drink heavily stretches these veins, so minor trauma can cause it, and chronic subdurals present weeks later with confusion that can mimic dementia. Here, we review its mechanism, risk factors, presentation, <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> appearance, and treatment, and how it differs from epidural hematoma.</p>
+                        <p class="review-abstract">Epidural hematoma is arterial bleeding between the skull and dura, usually from a middle meningeal artery torn by a temporal bone fracture, forming a lens-shaped collection that stops at the sutures and expands quickly. Subdural hematoma is venous bleeding between the dura and arachnoid from bridging veins torn by shearing forces, forming a crescent that crosses sutures and grows slowly, often after minor trauma in older adults with brain atrophy. Both can raise <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> and cause uncal herniation. Here, we review their mechanisms, risk factors, presentation, <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> appearance, and treatment, and how they relate to herniation, other hemorrhages, and dementia.</p>
 
                         <aside class="review-key-points">
                             <h4>Key points</h4>
                             <ul>
-                                <li>Subdural hematoma comes from torn bridging veins and forms a crescent that crosses sutures but not the midline.</li>
-                                <li>Older age, alcohol use, anticoagulants, and abusive head trauma in infants are the main risks.</li>
-                                <li>Acute subdurals follow significant trauma, whereas chronic subdurals appear weeks after minor trauma with fluctuating confusion.</li>
-                                <li>On <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr>, blood is hyperdense when acute, isodense at 1–3 weeks, and hypodense when chronic; treatment is evacuation or burr hole drainage.</li>
+                                <li>Epidural hematoma follows a temporal bone fracture that tears the middle meningeal artery; it is biconvex on <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> and does not cross sutures.</li>
+                                <li>Subdural hematoma comes from torn bridging veins; it is a crescent that crosses sutures but not the midline.</li>
+                                <li>A lucid interval before rapid decline is classic for epidural hematoma but occurs in only a minority.</li>
+                                <li>Older age, alcohol use, anticoagulants, and abusive head trauma in infants are the main risks for subdural hematoma, and chronic subdurals present weeks after minor trauma with fluctuating confusion that can mimic dementia.</li>
+                                <li>Subdural blood is hyperdense when acute, isodense at 1–3 weeks, and hypodense when chronic.</li>
+                                <li>Large or symptomatic hematomas need craniotomy, chronic subdurals burr hole drainage, and anticoagulation is reversed.</li>
                             </ul>
                         </aside>
 
                         <h4>Pathophysiology</h4>
+                        <p>A temporal bone fracture, often at the pterion, tears the middle meningeal artery, and arterial blood strips the dura from the skull. The collection stops at the sutures, where the dura attaches, so it is lens shaped, and because the bleeding is arterial it expands quickly, raising <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> and causing uncal herniation and death if untreated.</p>
                         <p>Acceleration and deceleration, often minor in older adults, tear bridging veins that cross between the dura and arachnoid to the dural sinuses, and venous blood forms a crescent that crosses sutures but not the midline and grows slowly, causing midline shift and herniation. Atrophy from older age or alcohol use enlarges the space and stretches the veins so that minor trauma tears them, and a chronic subdural keeps growing through an inflammatory membrane with new vessels and repeated small bleeds.</p>
 
                         <h4>Etiology</h4>
+                        <p>Most epidural hematomas follow head trauma with a skull fracture that tears the middle meningeal artery; venous sources, such as dural sinuses or diploic veins, are less common, and vascular malformations or coagulopathy rarely cause nontraumatic cases. Adolescents and young men with high-impact injuries are affected most, because their dura is less firmly attached to the skull than in older adults.</p>
                         <p>The main risks are older age and alcohol use, both through atrophy, anticoagulants and antiplatelets, which keep bleeding going, and abusive head trauma in infants, often with retinal hemorrhages. Falls and motor vehicle accidents cause acute subdurals, whereas minor or forgotten trauma causes chronic subdurals in older adults.</p>
 
                         <h4>Symptoms and complications</h4>
+                        <p>Classically, a brief loss of consciousness is followed by a lucid interval and then rapid decline, with headache, vomiting, focal deficits, an ipsilateral dilated pupil from compression of <abbr class="term" tabindex="0" data-definition="Cranial nerve III (the oculomotor nerve)">CN III</abbr>, and contralateral hemiparesis. The lucid interval occurs in only a minority, so its absence does not exclude the diagnosis. Without evacuation, uncal herniation causes a blown pupil, coma, and death.</p>
                         <p>Acute subdurals present within days of significant trauma with reduced consciousness and focal deficits. Chronic subdurals present weeks after minor or forgotten trauma with headache, confusion, fluctuating consciousness, gait change, and gradual weakness, often mistaken for dementia. Complications include herniation with midline shift, seizures, and recurrence, which is common in chronic subdurals, and a subdural in an infant with an inconsistent history suggests abusive head trauma.</p>
 
                         <h4>Diagnosis</h4>
-                        <p>Non-contrast <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> shows a crescent-shaped collection that crosses sutures but not the midline, hyperdense when acute, isodense at 1–3 weeks, and hypodense when chronic, with midline shift and effaced sulci from mass effect. Infants need a skeletal survey and an eye examination for retinal hemorrhages.</p>
+                        <p>On non-contrast <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr>, an epidural hematoma is a hyperdense, biconvex collection that stops at the sutures, may cross the midline, and often lies beneath a skull fracture, whereas a subdural hematoma is a crescent that crosses sutures but not the midline, hyperdense when acute, isodense at 1–3 weeks, and hypodense when chronic, with midline shift and effaced sulci from mass effect. The <abbr class="term" tabindex="0" data-definition="Glasgow Coma Scale">GCS</abbr> and pupils are followed to track decline, and infants with a subdural need a skeletal survey and an eye examination for retinal hemorrhages.</p>
 
                         <h4>Treatment</h4>
-                        <p>Large acute hematomas or those with midline shift are evacuated by craniotomy, symptomatic chronic hematomas are drained through burr holes, and small hematomas without mass effect are observed with repeat <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr>. Anticoagulation is reversed in all.</p>
+                        <p>Large or symptomatic epidural hematomas, or those with midline shift, need emergency craniotomy and evacuation, as do large acute subdurals or those with midline shift, whereas symptomatic chronic subdurals are drained through burr holes. Small, stable hematomas without mass effect and with a high <abbr class="term" tabindex="0" data-definition="Glasgow Coma Scale">GCS</abbr> can be observed closely with repeat <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr>. Anticoagulation or coagulopathy is reversed in all, and raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> is treated by raising the head and with osmotic therapy while surgery is arranged.</p>
 
                         <h4>Relationships to other conditions</h4>
-                        <p><em><button type="button" class="review-link" data-goto="epidural-hematoma">Epidural hematoma</button>.</em> Subdural hematoma is venous, crescent shaped, crosses sutures, and grows slowly in older adults, whereas epidural hematoma is arterial, lens shaped, limited by sutures, and expands quickly after a skull fracture in young patients.</p>
+                        <p><em><button type="button" class="review-link" data-goto="herniation">Raised intracranial pressure and herniation</button>.</em> Either hematoma can cause herniation; a temporal epidural hematoma pushes the medial temporal lobe over the tentorium, causing uncal herniation with a blown pupil on the same side, the event that makes the lucid interval end.</p>
+                        <p><em><button type="button" class="review-link" data-goto="intracerebral-hemorrhage">Intracerebral hemorrhage</button>.</em> Both hematomas lie outside the brain and follow trauma, whereas intracerebral hemorrhage bleeds into the brain itself, most often from hypertension or amyloid angiopathy; all three appear hyperdense on <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> when acute and are worsened by anticoagulation.</p>
                         <p><em><button type="button" class="review-link" data-goto="alzheimers">Dementia</button>.</em> A chronic subdural can cause fluctuating confusion, gait change, and headache in an older adult, mimicking dementia, so it is excluded with imaging, especially after a fall or on anticoagulants.</p>
                     </div>
                 </dialog>
             </article>
 
             <article class="condition-content" id="herniation">
-                <h2>Herniation Syndromes</h2>
+                <h2>Raised Intracranial Pressure and Herniation</h2>
 
                 <section class="content-section">
                     <h3>Pathophysiology</h3>
-<p>When a mass or swelling raises <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> beyond what <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr> and blood displacement can offset, brain is pushed across the rigid falx or tentorium, or through the foramen magnum, compressing nerves, vessels, and the brainstem.</p>
-<ol class="pathway">
-<li><span class="pathway-title">Mass or swelling</span><span class="pathway-detail">Hematoma, tumor, edema, or hydrocephalus</span></li>
-<li><span class="pathway-title">Compensation fails</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr> and venous blood can no longer be displaced</span></li>
-<li><span class="pathway-title">Raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr></span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Hypertension, bradycardia, and irregular respirations">Cushing triad</abbr>: hypertension, bradycardia, irregular breathing</span></li>
-<li><span class="pathway-title">Herniation</span><span class="pathway-detail">Across the falx or tentorium, or through the foramen magnum</span></li>
-</ol>
+<p>The skull holds a fixed volume of brain, blood, and <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr>, so a mass or swelling first displaces <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr> and venous blood; once that compensation is used up, <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> rises steeply, lowering cerebral perfusion and pushing brain across the falx or tentorium or through the foramen magnum.</p>
 <div class="subsection">
-<h4 class="sc-heading">Five routes</h4>
+<h4 class="sc-heading">The Monro–Kellie doctrine</h4>
 <div class="etiology-map">
-<figure class="cause-map"><svg viewBox="0 0 440 360" role="img" aria-label="A brain in coronal section with a mass on one side, showing five numbered routes of herniation: 1, subfalcine, under the falx; 2, uncal, over the edge of the tentorium; 3, central, down through the tentorial notch; 4, tonsillar, through the foramen magnum; 5, upward, from the posterior fossa"><ellipse class="sah-brain" cx="220" cy="160" rx="200" ry="140"/><path class="ich-midline" d="M220 20V150"/><path class="sah-press" d="M60 210C120 196 170 196 205 206M235 206C270 196 320 196 380 210"/><circle class="bleed" cx="330" cy="110" r="44"/><path class="sah-brain" d="M190 230H250V300C250 320 190 320 190 300Z"/><path class="sah-press" d="M280 140L200 150M200 150L208.4 144.6M200 150L209.5 153.2"/><path class="sah-press" d="M300 180L236 214M236 214L241.9 205.9M236 214L246.0 213.6"/><path class="sah-press" d="M230 180L228 250M228 250L223.9 240.9M228 250L232.6 241.1"/><path class="sah-press" d="M220 300L220 345M220 345L215.7 336.0M220 345L224.3 336.0"/><path class="sah-press" d="M150 330L190 266M190 266L188.9 275.9M190 266L181.5 271.3"/><text class="site-label" x="220" y="356" text-anchor="middle">Foramen magnum</text><text class="site-label" x="70" y="228" text-anchor="start">Tentorium</text><g class="site-marker"><circle cx="250" cy="128" r="11"/><text x="250" y="132.5">1</text></g><g class="site-marker"><circle cx="290" cy="208" r="11"/><text x="290" y="212.5">2</text></g><g class="site-marker"><circle cx="246" cy="236" r="11"/><text x="246" y="240.5">3</text></g><g class="site-marker"><circle cx="240" cy="330" r="11"/><text x="240" y="334.5">4</text></g><g class="site-marker"><circle cx="140" cy="316" r="11"/><text x="140" y="320.5">5</text></g></svg></figure>
+<figure class="cause-map"><svg viewBox="0 0 480 280" role="img" aria-label="A pressure–volume curve: as volume is added inside the skull, ICP stays nearly flat at first, A, while CSF and venous blood are displaced, then rises steeply, B, once compensation is used up, so that a small extra volume causes a large rise in pressure"><path class="sah-press" d="M50 30V240H450"/><rect class="tr-box" x="52" y="204" width="396" height="22" rx="4"/><text class="site-label" x="440" y="219" text-anchor="end">Normal ICP 7–15 mmHg</text><path class="ich-midline" d="M52 150H448"/><text class="site-label" x="60" y="142" text-anchor="start">20–25 mmHg: treat</text><path class="sah-press" d="M60 222C200 216 300 202 350 162C390 130 410 82 425 38" stroke-width="5"/><text class="site-label" x="250" y="268" text-anchor="middle">Volume added: mass, edema, blood, or CSF</text><text class="site-label" x="40" y="24" text-anchor="start">ICP</text><g class="site-marker"><circle cx="190" cy="194" r="11"/><text x="190" y="198.5">A</text></g><g class="site-marker"><circle cx="372" cy="112" r="11"/><text x="372" y="116.5">B</text></g></svg></figure>
 <ul class="cause-list">
-<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Subfalcine</span><span class="cause-detail">Cingulate gyrus under the falx; compresses the <abbr class="term" tabindex="0" data-definition="Anterior cerebral artery">ACA</abbr> → contralateral leg weakness</span></span></li>
-<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Uncal</span><span class="cause-detail">Medial temporal lobe over the tentorium; compresses <abbr class="term" tabindex="0" data-definition="Cranial nerve III (the oculomotor nerve)">CN III</abbr> → ipsilateral blown pupil, ptosis, and a down-and-out eye; cerebral peduncle → contralateral hemiparesis; Kernohan notch → ipsilateral hemiparesis; <abbr class="term" tabindex="0" data-definition="Posterior cerebral artery">PCA</abbr> → occipital infarct</span></span></li>
-<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Central</span><span class="cause-detail">Diencephalon and midbrain down through the tentorial notch; stretched pontine arteries → Duret hemorrhages</span></span></li>
-<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Tonsillar</span><span class="cause-detail">Cerebellar tonsils through the foramen magnum; compresses the medulla → respiratory arrest and death</span></span></li>
-<li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">Upward</span><span class="cause-detail">Posterior fossa mass pushes the cerebellum up through the notch, distorting the midbrain</span></span></li>
+<li><span class="cause-number" aria-hidden="true">A</span><span class="cause-text"><span class="cause-name">Compensation</span><span class="cause-detail">A volume increase in one component is offset by moving <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr> into the spinal canal and venous blood out of the skull, so <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> barely rises</span></span></li>
+<li><span class="cause-number" aria-hidden="true">B</span><span class="cause-text"><span class="cause-name">Decompensation</span><span class="cause-detail">Once these reserves are used up, a small extra volume causes a large rise in <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr>; above 20–25 mmHg is treated</span></span></li>
+</ul>
+</div>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Cerebral perfusion pressure</h4>
+<span class="formula-inline"><abbr class="term" tabindex="0" data-definition="Cerebral perfusion pressure">CPP</abbr> = <abbr class="term" tabindex="0" data-definition="Mean arterial pressure">MAP</abbr> − <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr>; normal 60–80 mmHg</span>
+<ul class="pair-list">
+<li><span class="pair-from">Autoregulation</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Cerebral arterioles dilate when <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr> falls and constrict when it rises, keeping blood flow steady across a wide range of pressures</span></li>
+<li><span class="pair-from">When <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> rises</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Cerebral perfusion pressure">CPP</abbr> falls, the brain becomes ischemic, and ischemic tissue swells, raising <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> further</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">The Cushing reflex</h4>
+<ol class="pathway">
+<li><span class="pathway-title"><abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> rises</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Cerebral perfusion pressure">CPP</abbr> falls and the brainstem becomes ischemic</span></li>
+<li><span class="pathway-title">Sympathetic surge</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr> rises, with a widened pulse pressure, to restore <abbr class="term" tabindex="0" data-definition="Cerebral perfusion pressure">CPP</abbr></span></li>
+<li><span class="pathway-title">Bradycardia</span><span class="pathway-detail">Follows the rise in <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr></span></li>
+<li><span class="pathway-title">Irregular breathing</span><span class="pathway-detail">From brainstem compression</span></li>
+<li><span class="pathway-title">Herniation imminent</span><span class="pathway-detail">The <abbr class="term" tabindex="0" data-definition="Hypertension, bradycardia, and irregular respirations">Cushing triad</abbr> is a late sign</span></li>
+</ol>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Five routes of herniation</h4>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="0 0 440 360" role="img" aria-label="A brain in coronal section with a mass on one side, showing five numbered routes of herniation: C, subfalcine, under the falx; D, uncal, over the edge of the tentorium; E, central, down through the tentorial notch; F, tonsillar, through the foramen magnum; G, upward, from the posterior fossa"><ellipse class="sah-brain" cx="220" cy="160" rx="200" ry="140"/><path class="ich-midline" d="M220 20V150"/><path class="sah-press" d="M60 210C120 196 170 196 205 206M235 206C270 196 320 196 380 210"/><circle class="bleed" cx="330" cy="110" r="44"/><path class="sah-brain" d="M190 230H250V300C250 320 190 320 190 300Z"/><path class="sah-press" d="M280 140L200 150M200 150L208.4 144.6M200 150L209.5 153.2"/><path class="sah-press" d="M300 180L236 214M236 214L241.9 205.9M236 214L246.0 213.6"/><path class="sah-press" d="M230 180L228 250M228 250L223.9 240.9M228 250L232.6 241.1"/><path class="sah-press" d="M220 300L220 345M220 345L215.7 336.0M220 345L224.3 336.0"/><path class="sah-press" d="M150 330L190 266M190 266L188.9 275.9M190 266L181.5 271.3"/><text class="site-label" x="220" y="356" text-anchor="middle">Foramen magnum</text><text class="site-label" x="70" y="228" text-anchor="start">Tentorium</text><g class="site-marker"><circle cx="250" cy="128" r="11"/><text x="250" y="132.5">C</text></g><g class="site-marker"><circle cx="290" cy="208" r="11"/><text x="290" y="212.5">D</text></g><g class="site-marker"><circle cx="246" cy="236" r="11"/><text x="246" y="240.5">E</text></g><g class="site-marker"><circle cx="240" cy="330" r="11"/><text x="240" y="334.5">F</text></g><g class="site-marker"><circle cx="140" cy="316" r="11"/><text x="140" y="320.5">G</text></g></svg></figure>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">C</span><span class="cause-text"><span class="cause-name">Subfalcine</span><span class="cause-detail">Cingulate gyrus under the falx; compresses the <abbr class="term" tabindex="0" data-definition="Anterior cerebral artery">ACA</abbr> → contralateral leg weakness</span></span></li>
+<li><span class="cause-number" aria-hidden="true">D</span><span class="cause-text"><span class="cause-name">Uncal</span><span class="cause-detail">Medial temporal lobe over the tentorium; compresses <abbr class="term" tabindex="0" data-definition="Cranial nerve III (oculomotor)">CN III</abbr> → ipsilateral blown pupil, ptosis, and a down-and-out eye; cerebral peduncle → contralateral hemiparesis; Kernohan notch → ipsilateral hemiparesis; <abbr class="term" tabindex="0" data-definition="Posterior cerebral artery">PCA</abbr> → occipital infarct</span></span></li>
+<li><span class="cause-number" aria-hidden="true">E</span><span class="cause-text"><span class="cause-name">Central</span><span class="cause-detail">Diencephalon and midbrain down through the tentorial notch; stretched pontine arteries → Duret hemorrhages</span></span></li>
+<li><span class="cause-number" aria-hidden="true">F</span><span class="cause-text"><span class="cause-name">Tonsillar</span><span class="cause-detail">Cerebellar tonsils through the foramen magnum; compresses the medulla → respiratory arrest and death</span></span></li>
+<li><span class="cause-number" aria-hidden="true">G</span><span class="cause-text"><span class="cause-name">Upward</span><span class="cause-detail">Posterior fossa mass pushes the cerebellum up through the notch, distorting the midbrain</span></span></li>
 </ul>
 </div>
 </div>
@@ -2279,21 +2083,50 @@
 
                 <section class="content-section">
                     <h3>Etiology</h3>
-<ul class="cause-list is-two-column">
-<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Hematomas</span><span class="cause-detail">Epidural, subdural, and intracerebral</span></span></li>
-<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Tumors</span><span class="cause-detail">With surrounding edema</span></span></li>
-<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Cerebral edema</span><span class="cause-detail">Large infarcts, trauma, and hepatic encephalopathy</span></span></li>
-<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Hydrocephalus</span><span class="cause-detail">Obstructed <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr> flow</span></span></li>
-<li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">Abscess</span><span class="cause-detail"></span></span></li>
-<li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name"><abbr class="term" tabindex="0" data-definition="Lumbar puncture">LP</abbr> with a mass</span><span class="cause-detail">Lowering spinal pressure can pull the tonsils down</span></span></li>
+<ul class="cause-list">
+<li class="cause-group">More brain: cerebral edema</li>
+<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Cytotoxic edema</span><span class="cause-detail">Cells fail to pump Na+ out and swell within minutes: hypoxic-ischemic injury, large infarcts, and trauma</span></span></li>
+<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Vasogenic edema <span class="badge">Most common</span></span><span class="cause-detail">A disrupted blood-brain barrier leaks fluid around tumors, abscesses, and infection such as meningitis and encephalitis</span></span></li>
+<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Osmotic edema</span><span class="cause-detail">Dilute plasma drives water into the brain: hyponatremia, <abbr class="term" tabindex="0" data-definition="Diabetic ketoacidosis">DKA</abbr>, dialysis disequilibrium, and fulminant hepatic encephalopathy</span></span></li>
+<li class="cause-group">A mass</li>
+<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Hematomas</span><span class="cause-detail">Epidural, subdural, and intracerebral</span></span></li>
+<li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">Tumors, abscesses, and cysts</span><span class="cause-detail">With surrounding vasogenic edema (2)</span></span></li>
+<li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name">Stroke and venous sinus thrombosis</span><span class="cause-detail">Large infarcts swell over days; venous thrombosis also blocks outflow</span></span></li>
+<li class="cause-group">More <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr></li>
+<li><span class="cause-number" aria-hidden="true">7</span><span class="cause-text"><span class="cause-name">Hydrocephalus</span><span class="cause-detail">Obstructed flow or reduced reabsorption after meningitis; rarely overproduction by a choroid plexus tumor; causes interstitial edema</span></span></li>
+<li class="cause-group">More blood</li>
+<li><span class="cause-number" aria-hidden="true">8</span><span class="cause-text"><span class="cause-name">Vasodilation and venous congestion</span><span class="cause-detail">Hypercarbia dilates cerebral vessels; venous sinus thrombosis, high central venous pressure, or a flexed or rotated neck slows outflow</span></span></li>
+<li class="cause-group">Other</li>
+<li><span class="cause-number" aria-hidden="true">9</span><span class="cause-text"><span class="cause-name">Idiopathic intracranial hypertension</span><span class="cause-detail">Raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> without a mass, linked to obesity, steroid withdrawal, and drugs such as vitamin A, tetracyclines, and lithium</span></span></li>
+<li><span class="cause-number" aria-hidden="true">10</span><span class="cause-text"><span class="cause-name"><abbr class="term" tabindex="0" data-definition="Lumbar puncture">LP</abbr> with a mass</span><span class="cause-detail">Lowering spinal pressure below a mass can pull the brain down and precipitate herniation</span></span></li>
 </ul>
+<p class="note"><strong>Note:</strong> Most causes act through more than one component: a hematoma adds mass, the edema around it adds brain volume, and compression of <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr> pathways adds hydrocephalus.</p>
                 </section>
 
                 <section class="content-section">
                     <h3>Symptoms and complications</h3>
 <div class="subsection">
-<h4 class="sc-heading">Warning signs</h4>
-<ul class="chip-list"><li>Falling <abbr class="term" tabindex="0" data-definition="Glasgow Coma Scale">GCS</abbr></li><li>Pupillary asymmetry</li><li>Abnormal posturing</li><li><abbr class="term" tabindex="0" data-definition="Hypertension, bradycardia, and irregular respirations">Cushing triad</abbr></li><li>Headache and vomiting</li><li>Papilledema</li></ul>
+<h4 class="sc-heading">Raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr></h4>
+<ul class="chip-list"><li>Headache</li><li>Vomiting</li><li>Drowsiness, then coma</li><li>Blurred or double vision</li><li>Papilledema</li><li>Bulging fontanelle in infants</li></ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Signs of herniation</h4>
+<ul class="pair-list">
+<li><span class="pair-from">Falling <abbr class="term" tabindex="0" data-definition="Glasgow Coma Scale">GCS</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Often the first sign of deterioration</span></li>
+<li><span class="pair-from">A fixed, dilated pupil</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Cranial nerve III (oculomotor)">CN III</abbr> compressed by the uncus, on the side of the mass</span></li>
+<li><span class="pair-from">Abnormal posturing</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Decorticate (flexor) posturing with damage above the red nucleus, progressing to decerebrate (extensor) posturing as the midbrain and pons are reached</span></li>
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Hypertension, bradycardia, and irregular respirations">Cushing triad</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Hypertension with a widened pulse pressure, bradycardia, and irregular breathing</span></li>
+</ul>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Signs by route</h4>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Route</th><th scope="col">What is compressed</th><th scope="col">Signs</th></tr></thead><tbody>
+<tr><th scope="row">Subfalcine (C)</th><td><abbr class="term" tabindex="0" data-definition="Anterior cerebral artery">ACA</abbr> and pericallosal arteries</td><td>Contralateral leg weakness</td></tr>
+<tr><th scope="row">Uncal (D)</th><td><abbr class="term" tabindex="0" data-definition="Cranial nerve III (oculomotor)">CN III</abbr>, the cerebral peduncle, the <abbr class="term" tabindex="0" data-definition="Posterior cerebral artery">PCA</abbr></td><td>Ipsilateral blown pupil and ptosis; contralateral hemiparesis, or ipsilateral from Kernohan notch; occipital infarct</td></tr>
+<tr><th scope="row">Central (E)</th><td>Diencephalon, midbrain, perforating basilar branches</td><td>Falling consciousness, impaired eye movements, Duret hemorrhages</td></tr>
+<tr><th scope="row">Tonsillar (F)</th><td>Medulla</td><td>Apnea and death</td></tr>
+<tr><th scope="row">Upward (G)</th><td>Midbrain, from a posterior fossa mass</td><td>Distorted midbrain; the tectum can be compressed, with bilateral ptosis and loss of upward gaze</td></tr>
+</tbody></table></div>
 </div>
 <div class="subsection">
 <h4 class="sc-heading">Complications</h4>
@@ -2309,74 +2142,126 @@
 
                 <section class="content-section">
                     <h3>Diagnosis</h3>
+<div class="subsection">
+<h4 class="sc-heading">Imaging first</h4>
 <ul class="pair-list">
-<li><span class="pair-from">Non-contrast <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr>, urgently</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">The cause, midline shift, effaced cisterns, and herniation</span></li>
-<li><span class="pair-from">Examination</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Glasgow Coma Scale">GCS</abbr>, pupils, and posturing, repeated</span></li>
-<li><span class="pair-from">Avoid <abbr class="term" tabindex="0" data-definition="Lumbar puncture">LP</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">In suspected mass effect until imaging excludes it</span></li>
+<li><span class="pair-from">Non-contrast <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr>, urgently</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">The cause, edema (low density, loss of gray-white distinction), effaced sulci and basal cisterns, compressed or enlarged ventricles, midline shift, and herniation; repeated to follow progress</span></li>
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Better detail of the cause once the patient is stable</span></li>
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Glasgow Coma Scale">GCS</abbr>, pupils, and posturing</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Examined repeatedly; papilledema on fundoscopy</span></li>
 </ul>
+<p class="note"><strong>Note:</strong> Image before any <abbr class="term" tabindex="0" data-definition="Lumbar puncture">LP</abbr>, because a sudden fall in spinal pressure below a mass can cause herniation (10).</p>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Measuring <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr></h4>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Method</th><th scope="col">What it gives</th></tr></thead><tbody>
+<tr><th scope="row"><abbr class="term" tabindex="0" data-definition="External ventricular drain">EVD</abbr></th><td>A catheter in the lateral ventricle that measures <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> and drains <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr></td></tr>
+<tr><th scope="row">Parenchymal monitor</th><td>A fiber optic catheter in the brain giving continuous readings</td></tr>
+<tr><th scope="row"><abbr class="term" tabindex="0" data-definition="Lumbar puncture">LP</abbr> opening pressure</th><td>Above 20 mmHg suggests raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr>; only once imaging excludes a mass</td></tr>
+<tr><th scope="row">Optic nerve sheath ultrasound</th><td>A sheath diameter of 0.48–0.63 cm, 3 mm behind the globe, suggests raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr>; noninvasive</td></tr>
+<tr><th scope="row">Pupillometry and transcranial Doppler</th><td>Noninvasive adjuncts</td></tr>
+</tbody></table></div>
+</div>
                 </section>
 
                 <section class="content-section">
                     <h3>Treatment</h3>
+<p>Every measure buys time until the cause is treated; the outlook is poor once both pupils are fixed and brainstem reflexes are lost.</p>
+<div class="subsection">
+<h4 class="sc-heading">Tiered management</h4>
 <ol class="pathway">
-<li><span class="pathway-title">Head of bed at 30°</span><span class="pathway-detail">Improves venous outflow</span></li>
-<li><span class="pathway-title">Osmotic therapy</span><span class="pathway-detail">Mannitol or hypertonic saline</span></li>
-<li><span class="pathway-title">Brief hyperventilation</span><span class="pathway-detail">Lowers <abbr class="term" tabindex="0" data-definition="Arterial partial pressure of carbon dioxide">PaCO2</abbr> and cerebral blood volume; a bridge only</span></li>
-<li><span class="pathway-title">Treat the cause</span><span class="pathway-detail">Evacuate hematomas, drain <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr>, or decompressive craniectomy</span></li>
+<li><span class="pathway-title">Airway, breathing, circulation</span><span class="pathway-detail">Intubate if <abbr class="term" tabindex="0" data-definition="Glasgow Coma Scale">GCS</abbr> is 8 or lower, consciousness falls, or herniation threatens</span></li>
+<li><span class="pathway-title">Position</span><span class="pathway-detail">Head of the bed at 30°, neck neutral, to help venous outflow</span></li>
+<li><span class="pathway-title">Osmotherapy</span><span class="pathway-detail">Mannitol or hypertonic saline</span></li>
+<li><span class="pathway-title"><abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr> drainage</span><span class="pathway-detail">Through an <abbr class="term" tabindex="0" data-definition="External ventricular drain">EVD</abbr></span></li>
+<li><span class="pathway-title">Refractory</span><span class="pathway-detail">Barbiturate coma, hypothermia, or decompressive craniectomy</span></li>
 </ol>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Treatments</h4>
+<div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">Treatment</th><th scope="col">How it works</th><th scope="col">Watch for</th></tr></thead><tbody>
+<tr><th scope="row">Mannitol</th><td>An osmotic gradient draws water out of the brain; it also lowers blood viscosity</td><td>Serum osmolality above 320 mOsm/kg risks <abbr class="term" tabindex="0" data-definition="Acute kidney injury">AKI</abbr> and dehydration; rebound edema</td></tr>
+<tr><th scope="row">Hypertonic saline</th><td>Draws water out of the brain; as effective as mannitol, without rebound</td><td>Keep Na+ below 160 mmol/L and osmolality below 340 mOsm/kg; needs central access for high concentrations</td></tr>
+<tr><th scope="row">Hyperventilation</th><td>Lower <abbr class="term" tabindex="0" data-definition="Arterial partial pressure of carbon dioxide">PaCO2</abbr> constricts cerebral vessels, reducing blood volume</td><td>Target <abbr class="term" tabindex="0" data-definition="Arterial partial pressure of carbon dioxide">PaCO2</abbr> no lower than 35 mmHg; below 30 only for acute herniation, as prolonged vasoconstriction causes ischemia</td></tr>
+<tr><th scope="row"><abbr class="term" tabindex="0" data-definition="External ventricular drain">EVD</abbr></th><td>Drains <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr> while measuring <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr></td><td>Infection</td></tr>
+<tr><th scope="row">Barbiturate coma</th><td>Pentobarbital lowers cerebral metabolic demand</td><td>Hypotension; kept for refractory <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr></td></tr>
+<tr><th scope="row">Hypothermia (32–35 °C)</th><td>Lowers metabolism and inflammation</td><td>Uncertain benefit; specialized centers</td></tr>
+<tr><th scope="row">Decompressive craniectomy</th><td>Removes skull and opens the dura so the brain can swell outward</td><td>Infection, hematoma, long-term disability</td></tr>
+<tr><th scope="row">Corticosteroids</th><td>Reduce vasogenic edema around tumors and abscesses (2, 5)</td><td>Not for traumatic brain injury or most other causes</td></tr>
+<tr><th scope="row">Acetazolamide</th><td>Reduces <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr> production</td><td>For idiopathic intracranial hypertension (9)</td></tr>
+</tbody></table></div>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Supportive care</h4>
+<ul class="pair-list">
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Cerebral perfusion pressure">CPP</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Vasopressors if needed to keep <abbr class="term" tabindex="0" data-definition="Cerebral perfusion pressure">CPP</abbr> at 50–70 mmHg</span></li>
+<li><span class="pair-from">Fever</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Treated aggressively, because it raises cerebral metabolism</span></li>
+<li><span class="pair-from">Glucose and Na+</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Avoid both hyper- and hypoglycemia; watch for <abbr class="term" tabindex="0" data-definition="Syndrome of inappropriate antidiuretic hormone secretion">SIADH</abbr> and cerebral salt wasting</span></li>
+<li><span class="pair-from">Treat the cause</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Evacuate hematomas, remove tumors, drain abscesses, or shunt hydrocephalus</span></li>
+</ul>
+</div>
                 </section>
 
                 <p class="see-also">
                     Related:
-                    <button type="button" class="link-button" data-goto="epidural-hematoma">Epidural Hematoma</button>
-                    <button type="button" class="link-button" data-goto="subdural-hematoma">Subdural Hematoma</button>
+                    <button type="button" class="link-button" data-goto="epidural-subdural-hematoma">Epidural and Subdural Hematoma</button>
                     <button type="button" class="link-button" data-goto="intracerebral-hemorrhage">Intracerebral Hemorrhage</button>
                     <button type="button" class="link-button" data-goto="localizing-lesions">Localizing a Lesion</button>
+                    <button type="button" class="link-button" data-goto="neuroimaging">Choosing Imaging and EEG</button>
                     <a class="link-button" href="physiology.html#cardiovascular-center">Cardiovascular Center</a>
+                    <a class="link-button" href="../renal/index.html#hyponatremia">Hyponatremia</a>
                 </p>
                 <section class="references" aria-label="References">
                     <h3>References</h3>
                     <ol>
                         <li>Munakomi S, Das JM. Brain Herniation. 2026. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK542246/" target="_blank" rel="noopener">NBK542246</a></li>
-                        <li>Khairat A, Margetis K, Waseem M. Epidural Hematoma. 2025. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK518982/" target="_blank" rel="noopener">NBK518982</a></li>
-                        <li>Pierre L, Julien C, Margetis K, Kondamudi NP. Subdural Hematoma. 2026. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK532970/" target="_blank" rel="noopener">NBK532970</a></li>
+                        <li>Pinto VL, Adeyinka A. Increased Intracranial Pressure. 2025. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK482119/" target="_blank" rel="noopener">NBK482119</a></li>
+                        <li>Mount CA, Das JM. Cerebral Perfusion Pressure. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK537271/" target="_blank" rel="noopener">NBK537271</a></li>
+                        <li>Dinallo S, Waseem M. Cushing Reflex. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK549801/" target="_blank" rel="noopener">NBK549801</a></li>
+                        <li>Nehring SM, Tadi P, Tenny S. Cerebral Edema. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK537272/" target="_blank" rel="noopener">NBK537272</a></li>
+                        <li>Munakomi S, Das JM. Intracranial Pressure Monitoring. 2026. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK542298/" target="_blank" rel="noopener">NBK542298</a></li>
                     </ol>
                 </section>
                 <dialog class="quick-review" aria-labelledby="herniation-review-title">
                     <div class="quick-review-body">
                         <p class="review-kicker">Review article</p>
-                        <h3 id="herniation-review-title">Herniation syndromes: brain displaced across the falx, tentorium, and foramen magnum</h3>
+                        <h3 id="herniation-review-title">Raised intracranial pressure and herniation: from the Monro–Kellie doctrine to tiered treatment</h3>
 
-                        <p class="review-abstract">Herniation occurs when a mass or swelling raises intracranial pressure beyond the brain's compensation, pushing tissue across rigid dural folds or through the foramen magnum. Each route compresses particular nerves, vessels, and brainstem regions, producing recognizable signs. Here, we review the mechanism, the five main routes and their signs, causes, warning signs, diagnosis, and emergency treatment.</p>
+                        <p class="review-abstract">The skull holds a fixed volume of brain, blood, and <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr>, so any added volume, from edema, a mass, hydrocephalus, or vascular congestion, is first offset by displacing <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr> and venous blood and then, once compensation is exhausted, raises <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> steeply. Rising <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> lowers cerebral perfusion pressure, provokes the Cushing reflex, and pushes brain across the falx or tentorium or through the foramen magnum, with signs that depend on the route. Here, we review the physiology of intracranial pressure and perfusion, the causes of raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr>, the routes and signs of herniation, imaging and <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> monitoring, and tiered treatment from positioning and osmotherapy to decompressive craniectomy.</p>
 
                         <aside class="review-key-points">
                             <h4>Key points</h4>
                             <ul>
-                                <li>Subfalcine herniation compresses the <abbr class="term" tabindex="0" data-definition="Anterior cerebral artery">ACA</abbr>, causing contralateral leg weakness.</li>
-                                <li>Uncal herniation compresses <abbr class="term" tabindex="0" data-definition="Cranial nerve III (the oculomotor nerve)">CN III</abbr>, causing an ipsilateral blown pupil and down-and-out eye, with contralateral hemiparesis or, from Kernohan notch, ipsilateral hemiparesis.</li>
-                                <li>Central herniation causes Duret hemorrhages, and tonsillar herniation compresses the medulla, causing respiratory arrest.</li>
-                                <li>Raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> causes the <abbr class="term" tabindex="0" data-definition="Hypertension, bradycardia, and irregular respirations">Cushing triad</abbr>, and treatment is head elevation, osmotic therapy, brief hyperventilation, and treating the cause; <abbr class="term" tabindex="0" data-definition="Lumbar puncture">LP</abbr> is avoided with mass effect.</li>
+                                <li>By the Monro–Kellie doctrine, added intracranial volume is offset by displacing <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr> and venous blood until compensation fails and <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> rises steeply; normal <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> is 7–15 mmHg, and above 20–25 mmHg is treated.</li>
+                                <li><abbr class="term" tabindex="0" data-definition="Cerebral perfusion pressure">CPP</abbr> equals <abbr class="term" tabindex="0" data-definition="Mean arterial pressure">MAP</abbr> minus <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr>, normally 60–80 mmHg; rising <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> lowers it, causing ischemia that worsens the swelling.</li>
+                                <li>The <abbr class="term" tabindex="0" data-definition="Hypertension, bradycardia, and irregular respirations">Cushing triad</abbr> of hypertension with a widened pulse pressure, bradycardia, and irregular breathing is a late sign of impending herniation.</li>
+                                <li>Uncal herniation compresses <abbr class="term" tabindex="0" data-definition="Cranial nerve III (oculomotor)">CN III</abbr>, causing an ipsilateral blown pupil, with contralateral hemiparesis or, from Kernohan notch, ipsilateral hemiparesis; tonsillar herniation compresses the medulla, causing apnea.</li>
+                                <li>Imaging precedes <abbr class="term" tabindex="0" data-definition="Lumbar puncture">LP</abbr>, because a fall in spinal pressure below a mass can cause herniation.</li>
+                                <li>Treatment is the airway, head elevation to 30° with the neck neutral, osmotherapy with mannitol or hypertonic saline, brief hyperventilation only for acute herniation, <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr> drainage, and for refractory cases barbiturate coma or decompressive craniectomy, while the cause is treated.</li>
                             </ul>
                         </aside>
 
                         <h4>Pathophysiology</h4>
-                        <p>A hematoma, tumor, edema, or hydrocephalus raises <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr>, which is offset at first by displacing <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr> and venous blood. When compensation fails, <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> rises, causing the <abbr class="term" tabindex="0" data-definition="Hypertension, bradycardia, and irregular respirations">Cushing triad</abbr> of hypertension, bradycardia, and irregular breathing, and brain is pushed across the falx or tentorium or through the foramen magnum. In subfalcine herniation, the cingulate gyrus passes under the falx and compresses the <abbr class="term" tabindex="0" data-definition="Anterior cerebral artery">ACA</abbr>, causing contralateral leg weakness. In uncal herniation, the medial temporal lobe passes over the tentorium and compresses <abbr class="term" tabindex="0" data-definition="Cranial nerve III (the oculomotor nerve)">CN III</abbr>, causing an ipsilateral blown pupil, ptosis, and a down-and-out eye, as well as the cerebral peduncle, causing contralateral hemiparesis, or, through Kernohan notch, ipsilateral hemiparesis, and the <abbr class="term" tabindex="0" data-definition="Posterior cerebral artery">PCA</abbr>, causing an occipital infarct. In central herniation, the diencephalon and midbrain move down through the tentorial notch, stretching pontine arteries and causing Duret hemorrhages. In tonsillar herniation, the cerebellar tonsils pass through the foramen magnum and compress the medulla, causing respiratory arrest and death, and in upward herniation, a posterior fossa mass pushes the cerebellum up through the notch, distorting the midbrain.</p>
+                        <p>The skull is rigid and holds brain, <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr>, and blood, and by the Monro–Kellie doctrine a rise in the volume of one must be offset by a fall in the others. At first, <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr> moves into the spinal canal and venous blood leaves the skull, so <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> barely rises, but once these reserves are used up, a small extra volume causes a large rise. Normal <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> is 7–15 mmHg lying down, and values above 20–25 mmHg are treated. Cerebral perfusion pressure is <abbr class="term" tabindex="0" data-definition="Mean arterial pressure">MAP</abbr> minus <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr>, normally 60–80 mmHg; autoregulation keeps cerebral blood flow steady across a wide range of <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr> by dilating or constricting arterioles, but as <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> rises, <abbr class="term" tabindex="0" data-definition="Cerebral perfusion pressure">CPP</abbr> falls, the brain becomes ischemic, and the ischemic tissue swells, raising <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> further.</p>
+                        <p>In the Cushing reflex, brainstem ischemia from rising <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> triggers a sympathetic surge that raises <abbr class="term" tabindex="0" data-definition="Blood pressure">BP</abbr>, with a widened pulse pressure, to restore perfusion, followed by bradycardia and, as the brainstem is compressed, irregular breathing; the triad is a late sign of impending herniation.</p>
+                        <p>Brain is then pushed across the falx or tentorium or through the foramen magnum. In subfalcine herniation, the cingulate gyrus passes under the falx and compresses the <abbr class="term" tabindex="0" data-definition="Anterior cerebral artery">ACA</abbr>, causing contralateral leg weakness. In uncal herniation, the medial temporal lobe passes over the tentorium and compresses <abbr class="term" tabindex="0" data-definition="Cranial nerve III (oculomotor)">CN III</abbr>, causing an ipsilateral blown pupil, ptosis, and a down-and-out eye, as well as the cerebral peduncle, causing contralateral hemiparesis, or, through Kernohan notch, ipsilateral hemiparesis, and the <abbr class="term" tabindex="0" data-definition="Posterior cerebral artery">PCA</abbr>, causing an occipital infarct. In central herniation, the diencephalon and midbrain move down through the tentorial notch, stretching pontine arteries and causing Duret hemorrhages. In tonsillar herniation, the cerebellar tonsils pass through the foramen magnum and compress the medulla, causing respiratory arrest and death, and in upward herniation, a posterior fossa mass pushes the cerebellum up through the notch, distorting the midbrain.</p>
 
                         <h4>Etiology</h4>
-                        <p>Causes include epidural, subdural, and intracerebral hematomas; tumors with surrounding edema; cerebral edema from large infarcts, trauma, and hepatic encephalopathy; hydrocephalus from obstructed <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr> flow; and abscesses. An <abbr class="term" tabindex="0" data-definition="Lumbar puncture">LP</abbr> in the presence of a mass can lower spinal pressure and pull the tonsils down.</p>
+                        <p>Causes are grouped by the component that grows. Cerebral edema adds brain volume: cytotoxic edema, in which cells fail to pump Na+ out and swell within minutes, follows hypoxic-ischemic injury, large infarcts, and trauma; vasogenic edema, the most common form, leaks through a disrupted blood-brain barrier around tumors, abscesses, and infection such as meningitis and encephalitis; and osmotic edema follows hyponatremia, <abbr class="term" tabindex="0" data-definition="Diabetic ketoacidosis">DKA</abbr>, dialysis disequilibrium, and fulminant hepatic encephalopathy. Masses include epidural, subdural, and intracerebral hematomas, tumors, abscesses, cysts, large infarcts, and venous sinus thrombosis, which also blocks outflow. Hydrocephalus adds <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr>, from obstructed flow, reduced reabsorption after meningitis, or rarely overproduction by a choroid plexus tumor, causing interstitial edema. Blood volume rises with hypercarbia, which dilates cerebral vessels, and with venous congestion from sinus thrombosis, high central venous pressure, or a flexed or rotated neck. Idiopathic intracranial hypertension raises <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> without a mass and is linked to obesity, steroid withdrawal, and drugs such as vitamin A, tetracyclines, and lithium, and an <abbr class="term" tabindex="0" data-definition="Lumbar puncture">LP</abbr> in the presence of a mass can precipitate herniation. Most causes act through more than one component.</p>
 
-                        <h4>Symptoms and complications</h4>
-                        <p>Warning signs are a falling <abbr class="term" tabindex="0" data-definition="Glasgow Coma Scale">GCS</abbr>, pupillary asymmetry, abnormal posturing, the <abbr class="term" tabindex="0" data-definition="Hypertension, bradycardia, and irregular respirations">Cushing triad</abbr>, headache and vomiting, and papilledema. Complications include brainstem compression with coma and respiratory arrest, Duret hemorrhages in central herniation, <abbr class="term" tabindex="0" data-definition="Posterior cerebral artery">PCA</abbr> or <abbr class="term" tabindex="0" data-definition="Anterior cerebral artery">ACA</abbr> infarcts in uncal or subfalcine herniation, and death. Kernohan notch causes hemiparesis on the same side as the lesion, a false localizing sign.</p>
+                        <h4>Clinical presentation and complications</h4>
+                        <p>Raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> causes headache, vomiting, drowsiness progressing to coma, blurred or double vision, and papilledema, and in infants a bulging fontanelle. Herniation is signaled by a falling <abbr class="term" tabindex="0" data-definition="Glasgow Coma Scale">GCS</abbr>, a fixed dilated pupil on the side of the mass from <abbr class="term" tabindex="0" data-definition="Cranial nerve III (oculomotor)">CN III</abbr> compression, abnormal posturing that progresses from decorticate (flexor) posturing with damage above the red nucleus to decerebrate (extensor) posturing as the midbrain and pons are reached, and the <abbr class="term" tabindex="0" data-definition="Hypertension, bradycardia, and irregular respirations">Cushing triad</abbr>. Complications include brainstem compression with coma and respiratory arrest, Duret hemorrhages in central herniation, <abbr class="term" tabindex="0" data-definition="Posterior cerebral artery">PCA</abbr> or <abbr class="term" tabindex="0" data-definition="Anterior cerebral artery">ACA</abbr> infarcts in uncal or subfalcine herniation, and death; Kernohan notch causes hemiparesis on the same side as the lesion, a false localizing sign.</p>
 
                         <h4>Diagnosis</h4>
-                        <p>Urgent non-contrast <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> shows the cause, midline shift, effaced cisterns, and herniation, the <abbr class="term" tabindex="0" data-definition="Glasgow Coma Scale">GCS</abbr>, pupils, and posturing are examined repeatedly, and <abbr class="term" tabindex="0" data-definition="Lumbar puncture">LP</abbr> is avoided when mass effect is suspected until imaging excludes it.</p>
+                        <p>Urgent non-contrast <abbr class="term" tabindex="0" data-definition="Computed tomography">CT</abbr> shows the cause and the signs of raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr>: edema, with low density and loss of gray-white distinction, effaced sulci and basal cisterns, compressed or enlarged ventricles, midline shift, and herniation, and is repeated to follow progress, with <abbr class="term" tabindex="0" data-definition="Magnetic resonance imaging">MRI</abbr> giving better detail once the patient is stable. The <abbr class="term" tabindex="0" data-definition="Glasgow Coma Scale">GCS</abbr>, pupils, and posturing are examined repeatedly, and fundoscopy shows papilledema. Imaging precedes any <abbr class="term" tabindex="0" data-definition="Lumbar puncture">LP</abbr>, because a sudden fall in spinal pressure below a mass can cause herniation; once a mass is excluded, an opening pressure above 20 mmHg suggests raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr>. <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> is measured directly with an <abbr class="term" tabindex="0" data-definition="External ventricular drain">EVD</abbr>, which also drains <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr>, or a parenchymal fiber optic monitor, and noninvasively with optic nerve sheath ultrasound, where a diameter of 0.48–0.63 cm 3 mm behind the globe suggests raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr>, pupillometry, and transcranial Doppler.</p>
 
-                        <h4>Treatment</h4>
-                        <p>The head of the bed is raised to 30° to improve venous outflow, osmotic therapy with mannitol or hypertonic saline is given, and brief hyperventilation lowers <abbr class="term" tabindex="0" data-definition="Arterial partial pressure of carbon dioxide">PaCO2</abbr> and cerebral blood volume as a bridge only. The cause is then treated by evacuating hematomas, draining <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr>, or decompressive craniectomy.</p>
+                        <h4>Management</h4>
+                        <p>Every measure buys time until the cause is treated, and the outlook is poor once both pupils are fixed and brainstem reflexes are lost. The airway, breathing, and circulation come first, with intubation if the <abbr class="term" tabindex="0" data-definition="Glasgow Coma Scale">GCS</abbr> is 8 or lower, consciousness falls, or herniation threatens. The head of the bed is raised to 30° with the neck neutral to help venous outflow. Osmotherapy uses mannitol, which draws water out of the brain and lowers blood viscosity but risks <abbr class="term" tabindex="0" data-definition="Acute kidney injury">AKI</abbr> and dehydration when serum osmolality exceeds 320 mOsm/kg and can cause rebound edema, or hypertonic saline, which is as effective, causes no rebound, and is kept below a Na+ of 160 mmol/L and an osmolality of 340 mOsm/kg. Hyperventilation constricts cerebral vessels and lowers blood volume, targeting a <abbr class="term" tabindex="0" data-definition="Arterial partial pressure of carbon dioxide">PaCO2</abbr> no lower than 35 mmHg, with values below 30 mmHg kept for acute herniation because prolonged vasoconstriction causes ischemia. An <abbr class="term" tabindex="0" data-definition="External ventricular drain">EVD</abbr> drains <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr>, and refractory <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> is treated with a pentobarbital coma, hypothermia to 32–35 °C, of uncertain benefit, or decompressive craniectomy, which lets the brain swell outward at the cost of infection, hematoma, and disability.</p>
+                        <p>Corticosteroids reduce vasogenic edema around tumors and abscesses but are not used in traumatic brain injury or most other causes, and acetazolamide reduces <abbr class="term" tabindex="0" data-definition="Cerebrospinal fluid">CSF</abbr> production in idiopathic intracranial hypertension. Supportive care keeps <abbr class="term" tabindex="0" data-definition="Cerebral perfusion pressure">CPP</abbr> at 50–70 mmHg, with vasopressors if needed, treats fever aggressively, avoids both hyper- and hypoglycemia, and watches Na+ for <abbr class="term" tabindex="0" data-definition="Syndrome of inappropriate antidiuretic hormone secretion">SIADH</abbr> and cerebral salt wasting. The cause is treated by evacuating hematomas, removing tumors, draining abscesses, or shunting hydrocephalus.</p>
 
                         <h4>Relationships to other conditions</h4>
-                        <p><em><button type="button" class="review-link" data-goto="epidural-hematoma">Epidural</button> and <button type="button" class="review-link" data-goto="subdural-hematoma">subdural hematoma</button>.</em> Both cause herniation, but an epidural hematoma does so within hours, often after a lucid interval, whereas a subdural hematoma, especially a chronic one, may do so gradually.</p>
+                        <p><em><button type="button" class="review-link" data-goto="epidural-subdural-hematoma">Epidural and subdural hematoma</button>.</em> Both cause herniation, but an epidural hematoma does so within hours, often after a lucid interval, whereas a subdural hematoma, especially a chronic one, may do so gradually; a temporal epidural hematoma classically causes uncal herniation with a blown pupil on the same side.</p>
                         <p><em><button type="button" class="review-link" data-goto="intracerebral-hemorrhage">Intracerebral hemorrhage</button>.</em> A large hematoma with surrounding edema raises <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> and causes herniation, which is why <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> is lowered with head elevation, osmotic therapy, and, for cerebellar bleeds, surgical evacuation.</p>
+                        <p><em>Hyponatremia.</em> Acute hyponatremia causes osmotic cerebral edema and can lead to herniation, whereas hypertonic saline, used to correct it, is also a mainstay of treating raised <abbr class="term" tabindex="0" data-definition="Intracranial pressure">ICP</abbr> from other causes.</p>
                     </div>
                 </dialog>
             </article>
@@ -7203,8 +7088,8 @@
 <div class="table-wrap"><table class="data-table compare-table"><thead><tr><th scope="col">For</th><th scope="col">Look for</th><th scope="col">Clue</th></tr></thead><tbody>
 <tr><th scope="row">1 <button type="button" class="link-button" data-goto="intracerebral-hemorrhage">Intracerebral hemorrhage</button></th><td>A round or oval bright collection within the brain, often with a dark rim of edema and mass effect</td><td>Deep (basal ganglia, thalamus, pons, cerebellum) in hypertension; lobar in cerebral amyloid angiopathy</td></tr>
 <tr><th scope="row">2 <button type="button" class="link-button" data-goto="subarachnoid-hemorrhage">Subarachnoid hemorrhage</button></th><td>Bright blood outlining the sulci, Sylvian fissures, and basal cisterns</td><td>Thunderclap headache; CT within 6 hours is highly sensitive, and <abbr class="term" tabindex="0" data-definition="Lumbar puncture">LP</abbr> for xanthochromia follows if negative</td></tr>
-<tr><th scope="row">3 <button type="button" class="link-button" data-goto="epidural-hematoma">Epidural hematoma</button></th><td>A biconvex, lens-shaped collection against the skull that stops at the sutures and can cross the midline</td><td>Skull fracture over a torn middle meningeal artery; young patients; lucid interval</td></tr>
-<tr><th scope="row">4 <button type="button" class="link-button" data-goto="subdural-hematoma">Subdural hematoma</button></th><td>A crescent along the inner skull that crosses sutures but not the midline, stopped by the falx</td><td>Torn bridging veins in older adults, alcohol use, or infants; bright when acute, isodense at 1–3 weeks, dark when chronic</td></tr>
+<tr><th scope="row">3 <button type="button" class="link-button" data-goto="epidural-subdural-hematoma">Epidural hematoma</button></th><td>A biconvex, lens-shaped collection against the skull that stops at the sutures and can cross the midline</td><td>Skull fracture over a torn middle meningeal artery; young patients; lucid interval</td></tr>
+<tr><th scope="row">4 <button type="button" class="link-button" data-goto="epidural-subdural-hematoma">Subdural hematoma</button></th><td>A crescent along the inner skull that crosses sutures but not the midline, stopped by the falx</td><td>Torn bridging veins in older adults, alcohol use, or infants; bright when acute, isodense at 1–3 weeks, dark when chronic</td></tr>
 </tbody></table></div>
 <p class="note"><strong>Sutures limit an epidural hematoma, and the falx limits a subdural one,</strong> so a lens that stops at the sutures is epidural and a crescent that stops at the midline is subdural.</p>
 </div>

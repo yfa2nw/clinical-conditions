@@ -11,10 +11,15 @@ const themeToggle = document.getElementById("theme-toggle");
 const quizView = document.getElementById("quiz");
 // Quizzes open from each page's "Quiz me" button; the hash is #quiz/<page id>
 const QUIZ_HASH = /^#quiz\/(.+)$/;
+// A merged page lists the ids of the pages it replaced in data-aliases, so old links still land on it
+const resolvePageId = (id) => {
+    if (!id) return null;
+    const article = conditionContents.find((page) => page.id === id || (page.dataset.aliases || "").split(" ").includes(id));
+    return article ? article.id : null;
+};
 const quizHashCondition = () => {
     const match = location.hash.match(QUIZ_HASH);
-    const id = match && decodeURIComponent(match[1]);
-    return id && conditionContents.some((article) => article.id === id) ? id : null;
+    return resolvePageId(match && decodeURIComponent(match[1]));
 };
 const ITEM_NAME = document.body.dataset.page === "physiology" ? "topic" : "condition";
 
@@ -177,8 +182,7 @@ document.addEventListener("click", (event) => {
 });
 
 function conditionFromHash() {
-    const id = decodeURIComponent(location.hash.slice(1));
-    return conditionContents.some((article) => article.id === id) ? id : null;
+    return resolvePageId(decodeURIComponent(location.hash.slice(1)));
 }
 
 window.addEventListener("popstate", () => {

@@ -21,7 +21,7 @@ const GI_FIGURE_SECTIONS = {
 
 // For a diagram with no description on its page
 const GI_FIGURE_LEGENDS = {
-    "biliary-stones": "The gallbladder and biliary tree.",
+    "gallbladder-stones": "The gallbladder and biliary tree.",
 };
 
 const SYSTEMS = {

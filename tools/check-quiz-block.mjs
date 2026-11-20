@@ -4,13 +4,12 @@
 //   node tools/check-quiz-block.mjs gi pud --merged        checks the page's questions already in the bank
 import { readFileSync, existsSync } from "node:fs";
 import vm from "node:vm";
+import { articleWords, quizGoal } from "./quiz-target.mjs";
 
 const [SYSTEM, ID, flag] = process.argv.slice(2);
 if (!SYSTEM || !ID) throw new Error("Usage: node tools/check-quiz-block.mjs <system> <page id> [--merged]");
-const SPECIAL = new Set(["abdominal-pain", "liver-tests", "localizing-lesions", "ruling-out-mimics", "neuroimaging"]);
-// Condition pages the site owner asked to have a special topic's 40 questions
-const LARGE = new Set(["acid-base"]);
-const target = SPECIAL.has(ID) || LARGE.has(ID) ? { memory: 15, reasoning: 15, analysis: 10 } : /-pharm-/.test(ID) ? { memory: 6, reasoning: 6, analysis: 3 } : { memory: 10, reasoning: 10, analysis: 5 };
+// The page's quiz length follows its size (tools/quiz-target.mjs): one question per 30 page words, from 10 to 40
+const words = articleWords(SYSTEM, ID);
 
 const bankFile = existsSync(`${SYSTEM}/physiology.html`) && readFileSync(`${SYSTEM}/physiology.html`, "utf8").includes(`id="${ID}"`) ? `${SYSTEM}/physiology-questions.js` : `${SYSTEM}/questions.js`;
 const pageFile = bankFile.includes("physiology") ? `${SYSTEM}/physiology.html` : `${SYSTEM}/index.html`;
@@ -62,9 +61,12 @@ for (const [name, members] of sets) {
 questions.filter((q) => q.passage && !q.set).forEach((q) => problems.push(`${q.id}: a passage belongs to a set`));
 if (!sets.size) warn.push("no set: include at least one analysis case with two or three questions");
 
-// Counts against the page's target
+// Counts against the page's target; a count within 10 of the target can stay as it is
+const goal = quizGoal(words, questions.length);
+const target = { memory: goal.memory, reasoning: goal.reasoning, analysis: goal.analysis };
+if (goal.total !== questions.length) problems.push(`${questions.length} questions; the page has ${words} words, so its target is ${goal.target} (change in groups of 5: 2 memory, 2 reasoning, 1 analysis)`);
 const counts = Object.fromEntries(["memory", "reasoning", "analysis"].map((k) => [k, questions.filter((q) => q.kind === k).length]));
-for (const k of Object.keys(target)) if (Math.abs(counts[k] - target[k]) > 2) problems.push(`${counts[k]} ${k} questions; the target is ${target[k]} (a few either way is fine)`);
+for (const k of Object.keys(target)) if (Math.abs(counts[k] - target[k]) > 2) problems.push(`${counts[k]} ${k} questions; the target is ${target[k]} (within 2 is fine)`);
 
 // The correct option should be the longest in about 1 in 5
 const longest = questions.filter((q) => q.options && q.options[q.answer].length >= Math.max(...q.options.filter((_, i) => i !== q.answer).map((o) => o.length)));
@@ -72,7 +74,7 @@ const share = Math.round((longest.length / Math.max(questions.length, 1)) * 100)
 if (share > 25) problems.push(`the correct option is the longest in ${share}% (${longest.map((q) => q.id).join(", ")}); keep it near 20%`);
 
 // Correct answers spread across original positions do not matter (options are shuffled), but report the mix
-console.log(`${ID}: ${questions.length} questions (memory ${counts.memory}, reasoning ${counts.reasoning}, analysis ${counts.analysis}); target ${target.memory}/${target.reasoning}/${target.analysis}; ${sets.size} set(s); correct option longest in ${share}%`);
+console.log(`${ID}: ${questions.length} questions (memory ${counts.memory}, reasoning ${counts.reasoning}, analysis ${counts.analysis}); target ${goal.target} for ${words} words, goal ${target.memory}/${target.reasoning}/${target.analysis}; ${sets.size} set(s); correct option longest in ${share}%`);
 warn.forEach((w) => console.log(`  warning: ${w}`));
 if (problems.length) {
     problems.forEach((p) => console.log(`  problem: ${p}`));

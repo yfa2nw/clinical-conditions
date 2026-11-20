@@ -1,4 +1,4 @@
-// Worksheet for the Hepatocellular Injury: Acute Fatty Liver of Pregnancy page, built by tools/build-worksheet-pdf.mjs gi hepatic-other.
+// Worksheet for the Liver Disease in Pregnancy page, built by tools/build-worksheet-pdf.mjs gi hepatic-other.
 // Part 1 follows the page's sections; Part 2 asks for inference and avoids the quiz's questions.
 // Question types: blank (html with [[answer]] marks), match (items, options, and the option index for each item),
 // mc (options and answer; select: 2 or justify: <words>), sa, and order (items and the correct order of their indexes).
@@ -6,33 +6,45 @@
 const labs = (head, rows) => `<table><thead><tr>${head.map((h) => `<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
 
 export const WORKSHEET = {
-    title: "Hepatocellular Injury: Acute Fatty Liver of Pregnancy",
+    title: "Liver Disease in Pregnancy",
     // The first page: one flowchart of the whole page, with [[answer]] blanks to fill in
     flowchart: {
-        title: "From fetal enzyme to maternal liver failure",
-        top: "Fetal [[LCHAD]] deficiency (the mother is a [[carrier]]) → fetal fatty acids reach the mother → her liver mitochondria are overwhelmed → [[microvesicular]] steatosis",
-        rows: ["Complication", "Why it happens", "Finding", "Support"],
+        title: "Liver disease through pregnancy",
+        top: "Four liver diseases are unique to pregnancy and follow the [[trimester]]; other liver diseases can occur in pregnancy or predate it",
+        rows: ["Condition", "Why it happens", "Key finding", "Treatment"],
         columns: [
-            ["Hypoglycemia", "Failing hepatocytes cannot keep up [[glucose]]", "Decreased glucose; common in AFLP, rare in HELLP", "IV [[glucose]], checked often"],
-            ["Coagulopathy", "Decreased clotting factor synthesis, and [[DIC]]", "Increased INR, decreased [[fibrinogen]]", "FFP and [[cryoprecipitate]]"],
-            ["Encephalopathy", "The failing liver cannot clear [[ammonia]]", "Confusion; increased ammonia", "ICU care"],
-            ["Kidneys", "Acute kidney injury", "Increased creatinine and [[uric acid]]", "ICU care"],
-            ["Fetus", "Maternal liver failure", "Fetal [[distress]] and death", "Delivery"],
+            ["1. Hyperemesis gravidarum (first trimester)", "Intractable vomiting; hormonal and [[motility]] changes", "Weight loss over 5% and [[ketonuria]]; ALT usually under 250 U/L", "Antiemetics, IV fluids, and electrolytes; [[thiamine]] if vomiting is prolonged"],
+            ["2. Intrahepatic cholestasis (second or third trimester)", "High [[estrogen]] and genetic variants alter canalicular bile transport", "Pruritus of the [[palms]] and soles, worse at night; raised serum [[bile acids]]", "[[Ursodeoxycholic acid]]; vitamin K; delivery at 38 weeks, or 36 if severe"],
+            ["3. HELLP syndrome (after 20 weeks)", "A severe variant of [[preeclampsia]]: endothelial injury, platelets and fibrin in the sinusoids", "[[Schistocytes]], AST and ALT over 10 times normal, and low platelets", "Antihypertensives and [[magnesium]] sulfate; early delivery"],
+            ["4. AFLP (30–38 weeks)", "Fetal [[LCHAD]] deficiency overwhelms maternal mitochondria → microvesicular steatosis", "Liver failure: low [[glucose]], high INR, low fibrinogen; Swansea criteria", "Emergency delivery after correcting glucose and clotting"],
         ],
-        span: "Prompt [[delivery]] is the only cure; then test the [[newborn]] for LCHAD deficiency and counsel about [[recurrence]]",
+        span: "Normal in pregnancy: ALP up to 4 times normal, from the [[placenta]], and low albumin. Abnormal: any rise in ALT, AST, or bilirubin",
         chains: [
-            { label: "Who is at risk", steps: [["Timing", "Third trimester, usually [[30–38]] weeks"], ["Pregnancy", "First pregnancy; [[twins]]"], ["Fetus", "[[Male]] fetus"], ["Mother", "Pre-eclampsia"]] },
             { label: "AFLP or HELLP", steps: [["Glucose", "Low in AFLP; rarely low in HELLP"], ["Clotting", "Coagulopathy common in AFLP"], ["Hemolysis", "Uncommon in AFLP; present in [[HELLP]]"], ["Platelets", "Normal or mildly low in AFLP; low in HELLP"]] },
+            { label: "Not unique to pregnancy", steps: [["Hepatitis E", "Fulminant in the [[third]] trimester"], ["Budd-Chiari", "LMWH, as oral anticoagulants are [[teratogenic]]"], ["Gallstones", "Slower gallbladder motility; resolve after delivery"], ["Wilson disease", "Continue chelation; [[zinc]] is safest"]] },
         ],
     },
     review: [
         {
             section: "Pathophysiology",
             questions: [
+                { id: "r-path-normal", type: "blank",
+                    html: "In the third trimester, ALP rises up to [[4]] times normal, from the [[placenta]], and albumin falls from [[hemodilution]]. Any rise in [[ALT]], AST, or bilirubin, or GGT rising with ALP, needs evaluation." },
+                { id: "r-path-four", type: "match",
+                    stem: "Match each liver disease of pregnancy to its mechanism.",
+                    items: ["Hyperemesis gravidarum", "Intrahepatic cholestasis of pregnancy", "HELLP syndrome", "AFLP"],
+                    options: ["Endothelial injury from abnormal placental vessels", "Fetal fatty acids overwhelm maternal mitochondria", "Intractable vomiting with hormonal and motility changes", "Estrogen and genetic changes in canalicular bile transport"],
+                    answer: [2, 3, 0, 1],
+                    explanation: "Each of the four has its own route to liver injury, and each appears at a characteristic time in pregnancy." },
+                { id: "r-path-hellp", type: "order",
+                    stem: "Number the steps of HELLP syndrome in order.",
+                    items: ["Platelets and fibrin deposit in the sinusoids", "Abnormal placental vessels", "Periportal (zone 1) necrosis and hemorrhage", "Endothelial injury and vasospasm"],
+                    order: [1, 3, 0, 2],
+                    explanation: "Abnormal placental vessels injure the endothelium; platelets and fibrin deposit in the sinusoids, causing hemolysis and low platelets, and periportal necrosis raises the liver enzymes." },
                 { id: "r-path-blanks", type: "blank",
                     html: "In fetal [[LCHAD]] deficiency, fetal fatty acids reach the [[maternal]] liver. Its overwhelmed [[mitochondria]] leave tiny fat droplets in hepatocytes ([[microvesicular]] steatosis), and acute liver failure develops in the [[third]] trimester." },
                 { id: "r-path-match", type: "match",
-                    stem: "Match each effect to its mechanism.",
+                    stem: "Match each effect of AFLP to its mechanism.",
                     items: ["Hypoglycemia", "Raised INR", "Encephalopathy", "Microvesicular steatosis"],
                     options: ["Increased ammonia", "Overwhelmed mitochondria leave tiny fat droplets", "Failing hepatocytes cannot keep up glucose", "Decreased clotting factor synthesis"],
                     answer: [2, 3, 0, 1],
@@ -46,6 +58,16 @@ export const WORKSHEET = {
         {
             section: "Etiology",
             questions: [
+                { id: "r-cause-ocp", type: "sa", lines: 2,
+                    stem: "Why can high-dose oral contraceptives cause the same cholestasis as pregnancy?",
+                    answer: "Both raise estrogen, which alters canalicular bile transport.",
+                    explanation: "Genetic variants of bile transport (MDR3, ABCB4) add to the risk, and the condition recurs in later pregnancies." },
+                { id: "r-cause-other", type: "match",
+                    stem: "Match each condition that is not unique to pregnancy to how pregnancy affects it.",
+                    items: ["Hepatitis E", "Budd-Chiari syndrome", "Gallstones", "Cirrhosis"],
+                    options: ["Slower gallbladder motility and larger volume", "A larger circulating volume worsens portal hypertension", "Fulminant liver failure in the third trimester", "Raised procoagulant and lowered anticoagulant factors"],
+                    answer: [2, 3, 0, 1],
+                    explanation: "Pregnancy changes the course of liver diseases that also occur outside it." },
                 { id: "r-cause-order", type: "order",
                     stem: "Number the steps from the fetal defect to liver failure in order.",
                     items: ["Maternal liver mitochondria are overwhelmed", "Fetal LCHAD deficiency", "Microvesicular steatosis and acute liver failure", "Fetal fatty acids reach the mother"],
@@ -65,10 +87,21 @@ export const WORKSHEET = {
         {
             section: "Symptoms and complications",
             questions: [
+                { id: "r-sx-table", type: "blank",
+                    stem: "Complete the table.",
+                    html: `<table><thead><tr><th>Condition</th><th>Clue</th><th>Complication</th></tr></thead><tbody>
+<tr><td>Hyperemesis gravidarum</td><td>Transient [[hyperthyroidism]], from hCG</td><td>[[Wernicke]] encephalopathy</td></tr>
+<tr><td>Intrahepatic cholestasis</td><td>Jaundice is rare and follows about [[2]] weeks of itch</td><td>Vitamin K malabsorption and a prolonged [[PT]]</td></tr>
+<tr><td>HELLP syndrome</td><td>Often none; jaundice is rare and [[hemolytic]]</td><td>Fetal mortality up to [[30]]%</td></tr>
+</tbody></table>` },
+                { id: "r-sx-confused", type: "sa", lines: 2,
+                    stem: "A woman thought to have intrahepatic cholestasis of pregnancy becomes confused. Why does this change the diagnosis?",
+                    answer: "Encephalopathy is not part of intrahepatic cholestasis, so another cause, such as AFLP, must be sought.",
+                    explanation: "Abdominal pain is also not part of intrahepatic cholestasis and prompts the same search." },
                 { id: "r-sx-blanks", type: "blank",
                     html: "Symptoms of AFLP are nausea and vomiting, abdominal pain, malaise, [[jaundice]], and an unusual pair: [[polyuria]] and polydipsia." },
                 { id: "r-sx-comp", type: "match",
-                    stem: "Match each complication to the finding that shows it.",
+                    stem: "In AFLP, match each complication to the finding that shows it.",
                     items: ["Acute liver failure", "Acute kidney injury", "Fetal compromise"],
                     options: ["Rising creatinine with falling urine output", "Fetal distress on monitoring", "Hypoglycemia, coagulopathy, and encephalopathy"],
                     answer: [2, 0, 1],
@@ -82,6 +115,15 @@ export const WORKSHEET = {
         {
             section: "Diagnosis",
             questions: [
+                { id: "r-dx-icp", type: "mc",
+                    stem: "Which result can be the only abnormality in intrahepatic cholestasis of pregnancy?",
+                    options: ["Raised serum bile acids", "Low platelets", "Low glucose", "Schistocytes on the blood film", "AST and ALT over 10 times normal"], answer: 0,
+                    explanation: "Intrahepatic cholestasis is a diagnosis of exclusion, and raised total and fasting serum bile acids can be its only abnormality; ultrasound excludes biliary obstruction, and viral hepatitis is excluded.",
+                    notes: { 1: "Low platelets point to HELLP syndrome.", 2: "Low glucose points to AFLP.", 3: "Schistocytes show the hemolysis of HELLP syndrome.", 4: "ALT is rarely over 250 U/L in intrahepatic cholestasis." } },
+                { id: "r-dx-bili", type: "sa", lines: 2,
+                    stem: "Why is the bilirubin rise mainly unconjugated in HELLP syndrome but over 90% conjugated in AFLP?",
+                    answer: "In HELLP, bilirubin comes from intravascular hemolysis; in AFLP, the failing liver cannot excrete the bilirubin it has conjugated.",
+                    explanation: "The type of bilirubin points to the mechanism: red cell breakdown or hepatocyte failure." },
                 { id: "r-dx-table", type: "blank",
                     stem: "Complete the key findings.",
                     html: `<table><thead><tr><th>Test</th><th>Finding in AFLP</th></tr></thead><tbody>
@@ -107,12 +149,24 @@ export const WORKSHEET = {
         {
             section: "Treatment",
             questions: [
+                { id: "r-tx-four", type: "match",
+                    stem: "Match each condition to its treatment.",
+                    items: ["Hyperemesis gravidarum", "Intrahepatic cholestasis of pregnancy", "HELLP syndrome", "AFLP"],
+                    options: ["Antihypertensives, magnesium sulfate, and early delivery", "Emergency delivery whatever the gestation", "Antiemetics, IV fluids, and thiamine", "Ursodeoxycholic acid and delivery at 38 weeks"],
+                    answer: [2, 3, 0, 1],
+                    explanation: "Hyperemesis is managed without planning delivery; delivery cures HELLP and AFLP and is timed in intrahepatic cholestasis." },
+                { id: "r-tx-vitk", type: "sa", lines: 2,
+                    stem: "Why is vitamin K given at least 6 hours before delivery in intrahepatic cholestasis?",
+                    answer: "Less bile reaches the gut, so fat-soluble vitamin K is malabsorbed and PT is prolonged, raising the risk of bleeding at delivery.",
+                    explanation: "Steatorrhea comes from the same lack of bile salts in the gut." },
+                { id: "r-tx-other", type: "blank",
+                    html: "Budd-Chiari syndrome in pregnancy is treated with [[low-molecular-weight heparin]], because oral anticoagulants are [[teratogenic]]. In Wilson disease, chelation continues without interruption, and [[zinc]] is the safest." },
                 { id: "r-tx-cure", type: "sa", lines: 2,
-                    stem: "Why is prompt delivery the only cure?",
+                    stem: "Why is prompt delivery the only cure for AFLP?",
                     answer: "It removes the fetal source of the fatty acids overwhelming the mother's liver.",
                     explanation: "Support keeps her safe until and after delivery." },
                 { id: "r-tx-match", type: "match",
-                    stem: "Match each support to what it treats.",
+                    stem: "In AFLP, match each support to what it treats.",
                     items: ["IV glucose", "FFP", "Cryoprecipitate", "ICU care"],
                     options: ["Low fibrinogen", "Encephalopathy and organ failure", "Hypoglycemia", "Raised INR from missing clotting factors"],
                     answer: [2, 3, 0, 1],
@@ -124,6 +178,54 @@ export const WORKSHEET = {
     ],
     practice: {
         scenarios: [
+            {
+                title: "Itching at 33 weeks",
+                keyPoints: [
+                    "Itching of the palms and soles, worse at night, with raised serum bile acids in the second or third trimester suggests intrahepatic cholestasis of pregnancy.",
+                    "ALP rises up to 4 times normal in a normal third trimester, so it does not show liver disease; ALT and bile acids do.",
+                    "Intrahepatic cholestasis is a diagnosis of exclusion: ultrasound excludes biliary obstruction, and viral hepatitis is excluded.",
+                    "Ursodeoxycholic acid relieves itch and improves fetal outcome; vitamin K corrects the prolonged PT from malabsorption.",
+                    "Delivery is planned at 38 weeks, or 36 if severe, because of the fetal risks; the condition resolves 4–6 weeks after delivery and recurs in later pregnancies.",
+                ],
+                blocks: [
+                    { passage: `<p>A 34-year-old woman in her second pregnancy is 33 weeks pregnant. For 2 weeks she has had itching of her palms and soles, worse at night and keeping her awake. She has scratch marks but no rash, no abdominal pain, and no jaundice. Her BP is 118/74, and urine dipstick is normal.</p>
+${labs(["Test", "Result", "Reference (nonpregnant)"], [["ALT", "180 U/L", "&lt;35"], ["ALP", "290 U/L", "30–120"], ["Bilirubin", "18 µmol/L", "&lt;20"], ["Fasting serum bile acids", "48 µmol/L", "&lt;10"], ["Platelets", "230 × 10⁹/L", "150–400"], ["Glucose", "4.8 mmol/L", "3.5–6.0"]])}<p><em>Illustrative data.</em></p>`,
+                        questions: [
+                            { id: "s0-alp", type: "sa", lines: 2,
+                                stem: "Does her ALP show liver disease? Explain, and name the results that do.",
+                                answer: "No: ALP rises up to 4 times normal in the third trimester, from the placenta. Her ALT and bile acids are abnormal.",
+                                explanation: "Any rise in ALT, AST, or bilirubin in pregnancy needs evaluation, whereas ALP alone is expected to rise." },
+                            { id: "s0-dx", type: "mc", justify: 12,
+                                stem: "Which diagnosis fits best? Briefly justify your choice.",
+                                options: ["Intrahepatic cholestasis of pregnancy", "AFLP", "HELLP syndrome", "Hyperemesis gravidarum", "Acute viral hepatitis"], answer: 0,
+                                justifyAnswer: "Night itch of palms, soles; raised bile acids; normal platelets, glucose.",
+                                explanation: "Pruritus of the palms and soles, worse at night, with raised serum bile acids in the third trimester is intrahepatic cholestasis of pregnancy; the absence of encephalopathy and abdominal pain fits it.",
+                                notes: { 1: "AFLP causes liver failure, with low glucose and coagulopathy; her glucose is normal.", 2: "HELLP causes hypertension, hemolysis, and low platelets; her BP and platelets are normal.", 3: "Hyperemesis is a first-trimester problem of vomiting.", 4: "Viral hepatitis has to be excluded, but itching with raised bile acids fits cholestasis of pregnancy." } },
+                            { id: "s0-exclude", type: "sa", lines: 2,
+                                stem: "Intrahepatic cholestasis is a diagnosis of exclusion. Name two investigations that exclude other causes.",
+                                answer: "Ultrasound, to exclude biliary obstruction, and viral hepatitis serology.",
+                                explanation: "Gallstones are also more common in pregnancy, so ultrasound matters." },
+                        ] },
+                    { passage: `<p>Ursodeoxycholic acid is started. At 35 weeks her itch persists, her bile acids have risen to 110 µmol/L, and the obstetric team classes her disease as severe. Her INR is 1.4 (0.9–1.2).</p>`,
+                        questions: [
+                            { id: "s0-inr", type: "sa", lines: 2,
+                                stem: "Explain her raised INR, and how it is managed before delivery.",
+                                answer: "Less bile reaches the gut, so vitamin K is malabsorbed; vitamin K is given at least 6 hours before delivery.",
+                                explanation: "Vitamin K malabsorption and a prolonged PT are complications of intrahepatic cholestasis." },
+                            { id: "s0-deliver", type: "sa", lines: 2,
+                                stem: "When should delivery be planned, and why not wait for labor at term?",
+                                answer: "At 36 weeks, because her disease is severe; it risks prematurity, fetal respiratory distress, and intrauterine death.",
+                                explanation: "Delivery is at 38 weeks in milder disease and 36 weeks when severe. If itching fails to settle, cholestyramine or hydroxyzine can be added." },
+                        ] },
+                    { passage: `<p>She delivers a healthy girl at 36 weeks. At her postnatal visit she asks whether the itch will go, and whether she can use the combined pill.</p>`,
+                        questions: [
+                            { id: "s0-after", type: "sa", lines: 3,
+                                stem: "What do you tell her about the itch, a future pregnancy, and estrogen?",
+                                answer: "It resolves 4–6 weeks after delivery but recurs in later pregnancies; high-dose estrogen, as in some oral contraceptives, can bring it back.",
+                                explanation: "High estrogen alters canalicular bile transport, the mechanism of intrahepatic cholestasis." },
+                        ] },
+                ],
+            },
             {
                 title: "Thirsty at 36 weeks",
                 keyPoints: [
