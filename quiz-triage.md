@@ -13,7 +13,7 @@ Over target: a kind with more kept questions than its target; move the extras to
 
 Pages marked done have been rewritten to the new style; their ids are in `DONE` in the script. The kinds on the other pages were proposed from each question's length, data, and what it asks, so check them when rewriting.
 
-Across the 5 banks: 1526 questions now, against a target of 2905. 801 keep, 717 keep with a fuller explanation, 8 rewrite, and 0 drop; about 1487 new questions are still to write.
+Across the 5 banks: 1532 questions now, against a target of 3050. 916 keep, 608 keep with a fuller explanation, 8 rewrite, and 0 drop; about 1588 new questions are still to write.
 
 ## GI conditions (`gi/questions.js`)
 
@@ -51,10 +51,10 @@ Across the 5 banks: 1526 questions now, against a target of 2905. 801 keep, 717 
 
 | Page | Memory | Reasoning | Analysis | Target | Still to write | Over target | Needs work |
 |---|---|---|---|---|---|---|---|
-| GI Embryology and Defects | 7/10 | 2/10 | 0/5 | 25 | 16 |  | 9 |
-| Gastric Secretion | 14/10 | 18/10 | 0/5 | 25 | 5 | 4 memory, 8 reasoning | 32 |
-| Emetic Center | 3/10 | 7/10 | 0/5 | 25 | 15 |  | 10 |
-| Liver Function | 38/16 | 20/16 | 0/8 | 40 | 8 | 22 memory, 4 reasoning | 58 |
+| GI Embryology and Defects (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
+| Gastric Secretion (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
+| Emetic Center (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
+| Liver Function (done) | 16/16 | 16/16 | 8/8 | 40 | 0 |  | 0 |
 | Digestion and Absorption | 17/8 | 16/8 | 0/4 | 20 | 4 | 9 memory, 8 reasoning | 33 |
 | Immune System of the Gut | 7/14 | 2/14 | 0/7 | 35 | 26 |  | 9 |
 | Enteric Nervous System | 5/10 | 4/10 | 0/5 | 25 | 16 |  | 9 |
@@ -71,127 +71,6 @@ Across the 5 banks: 1526 questions now, against a target of 2905. 801 keep, 717 
 | Replacement Therapy | 0/6 | 2/6 | 0/3 | 15 | 13 |  | 2 |
 | Analgesics and Smooth Muscle Relaxants | 1/8 | 1/8 | 0/4 | 20 | 18 |  | 2 |
 | Drugs That Cause GI Disease | 2/4 | 0/4 | 0/2 | 10 | 8 |  | 2 |
-
-### GI Embryology and Defects
-
-- `emb-layers`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 169 characters; needs the why and how)
-- `emb-regions`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 158 characters; needs the why and how)
-- `emb-duodenal`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 138 characters; needs the why and how)
-- `emb-pyloric`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 208 characters; needs the why and how)
-- `emb-tef`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 157 characters; needs the why and how)
-- `emb-meckel`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 175 characters; needs the why and how)
-- `emb-rotation`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 228 characters; needs the why and how)
-- `emb-wall`: memory, **keep, expand** (notes on 1 of 4 wrong options; explanation 225 characters; needs the why and how)
-- `emb-biliary`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 214 characters; needs the why and how)
-
-### Gastric Secretion
-
-- `gs-cephalic-path`: reasoning, **keep, expand** (notes on 3 of 4 wrong options; explanation 229 characters; needs the why and how)
-- `gs-vagotomy`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 61 characters; needs the why and how)
-- `gs-vagovagal`: memory, **keep, expand** (notes on 1 of 4 wrong options; explanation 133 characters; needs the why and how)
-- `gs-sympathetic`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 120 characters; needs the why and how)
-- `gs-phase-share`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 113 characters; needs the why and how)
-- `gs-antrectomy`: memory, **keep, expand** (notes on 3 of 4 wrong options; explanation 139 characters; needs the why and how)
-- `gs-parietal-loss`: memory, **keep, expand** (explanation 119 characters; needs the why and how)
-- `gs-barrier-layer`: memory, **keep, expand** (notes on 3 of 4 wrong options; explanation 133 characters; needs the why and how)
-- `gs-barrier-cells`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 141 characters; needs the why and how)
-- `gs-gastrin-route`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 188 characters; needs the why and how)
-- `gs-gastrin-receptor`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 115 characters; needs the why and how)
-- `gs-histamine-pathway`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 132 characters; needs the why and how)
-- `gs-chief-signal`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 85 characters; needs the why and how)
-- `gs-g-cell-signal`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 147 characters; needs the why and how)
-- `gs-d-cell`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 80 characters; needs the why and how)
-- `gs-somatostatin-targets`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 116 characters; needs the why and how)
-- `gs-pepsin-ph`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 77 characters; needs the why and how)
-- `gs-secretin`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 103 characters; needs the why and how)
-- `gs-cck`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 156 characters; needs the why and how)
-- `gs-pyy`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 125 characters; needs the why and how)
-- `gs-entero-oxyntin`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 169 characters; needs the why and how)
-- `gs-enterogastric`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 176 characters; needs the why and how)
-- `gs-zes-feedback`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 136 characters; needs the why and how)
-- `gs-achlorhydria-gastrin`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 104 characters; needs the why and how)
-- `gs-cushing`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 78 characters; needs the why and how)
-- `gs-nsaid-barrier`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 94 characters; needs the why and how)
-- `gs-ppi`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 154 characters; needs the why and how)
-- `gs-h2ra`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 171 characters; needs the why and how)
-- `gs-antacid`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 97 characters; needs the why and how)
-- `gs-misoprostol`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 156 characters; needs the why and how)
-- `gs-sucralfate`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 124 characters; needs the why and how)
-- `gs-bismuth`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 85 characters; needs the why and how)
-
-### Emetic Center
-
-- `em-ctz-barrier`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 190 characters; needs the why and how)
-- `em-cinv-delayed`: reasoning, **keep, expand** (notes on 3 of 4 wrong options)
-- `em-motion`: reasoning, **keep, expand** (notes on 1 of 4 wrong options; explanation 248 characters; needs the why and how)
-- `em-opioid-dose`: memory, **keep, expand** (notes on 1 of 4 wrong options; explanation 232 characters; needs the why and how)
-- `em-metoclopramide`: reasoning, **keep, expand** (notes on 1 of 4 wrong options; explanation 165 characters; needs the why and how)
-- `em-aps`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 197 characters; needs the why and how)
-- `em-chs`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 174 characters; needs the why and how)
-- `em-vomit-alkalosis`: memory, **keep, expand** (notes on 1 of 4 wrong options; explanation 217 characters; needs the why and how)
-- `em-scopolamine`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 191 characters; needs the why and how)
-- `em-nts-convergence`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 205 characters; needs the why and how)
-
-### Liver Function
-
-- `lv-triad`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 123 characters; needs the why and how)
-- `lv-kupffer`: memory, **keep, expand** (notes on 1 of 4 wrong options; explanation 135 characters; needs the why and how)
-- `lv-stellate`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 104 characters; needs the why and how)
-- `lv-stellate-vita`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 49 characters; needs the why and how)
-- `lv-flow`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 138 characters; needs the why and how)
-- `lv-zone3`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 101 characters; needs the why and how)
-- `lv-zones`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 145 characters; needs the why and how)
-- `lv-g6pase`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 171 characters; needs the why and how)
-- `lv-gluconeo`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 101 characters; needs the why and how)
-- `lv-glycogen`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 131 characters; needs the why and how)
-- `lv-transamination`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 140 characters; needs the why and how)
-- `lv-urea-first`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 114 characters; needs the why and how)
-- `lv-urea-last`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 77 characters; needs the why and how)
-- `lv-globulins`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 142 characters; needs the why and how)
-- `lv-anticlotting`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 116 characters; needs the why and how)
-- `lv-hormones`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 71 characters; needs the why and how)
-- `lv-cpt1`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 90 characters; needs the why and how)
-- `lv-ketones`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 135 characters; needs the why and how)
-- `lv-vldl`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 116 characters; needs the why and how)
-- `lv-statin`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 106 characters; needs the why and how)
-- `lv-vitd`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 110 characters; needs the why and how)
-- `lv-warfarin`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 140 characters; needs the why and how)
-- `lv-cyp7a1`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 75 characters; needs the why and how)
-- `lv-cyp8b1`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 80 characters; needs the why and how)
-- `lv-secondary`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 105 characters; needs the why and how)
-- `lv-conjugation`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 72 characters; needs the why and how)
-- `lv-heme`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 79 characters; needs the why and how)
-- `lv-reductase`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 86 characters; needs the why and how)
-- `lv-stool`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 159 characters; needs the why and how)
-- `lv-urine-yellow`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 82 characters; needs the why and how)
-- `lv-hemolysis`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 95 characters; needs the why and how)
-- `lv-obstruction`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 136 characters; needs the why and how)
-- `lv-phases`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 164 characters; needs the why and how)
-- `lv-phase2`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 96 characters; needs the why and how)
-- `lv-cyp-substrates`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 133 characters; needs the why and how)
-- `lv-2d6-ultrarapid`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 96 characters; needs the why and how)
-- `lv-2d6-poor`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 110 characters; needs the why and how)
-- `lv-alcohol-main`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 134 characters; needs the why and how)
-- `lv-alcohol-fat`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 122 characters; needs the why and how)
-- `lv-glutathione`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 116 characters; needs the why and how)
-- `lv-nac`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 112 characters; needs the why and how)
-- `lv-ntcp`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 58 characters; needs the why and how)
-- `lv-channels-bile`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 124 characters; needs the why and how)
-- `lv-channels-blood`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 72 characters; needs the why and how)
-- `lv-gilbert`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 127 characters; needs the why and how)
-- `lv-crigler`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 151 characters; needs the why and how)
-- `lv-dubin`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 133 characters; needs the why and how)
-- `lv-rotor`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 97 characters; needs the why and how)
-- `lv-hbv-drugs`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 122 characters; needs the why and how)
-- `lv-hbv-target`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 84 characters; needs the why and how)
-- `lv-peginterferon`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 107 characters; needs the why and how)
-- `lv-hcv-protease`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 103 characters; needs the why and how)
-- `lv-hcv-ns5a`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 123 characters; needs the why and how)
-- `lv-hcv-ns5b`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 102 characters; needs the why and how)
-- `lv-cholestyramine`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 147 characters; needs the why and how)
-- `lv-cholestyramine-ldl`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 115 characters; needs the why and how)
-- `lv-udca`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 144 characters; needs the why and how)
-- `lv-udca-stones`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 105 characters; needs the why and how)
 
 ### Digestion and Absorption
 
@@ -1073,10 +952,15 @@ Across the 5 banks: 1526 questions now, against a target of 2905. 801 keep, 717 
 | Page | Memory | Reasoning | Analysis | Target | Still to write | Over target | Needs work |
 |---|---|---|---|---|---|---|---|
 | Prerenal Acute Kidney Injury | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Intrarenal AKI | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
 | Acute Tubular Necrosis | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
 | Acute Interstitial Nephritis | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
-| Glomerulonephritis | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Minimal Change Disease, FSGS, and Membranous Nephropathy | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Diabetic Kidney Disease and Amyloid Nephropathy | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Anti-GBM Disease, ANCA-Associated Vasculitis, and Alport Syndrome | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| IgA Nephropathy, PSGN, Lupus Nephritis, and MPGN | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
 | Thrombotic Microangiopathy | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Nephrotic vs Nephritic Syndrome | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
 | Postrenal Acute Kidney Injury | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
 | Diabetes Insipidus | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
 | Syndrome of Inappropriate Antidiuretic Hormone (SIADH) | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
@@ -1092,8 +976,9 @@ Across the 5 banks: 1526 questions now, against a target of 2905. 801 keep, 717 
 | Hyponatremia | 0/16 | 0/16 | 0/8 | 40 | 40 |  | 0 |
 | Hypernatremia | 0/14 | 0/14 | 0/7 | 35 | 35 |  | 0 |
 | Sodium Disorders: Comparison and Workup | 0/14 | 0/14 | 0/7 | 35 | 35 |  | 0 |
-| Hypokalemia | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
-| Hyperkalemia | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Hypokalemia | 0/16 | 0/16 | 0/8 | 40 | 40 |  | 0 |
+| Hyperkalemia | 0/14 | 0/14 | 0/7 | 35 | 35 |  | 0 |
+| Potassium Disorders: Comparison and Workup | 0/16 | 0/16 | 0/8 | 40 | 40 |  | 0 |
 | Hypoaldosteronism and Hyperaldosteronism | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
 
 ### Acid-base Disorders: Comparison and Workup

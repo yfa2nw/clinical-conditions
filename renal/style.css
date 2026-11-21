@@ -166,6 +166,10 @@ body {
     stroke-linejoin: round;
 }
 
+.rn-tube.is-thin {
+    stroke-width: 4;
+}
+
 .rn-capsule {
     fill: var(--color-accent-soft);
     stroke: var(--color-accent);
@@ -224,6 +228,15 @@ body {
 
 .rn-ion {
     fill: var(--color-accent);
+}
+
+/* An ECG trace */
+.rn-trace {
+    fill: none;
+    stroke: var(--color-text);
+    stroke-width: 2.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
 }
 
 .rn-small {

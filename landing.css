@@ -587,6 +587,36 @@
     stroke-width: 1.6;
 }
 
+/* The review articles span the shelf when two exam forms sit below them */
+.shelf-file.is-wide {
+    grid-column: 1 / -1;
+}
+
+/* Exam forms: an outlined letter for Form A, a filled warm one for Form B, matching their covers */
+.shelf-form {
+    display: flex;
+    flex: none;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.shelf-form.is-a {
+    border: 1.5px solid var(--color-accent);
+    color: var(--color-accent);
+}
+
+.shelf-form.is-b {
+    background-color: #e8836f;
+    box-shadow: 0 0 0 3px rgba(232, 131, 111, 0.25);
+    color: #fff;
+}
+
 .shelf-text {
     display: flex;
     flex: 1;

@@ -1,15 +1,15 @@
 # Page sizes
 
-Made by `node tools/page-sizes.mjs` on 2026-11-20. Page words leave out diagrams, the Related line, references, and the review article; review words count the review article. Questions are memory / reasoning / analysis.
+Made by `node tools/page-sizes.mjs` on 2026-11-21. Page words leave out diagrams, the Related line, references, and the review article; review words count the review article. Questions are memory / reasoning / analysis.
 
 Each page's target is one question per 30 page words, rounded to the nearest 5 and kept between 10 and 40, split 2:2:1. **Change** is the number of questions to add or remove, always in groups of 5 (2 memory, 2 reasoning, 1 analysis), shown only when a page is 10 or more away from its target. An asterisk marks a quiz not yet rewritten in the new style; its change is made when it is rewritten. A dash marks a page that is not written yet.
 
 | System | Pages written | Page words | Average per page | Questions | Target for written pages |
 |---|---|---:|---:|---:|---:|
-| GI | 47 of 47 | 35076 | 746 | 924 | 1200 |
+| GI | 47 of 47 | 35076 | 746 | 930 | 1200 |
 | Neurology | 50 of 50 | 37680 | 754 | 522 | 1240 |
-| Renal | 11 of 27 | 12290 | 1117 | 80 | 370 |
-| Endocrine | 0 of 18 | 0 | 0 | 0 | 0 |
+| Renal | 33 of 47 | 30590 | 927 | 80 | 980 |
+| Endocrine | 0 of 21 | 0 | 0 | 0 | 0 |
 
 ## GI
 
@@ -49,10 +49,10 @@ Each page's target is one question per 30 page words, rounded to the nearest 5 a
 
 | Page | Page words | Review words | Diagrams | Questions | M / R / A | Words per question | Target | Change |
 |---|---:|---:|---:|---:|---|---:|---:|---:|
-| GI Embryology and Defects* | 696 | 807 | 2 | 9 | 7 / 2 / 0 | 77 | 25 | +16 |
-| Gastric Secretion* | 797 | 1063 | 6 | 32 | 14 / 18 / 0 | 25 | 25 | -7 |
-| Emetic Center* | 742 | 842 | 2 | 10 | 3 / 7 / 0 | 74 | 25 | +15 |
-| Liver Function* | 1491 | 1720 | 7 | 58 | 38 / 20 / 0 | 26 | 40 | -18 |
+| GI Embryology and Defects | 696 | 807 | 2 | 25 | 10 / 10 / 5 | 28 | 25 |  |
+| Gastric Secretion | 797 | 1063 | 6 | 25 | 10 / 10 / 5 | 32 | 25 |  |
+| Emetic Center | 742 | 842 | 2 | 25 | 10 / 10 / 5 | 30 | 25 |  |
+| Liver Function | 1491 | 1720 | 7 | 40 | 16 / 16 / 8 | 37 | 40 |  |
 | Digestion and Absorption* | 668 | 910 | 5 | 33 | 17 / 16 / 0 | 20 | 20 | -13 |
 | Immune System of the Gut* | 1087 | 1111 | 3 | 9 | 7 / 2 / 0 | 121 | 35 | +26 |
 | Enteric Nervous System* | 811 | 850 | 3 | 9 | 5 / 4 / 0 | 90 | 25 | +16 |
@@ -138,12 +138,18 @@ Each page's target is one question per 30 page words, rounded to the nearest 5 a
 
 | Page | Page words | Review words | Diagrams | Questions | M / R / A | Words per question | Target | Change |
 |---|---:|---:|---:|---:|---|---:|---:|---:|
-| Prerenal Acute Kidney Injury | 22 | – | – | 0 | 0 / 0 / 0 | – | – |  |
+| Prerenal AKI | 709 | 699 | 1 | 0 | 0 / 0 / 0 | – | 25 | +25 |
+| Intrarenal AKI | 593 | 545 | 1 | 0 | 0 / 0 / 0 | – | 20 | +20 |
+| Postrenal AKI | 523 | 448 | 1 | 0 | 0 / 0 / 0 | – | 15 | +15 |
+| AKI: Comparison and Workup | 879 | 764 | 0 | 0 | 0 / 0 / 0 | – | 30 | +30 |
 | Acute Tubular Necrosis | 22 | – | – | 0 | 0 / 0 / 0 | – | – |  |
 | Acute Interstitial Nephritis | 22 | – | – | 0 | 0 / 0 / 0 | – | – |  |
-| Glomerulonephritis | 22 | – | – | 0 | 0 / 0 / 0 | – | – |  |
+| Minimal Change Disease, FSGS, and Membranous Nephropathy | 22 | – | – | 0 | 0 / 0 / 0 | – | – |  |
+| Diabetic Kidney Disease and Amyloid Nephropathy | 22 | – | – | 0 | 0 / 0 / 0 | – | – |  |
+| Anti-GBM Disease, ANCA-Associated Vasculitis, and Alport Syndrome | 22 | – | – | 0 | 0 / 0 / 0 | – | – |  |
+| IgA Nephropathy, PSGN, Lupus Nephritis, and MPGN | 22 | – | – | 0 | 0 / 0 / 0 | – | – |  |
 | Thrombotic Microangiopathy | 22 | – | – | 0 | 0 / 0 / 0 | – | – |  |
-| Postrenal Acute Kidney Injury | 22 | – | – | 0 | 0 / 0 / 0 | – | – |  |
+| Nephrotic vs Nephritic Syndrome | 12 | – | – | 0 | 0 / 0 / 0 | – | – |  |
 | Diabetes Insipidus | 22 | – | – | 0 | 0 / 0 / 0 | – | – |  |
 | Syndrome of Inappropriate Antidiuretic Hormone (SIADH) | 22 | – | – | 0 | 0 / 0 / 0 | – | – |  |
 | Urinary Tract Infection | 22 | – | – | 0 | 0 / 0 / 0 | – | – |  |
@@ -153,23 +159,37 @@ Each page's target is one question per 30 page words, rounded to the nearest 5 a
 | Metabolic Alkalosis | 1048 | 1388 | 2 | 38 | 13 / 15 / 10 | 28 | 35 | -3 |
 | Acid-base Disorders: Comparison and Workup | 996 | 806 | 0 | 14 | 8 / 3 / 3 | 71 | 35 | +21 |
 | Hypovolemia | 1110 | 1614 | 1 | 0 | 0 / 0 / 0 | – | 35 | +35 |
-| Hypervolemia | 1172 | 1423 | 1 | 0 | 0 / 0 / 0 | – | 40 | +40 |
+| Hypervolemia | 1172 | 1424 | 1 | 0 | 0 / 0 / 0 | – | 40 | +40 |
 | Fluid Volume: Comparison and Workup | 812 | 637 | 0 | 0 | 0 / 0 / 0 | – | 25 | +25 |
 | Hyponatremia | 1529 | 1922 | 2 | 0 | 0 / 0 / 0 | – | 40 | +40 |
 | Hypernatremia | 1095 | 1401 | 2 | 0 | 0 / 0 / 0 | – | 35 | +35 |
 | Sodium Disorders: Comparison and Workup | 1118 | 643 | 0 | 0 | 0 / 0 / 0 | – | 35 | +35 |
-| Hypokalemia | 22 | – | – | 0 | 0 / 0 / 0 | – | – |  |
-| Hyperkalemia | 22 | – | – | 0 | 0 / 0 / 0 | – | – |  |
+| Hypokalemia | 1353 | 1403 | 3 | 0 | 0 / 0 / 0 | – | 40 | +40 |
+| Hyperkalemia | 1070 | 1268 | 3 | 0 | 0 / 0 / 0 | – | 35 | +35 |
+| Potassium Disorders: Comparison and Workup | 1151 | 1049 | 0 | 0 | 0 / 0 / 0 | – | 40 | +40 |
 | Hypoaldosteronism and Hyperaldosteronism | 22 | – | – | 0 | 0 / 0 / 0 | – | – |  |
+| Hypocalcemia | 1001 | 1149 | 2 | 0 | 0 / 0 / 0 | – | 35 | +35 |
+| Hypercalcemia | 823 | 1012 | 2 | 0 | 0 / 0 / 0 | – | 25 | +25 |
+| Hypomagnesemia | 721 | 915 | 1 | 0 | 0 / 0 / 0 | – | 25 | +25 |
+| Hypermagnesemia | 659 | 787 | 1 | 0 | 0 / 0 / 0 | – | 20 | +20 |
+| Calcium and Magnesium Disorders: Comparison and Workup | 941 | 762 | 0 | 0 | 0 / 0 / 0 | – | 30 | +30 |
 
 ### Physiology (`renal/physiology.html`)
 
 | Page | Page words | Review words | Diagrams | Questions | M / R / A | Words per question | Target | Change |
 |---|---:|---:|---:|---:|---|---:|---:|---:|
-| The Nephron | 4 | – | – | 0 | 0 / 0 / 0 | – | – |  |
-| RAAS, ADH, and SNS | 4 | – | – | 0 | 0 / 0 / 0 | – | – |  |
-| Fluids | 1561 | 1551 | 4 | 0 | 0 / 0 / 0 | – | 40 | +40 |
-| Acid-base Balance | 247 | 495 | 0 | 0 | 0 / 0 / 0 | – | 10 | +10 |
+| Nephron Structure | 641 | 658 | 1 | 0 | 0 / 0 / 0 | – | 20 | +20 |
+| Glomerular Filtration | 1131 | 795 | 1 | 0 | 0 / 0 / 0 | – | 40 | +40 |
+| Tubular Transport | 729 | 631 | 2 | 0 | 0 / 0 / 0 | – | 25 | +25 |
+| Urine Concentration and Dilution | 692 | 650 | 1 | 0 | 0 / 0 / 0 | – | 25 | +25 |
+| Fluids | 1298 | 1322 | 3 | 0 | 0 / 0 / 0 | – | 40 | +40 |
+| Volume and Osmolality Regulation | 586 | 577 | 0 | 0 | 0 / 0 / 0 | – | 20 | +20 |
+| Renin-Angiotensin-Aldosterone System | 568 | 556 | 1 | 0 | 0 / 0 / 0 | – | 20 | +20 |
+| ADH and Thirst | 443 | 497 | 0 | 0 | 0 / 0 / 0 | – | 15 | +15 |
+| SNS and Natriuretic Peptides | 413 | 482 | 0 | 0 | 0 / 0 / 0 | – | 15 | +15 |
+| Potassium Balance | 902 | 811 | 3 | 0 | 0 / 0 / 0 | – | 30 | +30 |
+| Calcium, Phosphate, and Magnesium Balance | 864 | 891 | 2 | 0 | 0 / 0 / 0 | – | 30 | +30 |
+| Acid-base Balance | 1418 | 1238 | 2 | 0 | 0 / 0 / 0 | – | 40 | +40 |
 
 ## Endocrine
 
@@ -186,6 +206,9 @@ Each page's target is one question per 30 page words, rounded to the nearest 5 a
 | Thyroid Hormone Physiology | 10 | – | – | 0 | 0 / 0 / 0 | – | – |  |
 | Hyperthyroidism | 22 | – | – | 0 | 0 / 0 / 0 | – | – |  |
 | Hypothyroidism | 22 | – | – | 0 | 0 / 0 / 0 | – | – |  |
+| Parathyroid Hormone Physiology | 10 | – | – | 0 | 0 / 0 / 0 | – | – |  |
+| Hyperparathyroidism | 22 | – | – | 0 | 0 / 0 / 0 | – | – |  |
+| Hypoparathyroidism | 22 | – | – | 0 | 0 / 0 / 0 | – | – |  |
 | Growth Hormone Physiology | 10 | – | – | 0 | 0 / 0 / 0 | – | – |  |
 | Acromegaly | 22 | – | – | 0 | 0 / 0 / 0 | – | – |  |
 | Prolactin Physiology | 10 | – | – | 0 | 0 / 0 / 0 | – | – |  |

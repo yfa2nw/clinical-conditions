@@ -18,7 +18,7 @@ export const WORKSHEET = {
             ["Aldosterone excess and its mimics (3–5)", "A mineralocorticoid effect retains Na+ and loses H+ and K+, with [[hypertension]]", "BP, [[renin]], and aldosterone", "Spironolactone or adrenalectomy; stop licorice; [[amiloride]] for Liddle syndrome"],
             ["Bartter and Gitelman syndromes (6)", "Inherited loss of NKCC2 or [[NCC]]", "Urine Ca2+ high in Bartter, [[low]] in Gitelman", "KCl and [[Mg2+]]"],
         ],
-        span: "Expected pCO2 = 0.7 × HCO3− + [[20]] (± 5); it rarely passes [[55]] mmHg, because hypoxia drives breathing",
+        span: "Every cause: treat the cause and replace volume, K+, and Cl−; [[acetazolamide]] when saline cannot be given; dialysis or dilute [[HCl]] only for severe or refractory alkalosis",
         chains: [
             { label: "pH, K+, and Ca2+", steps: [["Alkalosis", "K+ moves into cells → [[hypokalemia]]"], ["Albumin", "Binds more Ca2+ → low [[ionized]] Ca2+ → tetany"]] },
             { label: "Why an alkalosis lasts", steps: [["Generation", "H+ lost or HCO3− gained"], ["Low volume", "Angiotensin II and aldosterone"], ["Low Cl−", "No Cl− to [[swap]] for HCO3− in the collecting duct"], ["Low K+", "More H+ secretion and NH4+ production"]] },
@@ -76,11 +76,10 @@ export const WORKSHEET = {
         {
             section: "Diagnosis",
             questions: [
-                { id: "r-dx-order", type: "order",
-                    stem: "Number the steps of the workup in order.",
-                    items: ["Check that compensation is as expected", "Confirm that the pH is high", "Measure urine Cl−", "Confirm that the HCO3− is high"],
-                    order: [1, 3, 0, 2],
-                    explanation: "A low urine Cl− marks a chloride-responsive alkalosis; a high one leads to BP, renin, and aldosterone." },
+                { id: "r-dx-bartter", type: "sa", lines: 2,
+                    stem: "Bartter and Gitelman syndromes both cause a hypokalemic alkalosis with low or normal BP and high renin and aldosterone. Which findings separate them?",
+                    answer: "Urine Ca2+ is high in Bartter syndrome, and low in Gitelman syndrome, which also has low Mg2+.",
+                    explanation: "Bartter syndrome affects NKCC2, like a loop diuretic, and Gitelman syndrome affects NCC, like a thiazide. The blood gas and compensation are read as on the Acid-base Disorders: Comparison and Workup page." },
                 { id: "r-dx-urinecl", type: "blank",
                     html: "Urine Cl− below [[20]] mmol/L marks a chloride-[[responsive]] alkalosis, in which the kidney holds on to Cl− because volume and Cl− are low. Urine Cl− is high while a diuretic acts and [[low]] once it wears off, so a changing result suggests hidden diuretic use." },
                 { id: "r-dx-alk", type: "blank",
