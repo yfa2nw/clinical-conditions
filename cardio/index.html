@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardiovascular · Clinical Conditions</title>
+
+    <script src="../shared/theme.js"></script>
+
+    <link rel="stylesheet" href="../shared/style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared/app.js" defer></script>
+    <script src="questions.js" defer></script>
+    <script src="../shared/quiz.js" defer></script>
+    <script src="map.js" defer></script>
+    <script src="../shared/map.js" defer></script>
+</head>
+
+<body data-specialty="cardio">
+    <a class="skip-link" href="#content-panel">Skip to content</a>
+
+    <main class="app-container">
+
+        <!-- Left sidebar -->
+        <aside class="sidebar">
+            <a class="home-link" href="../index.html">← Clinical Conditions</a>
+
+            <div class="sidebar-header">
+                <h1>
+                    <span class="brand-mark" aria-hidden="true"></span>
+                    Cardiovascular
+                </h1>
+                <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme">
+                    <span class="theme-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <nav class="section-switch" aria-label="Section">
+                <a href="index.html" aria-current="page">Clinical</a>
+                <a href="physiology.html">Physiology</a>
+            </nav>
+
+            <div class="search" role="search">
+                <label class="visually-hidden" for="condition-search">Search conditions and content</label>
+                <input type="search" id="condition-search" class="search-input" placeholder="Search…" autocomplete="off" aria-describedby="search-hint">
+                <kbd class="search-key" aria-hidden="true">/</kbd>
+            </div>
+            <p class="search-hint" id="search-hint" aria-live="polite"></p>
+
+            <nav class="condition-list map-nav" aria-label="Cardiovascular conditions">
+                <!-- The blood vessels are drawn here by map.js and shared/map.js, lined up with the stations below -->
+                <svg class="map-svg" aria-hidden="true" focusable="false"></svg>
+
+                <div class="station" data-organ="valves">
+                <p class="group-label" id="group-valves">Valvular disease</p>
+                <div class="condition-group" role="group" aria-labelledby="group-valves">
+                    <button type="button" class="condition-item active" data-condition="aortic-stenosis" aria-current="true">Aortic stenosis</button>
+                    <button type="button" class="condition-item" data-condition="aortic-regurgitation">Aortic regurgitation</button>
+                    <button type="button" class="condition-item" data-condition="mitral-stenosis">Mitral stenosis</button>
+                    <button type="button" class="condition-item" data-condition="mitral-regurgitation">Mitral regurgitation</button>
+                    <button type="button" class="condition-item" data-condition="right-sided-valves">Tricuspid and pulmonary valves</button>
+                    <button type="button" class="condition-item" data-condition="valve-workup">Comparison and workup</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="infections">
+                <p class="group-label" id="group-infections">Cardiac infections</p>
+                <div class="condition-group" role="group" aria-labelledby="group-infections">
+                    <button type="button" class="condition-item" data-condition="rheumatic-heart-disease">Rheumatic heart disease</button>
+                    <button type="button" class="condition-item" data-condition="infective-endocarditis">Infective endocarditis</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="ischemia">
+                <p class="group-label" id="group-ischemia">Ischemic heart disease</p>
+                <div class="condition-group" role="group" aria-labelledby="group-ischemia">
+                    <button type="button" class="condition-item" data-condition="stable-angina">Stable angina</button>
+                    <button type="button" class="condition-item" data-condition="acute-coronary-syndrome">Acute coronary syndrome</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="hypertension">
+                <p class="group-label" id="group-hypertension">Hypertension</p>
+                <div class="condition-group" role="group" aria-labelledby="group-hypertension">
+                    <button type="button" class="condition-item" data-condition="primary-hypertension">Primary hypertension</button>
+                    <button type="button" class="condition-item" data-condition="secondary-hypertension">Secondary hypertension</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="arrhythmias">
+                <p class="group-label" id="group-arrhythmias">Arrhythmias</p>
+                <div class="condition-group" role="group" aria-labelledby="group-arrhythmias">
+                    <button type="button" class="condition-item" data-condition="bradyarrhythmias">Bradyarrhythmias and heart block</button>
+                    <button type="button" class="condition-item" data-condition="atrial-fibrillation-flutter">A-fib and atrial flutter</button>
+                    <button type="button" class="condition-item" data-condition="supraventricular-tachycardia">Supraventricular tachycardia</button>
+                    <button type="button" class="condition-item" data-condition="ventricular-arrhythmias">Ventricular arrhythmias</button>
+                    <button type="button" class="condition-item" data-condition="long-qt">Long QT syndrome</button>
+                    <button type="button" class="condition-item" data-condition="arrhythmia-workup">Comparison and workup</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="cardiomyopathies">
+                <p class="group-label" id="group-cardiomyopathies">Cardiomyopathies</p>
+                <div class="condition-group" role="group" aria-labelledby="group-cardiomyopathies">
+                    <button type="button" class="condition-item" data-condition="hypertrophic-cardiomyopathy">Hypertrophic</button>
+                    <button type="button" class="condition-item" data-condition="dilated-cardiomyopathy">Dilated</button>
+                    <button type="button" class="condition-item" data-condition="restrictive-cardiomyopathy">Restrictive</button>
+                    <button type="button" class="condition-item" data-condition="other-cardiomyopathies">Other cardiomyopathies</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="failure">
+                <p class="group-label" id="group-failure">Heart failure</p>
+                <div class="condition-group" role="group" aria-labelledby="group-failure">
+                    <button type="button" class="condition-item" data-condition="heart-failure">Heart failure</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="pericardium">
+                <p class="group-label" id="group-pericardium">Pericardial disease</p>
+                <div class="condition-group" role="group" aria-labelledby="group-pericardium">
+                    <button type="button" class="condition-item" data-condition="pericarditis">Pericarditis</button>
+                    <button type="button" class="condition-item" data-condition="pericardial-effusion">Effusion and tamponade</button>
+                    <button type="button" class="condition-item" data-condition="constrictive-pericarditis">Constrictive pericarditis</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="congenital">
+                <p class="group-label" id="group-congenital">Congenital heart disease</p>
+                <div class="condition-group" role="group" aria-labelledby="group-congenital">
+                    <button type="button" class="condition-item" data-condition="left-to-right-shunts">Left-to-right shunts</button>
+                    <button type="button" class="condition-item" data-condition="cyanotic-heart-disease">Cyanotic heart disease</button>
+                    <button type="button" class="condition-item" data-condition="aortic-coarctation">Coarctation of the aorta</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="vascular">
+                <p class="group-label" id="group-vascular">Vascular disease</p>
+                <div class="condition-group" role="group" aria-labelledby="group-vascular">
+                    <button type="button" class="condition-item" data-condition="aortic-aneurysm-dissection">Aortic aneurysm and dissection</button>
+                    <button type="button" class="condition-item" data-condition="peripheral-artery-disease">Peripheral artery disease</button>
+                    <button type="button" class="condition-item" data-condition="deep-vein-thrombosis">Deep vein thrombosis</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="topics">
+                <p class="group-label" id="group-topics">Special topics</p>
+                <div class="condition-group" role="group" aria-labelledby="group-topics">
+                    <button type="button" class="condition-item" data-condition="chest-pain">Localizing chest pain</button>
+                    <button type="button" class="condition-item" data-condition="murmurs">Murmurs and heart sounds</button>
+                    <button type="button" class="condition-item" data-condition="reading-ecg">Reading an ECG</button>
+                    <button type="button" class="condition-item" data-condition="reading-echo">Reading an echocardiogram</button>
+                </div>
+                </div>
+
+                <p class="no-results" id="no-results" hidden>No matches</p>
+            </nav>
+
+        </aside>
+
+        <!-- Announces the newly opened condition to screen readers -->
+        <p class="visually-hidden" id="view-status" role="status"></p>
+
+        <!-- Right content panel -->
+        <section class="content-panel" id="content-panel" tabindex="0" aria-label="Topic details">
+
+            <article class="condition-content active" id="aortic-stenosis">
+                <h2>Aortic Stenosis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="aortic-regurgitation">
+                <h2>Aortic Regurgitation</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="mitral-stenosis">
+                <h2>Mitral Stenosis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="mitral-regurgitation">
+                <h2>Mitral Regurgitation</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="right-sided-valves">
+                <h2>Tricuspid and Pulmonary Valve Disease</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="valve-workup">
+                <h2>Valvular Disease: Comparison and Workup</h2>
+
+                <section class="content-section">
+                    <h3>Comparison</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="rheumatic-heart-disease">
+                <h2>Acute Rheumatic Fever and Rheumatic Heart Disease</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="infective-endocarditis">
+                <h2>Infective Endocarditis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="stable-angina">
+                <h2>Stable Angina</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="acute-coronary-syndrome">
+                <h2>Acute Coronary Syndrome</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="primary-hypertension">
+                <h2>Primary Hypertension</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="secondary-hypertension">
+                <h2>Secondary Hypertension</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="bradyarrhythmias">
+                <h2>Bradyarrhythmias and Heart Block</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="atrial-fibrillation-flutter">
+                <h2>Atrial Fibrillation and Atrial Flutter</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="supraventricular-tachycardia">
+                <h2>Supraventricular Tachycardia</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="ventricular-arrhythmias">
+                <h2>Ventricular Arrhythmias</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="long-qt">
+                <h2>Long QT Syndrome</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="arrhythmia-workup">
+                <h2>Arrhythmias: Comparison and Workup</h2>
+
+                <section class="content-section">
+                    <h3>Comparison</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="hypertrophic-cardiomyopathy">
+                <h2>Hypertrophic Cardiomyopathy</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="dilated-cardiomyopathy">
+                <h2>Dilated Cardiomyopathy</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="restrictive-cardiomyopathy">
+                <h2>Restrictive Cardiomyopathy</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="other-cardiomyopathies">
+                <h2>Other Cardiomyopathies</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="heart-failure">
+                <h2>Heart Failure</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="pericarditis">
+                <h2>Pericarditis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="pericardial-effusion">
+                <h2>Pericardial Effusion and Tamponade</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="constrictive-pericarditis">
+                <h2>Constrictive Pericarditis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="left-to-right-shunts">
+                <h2>Left-to-right Shunts</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="cyanotic-heart-disease">
+                <h2>Cyanotic Heart Disease</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="aortic-coarctation">
+                <h2>Coarctation of the Aorta</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="aortic-aneurysm-dissection">
+                <h2>Aortic Aneurysm and Dissection</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="peripheral-artery-disease">
+                <h2>Peripheral Artery Disease</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="deep-vein-thrombosis">
+                <h2>Deep Vein Thrombosis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="chest-pain">
+                <h2>Localizing Chest Pain</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="murmurs">
+                <h2>Murmurs and Heart Sounds</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="reading-ecg">
+                <h2>Reading an ECG</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="reading-echo">
+                <h2>Reading an Echocardiogram</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <!-- Page quiz (filled in by quiz.js) -->
+            <section class="quiz-view" id="quiz" aria-labelledby="quiz-title"></section>
+
+        </section>
+    </main>
+</body>
+</html>

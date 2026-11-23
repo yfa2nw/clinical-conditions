@@ -10,9 +10,9 @@ import { pathToFileURL } from "node:url";
 import vm from "node:vm";
 
 const EDGE = "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe";
-const SITES = ["gi", "neuro", "renal", "endocrine"];
-const PROGRESS_SITES = ["renal", "endocrine"];
-const PAGES = ["gi/index.html", "gi/physiology.html", "neuro/index.html", "neuro/physiology.html", "renal/index.html", "renal/physiology.html", "endocrine/index.html"];
+const SITES = ["gi", "neuro", "foundations", "msk", "resp", "cardio", "renal", "endocrine"];
+const PROGRESS_SITES = ["foundations", "msk", "resp", "cardio", "renal", "endocrine"];
+const PAGES = ["gi/index.html", "gi/physiology.html", "neuro/index.html", "neuro/physiology.html", "foundations/index.html", "msk/index.html", "msk/physiology.html", "resp/index.html", "resp/physiology.html", "cardio/index.html", "cardio/physiology.html", "renal/index.html", "renal/physiology.html", "endocrine/index.html", "endocrine/physiology.html"];
 const shotsAt = process.argv.indexOf("--shots");
 const shotsFolder = shotsAt > 0 ? process.argv[shotsAt + 1] : null;
 const onlyAt = process.argv.indexOf("--only");

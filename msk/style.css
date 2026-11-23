@@ -1,0 +1,209 @@
+/* Musculoskeletal theme: ivory bone on plum, with a spine and jointed long bones.
+   Restyles the shared components in shared/style.css; the markup is unchanged. */
+
+/* =========================
+   Tokens
+========================= */
+
+:root {
+    --color-text: #2e1a32;
+    --color-text-muted: #6c566f;
+    --color-page: #f6f0f3;
+    --color-surface: #ffffff;
+    --color-surface-muted: #fbf7fa;
+    --color-surface-sunken: #f1e8ee;
+    --color-border: #e6d8e3;
+    --color-border-strong: #cfb8cb;
+    --color-divider: #efe4ec;
+    --color-accent: #7d3486;
+    --color-accent-hover: #612468;
+    --color-accent-soft: #f3e3f4;
+    --color-accent-line: #cf9fd4;
+    --color-on-accent: #ffffff;
+    --color-focus: #7d3486;
+    --color-note: #f8f1e2;
+    --color-note-line: #cbb07a;
+    --bone: #e3d3b5;
+    --bone-line: #b79c6c;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --color-text: #f3e8f3;
+        --color-text-muted: #c0a8c0;
+        --color-page: #110814;
+        --color-surface: #1c1020;
+        --color-surface-muted: #241629;
+        --color-surface-sunken: #160c19;
+        --color-border: #3c2842;
+        --color-border-strong: #573c5e;
+        --color-divider: #301f35;
+        --color-accent: #dca2e2;
+        --color-accent-hover: #ebc3ef;
+        --color-accent-soft: #3b1c41;
+        --color-accent-line: #7d4586;
+        --color-on-accent: #210c25;
+        --color-focus: #ebc3ef;
+        --color-note: #2c2417;
+        --color-note-line: #a58a55;
+        --bone: #7c6c50;
+        --bone-line: #b8a37a;
+    }
+}
+
+:root[data-theme="dark"] {
+    --color-text: #f3e8f3;
+    --color-text-muted: #c0a8c0;
+    --color-page: #110814;
+    --color-surface: #1c1020;
+    --color-surface-muted: #241629;
+    --color-surface-sunken: #160c19;
+    --color-border: #3c2842;
+    --color-border-strong: #573c5e;
+    --color-divider: #301f35;
+    --color-accent: #dca2e2;
+    --color-accent-hover: #ebc3ef;
+    --color-accent-soft: #3b1c41;
+    --color-accent-line: #7d4586;
+    --color-on-accent: #210c25;
+    --color-focus: #ebc3ef;
+    --color-note: #2c2417;
+    --color-note-line: #a58a55;
+    --bone: #7c6c50;
+    --bone-line: #b8a37a;
+}
+
+/* =========================
+   Page and brand
+========================= */
+
+body {
+    background-image:
+        radial-gradient(ellipse at 6% 4%, var(--color-accent-soft), transparent 42%),
+        radial-gradient(ellipse at 98% 96%, var(--color-note), transparent 42%);
+    background-attachment: fixed;
+}
+
+/* A long bone */
+.brand-mark {
+    border-radius: 0;
+    background:
+        radial-gradient(circle 5px at 5px 9px, var(--color-accent) 94%, transparent),
+        radial-gradient(circle 5px at 5px 17px, var(--color-accent) 94%, transparent),
+        radial-gradient(circle 5px at 21px 9px, var(--color-accent) 94%, transparent),
+        radial-gradient(circle 5px at 21px 17px, var(--color-accent) 94%, transparent),
+        linear-gradient(var(--color-accent), var(--color-accent)) center / 16px 8px no-repeat;
+}
+
+.brand-mark::after {
+    display: none;
+}
+
+/* =========================
+   Sidebar: a spine, with a rib at each station
+========================= */
+
+.station {
+    min-height: 104px;
+    padding-top: 20px;
+}
+
+.map-organ.map-vertebra {
+    fill: color-mix(in srgb, var(--bone) 60%, var(--color-surface));
+    stroke: var(--bone-line);
+    stroke-width: 1.5;
+}
+
+.map-part.map-disc,
+.map-part.map-disc:is(.is-active, .is-hover, .is-match) {
+    stroke-width: 4;
+}
+
+.map-part.map-rib {
+    stroke: var(--bone-line);
+    stroke-width: 5;
+}
+
+.map-organ.map-vertebra:is(.is-active, .is-hover, .is-match) {
+    fill: var(--bone);
+    stroke: var(--color-accent);
+    stroke-width: 2;
+}
+
+.map-part.map-rib:is(.is-active, .is-hover, .is-match) {
+    stroke: var(--color-accent);
+}
+
+/* =========================
+   Article: long bones down the page, jointed at each section
+========================= */
+
+.content-section {
+    position: relative;
+    padding-left: 46px;
+}
+
+.content-section::before {
+    content: "";
+    position: absolute;
+    top: 28px;
+    bottom: -38px;
+    left: 2px;
+    width: 22px;
+    background:
+        radial-gradient(circle 6px at 6px 6px, var(--bone) 94%, transparent),
+        radial-gradient(circle 6px at 16px 6px, var(--bone) 94%, transparent),
+        radial-gradient(circle 6px at 6px calc(100% - 6px), var(--bone) 94%, transparent),
+        radial-gradient(circle 6px at 16px calc(100% - 6px), var(--bone) 94%, transparent),
+        linear-gradient(var(--bone), var(--bone)) center / 9px calc(100% - 10px) no-repeat;
+}
+
+.content-section + .content-section {
+    margin-top: 0;
+    padding-top: 40px;
+    border-top: 0;
+}
+
+.content-section + .content-section::before {
+    top: 68px;
+}
+
+.content-section:last-of-type::before {
+    bottom: -8px;
+}
+
+.content-section > h3 {
+    position: relative;
+    z-index: 1;
+}
+
+/* Each section number is the joint between two bones */
+.content-section > h3::before {
+    position: absolute;
+    top: -1px;
+    left: -47px;
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    box-shadow: 0 0 0 3px var(--color-surface);
+    color: var(--color-on-accent);
+    font-size: 11px;
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        padding-left: 36px;
+    }
+
+    .content-section::before {
+        left: -2px;
+    }
+
+    .content-section > h3::before {
+        left: -41px;
+    }
+}

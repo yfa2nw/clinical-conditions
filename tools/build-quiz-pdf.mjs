@@ -9,10 +9,15 @@ import { printPdf } from "./print-pdf.mjs";
 const THEMES = {
     gi: { name: "Gastrointestinal", accent: "#0f766e", soft: "#e2f1ee", dark: "#0a3a35" },
     neuro: { name: "Neurology", accent: "#4f46c8", soft: "#e9e8fb", dark: "#1b1a47" },
+    foundations: { name: "Foundations", accent: "#3f5566", soft: "#e4eaef", dark: "#1d2730" },
+    msk: { name: "Musculoskeletal", accent: "#7d3486", soft: "#f3e3f4", dark: "#2e1a32" },
+    resp: { name: "Respiratory", accent: "#4c7419", soft: "#e8f2d8", dark: "#1d2a14" },
+    cardio: { name: "Cardiovascular", accent: "#b01c3a", soft: "#fbe4e8", dark: "#321319" },
+    endocrine: { name: "Endocrine", accent: "#b35c0e", soft: "#fbeedd", dark: "#2a1b0c" },
     renal: { name: "Renal", accent: "#1c6db0", soft: "#e1eff9", dark: "#13283a" },
 };
 const [SYSTEM, ID] = process.argv.slice(2);
-if (!THEMES[SYSTEM] || !ID) throw new Error("Usage: node tools/build-quiz-pdf.mjs <gi|neuro|renal> <page id>");
+if (!THEMES[SYSTEM] || !ID) throw new Error("Usage: node tools/build-quiz-pdf.mjs <gi|neuro|foundations|msk|resp|cardio|endocrine|renal> <page id>");
 const THEME = THEMES[SYSTEM];
 
 // The page lives on the conditions page or the physiology page, each with its own bank

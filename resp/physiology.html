@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respiratory Physiology · Clinical Conditions</title>
+
+    <script src="../shared/theme.js"></script>
+
+    <link rel="stylesheet" href="../shared/style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared/app.js" defer></script>
+    <script src="physiology-questions.js" defer></script>
+    <script src="../shared/quiz.js" defer></script>
+    <script src="map.js" defer></script>
+    <script src="../shared/map.js" defer></script>
+</head>
+
+<body data-specialty="resp-physiology" data-page="physiology">
+    <a class="skip-link" href="#content-panel">Skip to content</a>
+
+    <main class="app-container">
+
+        <!-- Left sidebar -->
+        <aside class="sidebar">
+            <a class="home-link" href="../index.html">← Clinical Conditions</a>
+
+            <div class="sidebar-header">
+                <h1>
+                    <span class="brand-mark" aria-hidden="true"></span>
+                    Respiratory Physiology
+                </h1>
+                <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme">
+                    <span class="theme-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <nav class="section-switch" aria-label="Section">
+                <a href="index.html">Clinical</a>
+                <a href="physiology.html" aria-current="page">Physiology</a>
+            </nav>
+
+            <div class="search" role="search">
+                <label class="visually-hidden" for="condition-search">Search conditions and content</label>
+                <input type="search" id="condition-search" class="search-input" placeholder="Search…" autocomplete="off" aria-describedby="search-hint">
+                <kbd class="search-key" aria-hidden="true">/</kbd>
+            </div>
+            <p class="search-hint" id="search-hint" aria-live="polite"></p>
+
+            <nav class="condition-list map-nav" aria-label="Respiratory physiology topics">
+                <!-- The bronchial tree is drawn here by map.js and shared/map.js, lined up with the stations below -->
+                <svg class="map-svg" aria-hidden="true" focusable="false"></svg>
+
+                <div class="station" data-organ="mechanics">
+                <p class="group-label" id="group-mechanics">Mechanics of breathing</p>
+                <div class="condition-group" role="group" aria-labelledby="group-mechanics">
+                    <button type="button" class="condition-item active" data-condition="lung-volumes" aria-current="true">Lung volumes and ventilation</button>
+                    <button type="button" class="condition-item" data-condition="resistance-compliance">Resistance and compliance</button>
+                    <button type="button" class="condition-item" data-condition="spirometry">Spirometry and flow-volume loops</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="exchange">
+                <p class="group-label" id="group-exchange">Gas exchange</p>
+                <div class="condition-group" role="group" aria-labelledby="group-exchange">
+                    <button type="button" class="condition-item" data-condition="gas-transport">Gas movement and transport</button>
+                    <button type="button" class="condition-item" data-condition="vq-matching">V/Q matching</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="control">
+                <p class="group-label" id="group-control">Airway and control</p>
+                <div class="condition-group" role="group" aria-labelledby="group-control">
+                    <button type="button" class="condition-item" data-condition="airway-smooth-muscle">Airway smooth muscle</button>
+                    <button type="button" class="condition-item" data-condition="control-of-breathing">Control of breathing</button>
+                    <button type="button" class="condition-item" data-condition="respiratory-acid-base">Acid-base and the lungs</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="sleep">
+                <p class="group-label" id="group-sleep">Sleep</p>
+                <div class="condition-group" role="group" aria-labelledby="group-sleep">
+                    <button type="button" class="condition-item" data-condition="sleep-regulation">Sleep regulation</button>
+                    <button type="button" class="condition-item" data-condition="sleep-stages">Stages of sleep</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="pharmacology">
+                <p class="group-label" id="group-pharmacology">Pharmacology</p>
+                <div class="condition-group" role="group" aria-labelledby="group-pharmacology">
+                    <button type="button" class="condition-item" data-condition="resp-pharm-bronchodilators">Bronchodilators</button>
+                    <button type="button" class="condition-item" data-condition="resp-pharm-inflammation">Anti-inflammatory drugs</button>
+                    <button type="button" class="condition-item" data-condition="resp-pharm-antibacterials">Respiratory antibacterials</button>
+                    <button type="button" class="condition-item" data-condition="resp-pharm-tuberculosis">Tuberculosis drugs</button>
+                    <button type="button" class="condition-item" data-condition="resp-pharm-symptoms">Cough, mucus, and cold drugs</button>
+                    <button type="button" class="condition-item" data-condition="resp-pharm-causes">Drugs that cause lung disease</button>
+                </div>
+                </div>
+
+                <p class="no-results" id="no-results" hidden>No matches</p>
+            </nav>
+
+        </aside>
+
+        <!-- Announces the newly opened condition to screen readers -->
+        <p class="visually-hidden" id="view-status" role="status"></p>
+
+        <!-- Right content panel -->
+        <section class="content-panel" id="content-panel" tabindex="0" aria-label="Topic details">
+
+            <article class="condition-content active" id="lung-volumes">
+                <h2>Lung Volumes and Ventilation</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="resistance-compliance">
+                <h2>Resistance and Compliance</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="spirometry">
+                <h2>Spirometry and Flow-volume Loops</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="gas-transport">
+                <h2>Gas Movement and Transport</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="vq-matching">
+                <h2>V/Q Matching</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="airway-smooth-muscle">
+                <h2>Airway Smooth Muscle</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="control-of-breathing">
+                <h2>Control of Breathing</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="respiratory-acid-base">
+                <h2>Acid-base and the Lungs</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="sleep-regulation">
+                <h2>Sleep Regulation</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="sleep-stages">
+                <h2>Stages of Sleep</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="resp-pharm-bronchodilators">
+                <h2>Bronchodilators</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="resp-pharm-inflammation">
+                <h2>Inhaled Corticosteroids and Anti-inflammatory Drugs</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="resp-pharm-antibacterials">
+                <h2>Respiratory Antibacterials</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="resp-pharm-tuberculosis">
+                <h2>Tuberculosis Drugs</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="resp-pharm-symptoms">
+                <h2>Cough, Mucus, and Cold Drugs</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="resp-pharm-causes">
+                <h2>When Drugs Cause Disease</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <!-- Page quiz (filled in by quiz.js) -->
+            <section class="quiz-view" id="quiz" aria-labelledby="quiz-title"></section>
+
+        </section>
+    </main>
+</body>
+</html>

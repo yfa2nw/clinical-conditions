@@ -19,7 +19,7 @@ const BANKS = [
     { system: "Renal", file: "renal/questions.js", page: "renal/index.html", kind: "clinical" },
 ];
 // Pages rewritten to the new style; add each page here once its quiz is done
-const DONE = new Set(["gi-embryology", "gastric-secretion", "emetic-center", "liver-function", "abdominal-pain", "liver-tests", "pancreatitis", "appendicitis", "hepatic-metabolic", "hepatic-iatrogenic", "hepatic-neoplastic", "hepatic-other", "biliary-cancer", "esophageal-motility", "gastric-tumors", "malabsorption", "diverticular-diseases", "ibd", "liver-failure", "ibs", "diarrhea", "intestinal-ischemia", "gi-bleeding-obstruction", "hepatic-vascular", "hepatic-infectious", "hepatic-traumatic", "hepatic-autoimmune", "metabolic-acidosis", "metabolic-alkalosis", "gerd-esophagitis", "gastritis-pud", "gallbladder-stones", "bile-duct-stones"]);
+const DONE = new Set(["gi-embryology", "gastric-secretion", "emetic-center", "liver-function", "abdominal-pain", "liver-tests", "pancreatitis", "appendicitis", "hepatic-metabolic", "hepatic-iatrogenic", "hepatic-neoplastic", "hepatic-other", "biliary-cancer", "esophageal-motility", "gastric-tumors", "malabsorption", "diverticular-diseases", "ibd", "liver-failure", "ibs", "diarrhea", "chronic-diarrhea", "intestinal-ischemia", "gi-bleeding-obstruction", "hepatic-vascular", "hepatic-infectious", "hepatic-traumatic", "hepatic-autoimmune", "metabolic-acidosis", "metabolic-alkalosis", "gerd-esophagitis", "gastritis-pud", "gallbladder-stones", "bile-duct-stones", "prerenal-aki", "intrarenal-aki", "postrenal-aki", "aki-workup"]);
 
 // Quiz length follows page size (tools/quiz-target.mjs). A rewritten page keeps its count while it is within 10 of its target.
 function target(id, system, current) {

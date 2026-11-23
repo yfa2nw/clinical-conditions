@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respiratory · Clinical Conditions</title>
+
+    <script src="../shared/theme.js"></script>
+
+    <link rel="stylesheet" href="../shared/style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared/app.js" defer></script>
+    <script src="questions.js" defer></script>
+    <script src="../shared/quiz.js" defer></script>
+    <script src="map.js" defer></script>
+    <script src="../shared/map.js" defer></script>
+</head>
+
+<body data-specialty="resp">
+    <a class="skip-link" href="#content-panel">Skip to content</a>
+
+    <main class="app-container">
+
+        <!-- Left sidebar -->
+        <aside class="sidebar">
+            <a class="home-link" href="../index.html">← Clinical Conditions</a>
+
+            <div class="sidebar-header">
+                <h1>
+                    <span class="brand-mark" aria-hidden="true"></span>
+                    Respiratory
+                </h1>
+                <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme">
+                    <span class="theme-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <nav class="section-switch" aria-label="Section">
+                <a href="index.html" aria-current="page">Clinical</a>
+                <a href="physiology.html">Physiology</a>
+            </nav>
+
+            <div class="search" role="search">
+                <label class="visually-hidden" for="condition-search">Search conditions and content</label>
+                <input type="search" id="condition-search" class="search-input" placeholder="Search…" autocomplete="off" aria-describedby="search-hint">
+                <kbd class="search-key" aria-hidden="true">/</kbd>
+            </div>
+            <p class="search-hint" id="search-hint" aria-live="polite"></p>
+
+            <nav class="condition-list map-nav" aria-label="Respiratory conditions">
+                <!-- The bronchial tree is drawn here by map.js and shared/map.js, lined up with the stations below -->
+                <svg class="map-svg" aria-hidden="true" focusable="false"></svg>
+
+                <div class="station" data-organ="obstructive">
+                <p class="group-label" id="group-obstructive">Obstructive lung disease</p>
+                <div class="condition-group" role="group" aria-labelledby="group-obstructive">
+                    <button type="button" class="condition-item active" data-condition="asthma" aria-current="true">Asthma</button>
+                    <button type="button" class="condition-item" data-condition="copd">COPD</button>
+                    <button type="button" class="condition-item" data-condition="bronchiectasis">Bronchiectasis</button>
+                    <button type="button" class="condition-item" data-condition="cystic-fibrosis">Cystic fibrosis</button>
+                    <button type="button" class="condition-item" data-condition="obstructive-workup">Comparison and workup</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="infections">
+                <p class="group-label" id="group-infections">Respiratory infections</p>
+                <div class="condition-group" role="group" aria-labelledby="group-infections">
+                    <button type="button" class="condition-item" data-condition="urti">Upper respiratory tract infection</button>
+                    <button type="button" class="condition-item" data-condition="otitis-media">Otitis media</button>
+                    <button type="button" class="condition-item" data-condition="community-acquired-pneumonia">Community-acquired pneumonia</button>
+                    <button type="button" class="condition-item" data-condition="hospital-acquired-pneumonia">Hospital-acquired pneumonia</button>
+                    <button type="button" class="condition-item" data-condition="tuberculosis">Tuberculosis</button>
+                    <button type="button" class="condition-item" data-condition="infection-workup">Comparison and workup</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="interstitial">
+                <p class="group-label" id="group-interstitial">Restrictive lung disease</p>
+                <div class="condition-group" role="group" aria-labelledby="group-interstitial">
+                    <button type="button" class="condition-item" data-condition="interstitial-lung-disease">Interstitial lung disease</button>
+                    <button type="button" class="condition-item" data-condition="pneumoconiosis">Pneumoconiosis</button>
+                    <button type="button" class="condition-item" data-condition="sarcoidosis">Sarcoidosis</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="pleura">
+                <p class="group-label" id="group-pleura">Pleural disease</p>
+                <div class="condition-group" role="group" aria-labelledby="group-pleura">
+                    <button type="button" class="condition-item" data-condition="pneumothorax">Pneumothorax</button>
+                    <button type="button" class="condition-item" data-condition="pleural-effusion">Pleural effusion and empyema</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="vessels">
+                <p class="group-label" id="group-vessels">Pulmonary vascular</p>
+                <div class="condition-group" role="group" aria-labelledby="group-vessels">
+                    <button type="button" class="condition-item" data-condition="pulmonary-embolism">Pulmonary embolism</button>
+                    <button type="button" class="condition-item" data-condition="pulmonary-hypertension">Pulmonary hypertension</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="cancer">
+                <p class="group-label" id="group-cancer">Neoplasms</p>
+                <div class="condition-group" role="group" aria-labelledby="group-cancer">
+                    <button type="button" class="condition-item" data-condition="lung-cancer">Lung cancer</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="sleep">
+                <p class="group-label" id="group-sleep">Sleep-disordered breathing</p>
+                <div class="condition-group" role="group" aria-labelledby="group-sleep">
+                    <button type="button" class="condition-item" data-condition="obstructive-sleep-apnea">Obstructive sleep apnea</button>
+                    <button type="button" class="condition-item" data-condition="central-sleep-apnea">Central sleep apnea</button>
+                    <button type="button" class="condition-item" data-condition="obesity-hypoventilation">Obesity hypoventilation</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="failure">
+                <p class="group-label" id="group-failure">Respiratory failure</p>
+                <div class="condition-group" role="group" aria-labelledby="group-failure">
+                    <button type="button" class="condition-item" data-condition="respiratory-failure">Type 1 and type 2 respiratory failure</button>
+                    <button type="button" class="condition-item" data-condition="ards">ARDS</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="topics">
+                <p class="group-label" id="group-topics">Special topics</p>
+                <div class="condition-group" role="group" aria-labelledby="group-topics">
+                    <button type="button" class="condition-item" data-condition="dyspnea">Localizing dyspnea</button>
+                    <button type="button" class="condition-item" data-condition="breath-sounds">Breath sounds and chest signs</button>
+                    <button type="button" class="condition-item" data-condition="reading-cxr">Reading a chest x-ray</button>
+                    <button type="button" class="condition-item" data-condition="lung-function-tests">Reading lung function tests</button>
+                </div>
+                </div>
+
+                <p class="no-results" id="no-results" hidden>No matches</p>
+            </nav>
+
+        </aside>
+
+        <!-- Announces the newly opened condition to screen readers -->
+        <p class="visually-hidden" id="view-status" role="status"></p>
+
+        <!-- Right content panel -->
+        <section class="content-panel" id="content-panel" tabindex="0" aria-label="Topic details">
+
+            <article class="condition-content active" id="asthma">
+                <h2>Asthma</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="copd">
+                <h2>Chronic Obstructive Pulmonary Disease</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="bronchiectasis">
+                <h2>Bronchiectasis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="cystic-fibrosis">
+                <h2>Cystic Fibrosis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="obstructive-workup">
+                <h2>Obstructive Lung Disease: Comparison and Workup</h2>
+
+                <section class="content-section">
+                    <h3>Comparison</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="urti">
+                <h2>Upper Respiratory Tract Infection</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="otitis-media">
+                <h2>Otitis Media</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="community-acquired-pneumonia">
+                <h2>Community-acquired Pneumonia</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="hospital-acquired-pneumonia">
+                <h2>Hospital-acquired Pneumonia</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="tuberculosis">
+                <h2>Tuberculosis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="infection-workup">
+                <h2>Respiratory Infections: Comparison and Workup</h2>
+
+                <section class="content-section">
+                    <h3>Comparison</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="interstitial-lung-disease">
+                <h2>Interstitial Lung Disease</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="pneumoconiosis">
+                <h2>Pneumoconiosis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="sarcoidosis">
+                <h2>Sarcoidosis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="pneumothorax">
+                <h2>Pneumothorax</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="pleural-effusion">
+                <h2>Pleural Effusion and Empyema</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="pulmonary-embolism">
+                <h2>Pulmonary Embolism</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="pulmonary-hypertension">
+                <h2>Pulmonary Hypertension</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="lung-cancer">
+                <h2>Lung Cancer</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="obstructive-sleep-apnea">
+                <h2>Obstructive Sleep Apnea</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="central-sleep-apnea">
+                <h2>Central Sleep Apnea</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="obesity-hypoventilation">
+                <h2>Obesity Hypoventilation Syndrome</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="respiratory-failure">
+                <h2>Type 1 and Type 2 Respiratory Failure</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="ards">
+                <h2>Acute Respiratory Distress Syndrome</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="dyspnea">
+                <h2>Localizing Dyspnea</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="breath-sounds">
+                <h2>Breath Sounds and Chest Signs</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="reading-cxr">
+                <h2>Reading a Chest X-ray</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="lung-function-tests">
+                <h2>Reading Lung Function Tests</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <!-- Page quiz (filled in by quiz.js) -->
+            <section class="quiz-view" id="quiz" aria-labelledby="quiz-title"></section>
+
+        </section>
+    </main>
+</body>
+</html>

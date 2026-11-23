@@ -1190,3 +1190,67 @@
 .imm-stem { fill: var(--color-up); }
 
 .emb-head { fill: var(--color-accent); }
+
+/* Diarrhea: onset timeline and the chronic sorting tree */
+.onset-grid {
+    stroke: var(--color-border);
+    stroke-dasharray: 3 4;
+    stroke-width: 1;
+}
+
+.onset-tick {
+    fill: var(--color-text-muted);
+    font-size: 11px;
+}
+
+.onset-label {
+    fill: var(--color-text);
+    font-size: 12.5px;
+    font-weight: 600;
+}
+
+.onset-note {
+    fill: var(--color-text-muted);
+    font-size: 11px;
+    font-style: italic;
+}
+
+.onset-bar {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 1.5;
+}
+
+.onset-bar.is-invasive {
+    fill: var(--color-wrong);
+    stroke: var(--color-wrong);
+    opacity: 0.7;
+}
+
+.onset-bar.is-parasite {
+    fill: var(--color-bolus);
+    stroke: var(--color-bolus);
+}
+
+.onset-bar.is-soft {
+    opacity: 0.35;
+}
+
+.onset-more {
+    fill: none;
+    stroke: var(--color-bolus);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2.5;
+}
+
+.gut-cell.is-short {
+    fill: var(--color-wrong);
+    opacity: 0.55;
+}
+
+.sort-line {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}

@@ -1,0 +1,1125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Musculoskeletal · Clinical Conditions</title>
+
+    <script src="../shared/theme.js"></script>
+
+    <link rel="stylesheet" href="../shared/style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared/app.js" defer></script>
+    <script src="questions.js" defer></script>
+    <script src="../shared/quiz.js" defer></script>
+    <script src="map.js" defer></script>
+    <script src="../shared/map.js" defer></script>
+</head>
+
+<body data-specialty="msk">
+    <a class="skip-link" href="#content-panel">Skip to content</a>
+
+    <main class="app-container">
+
+        <!-- Left sidebar -->
+        <aside class="sidebar">
+            <a class="home-link" href="../index.html">← Clinical Conditions</a>
+
+            <div class="sidebar-header">
+                <h1>
+                    <span class="brand-mark" aria-hidden="true"></span>
+                    Musculoskeletal
+                </h1>
+                <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme">
+                    <span class="theme-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <nav class="section-switch" aria-label="Section">
+                <a href="index.html" aria-current="page">Clinical</a>
+                <a href="physiology.html">Physiology</a>
+            </nav>
+
+            <div class="search" role="search">
+                <label class="visually-hidden" for="condition-search">Search conditions and content</label>
+                <input type="search" id="condition-search" class="search-input" placeholder="Search…" autocomplete="off" aria-describedby="search-hint">
+                <kbd class="search-key" aria-hidden="true">/</kbd>
+            </div>
+            <p class="search-hint" id="search-hint" aria-live="polite"></p>
+
+            <nav class="condition-list map-nav" aria-label="Musculoskeletal conditions">
+                <!-- The spine is drawn here by map.js and shared/map.js, lined up with the stations below -->
+                <svg class="map-svg" aria-hidden="true" focusable="false"></svg>
+
+                <div class="station" data-organ="arthritis">
+                <p class="group-label" id="group-arthritis">Arthritis</p>
+                <div class="condition-group" role="group" aria-labelledby="group-arthritis">
+                    <button type="button" class="condition-item active" data-condition="osteoarthritis" aria-current="true">Osteoarthritis</button>
+                    <button type="button" class="condition-item" data-condition="gout">Gout and pseudogout</button>
+                    <button type="button" class="condition-item" data-condition="rheumatoid-arthritis">Rheumatoid arthritis</button>
+                    <button type="button" class="condition-item" data-condition="septic-arthritis">Septic arthritis</button>
+                    <button type="button" class="condition-item" data-condition="psoriatic-reactive-arthritis">Psoriatic and reactive arthritis</button>
+                    <button type="button" class="condition-item" data-condition="arthritis-workup">Comparison and workup</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="connective">
+                <p class="group-label" id="group-connective">Connective tissue</p>
+                <div class="condition-group" role="group" aria-labelledby="group-connective">
+                    <button type="button" class="condition-item" data-condition="lupus">Systemic lupus erythematosus</button>
+                    <button type="button" class="condition-item" data-condition="sjogren">Sjögren syndrome</button>
+                    <button type="button" class="condition-item" data-condition="systemic-sclerosis">Systemic sclerosis</button>
+                    <button type="button" class="condition-item" data-condition="myositis">Inflammatory myositis</button>
+                    <button type="button" class="condition-item" data-condition="polymyalgia-vasculitis">Polymyalgia and vasculitis</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="spine">
+                <p class="group-label" id="group-spine">Spine</p>
+                <div class="condition-group" role="group" aria-labelledby="group-spine">
+                    <button type="button" class="condition-item" data-condition="low-back-pain">Non-specific low back pain</button>
+                    <button type="button" class="condition-item" data-condition="radiculopathy">Radiculopathy and cauda equina</button>
+                    <button type="button" class="condition-item" data-condition="axial-spondyloarthritis">Axial spondyloarthritis</button>
+                    <button type="button" class="condition-item" data-condition="back-pain-workup">Comparison and workup</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="upper-limb">
+                <p class="group-label" id="group-upper-limb">Upper limb</p>
+                <div class="condition-group" role="group" aria-labelledby="group-upper-limb">
+                    <button type="button" class="condition-item" data-condition="soft-tissue-injury">Soft tissue injury</button>
+                    <button type="button" class="condition-item" data-condition="rotator-cuff">Rotator cuff tendinopathy</button>
+                    <button type="button" class="condition-item" data-condition="frozen-shoulder">Frozen shoulder</button>
+                    <button type="button" class="condition-item" data-condition="epicondylitis">Epicondylitis</button>
+                    <button type="button" class="condition-item" data-condition="de-quervain">de Quervain tenosynovitis</button>
+                    <button type="button" class="condition-item" data-condition="carpal-tunnel">Carpal tunnel syndrome</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="lower-limb">
+                <p class="group-label" id="group-lower-limb">Lower limb</p>
+                <div class="condition-group" role="group" aria-labelledby="group-lower-limb">
+                    <button type="button" class="condition-item" data-condition="trochanteric-pain">Greater trochanteric pain</button>
+                    <button type="button" class="condition-item" data-condition="knee-ligaments">Knee ligament injuries</button>
+                    <button type="button" class="condition-item" data-condition="meniscal-tear">Meniscal tear</button>
+                    <button type="button" class="condition-item" data-condition="ankle-sprain">Lateral ankle sprain</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="trauma">
+                <p class="group-label" id="group-trauma">Trauma</p>
+                <div class="condition-group" role="group" aria-labelledby="group-trauma">
+                    <button type="button" class="condition-item" data-condition="fractures">Fractures</button>
+                    <button type="button" class="condition-item" data-condition="compartment-syndrome">Compartment syndrome</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="bone">
+                <p class="group-label" id="group-bone">Bone</p>
+                <div class="condition-group" role="group" aria-labelledby="group-bone">
+                    <button type="button" class="condition-item" data-condition="osteoporosis">Osteoporosis</button>
+                    <button type="button" class="condition-item" data-condition="osteomalacia-rickets">Osteomalacia and rickets</button>
+                    <button type="button" class="condition-item" data-condition="paget-bone">Paget disease of bone</button>
+                    <button type="button" class="condition-item" data-condition="osteomyelitis">Osteomyelitis</button>
+                    <button type="button" class="condition-item" data-condition="bone-tumors">Bone tumors</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="chronic-pain">
+                <p class="group-label" id="group-chronic-pain">Chronic pain</p>
+                <div class="condition-group" role="group" aria-labelledby="group-chronic-pain">
+                    <button type="button" class="condition-item" data-condition="fibromyalgia">Fibromyalgia</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="topics">
+                <p class="group-label" id="group-topics">Special topics</p>
+                <div class="condition-group" role="group" aria-labelledby="group-topics">
+                    <button type="button" class="condition-item" data-condition="joint-pain">Localizing joint pain</button>
+                    <button type="button" class="condition-item" data-condition="back-pain-red-flags">Back pain red flags</button>
+                    <button type="button" class="condition-item" data-condition="msk-imaging">Reading joint and bone imaging</button>
+                </div>
+                </div>
+
+                <p class="no-results" id="no-results" hidden>No matches</p>
+            </nav>
+
+        </aside>
+
+        <!-- Announces the newly opened condition to screen readers -->
+        <p class="visually-hidden" id="view-status" role="status"></p>
+
+        <!-- Right content panel -->
+        <section class="content-panel" id="content-panel" tabindex="0" aria-label="Topic details">
+
+            <article class="condition-content active" id="osteoarthritis">
+                <h2>Osteoarthritis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="gout">
+                <h2>Gout and Pseudogout</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="rheumatoid-arthritis">
+                <h2>Rheumatoid Arthritis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="septic-arthritis">
+                <h2>Septic Arthritis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="psoriatic-reactive-arthritis">
+                <h2>Psoriatic and Reactive Arthritis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="arthritis-workup">
+                <h2>Arthritis: Comparison and Workup</h2>
+
+                <section class="content-section">
+                    <h3>Comparison</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="lupus">
+                <h2>Systemic Lupus Erythematosus</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="sjogren">
+                <h2>Sjögren Syndrome</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="systemic-sclerosis">
+                <h2>Systemic Sclerosis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="myositis">
+                <h2>Inflammatory Myositis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="polymyalgia-vasculitis">
+                <h2>Polymyalgia Rheumatica and Vasculitis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="low-back-pain">
+                <h2>Non-specific Low Back Pain</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="radiculopathy">
+                <h2>Radiculopathy and Cauda Equina Syndrome</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="axial-spondyloarthritis">
+                <h2>Axial Spondyloarthritis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="back-pain-workup">
+                <h2>Back Pain: Comparison and Workup</h2>
+
+                <section class="content-section">
+                    <h3>Comparison</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="soft-tissue-injury">
+                <h2>Soft Tissue Injury</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="rotator-cuff">
+                <h2>Rotator Cuff Tendinopathy</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="frozen-shoulder">
+                <h2>Frozen Shoulder</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="epicondylitis">
+                <h2>Epicondylitis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="de-quervain">
+                <h2>de Quervain Tenosynovitis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="carpal-tunnel">
+                <h2>Carpal Tunnel Syndrome</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="trochanteric-pain">
+                <h2>Greater Trochanteric Pain Syndrome</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="knee-ligaments">
+                <h2>Knee Ligament Injuries</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="meniscal-tear">
+                <h2>Meniscal Tear</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="ankle-sprain">
+                <h2>Lateral Ankle Sprain</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="fractures">
+                <h2>Fractures</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="compartment-syndrome">
+                <h2>Compartment Syndrome</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="osteoporosis">
+                <h2>Osteoporosis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="osteomalacia-rickets">
+                <h2>Osteomalacia and Rickets</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="paget-bone">
+                <h2>Paget Disease of Bone</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="osteomyelitis">
+                <h2>Osteomyelitis</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="bone-tumors">
+                <h2>Bone Tumors</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="fibromyalgia">
+                <h2>Fibromyalgia</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="joint-pain">
+                <h2>Localizing Joint Pain</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="back-pain-red-flags">
+                <h2>Back Pain Red Flags</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="msk-imaging">
+                <h2>Reading Joint and Bone Imaging</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <!-- Page quiz (filled in by quiz.js) -->
+            <section class="quiz-view" id="quiz" aria-labelledby="quiz-title"></section>
+
+        </section>
+    </main>
+</body>
+</html>

@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foundations · Clinical Conditions</title>
+
+    <script src="../shared/theme.js"></script>
+
+    <link rel="stylesheet" href="../shared/style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared/app.js" defer></script>
+    <script src="questions.js" defer></script>
+    <script src="../shared/quiz.js" defer></script>
+    <script src="map.js" defer></script>
+    <script src="../shared/map.js" defer></script>
+</head>
+
+<body data-specialty="foundations">
+    <a class="skip-link" href="#content-panel">Skip to content</a>
+
+    <main class="app-container">
+
+        <!-- Left sidebar -->
+        <aside class="sidebar">
+            <a class="home-link" href="../index.html">← Clinical Conditions</a>
+
+            <div class="sidebar-header">
+                <h1>
+                    <span class="brand-mark" aria-hidden="true"></span>
+                    Foundations
+                </h1>
+                <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme">
+                    <span class="theme-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <div class="search" role="search">
+                <label class="visually-hidden" for="condition-search">Search conditions and content</label>
+                <input type="search" id="condition-search" class="search-input" placeholder="Search…" autocomplete="off" aria-describedby="search-hint">
+                <kbd class="search-key" aria-hidden="true">/</kbd>
+            </div>
+            <p class="search-hint" id="search-hint" aria-live="polite"></p>
+
+            <nav class="condition-list map-nav" aria-label="Foundations conditions">
+                <!-- The DNA helix is drawn here by map.js and shared/map.js, lined up with the stations below -->
+                <svg class="map-svg" aria-hidden="true" focusable="false"></svg>
+
+                <div class="station" data-organ="cells">
+                <p class="group-label" id="group-cells">Cells and genetics</p>
+                <div class="condition-group" role="group" aria-labelledby="group-cells">
+                    <button type="button" class="condition-item active" data-condition="gene-expression" aria-current="true">Gene expression</button>
+                    <button type="button" class="condition-item" data-condition="cell-cycle">Cell cycle</button>
+                    <button type="button" class="condition-item" data-condition="inheritance">Inheritance</button>
+                    <button type="button" class="condition-item" data-condition="mutations">Mutations and genetic testing</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="biochemistry">
+                <p class="group-label" id="group-biochemistry">Biochemistry</p>
+                <div class="condition-group" role="group" aria-labelledby="group-biochemistry">
+                    <button type="button" class="condition-item" data-condition="carbohydrate-metabolism">Carbohydrate metabolism</button>
+                    <button type="button" class="condition-item" data-condition="lipid-metabolism">Lipid metabolism</button>
+                    <button type="button" class="condition-item" data-condition="amino-acid-metabolism">Amino acids and nucleotides</button>
+                    <button type="button" class="condition-item" data-condition="vitamins">Vitamins</button>
+                    <button type="button" class="condition-item" data-condition="inborn-errors">Inborn errors of metabolism</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="pharmacology">
+                <p class="group-label" id="group-pharmacology">Pharmacology</p>
+                <div class="condition-group" role="group" aria-labelledby="group-pharmacology">
+                    <button type="button" class="condition-item" data-condition="pharmacodynamics">Pharmacodynamics</button>
+                    <button type="button" class="condition-item" data-condition="receptors">Receptors and signaling</button>
+                    <button type="button" class="condition-item" data-condition="absorption-distribution">Absorption and distribution</button>
+                    <button type="button" class="condition-item" data-condition="drug-metabolism">Metabolism and CYP enzymes</button>
+                    <button type="button" class="condition-item" data-condition="drug-excretion">Excretion and clearance</button>
+                    <button type="button" class="condition-item" data-condition="pharmacokinetic-calculations">Pharmacokinetic calculations</button>
+                    <button type="button" class="condition-item" data-condition="adverse-reactions">Adverse reactions and toxicology</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="microbiology">
+                <p class="group-label" id="group-microbiology">Microbiology</p>
+                <div class="condition-group" role="group" aria-labelledby="group-microbiology">
+                    <button type="button" class="condition-item" data-condition="pathogens">Pathogens and detection</button>
+                    <button type="button" class="condition-item" data-condition="bacterial-structure">Bacterial structure</button>
+                    <button type="button" class="condition-item" data-condition="bacterial-virulence">Bacterial virulence and toxins</button>
+                    <button type="button" class="condition-item" data-condition="staphylococcus-salmonella">Staphylococcus and Salmonella</button>
+                    <button type="button" class="condition-item" data-condition="viruses">Viruses</button>
+                    <button type="button" class="condition-item" data-condition="fungi">Fungi and antifungals</button>
+                    <button type="button" class="condition-item" data-condition="parasites">Parasites</button>
+                    <button type="button" class="condition-item" data-condition="antibacterials">Antibacterials</button>
+                    <button type="button" class="condition-item" data-condition="antivirals">Antivirals</button>
+                    <button type="button" class="condition-item" data-condition="antiparasitics">Antiparasitics</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="immunology">
+                <p class="group-label" id="group-immunology">Immunology</p>
+                <div class="condition-group" role="group" aria-labelledby="group-immunology">
+                    <button type="button" class="condition-item" data-condition="immune-cells">Cells and tissues</button>
+                    <button type="button" class="condition-item" data-condition="innate-immunity">Innate immunity</button>
+                    <button type="button" class="condition-item" data-condition="complement">Complement</button>
+                    <button type="button" class="condition-item" data-condition="b-cells">B cells and antibodies</button>
+                    <button type="button" class="condition-item" data-condition="t-cells">T cells and MHC</button>
+                    <button type="button" class="condition-item" data-condition="tolerance">Diversity and tolerance</button>
+                    <button type="button" class="condition-item" data-condition="cytokines">Cytokines and biologic drugs</button>
+                    <button type="button" class="condition-item" data-condition="vaccines">Vaccines</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="immune-disease">
+                <p class="group-label" id="group-immune-disease">Immune disease</p>
+                <div class="condition-group" role="group" aria-labelledby="group-immune-disease">
+                    <button type="button" class="condition-item" data-condition="hypersensitivity">Hypersensitivity</button>
+                    <button type="button" class="condition-item" data-condition="autoimmunity">Autoimmunity</button>
+                    <button type="button" class="condition-item" data-condition="immunodeficiency">Immunodeficiency</button>
+                    <button type="button" class="condition-item" data-condition="transplant-rejection">Transplant rejection</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="inflammation">
+                <p class="group-label" id="group-inflammation">Inflammation</p>
+                <div class="condition-group" role="group" aria-labelledby="group-inflammation">
+                    <button type="button" class="condition-item" data-condition="inflammatory-signaling">Inflammatory signaling</button>
+                    <button type="button" class="condition-item" data-condition="acute-inflammation">Acute inflammation</button>
+                    <button type="button" class="condition-item" data-condition="chronic-inflammation">Chronic and granulomatous</button>
+                    <button type="button" class="condition-item" data-condition="tissue-repair">Tissue repair</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="pathology">
+                <p class="group-label" id="group-pathology">Pathology</p>
+                <div class="condition-group" role="group" aria-labelledby="group-pathology">
+                    <button type="button" class="condition-item" data-condition="cell-injury">Cell injury and death</button>
+                    <button type="button" class="condition-item" data-condition="edema-shock">Edema and shock</button>
+                    <button type="button" class="condition-item" data-condition="thrombosis-embolism">Thrombosis and embolism</button>
+                    <button type="button" class="condition-item" data-condition="neoplasia">Neoplasia</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="evidence">
+                <p class="group-label" id="group-evidence">Evidence</p>
+                <div class="condition-group" role="group" aria-labelledby="group-evidence">
+                    <button type="button" class="condition-item" data-condition="clinical-questions">Clinical questions and PICO</button>
+                    <button type="button" class="condition-item" data-condition="study-design">Study design and bias</button>
+                    <button type="button" class="condition-item" data-condition="test-performance">Test performance</button>
+                    <button type="button" class="condition-item" data-condition="biostatistics">Biostatistics</button>
+                </div>
+                </div>
+
+                <p class="no-results" id="no-results" hidden>No matches</p>
+            </nav>
+
+        </aside>
+
+        <!-- Announces the newly opened condition to screen readers -->
+        <p class="visually-hidden" id="view-status" role="status"></p>
+
+        <!-- Right content panel -->
+        <section class="content-panel" id="content-panel" tabindex="0" aria-label="Topic details">
+
+            <article class="condition-content active" id="gene-expression">
+                <h2>Gene Expression</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="cell-cycle">
+                <h2>Cell Cycle</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="inheritance">
+                <h2>Inheritance</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="mutations">
+                <h2>Mutations and Genetic Testing</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="carbohydrate-metabolism">
+                <h2>Carbohydrate Metabolism</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="lipid-metabolism">
+                <h2>Lipid Metabolism</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="amino-acid-metabolism">
+                <h2>Amino Acid and Nucleotide Metabolism</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="vitamins">
+                <h2>Vitamins</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="inborn-errors">
+                <h2>Inborn Errors of Metabolism</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="pharmacodynamics">
+                <h2>Pharmacodynamics</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="receptors">
+                <h2>Receptors and Signaling</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="absorption-distribution">
+                <h2>Absorption and Distribution</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="drug-metabolism">
+                <h2>Metabolism and CYP Enzymes</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="drug-excretion">
+                <h2>Excretion and Clearance</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="pharmacokinetic-calculations">
+                <h2>Pharmacokinetic Calculations</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="adverse-reactions">
+                <h2>Adverse Reactions and Toxicology</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="pathogens">
+                <h2>Pathogens and Detection</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="bacterial-structure">
+                <h2>Bacterial Structure and Classification</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="bacterial-virulence">
+                <h2>Bacterial Virulence and Toxins</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="staphylococcus-salmonella">
+                <h2>Staphylococcus and Salmonella</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="viruses">
+                <h2>Viruses</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="fungi">
+                <h2>Fungi and Antifungals</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="parasites">
+                <h2>Parasites</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="antibacterials">
+                <h2>Antibacterials</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="antivirals">
+                <h2>Antivirals</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="antiparasitics">
+                <h2>Antiparasitics</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="immune-cells">
+                <h2>Cells and Tissues of the Immune System</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="innate-immunity">
+                <h2>Innate Immunity</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="complement">
+                <h2>Complement</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="b-cells">
+                <h2>B Cells and Antibodies</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="t-cells">
+                <h2>T Cells and MHC</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="tolerance">
+                <h2>Diversity and Tolerance</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="cytokines">
+                <h2>Cytokines and Biologic Drugs</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="vaccines">
+                <h2>Vaccines</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="hypersensitivity">
+                <h2>Hypersensitivity</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="autoimmunity">
+                <h2>Autoimmunity</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="immunodeficiency">
+                <h2>Immunodeficiency</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="transplant-rejection">
+                <h2>Transplant Rejection</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="inflammatory-signaling">
+                <h2>Inflammatory Signaling</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="acute-inflammation">
+                <h2>Acute Inflammation</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="chronic-inflammation">
+                <h2>Chronic and Granulomatous Inflammation</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="tissue-repair">
+                <h2>Tissue Repair</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="cell-injury">
+                <h2>Cell Injury and Death</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="edema-shock">
+                <h2>Edema and Shock</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="thrombosis-embolism">
+                <h2>Thrombosis and Embolism</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="neoplasia">
+                <h2>Neoplasia</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="clinical-questions">
+                <h2>Clinical Questions and PICO</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="study-design">
+                <h2>Study Design and Bias</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="test-performance">
+                <h2>Test Performance</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="biostatistics">
+                <h2>Biostatistics</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where it leads</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <!-- Page quiz (filled in by quiz.js) -->
+            <section class="quiz-view" id="quiz" aria-labelledby="quiz-title"></section>
+
+        </section>
+    </main>
+</body>
+</html>

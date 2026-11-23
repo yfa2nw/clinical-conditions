@@ -35,6 +35,11 @@
                 </button>
             </div>
 
+            <nav class="section-switch" aria-label="Section">
+                <a href="index.html" aria-current="page">Clinical</a>
+                <a href="physiology.html">Physiology</a>
+            </nav>
+
             <div class="search" role="search">
                 <label class="visually-hidden" for="condition-search">Search conditions and content</label>
                 <input type="search" id="condition-search" class="search-input" placeholder="Search…" autocomplete="off" aria-describedby="search-hint">
@@ -42,76 +47,89 @@
             </div>
             <p class="search-hint" id="search-hint" aria-live="polite"></p>
 
-            <nav class="condition-list map-nav" aria-label="Endocrine topics">
-                <!-- The neuron chain is drawn here by map.js and shared/map.js, lined up with the stations below -->
+            <nav class="condition-list map-nav" aria-label="Endocrine conditions">
+                <!-- The hormone web is drawn here by map.js and shared/map.js, lined up with the stations below -->
                 <svg class="map-svg" aria-hidden="true" focusable="false"></svg>
 
                 <div class="station" data-organ="pituitary">
-                <p class="group-label" id="group-pituitary">Pituitary gland</p>
+                <p class="group-label" id="group-pituitary">Pituitary</p>
                 <div class="condition-group" role="group" aria-labelledby="group-pituitary">
-                    <button type="button" class="condition-item active" data-condition="pituitary-physiology" aria-current="true">Pituitary physiology</button>
-                    <button type="button" class="condition-item" data-condition="hypopituitarism">Hypopituitarism</button>
-                    <button type="button" class="condition-item" data-condition="hyperpituitarism">Hyperpituitarism</button>
-                </div>
-                </div>
-
-                <div class="station" data-organ="cortisol">
-                <p class="group-label" id="group-cortisol">Cortisol</p>
-                <div class="condition-group" role="group" aria-labelledby="group-cortisol">
-                    <button type="button" class="condition-item" data-condition="cortisol-physiology">Cortisol physiology</button>
-                    <button type="button" class="condition-item" data-condition="adrenal-insufficiency">Adrenal insufficiency</button>
-                    <button type="button" class="condition-item" data-condition="cushing">Cushing syndrome</button>
+                    <button type="button" class="condition-item active" data-condition="hypopituitarism" aria-current="true">Hypopituitarism</button>
+                    <button type="button" class="condition-item" data-condition="pituitary-adenomas">Pituitary adenomas</button>
+                    <button type="button" class="condition-item" data-condition="hyperprolactinemia">Hyperprolactinemia</button>
+                    <button type="button" class="condition-item" data-condition="acromegaly">Acromegaly and gigantism</button>
+                    <button type="button" class="condition-item" data-condition="pituitary-workup">Comparison and workup</button>
                 </div>
                 </div>
 
                 <div class="station" data-organ="thyroid">
-                <p class="group-label" id="group-thyroid">Thyroid hormone</p>
+                <p class="group-label" id="group-thyroid">Thyroid</p>
                 <div class="condition-group" role="group" aria-labelledby="group-thyroid">
-                    <button type="button" class="condition-item" data-condition="thyroid-physiology">Thyroid hormone physiology</button>
                     <button type="button" class="condition-item" data-condition="hyperthyroidism">Hyperthyroidism</button>
                     <button type="button" class="condition-item" data-condition="hypothyroidism">Hypothyroidism</button>
+                    <button type="button" class="condition-item" data-condition="thyroiditis">Thyroiditis</button>
+                    <button type="button" class="condition-item" data-condition="thyroid-nodules">Thyroid nodules and cancer</button>
+                    <button type="button" class="condition-item" data-condition="thyroid-emergencies">Thyroid storm and myxedema coma</button>
+                    <button type="button" class="condition-item" data-condition="thyroid-workup">Comparison and workup</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="adrenal">
+                <p class="group-label" id="group-adrenal">Adrenal</p>
+                <div class="condition-group" role="group" aria-labelledby="group-adrenal">
+                    <button type="button" class="condition-item" data-condition="adrenal-insufficiency">Adrenal insufficiency</button>
+                    <button type="button" class="condition-item" data-condition="cushing">Cushing syndrome</button>
+                    <button type="button" class="condition-item" data-condition="congenital-adrenal-hyperplasia">Congenital adrenal hyperplasia</button>
+                    <button type="button" class="condition-item" data-condition="pheochromocytoma">Pheochromocytoma</button>
+                    <button type="button" class="condition-item" data-condition="adrenal-masses">Adrenal masses</button>
+                    <button type="button" class="condition-item" data-condition="adrenal-workup">Comparison and workup</button>
                 </div>
                 </div>
 
                 <div class="station" data-organ="parathyroid">
-                <p class="group-label" id="group-parathyroid">Parathyroid hormone</p>
+                <p class="group-label" id="group-parathyroid">Parathyroid</p>
                 <div class="condition-group" role="group" aria-labelledby="group-parathyroid">
-                    <button type="button" class="condition-item" data-condition="parathyroid-physiology">Parathyroid hormone physiology</button>
                     <button type="button" class="condition-item" data-condition="hyperparathyroidism">Hyperparathyroidism</button>
                     <button type="button" class="condition-item" data-condition="hypoparathyroidism">Hypoparathyroidism</button>
+                    <button type="button" class="condition-item" data-condition="men-syndromes">MEN syndromes</button>
                 </div>
                 </div>
 
-                <div class="station" data-organ="growth">
-                <p class="group-label" id="group-growth">Growth hormone</p>
-                <div class="condition-group" role="group" aria-labelledby="group-growth">
-                    <button type="button" class="condition-item" data-condition="gh-physiology">Growth hormone physiology</button>
-                    <button type="button" class="condition-item" data-condition="acromegaly">Acromegaly</button>
-                </div>
-                </div>
-
-                <div class="station" data-organ="prolactin">
-                <p class="group-label" id="group-prolactin">Prolactin</p>
-                <div class="condition-group" role="group" aria-labelledby="group-prolactin">
-                    <button type="button" class="condition-item" data-condition="prolactin-physiology">Prolactin physiology</button>
-                </div>
-                </div>
-
-                <div class="station" data-organ="gonadal">
-                <p class="group-label" id="group-gonadal">LH and FSH</p>
-                <div class="condition-group" role="group" aria-labelledby="group-gonadal">
-                    <button type="button" class="condition-item" data-condition="reproductive-cycles">Ovarian and uterine cycles</button>
-                    <button type="button" class="condition-item" data-condition="spermatogenesis">Spermatogenesis</button>
-                    <button type="button" class="condition-item" data-condition="hypogonadism">Hypogonadism</button>
+                <div class="station" data-organ="diabetes">
+                <p class="group-label" id="group-diabetes">Diabetes</p>
+                <div class="condition-group" role="group" aria-labelledby="group-diabetes">
+                    <button type="button" class="condition-item" data-condition="type-1-diabetes">Type 1 diabetes</button>
+                    <button type="button" class="condition-item" data-condition="type-2-diabetes">Type 2 diabetes</button>
+                    <button type="button" class="condition-item" data-condition="dka-hhs">DKA and HHS</button>
+                    <button type="button" class="condition-item" data-condition="hypoglycemia">Hypoglycemia</button>
+                    <button type="button" class="condition-item" data-condition="diabetes-complications">Long-term complications</button>
+                    <button type="button" class="condition-item" data-condition="diabetes-workup">Comparison and workup</button>
                 </div>
                 </div>
 
                 <div class="station" data-organ="metabolic">
                 <p class="group-label" id="group-metabolic">Metabolic</p>
                 <div class="condition-group" role="group" aria-labelledby="group-metabolic">
-                    <button type="button" class="condition-item" data-condition="insulin-physiology">Insulin physiology</button>
-                    <button type="button" class="condition-item" data-condition="metabolic-syndrome">Metabolic syndrome</button>
-                    <button type="button" class="condition-item" data-condition="diabetes-mellitus">Diabetes mellitus</button>
+                    <button type="button" class="condition-item" data-condition="metabolic-syndrome">Metabolic syndrome and obesity</button>
+                    <button type="button" class="condition-item" data-condition="lipid-disorders">Lipid disorders</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="reproductive">
+                <p class="group-label" id="group-reproductive">Reproductive</p>
+                <div class="condition-group" role="group" aria-labelledby="group-reproductive">
+                    <button type="button" class="condition-item" data-condition="male-hypogonadism">Male hypogonadism</button>
+                    <button type="button" class="condition-item" data-condition="amenorrhea">Amenorrhea and female hypogonadism</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="topics">
+                <p class="group-label" id="group-topics">Special topics</p>
+                <div class="condition-group" role="group" aria-labelledby="group-topics">
+                    <button type="button" class="condition-item" data-condition="hormone-tests">Reading hormone tests</button>
+                    <button type="button" class="condition-item" data-condition="fatigue-weight">Localizing fatigue and weight change</button>
+                    <button type="button" class="condition-item" data-condition="endocrine-hypertension">Endocrine causes of hypertension</button>
+                    <button type="button" class="condition-item" data-condition="endocrine-emergencies">Endocrine emergencies</button>
                 </div>
                 </div>
 
@@ -126,21 +144,7 @@
         <!-- Right content panel -->
         <section class="content-panel" id="content-panel" tabindex="0" aria-label="Topic details">
 
-            <article class="condition-content active" id="pituitary-physiology">
-                <h2>Pituitary Physiology</h2>
-
-                <section class="content-section">
-                    <h3>Overview</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>When it fails</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-            </article>
-
-            <article class="condition-content" id="hypopituitarism">
+            <article class="condition-content active" id="hypopituitarism">
                 <h2>Hypopituitarism</h2>
 
                 <section class="content-section">
@@ -169,8 +173,8 @@
                 </section>
             </article>
 
-            <article class="condition-content" id="hyperpituitarism">
-                <h2>Hyperpituitarism</h2>
+            <article class="condition-content" id="pituitary-adenomas" data-aliases="hyperpituitarism">
+                <h2>Pituitary Adenomas</h2>
 
                 <section class="content-section">
                     <h3>Pathophysiology</h3>
@@ -198,22 +202,8 @@
                 </section>
             </article>
 
-            <article class="condition-content" id="cortisol-physiology">
-                <h2>Cortisol Physiology</h2>
-
-                <section class="content-section">
-                    <h3>Overview</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>When it fails</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-            </article>
-
-            <article class="condition-content" id="adrenal-insufficiency">
-                <h2>Adrenal Insufficiency</h2>
+            <article class="condition-content" id="hyperprolactinemia">
+                <h2>Hyperprolactinemia</h2>
 
                 <section class="content-section">
                     <h3>Pathophysiology</h3>
@@ -241,8 +231,8 @@
                 </section>
             </article>
 
-            <article class="condition-content" id="cushing">
-                <h2>Cushing Syndrome</h2>
+            <article class="condition-content" id="acromegaly">
+                <h2>Acromegaly and Gigantism</h2>
 
                 <section class="content-section">
                     <h3>Pathophysiology</h3>
@@ -270,16 +260,21 @@
                 </section>
             </article>
 
-            <article class="condition-content" id="thyroid-physiology">
-                <h2>Thyroid Hormone Physiology</h2>
+            <article class="condition-content" id="pituitary-workup">
+                <h2>Pituitary Disease: Comparison and Workup</h2>
 
                 <section class="content-section">
-                    <h3>Overview</h3>
+                    <h3>Comparison</h3>
                     <p class="pending-content">To be added.</p>
                 </section>
 
                 <section class="content-section">
-                    <h3>When it fails</h3>
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
                     <p class="pending-content">To be added.</p>
                 </section>
             </article>
@@ -342,16 +337,272 @@
                 </section>
             </article>
 
-            <article class="condition-content" id="parathyroid-physiology">
-                <h2>Parathyroid Hormone Physiology</h2>
+            <article class="condition-content" id="thyroiditis">
+                <h2>Thyroiditis</h2>
 
                 <section class="content-section">
-                    <h3>Overview</h3>
+                    <h3>Pathophysiology</h3>
                     <p class="pending-content">To be added.</p>
                 </section>
 
                 <section class="content-section">
-                    <h3>When it fails</h3>
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="thyroid-nodules">
+                <h2>Thyroid Nodules and Cancer</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="thyroid-emergencies">
+                <h2>Thyroid Storm and Myxedema Coma</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="thyroid-workup">
+                <h2>Thyroid Disease: Comparison and Workup</h2>
+
+                <section class="content-section">
+                    <h3>Comparison</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="adrenal-insufficiency">
+                <h2>Adrenal Insufficiency</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="cushing">
+                <h2>Cushing Syndrome</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="congenital-adrenal-hyperplasia">
+                <h2>Congenital Adrenal Hyperplasia</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="pheochromocytoma">
+                <h2>Pheochromocytoma</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="adrenal-masses">
+                <h2>Adrenal Masses</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="adrenal-workup">
+                <h2>Adrenal Disease: Comparison and Workup</h2>
+
+                <section class="content-section">
+                    <h3>Comparison</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
                     <p class="pending-content">To be added.</p>
                 </section>
             </article>
@@ -414,22 +665,8 @@
                 </section>
             </article>
 
-            <article class="condition-content" id="gh-physiology">
-                <h2>Growth Hormone Physiology</h2>
-
-                <section class="content-section">
-                    <h3>Overview</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>When it fails</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-            </article>
-
-            <article class="condition-content" id="acromegaly">
-                <h2>Acromegaly</h2>
+            <article class="condition-content" id="men-syndromes">
+                <h2>Multiple Endocrine Neoplasia Syndromes</h2>
 
                 <section class="content-section">
                     <h3>Pathophysiology</h3>
@@ -457,50 +694,8 @@
                 </section>
             </article>
 
-            <article class="condition-content" id="prolactin-physiology">
-                <h2>Prolactin Physiology</h2>
-
-                <section class="content-section">
-                    <h3>Overview</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>When it fails</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-            </article>
-
-            <article class="condition-content" id="reproductive-cycles">
-                <h2>Ovarian and Uterine Cycles</h2>
-
-                <section class="content-section">
-                    <h3>Overview</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>When it fails</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-            </article>
-
-            <article class="condition-content" id="spermatogenesis">
-                <h2>Spermatogenesis</h2>
-
-                <section class="content-section">
-                    <h3>Overview</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>When it fails</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-            </article>
-
-            <article class="condition-content" id="hypogonadism">
-                <h2>Hypogonadism</h2>
+            <article class="condition-content" id="type-1-diabetes">
+                <h2>Type 1 Diabetes Mellitus</h2>
 
                 <section class="content-section">
                     <h3>Pathophysiology</h3>
@@ -528,22 +723,143 @@
                 </section>
             </article>
 
-            <article class="condition-content" id="insulin-physiology">
-                <h2>Insulin Physiology</h2>
+            <article class="condition-content" id="type-2-diabetes">
+                <h2>Type 2 Diabetes Mellitus</h2>
 
                 <section class="content-section">
-                    <h3>Overview</h3>
+                    <h3>Pathophysiology</h3>
                     <p class="pending-content">To be added.</p>
                 </section>
 
                 <section class="content-section">
-                    <h3>When it fails</h3>
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="dka-hhs">
+                <h2>Diabetic Ketoacidosis and Hyperosmolar Hyperglycemic State</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="hypoglycemia">
+                <h2>Hypoglycemia</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="diabetes-complications">
+                <h2>Long-term Complications of Diabetes</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="diabetes-workup" data-aliases="diabetes-mellitus">
+                <h2>Diabetes: Comparison and Workup</h2>
+
+                <section class="content-section">
+                    <h3>Comparison</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
                     <p class="pending-content">To be added.</p>
                 </section>
             </article>
 
             <article class="condition-content" id="metabolic-syndrome">
-                <h2>Metabolic Syndrome</h2>
+                <h2>Metabolic Syndrome and Obesity</h2>
 
                 <section class="content-section">
                     <h3>Pathophysiology</h3>
@@ -571,8 +887,8 @@
                 </section>
             </article>
 
-            <article class="condition-content" id="diabetes-mellitus">
-                <h2>Diabetes Mellitus</h2>
+            <article class="condition-content" id="lipid-disorders">
+                <h2>Lipid Disorders</h2>
 
                 <section class="content-section">
                     <h3>Pathophysiology</h3>
@@ -596,6 +912,100 @@
 
                 <section class="content-section">
                     <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="male-hypogonadism" data-aliases="hypogonadism">
+                <h2>Male Hypogonadism</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="amenorrhea">
+                <h2>Amenorrhea and Female Hypogonadism</h2>
+
+                <section class="content-section">
+                    <h3>Pathophysiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Etiology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Symptoms and complications</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Diagnosis</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Treatment</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="hormone-tests">
+                <h2>Reading Hormone Tests</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="fatigue-weight">
+                <h2>Localizing Fatigue and Weight Change</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="endocrine-hypertension">
+                <h2>Endocrine Causes of Hypertension</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="endocrine-emergencies">
+                <h2>Endocrine Emergencies</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
                     <p class="pending-content">To be added.</p>
                 </section>
             </article>

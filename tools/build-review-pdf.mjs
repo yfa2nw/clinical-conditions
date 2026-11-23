@@ -3,7 +3,9 @@
 import { readFileSync } from "node:fs";
 import { printPdf } from "./print-pdf.mjs";
 
-// Which review section each diagram sits beside, in page order. Other reviews place theirs after Key points.
+// Which review section each diagram sits beside, in page order, where the automatic placement below is not right.
+// Every other diagram goes before the review section that matches the page section it sits in (REVIEW_SECTION),
+// or after Key points when the review has no such section.
 const GI_FIGURE_SECTIONS = {
     "gastric-secretion": ["", "Cephalic phase", "Gastric cells and the mucosal barrier", "Gastric cells and the mucosal barrier", "Receptors and intracellular pathways", "Pharmacology"],
     "emetic-center": ["Inputs", "Pharmacology"],
@@ -18,6 +20,37 @@ const GI_FIGURE_SECTIONS = {
     "gi-pharm-motility": ["Speeding the gut"],
     "gi-pharm-immune": ["Broad suppression"],
 };
+
+// Page section → review section, for the condition pages; other pages use the review heading of the same name
+const REVIEW_SECTION = {
+    Etiology: "Etiology and mechanisms",
+    "Symptoms and complications": "Clinical presentation and complications",
+    Treatment: "Management",
+};
+
+// The standard order of condition review sections, for reviews that replace one with headings of their own
+const SECTION_ORDER = ["Pathophysiology", "Etiology and mechanisms", "Clinical presentation and complications", "Diagnosis", "Management"];
+const keyWords = (s) => new Set(s.toLowerCase().replace(/\([^)]*\)/g, " ").split(/[^a-z0-9]+/).filter((w) => w.length > 3).map((w) => w.replace(/s$/, "")));
+// The review heading for a page section that has no heading of the same name, or "" for the top of the article
+function nearestHeading(wanted, headings) {
+    // A heading that shares a key word, as "Channels and the action potential" for "Action potential"
+    const words = keyWords(wanted);
+    let best = "", score = 0;
+    for (const heading of headings) {
+        if (heading.startsWith("Relationships to other")) continue;
+        const shared = [...keyWords(heading)].filter((w) => words.has(w)).length;
+        if (shared > score) { best = heading; score = shared; }
+    }
+    if (best) return best;
+    // A standard section that this review replaces with its own headings, as the causes on a page organized by cause:
+    // the figure goes before the first heading after the standard section that comes before it
+    const at = SECTION_ORDER.indexOf(wanted);
+    for (let i = at - 1; at > 0 && i >= 0; i--) {
+        const prev = headings.indexOf(SECTION_ORDER[i]);
+        if (prev >= 0) return headings[prev + 1] && !SECTION_ORDER.includes(headings[prev + 1]) ? headings[prev + 1] : "";
+    }
+    return "";
+}
 
 // For a diagram with no description on its page
 const GI_FIGURE_LEGENDS = {
@@ -64,7 +97,7 @@ const addDefinition = (term, definition) => {
     if (!list.some((d) => d.toLowerCase() === definition.toLowerCase())) list.push(definition);
     glossary.set(term, list);
 };
-let figureCount = 0;
+let figureCount = 0, leadCount = 0;
 function clean(html) {
     return html
         .replace(/<abbr [^>]*data-definition="([^"]*)"[^>]*>([\s\S]*?)<\/abbr>/g, (m, definition, text) => {
@@ -115,7 +148,7 @@ function diagramStyles() {
 
 // The numbers on a diagram refer to lists on its page, so a figure's legend has to carry them
 function figureKey(after, svg, id, label = "") {
-    const wanted = [...new Set([...svg.matchAll(/<g class="site-marker">[\s\S]*?<text[^>]*>([A-Z0-9]+)<\/text>/g)].map((m) => m[1]))].sort((a, b) => a.localeCompare(b, "en", { numeric: true }));
+    const wanted = [...new Set([...svg.matchAll(/<g class="site-marker">[\s\S]*?<text[^>]*>(\d+[a-z]?|[A-Z0-9]+)<\/text>/g)].map((m) => m[1]))].sort((a, b) => a.localeCompare(b, "en", { numeric: true }));
     if (!wanted.length) return "";
     // The key ends at the section's end or the next diagram, whose numbers are its own
     const end = after.indexOf("</section>"), next = after.indexOf("<svg");
@@ -151,7 +184,12 @@ function figuresFor(text, id) {
         const note = after.match(/^<figcaption>([\s\S]*?)<\/figcaption>/)?.[1];
         const legend = `${label.replace(/\.?$/, ".")}${note && !note.startsWith("Numbers match") ? ` ${plain(note)}` : ""}${figureKey(after, svg, id, label)}`;
         const wide = Number(box[1]) / Number(box[2]) > 1.6;
-        return { section: FIGURE_SECTIONS[id]?.[index] || "", html: `<figure class="figure journey-page${wide ? " is-wide" : ""}">${svg}<figcaption><strong>Fig. ${index + 1} |</strong> ${legend}</figcaption></figure>` };
+        // The page section the diagram sits in, unless the list above says otherwise
+        const before = body.slice(0, m.index);
+        const pageSection = plain((before.slice(before.lastIndexOf("<h3>")).match(/<h3>([\s\S]*?)<\/h3>/) || [, ""])[1]).trim();
+        const fixed = FIGURE_SECTIONS[id]?.[index];
+        const section = fixed !== undefined ? fixed : REVIEW_SECTION[pageSection] || pageSection;
+        return { section, auto: fixed === undefined, html: `<figure class="figure journey-page${wide ? " is-wide" : ""}">${svg}<figcaption><strong>Fig. ${index + 1} |</strong> ${legend}</figcaption></figure>` };
     });
 }
 
@@ -165,9 +203,17 @@ const articles = groups.flatMap((group) => group.ids.map((id) => {
     const top = body.slice(0, split).replace(/<p class="review-kicker">[^<]*<\/p>/, `<p class="kicker">${group.name}</p>`).replace(/<h3[^>]*>/, "<h2>").replace("</h3>", "</h2>");
     const figures = figuresFor(text, id);
     let columns = body.slice(split);
+    const headings = [...columns.matchAll(/<h4>([\s\S]*?)<\/h4>/g)].map((m) => m[1]);
+    // An automatic placement whose review section has another name is matched to the nearest heading
+    figures.filter((figure) => figure.auto && figure.section && !headings.includes(figure.section)).forEach((figure) => {
+        const from = figure.section;
+        figure.section = nearestHeading(figure.section, headings);
+        if (process.env.FIG_DEBUG) console.error(`MATCH ${id}: "${from}" → "${figure.section}"`);
+    });
     // A figure for the first section goes above the columns, so it does not split them at the page top
-    const firstSection = columns.match(/<h4>([\s\S]*?)<\/h4>/)[1];
+    const firstSection = headings[0];
     figures.forEach((figure) => {
+        figure.placed = Boolean(figure.section);
         if (figure.section === firstSection) figure.section = "";
     });
     figures.filter((figure) => figure.section).forEach((figure) => {
@@ -177,6 +223,7 @@ const articles = groups.flatMap((group) => group.ids.map((id) => {
     });
     const lead = figures.filter((figure) => !figure.section).map((figure) => figure.html).join("");
     figureCount += figures.length;
+    leadCount += figures.filter((figure) => !figure.placed).length;
     const refs = text.match(/<section class="references"[^>]*>[\s\S]*?<ol>([\s\S]*?)<\/ol>/)?.[1].trim() || "";
     return { id, group: group.name, title, refs: clean(refs), html: `<article id="review-${id}"${group.source === physiologyPage ? ' class="is-physiology"' : ""}>${top}${lead}<div class="columns">${columns}</div></article>` };
 }));
@@ -319,5 +366,5 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
 </body></html>`;
 
 await printPdf(html, OUTPUT, `Clinical Conditions · ${SYSTEM_NAME} review articles`);
-console.log(`${OUTPUT}: ${articles.length} reviews, ${figureCount} figures, ${glossary.size} abbreviations`);
+console.log(`${OUTPUT}: ${articles.length} reviews, ${figureCount} figures (${figureCount - leadCount} beside their sections), ${glossary.size} abbreviations`);
 process.exit(0);

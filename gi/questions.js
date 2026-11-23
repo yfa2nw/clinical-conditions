@@ -3883,7 +3883,7 @@ const QUIZ_QUESTIONS = [
         },
     },
 
-    /* ===== Diarrhea ===== */
+    /* ===== Acute Diarrhea ===== */
 
     /* --- Memory --- */
     {
@@ -3893,15 +3893,14 @@ const QUIZ_QUESTIONS = [
         stem: "Two hours after eating leftover fried rice, a 25-year-old man has nausea and repeated vomiting, which settle within 24 hours. Which organism is most likely responsible?",
         options: ["Bacillus cereus", "Staphylococcus aureus", "Clostridioides difficile", "Enterotoxigenic E. coli", "Salmonella"],
         answer: 0,
-        explanation: `<p><strong>Rice is the classic source of B. cereus.</strong> Its spores survive cooking, and when cooked rice is left at room temperature they germinate and make a toxin in the food. Because the toxin is already formed when the food is eaten, vomiting starts within hours.</p>
-<p>B. cereus is one of the enterotoxic bacteria of acute non-inflammatory diarrhea, with S. aureus (picnic), ETEC (travel), and V. cholerae (travel). They cause watery diarrhea without fecal WBC or calprotectin.</p>`,
+        explanation: `<p><strong>Rice is the classic source of the vomiting type of B. cereus.</strong> Its spores survive cooking, and when cooked rice is left at room temperature they germinate and make a toxin in the food. Reheating does not help, because the toxin is already formed when the food is eaten, so vomiting starts within 30 minutes to 6 hours and settles within a day.</p>
+<p>It is one of the two preformed toxins (group 1), with S. aureus. Its diarrheal type is different: the bacteria make toxin in the gut, so watery diarrhea starts 6–15 hours after meat, vegetables, or sauces left out.</p>`,
         notes: {
-            1: "S. aureus also acts through a preformed toxin within hours, but its classic source is picnic food such as potato salad.",
-            2: "C. difficile follows ABX and causes inflammatory diarrhea, not vomiting hours after a meal.",
-            3: "ETEC is the classic cause of traveler's diarrhea, with watery stools a few days into a trip.",
-            4: "Salmonella comes from poultry and invades the mucosa, causing inflammatory diarrhea with fever after a longer incubation.",
+            1: "S. aureus also acts through a preformed toxin within hours, but it comes from food handled by a carrier, such as processed meats, mayonnaise salads, and cream pastries.",
+            2: "C. difficile follows ABX and causes watery diarrhea and colitis, not vomiting hours after a meal.",
+            3: "ETEC must grow in the gut before it makes toxin, so watery diarrhea starts 16 hours to 3 days after exposure.",
+            4: "Salmonella invades the mucosa and causes fever and diarrhea 8–72 hours after poultry or eggs.",
         },
-        info: "The preformed toxin of B. cereus (cereulide) is from standard microbiology; the page links B. cereus to rice.",
     },
     {
         id: "dia-noro",
@@ -3910,13 +3909,13 @@ const QUIZ_QUESTIONS = [
         stem: "During a cruise, 120 passengers develop sudden vomiting and watery diarrhea within 1–2 days of each other. Which organism is the most likely cause?",
         options: ["Norovirus", "Rotavirus", "Entamoeba histolytica", "Clostridioides difficile", "Shiga toxin-producing E. coli"],
         answer: 0,
-        explanation: `<p><strong>Norovirus is the classic cause of outbreaks on cruise ships.</strong> It is highly contagious and spreads quickly through a closed population, causing sudden vomiting and watery, non-inflammatory diarrhea that settles in a few days.</p>
-<p>Because it is non-inflammatory, the stool has no fecal WBC or calprotectin. The main risk is hypovolemia, treated with ORS or IV fluids. The initial workup of acute diarrhea includes norovirus and rotavirus testing.</p>`,
+        explanation: `<p><strong>Norovirus is the classic cause of outbreaks on cruise ships,</strong> as well as in hospitals, schools, and nursing homes. A few particles are enough to infect, and it spreads person to person, through food, and on surfaces, so it moves quickly through a closed population.</p>
+<p>After 1–2 days it causes sudden vomiting and watery diarrhea that settle in 1–3 days. It damages the villi, so the diarrhea is non-inflammatory, and the main risk is hypovolemia. Soap and water and bleach for surfaces control spread, since alcohol gel works poorly against it.</p>`,
         notes: {
-            1: "Rotavirus is the classic cause in young children in childcare, not adult outbreaks.",
-            2: "E. histolytica is a parasite acquired by travel, causing inflammatory, bloody diarrhea.",
+            1: "Rotavirus affects unvaccinated children under 5, often in childcare, rather than adult outbreaks.",
+            2: "E. histolytica causes gradual, bloody diarrhea over weeks, not a sudden shipboard outbreak.",
             3: "C. difficile follows ABX, with diarrhea rather than mass vomiting outbreaks.",
-            4: "STEC causes bloody diarrhea from food and can lead to HUS.",
+            4: "STEC causes painful bloody diarrhea 3–4 days after undercooked beef and can lead to HUS.",
         },
     },
     {
@@ -3926,15 +3925,14 @@ const QUIZ_QUESTIONS = [
         stem: "A 14-month-old unvaccinated child who attends childcare has 3 days of vomiting, fever, and profuse watery diarrhea. Which organism is the most likely cause?",
         options: ["Rotavirus", "Norovirus", "Campylobacter", "Giardia", "Vibrio cholerae"],
         answer: 0,
-        explanation: `<p><strong>Rotavirus is the classic cause of watery diarrhea in young children in childcare,</strong> particularly the unvaccinated. It infects the cells at the villus tips, so less fluid is absorbed, and the result is high-volume, watery, non-inflammatory diarrhea.</p>
-<p>Small children have little reserve, so the danger is hypovolemia, hypokalemia, and NAGMA. ORS works because the sodium-glucose cotransporter still absorbs salt and water together.</p>`,
+        explanation: `<p><strong>Rotavirus is the classic cause of watery diarrhea in unvaccinated children under 5,</strong> often in childcare. After 1–3 days, vomiting comes first, then profuse watery diarrhea, with fever in a third, lasting 5–7 days.</p>
+<p>It damages the villi, so less water is absorbed. Small children have little reserve, so the danger is hypovolemia, hypokalemia, and NAGMA. ORS works because the sodium-glucose cotransporter still absorbs salt and water together, and rotavirus vaccine prevents the disease.</p>`,
         notes: {
-            1: "Norovirus causes outbreaks in closed adult settings such as cruise ships.",
-            2: "Campylobacter comes from food and causes inflammatory, often bloody, diarrhea.",
-            3: "Giardia comes from river water and causes fatty, foul-smelling stools over weeks.",
-            4: "V. cholerae is acquired by travel to endemic areas and causes rice-water stools.",
+            1: "Norovirus causes outbreaks in closed settings such as cruise ships, at any age, with illness settling in 1–3 days.",
+            2: "Campylobacter comes from poultry and causes a febrile prodrome, then often bloody diarrhea.",
+            3: "Giardia comes from untreated water or childcare and causes greasy stools and bloating over weeks.",
+            4: "V. cholerae comes from contaminated water in disasters or crowded camps and causes rice-water stools.",
         },
-        info: "Rotavirus vaccination and the villus-tip mechanism are from standard teaching; the page links rotavirus to childcare.",
     },
     {
         id: "dia-giardia",
@@ -3943,13 +3941,13 @@ const QUIZ_QUESTIONS = [
         stem: "Ten days after a hiking trip on which he drank untreated stream water, a 30-year-old man has bloating, flatulence, and foul-smelling, greasy stools without blood. Which organism is the most likely cause?",
         options: ["Giardia", "Entamoeba histolytica", "Shigella", "Campylobacter", "Norovirus"],
         answer: 0,
-        explanation: `<p><strong>Giardia comes from river and stream water.</strong> It attaches to the small bowel lining without invading it, so the diarrhea is non-inflammatory: no blood and no fecal WBC.</p>
-<p>By coating the lining, it reduces absorption of fat and other nutrients. Unabsorbed fat makes the stool greasy and foul-smelling, and unabsorbed carbohydrate is fermented into gas, causing bloating and flatulence. Stool O&amp;P testing finds it.</p>`,
+        explanation: `<p><strong>Giardia comes from untreated stream water,</strong> and as few as 10 cysts can infect. Its incubation of 1–2 weeks fits the timing.</p>
+<p>It attaches to the small bowel lining without invading it, so there is no blood. By covering the villi it decreases absorption and brush border enzymes: unabsorbed fat makes the stool greasy and foul, and unabsorbed carbohydrate is fermented into gas, causing bloating and flatulence. It is found by stool antigen or PCR and treated with tinidazole or metronidazole.</p>`,
         notes: {
-            1: "E. histolytica invades the colon, causing dysentery with blood and mucus.",
-            2: "Shigella invades the colon, causing bloody, mucoid stools with fever.",
-            3: "Campylobacter comes from food, especially poultry, and causes inflammatory diarrhea.",
-            4: "Norovirus causes vomiting and watery diarrhea for a few days, not greasy stools for weeks.",
+            1: "E. histolytica invades the colon, causing weeks of cramps and bloody diarrhea, not greasy stools.",
+            2: "Shigella invades the colon 1–4 days after exposure, causing fever, tenesmus, and bloody stools.",
+            3: "Campylobacter comes from poultry or milk and causes fever and often bloody diarrhea within days.",
+            4: "Norovirus causes vomiting and watery diarrhea 1–2 days after exposure, settling in 1–3 days.",
         },
     },
     {
@@ -3959,15 +3957,14 @@ const QUIZ_QUESTIONS = [
         stem: "A 38-year-old man with untreated HIV and a CD4 count of 45/µL has months of severe watery diarrhea and weight loss. A modified acid-fast stain of stool shows small round oocysts. Which organism is the most likely cause?",
         options: ["Cryptosporidium", "Giardia", "Entamoeba histolytica", "Clostridioides difficile", "Vibrio cholerae"],
         answer: 0,
-        explanation: `<p><strong>Cryptosporidium is the parasite of immunocompromised patients,</strong> and its oocysts stain acid-fast. In a healthy person it causes a short watery illness, but without T cell immunity it cannot be cleared, so the diarrhea becomes chronic and severe, with weight loss.</p>
-<p>It is non-inflammatory and watery, and the danger is fluid loss. Restoring immunity with antiretroviral therapy is central to clearing it.</p>`,
+        explanation: `<p><strong>Cryptosporidium oocysts stain acid-fast, and the disease becomes chronic and wasting in advanced HIV.</strong> In a healthy person it causes watery diarrhea that settles by itself, but without T cell immunity it cannot be cleared.</p>
+<p>With a CD4 count under 50/µL, as here, it can also spread to the bile ducts and pancreas, causing sclerosing cholangitis, acalculous cholecystitis, and pancreatitis. Treatment is supportive, with ART to restore the CD4 count.</p>`,
         notes: {
-            1: "Giardia comes from river water and causes greasy stools; its cysts are not acid-fast.",
-            2: "E. histolytica causes dysentery after travel, with trophozoites rather than acid-fast oocysts.",
-            3: "C. difficile follows ABX and is a bacterium, found by GDH or NAAT and toxin testing.",
-            4: "V. cholerae causes acute rice-water stools after travel, not months of diarrhea.",
+            1: "Giardia is found by stool antigen or PCR, and causes greasy stools after untreated water.",
+            2: "E. histolytica causes bloody colitis over weeks and is found by stool antigen or PCR.",
+            3: "C. difficile is a bacterium found by GDH or NAAT, then toxin testing, after ABX.",
+            4: "V. cholerae causes acute rice-water stools, not months of diarrhea.",
         },
-        info: "The acid-fast stain and the role of antiretroviral therapy are from standard teaching; the page links Cryptosporidium to immunocompromised patients.",
     },
     {
         id: "dia-gbs",
@@ -3976,15 +3973,14 @@ const QUIZ_QUESTIONS = [
         stem: "Three weeks after bloody diarrhea from undercooked chicken, a 23-year-old man develops ascending symmetric leg weakness with absent reflexes. Which organism most likely caused his diarrhea?",
         options: ["Campylobacter", "Vibrio cholerae", "Staphylococcus aureus", "Rotavirus", "Giardia"],
         answer: 0,
-        explanation: `<p><strong>Campylobacter is a food-borne invasive bacterium and the classic trigger of Guillain-Barré syndrome.</strong> It causes inflammatory diarrhea, often bloody, with raised fecal WBC and calprotectin.</p>
-<p>Weeks later, antibodies made against the bacterium's surface sugars cross-react with gangliosides on peripheral nerves (molecular mimicry). That causes the ascending, symmetric weakness and lost reflexes of GBS.</p>`,
+        explanation: `<p><strong>Campylobacter, from undercooked poultry, is the classic trigger of Guillain-Barré syndrome.</strong> It invades the mucosa, causing a febrile prodrome, then cramps and often bloody diarrhea.</p>
+<p>Weeks later, antibodies made against the bacterium cross-react with gangliosides on peripheral nerves (molecular mimicry), causing ascending weakness with lost reflexes. Campylobacter can also cause reactive arthritis and pseudoappendicitis.</p>`,
         notes: {
-            1: "V. cholerae is non-invasive and causes watery rice-water stools, not bloody diarrhea.",
+            1: "V. cholerae is not invasive and causes rice-water stools, not bloody diarrhea.",
             2: "S. aureus causes vomiting within hours from a preformed toxin, without blood.",
             3: "Rotavirus causes watery diarrhea in young children.",
-            4: "Giardia is non-invasive and causes greasy stools, not bloody diarrhea.",
+            4: "Giardia is not invasive and causes greasy stools, not bloody diarrhea.",
         },
-        info: "The link between Campylobacter and Guillain-Barré syndrome is not on the page; it is standard teaching, confirmed in the StatPearls chapter on Campylobacter infection.",
     },
     {
         id: "dia-hus",
@@ -3993,33 +3989,13 @@ const QUIZ_QUESTIONS = [
         stem: "A child has bloody diarrhea after eating an undercooked hamburger, and STEC is suspected. Which treatment should be avoided?",
         options: ["ABX", "ORS", "IV fluids", "Red cell transfusion if needed", "Dialysis if needed"],
         answer: 0,
-        explanation: `<p><strong>ABX are avoided in STEC, because they raise the risk of HUS.</strong> Killing the bacteria can release more Shiga toxin, which enters the blood and damages the endothelium of small vessels, especially in the kidney.</p>
-<p>HUS is the triad of AKI, thrombocytopenia, and hemolytic anemia. Loperamide is also avoided, because slowing the bowel keeps the toxin in contact with the gut. Treatment is supportive: fluids, blood, and dialysis if needed.</p>`,
+        explanation: `<p><strong>ABX are avoided in STEC, because they increase the risk of HUS.</strong> Shiga toxin injures glomerular endothelium, causing microangiopathic hemolytic anemia, thrombocytopenia, and AKI 5–13 days after the diarrhea starts, mostly in children under 5.</p>
+<p>Loperamide is also avoided, because slowing the bowel keeps the toxin in the colon. Treatment is supportive: fluids, with blood or dialysis if HUS develops.</p>`,
         notes: {
             1: "ORS is appropriate to treat hypovolemia.",
             2: "IV fluids are appropriate when ORS is not enough.",
             3: "Transfusion is part of supportive care for hemolytic anemia in HUS.",
             4: "Dialysis supports AKI in HUS when needed.",
-        },
-    },
-    {
-        id: "dia-vipoma",
-        condition: "diarrhea",
-        kind: "memory",
-        stem: "A 48-year-old woman has 3 L a day of watery diarrhea, hypokalemia, and achlorhydria. Which hormone is most likely being secreted in excess?",
-        options: ["VIP", "Gastrin", "Serotonin", "Somatostatin", "Cholecystokinin"],
-        answer: 0,
-        explanation: `<p><strong>Watery diarrhea, hypokalemia, and achlorhydria (WDHA) is the syndrome of a vipoma.</strong> VIP stimulates the intestinal channels that secrete chloride and water into the lumen, causing large-volume secretory diarrhea with no mucosal damage.</p>
-<ul>
-<li>The stool carries away potassium, causing hypokalemia.</li>
-<li>VIP inhibits gastric acid secretion, causing achlorhydria.</li>
-<li>As a secretory diarrhea, it continues with fasting and has an osmotic gap under 50 mOsm/kg.</li>
-</ul>`,
-        notes: {
-            1: "Gastrin from a gastrinoma causes diarrhea with excess acid and peptic ulcers, the opposite of achlorhydria.",
-            2: "Serotonin from carcinoid syndrome causes diarrhea with flushing, wheezing, and tricuspid valve disease.",
-            3: "Somatostatin inhibits gut secretion; octreotide, its analogue, treats secretory tumors.",
-            4: "CCK stimulates gallbladder contraction and pancreatic enzymes and does not cause WDHA.",
         },
     },
     {
@@ -4029,30 +4005,144 @@ const QUIZ_QUESTIONS = [
         stem: "A 40-year-old man has had severe watery diarrhea for 4 days and has dry mucous membranes. Which acid-base disturbance is most likely?",
         options: ["Normal anion gap metabolic acidosis", "High anion gap metabolic acidosis", "Metabolic alkalosis with hypochloremia", "Respiratory acidosis from hypoventilation", "Primary respiratory alkalosis from anxiety"],
         answer: 0,
-        explanation: `<p><strong>Diarrhea causes NAGMA, a normal anion gap metabolic acidosis.</strong> Intestinal fluid is rich in bicarbonate, so losing it in stool lowers serum bicarbonate. The kidney holds on to chloride in its place, so the anion gap stays normal (a hyperchloremic acidosis).</p>
-<p>The page's complications of fluid status in acute diarrhea are hypovolemia, hypokalemia, and NAGMA. Breathing faster lowers the PaCO2 to compensate.</p>`,
+        explanation: `<p><strong>Diarrhea causes NAGMA, a normal anion gap metabolic acidosis.</strong> Intestinal fluid is rich in HCO3−, so losing it in stool decreases serum HCO3−. The kidney holds on to chloride in its place, so the anion gap stays normal (a hyperchloremic acidosis).</p>
+<p>Hypovolemia, hypokalemia, and NAGMA are the complications of fluid loss from any cause, worst in infants and older adults. Breathing faster decreases the PaCO2 to compensate.</p>`,
         notes: {
-            1: "A high anion gap means an added acid, such as lactate or ketones, rather than lost bicarbonate.",
+            1: "A high anion gap means an added acid, such as lactate or ketones, rather than lost HCO3−.",
             2: "Metabolic alkalosis comes from losing gastric acid, as in vomiting.",
             3: "Respiratory acidosis is from hypoventilation; diarrhea causes a metabolic disturbance.",
             4: "Respiratory alkalosis would be primary hyperventilation; here faster breathing only compensates.",
         },
     },
     {
-        id: "dia-microscopic",
+        id: "dia-stec-cattle",
         condition: "diarrhea",
         kind: "memory",
-        stem: "A 66-year-old woman has chronic watery diarrhea and a normal-looking colonoscopy. Biopsies show a subepithelial collagen band of 18 µm. What is the diagnosis?",
-        options: ["Collagenous colitis", "Lymphocytic colitis", "Ulcerative colitis", "Pseudomembranous colitis", "Ischemic colitis"],
+        stem: "Which animals carry STEC in their gut without becoming ill, making their meat, milk, and manure its main sources?",
+        options: ["Cattle", "Poultry", "Reptiles", "Puppies", "Shellfish"],
         answer: 0,
-        explanation: `<p><strong>A collagen band over 10 µm under the surface epithelium is collagenous colitis,</strong> one of the two forms of microscopic colitis. The other, lymphocytic colitis, has 20 or more intraepithelial lymphocytes per 100 cells.</p>
-<p>The colon looks normal, so the diagnosis needs biopsies. Microscopic colitis causes chronic watery, nonbloody diarrhea, 4–9 stools a day and often nocturnal, mostly in older women. It is linked to NSAIDs, PPIs, SSRIs, statins, and smoking.</p>`,
+        explanation: `<p><strong>Cattle carry STEC without illness.</strong> People acquire it from undercooked beef (such as hamburgers), unpasteurized milk, produce or water contaminated by cattle manure, and petting zoos.</p>
+<p>After 3–4 days (range 1–10), painful watery diarrhea turns bloody, with little or no fever. The danger is HUS, which follows 5–13 days after the diarrhea starts.</p>`,
         notes: {
-            1: "Lymphocytic colitis has 20 or more intraepithelial lymphocytes per 100 cells, without the thick collagen band.",
-            2: "Ulcerative colitis has visible continuous mucosal inflammation and bloody diarrhea.",
-            3: "Pseudomembranous colitis from C. difficile shows visible yellow plaques at colonoscopy.",
-            4: "Ischemic colitis causes pain and bloody diarrhea with visibly injured mucosa.",
+            1: "Poultry is the classic source of Campylobacter and nontyphoidal Salmonella.",
+            2: "Reptiles and other pets carry nontyphoidal Salmonella.",
+            3: "Sick puppies are a source of Campylobacter.",
+            4: "Shellfish, such as oysters, carry norovirus, and seafood carries V. cholerae.",
         },
+    },
+    {
+        id: "dia-etec",
+        condition: "diarrhea",
+        kind: "memory",
+        stem: "Which organism is the most common cause of traveler's diarrhea?",
+        options: ["Enterotoxigenic E. coli", "Shiga toxin-producing E. coli", "Giardia", "Vibrio cholerae", "Norovirus"],
+        answer: 0,
+        explanation: `<p><strong>ETEC is the most common cause of traveler's diarrhea.</strong> It is acquired from fecally contaminated food and water, colonizes the small bowel, and then secretes toxins that increase cAMP or cGMP, so chloride and water pour into the lumen.</p>
+<p>Because the mucosa is not invaded, it causes watery diarrhea and cramps without blood for a few days, starting 16 hours to 3 days after exposure. Mild illness is treated with ORS and loperamide, and severe illness with azithromycin.</p>`,
+        notes: {
+            1: "STEC causes bloody diarrhea from beef, milk, or manure, with a risk of HUS.",
+            2: "Giardia can follow travel, but it is less common and takes 1–2 weeks to cause greasy stools.",
+            3: "V. cholerae causes rice-water stools after disasters or in crowded camps, not routine traveler's diarrhea.",
+            4: "Norovirus causes outbreaks with vomiting, such as on cruise ships, but is not the leading cause in travelers.",
+        },
+    },
+    {
+        id: "dia-shigella-dose",
+        condition: "diarrhea",
+        kind: "memory",
+        stem: "Which organism has humans as its only reservoir, causes disease with as few as 10–100 organisms, and spreads easily in childcare and between men who have sex with men?",
+        options: ["Shigella", "Salmonella", "Campylobacter", "Vibrio cholerae", "Shiga toxin-producing E. coli"],
+        answer: 0,
+        explanation: `<p><strong>Shigella needs only 10–100 organisms,</strong> because it survives gastric acid, so it spreads easily from person to person: in childcare, with crowding, and through sex between men, as well as through food and water.</p>
+<p>After 1–4 days it invades the colon, causing fever, cramps, and tenesmus, then bloody, mucoid diarrhea. It can cause febrile seizures in children and HUS from Shiga toxin. Azithromycin or ciprofloxacin shortens illness and spread.</p>`,
+        notes: {
+            1: "Nontyphoidal Salmonella has animal reservoirs, such as poultry, eggs, and reptiles.",
+            2: "Campylobacter comes from animals, mainly poultry, and from milk and water.",
+            3: "V. cholerae is killed by acid, so it needs a large dose, usually from contaminated water.",
+            4: "STEC comes from cattle, which carry it without illness.",
+        },
+    },
+    {
+        id: "dia-crypto-pool",
+        condition: "diarrhea",
+        kind: "memory",
+        stem: "Twenty children develop watery diarrhea about a week after swimming at the same chlorinated public pool. Which organism is the most likely cause?",
+        options: ["Cryptosporidium", "Giardia", "Shigella", "Norovirus", "Entamoeba histolytica"],
+        answer: 0,
+        explanation: `<p><strong>Cryptosporidium oocysts resist chlorine,</strong> so swimming pools are its classic source, along with farm animals, childcare, and sex between men. Its incubation is about 7 days (2–28), which fits.</p>
+<p>It damages the villi, causing watery diarrhea that is self-limited in healthy people. Routine O&amp;P misses it, so it is requested specifically, with a modified acid-fast stain or PCR.</p>`,
+        notes: {
+            1: "Giardia also spreads by swimming, but chlorination kills it far more readily, and it causes greasy stools.",
+            2: "Shigella spreads person to person and causes bloody diarrhea within 1–4 days.",
+            3: "Norovirus causes vomiting within 1–2 days, not a week later.",
+            4: "E. histolytica comes from food and water in endemic regions and causes colitis over weeks.",
+        },
+        info: "Chlorination killing Giardia more readily than Cryptosporidium is standard teaching rather than page content.",
+    },
+    {
+        id: "dia-typhoid",
+        condition: "diarrhea",
+        kind: "memory",
+        stem: "Two weeks after returning from South Asia, a 30-year-old woman has a gradually rising fever, headache, abdominal pain, faint pink spots on her trunk, and a pulse of 80 at 39.5 °C. Which organism is the most likely cause?",
+        options: ["Salmonella Typhi", "Nontyphoidal Salmonella", "Campylobacter", "Shigella", "Entamoeba histolytica"],
+        answer: 0,
+        explanation: `<p><strong>This is enteric fever from Salmonella Typhi (or Paratyphi).</strong> It is spread by food and water contaminated by human carriers, in or after travel to South Asia or sub-Saharan Africa, and takes 6–30 days to appear.</p>
+<p>The fever rises gradually with headache and abdominal pain, and the clues are rose spots, relative bradycardia (a slow pulse for the fever), and hepatosplenomegaly. Diarrhea occurs in only some. It is diagnosed by blood or bone marrow culture and treated with ceftriaxone or azithromycin.</p>`,
+        notes: {
+            1: "Nontyphoidal Salmonella causes fever and diarrhea 8–72 hours after poultry or eggs, without rose spots.",
+            2: "Campylobacter causes a febrile prodrome, then bloody diarrhea within days.",
+            3: "Shigella causes dysentery with tenesmus 1–4 days after exposure.",
+            4: "E. histolytica causes weeks of bloody diarrhea, or a liver abscess with RUQ pain.",
+        },
+    },
+    {
+        id: "dia-salm-reptile",
+        condition: "diarrhea",
+        kind: "memory",
+        stem: "A 6-year-old whose family recently bought a pet turtle has fever, cramps, and diarrhea with some blood. Which organism is the most likely cause?",
+        options: ["Nontyphoidal Salmonella", "Shigella", "Shiga toxin-producing E. coli", "Giardia", "Bacillus cereus"],
+        answer: 0,
+        explanation: `<p><strong>Reptiles and other pets carry nontyphoidal Salmonella,</strong> as do undercooked poultry and eggs and unpasteurized milk.</p>
+<p>After 8–72 hours it invades the mucosa, causing fever, cramps, and diarrhea, sometimes bloody; fever settles in 2–3 days and diarrhea in 4–10. Healthy patients need no ABX, but infants, older adults, and immunocompromised patients can develop bacteremia, which is treated with ceftriaxone.</p>`,
+        notes: {
+            1: "Shigella has humans as its only reservoir and spreads person to person.",
+            2: "STEC comes from cattle, beef, and manure, and causes bloody diarrhea with little or no fever.",
+            3: "Giardia comes from water or childcare and causes greasy stools without blood.",
+            4: "B. cereus comes from food left at room temperature and causes vomiting or watery diarrhea without fever.",
+        },
+    },
+    {
+        id: "dia-strongy-test",
+        condition: "diarrhea",
+        kind: "memory",
+        stem: "Which test is most sensitive for screening a patient for Strongyloides before starting corticosteroids?",
+        options: ["Serology", "A single stool examination for larvae", "Peripheral eosinophil count", "Stool culture", "Colonoscopy with biopsy"],
+        answer: 0,
+        explanation: `<p><strong>Serology is the most sensitive test for Strongyloides,</strong> so it is used for screening, along with stool examination for larvae.</p>
+<p>Larvae are passed in small numbers and only some of the time, so a single stool examination often misses them. Screening matters because corticosteroids and other immunosuppressants can trigger hyperinfection syndrome, which has a high mortality.</p>`,
+        notes: {
+            1: "Larvae are passed intermittently and in small numbers, so a single stool examination is insensitive.",
+            2: "Eosinophilia is common but not reliable, and is often absent in hyperinfection.",
+            3: "Stool culture finds bacteria such as Salmonella, Shigella, and Campylobacter, not helminths.",
+            4: "Colonoscopy is not a screening test for Strongyloides.",
+        },
+    },
+    {
+        id: "dia-reactive",
+        condition: "diarrhea",
+        kind: "memory",
+        stem: "Two weeks after Shigella dysentery, a 27-year-old man develops a swollen knee with sterile joint fluid, red eyes, and dysuria. Which genetic marker do most patients with this complication carry?",
+        options: ["HLA-B27", "HLA-DQ2 and HLA-DQ8", "HLA-DR3", "HLA-B51", "HLA-DR4"],
+        answer: 0,
+        explanation: `<p><strong>This is reactive arthritis, and most patients are HLA-B27-positive.</strong> It is a sterile arthritis that follows Salmonella, Shigella, Campylobacter, or STEC, sometimes with conjunctivitis and urethritis.</p>
+<p>The joint is inflamed by the immune response to the infection rather than by organisms in the joint, which is why the fluid is sterile.</p>`,
+        notes: {
+            1: "HLA-DQ2 and HLA-DQ8 are the markers of celiac disease.",
+            2: "HLA-DR3 is linked to autoimmune diseases such as type 1 diabetes and autoimmune hepatitis.",
+            3: "HLA-B51 is linked to Behçet disease.",
+            4: "HLA-DR4 is linked to rheumatoid arthritis and type 1 diabetes.",
+        },
+        info: "The HLA associations of the other options are standard immunology rather than page content.",
     },
 
     /* --- Reasoning --- */
@@ -4063,11 +4153,11 @@ const QUIZ_QUESTIONS = [
         stem: "Several guests at a summer picnic develop abrupt nausea, vomiting, and cramps about 3 hours after eating potato salad. None have fever, and all recover within a day. Which mechanism best explains the rapid onset?",
         options: ["Preformed toxin eaten with the food", "Invasion of the colonic mucosa", "Toxin made by bacteria after they colonize the gut", "Viral destruction of villus cells", "Unabsorbed solutes pulling water in"],
         answer: 0,
-        explanation: `<p><strong>S. aureus multiplies in food left at room temperature and makes its toxin before the food is eaten.</strong> Because the toxin is already present, symptoms start within hours, with no time needed for the bacteria to grow in the gut. The toxin is heat-stable, so reheating does not help.</p>
-<p>This is why picnics are the classic setting. Without invasion there is no fever, no blood, and no fecal WBC, and the illness ends once the toxin is cleared.</p>`,
+        explanation: `<p><strong>S. aureus from a food handler multiplies in food left unrefrigerated and makes its toxin before the food is eaten.</strong> Because the toxin is already present, symptoms start within 30 minutes to 8 hours, with no time needed for the bacteria to grow in the gut.</p>
+<p>Mayonnaise salads, processed meats, and cream pastries are the classic foods. Without invasion there is no fever or blood, the illness ends within 24 hours, and ABX do not help.</p>`,
         notes: {
-            1: "Mucosal invasion causes inflammatory diarrhea with fever and blood, and takes longer to develop.",
-            2: "Toxin made after colonization, as with ETEC and cholera, takes a day or more to cause symptoms.",
+            1: "Mucosal invasion causes fever and bloody stools, and takes days to develop.",
+            2: "Toxin made after colonization, as with ETEC and cholera, takes many hours to days to cause symptoms.",
             3: "Viruses such as norovirus need 1–2 days to replicate before symptoms begin.",
             4: "Osmotic diarrhea follows unabsorbed solutes such as lactose or laxatives, not a picnic outbreak.",
         },
@@ -4077,17 +4167,17 @@ const QUIZ_QUESTIONS = [
         condition: "diarrhea",
         kind: "reasoning",
         stem: "A relief worker returning from a flooded area has profuse, painless rice-water diarrhea and becomes severely dehydrated within hours. Stool culture grows comma-shaped gram-negative rods. How does the organism cause diarrhea?",
-        options: ["Its toxin raises cAMP, opening chloride channels", "It invades the mucosa, bringing in neutrophils", "Its toxin stops protein synthesis in the cells", "Unabsorbed sugars hold water in the lumen", "It destroys the villi, so less water is absorbed"],
+        options: ["Its toxin increases cAMP, opening chloride channels", "It invades the mucosa, bringing in neutrophils and blood", "Its toxin stops protein synthesis in the cells", "Unabsorbed sugars hold water in the lumen", "It destroys the villi, so less water is absorbed"],
         answer: 0,
-        explanation: `<p><strong>Cholera toxin permanently switches on the G protein that makes cAMP in intestinal cells.</strong> High cAMP opens the CFTR chloride channel, so chloride pours into the lumen, and sodium and water follow. This is channel stimulation: secretory diarrhea without mucosal damage.</p>
-<p>Because the mucosa is intact, the stool has no blood or WBC, and the sodium-glucose cotransporter still works. That is why ORS treats it, with doxycycline added.</p>`,
+        explanation: `<p><strong>Cholera toxin increases cAMP in intestinal cells, opening CFTR and decreasing Na+ absorption.</strong> Chloride pours into the lumen, and sodium and water follow, producing isotonic, rice-water stools without mucosal damage.</p>
+<p>Because the mucosa is intact, there is no blood or fever, and the sodium-glucose cotransporter still works. That is why ORS treats it, or IV Hartmann solution in shock, with doxycycline added.</p>`,
         notes: {
             1: "Invasion with neutrophils is inflammatory diarrhea, as in Shigella, which causes blood and mucus.",
-            2: "Stopping protein synthesis is the action of Shiga toxin, which damages cells and causes bloody diarrhea.",
+            2: "Stopping protein synthesis is the action of Shiga toxin, which kills cells and causes bloody diarrhea.",
             3: "Unabsorbed sugars cause osmotic diarrhea, which is far smaller in volume and stops with fasting.",
             4: "The villi are intact in cholera; secretion, not destruction, drives the fluid loss.",
         },
-        info: "The ADP-ribosylation of Gs and the CFTR mechanism are from standard microbiology; the page describes channel stimulation and increased secretory activity.",
+        info: "Shiga toxin stopping protein synthesis is standard microbiology; the page describes it as killing cells.",
     },
     {
         id: "dia-ors",
@@ -4097,30 +4187,13 @@ const QUIZ_QUESTIONS = [
         options: ["Sodium and glucose are absorbed together, and water follows", "Glucose provides calories while the patient cannot eat", "Glucose pulls water into the lumen to flush out toxins", "Glucose blocks the chloride channel that cholera toxin opens", "Glucose prevents the hypoglycemia that diarrhea causes in adults"],
         answer: 0,
         explanation: `<p><strong>The sodium-glucose cotransporter carries sodium and glucose into the cell together, and water follows by osmosis.</strong> This transporter keeps working in secretory diarrhea, even when toxins are driving chloride and water out through other channels.</p>
-<p>So salt and glucose in the right ratio let the gut absorb fluid faster than it loses it. This is why ORS treats hypovolemia even in cholera, with IV fluids kept for patients who cannot drink enough.</p>`,
+<p>So salt and glucose in the right ratio let the gut absorb fluid faster than it loses it. This is why ORS treats hypovolemia even in cholera, with IV fluids kept for severe cases or when vomiting prevents drinking.</p>`,
         notes: {
             1: "The small amount of glucose is there for absorption, not nutrition.",
             2: "Too much glucose would do this, causing osmotic diarrhea; the ratio is set to drive absorption.",
             3: "Glucose does not block CFTR; it works through a separate absorption pathway.",
             4: "Hypoglycemia is not the reason; the glucose enables sodium and water absorption.",
         },
-    },
-    {
-        id: "dia-fasting",
-        condition: "diarrhea",
-        kind: "reasoning",
-        stem: "A patient with chronic watery diarrhea is admitted and kept fasting for 48 hours, and the diarrhea stops. What does this suggest?",
-        options: ["An osmotic cause", "A secretory cause", "A vipoma", "Carcinoid syndrome", "Use of a stimulant laxative"],
-        answer: 0,
-        explanation: `<p><strong>Osmotic diarrhea needs something unabsorbed in the lumen, so it stops when the patient stops eating it.</strong> Without lactose, malabsorbed nutrients, or an osmotic laxative, there is nothing to hold water in the bowel.</p>
-<p>Secretory diarrhea comes from channel stimulation by hormones, toxins, or stimulant laxatives, so it continues during fasting. The stool osmotic gap makes the same distinction: under 50 mOsm/kg is secretory, and over 75 is osmotic.</p>`,
-        notes: {
-            1: "Secretory diarrhea continues during fasting, because channel stimulation does not depend on food.",
-            2: "A vipoma causes secretory diarrhea, which persists while fasting.",
-            3: "Carcinoid syndrome causes secretory diarrhea through serotonin, which persists while fasting.",
-            4: "Stimulant laxatives cause secretory diarrhea; osmotic laxatives would fit, if taken secretly.",
-        },
-        info: "The fasting test as a way to separate osmotic from secretory diarrhea is standard teaching; the page uses the stool osmotic gap.",
     },
     {
         id: "dia-cdiff",
@@ -4130,10 +4203,10 @@ const QUIZ_QUESTIONS = [
         options: ["Oral vancomycin for 10 days", "IV vancomycin for 10 days", "Loperamide until the stools settle", "Oral clindamycin for a further week", "Fecal microbiota transplant"],
         answer: 0,
         explanation: `<p><strong>C. difficile is treated with oral fidaxomicin or oral vancomycin for 10 days,</strong> after stopping unnecessary ABX. Metronidazole is used only if neither is available.</p>
-<p>The route matters: oral vancomycin is not absorbed, so it reaches high levels in the colon where the bacteria are. ABX such as clindamycin destroy the normal flora, which lets C. difficile grow and release its toxins, so stopping the culprit helps the flora recover.</p>`,
+<p>The route matters: oral vancomycin is not absorbed, so it reaches high levels in the colon where the bacteria are. ABX such as clindamycin disturb the colonic flora, which lets C. difficile grow and release toxins A and B, so stopping the culprit helps the flora recover.</p>`,
         notes: {
             1: "IV vancomycin is not excreted into the colon, so it does not reach the infection.",
-            2: "Loperamide is avoided in C. diff, because slowing the bowel retains toxin and risks toxic megacolon.",
+            2: "Loperamide is avoided in C. difficile, because slowing the bowel keeps toxin in the colon.",
             3: "Clindamycin is one of the drugs that caused the infection.",
             4: "Fecal microbiota transplant is for recurrence, not a first episode.",
         },
@@ -4142,10 +4215,10 @@ const QUIZ_QUESTIONS = [
         id: "dia-cdiff-test",
         condition: "diarrhea",
         kind: "reasoning",
-        stem: "Why is C. difficile tested only in patients with diarrhea, using a 2-step test that ends with toxin A and B?",
-        options: ["Many healthy adults carry it, so finding it alone does not mean disease", "The toxin test is cheaper than GDH or NAAT", "Formed stool damages the testing equipment", "C. difficile cannot be cultured from diarrheal stool", "The toxin is only made by strains that cause HUS"],
+        stem: "Why is C. difficile tested only in liquid stool, using a 2-step test that ends with toxin A and B?",
+        options: ["Many healthy adults carry it, so finding it alone does not mean disease", "The toxin test is cheaper than GDH or NAAT", "Formed stool damages the testing equipment", "Culture of C. difficile from liquid stool takes too long to guide treatment", "The toxin is only made by strains that cause HUS"],
         answer: 0,
-        explanation: `<p><strong>3–5% of healthy adults carry C. difficile, so detecting the organism does not prove it is causing illness.</strong> Testing only patients with diarrhea avoids treating carriers.</p>
+        explanation: `<p><strong>3–5% of healthy adults carry C. difficile, so detecting the organism does not prove it is causing illness.</strong> Testing only liquid stool avoids treating carriers.</p>
 <p>The two steps divide the work:</p>
 <ul>
 <li><strong>GDH or NAAT</strong> (such as a stool multiplex PCR) is sensitive and shows the organism is there.</li>
@@ -4154,7 +4227,7 @@ const QUIZ_QUESTIONS = [
         notes: {
             1: "Cost is not the reason; the toxin step confirms active disease.",
             2: "Formed stool is not tested because a positive result would most likely reflect carriage.",
-            3: "The test detects the organism and its toxins, not culture failure.",
+            3: "The test detects the organism and its toxins; culture is not the issue.",
             4: "HUS follows STEC and Shigella; C. difficile toxins cause colitis, not HUS.",
         },
     },
@@ -4165,8 +4238,8 @@ const QUIZ_QUESTIONS = [
         stem: "On a ward with a C. difficile outbreak, why are staff told to wash their hands with soap and water rather than use alcohol gel?",
         options: ["Alcohol does not kill the spores, but washing removes them", "Alcohol gel spreads the toxin onto the skin", "Soap kills the spores, while alcohol only slows them", "Alcohol gel makes the organism resistant to vancomycin", "Soap neutralizes toxin A and B on the hands"],
         answer: 0,
-        explanation: `<p><strong>C. difficile is a spore-forming anaerobe, and its spores resist alcohol.</strong> Alcohol gel leaves the spores alive on the hands, ready to pass to the next patient. Soap and running water physically lift them off and rinse them away.</p>
-<p>The spores are also why C. difficile spreads in hospitals: they survive on surfaces for long periods, and patients on ABX, whose normal flora is suppressed, are the ones they colonize.</p>`,
+        explanation: `<p><strong>C. difficile is a spore-forming anaerobe, and its spores resist alcohol.</strong> Alcohol gel leaves the spores alive on the hands, ready to pass to the next patient. Soap and running water lift them off and rinse them away.</p>
+<p>The spores are also why C. difficile spreads in hospitals: they survive on hands and surfaces, and patients on ABX, whose colonic flora is disturbed, are the ones they colonize.</p>`,
         notes: {
             1: "The concern is the spores, not toxin spread by gel.",
             2: "Soap does not kill spores either; washing removes them mechanically.",
@@ -4181,8 +4254,8 @@ const QUIZ_QUESTIONS = [
         stem: "A 35-year-old woman has a fever of 38.9 °C and small-volume bloody, mucoid stools after eating at a market stall. She asks for loperamide. Why should it be avoided?",
         options: ["Slowing the bowel keeps invasive organisms in the colon", "It draws water into the lumen and worsens the dehydration", "It kills normal flora and allows C. difficile to grow", "It reverses the effect of ORS on the cotransporter", "It is absorbed and causes respiratory depression in adults"],
         answer: 0,
-        explanation: `<p><strong>Loperamide slows transit, so invasive bacteria and their toxins stay longer against the inflamed colon.</strong> In inflammatory diarrhea that can worsen colitis toward megacolon and perforation, and with STEC or Shigella it may raise the risk of HUS.</p>
-<p>Fever and bloody stools mark inflammatory diarrhea (dysentery), from organisms such as Salmonella, Shigella, Campylobacter, or STEC. Loperamide can be used in most diarrhea, but is avoided in HUS, C. diff, toxic megacolon, and with fever or bloody stools.</p>`,
+        explanation: `<p><strong>Loperamide slows transit, so invasive bacteria and their toxins stay longer against the inflamed colon.</strong> In colitis that can lead to toxic megacolon and perforation, and with STEC it increases the risk of HUS.</p>
+<p>Fever and bloody stools mark inflammatory diarrhea (dysentery), from organisms such as Salmonella, Shigella, or Campylobacter. Loperamide is fine in watery diarrhea without fever or blood, but is avoided with fever or bloody stools, in STEC and C. difficile, and in toxic megacolon.</p>`,
         notes: {
             1: "Loperamide slows the bowel and increases water absorption; it does not draw water in.",
             2: "Loperamide is not an antibiotic and does not affect the flora; ABX do this.",
@@ -4197,86 +4270,772 @@ const QUIZ_QUESTIONS = [
         stem: "A 26-year-old woman develops watery diarrhea 3 days after arriving in Mexico. She has 4 loose stools a day, no fever and no blood, and is drinking well. Which is the most appropriate management?",
         options: ["ORS, with loperamide if needed", "IV ciprofloxacin and admission", "Stool O&P, then empiric metronidazole", "Urgent colonoscopy", "Oral vancomycin for 10 days"],
         answer: 0,
-        explanation: `<p><strong>Watery diarrhea without fever or blood during travel is usually ETEC, a non-inflammatory cause that settles by itself.</strong> Its toxins stimulate secretion without damaging the mucosa, so the main risk is fluid loss.</p>
-<p>ORS replaces salt and water through the sodium-glucose cotransporter, and loperamide can be used because she has no fever or blood. ABX are kept for severe colitis or immunocompromised patients.</p>`,
+        explanation: `<p><strong>Mild traveler's diarrhea is treated with ORS and loperamide.</strong> Watery diarrhea without fever or blood during travel is usually ETEC, whose toxins stimulate secretion without damaging the mucosa, so the illness settles by itself in a few days.</p>
+<p>Loperamide is safe because she has no fever or blood. Azithromycin is kept for severe traveler's diarrhea or dysentery, and stool tests for fever, blood, severe illness, or persistent symptoms.</p>`,
         notes: {
-            1: "IV ABX and admission are for severe colitis or immunocompromised patients, and she is drinking well.",
-            2: "O&P testing fits suspected parasites, such as Giardia from river water, not a short watery illness.",
-            3: "Colonoscopy has no role in acute non-inflammatory diarrhea.",
+            1: "IV ABX and admission are for severe illness or dysentery, and she is drinking well.",
+            2: "Parasites take 1–2 weeks to cause symptoms; stool tests are not needed for a mild watery illness.",
+            3: "Colonoscopy has no role in acute watery diarrhea.",
             4: "Oral vancomycin treats C. difficile, which follows ABX.",
         },
     },
     {
-        id: "dia-carcinoid",
+        id: "dia-cholera-dose",
         condition: "diarrhea",
         kind: "reasoning",
-        stem: "A 59-year-old man with carcinoid syndrome from liver metastases develops a rash on sun-exposed skin, diarrhea, and confusion. What explains these new features?",
+        stem: "Why does cholera usually need a large dose from contaminated water, while Shigella spreads from person to person with only 10–100 organisms?",
+        options: ["Gastric acid kills V. cholerae, but Shigella survives it", "V. cholerae must invade the colon, but Shigella acts in the lumen", "Shigella makes a preformed toxin, but V. cholerae does not", "V. cholerae only infects people with blood group A", "Shigella multiplies in food before it is eaten"],
+        answer: 0,
+        explanation: `<p><strong>V. cholerae is not acid-resistant, so most organisms die in the stomach,</strong> and a large dose, usually from water contaminated with human waste, is needed for enough to reach the small bowel.</p>
+<p>Shigella survives gastric acid better, so a tiny dose is enough. That is why it spreads directly between people (in childcare, with crowding, and through sex between men), while cholera spreads in explosive outbreaks where water is contaminated, such as after disasters.</p>`,
+        notes: {
+            1: "It is the reverse: Shigella invades the colon, while V. cholerae stays on the small bowel surface and secretes toxin.",
+            2: "Neither acts through a preformed toxin; that is S. aureus and the vomiting type of B. cereus.",
+            3: "Blood group O, not A, is linked to more severe cholera, and blood group does not explain the dose.",
+            4: "Shigella spreads from person to person; multiplying in food before eating describes S. aureus and B. cereus.",
+        },
+        info: "The link between blood group O and severe cholera comes from the StatPearls chapter on cholera rather than the page.",
+    },
+    {
+        id: "dia-strongy-hyper",
+        condition: "diarrhea",
+        kind: "reasoning",
+        stem: "Why does Strongyloides hyperinfection so often cause gram-negative sepsis and meningitis?",
+        options: ["Larvae leaving the bowel carry gut bacteria with them", "The worm releases an endotoxin into the blood", "Ivermectin kills the larvae and releases bacteria", "Eosinophils damage the blood-brain barrier", "The worms block the bile duct, causing cholangitis"],
+        answer: 0,
+        explanation: `<p><strong>In hyperinfection, masses of larvae burrow out through the bowel wall and carry gut bacteria into the blood.</strong> The result is gram-negative sepsis, meningitis, and periumbilical purpura.</p>
+<p>Corticosteroids, other immunosuppressants, or HTLV-1 speed up autoinfection, in which larvae mature inside the host and reinvade. Eosinophilia is often absent, so the diagnosis is easy to miss, and mortality is high.</p>`,
+        notes: {
+            1: "The bacteria come from the gut; the worm does not make endotoxin.",
+            2: "Ivermectin is the treatment, not the cause of the sepsis.",
+            3: "Eosinophilia is often absent in hyperinfection, and meningitis follows bacteria carried by larvae.",
+            4: "Biliary obstruction is not the mechanism; larvae spread through the bowel wall and blood.",
+        },
+    },
+    {
+        id: "dia-strongy-screen",
+        condition: "diarrhea",
+        kind: "reasoning",
+        stem: "A 58-year-old man who grew up in rural Southeast Asia is about to start high-dose prednisolone. Why is he screened for Strongyloides first?",
+        options: ["Corticosteroids can trigger a fatal hyperinfection", "Prednisolone is less effective if worms are present", "Strongyloides causes resistance to prednisolone", "Ivermectin cannot be given once steroids are started", "Strongyloides makes prednisolone toxic to the liver"],
+        answer: 0,
+        explanation: `<p><strong>Strongyloides can persist for decades by autoinfection, often with no symptoms,</strong> and corticosteroids speed up that autoinfection into hyperinfection syndrome, with gram-negative sepsis and high mortality.</p>
+<p>People from endemic areas are therefore screened before corticosteroids or other immunosuppression, using serology and stool for larvae, and treated with ivermectin if positive.</p>`,
+        notes: {
+            1: "The concern is the worm, not the effect of prednisolone on his disease.",
+            2: "Steroid resistance is not the problem; the steroid enhances the worm.",
+            3: "Ivermectin can be given at any time; screening simply allows treatment before steroids start.",
+            4: "Liver toxicity is not the reason for screening.",
+        },
+    },
+    {
+        id: "dia-ameba-luminal",
+        condition: "diarrhea",
+        kind: "reasoning",
+        stem: "After metronidazole for amebic colitis, why is a luminal agent such as paromomycin also given?",
+        options: ["Metronidazole leaves cysts in the bowel lumen", "Paromomycin treats the bacterial infection that follows", "Metronidazole only kills cysts, not trophozoites", "Paromomycin reverses the side effects of metronidazole", "Paromomycin prevents the amebae from reaching the liver"],
+        answer: 0,
+        explanation: `<p><strong>Metronidazole is well absorbed and kills trophozoites in tissue, but cysts left in the bowel lumen survive.</strong> A luminal agent such as paromomycin stays in the gut and clears them, preventing relapse and further spread.</p>
+<p>The same combination treats amebic liver abscess. Carriers who pass cysts without symptoms take the luminal agent alone.</p>`,
+        notes: {
+            1: "Paromomycin is given for the amebic cysts, not a bacterial infection.",
+            2: "It is the reverse: metronidazole kills invasive trophozoites, and cysts in the lumen survive it.",
+            3: "Paromomycin does not reverse metronidazole side effects.",
+            4: "Metronidazole treats invasive disease, including the liver; paromomycin clears the lumen.",
+        },
+    },
+    {
+        id: "dia-hospital",
+        condition: "diarrhea",
+        kind: "reasoning",
+        stem: "A 66-year-old man develops diarrhea on day 5 of an admission for pneumonia treated with ceftriaxone. Why is C. difficile testing sent rather than a routine stool culture?",
+        options: ["Community food-borne bacteria are unlikely to start this late in hospital", "Stool culture cannot be interpreted while a patient is being treated with ABX", "C. difficile is the only cause of diarrhea in older adults", "A stool culture would find the C. difficile toxin anyway", "Ceftriaxone causes diarrhea only through STEC"],
+        answer: 0,
+        explanation: `<p><strong>Diarrhea starting after 3 days in hospital is unlikely to be a food-borne infection acquired before admission,</strong> because their incubation is usually shorter. C. difficile is the likely cause, especially with ABX such as cephalosporins disturbing the colonic flora.</p>
+<p>So C. difficile testing replaces a routine stool culture, using the 2-step test on liquid stool.</p>`,
+        notes: {
+            1: "Culture is possible on ABX; it is simply unlikely to help this late in an admission.",
+            2: "Older adults can have other causes, but hospital-onset diarrhea on ABX points to C. difficile.",
+            3: "Routine stool culture looks for Salmonella, Shigella, and Campylobacter, not C. difficile toxins.",
+            4: "Ceftriaxone does not cause STEC infection; it predisposes to C. difficile.",
+        },
+    },
+    {
+        id: "dia-stec-fever",
+        condition: "diarrhea",
+        kind: "reasoning",
+        stem: "Why does STEC cause bloody diarrhea with little or no fever, while Shigella and Campylobacter usually cause high fever?",
+        options: ["Its Shiga toxin kills cells without invading the mucosa", "It infects only the small bowel, sparing the colon", "It is a virus rather than a bacterium", "Its toxin is already formed in the food", "It is cleared within 24 hours, before fever develops"],
+        answer: 0,
+        explanation: `<p><strong>STEC damages the colon mainly through Shiga toxin, which kills colonic and endothelial cells, rather than through invasion.</strong> The cells die and bleed, but there is less of the tissue invasion that drives fever in Shigella and Campylobacter.</p>
+<p>So bloody diarrhea with little or no fever, after undercooked beef or a petting zoo, points to STEC, and Shiga toxin testing is done on every bloody stool. ABX and loperamide are avoided because they increase the risk of HUS.</p>`,
+        notes: {
+            1: "STEC causes colitis, with bloody stools from the colon.",
+            2: "STEC is a bacterium, an E. coli.",
+            3: "STEC takes 3–4 days to cause symptoms; preformed toxins act within hours.",
+            4: "STEC diarrhea lasts about a week, and HUS can follow 5–13 days after it starts.",
+        },
+    },
+    {
+        id: "dia-giardia-lactose",
+        condition: "diarrhea",
+        kind: "reasoning",
+        stem: "A woman treated for Giardia 2 weeks ago still gets bloating and loose stools after milk, although the parasite is gone. What explains this?",
+        options: ["Lactase on the damaged brush border has not yet recovered", "Giardia has become resistant and persists in the colon", "Tinidazole has caused C. difficile infection", "She has developed celiac disease from the infection", "Milk proteins trigger an allergic colitis after Giardia"],
+        answer: 0,
+        explanation: `<p><strong>Giardia covers and damages the villi, decreasing brush border enzymes such as lactase.</strong> After the parasite clears, lactase takes weeks to recover, so lactose stays in the lumen, pulls water in, and is fermented into gas.</p>
+<p>The same postinfectious lactose intolerance can follow other gastroenteritis, until the brush border recovers. Avoiding lactose for a while relieves it.</p>`,
+        notes: {
+            1: "The parasite is gone, and symptoms after milk point to lactase deficiency, not persisting infection.",
+            2: "C. difficile follows ABX with watery diarrhea, not symptoms tied to milk.",
+            3: "Celiac disease is triggered by gluten, not milk, and is not caused by Giardia.",
+            4: "The timing and the link to lactose point to temporary lactase deficiency.",
+        },
+    },
+    {
+        id: "dia-salm-cultures",
+        condition: "diarrhea",
+        kind: "reasoning",
+        stem: "A 72-year-old man with peripheral arterial disease has fever and diarrhea after eating undercooked eggs. Why are blood cultures taken as well as stool tests?",
+        options: ["Salmonella bacteremia can seed atherosclerotic arteries", "Stool culture cannot detect Salmonella in older adults", "Blood cultures are needed to confirm Shiga toxin", "Salmonella only grows in blood, not stool", "Blood cultures decide whether loperamide is safe"],
+        answer: 0,
+        explanation: `<p><strong>Nontyphoidal Salmonella can cause bacteremia in older adults and immunocompromised patients, seeding bone, heart valves, and atherosclerotic arteries,</strong> where it causes a mycotic aneurysm.</p>
+<p>So blood cultures are taken at high risk: age under 12 months or over 50, hemoglobinopathy, atherosclerosis, or immunosuppression. Bacteremia is treated with ceftriaxone, while healthy adults with Salmonella gastroenteritis need no ABX.</p>`,
+        notes: {
+            1: "Stool culture finds Salmonella at any age; blood cultures look for spread.",
+            2: "Shiga toxin is tested in stool, for STEC.",
+            3: "Salmonella grows in stool culture; blood cultures look for bacteremia.",
+            4: "Loperamide is avoided because of the fever, whatever the cultures show.",
+        },
+    },
+
+    /* --- Analysis --- */
+    {
+        id: "dia-set-stec-1",
+        condition: "diarrhea",
+        kind: "analysis",
+        set: "dia-stec",
+        passage: `<p>A 4-year-old visited a petting zoo 4 days ago. Since yesterday she has had painful, watery diarrhea, which this morning became bloody. Her temperature is 37.4 °C, and she is drinking but tired.</p>
+<table><thead><tr><th>Day</th><th>Hemoglobin</th><th>Platelets</th><th>Creatinine</th><th>Blood film</th></tr></thead><tbody>
+<tr><td>Day 2 of diarrhea</td><td>122 g/L</td><td>240 × 10⁹/L</td><td>35 µmol/L</td><td>Normal</td></tr>
+<tr><td>Day 8 of diarrhea</td><td>78 g/L</td><td>42 × 10⁹/L</td><td>210 µmol/L</td><td>Schistocytes</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p>`,
+        stem: "On day 2, which organism is the most likely cause?",
+        options: ["Shiga toxin-producing E. coli", "Shigella", "Campylobacter", "Nontyphoidal Salmonella from the animals", "Rotavirus"],
+        answer: 0,
+        explanation: `<p><strong>Bloody diarrhea with little or no fever, 3–4 days after a petting zoo, points to STEC.</strong> Cattle carry it, and painful watery diarrhea typically turns bloody after 1–3 days.</p>
+<p>Shiga toxin kills colonic cells rather than invading them, which is why fever is slight. Every bloody stool is tested for Shiga toxin.</p>`,
+        notes: {
+            1: "Shigella usually causes high fever and tenesmus, and spreads person to person.",
+            2: "Campylobacter causes a prodrome of high fever and aches before the diarrhea.",
+            3: "Salmonella can come from animals, but usually causes fever.",
+            4: "Rotavirus causes vomiting and watery diarrhea without blood.",
+        },
+    },
+    {
+        id: "dia-set-stec-2",
+        condition: "diarrhea",
+        kind: "analysis",
+        set: "dia-stec",
+        stem: "Her parents ask for ABX to clear the infection quickly. What is the best response on day 2?",
+        options: ["No ABX or loperamide; fluids, and watch her blood count and creatinine", "Azithromycin, since she has dysentery", "Ciprofloxacin, since she is drinking", "Loperamide to reduce fluid loss, without ABX", "Ceftriaxone, since she is a child with bloody diarrhea"],
+        answer: 0,
+        explanation: `<p><strong>ABX and loperamide are avoided in STEC, because they increase the risk of HUS.</strong> She is given fluids, and FBC, blood film, and creatinine are repeated over the following days, because HUS appears 5–13 days after the diarrhea starts.</p>
+<p>Empirical ABX for dysentery apply when infection is invasive, with high fever; bloody diarrhea with little fever after animal contact is the exception, so STEC is excluded first.</p>`,
+        notes: {
+            1: "Azithromycin suits dysentery with fever, but here the picture is STEC, where ABX increase the risk of HUS.",
+            2: "Ciprofloxacin is also an ABX and carries the same risk in STEC.",
+            3: "Loperamide is avoided in STEC, since it keeps the toxin in the colon.",
+            4: "Ceftriaxone is empirical treatment for children with invasive infection, not suspected STEC.",
+        },
+    },
+    {
+        id: "dia-set-stec-3",
+        condition: "diarrhea",
+        kind: "analysis",
+        set: "dia-stec",
+        stem: "What do her day 8 results show?",
+        options: ["HUS from Shiga toxin injuring glomerular endothelium", "Iron deficiency anemia from blood loss in stool", "Prerenal AKI from dehydration, with anemia from blood loss", "Bone marrow suppression from the infection", "DIC from bacteremia"],
+        answer: 0,
+        explanation: `<p><strong>Anemia with schistocytes, thrombocytopenia, and AKI is HUS.</strong> Shiga toxin enters the blood and injures glomerular endothelium, so platelets are consumed in small thrombi and red cells are sheared as they pass (microangiopathic hemolytic anemia).</p>
+<p>It follows 5–13 days after the diarrhea starts, mostly in children under 5. Treatment is supportive, with fluids, blood, or dialysis if needed.</p>`,
+        notes: {
+            1: "Blood loss would not explain schistocytes, a falling platelet count, or AKI.",
+            2: "Dehydration and blood loss would not cause schistocytes or thrombocytopenia.",
+            3: "Marrow suppression lowers counts without schistocytes or AKI.",
+            4: "DIC follows sepsis and prolongs clotting times; HUS is the complication of STEC.",
+        },
+    },
+    {
+        id: "dia-set-ameba-1",
+        condition: "diarrhea",
+        kind: "analysis",
+        set: "dia-ameba",
+        passage: `<p>A 31-year-old man moved from rural Mexico 6 months ago. He has had 6 weeks of cramps, weight loss, and diarrhea with blood, which began gradually. Colonoscopy shows scattered ulcers in the cecum and ascending colon, and he was started on prednisolone for presumed IBD. Two weeks later he is worse, with more bleeding and fever.</p>
+<table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody>
+<tr><td>Stool culture</td><td>No growth of pathogens</td></tr>
+<tr><td>Stool antigen for E. histolytica</td><td>Positive</td></tr>
+<tr><td>C. difficile</td><td>Negative</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p>`,
+        stem: "What best explains why he is worse?",
+        options: ["Amebic colitis treated as IBD, worsened by corticosteroids", "Severe ulcerative colitis needing IV corticosteroids", "C. difficile colitis caused by prednisolone", "Crohn disease with a new fistula", "STEC infection acquired in hospital"],
+        answer: 0,
+        explanation: `<p><strong>This is amebic colitis mistaken for IBD.</strong> E. histolytica, acquired in an endemic region, causes several weeks of cramps, weight loss, and bloody diarrhea that start gradually, and its ulcers can look like IBD at colonoscopy.</p>
+<p>Corticosteroids suppress the immune response that contains the amebae, so the colitis worsens. That is why infection, including E. histolytica, is excluded before IBD is diagnosed. The stool antigen separates it from harmless E. dispar.</p>`,
+        notes: {
+            1: "The positive E. histolytica antigen explains the colitis, and steroids would not be escalated.",
+            2: "His C. difficile test is negative.",
+            3: "A fistula does not explain the positive amebic antigen or worsening on steroids.",
+            4: "STEC causes bloody diarrhea over days, not 6 weeks, and his culture is negative.",
+        },
+    },
+    {
+        id: "dia-set-ameba-2",
+        condition: "diarrhea",
+        kind: "analysis",
+        set: "dia-ameba",
+        stem: "Prednisolone is stopped. Three weeks later, after his diarrhea has settled, he returns with fever and RUQ pain, and ultrasound shows a single liver lesion. Which treatment plan is most appropriate?",
+        options: ["Metronidazole, then paromomycin", "Paromomycin alone", "Ivermectin, then albendazole", "Oral vancomycin, then fidaxomicin", "Resume prednisolone with azathioprine"],
+        answer: 0,
+        explanation: `<p><strong>This is an amebic liver abscess, treated with metronidazole (or tinidazole), then a luminal agent such as paromomycin.</strong> It follows amebic colitis by 2–4 weeks, mostly in men aged 18–50, often after the diarrhea has gone.</p>
+<p>Metronidazole kills the invasive trophozoites in the liver and colon, and paromomycin then clears cysts from the bowel lumen to prevent relapse. Imaging and serology support the diagnosis.</p>`,
+        notes: {
+            1: "A luminal agent alone treats carriers without symptoms, not invasive disease.",
+            2: "Ivermectin treats Strongyloides, and albendazole other helminths, not amebae.",
+            3: "Oral vancomycin and fidaxomicin treat C. difficile.",
+            4: "Immunosuppression worsens amebic infection; this is not IBD.",
+        },
+    },
+    {
+        id: "dia-set-strongy-1",
+        condition: "diarrhea",
+        kind: "analysis",
+        set: "dia-strongy",
+        passage: `<p>A 64-year-old man who worked barefoot on a farm in rural Southeast Asia until he migrated 30 years ago has taken prednisolone 50 mg a day for 3 weeks for a vasculitis. He now has abdominal pain, diarrhea, vomiting, a fever of 39.2 °C, and confusion, with a purple rash around his umbilicus.</p>
+<table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody>
+<tr><td>Blood cultures</td><td>E. coli and Klebsiella</td></tr>
+<tr><td>CSF</td><td>Neutrophils; gram-negative rods</td></tr>
+<tr><td>Eosinophils</td><td>0.1 × 10⁹/L (normal)</td></tr>
+<tr><td>Stool and sputum</td><td>Many larvae</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p>`,
+        stem: "What is the underlying diagnosis?",
+        options: ["Strongyloides hyperinfection syndrome", "Bacterial meningitis from a primary bowel perforation", "Cryptosporidium spread to the bile ducts", "Typhoid fever with intestinal perforation", "Disseminated C. difficile infection"],
+        answer: 0,
+        explanation: `<p><strong>This is Strongyloides hyperinfection, triggered by corticosteroids decades after he was infected through bare skin.</strong> Autoinfection let the worm persist without symptoms, and prednisolone sped it up.</p>
+<ul>
+<li>Masses of larvae leave the bowel carrying gut bacteria, causing polymicrobial gram-negative bacteremia and meningitis.</li>
+<li>Periumbilical purpura is a sign of larvae in the skin.</li>
+<li>Eosinophilia is often absent, here because of the steroids.</li>
+<li>Larvae in sputum show they are spreading beyond the gut.</li>
+</ul>`,
+        notes: {
+            1: "Bowel perforation does not explain larvae in stool and sputum or the periumbilical rash.",
+            2: "Cryptosporidium affects the bile ducts in advanced HIV and does not cause larvae or meningitis.",
+            3: "Typhoid comes from recent travel and does not produce larvae.",
+            4: "C. difficile causes colitis, not larvae, bacteremia with mixed gram-negative rods, or meningitis.",
+        },
+    },
+    {
+        id: "dia-set-strongy-2",
+        condition: "diarrhea",
+        kind: "analysis",
+        set: "dia-strongy",
+        stem: "Which treatment plan is most appropriate?",
+        options: ["Daily ivermectin until stools are clear, with ABX for gram-negative sepsis", "Ivermectin for 2 days, then repeat serology in a year", "ABX alone, since the infection is bacterial", "Metronidazole, then paromomycin", "Increase prednisolone to treat the vasculitis flare"],
+        answer: 0,
+        explanation: `<p><strong>Hyperinfection is treated with ivermectin given daily until stools are clear of larvae, with ABX for the gram-negative sepsis.</strong> The bacteria come from the gut on the larvae, so killing the worms is as important as the ABX.</p>
+<p>A short course of ivermectin suits uncomplicated infection found on screening, which is why people from endemic areas are screened before corticosteroids.</p>`,
+        notes: {
+            1: "A 2-day course treats uncomplicated infection; hyperinfection needs daily treatment until stools are clear.",
+            2: "ABX alone leave the larvae, which keep carrying bacteria from the gut.",
+            3: "Metronidazole and paromomycin treat E. histolytica, not Strongyloides.",
+            4: "More corticosteroid would worsen the hyperinfection.",
+        },
+    },
+    {
+        id: "dia-cholera-labs",
+        condition: "diarrhea",
+        kind: "analysis",
+        stem: `<p>A 25-year-old aid worker in a flood-affected camp has had profuse, painless rice-water stools for 12 hours, with vomiting. He is confused, with cold skin, a pulse of 128, and blood pressure 82/50 mmHg.</p>
+<table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody>
+<tr><td>Na+</td><td>138 mmol/L</td></tr>
+<tr><td>K+</td><td>2.8 mmol/L</td></tr>
+<tr><td>HCO3−</td><td>13 mmol/L</td></tr>
+<tr><td>Creatinine</td><td>160 µmol/L</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p>
+<p>What is the most appropriate immediate management?</p>`,
+        options: ["IV Hartmann solution replacing the deficit within 3–4 hours, then ORS and doxycycline", "ORS by mouth in frequent small sips, with doxycycline once a stool culture confirms cholera", "Loperamide and IV fluids at a maintenance rate", "IV ciprofloxacin, with fluids once the culture returns", "Hypertonic saline to correct the sodium first"],
+        answer: 0,
+        explanation: `<p><strong>He is in shock from cholera, so he needs rapid IV Hartmann solution, replacing the deficit within 3–4 hours,</strong> then ORS once he can drink, with doxycycline.</p>
+<ul>
+<li><strong>Isotonic loss:</strong> the sodium is normal because the stool is isotonic.</li>
+<li><strong>Low K+ and HCO3−:</strong> both are lost in stool, causing hypokalemia and metabolic acidosis.</li>
+<li><strong>High creatinine:</strong> from hypovolemia.</li>
+</ul>
+<p>Untreated, over half of severe cholera cases die; with prompt rehydration, under 1%.</p>`,
+        notes: {
+            1: "ORS suits patients who can drink, but he is confused and vomiting, in shock.",
+            2: "Loperamide does not replace losses, and a maintenance rate is far too slow for shock.",
+            3: "Fluids come first in cholera; ABX only shorten the illness.",
+            4: "His sodium is normal, because cholera stool is isotonic.",
+        },
+    },
+
+    /* ===== Chronic Diarrhea ===== */
+
+    /* --- Memory --- */
+    {
+        id: "dia-vipoma",
+        condition: "chronic-diarrhea",
+        kind: "memory",
+        stem: "A 48-year-old woman has profuse watery diarrhea that continues during a fast, with hypokalemia and achlorhydria. Which hormone is most likely being secreted in excess?",
+        options: ["VIP", "Gastrin", "Serotonin", "Somatostatin", "Cholecystokinin"],
+        answer: 0,
+        explanation: `<p><strong>Watery diarrhea, hypokalemia, and achlorhydria (WDHA) is the syndrome of a vipoma,</strong> a pancreatic tumor. VIP stimulates intestinal secretion of chloride and water, causing large-volume secretory diarrhea with no mucosal damage.</p>
+<ul>
+<li>The stool carries away potassium, causing hypokalemia.</li>
+<li>VIP inhibits gastric acid secretion, causing achlorhydria.</li>
+<li>As a secretory diarrhea, it continues with fasting and has an osmotic gap under 50 mOsm/kg.</li>
+</ul>`,
+        notes: {
+            1: "Gastrin from a gastrinoma causes diarrhea with excess acid and peptic ulcers, the opposite of achlorhydria.",
+            2: "Serotonin from carcinoid syndrome causes diarrhea with flushing, wheezing, and right-sided valve disease.",
+            3: "Somatostatin inhibits gut secretion; its analogs octreotide and lanreotide treat vipomas.",
+            4: "CCK stimulates gallbladder contraction and pancreatic enzymes and does not cause WDHA.",
+        },
+    },
+    {
+        id: "dia-microscopic",
+        condition: "chronic-diarrhea",
+        kind: "memory",
+        stem: "A 66-year-old woman has chronic watery diarrhea and a normal-looking colonoscopy. Biopsies show a subepithelial collagen band of 18 µm. What is the diagnosis?",
+        options: ["Collagenous colitis", "Lymphocytic colitis", "Ulcerative colitis", "Pseudomembranous colitis", "Ischemic colitis"],
+        answer: 0,
+        explanation: `<p><strong>A collagen band over 10 µm under the surface epithelium is collagenous colitis,</strong> one of the two forms of microscopic colitis. The other, lymphocytic colitis, has 20 or more intraepithelial lymphocytes per 100 cells.</p>
+<p>The colon looks normal, so the diagnosis needs biopsies. Microscopic colitis causes chronic watery, nonbloody diarrhea, 4–9 stools a day and often at night, mostly in older women. It is linked to NSAIDs, PPIs, SSRIs, statins, and smoking.</p>`,
+        notes: {
+            1: "Lymphocytic colitis has 20 or more intraepithelial lymphocytes per 100 cells, without the thick collagen band.",
+            2: "Ulcerative colitis has visible continuous mucosal inflammation and bloody diarrhea.",
+            3: "Pseudomembranous colitis from C. difficile shows visible plaques at colonoscopy.",
+            4: "Ischemic colitis causes pain and bloody diarrhea with visibly injured mucosa.",
+        },
+    },
+    {
+        id: "chr-gap-low",
+        condition: "chronic-diarrhea",
+        kind: "memory",
+        stem: "A patient with chronic watery diarrhea has a stool osmotic gap of 30 mOsm/kg. What type of diarrhea does this indicate?",
+        options: ["Secretory", "Osmotic", "Fatty", "Motility", "Inflammatory"],
+        answer: 0,
+        explanation: `<p><strong>A stool osmotic gap under 50 mOsm/kg indicates secretory diarrhea,</strong> and a gap over 75 mOsm/kg indicates osmotic diarrhea.</p>
+<p>The gap is 290 − 2 × (stool Na+ + stool K+). A low gap means electrolytes account for almost all the stool osmolality, so secreted salt is holding the water, as with hormones, stimulant laxatives, or bile salts.</p>`,
+        notes: {
+            1: "Osmotic diarrhea has a gap over 75 mOsm/kg, because unabsorbed solutes hold the water.",
+            2: "The gap is not used in fatty diarrhea, which is investigated with fecal elastase and fecal fat.",
+            3: "Motility diarrhea gives a variable gap, so a low gap does not point to it.",
+            4: "The gap is not used in inflammatory diarrhea, which is found by calprotectin and colonoscopy.",
+        },
+    },
+    {
+        id: "chr-5hiaa",
+        condition: "chronic-diarrhea",
+        kind: "memory",
+        stem: "A 61-year-old man has chronic watery diarrhea, episodes of facial flushing, and wheezing, and imaging shows several liver lesions. Which test best confirms the cause?",
+        options: ["Urine 5-HIAA", "Serum VIP", "Serum gastrin", "Fecal elastase", "Hydrogen breath test"],
+        answer: 0,
+        explanation: `<p><strong>Flushing, wheezing, and diarrhea with liver lesions is carcinoid syndrome, confirmed by urine 5-HIAA,</strong> a breakdown product of serotonin.</p>
+<p>A midgut neuroendocrine tumor causes the syndrome once it reaches the liver, because the liver otherwise breaks down serotonin. It is treated with octreotide or lanreotide and resection.</p>`,
+        notes: {
+            1: "VIP is measured for a vipoma, which causes WDHA without flushing or wheezing.",
+            2: "Gastrin is measured for a gastrinoma, which causes ulcers with diarrhea.",
+            3: "Fecal elastase tests for EPI in fatty diarrhea.",
+            4: "The hydrogen breath test is for lactose intolerance.",
+        },
+    },
+    {
+        id: "chr-zes",
+        condition: "chronic-diarrhea",
+        kind: "memory",
+        stem: "A 44-year-old man has refractory peptic ulcers in the duodenum and jejunum, and chronic diarrhea. Which tumor is most likely?",
+        options: ["Gastrinoma", "Vipoma", "Carcinoid tumor", "Gastric adenocarcinoma", "Insulinoma"],
+        answer: 0,
+        explanation: `<p><strong>Refractory peptic ulcers with diarrhea suggest a gastrinoma (Zollinger-Ellison syndrome).</strong> Gastrin drives acid secretion, and the acid floods the small bowel.</p>
+<p>The acid damages the mucosa and inactivates pancreatic enzymes and bile salts, causing diarrhea. Gastrin is measured, and treatment is high-dose PPIs and resection.</p>`,
+        notes: {
+            1: "A vipoma causes WDHA, with achlorhydria rather than ulcers.",
+            2: "Carcinoid syndrome causes flushing, wheezing, and diarrhea, not ulcers.",
+            3: "Gastric adenocarcinoma does not cause ulcers in the jejunum with secretory diarrhea.",
+            4: "An insulinoma causes hypoglycemia, not ulcers or diarrhea.",
+        },
+    },
+    {
+        id: "chr-cholecystectomy",
+        condition: "chronic-diarrhea",
+        kind: "memory",
+        stem: "Since her cholecystectomy 8 months ago, a 50-year-old woman has had watery diarrhea, with normal calprotectin. Which drug is most likely to help?",
+        options: ["Cholestyramine", "Budesonide", "Mesalazine enemas", "Metronidazole", "Octreotide"],
+        answer: 0,
+        explanation: `<p><strong>Diarrhea after cholecystectomy is bile acid diarrhea, treated with cholestyramine,</strong> a bile acid sequestrant.</p>
+<p>Without the gallbladder to store bile, more bile salts reach the colon, where they stimulate chloride secretion, a secretory diarrhea. Cholestyramine binds them in the lumen, and a response to it supports the diagnosis.</p>`,
+        notes: {
+            1: "Budesonide treats microscopic colitis, which is linked to drugs such as NSAIDs and PPIs.",
+            2: "Mesalazine enemas treat distal ulcerative colitis, which increases calprotectin.",
+            3: "Metronidazole treats infections such as Giardia and amebiasis.",
+            4: "Octreotide treats hormonal diarrhea from a vipoma or carcinoid syndrome.",
+        },
+    },
+    {
+        id: "chr-breath",
+        condition: "chronic-diarrhea",
+        kind: "memory",
+        stem: "Which test confirms lactose intolerance?",
+        options: ["Hydrogen breath test", "Fecal elastase", "Urine 5-HIAA", "Celiac serology", "Stool osmotic gap alone"],
+        answer: 0,
+        explanation: `<p><strong>The hydrogen breath test confirms lactose intolerance.</strong> Unabsorbed lactose reaches the colon, where bacteria ferment it and release hydrogen, which is absorbed and breathed out.</p>
+<p>Lactose intolerance is an osmotic diarrhea: the stool osmotic gap is over 75 mOsm/kg and the diarrhea stops with fasting. It is treated with a lactose-free diet or lactase.</p>`,
+        notes: {
+            1: "Fecal elastase tests for EPI, a cause of fatty diarrhea.",
+            2: "Urine 5-HIAA tests for carcinoid syndrome.",
+            3: "Celiac serology tests for celiac disease, a cause of fatty diarrhea.",
+            4: "A high gap shows an osmotic cause but not which solute is unabsorbed.",
+        },
+    },
+    {
+        id: "chr-budesonide",
+        condition: "chronic-diarrhea",
+        kind: "memory",
+        stem: "Once culprit drugs are stopped, which drug treats microscopic colitis?",
+        options: ["Budesonide", "Mesalazine", "Oral vancomycin", "Cholestyramine", "Infliximab"],
+        answer: 0,
+        explanation: `<p><strong>Microscopic colitis is treated by stopping culprit drugs, then giving budesonide for 6–8 weeks.</strong> The culprits are NSAIDs, PPIs, SSRIs, and statins, along with smoking.</p>
+<p>Budesonide is a corticosteroid that acts on the gut lining, with fewer systemic effects than prednisolone.</p>`,
+        notes: {
+            1: "Mesalazine treats ulcerative colitis, which has visible inflammation and bleeding.",
+            2: "Oral vancomycin treats C. difficile.",
+            3: "Cholestyramine treats bile acid diarrhea.",
+            4: "Infliximab treats moderate to severe IBD.",
+        },
+        info: "Budesonide having fewer systemic effects than prednisolone is standard pharmacology rather than page content.",
+    },
+    {
+        id: "chr-hyperthyroid",
+        condition: "chronic-diarrhea",
+        kind: "memory",
+        stem: "A 34-year-old woman has 2 months of frequent loose stools, with tremor, heat intolerance, palpitations, and weight loss despite a good appetite. Which test is most likely to show the cause?",
+        options: ["TFTs", "Fecal calprotectin", "Urine 5-HIAA", "Hydrogen breath test", "Fecal elastase"],
+        answer: 0,
+        explanation: `<p><strong>Tremor, heat intolerance, palpitations, and weight loss point to hyperthyroidism, a motility cause of chronic diarrhea,</strong> so TFTs show the cause.</p>
+<p>Thyroid hormone speeds gut transit, leaving too little time to absorb water, so the stools are frequent and loose. Treating the hyperthyroidism settles them, and TFTs are part of the initial tests for chronic diarrhea.</p>`,
+        notes: {
+            1: "Calprotectin looks for inflammatory diarrhea, which her symptoms do not suggest.",
+            2: "Urine 5-HIAA looks for carcinoid syndrome, with flushing and wheezing.",
+            3: "The hydrogen breath test looks for lactose intolerance, with symptoms after dairy.",
+            4: "Fecal elastase looks for EPI, with pale, greasy stools.",
+        },
+    },
+    {
+        id: "chr-melanosis-cause",
+        condition: "chronic-diarrhea",
+        kind: "memory",
+        stem: "Colonoscopy shows dark brown pigmentation throughout the colon, with pigment-laden macrophages on biopsy. Which drug most likely caused it?",
+        options: ["Senna", "Lactulose", "Magnesium citrate", "Polyethylene glycol", "Loperamide"],
+        answer: 0,
+        explanation: `<p><strong>Melanosis coli follows long-term use of anthraquinone laxatives such as senna.</strong> They cause colonic cells to die, and macrophages that take up the debris collect pigment in the mucosa.</p>
+<p>It points to hidden stimulant laxative use in secretory diarrhea, and it fades once the laxatives stop.</p>`,
+        notes: {
+            1: "Lactulose is an osmotic laxative and does not pigment the colon.",
+            2: "Magnesium citrate is an osmotic laxative and does not pigment the colon.",
+            3: "PEG is an osmotic laxative and does not pigment the colon.",
+            4: "Loperamide slows the bowel and does not cause melanosis coli.",
+        },
+    },
+    {
+        id: "chr-antacid",
+        condition: "chronic-diarrhea",
+        kind: "memory",
+        stem: "A 70-year-old man takes a magnesium antacid several times a day and has chronic watery diarrhea. What type of diarrhea is this?",
+        options: ["Osmotic", "Secretory", "Inflammatory", "Motility", "Fatty"],
+        answer: 0,
+        explanation: `<p><strong>Magnesium is poorly absorbed, so it stays in the lumen and pulls water in: an osmotic diarrhea.</strong> Magnesium antacids act like the osmotic laxative magnesium citrate.</p>
+<p>The stool osmotic gap is over 75 mOsm/kg, the diarrhea stops with fasting, and stopping the antacid cures it.</p>`,
+        notes: {
+            1: "Secretory diarrhea follows hormones, stimulant laxatives, or bile salts, with a low gap.",
+            2: "Inflammatory diarrhea needs mucosal damage, with blood or a high calprotectin.",
+            3: "Motility diarrhea follows fast transit, as in hyperthyroidism.",
+            4: "Fatty diarrhea follows malabsorption or maldigestion of fat.",
+        },
+    },
+    {
+        id: "chr-alarm",
+        condition: "chronic-diarrhea",
+        kind: "memory",
+        stem: "In a patient with chronic diarrhea, which feature is an alarm feature calling for colonoscopy?",
+        options: ["Diarrhea that wakes the patient at night", "Bloating after large meals", "Pain relieved by defecation", "Stools that vary from loose to hard within a week", "Symptoms worse with stress"],
+        answer: 0,
+        explanation: `<p><strong>Nocturnal diarrhea is an alarm feature,</strong> because it suggests an organic cause, secretory or inflammatory, rather than IBS.</p>
+<p>The alarm features are onset after 50, nocturnal symptoms, weight loss, fever, iron deficiency anemia, high CRP or calprotectin, a positive FOBT, and a family history of IBD or colorectal cancer. They call for colonoscopy with biopsies.</p>`,
+        notes: {
+            1: "Bloating after meals is common in IBS and lactose intolerance and is not an alarm feature.",
+            2: "Pain relieved by defecation is typical of IBS.",
+            3: "Alternating stool form is typical of IBS.",
+            4: "Stress worsening symptoms is typical of IBS.",
+        },
+    },
+
+    /* --- Reasoning --- */
+    {
+        id: "dia-fasting",
+        condition: "chronic-diarrhea",
+        kind: "reasoning",
+        stem: "A patient with chronic watery diarrhea is admitted and kept fasting for 48 hours, and the diarrhea stops. What does this suggest?",
+        options: ["An osmotic cause", "A secretory cause", "A vipoma", "Carcinoid syndrome", "Use of a stimulant laxative"],
+        answer: 0,
+        explanation: `<p><strong>Osmotic diarrhea needs something unabsorbed in the lumen, so it stops when the patient stops eating it.</strong> Without lactose or an osmotic laxative, there is nothing to hold water in the bowel. Fatty diarrhea also stops with fasting.</p>
+<p>Secretory diarrhea comes from channel stimulation by hormones, stimulant laxatives, or bile salts, so it continues during fasting. The stool osmotic gap makes the same distinction: under 50 mOsm/kg is secretory, and over 75 is osmotic.</p>`,
+        notes: {
+            1: "Secretory diarrhea continues during fasting, because channel stimulation does not depend on food.",
+            2: "A vipoma causes secretory diarrhea, which persists while fasting.",
+            3: "Carcinoid syndrome causes secretory diarrhea through serotonin, which persists while fasting.",
+            4: "Stimulant laxatives cause secretory diarrhea; osmotic laxatives would fit, if taken secretly.",
+        },
+    },
+    {
+        id: "dia-carcinoid",
+        condition: "chronic-diarrhea",
+        kind: "reasoning",
+        stem: "A 59-year-old man with carcinoid syndrome from liver metastases develops a rash on sun-exposed skin, worsening diarrhea, and confusion. What explains these new features?",
         options: ["Tryptophan is diverted to serotonin, causing niacin deficiency", "Serotonin damages the skin directly, causing a photosensitive rash", "Liver metastases block the absorption of fat-soluble vitamins", "The tumor secretes VIP, causing hypokalemia", "Octreotide treatment has caused a drug rash"],
         answer: 0,
         explanation: `<p><strong>The tumor uses so much tryptophan to make serotonin that too little is left to make niacin,</strong> causing pellagra: dermatitis on sun-exposed skin, diarrhea, and dementia.</p>
-<p>Carcinoid syndrome needs liver metastases because the liver normally breaks down serotonin from gut tumors before it reaches the systemic circulation. Once tumor drains directly into the hepatic veins, serotonin causes flushing, wheezing, and tricuspid valve disease. It is diagnosed with urine 5-HIAA and treated with octreotide or lanreotide.</p>`,
+<p>Carcinoid syndrome needs liver metastases because the liver normally breaks down serotonin from gut tumors. Once tumor in the liver releases serotonin directly into the circulation, it causes flushing, wheezing, and right-sided heart valve disease.</p>`,
         notes: {
             1: "Serotonin causes flushing, not a photosensitive rash; the rash is from niacin deficiency.",
             2: "Liver metastases do not block fat-soluble vitamin absorption; the problem is tryptophan use.",
             3: "VIP comes from a vipoma and causes WDHA, not pellagra.",
-            4: "Octreotide treats carcinoid syndrome; the triad of rash, diarrhea, and confusion is pellagra.",
+            4: "Octreotide treats carcinoid syndrome; the rash, diarrhea, and confusion are pellagra.",
         },
-        info: "Hepatic breakdown of serotonin as the reason liver metastases are needed is standard teaching; the page lists liver metastases as part of carcinoid syndrome.",
+    },
+    {
+        id: "chr-ileal-extent",
+        condition: "chronic-diarrhea",
+        kind: "reasoning",
+        stem: "Why does cholestyramine help diarrhea after a short terminal ileal resection but not after an extensive one?",
+        options: ["After an extensive resection the bile salt pool is depleted, so fat is malabsorbed", "Cholestyramine is absorbed by the shortened bowel after an extensive resection, so it never reaches the colon", "An extensive resection removes the colon, where cholestyramine acts", "A short resection causes osmotic diarrhea, which cholestyramine treats", "Bile salts are not involved after either resection"],
+        answer: 0,
+        explanation: `<p><strong>After a short resection, the liver keeps up with the bile salts lost, and the extra bile salts reaching the colon stimulate Cl− secretion:</strong> a secretory diarrhea that cholestyramine treats by binding them.</p>
+<p>After an extensive resection, so much is lost that the bile salt pool is depleted. Too little reaches the duodenum to digest fat, so the diarrhea is fatty, and binding what is left with cholestyramine does not help.</p>`,
+        notes: {
+            1: "Cholestyramine is not absorbed; it stays in the lumen and binds bile salts.",
+            2: "An ileal resection does not remove the colon.",
+            3: "Bile acid diarrhea after a short resection is secretory, not osmotic.",
+            4: "Bile salts drive the diarrhea in both: excess in the colon after a short resection, deficiency after an extensive one.",
+        },
+        info: "The liver compensating for bile salt loss after a short resection is standard teaching; the page gives the outcome.",
+    },
+    {
+        id: "chr-bile-mech",
+        condition: "chronic-diarrhea",
+        kind: "reasoning",
+        stem: "How does a limited terminal ileal resection for Crohn disease cause watery diarrhea?",
+        options: ["Bile salts not absorbed in the ileum stimulate Cl− secretion in the colon", "Loss of the ileum removes the lactase needed for dairy, leaving lactose unabsorbed in the colon", "Removing the ileum speeds transit through the stomach", "The resection exposes the colon to stomach acid", "Bile salts form gallstones that block the bowel"],
+        answer: 0,
+        explanation: `<p><strong>The terminal ileum reabsorbs bile salts. After a limited resection or disease, they pass on to the colon, where they stimulate chloride secretion,</strong> causing a secretory diarrhea.</p>
+<p>The same happens after cholecystectomy. Cholestyramine binds bile salts in the lumen and treats it, and a response supports the diagnosis.</p>`,
+        notes: {
+            1: "Lactase sits on the brush border throughout the small bowel, and its loss gives an osmotic diarrhea.",
+            2: "The ileum does not control gastric emptying.",
+            3: "Acid is neutralized long before the colon.",
+            4: "Gallstones do not cause this diarrhea.",
+        },
+    },
+    {
+        id: "chr-carcinoid-liver",
+        condition: "chronic-diarrhea",
+        kind: "reasoning",
+        stem: "A small bowel neuroendocrine tumor secretes serotonin, yet causes no flushing or wheezing until it spreads to the liver. Why?",
+        options: ["The liver breaks down serotonin from the gut before it reaches the circulation", "Serotonin is made only by tumor cells in the liver", "Liver metastases release VIP as well as serotonin", "The small bowel tumor stops secreting once it spreads", "Serotonin cannot cross the bowel wall into the blood until liver function has begun to fail"],
+        answer: 0,
+        explanation: `<p><strong>Serotonin from a gut tumor drains through the portal vein to the liver, which breaks it down.</strong> Once tumor sits in the liver, it releases serotonin straight into the hepatic veins and systemic circulation.</p>
+<p>So carcinoid syndrome, with diarrhea, flushing, wheezing, and right-sided heart valve disease, appears with liver metastases. It is confirmed with urine 5-HIAA.</p>`,
+        notes: {
+            1: "The primary tumor makes serotonin; the liver metastases bypass its breakdown.",
+            2: "VIP comes from a vipoma, not a carcinoid tumor.",
+            3: "The primary keeps secreting; its serotonin is broken down in the liver.",
+            4: "Serotonin crosses into portal blood easily; the liver is what removes it.",
+        },
+    },
+    {
+        id: "chr-gastrinoma-mech",
+        condition: "chronic-diarrhea",
+        kind: "reasoning",
+        stem: "Why does a gastrinoma cause diarrhea?",
+        options: ["Acid floods the small bowel, inactivating pancreatic enzymes and bile salts", "Gastrin directly opens chloride channels in the colon, as cholera toxin does in the small bowel", "Gastrin inhibits gastric acid, causing bacterial overgrowth", "The tumor secretes serotonin alongside gastrin", "Ulcers in the stomach bleed into the bowel"],
+        answer: 0,
+        explanation: `<p><strong>Gastrin drives so much acid that it floods the small bowel,</strong> damaging the mucosa and inactivating pancreatic enzymes and bile salts, so digestion fails.</p>
+<p>With refractory peptic ulcers, this is Zollinger-Ellison syndrome. High-dose PPIs control the acid, and resection removes the tumor.</p>`,
+        notes: {
+            1: "The diarrhea comes from the acid, not a direct action of gastrin on colonic channels.",
+            2: "Gastrin stimulates acid; inhibiting acid describes VIP.",
+            3: "Serotonin comes from carcinoid tumors.",
+            4: "Bleeding ulcers cause melena, not chronic diarrhea.",
+        },
+    },
+    {
+        id: "chr-nocturnal",
+        condition: "chronic-diarrhea",
+        kind: "reasoning",
+        stem: "A 45-year-old man thought to have IBS mentions that his diarrhea wakes him at night. Why does this change the workup?",
+        options: ["Nocturnal diarrhea points to an organic secretory or inflammatory cause", "IBS is worse at night, which confirms the diagnosis", "Nocturnal diarrhea is typical of lactose intolerance", "Diarrhea at night means it is osmotic", "It shows that the diarrhea is caused by stress"],
+        answer: 0,
+        explanation: `<p><strong>Diarrhea at night or during a fast suggests a secretory or inflammatory cause, not IBS,</strong> so it is an alarm feature calling for colonoscopy with biopsies.</p>
+<p>Secretory and inflammatory diarrhea carry on whatever the patient eats or does. Osmotic diarrhea and IBS are tied to eating and waking activity, so they usually settle overnight.</p>`,
+        notes: {
+            1: "IBS usually settles overnight, so nocturnal diarrhea argues against it.",
+            2: "Lactose intolerance follows dairy and settles with fasting, including overnight.",
+            3: "Osmotic diarrhea stops when the patient is not eating, as at night.",
+            4: "Stress worsens IBS by day; nocturnal diarrhea points to an organic cause.",
+        },
+        info: "IBS settling overnight is standard teaching; the page lists nocturnal symptoms as an alarm feature that argues against IBS.",
+    },
+    {
+        id: "chr-gap-why",
+        condition: "chronic-diarrhea",
+        kind: "reasoning",
+        stem: "Why does a high stool osmotic gap point to osmotic diarrhea?",
+        options: ["Unabsorbed solutes, not electrolytes, account for much of the stool osmolality", "Secreted salt raises the measured stool sodium and potassium, which widens the gap", "A high gap means blood and mucus are in the stool", "Fast transit concentrates electrolytes in the stool", "A high gap shows the bile salts are reaching the colon"],
+        answer: 0,
+        explanation: `<p><strong>The gap is 290 − 2 × (stool Na+ + stool K+).</strong> It measures the part of stool osmolality not made up of sodium and potassium salts.</p>
+<p>When the gap is high, something else, such as lactose or magnesium, is holding water in the lumen: osmotic diarrhea. When it is low, the stool water is mostly secreted salt: secretory diarrhea, as with bile salts or hormones.</p>`,
+        notes: {
+            1: "More stool sodium and potassium narrows the gap, which points to secretory diarrhea.",
+            2: "Blood and mucus point to inflammatory diarrhea, where the gap is not used.",
+            3: "Motility diarrhea gives a variable gap.",
+            4: "Bile salts cause secretory diarrhea, with a low gap.",
+        },
+    },
+    {
+        id: "chr-biopsy",
+        condition: "chronic-diarrhea",
+        kind: "reasoning",
+        stem: "In an older woman with chronic watery diarrhea, why are colonic biopsies taken even when colonoscopy looks normal?",
+        options: ["Microscopic colitis is seen only under the microscope", "Biopsies are needed to measure the stool osmotic gap", "Normal mucosa rules out IBD, so biopsies look for cancer", "Biopsies are needed to detect C. difficile toxin", "Biopsies show the hormone a vipoma secretes"],
+        answer: 0,
+        explanation: `<p><strong>Microscopic colitis leaves the colon looking normal,</strong> so it is found only on biopsy: a collagen band over 10 µm (collagenous) or 20 or more intraepithelial lymphocytes per 100 cells (lymphocytic).</p>
+<p>It is common in older women with chronic watery, nonbloody diarrhea, often at night, and is linked to NSAIDs, PPIs, SSRIs, statins, and smoking.</p>`,
+        notes: {
+            1: "The osmotic gap uses stool Na+ and K+, not biopsies.",
+            2: "Biopsies here look for microscopic colitis.",
+            3: "C. difficile is tested in liquid stool.",
+            4: "Vipomas are found by serum VIP, not colonic biopsy.",
+        },
+    },
+    {
+        id: "chr-calprotectin",
+        condition: "chronic-diarrhea",
+        kind: "reasoning",
+        stem: "How does fecal calprotectin help separate IBD from IBS?",
+        options: ["It is a neutrophil protein, so it increases with mucosal inflammation", "It measures bile salts reaching the colon", "It shows how fast stool passes through the gut", "It detects blood that cannot be seen", "It is made by colonic bacteria in IBS"],
+        answer: 0,
+        explanation: `<p><strong>Calprotectin is released by neutrophils, so stool levels increase when the mucosa is inflamed,</strong> as in IBD, and stay normal in IBS, which has no inflammation.</p>
+<p>A high calprotectin is an alarm feature that calls for colonoscopy. With ESR and CRP, it separates inflammatory disease from IBS.</p>`,
+        notes: {
+            1: "Bile acid diarrhea is supported by a response to cholestyramine.",
+            2: "Calprotectin does not measure transit.",
+            3: "Hidden blood is detected by FOBT.",
+            4: "Calprotectin comes from neutrophils, not bacteria.",
+        },
+        info: "Calprotectin coming from neutrophils is standard teaching rather than page content.",
+    },
+    {
+        id: "chr-hypokalemia",
+        condition: "chronic-diarrhea",
+        kind: "reasoning",
+        stem: "Why does a secretory diarrhea, such as that of a vipoma or hidden stimulant laxative use, cause hypokalemia?",
+        options: ["Large volumes of stool carry away potassium", "The diarrhea pushes potassium into cells", "The kidney stops excreting potassium", "Secretory diarrhea raises insulin levels", "Potassium is used up making the hormone"],
+        answer: 0,
+        explanation: `<p><strong>Secretory diarrhea produces large volumes of salt-rich stool, and potassium is lost with it.</strong> Hypovolemia adds to the loss, and HCO3− lost in the same stool causes NAGMA.</p>
+<p>That is why the treatment includes K+ replacement with fluids, and why hypokalemia is part of WDHA.</p>`,
+        notes: {
+            1: "The problem is loss in stool, not a shift into cells.",
+            2: "Reduced renal excretion would raise potassium, not lower it.",
+            3: "Insulin is not the mechanism.",
+            4: "Hormone synthesis does not use up potassium.",
+        },
+        info: "Renal potassium loss from hypovolemia adding to stool loss is standard physiology rather than page content.",
+    },
+
+    {
+        id: "chr-loperamide",
+        condition: "chronic-diarrhea",
+        kind: "reasoning",
+        stem: "In chronic diarrhea, why is loperamide kept for non-inflammatory diarrhea once its cause is known?",
+        options: ["It can hide a treatable cause, and slowing an inflamed colon risks toxic megacolon", "It worsens osmotic diarrhea by drawing water into the lumen", "It is ineffective in every form of chronic diarrhea", "It raises the stool osmotic gap and confuses the workup", "It causes melanosis coli with long-term use"],
+        answer: 0,
+        explanation: `<p><strong>Loperamide treats the symptom, not the cause.</strong> Used too early, it can hide a vipoma, IBD, or bile acid diarrhea that needs its own treatment, and in inflammatory diarrhea slowing the colon risks toxic megacolon.</p>
+<p>Once the cause is known and is not inflammatory, it is a useful addition to treating the cause, with fluids and K+ replacement for losses.</p>`,
+        notes: {
+            1: "Loperamide slows the bowel and increases absorption; it does not draw water in.",
+            2: "It helps many non-inflammatory causes once they are identified.",
+            3: "Loperamide does not change the stool electrolytes used for the gap.",
+            4: "Melanosis coli follows anthraquinone laxatives such as senna.",
+        },
+        info: "Loperamide hiding a treatable cause is standard teaching; the page gives the rule for when it is used.",
     },
 
     /* --- Analysis --- */
     {
         id: "dia-set-gap-1",
-        condition: "diarrhea",
+        condition: "chronic-diarrhea",
         kind: "analysis",
         set: "dia-gap",
-        passage: `<p>A 34-year-old woman has 5 months of watery, nonbloody diarrhea with bloating and flatulence, 3–4 stools a day, none at night. Fecal WBC and calprotectin are normal, and FOBT is negative. Stool studies:</p>
+        passage: `<p>A 34-year-old woman has 5 months of watery, nonbloody diarrhea with bloating and flatulence, 3–4 stools a day, none at night. Fecal calprotectin is normal, and FOBT is negative. Stool studies:</p>
 <table><thead><tr><th>Stool test</th><th>Result</th></tr></thead><tbody>
 <tr><td>Sodium</td><td>35 mmol/L</td></tr>
 <tr><td>Potassium</td><td>30 mmol/L</td></tr>
-<tr><td>Measured osmolality</td><td>300 mOsm/kg</td></tr>
 </tbody></table>
-<p>The osmotic gap is calculated as 290 − 2 × (sodium + potassium).</p>
+<p>The osmotic gap is 290 − 2 × (stool Na+ + stool K+).</p>
 <p><em>Illustrative data.</em></p>`,
         stem: "What type of chronic diarrhea does this show?",
-        options: ["Osmotic", "Secretory", "Inflammatory", "Non-inflammatory acute", "Cannot be classified without colonoscopy"],
+        options: ["Osmotic", "Secretory", "Inflammatory", "Acute non-inflammatory", "Cannot be classified without colonoscopy"],
         answer: 0,
         explanation: `<p><strong>The osmotic gap is 290 − 2 × (35 + 30) = 160 mOsm/kg, well over 75, so the diarrhea is osmotic.</strong></p>
-<p>The gap measures the solutes in stool that are not sodium and potassium. A large gap means something unabsorbed, such as a sugar or magnesium, is holding water in the lumen. In secretory diarrhea, the stool water is mostly secreted salt, so sodium and potassium account for nearly all the osmolality and the gap is under 50.</p>
-<p>Normal fecal WBC, calprotectin, and FOBT already argued against an inflammatory cause.</p>`,
+<p>A large gap means something unabsorbed, such as a sugar or magnesium, is holding water in the lumen. In secretory diarrhea, the stool water is mostly secreted salt, so sodium and potassium account for nearly all the osmolality and the gap is under 50.</p>
+<p>Normal calprotectin and FOBT, and no nocturnal stools, already argued against an inflammatory cause.</p>`,
         notes: {
             1: "Secretory diarrhea has a gap under 50 mOsm/kg; hers is 160.",
-            2: "Inflammatory diarrhea would raise fecal WBC and calprotectin, which are normal.",
+            2: "Inflammatory diarrhea would raise calprotectin, which is normal.",
             3: "After 5 months, this is chronic diarrhea, not acute.",
-            4: "The stool tests classify it already; colonoscopy is for inflammatory diarrhea.",
+            4: "The stool tests classify it already; colonoscopy is for alarm features or inflammatory diarrhea.",
         },
-        info: "The formula for the stool osmotic gap is standard teaching; the page gives the cutoffs (under 50 secretory, over 75 osmotic).",
     },
     {
         id: "dia-set-gap-2",
-        condition: "diarrhea",
+        condition: "chronic-diarrhea",
         kind: "analysis",
         set: "dia-gap",
         stem: "Her symptoms are worst after milky coffee and ice cream and settle on days she eats little. Which cause best fits all the findings?",
         options: ["Lactose intolerance", "Vipoma", "Microscopic colitis", "Stimulant laxative use", "Carcinoid syndrome"],
         answer: 0,
-        explanation: `<p><strong>A high osmotic gap, symptoms after dairy, and improvement with less food point to lactose intolerance,</strong> a form of maldigestion.</p>
-<p>Without enough lactase, lactose stays in the lumen and pulls water in by osmosis. Colonic bacteria then ferment it into gas, causing bloating and flatulence. Because the cause is something she eats, it settles when she eats less. The other osmotic causes on the page are malabsorption (celiac disease, Whipple disease, tropical sprue), other maldigestion (EPI, bile salt deficiency), and osmotic laxatives.</p>`,
+        explanation: `<p><strong>A high osmotic gap, symptoms after dairy, and improvement with less food point to lactose intolerance.</strong></p>
+<p>Without enough lactase, lactose stays in the lumen and pulls water in. Colonic bacteria then ferment it into gas, causing bloating and flatulence. Because the cause is something she eats, it settles when she eats less. A hydrogen breath test confirms it, and a lactose-free diet or lactase treats it.</p>`,
         notes: {
             1: "A vipoma causes high-volume secretory diarrhea with a low gap that persists during fasting.",
-            2: "Microscopic colitis is an inflammatory cause, often nocturnal, in older women, with a low gap.",
+            2: "Microscopic colitis is an inflammatory cause, often at night, in older women.",
             3: "Stimulant laxatives cause secretory diarrhea with a low gap.",
             4: "Carcinoid syndrome causes secretory diarrhea with flushing and wheezing.",
         },
     },
     {
         id: "dia-melanosis",
-        condition: "diarrhea",
+        condition: "chronic-diarrhea",
         kind: "analysis",
         stem: `<p>A 52-year-old woman has 1 year of watery diarrhea, 6–8 stools a day, continuing overnight and during a 48-hour fast. She denies taking any medicines. Her potassium is 2.9 mmol/L.</p>
 <table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody>
 <tr><td>Stool sodium + potassium</td><td>140 mmol/L</td></tr>
-<tr><td>Stool osmolality</td><td>295 mOsm/kg</td></tr>
 <tr><td>Fecal calprotectin</td><td>Normal</td></tr>
 <tr><td>VIP, gastrin, urine 5-HIAA</td><td>Normal</td></tr>
 <tr><td>Colonoscopy</td><td>Dark brown pigmentation throughout the colon; biopsies show pigment-laden macrophages</td></tr>
@@ -4285,31 +5044,30 @@ const QUIZ_QUESTIONS = [
 <p>What is the most likely cause?</p>`,
         options: ["Covert use of a stimulant laxative such as senna", "Covert use of magnesium citrate", "A vipoma that the VIP level has missed", "Microscopic colitis", "Lactose intolerance"],
         answer: 0,
-        explanation: `<p><strong>This is a secretory diarrhea with normal hormone levels and a pigmented colon: covert stimulant laxative use.</strong></p>
+        explanation: `<p><strong>This is a secretory diarrhea with normal hormone levels and a pigmented colon: hidden stimulant laxative use.</strong></p>
 <ul>
-<li><strong>Secretory:</strong> the gap is 290 − 2 × 140 = 10 mOsm/kg, and diarrhea continues during fasting and overnight.</li>
+<li><strong>Secretory:</strong> the gap is 290 − 2 × 140 = 10 mOsm/kg, and diarrhea continues during fasting and overnight, with hypokalemia.</li>
 <li><strong>Not hormonal:</strong> VIP, gastrin, and urine 5-HIAA are normal.</li>
-<li><strong>Laxative:</strong> stimulant laxatives cause channel stimulation, and long-term senna leaves brown pigment in macrophages of the colon (melanosis coli).</li>
+<li><strong>Laxative:</strong> anthraquinones such as senna leave pigment-laden macrophages in the colon (melanosis coli), which fade once they stop.</li>
 </ul>
-<p>Laxative use is part of the workup of non-inflammatory chronic diarrhea for this reason.</p>`,
+<p>A laxative screen of stool or urine would confirm it.</p>`,
         notes: {
             1: "Magnesium citrate is an osmotic laxative, which would give a gap over 75 and stop during fasting.",
-            2: "A vipoma would raise VIP and does not pigment the colon.",
+            2: "A vipoma would increase VIP and does not pigment the colon.",
             3: "Microscopic colitis shows a collagen band or intraepithelial lymphocytes, not pigment-laden macrophages.",
             4: "Lactose intolerance is osmotic, with a high gap, and settles with fasting.",
         },
-        info: "Melanosis coli from anthraquinone laxatives is standard pathology and is not on the page or in its references.",
     },
     {
         id: "dia-set-micro-1",
-        condition: "diarrhea",
+        condition: "chronic-diarrhea",
         kind: "analysis",
         set: "dia-micro",
         passage: `<p>A 69-year-old woman has 4 months of watery, nonbloody diarrhea, 6–7 stools a day, including at night. She takes naproxen for knee osteoarthritis, omeprazole, sertraline, and atorvastatin, and she smokes. She has lost 2 kg.</p>
 <table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody>
-<tr><td>FBC, BMP</td><td>Normal</td></tr>
-<tr><td>Fecal calprotectin</td><td>Mildly raised</td></tr>
-<tr><td>Stool culture, O&amp;P, C. diff</td><td>Negative</td></tr>
+<tr><td>FBC, BMP, TFTs</td><td>Normal</td></tr>
+<tr><td>Fecal calprotectin</td><td>Mildly increased</td></tr>
+<tr><td>Stool culture, O&amp;P, C. difficile</td><td>Negative</td></tr>
 <tr><td>Colonoscopy</td><td>Normal-looking mucosa throughout</td></tr>
 <tr><td>Random colonic biopsies</td><td>28 intraepithelial lymphocytes per 100 epithelial cells; collagen band 6 µm</td></tr>
 </tbody></table>
@@ -4318,36 +5076,68 @@ const QUIZ_QUESTIONS = [
         options: ["Lymphocytic colitis", "Collagenous colitis", "Mild ulcerative colitis", "IBS with diarrhea", "Celiac disease with villous atrophy"],
         answer: 0,
         explanation: `<p><strong>20 or more intraepithelial lymphocytes per 100 cells, with a normal collagen band, is lymphocytic colitis,</strong> a form of microscopic colitis.</p>
-<p>Everything fits: an older woman, chronic watery nonbloody diarrhea at 4–9 stools a day, nocturnal stools, and four culprit drugs (an NSAID, a PPI, an SSRI, and a statin) plus smoking. The mucosa looks normal, which is why microscopic colitis needs biopsies to be seen.</p>`,
+<p>Everything fits: an older woman, chronic watery nonbloody diarrhea at 4–9 stools a day, nocturnal stools, and four culprit drugs (an NSAID, a PPI, an SSRI, and a statin) plus smoking. The mucosa looks normal, which is why microscopic colitis needs biopsies.</p>`,
         notes: {
             1: "Collagenous colitis needs a collagen band over 10 µm; hers is 6 µm.",
             2: "Ulcerative colitis shows visible continuous inflammation and bloody diarrhea.",
-            3: "Nocturnal diarrhea, weight loss, raised calprotectin, and onset after 50 are alarm features, and her biopsies show a cause.",
-            4: "Celiac disease damages the small bowel villi; her colonic biopsies explain the diarrhea, and she has culprit drugs.",
+            3: "Nocturnal diarrhea, weight loss, increased calprotectin, and onset after 50 are alarm features, and her biopsies show a cause.",
+            4: "Celiac disease damages the small bowel villi; her colonic biopsies explain the diarrhea.",
         },
     },
     {
         id: "dia-set-micro-2",
-        condition: "diarrhea",
+        condition: "chronic-diarrhea",
         kind: "analysis",
         set: "dia-micro",
         stem: "Which management plan is most appropriate?",
         options: ["Stop culprit drugs where possible; budesonide for 6–8 weeks", "Oral vancomycin for 10 days, with fidaxomicin if symptoms recur", "Mesalazine and a course of IV steroids", "Loperamide alone; continue all medicines", "Colectomy if symptoms persist past 3 months"],
         answer: 0,
-        explanation: `<p><strong>Microscopic colitis is treated by stopping culprit drugs and giving budesonide for 6–8 weeks.</strong></p>
+        explanation: `<p><strong>Microscopic colitis is treated by stopping culprit drugs, then giving budesonide for 6–8 weeks.</strong></p>
 <ul>
 <li><strong>Culprit drugs:</strong> naproxen and sertraline can often be replaced, and the need for omeprazole and atorvastatin reviewed; stopping smoking helps too.</li>
-<li><strong>Budesonide:</strong> a steroid largely broken down by the liver on first pass, so it acts on the gut lining with fewer systemic effects.</li>
+<li><strong>Budesonide:</strong> a corticosteroid that acts on the gut lining with fewer systemic effects.</li>
 </ul>
 <p>Stopping drugs alone may be enough for some patients, which is why it comes first.</p>`,
         notes: {
-            1: "Oral vancomycin treats C. difficile, and her C. diff test is negative.",
+            1: "Oral vancomycin treats C. difficile, and her test is negative.",
             2: "IV steroids and mesalazine fit severe ulcerative colitis, not microscopic colitis.",
             3: "Continuing the culprit drugs leaves the cause in place.",
             4: "Microscopic colitis is treated medically; surgery has no routine role.",
         },
-        info: "The first-pass metabolism of budesonide is standard pharmacology rather than page content.",
     },
+    {
+        id: "chr-bile-case",
+        condition: "chronic-diarrhea",
+        kind: "analysis",
+        stem: `<p>A 38-year-old man with Crohn disease had 40 cm of terminal ileum resected a year ago and has been in remission since. He now has 5 watery stools a day, without blood, weight loss, or night-time stools.</p>
+<table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody>
+<tr><td>Fecal calprotectin</td><td>Normal</td></tr>
+<tr><td>Stool Na+ + K+</td><td>130 mmol/L</td></tr>
+<tr><td>Fecal fat</td><td>Normal</td></tr>
+<tr><td>Stool tests for infection</td><td>Negative</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p>
+<p>Which treatment is most likely to help?</p>`,
+        options: ["Cholestyramine", "Increase his Crohn disease therapy", "Pancreatic enzyme replacement", "A lactose-free diet", "Octreotide"],
+        answer: 0,
+        explanation: `<p><strong>This is bile acid diarrhea after a limited ileal resection, treated with cholestyramine.</strong></p>
+<ul>
+<li><strong>Secretory:</strong> the gap is 290 − 2 × 130 = 30 mOsm/kg.</li>
+<li><strong>Not a flare:</strong> calprotectin is normal, with no blood or weight loss.</li>
+<li><strong>Not fatty:</strong> fecal fat is normal, so the bile salt pool is still enough to digest fat, as expected after a limited resection.</li>
+</ul>
+<p>Bile salts that the missing ileum would have reabsorbed reach the colon and stimulate Cl− secretion. Cholestyramine binds them in the lumen.</p>`,
+        notes: {
+            1: "A normal calprotectin and no blood argue against active Crohn disease.",
+            2: "Pancreatic enzymes treat EPI, a cause of fatty diarrhea, and his fecal fat is normal.",
+            3: "Lactose intolerance is osmotic, with a high gap; his gap is low.",
+            4: "Octreotide treats hormonal secretory diarrhea, and he has a clear bile salt cause.",
+        },
+    },
+
+    /* --- Reasoning --- */
+
+    /* --- Analysis --- */
 
     /* ===== Intestinal ischemia ===== */
 
@@ -13383,5 +14173,4 @@ const QUIZ_QUESTIONS = [
     },
 
     /* ===== Reading liver function tests ===== */
-
 ];

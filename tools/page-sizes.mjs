@@ -13,8 +13,12 @@ import { pageWords, pageArticles, quizGoal, WORDS_PER_QUESTION, CHANGE_AT, MIN_Q
 const SYSTEMS = [
     { name: "GI", folder: "gi", pages: [["index.html", "questions.js"], ["physiology.html", "physiology-questions.js"]] },
     { name: "Neurology", folder: "neuro", pages: [["index.html", "questions.js"], ["physiology.html", "physiology-questions.js"]] },
+    { name: "Foundations", folder: "foundations", pages: [["index.html", "questions.js"]] },
+    { name: "Musculoskeletal", folder: "msk", pages: [["index.html", "questions.js"], ["physiology.html", "physiology-questions.js"]] },
+    { name: "Respiratory", folder: "resp", pages: [["index.html", "questions.js"], ["physiology.html", "physiology-questions.js"]] },
+    { name: "Cardiovascular", folder: "cardio", pages: [["index.html", "questions.js"], ["physiology.html", "physiology-questions.js"]] },
     { name: "Renal", folder: "renal", pages: [["index.html", "questions.js"], ["physiology.html", "physiology-questions.js"]] },
-    { name: "Endocrine", folder: "endocrine", pages: [["index.html", "questions.js"]] },
+    { name: "Endocrine", folder: "endocrine", pages: [["index.html", "questions.js"], ["physiology.html", "physiology-questions.js"]] },
 ];
 
 const words = (html) => {

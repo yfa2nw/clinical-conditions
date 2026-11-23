@@ -1528,4 +1528,1851 @@ const QUIZ_QUESTIONS = [
         },
     },
 
+    /* ===== Prerenal AKI ===== */
+
+    /* --- Memory --- */
+    {
+        id: "pre-intrarenal",
+        condition: "prerenal-aki",
+        kind: "memory",
+        stem: "Which of these causes AKI by injuring the kidney itself, rather than by decreasing its perfusion?",
+        options: ["Gentamicin", "Ibuprofen", "Lisinopril", "Upper GI bleeding", "Cirrhosis with ascites"],
+        answer: 0,
+        explanation: `<p><strong>Aminoglycosides such as gentamicin are toxic to tubular cells, causing ATN, an intrarenal AKI.</strong> The kidney itself is damaged, so restoring perfusion does not reverse it.</p>
+<p>Prerenal causes lower perfusion while the kidney stays healthy: too little blood volume, a failing heart or dilated vessels, or drugs and diseases that act on the kidney's own vessels. Because the tubules still work, the urine is concentrated and low in Na+, and creatinine falls once perfusion returns.</p>`,
+        notes: {
+            1: "NSAIDs remove the prostaglandins that dilate the afferent arteriole, a prerenal cause (6).",
+            2: "ACEi dilate the efferent arteriole and lower glomerular pressure, a prerenal cause (7).",
+            3: "Bleeding lowers blood volume, a prerenal cause (1).",
+            4: "Cirrhosis causes hepatorenal syndrome through intense renal vasoconstriction, a prerenal cause (5).",
+        },
+    },
+    {
+        id: "pre-angiotensin",
+        condition: "prerenal-aki",
+        kind: "memory",
+        stem: "As renal perfusion falls, which hormone constricts the efferent arteriole to hold GFR up?",
+        options: ["Angiotensin II", "Prostaglandin E2", "ADH", "Aldosterone", "Atrial natriuretic peptide"],
+        answer: 0,
+        explanation: `<p><strong>Angiotensin II constricts the efferent arteriole,</strong> raising glomerular pressure so that GFR holds up even as flow falls. Prostaglandins dilate the afferent arteriole at the same time.</p>
+<p>This autoregulation works until systolic pressure falls below about 80 mmHg. That is why drugs that remove either arm, ACEi and ARBs on the efferent side and NSAIDs on the afferent side, can tip a patient into prerenal AKI.</p>`,
+        notes: {
+            1: "Prostaglandins dilate the afferent arteriole, the other arm of autoregulation.",
+            2: "ADH concentrates the urine by water reabsorption; it does not set glomerular pressure.",
+            3: "Aldosterone increases Na+ reabsorption in the collecting duct, not efferent tone.",
+            4: "ANP is released when the atria stretch, in volume overload, and promotes Na+ excretion.",
+        },
+    },
+    {
+        id: "pre-nsaids",
+        condition: "prerenal-aki",
+        kind: "memory",
+        stem: "Which drug class removes the mechanism that dilates the afferent arteriole when renal perfusion falls?",
+        options: ["NSAIDs", "ACEi", "ARBs", "Loop diuretics", "Calcium channel blockers"],
+        answer: 0,
+        explanation: `<p><strong>NSAIDs block prostaglandin synthesis, and prostaglandins dilate the afferent arteriole</strong> to keep blood flowing into the glomerulus when perfusion falls.</p>
+<p>In a healthy, well-filled patient this barely matters, but in hypovolemia, HF, or cirrhosis the kidney depends on it, so NSAIDs can cause prerenal AKI (6). They are stopped as part of treatment.</p>`,
+        notes: {
+            1: "ACEi remove angiotensin II at the efferent arteriole, lowering glomerular pressure from the other side (7).",
+            2: "ARBs act like ACEi, on the efferent arteriole (7).",
+            3: "Loop diuretics cause prerenal AKI by overdiuresis and fluid loss (1), not afferent constriction.",
+            4: "Calcium channel blockers dilate the afferent arteriole rather than constricting it.",
+        },
+        info: "Calcium channel blockers dilating the afferent arteriole is standard pharmacology rather than page content.",
+    },
+    {
+        id: "pre-urine",
+        condition: "prerenal-aki",
+        kind: "memory",
+        stem: "Which urine finding fits prerenal AKI?",
+        options: ["FENa below 1%", "Muddy brown granular casts", "Urine Na+ above 40 mmol/L", "Urine osmolality below 450 mOsm/kg", "RBC casts"],
+        answer: 0,
+        explanation: `<p><strong>In prerenal AKI the tubules still work and hold on to Na+, so FENa is below 1%.</strong> The other findings follow from the same idea:</p>
+<ul>
+<li>Urine Na+ below 20 mmol/L.</li>
+<li>Urine osmolality above 500 mOsm/kg.</li>
+<li>UCR above 100.</li>
+<li>Bland urine, or hyaline casts.</li>
+</ul>
+<p>With diuretics, FEUrea below 35% is used instead.</p>`,
+        notes: {
+            1: "Muddy brown granular casts mean tubular cells are dying, as in ATN.",
+            2: "A high urine Na+ means the tubules can no longer reabsorb it, as in ATN.",
+            3: "Dilute urine means the tubules can no longer concentrate, as in ATN; prerenal urine is above 500.",
+            4: "RBC casts point to glomerulonephritis, an intrarenal cause.",
+        },
+    },
+    {
+        id: "pre-rbc-casts",
+        condition: "prerenal-aki",
+        kind: "memory",
+        stem: "A patient with low skin turgor, tachycardia, and oliguria is thought to have AKI. Which finding would point away from a prerenal cause?",
+        options: ["RBC casts", "FENa of 0.7%", "A postural fall in blood pressure", "Hyaline casts", "A UCR of 130"],
+        answer: 0,
+        explanation: `<p><strong>RBC casts form when red cells leak through damaged glomeruli and set in the tubules,</strong> so they point to glomerulonephritis, an intrarenal cause, rather than hypoperfusion.</p>
+<p>Prerenal AKI has bland urine, or hyaline casts, with signs of the cause, such as hypovolemia here. Volume depletion and glomerulonephritis can coexist, so RBC casts call for the glomerular workup even when the patient is dry.</p>`,
+        notes: {
+            1: "A FENa below 1% fits prerenal AKI, with tubules that still hold on to Na+.",
+            2: "A postural fall in blood pressure is a sign of hypovolemia, a prerenal cause.",
+            3: "Hyaline casts are found in concentrated, bland urine and fit prerenal AKI.",
+            4: "A UCR above 100 fits prerenal AKI, as urea is reabsorbed with Na+ and water.",
+        },
+    },
+    {
+        id: "pre-threshold",
+        condition: "prerenal-aki",
+        kind: "memory",
+        stem: "Below about which systolic blood pressure does renal autoregulation stop holding GFR steady?",
+        options: ["80 mmHg", "40 mmHg", "100 mmHg", "120 mmHg", "60 mmHg diastolic"],
+        answer: 0,
+        explanation: `<p><strong>Autoregulation holds GFR until systolic pressure falls below about 80 mmHg.</strong> Above it, angiotensin II constricting the efferent arteriole and prostaglandins dilating the afferent keep glomerular pressure up.</p>
+<p>Below it, further angiotensin II and sympathetic drive constrict the afferent arteriole too, and GFR falls. In CKD, autoregulation is weaker, so GFR falls with a smaller drop in perfusion.</p>`,
+        notes: {
+            1: "Autoregulation fails well before 40 mmHg.",
+            2: "Autoregulation still works at 100 mmHg.",
+            3: "120 mmHg is a normal systolic pressure.",
+            4: "The threshold is given as a systolic pressure.",
+        },
+    },
+    {
+        id: "pre-best-test",
+        condition: "prerenal-aki",
+        kind: "memory",
+        stem: "Which finding best confirms that an AKI was prerenal?",
+        options: ["Creatinine returning toward baseline within 24–72 hours of restoring volume", "A FENa below 1% on admission", "Hyaline casts on urinalysis", "A UCR above 100", "Urine osmolality above 500 mOsm/kg"],
+        answer: 0,
+        explanation: `<p><strong>The best test is the response: creatinine returns toward baseline within 24–72 hours of restoring volume,</strong> because the kidney itself was healthy.</p>
+<p>The urine indices support the diagnosis but can mislead. FENa can be low despite intrinsic disease in HF, cirrhosis, contrast-associated AKI, and glomerulonephritis, and falsely high with diuretics.</p>`,
+        notes: {
+            1: "A low FENa supports it but also occurs in contrast-associated AKI and glomerulonephritis.",
+            2: "Hyaline casts are consistent with it but are not specific.",
+            3: "A high UCR supports it but can be raised by bleeding into the gut or corticosteroids.",
+            4: "Concentrated urine supports it but does not prove the kidney will recover.",
+        },
+        info: "A high UCR from upper GI bleeding or corticosteroids is standard teaching rather than page content.",
+    },
+    {
+        id: "pre-acs",
+        condition: "prerenal-aki",
+        kind: "memory",
+        stem: "After a large abdominal operation, a ventilated patient has a tense, distended abdomen and falling urine output. Which measurement best tests for the cause?",
+        options: ["Bladder pressure", "Central venous pressure", "Urine osmolality", "Renal artery Doppler", "Serum lactate"],
+        answer: 0,
+        explanation: `<p><strong>Bladder pressure measures intra-abdominal pressure,</strong> the test for abdominal compartment syndrome (9). Increased pressure compresses the renal veins and kidneys and lowers renal perfusion.</p>
+<p>It is treated by lowering the intra-abdominal pressure, by surgical decompression when severe.</p>`,
+        notes: {
+            1: "Central venous pressure helps assess volume, but does not show increased abdominal pressure.",
+            2: "Urine osmolality shows the kidney is concentrating, not why perfusion fell.",
+            3: "Renal artery Doppler looks for renal artery stenosis (8).",
+            4: "Lactate is used in suspected sepsis (3).",
+        },
+    },
+    {
+        id: "pre-acei",
+        condition: "prerenal-aki",
+        kind: "memory",
+        stem: "Which drugs lower glomerular pressure by removing the angiotensin II that constricts the efferent arteriole?",
+        options: ["ACEi and ARBs", "NSAIDs", "Calcineurin inhibitors", "Iodinated contrast", "Amphotericin B"],
+        answer: 0,
+        explanation: `<p><strong>ACEi and ARBs remove the effect of angiotensin II, so the efferent arteriole dilates and glomerular pressure falls</strong> (7).</p>
+<p>This matters most when perfusion is already low, as in hypovolemia or renal artery stenosis. They are held until volume and creatinine recover.</p>`,
+        notes: {
+            1: "NSAIDs act on the afferent arteriole, removing the prostaglandins that dilate it (6).",
+            2: "Calcineurin inhibitors constrict the afferent arteriole (6).",
+            3: "Iodinated contrast constricts the afferent arteriole (6).",
+            4: "Amphotericin B constricts the afferent arteriole (6).",
+        },
+    },
+    {
+        id: "pre-safe",
+        condition: "prerenal-aki",
+        kind: "memory",
+        stem: "In prerenal AKI from fluid loss, how did isotonic saline compare with 4% albumin for resuscitation in the SAFE study?",
+        options: ["Outcomes were similar", "Albumin halved the need for dialysis", "Saline caused more AKI", "Albumin reduced deaths by a third", "Saline was harmful in every group"],
+        answer: 0,
+        explanation: `<p><strong>The SAFE study found isotonic saline and 4% albumin similar in outcome,</strong> so either restores volume in prerenal AKI from fluid loss.</p>
+<p>Fluid is followed by maintenance fluid, watching for overload. In contrast, albumin has a specific role in cirrhosis, where it is given with large-volume paracentesis and in hepatorenal syndrome.</p>`,
+        notes: {
+            1: "Albumin did not reduce dialysis compared with saline.",
+            2: "Saline did not cause more AKI than albumin.",
+            3: "Albumin did not reduce deaths compared with saline.",
+            4: "Saline was not harmful; outcomes were similar.",
+        },
+    },
+
+    /* --- Reasoning --- */
+    {
+        id: "pre-concentrated",
+        condition: "prerenal-aki",
+        kind: "reasoning",
+        stem: "Why is the urine concentrated, rather than dilute, in prerenal AKI?",
+        options: ["The tubules are uninjured and ADH drives water reabsorption", "Less filtrate reaches the tubules, so less water is excreted regardless of their function", "Filtered proteins pull water out of the urine", "Damaged tubules leak concentrated fluid into the urine", "Angiotensin II concentrates urine in the glomerulus"],
+        answer: 0,
+        explanation: `<p><strong>In prerenal AKI the kidney itself is healthy, and falling perfusion raises ADH.</strong> The intact tubules respond, reabsorbing water in the collecting duct, so urine osmolality is above 500 mOsm/kg.</p>
+<p>Once tubular cells are injured, as in ATN, they can no longer concentrate, and the urine becomes dilute, below 450 mOsm/kg. So concentrated urine is evidence that the tubules still work.</p>`,
+        notes: {
+            1: "Less filtrate lowers the volume, but concentration needs working tubules and ADH.",
+            2: "Proteinuria is not a feature of prerenal AKI and would not concentrate urine.",
+            3: "Injured tubules cannot concentrate; that is ATN, with dilute urine.",
+            4: "The glomerulus filters; concentration happens in the tubules and collecting duct.",
+        },
+    },
+    {
+        id: "pre-sodium",
+        condition: "prerenal-aki",
+        kind: "reasoning",
+        stem: "Why are Na+ and water reabsorbed avidly in prerenal AKI?",
+        options: ["Low perfusion switches on renin, sympathetic drive, and ADH", "Injured tubules can no longer secrete Na+, so it stays in the blood and draws water back", "The glomerulus filters less Na+ than water", "High urea levels drive Na+ out of the urine", "Aldosterone falls as the kidneys fail"],
+        answer: 0,
+        explanation: `<p><strong>The kidney senses low perfusion and responds as if the body were short of volume.</strong> Baroreceptors raise sympathetic tone, the afferent arteriole releases renin, angiotensin II and aldosterone increase, and ADH rises.</p>
+<p>Because the tubules are healthy, they act on these signals, reabsorbing Na+ and water, and urea follows passively in the proximal tubule. In fluid loss the volume really is low; in HF and cirrhosis the kidney senses underfilling although total body water is high.</p>`,
+        notes: {
+            1: "Prerenal tubules are uninjured, and the issue is reabsorption, not secretion.",
+            2: "The glomerulus filters Na+ and water together; GFR falls for both.",
+            3: "Urea follows Na+ and water; it does not drive Na+ reabsorption.",
+            4: "Aldosterone increases with renin and angiotensin II.",
+        },
+    },
+    {
+        id: "pre-cirrhosis",
+        condition: "prerenal-aki",
+        kind: "reasoning",
+        stem: "How does cirrhosis lead to AKI in hepatorenal syndrome?",
+        options: ["Splanchnic vasodilation underfills the arteries, so the kidneys constrict their vessels", "Bilirubin deposits injure the tubules", "Portal hypertension compresses the renal veins, so blood backs up and filtration pressure falls", "Ascites blocks both ureters", "Low albumin causes immune complexes to form in the glomeruli"],
+        answer: 0,
+        explanation: `<p><strong>In cirrhosis, the splanchnic vessels dilate, so the arteries are underfilled although total body fluid is high.</strong> The kidneys sense low perfusion and constrict their own vessels intensely, so GFR falls while the tubules still work.</p>
+<p>That is why the urine is bland with a low FENa. Bleeding, overdiuresis, large-volume paracentesis without albumin, infection, and NSAIDs trigger it.</p>`,
+        notes: {
+            1: "Bile cast nephropathy exists, but hepatorenal syndrome is functional, with intact tubules.",
+            2: "The problem is arterial underfilling and vasoconstriction, not venous compression.",
+            3: "Ascites does not obstruct the ureters.",
+            4: "Hepatorenal syndrome has bland urine; immune complex disease would cause an active sediment.",
+        },
+        info: "Bile cast nephropathy is standard teaching rather than page content.",
+    },
+    {
+        id: "pre-feurea",
+        condition: "prerenal-aki",
+        kind: "reasoning",
+        stem: "Why is FEUrea used instead of FENa to decide whether AKI is prerenal in a patient taking diuretics?",
+        options: ["Diuretics block Na+ reabsorption, but urea is reabsorbed in the proximal tubule before they act", "Diuretics stop the glomerulus from filtering urea, so its clearance cannot be measured accurately", "FENa cannot be calculated when urine output is low", "Urea is unaffected by changes in perfusion", "Diuretics lower plasma creatinine, so FENa reads falsely low"],
+        answer: 0,
+        explanation: `<p><strong>Diuretics stop the tubules reabsorbing Na+, so FENa rises even when the kidney is underperfused.</strong> A prerenal patient on diuretics can have a FENa above 1%.</p>
+<p>Urea is handled passively in the proximal tubule, before loop and thiazide diuretics act, so it is still held back in prerenal AKI. A FEUrea below 35% points to a prerenal cause.</p>`,
+        notes: {
+            1: "Urea is still filtered; the point is where it is reabsorbed.",
+            2: "FENa can be calculated from spot samples at any urine output.",
+            3: "Urea reabsorption increases with low perfusion; that is why FEUrea falls.",
+            4: "Diuretics make FENa falsely high, not low.",
+        },
+    },
+    {
+        id: "pre-ucr",
+        condition: "prerenal-aki",
+        kind: "reasoning",
+        stem: "Why does the UCR rise above 100 in prerenal AKI?",
+        options: ["Urea is reabsorbed with Na+ and water in the proximal tubule, but creatinine is not", "The liver makes more urea when perfusion falls", "Creatinine is secreted faster into the tubules when GFR falls, so plasma creatinine rises more slowly", "Muscle breakdown releases urea", "Urea is filtered more than creatinine at low GFR"],
+        answer: 0,
+        explanation: `<p><strong>Both urea and creatinine accumulate as GFR falls, but urea is also reabsorbed.</strong> In prerenal AKI the tubules reabsorb Na+ and water avidly, and urea follows passively in the proximal tubule, so plasma urea rises faster than creatinine.</p>
+<p>The UCR is urea in mmol/L divided by creatinine in mmol/L. In ATN, injured tubules reabsorb less, so the ratio stays below 100.</p>`,
+        notes: {
+            1: "Urea production does not rise with low perfusion.",
+            2: "Creatinine secretion does not explain the ratio; urea reabsorption does.",
+            3: "Muscle breakdown releases creatinine and potassium, as in rhabdomyolysis.",
+            4: "Both are filtered freely; the difference is reabsorption.",
+        },
+    },
+    {
+        id: "pre-ckd",
+        condition: "prerenal-aki",
+        kind: "reasoning",
+        stem: "Why does a patient with CKD develop prerenal AKI after a smaller fall in blood pressure than a healthy person?",
+        options: ["Autoregulation is weaker, so GFR falls with a smaller drop in perfusion", "CKD raises the threshold for ADH release", "Their damaged tubules cannot reabsorb enough Na+ to defend volume, so they become dry sooner", "CKD causes the efferent arteriole to dilate permanently", "Their urine is always dilute"],
+        answer: 0,
+        explanation: `<p><strong>In CKD, the kidney's ability to hold GFR steady is weaker,</strong> so a fall in perfusion that a healthy kidney would buffer lowers GFR.</p>
+<p>They are also often taking ACEi, ARBs, or diuretics, which remove more of that buffering, so these are held when they become dry or unwell.</p>`,
+        notes: {
+            1: "ADH release is not the reason; the issue is glomerular autoregulation.",
+            2: "If the tubules could not reabsorb Na+, it would be tubular disease, not a prerenal pattern.",
+            3: "CKD does not permanently dilate the efferent arteriole.",
+            4: "Urine concentration varies in CKD; it does not explain the lower threshold.",
+        },
+        info: "CKD patients often taking ACEi, ARBs, or diuretics is standard teaching rather than page content.",
+    },
+    {
+        id: "pre-ras",
+        condition: "prerenal-aki",
+        kind: "reasoning",
+        stem: "A 70-year-old with bilateral renal artery stenosis starts ramipril, and creatinine rises sharply within a week. What explains this?",
+        options: ["Glomerular pressure depended on angiotensin II constricting the efferent arteriole", "Ramipril injures the tubules directly", "Ramipril constricts the afferent arteriole", "Ramipril causes an allergic interstitial nephritis in every patient", "Ramipril blocks prostaglandin synthesis"],
+        answer: 0,
+        explanation: `<p><strong>Beyond a stenosis, pressure is low, and the glomerulus holds its filtration pressure by angiotensin II constricting the efferent arteriole.</strong> An ACEi removes that, so glomerular pressure and GFR fall.</p>
+<p>The same happens with stenosis of a single working kidney. Creatinine rising after ACEi or ARBs is a clue to renal artery stenosis (8); the drug is stopped, and revascularization is considered in selected patients.</p>`,
+        notes: {
+            1: "ACEi act through hemodynamics here, not tubular toxicity.",
+            2: "ACEi dilate the efferent arteriole; they do not constrict the afferent.",
+            3: "AIN is uncommon and drug-specific; this is the expected hemodynamic effect.",
+            4: "Blocking prostaglandins is the action of NSAIDs.",
+        },
+    },
+    {
+        id: "pre-hf-diuresis",
+        condition: "prerenal-aki",
+        kind: "reasoning",
+        stem: "In cardiorenal syndrome, why can careful diuresis improve renal function, although it removes fluid?",
+        options: ["It relieves renal venous congestion, which also lowers renal perfusion", "It raises cardiac output by removing excess fluid from the circulating blood volume", "It increases renin release", "It concentrates the urine, raising GFR", "It removes urea, which was injuring the tubules"],
+        answer: 0,
+        explanation: `<p><strong>In HF, both low output and high venous pressure lower renal perfusion.</strong> High renal venous pressure reduces the pressure gradient across the kidney, so relieving congestion with careful diuresis can improve GFR.</p>
+<p>Too much diuresis, however, removes the volume the heart depends on and causes prerenal AKI from overdiuresis, which is why it is cautious.</p>`,
+        notes: {
+            1: "Diuresis can improve output in some patients, but the page's reason is relief of venous congestion.",
+            2: "More renin would worsen Na+ retention and vasoconstriction.",
+            3: "Urine concentration does not raise GFR.",
+            4: "Urea is not the cause of the injury in cardiorenal syndrome.",
+        },
+    },
+    {
+        id: "pre-to-atn",
+        condition: "prerenal-aki",
+        kind: "reasoning",
+        stem: "Why can a prerenal AKI that is left untreated for days stop responding to fluid?",
+        options: ["Prolonged hypoperfusion injures tubular cells, turning it into ATN", "The kidney becomes resistant to ADH and aldosterone, so fluid given late is simply excreted", "Fluid given late is excreted before it reaches the kidney", "The renin system switches off", "Prolonged hypoperfusion causes glomerulonephritis"],
+        answer: 0,
+        explanation: `<p><strong>Tubular cells need a steady oxygen supply, and prolonged hypoperfusion kills them.</strong> Prerenal AKI then becomes ATN, an intrarenal injury that no longer reverses when perfusion returns, and recovery takes weeks.</p>
+<p>The urine changes with it: FENa rises above 2%, the urine becomes dilute, and muddy brown casts appear. This is why prompt restoration of perfusion matters.</p>`,
+        notes: {
+            1: "ADH resistance is not the mechanism; the tubular cells are dead.",
+            2: "Fluid reaches the kidney; the injured tubules can no longer respond.",
+            3: "The renin system stays active; the tubules are what fail.",
+            4: "Hypoperfusion injures tubules, not glomeruli.",
+        },
+    },
+    {
+        id: "pre-hrs-tx",
+        condition: "prerenal-aki",
+        kind: "reasoning",
+        stem: "In hepatorenal syndrome, why are albumin and terlipressin given together?",
+        options: ["Albumin refills the arteries, and terlipressin constricts the dilated splanchnic vessels", "Both drugs dilate the renal arteries directly", "Albumin binds bilirubin, and terlipressin increases urine output by diuresis", "They lower portal pressure by draining ascites", "They replace the clotting factors the liver no longer makes"],
+        answer: 0,
+        explanation: `<p><strong>Hepatorenal syndrome is driven by splanchnic vasodilation and arterial underfilling.</strong> Albumin expands the circulating volume, and terlipressin, a vasoconstrictor, constricts the splanchnic vessels, so more blood reaches the kidneys and they relax their own vasoconstriction.</p>
+<p>Diuretics and nephrotoxins are stopped, and transplant referral is the definitive treatment.</p>`,
+        notes: {
+            1: "Neither dilates the renal arteries directly; they correct the underfilling that makes the kidneys constrict.",
+            2: "Albumin is given for volume, and terlipressin is not a diuretic.",
+            3: "Neither drains ascites.",
+            4: "Neither replaces clotting factors.",
+        },
+    },
+
+    /* --- Analysis --- */
+    {
+        id: "pre-set-contrast-1",
+        condition: "prerenal-aki",
+        kind: "analysis",
+        set: "pre-contrast",
+        passage: `<p>A 72-year-old man with stable chronic HF has coronary angiography with iodinated contrast for worsening angina. Over the next 2 days his urine output falls and his ankle edema worsens. His weight, blood pressure, and echocardiogram are unchanged from before the procedure.</p>
+<table><thead><tr><th>Test</th><th>Before angiography</th><th>Day 2</th></tr></thead><tbody>
+<tr><td>Creatinine</td><td>110 µmol/L</td><td>190 µmol/L</td></tr>
+<tr><td>Urea</td><td>8 mmol/L</td><td>22 mmol/L</td></tr>
+<tr><td>FENa</td><td>–</td><td>0.6%</td></tr>
+<tr><td>Urine osmolality</td><td>–</td><td>560 mOsm/kg</td></tr>
+<tr><td>Urinalysis</td><td>–</td><td>Bland</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p>`,
+        stem: "What best explains his AKI?",
+        options: ["Contrast constricting the renal vessels", "Worsening cardiac output from his HF", "Atheroembolic disease from the catheter", "ATN from contrast toxic to the tubules, with a FENa that should be high", "Overdiuresis since the procedure"],
+        answer: 0,
+        explanation: `<p><strong>The AKI began only after contrast, while his heart function was unchanged, so the cause is the contrast constricting the afferent arteriole</strong> (6), lowering perfusion while the tubules still work.</p>
+<ul>
+<li><strong>UCR:</strong> 22 ÷ 0.19 is about 116, above 100.</li>
+<li><strong>Working tubules:</strong> FENa 0.6%, osmolality 560 mOsm/kg, and bland urine.</li>
+</ul>
+<p>Contrast is also toxic to tubular cells, so this can progress to ATN, and FENa can be low in contrast-associated AKI even then, which is why the course matters too.</p>`,
+        notes: {
+            1: "His echocardiogram, weight, and blood pressure are unchanged, and the AKI followed the procedure.",
+            2: "Atheroembolic disease appears days to weeks later, with livedo reticularis and eosinophilia.",
+            3: "Contrast can cause ATN, but a low FENa does not exclude it; a low FENa is not a reason to choose ATN over vasoconstriction.",
+            4: "His weight is unchanged, and there is no mention of extra diuretics.",
+        },
+    },
+    {
+        id: "pre-set-contrast-2",
+        condition: "prerenal-aki",
+        kind: "analysis",
+        set: "pre-contrast",
+        stem: "His creatinine returns to 115 µmol/L by day 10. Three weeks later it rises to 240 µmol/L, with mottled purple skin on his feet, painful blue toes, and an eosinophil count of 1.2 × 10⁹/L. What is the most likely cause now?",
+        options: ["Atheroembolic disease", "A second episode of contrast vasoconstriction", "Hepatorenal syndrome", "Prerenal AKI from worsening HF", "Allergic reaction to the contrast"],
+        answer: 0,
+        explanation: `<p><strong>Livedo reticularis, blue toes, and eosinophilia weeks after angiography point to atheroembolic disease.</strong> The catheter dislodged cholesterol crystals from aortic plaque, which lodge in small renal arteries and in the toes.</p>
+<p>It appears days to weeks after the procedure, with eosinophiluria and low complement, and biopsy shows cholesterol clefts. There is no specific treatment: statins, BP control, and avoiding further procedures. Its late timing separates it from contrast-associated AKI, which follows within 48–72 hours and recovers by about 2 weeks, as his did.</p>`,
+        notes: {
+            1: "He had no further contrast, and contrast-associated AKI follows within days, without skin changes.",
+            2: "He does not have cirrhosis.",
+            3: "HF does not explain livedo, blue toes, or eosinophilia.",
+            4: "A contrast allergy causes an immediate reaction, not AKI with blue toes weeks later.",
+        },
+    },
+    {
+        id: "pre-set-vomit-1",
+        condition: "prerenal-aki",
+        kind: "analysis",
+        set: "pre-vomit",
+        passage: `<p>An 84-year-old woman who lives alone is found after 3 days of vomiting and poor intake. She takes perindopril and furosemide. She is drowsy, with dry mucosa, a pulse of 112, and blood pressure 92/60 mmHg lying and 74/48 mmHg sitting.</p>
+<table><thead><tr><th>Test</th><th>Day 1</th></tr></thead><tbody>
+<tr><td>Creatinine</td><td>260 µmol/L (baseline 90)</td></tr>
+<tr><td>Urea</td><td>34 mmol/L</td></tr>
+<tr><td>FENa</td><td>1.8%</td></tr>
+<tr><td>FEUrea</td><td>24%</td></tr>
+<tr><td>Urine osmolality</td><td>610 mOsm/kg</td></tr>
+<tr><td>Urinalysis</td><td>Hyaline casts</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p>`,
+        stem: "How should her day 1 results be read?",
+        options: ["Prerenal AKI; the FENa is raised by furosemide, and the FEUrea is low", "ATN, since the FENa is above 1%", "Postrenal AKI, since she is elderly", "Glomerulonephritis, since creatinine has nearly tripled", "No AKI, since the urine is concentrated"],
+        answer: 0,
+        explanation: `<p><strong>Everything points to prerenal AKI from fluid loss, made worse by perindopril and furosemide.</strong></p>
+<ul>
+<li><strong>FENa 1.8%:</strong> falsely high, because furosemide blocks Na+ reabsorption.</li>
+<li><strong>FEUrea 24%:</strong> below 35%, so the tubules are holding on to urea.</li>
+<li><strong>Osmolality 610 and hyaline casts:</strong> concentrated, bland urine from working tubules.</li>
+<li><strong>UCR:</strong> 34 ÷ 0.26 is about 130, above 100.</li>
+</ul>
+<p>She needs isotonic fluid, and perindopril and furosemide are held until volume and creatinine recover.</p>`,
+        notes: {
+            1: "With diuretics FENa is unreliable; her FEUrea and concentrated urine show working tubules.",
+            2: "Age alone does not suggest obstruction, and her history explains the AKI.",
+            3: "Her urine is bland, with hyaline casts rather than RBC casts.",
+            4: "Creatinine has nearly tripled from baseline, which is AKI.",
+        },
+    },
+    {
+        id: "pre-set-vomit-2",
+        condition: "prerenal-aki",
+        kind: "analysis",
+        set: "pre-vomit",
+        stem: "Because of a bed shortage, she receives little fluid for the first 2 days. On day 4, despite good blood pressure after fluid, her results are as follows: creatinine 410 µmol/L, urea 30 mmol/L, FEUrea 62%, urine osmolality 310 mOsm/kg, and muddy brown granular casts. What has happened?",
+        options: ["Prolonged hypoperfusion has caused ATN", "She is still underfilled and needs more fluid", "The furosemide has worn off, unmasking a prerenal pattern", "She has developed hepatorenal syndrome", "Her perindopril was restarted too early"],
+        answer: 0,
+        explanation: `<p><strong>Prolonged hypoperfusion injured her tubular cells, turning prerenal AKI into ATN.</strong> The tubules can no longer hold urea or concentrate the urine:</p>
+<ul>
+<li><strong>FEUrea 62%:</strong> above 50%.</li>
+<li><strong>Osmolality 310:</strong> dilute, below 450.</li>
+<li><strong>Muddy brown casts:</strong> dying tubular cells.</li>
+<li><strong>UCR:</strong> 30 ÷ 0.41 is about 73, now below 100.</li>
+</ul>
+<p>ATN no longer responds to fluid, and recovery takes weeks, which is why perfusion is restored promptly.</p>`,
+        notes: {
+            1: "Her blood pressure has recovered with fluid, and the urine shows tubular injury rather than underfilling.",
+            2: "Without diuretics, a prerenal pattern would show a low FEUrea and concentrated urine; hers is the opposite.",
+            3: "She does not have cirrhosis.",
+            4: "Restarting an ACEi would lower GFR hemodynamically, but would not cause muddy brown casts.",
+        },
+    },
+    {
+        id: "pre-hrs-case",
+        condition: "prerenal-aki",
+        kind: "analysis",
+        stem: `<p>A 56-year-old man with alcohol-related cirrhosis and tense ascites has 8 L of ascites drained, without albumin. Over 4 days his urine output falls. His diuretics are stopped and he is given albumin for 2 days, without improvement. He has no shock and takes no nephrotoxic drugs.</p>
+<table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody>
+<tr><td>Creatinine</td><td>98 → 220 µmol/L</td></tr>
+<tr><td>Urine Na+</td><td>8 mmol/L</td></tr>
+<tr><td>FENa</td><td>0.2%</td></tr>
+<tr><td>Urinalysis</td><td>Bland; no protein or blood</td></tr>
+<tr><td>Renal ultrasound</td><td>Normal</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p>
+<p>What is the most likely diagnosis?</p>`,
+        options: ["Hepatorenal syndrome", "Prerenal AKI from paracentesis that will respond to more albumin", "ATN from the procedure", "Obstruction from tense ascites", "Glomerulonephritis from hepatitis C"],
+        answer: 0,
+        explanation: `<p><strong>AKI in cirrhosis with ascites, with bland urine and a very low FENa, that does not respond to stopping diuretics and giving albumin is hepatorenal syndrome</strong> (5).</p>
+<p>Large-volume paracentesis without albumin triggered it by further underfilling the arteries, and the kidneys responded by constricting their vessels intensely. Treatment adds a vasoconstrictor such as terlipressin to albumin, with transplant referral.</p>`,
+        notes: {
+            1: "Simple prerenal AKI would have responded to stopping diuretics and giving albumin.",
+            2: "ATN would show muddy brown casts and a high FENa.",
+            3: "His renal ultrasound is normal, with no hydronephrosis.",
+            4: "His urine is bland, with no protein or blood.",
+        },
+    },
+
+    /* ===== Intrarenal AKI ===== */
+
+    /* --- Memory --- */
+    {
+        id: "intra-acyclovir",
+        condition: "intrarenal-aki",
+        kind: "memory",
+        stem: "Which part of the kidney does acyclovir injure when it causes AKI?",
+        options: ["The tubules, where its crystals block the lumen", "The interstitium, through an allergic reaction", "The glomerulus, through immune complexes", "The small vessels, through endothelial injury", "The collecting system, through stones in the ureter"],
+        answer: 0,
+        explanation: `<p><strong>Acyclovir is poorly soluble in urine, so it forms crystals that block the tubule lumen</strong> (compartment 3), with urate in TLS, indinavir, ethylene glycol, and myeloma light chains.</p>
+<p>The page sorts intrarenal AKI by where the injury lies: small vessels (1), glomerulus (2), tubules (3), and interstitium (4). Crystal injury is prevented by keeping the patient well hydrated.</p>`,
+        notes: {
+            1: "Allergic interstitial injury is AIN, from drugs such as PPIs, penicillins, and NSAIDs.",
+            2: "Immune complexes in the glomerulus cause glomerulonephritis, such as lupus nephritis or PSGN.",
+            3: "Endothelial injury in small vessels is TMA.",
+            4: "Ureteric stones cause postrenal AKI, not crystal injury inside the kidney.",
+        },
+        info: "Acyclovir's poor solubility and hydration as prevention are standard pharmacology rather than page content.",
+    },
+    {
+        id: "intra-ppi",
+        condition: "intrarenal-aki",
+        kind: "memory",
+        stem: "Omeprazole can cause AKI by injuring which part of the kidney?",
+        options: ["Interstitium", "Tubule lumen", "Glomerulus", "Small vessels", "Collecting system"],
+        answer: 0,
+        explanation: `<p><strong>PPIs such as omeprazole cause AIN, an immune reaction that fills the interstitium with white cells</strong> (compartment 4).</p>
+<p>The other common drug causes are diuretics, NSAIDs, penicillins and cephalosporins, rifampin, sulfonamides, and allopurinol. AIN usually follows a new drug by 1–2 weeks, and the urine shows white cell casts and sterile pyuria.</p>`,
+        notes: {
+            1: "Drugs that block the tubule lumen form crystals, such as acyclovir and indinavir.",
+            2: "PPIs do not cause glomerular disease.",
+            3: "Small vessel injury is TMA, cholesterol emboli, or malignant hypertension.",
+            4: "The collecting system is involved in postrenal obstruction.",
+        },
+    },
+    {
+        id: "intra-tma",
+        condition: "intrarenal-aki",
+        kind: "memory",
+        stem: "Which condition causes AKI through endothelial injury and clots in the kidney's small vessels?",
+        options: ["Thrombotic microangiopathy", "Acute tubular necrosis", "Acute interstitial nephritis", "IgA nephropathy", "Minimal change disease"],
+        answer: 0,
+        explanation: `<p><strong>In thrombotic microangiopathy (HUS and TTP), injured endothelium triggers platelet clots in small vessels</strong> (compartment 1). Red cells are sheared as they pass, so anemia and low platelets accompany the AKI.</p>
+<p>It is found with a blood film for schistocytes, platelets, and LDH, and treated with plasma exchange or complement blockade by type. Cholesterol emboli and malignant hypertension also injure the small vessels.</p>`,
+        notes: {
+            1: "ATN kills tubular cells, not vessels.",
+            2: "AIN is an immune infiltrate in the interstitium.",
+            3: "IgA nephropathy is a glomerular disease.",
+            4: "Minimal change disease is a nephrotic glomerular disease without clots.",
+        },
+    },
+    {
+        id: "intra-glomerular",
+        condition: "intrarenal-aki",
+        kind: "memory",
+        stem: "Which condition injures the glomerulus, letting blood and protein into the urine?",
+        options: ["IgA nephropathy", "Acute tubular necrosis", "Acute interstitial nephritis", "Atheroembolic disease", "Rhabdomyolysis"],
+        answer: 0,
+        explanation: `<p><strong>IgA nephropathy is a glomerular disease</strong> (compartment 2): immune injury and inflammation lower filtration and let blood and protein through.</p>
+<p>Glomerular disease shows hematuria, proteinuria, edema, and hypertension, with red cell casts and dysmorphic red cells. The glomerular causes are nephrotic (MCD, FSGS, MN, DKD, and amyloid) or nephritic (anti-GBM disease, ANCA vasculitis, Alport syndrome, IgA nephropathy, PSGN, MPGN, and lupus nephritis).</p>`,
+        notes: {
+            1: "ATN injures tubular cells, giving muddy brown casts rather than blood and protein.",
+            2: "AIN injures the interstitium, giving white cell casts and sterile pyuria.",
+            3: "Atheroembolic disease blocks small arteries with cholesterol crystals.",
+            4: "Rhabdomyolysis injures the tubules with myoglobin.",
+        },
+    },
+    {
+        id: "intra-light-chains",
+        condition: "intrarenal-aki",
+        kind: "memory",
+        stem: "A 74-year-old has AKI with no clear cause in the history or urine sediment. Which tests look for the tubular cause most easily missed?",
+        options: ["SPEP and UPEP, with serum free light chains", "Complement, ANCA, anti-GBM, and ANA serology", "A blood film for schistocytes", "CK and urine myoglobin", "Renal ultrasound"],
+        answer: 0,
+        explanation: `<p><strong>Myeloma light chains block the tubules</strong> (compartment 3), and the sediment can look unremarkable, so SPEP, UPEP, and serum free light chains are checked in older patients with unexplained AKI.</p>
+<p>Each compartment has its tests: the glomeruli complement, ANCA, anti-GBM, and ANA; the vessels a blood film, platelets, and LDH; and the tubules CK and myoglobin, urate and phosphate, and the light chain tests.</p>`,
+        notes: {
+            1: "These look for glomerular disease, which would usually show red cell casts or protein.",
+            2: "A blood film looks for TMA, with anemia and low platelets.",
+            3: "CK and myoglobin look for rhabdomyolysis, after muscle injury.",
+            4: "Ultrasound looks for obstruction, a postrenal cause.",
+        },
+    },
+    {
+        id: "intra-muddy",
+        condition: "intrarenal-aki",
+        kind: "memory",
+        stem: "Muddy brown granular casts on urine microscopy point to which compartment?",
+        options: ["Tubules", "Glomerulus", "Interstitium", "Small vessels", "Renal artery"],
+        answer: 0,
+        explanation: `<p><strong>Muddy brown granular casts are made of dead tubular cells sloughed into the lumen, so they point to ATN</strong> (compartment 3), often with renal tubular epithelial cells. Early on the sediment can still be normal.</p>
+<p>The sediment points to the compartment: red cell casts to the glomerulus, white cell casts to the interstitium, and often bland urine in vessel disease.</p>`,
+        notes: {
+            1: "Glomerular disease gives red cell casts and dysmorphic red cells.",
+            2: "Interstitial disease gives white cell casts and sterile pyuria.",
+            3: "Small vessel disease often leaves the sediment bland.",
+            4: "Renal artery disease lowers perfusion, a prerenal pattern with bland urine.",
+        },
+    },
+    {
+        id: "intra-rhabdo-fluid",
+        condition: "intrarenal-aki",
+        kind: "memory",
+        stem: "In rhabdomyolysis, early IV fluid aims for which urine output?",
+        options: ["200–300 mL/h", "0.5 mL/kg/h", "50–100 mL/h", "500–600 mL/h", "As little as possible, to avoid overload"],
+        answer: 0,
+        explanation: `<p><strong>Large volumes of IV fluid, started early, aim for a urine output of 200–300 mL/h.</strong> The high flow dilutes myoglobin and washes it through before it forms casts that block the tubules.</p>
+<p>The fluid has to start early, before myoglobin casts and heme toxicity have established ATN.</p>`,
+        notes: {
+            1: "0.5 mL/kg/h is the threshold that defines low urine output, not a target here.",
+            2: "50–100 mL/h is too low to wash myoglobin through.",
+            3: "500–600 mL/h is beyond the page's target.",
+            4: "Restricting fluid would let myoglobin casts form.",
+        },
+        info: "The 0.5 mL/kg/h threshold comes from the KDIGO staging on AKI: Comparison and Workup.",
+    },
+    {
+        id: "intra-common",
+        condition: "intrarenal-aki",
+        kind: "memory",
+        stem: "Which intrarenal cause accounts for the largest share of hospital AKI?",
+        options: ["Acute tubular necrosis", "Glomerulonephritis and vasculitis", "Acute interstitial nephritis", "Atheroembolic disease", "Thrombotic microangiopathy"],
+        answer: 0,
+        explanation: `<p><strong>ATN causes about 45% of hospital AKI,</strong> mostly from ischemia in shock and from nephrotoxins such as aminoglycosides, cisplatin, amphotericin B, vancomycin, and contrast.</p>
+<p>The other intrarenal causes are far less common: glomerulonephritis and vasculitis about 4%, AIN about 2%, and atheroemboli about 1%.</p>`,
+        notes: {
+            1: "Glomerulonephritis and vasculitis cause about 4%.",
+            2: "AIN causes about 2%.",
+            3: "Atheroemboli cause about 1%.",
+            4: "TMA is uncommon compared with ATN.",
+        },
+    },
+
+    /* --- Reasoning --- */
+    {
+        id: "intra-fena",
+        condition: "intrarenal-aki",
+        kind: "reasoning",
+        stem: "Why is FENa above 2% in ATN, but below 1% in prerenal AKI?",
+        options: ["Injured tubular cells can no longer reabsorb Na+", "The glomerulus filters more Na+ in ATN", "Aldosterone is absent in ATN", "Diuretics are always given in ATN", "Prerenal AKI raises plasma Na+, lowering the fraction excreted"],
+        answer: 0,
+        explanation: `<p><strong>FENa measures how much filtered Na+ escapes into the urine. In ATN, the tubular cells that reabsorb it are dead,</strong> so more than 2% escapes and the urine is dilute, below 450 mOsm/kg.</p>
+<p>In prerenal AKI the tubules are healthy and hold on to Na+. A low FENa therefore means working tubules, not necessarily prerenal AKI: glomerulonephritis, vasculitis, and contrast-associated AKI can also give a low FENa, because filtration falls while the tubules still work.</p>`,
+        notes: {
+            1: "GFR falls in ATN, so less Na+ is filtered, not more.",
+            2: "Aldosterone is present; the tubules cannot respond to it.",
+            3: "Diuretics raise FENa falsely, but ATN raises it without them.",
+            4: "Plasma Na+ does not explain the difference; tubular function does.",
+        },
+    },
+    {
+        id: "intra-rhabdo-away",
+        condition: "intrarenal-aki",
+        kind: "reasoning",
+        stem: "A 24-year-old has cola-colored urine and aching thighs the day after an intense weight-lifting session. Which finding points away from rhabdomyolysis?",
+        options: ["Dysmorphic red cells and red cell casts on microscopy", "CK 30 times the upper limit", "A dipstick strongly positive for blood, with no red cells seen", "A high K+", "A low Ca2+"],
+        answer: 0,
+        explanation: `<p><strong>In rhabdomyolysis the dipstick is positive for blood with few red cells on microscopy,</strong> because the dipstick reacts to the heme in myoglobin. Dysmorphic red cells in casts mean blood is leaking through damaged glomeruli, which points to glomerular disease.</p>
+<p>Injured muscle releases K+, phosphate, urate, CK, and myoglobin, and Ca2+ is low early as it deposits in damaged muscle. Myoglobin injures the tubules by constricting vessels (heme binds NO), by direct toxicity, and by forming casts, which form more readily in acidic urine.</p>`,
+        notes: {
+            1: "A CK above 5 times the upper limit fits rhabdomyolysis.",
+            2: "A positive dipstick fits, since it detects the heme in myoglobin.",
+            3: "Injured muscle releases K+, so hyperkalemia fits.",
+            4: "Ca2+ is low early in rhabdomyolysis and high in recovery.",
+        },
+        info: "Ca2+ depositing in damaged muscle is standard teaching; the page gives low Ca2+ early and high Ca2+ in recovery.",
+    },
+    {
+        id: "intra-dysmorphic",
+        condition: "intrarenal-aki",
+        kind: "reasoning",
+        stem: "A patient with AKI has dysmorphic red cells on urine microscopy. Which tests should be ordered next?",
+        options: ["Complement, ANCA, anti-GBM, and ANA", "CK and urine myoglobin", "SPEP, UPEP, and serum free light chains", "A blood film for schistocytes, platelets, and LDH", "Renal ultrasound for hydronephrosis"],
+        answer: 0,
+        explanation: `<p><strong>Dysmorphic red cells are distorted as they squeeze through damaged glomeruli, so they point to glomerular disease.</strong> The serology sorts the cause:</p>
+<ul>
+<li>Low complement in immune complex disease, such as PSGN, MPGN, and lupus nephritis.</li>
+<li>ANCA in ANCA vasculitis, and anti-GBM in anti-GBM disease.</li>
+<li>ANA in lupus.</li>
+</ul>
+<p>Biopsy usually follows to confirm the diagnosis.</p>`,
+        notes: {
+            1: "CK and myoglobin look for rhabdomyolysis, which gives few red cells.",
+            2: "Light chain tests look for myeloma cast nephropathy in the tubules.",
+            3: "A blood film looks for TMA in the small vessels.",
+            4: "Ultrasound looks for obstruction; dysmorphic red cells come from the glomerulus.",
+        },
+    },
+    {
+        id: "intra-tls",
+        condition: "intrarenal-aki",
+        kind: "reasoning",
+        stem: "Before chemotherapy for a bulky lymphoma, why is the patient given IV fluid from 48 hours beforehand, with allopurinol or rasburicase?",
+        options: ["To keep urine flowing and lower uric acid, so urate crystals do not block the tubules", "To protect the glomeruli from immune complexes released by the tumor", "To prevent an allergic interstitial nephritis from the chemotherapy", "To keep blood pressure up during chemotherapy so that the kidneys stay well perfused throughout", "To bind the chemotherapy drug in the bowel"],
+        answer: 0,
+        explanation: `<p><strong>In tumor lysis syndrome, dying tumor cells release DNA that is broken down to uric acid, which crystallizes in the tubules and blocks them.</strong></p>
+<ul>
+<li><strong>IV fluid:</strong> keeps urine flowing and dilute, so crystals do not form.</li>
+<li><strong>Allopurinol:</strong> blocks xanthine oxidase, so less uric acid is made.</li>
+<li><strong>Rasburicase:</strong> breaks down uric acid that is already present.</li>
+</ul>`,
+        notes: {
+            1: "TLS injures the tubules with crystals, not the glomeruli.",
+            2: "Allergic AIN is a drug reaction; allopurinol can even cause it.",
+            3: "Perfusion matters, but the specific danger is urate crystals.",
+            4: "None of these bind chemotherapy in the bowel.",
+        },
+        info: "How allopurinol and rasburicase work is standard pharmacology rather than page content.",
+    },
+    {
+        id: "intra-perfusion",
+        condition: "intrarenal-aki",
+        kind: "reasoning",
+        stem: "Why does restoring blood pressure and volume not reverse intrarenal AKI, as it does prerenal AKI?",
+        options: ["The kidney itself is damaged, and injured tubules release vasoconstrictors", "Fluid given in intrarenal AKI leaks into the tissues instead of reaching the kidney", "The kidney stops making renin in intrarenal AKI", "Intrarenal AKI always involves a blocked ureter", "The glomeruli are too small to accept more blood"],
+        answer: 0,
+        explanation: `<p><strong>In intrarenal AKI the injury is in the kidney itself, in its vessels, glomeruli, tubules, or interstitium,</strong> so better perfusion does not repair it. Injured tubules also release vasoconstrictors that lower GFR further.</p>
+<p>That is why recovery in ATN takes weeks to months, with support and dialysis if needed, while prerenal AKI recovers within 24–72 hours of restoring volume.</p>`,
+        notes: {
+            1: "Fluid reaches the kidney; the kidney cannot respond.",
+            2: "Renin is still made; the problem is structural injury.",
+            3: "A blocked ureter is postrenal AKI.",
+            4: "Glomerular size is not the issue.",
+        },
+    },
+    {
+        id: "intra-ain-polyuria",
+        condition: "intrarenal-aki",
+        kind: "reasoning",
+        stem: "Why can a patient with AIN pass more urine than usual, despite AKI?",
+        options: ["Interstitial inflammation disrupts the medulla's ability to concentrate urine", "The drug causing AIN is always a diuretic, which keeps acting after the kidney is injured", "AIN raises GFR", "The infiltrating white cells secrete water", "AIN blocks ADH release from the pituitary"],
+        answer: 0,
+        explanation: `<p><strong>The interstitium of the medulla holds the concentration gradient that lets the collecting duct reabsorb water.</strong> When it fills with white cells, the gradient fails, so urine stays dilute and its volume can increase: a concentrating defect.</p>
+<p>So AIN can present with polyuria rather than oliguria, along with a new drug 1–2 weeks before. Fever, rash, and eosinophilia occur in only about 10%.</p>`,
+        notes: {
+            1: "Diuretics are one cause of AIN, but the polyuria comes from the concentrating defect.",
+            2: "GFR falls in AIN.",
+            3: "White cells do not secrete water.",
+            4: "ADH is released normally; the kidney cannot respond to it.",
+        },
+        info: "The medullary gradient as the reason for the concentrating defect is standard physiology; the page names the concentrating defect.",
+    },
+    {
+        id: "intra-rhabdo-early",
+        condition: "intrarenal-aki",
+        kind: "reasoning",
+        stem: "Why are large volumes of IV fluid started early in rhabdomyolysis?",
+        options: ["To dilute myoglobin and wash it through before it forms casts in the tubules", "To lower CK by dilution so that muscle stops breaking down", "To replace the albumin lost in the urine", "To correct a low K+", "To prevent glomerular immune complexes"],
+        answer: 0,
+        explanation: `<p><strong>Myoglobin injures the tubules by forming casts that block them, by direct heme toxicity, and by constricting vessels.</strong> A high urine flow dilutes it and washes it through before casts form, which they do more readily in acidic urine.</p>
+<p>Once casts and tubular cell death are established, fluid no longer reverses the injury, so it is started as early as possible.</p>`,
+        notes: {
+            1: "CK is a marker of muscle injury; diluting it does not stop the breakdown.",
+            2: "Rhabdomyolysis releases myoglobin, not albumin.",
+            3: "K+ is high in rhabdomyolysis, not low.",
+            4: "Rhabdomyolysis injures the tubules, not the glomeruli.",
+        },
+    },
+    {
+        id: "intra-contrast",
+        condition: "intrarenal-aki",
+        kind: "reasoning",
+        stem: "Why can contrast-associated AKI show a low FENa, although contrast is a tubular toxin?",
+        options: ["Contrast also constricts renal vessels, lowering filtration while many tubules still work", "Contrast blocks the collecting duct", "Contrast stimulates aldosterone release, so the collecting duct holds on to more of the filtered Na+", "Contrast is reabsorbed with Na+", "Contrast causes an allergic interstitial nephritis"],
+        answer: 0,
+        explanation: `<p><strong>Iodinated contrast acts in two ways: it constricts renal vessels and is toxic to tubular cells.</strong> The vasoconstriction lowers filtration while many tubules still reabsorb Na+, so FENa can be low.</p>
+<p>Risk is highest in CKD, DM, HF, volume depletion, and with large contrast volumes. It is prevented with hydration, the lowest dose, and avoiding repeat exposure.</p>`,
+        notes: {
+            1: "Contrast does not block the collecting duct.",
+            2: "Aldosterone is not the mechanism.",
+            3: "Contrast is filtered and excreted, not reabsorbed with Na+.",
+            4: "Contrast-associated AKI is a vascular and tubular injury, not AIN.",
+        },
+    },
+
+    /* --- Analysis --- */
+    {
+        id: "intra-ain-case",
+        condition: "intrarenal-aki",
+        kind: "analysis",
+        stem: `<p>A 63-year-old woman has 4 days of fatigue, a faint rash on her trunk, and passing more urine than usual. Her creatinine has risen from 80 to 230 µmol/L. Her blood pressure is normal, and she has no edema.</p>
+<table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody>
+<tr><td>Urine microscopy</td><td>White cell casts; white cells with a negative culture</td></tr>
+<tr><td>Urine protein</td><td>Trace</td></tr>
+<tr><td>Urine red cells</td><td>Few, normal shape</td></tr>
+<tr><td>Eosinophils</td><td>Normal</td></tr>
+<tr><td>CK</td><td>Normal</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p>
+<p>Which additional finding would most support AIN?</p>`,
+        options: ["Omeprazole started 10 days ago", "Eosinophils seen in the urine", "A recent sore throat", "Coronary angiography 2 days ago", "A low complement level"],
+        answer: 0,
+        explanation: `<p><strong>AIN usually follows a new drug by 1–2 weeks,</strong> and PPIs are among the commonest causes. Her white cell casts, sterile pyuria, and polyuria from a concentrating defect fit the interstitium (compartment 4).</p>
+<p>Fever, rash, and eosinophilia occur together in only about 10%, so their absence does not exclude it. Treatment is stopping the drug, with corticosteroids if there is no improvement within 3–7 days.</p>`,
+        notes: {
+            1: "Eosinophiluria is unreliable in AIN, and it also occurs in atheroemboli.",
+            2: "A sore throat 1–3 weeks before points to PSGN, a glomerular disease with red cell casts.",
+            3: "Contrast causes contrast-associated AKI, with muddy brown casts rather than white cell casts.",
+            4: "Low complement points to immune complex glomerular disease or atheroemboli.",
+        },
+    },
+    {
+        id: "intra-set-sort-1",
+        condition: "intrarenal-aki",
+        kind: "analysis",
+        set: "intra-sort",
+        passage: `<p>Three patients on a ward develop AKI in the same week.</p>
+<table><thead><tr><th>Patient</th><th>History</th><th>Urine microscopy</th><th>FENa</th></tr></thead><tbody>
+<tr><td>A, 70</td><td>Septic shock 3 days ago, on noradrenaline for 36 hours</td><td>Muddy brown granular casts and tubular cells</td><td>3.4%</td></tr>
+<tr><td>B, 58</td><td>Started on flucloxacillin for cellulitis 12 days ago</td><td>White cell casts; sterile pyuria</td><td>2.1%</td></tr>
+<tr><td>C, 34</td><td>Coughing up blood for 2 days; new hypertension</td><td>Dysmorphic red cells and red cell casts; protein</td><td>0.8%</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p>`,
+        stem: "Which compartment is injured in each patient?",
+        options: ["A tubules, B interstitium, C glomeruli", "A interstitium, B tubules, C glomeruli", "A tubules, B glomeruli, C interstitium", "A small vessels, B interstitium, C tubules", "A glomeruli, B tubules, C small vessels"],
+        answer: 0,
+        explanation: `<p><strong>The sediment points to the compartment:</strong></p>
+<ul>
+<li><strong>A:</strong> muddy brown casts after shock is ischemic ATN, in the tubules.</li>
+<li><strong>B:</strong> white cell casts and sterile pyuria after a penicillin is AIN, in the interstitium.</li>
+<li><strong>C:</strong> dysmorphic red cells, red cell casts, and protein are glomerular, here with hemoptysis.</li>
+</ul>
+<p>C's FENa is low because filtration falls while the tubules still work, which is why a low FENa does not always mean prerenal AKI.</p>`,
+        notes: {
+            1: "Muddy brown casts mean tubular injury, and white cell casts mean interstitial injury, not the reverse.",
+            2: "White cell casts point to the interstitium, and red cell casts to the glomeruli.",
+            3: "Vessel disease leaves the urine often bland, and red cell casts are glomerular.",
+            4: "Muddy brown casts are tubular, not glomerular.",
+        },
+    },
+    {
+        id: "intra-set-sort-2",
+        condition: "intrarenal-aki",
+        kind: "analysis",
+        set: "intra-sort",
+        stem: "What is the most urgent next step for patient C?",
+        options: ["Anti-GBM and ANCA testing, with urgent referral for biopsy and immunosuppression", "Stop her medicines and wait 3–7 days", "Large volumes of IV fluid aiming for 200–300 mL/h", "SPEP and serum free light chains", "Repeat urinalysis in a week"],
+        answer: 0,
+        explanation: `<p><strong>Hemoptysis with a glomerular sediment and rising creatinine suggests a pulmonary-renal syndrome, such as anti-GBM disease or ANCA vasculitis,</strong> which can destroy the kidneys and lungs within days.</p>
+<p>Anti-GBM and ANCA testing, with complement and ANA, are sent at once, and biopsy and immunosuppression follow quickly. Biopsy is reserved for unexplained or rapidly progressive AKI, and she has both.</p>`,
+        notes: {
+            1: "Stopping the drug and waiting suits AIN, as in patient B.",
+            2: "High-volume fluid is for rhabdomyolysis.",
+            3: "Light chain tests look for myeloma, which does not cause red cell casts or hemoptysis.",
+            4: "Waiting risks permanent loss of kidney function in rapidly progressive disease.",
+        },
+        info: "Pulmonary-renal syndrome is covered on the glomerular disease pages; this page lists hemoptysis as a glomerular clue.",
+    },
+    {
+        id: "intra-tma-case",
+        condition: "intrarenal-aki",
+        kind: "analysis",
+        stem: `<p>A 29-year-old woman has 3 days of headache, confusion, and passing less urine. She has bruises on her legs.</p>
+<table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody>
+<tr><td>Hemoglobin</td><td>74 g/L</td></tr>
+<tr><td>Platelets</td><td>18 × 10⁹/L</td></tr>
+<tr><td>Blood film</td><td>Many schistocytes</td></tr>
+<tr><td>LDH</td><td>1850 U/L (high)</td></tr>
+<tr><td>Creatinine</td><td>190 µmol/L</td></tr>
+<tr><td>Urine microscopy</td><td>A few red cells; no casts</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p>
+<p>Which compartment is injured, and how is it treated?</p>`,
+        options: ["Small vessels; plasma exchange or complement blockade by type", "Glomeruli; corticosteroids and cyclophosphamide", "Tubules; large volumes of IV fluid", "Interstitium; stop the drug, then corticosteroids", "Small vessels; platelet transfusion to stop the bleeding"],
+        answer: 0,
+        explanation: `<p><strong>Anemia with schistocytes, low platelets, high LDH, and AKI is thrombotic microangiopathy,</strong> an injury to the small vessels (compartment 1). Endothelial injury triggers platelet clots, which shear red cells, and the urine is often fairly bland.</p>
+<p>With confusion and very low platelets, TTP is likely, treated with plasma exchange; complement-mediated HUS is treated with complement blockade. The Thrombotic Microangiopathy page covers telling the types apart.</p>`,
+        notes: {
+            1: "Glomerulonephritis gives red cell casts and protein, without schistocytes and very low platelets.",
+            2: "ATN does not cause hemolysis or low platelets.",
+            3: "AIN gives white cell casts after a drug, without hemolysis.",
+            4: "The platelets are being consumed in clots; the treatment is plasma exchange or complement blockade.",
+        },
+        info: "Platelet transfusion being avoided in TTP is standard teaching on the Thrombotic Microangiopathy page.",
+    },
+
+    /* ===== Postrenal AKI ===== */
+
+    /* --- Memory --- */
+    {
+        id: "post-bph",
+        condition: "postrenal-aki",
+        kind: "memory",
+        stem: "What is the most common cause of postrenal AKI in older men?",
+        options: ["Benign prostatic hyperplasia", "Kidney stones", "Retroperitoneal fibrosis", "Bladder cancer with clot retention", "Urethral stricture"],
+        answer: 0,
+        explanation: `<p><strong>BPH is the most common cause of postrenal AKI in older men.</strong> The enlarged prostate narrows the urethra below the bladder (cause 1), so both kidneys back up at once.</p>
+<p>It presents with difficulty starting to void, a weak stream, and retention with a distended bladder. A urethral catheter that drains a large volume is diagnostic and therapeutic, with a Coudé tip when the prostate is large.</p>`,
+        notes: {
+            1: "Stones are the most common cause in younger patients.",
+            2: "Retroperitoneal fibrosis is a less common cause that encases both ureters.",
+            3: "Bladder tumors and clots cause obstruction, but less often than BPH.",
+            4: "Urethral stricture is a less common cause below the bladder.",
+        },
+    },
+    {
+        id: "post-stones",
+        condition: "postrenal-aki",
+        kind: "memory",
+        stem: "What is the most common cause of postrenal AKI in younger patients?",
+        options: ["Kidney stones", "Benign prostatic hyperplasia", "Pelvic cancers", "Neurogenic bladder", "Retroperitoneal fibrosis"],
+        answer: 0,
+        explanation: `<p><strong>Stones are the most common cause of postrenal AKI in younger patients</strong> (cause 3). They cause AKI only when both ureters, or the ureter of a single working kidney, are blocked.</p>
+<p>They typically cause flank pain. Struvite and cystine stones grow fast, and an infected, obstructed kidney needs urgent drainage.</p>`,
+        notes: {
+            1: "BPH is the most common cause in older men.",
+            2: "Pelvic masses and cancers are the most common cause in older women.",
+            3: "Neurogenic bladder is a cause at any age, but less common than stones in the young.",
+            4: "Retroperitoneal fibrosis is an uncommon cause, usually in older patients.",
+        },
+    },
+    {
+        id: "post-women",
+        condition: "postrenal-aki",
+        kind: "memory",
+        stem: "What is the most common cause of postrenal AKI in older women?",
+        options: ["Pelvic masses and cancers", "Kidney stones", "Posterior urethral valves", "Phimosis", "Benign prostatic hyperplasia"],
+        answer: 0,
+        explanation: `<p><strong>Pelvic masses and cancers are the most common cause in older women</strong> (cause 4). They compress both ureters, often slowly, so the obstruction can be painless until the kidneys fail.</p>
+<p>Retroperitoneal fibrosis and lymph nodes block the ureters in the same way, and pelvic organ prolapse can obstruct the bladder outlet.</p>`,
+        notes: {
+            1: "Stones are the most common cause in younger patients.",
+            2: "Posterior urethral valves obstruct the urethra in boys.",
+            3: "Phimosis is a cause below the bladder in men.",
+            4: "BPH affects men.",
+        },
+    },
+    {
+        id: "post-ultrasound",
+        condition: "postrenal-aki",
+        kind: "memory",
+        stem: "Which imaging test is used first to look for hydronephrosis and hydroureter?",
+        options: ["Kidney ultrasound", "CT of the abdomen and pelvis", "Plain abdominal x-ray", "MRI of the pelvis", "Renal angiography"],
+        answer: 0,
+        explanation: `<p><strong>Kidney ultrasound shows hydronephrosis and hydroureter</strong> without radiation or contrast, so it is the first test once a bladder scan and catheter have dealt with the bladder outlet.</p>
+<p>CT follows to find the cause, such as a stone or mass. Because obstruction is reversible, it is looked for early in every unexplained AKI.</p>`,
+        notes: {
+            1: "CT finds stones and masses, but ultrasound comes first to show the dilation.",
+            2: "A plain x-ray shows some stones but not hydronephrosis.",
+            3: "MRI is not the first test for hydronephrosis.",
+            4: "Angiography looks at the renal arteries, not the urinary tract.",
+        },
+    },
+    {
+        id: "post-pod",
+        condition: "postrenal-aki",
+        kind: "memory",
+        stem: "Which complication follows the relief of urinary obstruction in up to 50% of patients?",
+        options: ["Post-obstructive diuresis", "Hyperkalemia", "Acute interstitial nephritis", "Bladder rupture", "Hepatorenal syndrome"],
+        answer: 0,
+        explanation: `<p><strong>Post-obstructive diuresis follows relief in up to 50%:</strong> urine output of 200 mL/h or more for 2 hours, or over 3 L in 24 hours.</p>
+<p>It can cause hypovolemia and losses of Na+, K+, phosphate, and Mg2+, so these are checked every 12–24 hours. Risk is highest when 1500 mL or more drains at once.</p>`,
+        notes: {
+            1: "K+ is lost in the diuresis, so hypokalemia, not hyperkalemia, follows relief.",
+            2: "AIN is a drug reaction, not a consequence of relieving obstruction.",
+            3: "Draining the bladder relieves pressure; it does not cause rupture.",
+            4: "Hepatorenal syndrome is a complication of cirrhosis.",
+        },
+    },
+    {
+        id: "post-coude",
+        condition: "postrenal-aki",
+        kind: "memory",
+        stem: "An older man with a large prostate is in urinary retention, and a standard urethral catheter will not pass. What is tried next?",
+        options: ["A Coudé-tip catheter, then a suprapubic catheter if it fails", "A ureteral stent", "A percutaneous nephrostomy", "Start tamsulosin, then review the retention again in a week", "Furosemide to increase urine flow"],
+        answer: 0,
+        explanation: `<p><strong>A Coudé catheter has a curved tip that rides over a large prostate.</strong> If no urethral catheter can pass, a suprapubic catheter drains the bladder through the abdominal wall.</p>
+<p>The obstruction is relieved at its level: below the bladder with a catheter, and in the ureters with a stent or nephrostomy. BPH treatment, from drugs to TURP, follows.</p>`,
+        notes: {
+            1: "A ureteral stent relieves obstruction of the ureter, not the bladder outlet.",
+            2: "A nephrostomy drains the kidney when the ureter is blocked.",
+            3: "BPH drugs come later; retention needs drainage now.",
+            4: "A diuretic adds urine to a bladder that cannot empty.",
+        },
+        info: "The curved tip of the Coudé catheter is standard teaching; the page recommends it when the prostate is large.",
+    },
+
+    /* --- Reasoning --- */
+    {
+        id: "post-unilateral",
+        condition: "postrenal-aki",
+        kind: "reasoning",
+        stem: "A CT done for another reason shows retroperitoneal fibrosis narrowing the left ureter, with left hydronephrosis. She has no pain, and her urine output and creatinine are normal. Why is her creatinine normal?",
+        options: ["The right kidney compensates for the blocked left kidney", "Fibrosis lowers the pressure in the left Bowman space", "Creatinine rises only once the bladder outlet itself is obstructed", "The left kidney filters more to overcome the blockage", "Hydronephrosis does not affect filtration"],
+        answer: 0,
+        explanation: `<p><strong>Obstruction causes AKI only when both kidneys, or a single working kidney, are blocked.</strong> With one ureter narrowed gradually, the other kidney compensates, so creatinine and urine output stay normal.</p>
+<p>The blockage is painless because it developed slowly; stones cause flank pain because they block suddenly. The left kidney is still at risk: obstruction that lasts causes tubular atrophy and interstitial fibrosis.</p>`,
+        notes: {
+            1: "Obstruction raises Bowman space pressure; it does not lower it.",
+            2: "Both ureters, or one ureter of a single kidney, can cause AKI without bladder involvement.",
+            3: "The obstructed kidney filters less, not more.",
+            4: "Hydronephrosis does lower filtration in that kidney; the other kidney makes up for it.",
+        },
+    },
+    {
+        id: "post-bowman",
+        condition: "postrenal-aki",
+        kind: "reasoning",
+        stem: "A man with a neurogenic bladder develops retention and AKI. Which Starling force across the glomerulus changes first, and how?",
+        options: ["Bowman space hydrostatic pressure increases", "Glomerular capillary hydrostatic pressure falls", "Glomerular capillary oncotic pressure increases", "Bowman space oncotic pressure increases", "Glomerular capillary hydrostatic pressure increases"],
+        answer: 0,
+        explanation: `<p><strong>Urine that cannot drain raises the pressure up the urinary tract into the tubules and Bowman space.</strong> Bowman space hydrostatic pressure opposes filtration, so within hours it narrows the net filtration pressure and GFR falls.</p>
+<p>Later, renal vasoconstriction, inflammation, tubular atrophy, and interstitial fibrosis add to the injury, which is why obstruction is relieved early.</p>`,
+        notes: {
+            1: "Glomerular capillary pressure falls later with renal vasoconstriction, not first.",
+            2: "Capillary oncotic pressure is not what obstruction changes first.",
+            3: "Bowman space has almost no protein, so its oncotic pressure stays near zero.",
+            4: "An increase would raise GFR, the opposite of what happens.",
+        },
+    },
+    {
+        id: "post-infected",
+        condition: "postrenal-aki",
+        kind: "reasoning",
+        stem: "A febrile patient has a stone blocking the ureter of her only working kidney, with hydronephrosis and pus cells in the urine. Why is a ureteral stent or nephrostomy needed urgently, rather than antibiotics alone?",
+        options: ["Infected urine cannot drain, so antibiotics alone fail", "Antibiotics cannot be given until the stone is removed", "The stent sterilizes the urine directly", "Nephrostomy is needed to measure GFR", "Antibiotics would dissolve the stone too slowly to protect the kidney"],
+        answer: 0,
+        explanation: `<p><strong>An infected, obstructed kidney is a closed space full of infected urine,</strong> so antibiotics alone fail and sepsis can follow quickly. A ureteral stent or percutaneous nephrostomy drains it, urgently when it is infected.</p>
+<p>Antibiotics and a urine culture accompany drainage, and the stone is treated once the infection settles.</p>`,
+        notes: {
+            1: "Antibiotics are given at once; they simply are not enough without drainage.",
+            2: "The stent drains the urine; it does not sterilize it.",
+            3: "Nephrostomy is for drainage, not measurement.",
+            4: "Antibiotics do not dissolve stones; the point is drainage of infected urine.",
+        },
+    },
+    {
+        id: "post-partial",
+        condition: "postrenal-aki",
+        kind: "reasoning",
+        stem: "A man reports days of passing almost no urine alternating with days of passing large volumes. What does this pattern suggest?",
+        options: ["A partial obstruction", "A complete obstruction", "Prerenal AKI from fluid loss", "ATN in its diuretic phase", "A concentrating defect from AIN"],
+        answer: 0,
+        explanation: `<p><strong>Alternating polyuria and low output suggest a partial obstruction:</strong> urine backs up while flow is blocked, then passes in large volumes when it gives way. Damaged tubules also concentrate poorly, adding to the volume.</p>
+<p>Sudden anuria, by contrast, suggests a complete obstruction. Both call for a bladder scan, catheter, and kidney ultrasound.</p>`,
+        notes: {
+            1: "A complete obstruction causes sudden anuria, without the large-volume days.",
+            2: "Prerenal AKI causes low output of concentrated urine, without polyuric days.",
+            3: "The diuretic phase of ATN follows oliguria once, without alternating back.",
+            4: "AIN can cause polyuria, but not alternating anuria.",
+        },
+    },
+    {
+        id: "post-replace",
+        condition: "postrenal-aki",
+        kind: "reasoning",
+        stem: "In post-obstructive diuresis, why are fluid losses replaced with care rather than matched mL for mL?",
+        options: ["Giving all the output back can keep the diuresis going", "IV fluid is unsafe in AKI", "The kidneys reabsorb all the lost fluid within hours", "Replacing fluid raises the pressure in the bladder and makes the obstruction recur", "Matching output causes hyperkalemia"],
+        answer: 0,
+        explanation: `<p><strong>Part of the diuresis is a physiological clearance of fluid retained during the obstruction.</strong> Replacing every mL keeps the patient overloaded, so the kidneys keep excreting, and the fluid itself drives the diuresis.</p>
+<p>Losses are replaced with care, with Na+, K+, phosphate, Mg2+, urea, and creatinine checked every 12–24 hours, to avoid hypovolemia without prolonging the diuresis.</p>`,
+        notes: {
+            1: "IV fluid is often needed; the point is how much.",
+            2: "The kidneys excrete fluid in this phase; they do not hold on to it.",
+            3: "Fluid does not cause the obstruction to recur.",
+            4: "The diuresis loses K+, so hypokalemia is the risk.",
+        },
+        info: "Retained fluid as the physiological part of the diuresis comes from the StatPearls chapter on postobstructive diuresis.",
+    },
+    {
+        id: "post-early",
+        condition: "postrenal-aki",
+        kind: "reasoning",
+        stem: "Why is obstruction looked for early in every unexplained AKI?",
+        options: ["It reverses if relieved early, but scars the kidney if it lasts", "It is the most common cause of AKI in hospital", "It always causes severe pain", "It cannot be found by ultrasound once it has been present for more than a few days", "It causes hyperkalemia within minutes"],
+        answer: 0,
+        explanation: `<p><strong>Obstruction is the cause of AKI most easily reversed,</strong> but if it lasts, renal vasoconstriction, inflammation, tubular atrophy, and interstitial fibrosis follow.</p>
+<p>Over weeks to months it leads to bladder atony, chronic interstitial nephritis, secondary FSGS, and ESRD. So a bladder scan and catheter, then ultrasound, come early in the workup.</p>`,
+        notes: {
+            1: "Prerenal AKI and ATN are far more common in hospital.",
+            2: "Slow obstruction is often painless, as with fibrosis or tumor.",
+            3: "Ultrasound shows hydronephrosis whether the obstruction is new or old.",
+            4: "Hyperkalemia is a complication of AKI, not the reason to look early.",
+        },
+    },
+
+    /* --- Analysis --- */
+    {
+        id: "post-psa",
+        condition: "postrenal-aki",
+        kind: "analysis",
+        stem: `<p>A 72-year-old man has 2 months of difficulty starting to void, a weak stream, and 6 kg of unintended weight loss. He is passing urine, and his bladder is not palpable. Digital rectal examination finds a hard, nodular prostate.</p>
+<table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody>
+<tr><td>Urinalysis</td><td>Blood 2+; red cells of normal shape</td></tr>
+<tr><td>Creatinine</td><td>92 µmol/L (normal)</td></tr>
+<tr><td>Post-void residual on bladder scan</td><td>80 mL</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p>
+<p>What is the next best step?</p>`,
+        options: ["PSA", "Urgent suprapubic catheter", "Ureteral stents", "Start tamsulosin and review in 3 months", "Complement and ANCA"],
+        answer: 0,
+        explanation: `<p><strong>A hard, nodular prostate with weight loss and hematuria raises concern for prostate cancer, so PSA is checked.</strong></p>
+<ul>
+<li><strong>No obstruction now:</strong> he is voiding, his residual is small, and his creatinine is normal, so he needs no drainage.</li>
+<li><strong>Not glomerular:</strong> the red cells are of normal shape.</li>
+</ul>
+<p>Prostate cancer is one of the causes below the bladder (cause 1), with BPH, urethral stricture, and phimosis.</p>`,
+        notes: {
+            1: "He is voiding with a small residual, so he does not need drainage.",
+            2: "His ureters are not obstructed; the concern is the prostate.",
+            3: "Treating as BPH would delay assessment of a possible cancer.",
+            4: "Normal-shaped red cells and normal creatinine do not suggest glomerulonephritis.",
+        },
+        info: "Some pathways now use prostate MRI before biopsy; the page's next step is PSA.",
+    },
+    {
+        id: "post-set-retention-1",
+        condition: "postrenal-aki",
+        kind: "analysis",
+        set: "post-retention",
+        passage: `<p>An 80-year-old man with BPH has not passed urine for 18 hours and has a tender, distended bladder. A Coudé catheter drains 1800 mL. Over the next 12 hours his urine keeps flowing, and his blood pressure falls from 150/85 to 112/70 mmHg.</p>
+<table><thead><tr><th>Test</th><th>Admission</th><th>12 hours after the catheter</th></tr></thead><tbody>
+<tr><td>Urine output</td><td>–</td><td>380 mL/h</td></tr>
+<tr><td>Creatinine</td><td>410 µmol/L</td><td>260 µmol/L</td></tr>
+<tr><td>K+</td><td>5.8 mmol/L</td><td>3.1 mmol/L</td></tr>
+<tr><td>Mg2+</td><td>0.9 mmol/L</td><td>0.55 mmol/L</td></tr>
+<tr><td>Phosphate</td><td>1.8 mmol/L</td><td>0.6 mmol/L</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p>`,
+        stem: "What best explains his course after the catheter?",
+        options: ["Post-obstructive diuresis, with electrolyte losses", "Prerenal AKI from fluid loss before admission", "ATN entering its oliguric phase", "Bladder rupture from the catheter", "Hepatorenal syndrome"],
+        answer: 0,
+        explanation: `<p><strong>Over 200 mL/h after relief is post-obstructive diuresis,</strong> and the risk was highest because 1500 mL or more drained at once.</p>
+<ul>
+<li><strong>Creatinine falling:</strong> the obstruction has been relieved.</li>
+<li><strong>K+, Mg2+, and phosphate falling:</strong> damaged tubules lose them in the large urine volume.</li>
+<li><strong>Blood pressure falling:</strong> early hypovolemia from the losses.</li>
+</ul>`,
+        notes: {
+            1: "His creatinine is falling with high urine output, which is recovery from obstruction, not prerenal AKI.",
+            2: "His output is high, the opposite of an oliguric phase.",
+            3: "The catheter drains well and output is high; rupture would stop drainage and cause pain.",
+            4: "He does not have cirrhosis.",
+        },
+    },
+    {
+        id: "post-set-retention-2",
+        condition: "postrenal-aki",
+        kind: "analysis",
+        set: "post-retention",
+        stem: "Which plan is most appropriate now?",
+        options: ["Replace losses with care, replace K+, Mg2+, and phosphate, and check electrolytes every 12–24 hours", "Give IV fluid matching every mL of urine output hour by hour", "Clamp the catheter to slow the diuresis", "Furosemide to protect the kidneys", "Stop all IV fluid and let him drink to thirst"],
+        answer: 0,
+        explanation: `<p><strong>Post-obstructive diuresis is managed by replacing losses with care and monitoring closely:</strong> Na+, K+, phosphate, Mg2+, urea, and creatinine every 12–24 hours.</p>
+<p>His falling blood pressure means he needs some fluid, but matching every mL would keep the diuresis going, because part of it is the excretion of fluid retained during the obstruction.</p>`,
+        notes: {
+            1: "Matching every mL can drive the diuresis itself.",
+            2: "Clamping the catheter would recreate the obstruction.",
+            3: "A diuretic would add to the losses.",
+            4: "He is becoming hypovolemic with falling electrolytes; he needs monitored replacement.",
+        },
+    },
+
+    /* ===== AKI: Comparison and Workup ===== */
+
+    /* --- Memory --- */
+    {
+        id: "akiw-stec",
+        condition: "aki-workup",
+        kind: "memory",
+        stem: "In STEC-HUS, how long after the diarrhea starts does creatinine usually begin to rise?",
+        options: ["5–13 days", "Within 24 hours", "48–72 hours", "3–4 weeks", "Over 3 months"],
+        answer: 0,
+        explanation: `<p><strong>Creatinine rises 5–13 days after the diarrhea starts in STEC-HUS.</strong> Shiga toxin is absorbed from the colon and injures the endothelium of the glomerular capillaries, and the clots that follow take days to cut filtration enough to show on bloods.</p>
+<p>By then the diarrhea has often settled, so the history has to be asked for. About half of patients need dialysis.</p>`,
+        notes: {
+            1: "Within 24 hours is too soon; the toxin takes days to injure the glomerular endothelium.",
+            2: "48–72 hours is when contrast-associated AKI starts to rise.",
+            3: "3–4 weeks is too late; most cases of HUS have declared themselves within 2 weeks.",
+            4: "Over 3 months defines CKD, not the onset of HUS.",
+        },
+    },
+    {
+        id: "akiw-diuretic-phase",
+        condition: "aki-workup",
+        kind: "memory",
+        stem: "In which phase of ATN are hypovolemia and hypokalemia most likely?",
+        options: ["The diuretic (polyuric) phase", "The initiation phase", "The extension phase", "The oliguric (maintenance) phase", "Recovery, once creatinine is stable"],
+        answer: 0,
+        explanation: `<p><strong>In the diuretic phase, GFR returns before the tubules can concentrate urine,</strong> so large volumes of Na+, K+, Mg2+, and water are lost.</p>
+<p>That makes it the phase for hypovolemia and hypokalemia, and why fluid balance and electrolytes are watched closely as urine output rises. The oliguric phase carries the opposite risks: overload, hyperkalemia, and acidosis.</p>`,
+        notes: {
+            1: "In initiation, GFR is only starting to fall, and urine output is not yet high.",
+            2: "In extension, injury is still spreading and urine output is falling, not high.",
+            3: "The oliguric phase brings overload and hyperkalemia, not hypovolemia and hypokalemia.",
+            4: "In recovery, the tubules concentrate urine again, so losses are no longer large.",
+        },
+    },
+    {
+        id: "akiw-polyuria",
+        condition: "aki-workup",
+        kind: "memory",
+        stem: "Which cause of AKI often presents with polyuria rather than oliguria?",
+        options: ["Acute interstitial nephritis", "Prerenal AKI from vomiting", "Complete bilateral ureteric obstruction", "Ischemic ATN in its oliguric phase", "Occlusion of a single kidney's renal artery"],
+        answer: 0,
+        explanation: `<p><strong>AIN often causes polyuria,</strong> because inflammation in the interstitium disrupts the medulla's ability to concentrate urine.</p>
+<p>The other causes of polyuria in AKI are post-obstructive diuresis, after an obstruction is relieved, and the diuretic phase of ATN. Oliguria, by contrast, favors AKI over CKD.</p>`,
+        notes: {
+            1: "Prerenal AKI conserves water, so the urine is low in volume and concentrated.",
+            2: "Complete obstruction causes sudden anuria until it is relieved; polyuria may follow relief.",
+            3: "The oliguric phase of ATN is, by definition, low in urine output.",
+            4: "Sudden occlusion of the artery to a single kidney causes anuria.",
+        },
+    },
+    {
+        id: "akiw-ckd-history",
+        condition: "aki-workup",
+        kind: "memory",
+        stem: "A patient has a creatinine of 380 µmol/L with no earlier result. Which history favors CKD over AKI?",
+        options: ["Months of fatigue, anorexia, nocturia, and pruritus", "Three days of vomiting with dizziness on standing up from bed", "A CT with contrast 2 days ago", "Starting an NSAID for back pain last week", "Cola-colored urine after a long-distance run"],
+        answer: 0,
+        explanation: `<p><strong>Months of fatigue, anorexia, nocturia, polyuria, and pruritus point to CKD,</strong> because uremic symptoms take time to build, and the failing kidney has lost its ability to concentrate urine overnight.</p>
+<p>Other clues to CKD are small kidneys on ultrasound, anemia, a high phosphate, and a high PTH. A recent insult with a normal creatinine before favors AKI.</p>`,
+        notes: {
+            1: "Recent vomiting with postural dizziness is a recent insult, favoring prerenal AKI.",
+            2: "Recent contrast is an insult that favors contrast-associated AKI.",
+            3: "A new NSAID is a recent insult, favoring AKI through afferent constriction or AIN.",
+            4: "Cola-colored urine after exertion suggests rhabdomyolysis, an acute cause.",
+        },
+    },
+    {
+        id: "akiw-kdigo",
+        condition: "aki-workup",
+        kind: "memory",
+        stem: "Which creatinine change meets the KDIGO definition of AKI?",
+        options: ["A rise of 26.5 µmol/L or more within 48 hours", "A rise of 10 µmol/L or more within 48 hours", "A rise of 1.2 times baseline within 30 days", "Any creatinine above the upper limit of normal", "A fall in eGFR below 60 for 3 months"],
+        answer: 0,
+        explanation: `<p><strong>KDIGO defines AKI as any of three changes:</strong></p>
+<ul>
+<li>a rise in creatinine of 26.5 µmol/L or more within 48 hours;</li>
+<li>a rise to 1.5 times baseline or more within 7 days;</li>
+<li>urine output below 0.5 mL/kg/h for 6 hours.</li>
+</ul>
+<p>The definition rests on change, not a single value, which is why a baseline creatinine matters.</p>`,
+        notes: {
+            1: "A rise of 10 µmol/L is within normal variation and too small to define AKI.",
+            2: "The relative threshold is 1.5 times baseline within 7 days.",
+            3: "A single high value does not show a change; it may be CKD.",
+            4: "An eGFR below 60 for 3 months defines CKD, not AKI.",
+        },
+    },
+    {
+        id: "akiw-akd",
+        condition: "aki-workup",
+        kind: "memory",
+        stem: "Kidney function that has not recovered 7–90 days after an AKI is called what?",
+        options: ["Acute kidney disease (AKD)", "Chronic kidney disease (CKD)", "Stage 3 AKI", "Acute-on-chronic kidney disease", "Rapidly progressive glomerulonephritis"],
+        answer: 0,
+        explanation: `<p><strong>Function that is still abnormal 7–90 days after an insult is acute kidney disease (AKD).</strong> The timeframes run on from one another:</p>
+<ul>
+<li>AKI: changes within 7 days;</li>
+<li>AKD: 7–90 days, when function has not yet recovered;</li>
+<li>CKD: abnormal for over 3 months.</li>
+</ul>`,
+        notes: {
+            1: "CKD needs abnormal function for over 3 months.",
+            2: "Stage 3 is the most severe stage of AKI by creatinine or urine output, not a timeframe.",
+            3: "Acute-on-chronic describes AKI on top of CKD, not a failure to recover.",
+            4: "RPGN is a glomerular disease that loses function over days to weeks, not a stage of recovery.",
+        },
+    },
+    {
+        id: "akiw-cystatin",
+        condition: "aki-workup",
+        kind: "memory",
+        stem: "Which marker of filtration rises sooner than creatinine in AKI and is not affected by muscle mass?",
+        options: ["Cystatin C", "Urea", "Albumin-to-creatinine ratio", "Urine Na+", "Creatine kinase"],
+        answer: 0,
+        explanation: `<p><strong>Cystatin C rises sooner than creatinine and does not depend on muscle mass.</strong> Creatinine lags behind the injury, so a fall in urine output can be the only early sign, and in a frail patient with little muscle a normal creatinine can hide a low GFR.</p>
+<p>KDIGO suggests cystatin C when creatinine is less accurate.</p>`,
+        notes: {
+            1: "Urea also changes with protein intake, bleeding, and corticosteroids, so it is a poorer marker of GFR.",
+            2: "The albumin-to-creatinine ratio measures protein leak, not filtration.",
+            3: "Urine Na+ shows how the tubules handle Na+, not GFR.",
+            4: "CK marks muscle injury, as in rhabdomyolysis, not filtration.",
+        },
+    },
+    {
+        id: "akiw-contrast",
+        condition: "aki-workup",
+        kind: "memory",
+        stem: "When does creatinine usually peak in contrast-associated AKI?",
+        options: ["2–5 days after the contrast", "Within 6 hours of the contrast", "1–2 weeks after the contrast", "5–13 days after the contrast", "3 months after the contrast"],
+        answer: 0,
+        explanation: `<p><strong>Contrast-associated AKI rises within 48–72 hours, peaks at 2–5 days, and returns to baseline by about 2 weeks.</strong></p>
+<p>That timecourse helps separate it from atheroemboli, which can follow the same angiogram but cause AKI days to weeks later, with variable recovery. It is also why contrast in the last 24–48 hours is asked about in the workup.</p>`,
+        notes: {
+            1: "Within 6 hours is too soon for creatinine to change after any insult.",
+            2: "1–2 weeks after a new drug is the timing of AIN.",
+            3: "5–13 days after the diarrhea starts is the timing of STEC-HUS.",
+            4: "By 3 months, contrast-associated AKI has usually recovered.",
+        },
+    },
+    {
+        id: "akiw-ain-steroids",
+        condition: "aki-workup",
+        kind: "memory",
+        stem: "In drug-induced AIN, when are corticosteroids added after stopping the drug?",
+        options: ["If there is no improvement in 3–7 days", "Straight away, with the first dose of IV fluid", "Only once dialysis has been needed", "After 3 months without recovery", "Never, because AIN recovers by itself"],
+        answer: 0,
+        explanation: `<p><strong>The drug is stopped first, and corticosteroids are added if there is no improvement in 3–7 days.</strong> Many patients recover once the trigger is gone, so steroids are kept for those who do not.</p>
+<p>A biopsy is considered at the same point, to confirm the diagnosis before treating.</p>`,
+        notes: {
+            1: "Stopping the drug comes first; many patients recover without steroids.",
+            2: "Waiting for dialysis would let the inflammation scar the interstitium.",
+            3: "After 3 months, fibrosis has set in and steroids help little.",
+            4: "Corticosteroids are used when stopping the drug is not enough.",
+        },
+    },
+    {
+        id: "akiw-infection",
+        condition: "aki-workup",
+        kind: "memory",
+        stem: "Which complication of AKI is more common in these patients and a major cause of their death?",
+        options: ["Infection", "Hypercalcemia", "Hypernatremia", "Polycythemia", "Hypoglycemia"],
+        answer: 0,
+        explanation: `<p><strong>Infection is more common in AKI and a major cause of death.</strong> Uremia impairs immune function, and patients often have catheters and lines, including dialysis catheters.</p>
+<p>In-hospital mortality is 40–50%, and over 50% in ICU. The other complications are overload, hyperkalemia, acidosis, other electrolyte changes, uremia, and drug toxicity.</p>`,
+        notes: {
+            1: "AKI tends to cause hypocalcemia, with a high phosphate.",
+            2: "AKI more often causes hyponatremia, from water the kidney cannot excrete.",
+            3: "AKI does not cause polycythemia; CKD causes anemia.",
+            4: "Hypoglycemia is not a typical complication of AKI.",
+        },
+    },
+    {
+        id: "akiw-mortality",
+        condition: "aki-workup",
+        kind: "memory",
+        stem: "About what proportion of patients with AKI in hospital die there?",
+        options: ["40–50%", "Under 1%", "5–10%", "15–20%", "Over 90%"],
+        answer: 0,
+        explanation: `<p><strong>In-hospital mortality in AKI is 40–50%, and over 50% in ICU.</strong> Much of this reflects the illness that caused the AKI, but AKI adds its own risks through overload, hyperkalemia, acidosis, and infection.</p>
+<p>Of those who survive, 12–15% later need long-term dialysis, and repeated AKI adds up to CKD.</p>`,
+        notes: {
+            1: "Under 1% is far too low; AKI is a marker of serious illness.",
+            2: "5–10% underestimates the mortality.",
+            3: "12–15% is the proportion that later needs long-term dialysis, not the mortality.",
+            4: "Over 90% is far too high; most patients outside ICU survive.",
+        },
+    },
+    {
+        id: "akiw-fatty-casts",
+        condition: "aki-workup",
+        kind: "memory",
+        stem: "Fatty casts and oval fat bodies on urine microscopy point to which condition?",
+        options: ["Nephrotic syndrome", "Acute tubular necrosis", "Prerenal AKI", "Acute interstitial nephritis", "Ethylene glycol poisoning"],
+        answer: 0,
+        explanation: `<p><strong>Fatty casts and oval fat bodies point to nephrotic syndrome.</strong> The leaky glomerulus lets lipoproteins into the tubule, where tubular cells take up the lipid and are shed as oval fat bodies.</p>
+<p>They come with heavy proteinuria, usually 3+ or more on the dipstick.</p>`,
+        notes: {
+            1: "ATN gives muddy brown granular casts and tubular cells.",
+            2: "Prerenal AKI gives bland urine or hyaline casts.",
+            3: "AIN gives white cell casts and sterile pyuria.",
+            4: "Ethylene glycol gives calcium oxalate crystals.",
+        },
+    },
+    {
+        id: "akiw-oxalate",
+        condition: "aki-workup",
+        kind: "memory",
+        stem: "Calcium oxalate crystals in the urine of a patient with AKI point to which cause?",
+        options: ["Ethylene glycol poisoning", "Tumor lysis syndrome", "Acyclovir", "Rhabdomyolysis", "Methanol poisoning from home-made spirits"],
+        answer: 0,
+        explanation: `<p><strong>Calcium oxalate crystals point to ethylene glycol,</strong> which is metabolized to oxalate that precipitates with calcium in the tubules.</p>
+<p>Other crystals have their own causes: urate in TLS, and acyclovir crystals after high doses. Ethylene glycol is also a dialyzable poison, one of the AEIOU indications.</p>`,
+        notes: {
+            1: "TLS gives urate crystals.",
+            2: "Acyclovir gives its own needle-shaped crystals.",
+            3: "Rhabdomyolysis gives blood on the dipstick with few red cells, from myoglobin.",
+            4: "Methanol causes a high anion gap acidosis and blindness, not oxalate crystals.",
+        },
+    },
+    {
+        id: "akiw-intoxication",
+        condition: "aki-workup",
+        kind: "memory",
+        stem: "Under the AEIOU indications for dialysis, which poisoning is an example of the \"I\"?",
+        options: ["Lithium", "Paracetamol", "Digoxin", "Benzodiazepines", "Opioids"],
+        answer: 0,
+        explanation: `<p><strong>"I" is a dialyzable poison, such as methanol, ethylene glycol, or lithium.</strong> These are small, water-soluble molecules that are not tightly bound to protein, so dialysis removes them.</p>
+<p>The other indications are refractory acidosis, refractory hyperkalemia, overload that does not respond to diuretics, and uremia with encephalopathy, pericarditis, neuropathy, seizures, or bleeding.</p>`,
+        notes: {
+            1: "Paracetamol poisoning is treated with acetylcysteine, not dialysis.",
+            2: "Digoxin is widely distributed in tissues, so dialysis removes little; digoxin antibodies are used.",
+            3: "Benzodiazepines are protein-bound and treated supportively, with flumazenil rarely.",
+            4: "Opioid toxicity is treated with naloxone.",
+        },
+    },
+    {
+        id: "akiw-protein",
+        condition: "aki-workup",
+        kind: "memory",
+        stem: "How much protein a day is recommended for a patient with AKI?",
+        options: ["1.2–1.5 g/kg", "Under 0.3 g/kg", "0.6–0.8 g/kg", "2.5–3 g/kg", "None until dialysis starts"],
+        answer: 0,
+        explanation: `<p><strong>Protein of 1.2–1.5 g/kg a day, preferably enteral, is recommended because AKI is catabolic.</strong> Restricting protein would worsen muscle wasting without protecting the kidney.</p>
+<p>Potassium and phosphate are limited instead, because the kidney cannot excrete them.</p>`,
+        notes: {
+            1: "Under 0.3 g/kg would worsen wasting in a catabolic patient.",
+            2: "0.6–0.8 g/kg is the restriction used in stable CKD, not in catabolic AKI.",
+            3: "2.5–3 g/kg is more than recommended and adds to the urea load.",
+            4: "Withholding protein worsens wasting and is not needed before dialysis.",
+        },
+    },
+    {
+        id: "akiw-crrt",
+        condition: "aki-workup",
+        kind: "memory",
+        stem: "Which form of dialysis is used for a patient with AKI whose blood pressure is unstable?",
+        options: ["CRRT", "Intermittent hemodialysis", "Peritoneal dialysis through a permanent catheter", "Plasma exchange", "A kidney transplant"],
+        answer: 0,
+        explanation: `<p><strong>CRRT is used for unstable patients,</strong> because it removes fluid and solute slowly over 24 hours, avoiding the large shifts that drop blood pressure in intermittent dialysis.</p>
+<p>In AKI, dialysis runs through a temporary venous catheter, is reassessed daily, and usually lasts days to weeks.</p>`,
+        notes: {
+            1: "Intermittent hemodialysis removes fluid quickly and can drop blood pressure in unstable patients.",
+            2: "Dialysis in AKI uses a temporary venous catheter, not a permanent peritoneal one.",
+            3: "Plasma exchange removes antibodies or proteins, as in anti-GBM disease or TTP; it does not replace kidney function.",
+            4: "AKI often recovers, so transplant is not used.",
+        },
+    },
+
+    /* --- Reasoning --- */
+    {
+        id: "akiw-dialysis-oliguric",
+        condition: "aki-workup",
+        kind: "reasoning",
+        stem: "Why is dialysis most often needed during the oliguric phase of severe ATN?",
+        options: ["With little urine, the kidney cannot excrete fluid, K+, or acid", "Creatinine is highest then, and creatinine itself is toxic", "The tubules leak Na+ and water, causing hypovolemia and low blood pressure", "Loop diuretics stop working only in this phase", "Dialysis speeds the regrowth of the tubular cells"],
+        answer: 0,
+        explanation: `<p><strong>In the oliguric phase, so little urine is made that fluid, K+, and acid build up.</strong> When overload, hyperkalemia, or acidosis does not respond to treatment, those are AEIOU indications for dialysis.</p>
+<p>Dialysis is usually needed for a few days to a few weeks, until the diuretic phase begins. It replaces the kidney's work but does not speed its recovery.</p>`,
+        notes: {
+            1: "Creatinine is a marker, not a toxin; dialysis is started for the complications, not a number.",
+            2: "Na+ and water loss is the problem of the diuretic phase.",
+            3: "Loop diuretics may still increase urine output; they work poorly when few nephrons are filtering.",
+            4: "Dialysis does not speed recovery; it supports the patient until the tubules regrow.",
+        },
+    },
+    {
+        id: "akiw-oliguria-ckd",
+        condition: "aki-workup",
+        kind: "reasoning",
+        stem: "Why does oliguria favor AKI over CKD?",
+        options: ["In CKD, the remaining nephrons adapt and urine output is kept", "In CKD, the kidneys are larger and filter more urine", "CKD causes oliguria only when the kidneys are infected", "Creatinine is normal in CKD, so oliguria cannot occur", "In AKI, ADH is always high, but in CKD it is no longer secreted at all"],
+        answer: 0,
+        explanation: `<p><strong>In CKD, function is lost slowly, and the remaining nephrons adapt by each filtering more,</strong> so urine output is usually kept until late. The failing kidney also loses the ability to concentrate urine, so nocturia and polyuria are common.</p>
+<p>In AKI, GFR falls suddenly with no time to adapt, so urine output drops. That makes oliguria a clue to AKI, though non-oliguric AKI is common.</p>`,
+        notes: {
+            1: "Kidneys in CKD are usually small, not large.",
+            2: "Infection is not what keeps urine output in CKD; adaptation of the remaining nephrons does.",
+            3: "Creatinine is high in CKD.",
+            4: "ADH is not absent in CKD; the failing kidney responds poorly to it.",
+        },
+        info: "The adaptation of the remaining nephrons goes beyond the page, which states only that oliguria favors AKI and that CKD brings nocturia and polyuria.",
+    },
+    {
+        id: "akiw-fena-gn",
+        condition: "aki-workup",
+        kind: "reasoning",
+        stem: "Why can the FENa be below 1% in glomerulonephritis, although the kidney itself is injured?",
+        options: ["GFR falls, but the tubules still work and reabsorb Na+", "Glomerular inflammation releases a hormone that blocks Na+ excretion", "The urine is too dilute for Na+ to be measured", "Red cells in the urine bind Na+ and lower its level", "Glomerulonephritis always has a prerenal cause as well"],
+        answer: 0,
+        explanation: `<p><strong>In glomerulonephritis, the injury is to the glomerulus, so GFR falls while the tubules still reabsorb Na+ avidly.</strong> The FENa then looks prerenal, below 1%.</p>
+<p>The same happens in HF, cirrhosis, contrast-associated AKI, and vasculitis. A low FENa therefore needs the sediment beside it: dysmorphic red cells and red cell casts point to the glomerulus.</p>`,
+        notes: {
+            1: "No such hormone explains it; it reflects working tubules.",
+            2: "Urine Na+ can be measured at any concentration; the FENa corrects for concentration with creatinine.",
+            3: "Red cells do not bind Na+ in a meaningful amount.",
+            4: "A prerenal component may coexist, but the low FENa occurs without one.",
+        },
+    },
+    {
+        id: "akiw-eosinophils",
+        condition: "aki-workup",
+        kind: "reasoning",
+        stem: "Why is eosinophiluria not used to diagnose AIN?",
+        options: ["It is often absent in AIN and also seen in other conditions, such as atheroemboli", "It appears only after a biopsy has confirmed AIN", "Eosinophils cannot be seen on urine microscopy", "It is present in every case of ATN as well, so it does not separate the two conditions", "It is a sign of nephrotic syndrome, not of AIN"],
+        answer: 0,
+        explanation: `<p><strong>Eosinophiluria is unreliable for AIN, because it is often absent and is also seen in other conditions,</strong> such as atheroemboli.</p>
+<p>Sterile pyuria and white cell casts are more useful, and biopsy confirms the diagnosis when stopping the drug does not bring improvement in 3–7 days. Eosinophilia in the blood is also uncommon, in about 10%.</p>`,
+        notes: {
+            1: "It is a urine test, so it does not depend on biopsy.",
+            2: "Eosinophils can be seen in the urine with special stains.",
+            3: "Eosinophiluria is not a feature of ATN, which gives muddy brown granular casts.",
+            4: "Nephrotic syndrome gives fatty casts and oval fat bodies, not eosinophils.",
+        },
+        info: "StatPearls reports a sensitivity of about 40% and a positive predictive value of about 38% for eosinophiluria in drug-induced AIN.",
+    },
+    {
+        id: "akiw-ckd-baseline",
+        condition: "aki-workup",
+        kind: "reasoning",
+        stem: "Why is AKI harder to diagnose and characterize in a patient with CKD?",
+        options: ["The baseline may be unknown, and the urine indices are less reliable", "CKD keeps creatinine from rising further, because the kidney has already lost its reserve", "Patients with CKD cannot develop ATN", "Ultrasound cannot be used in CKD", "CKD lowers K+, hiding hyperkalemia"],
+        answer: 0,
+        explanation: `<p><strong>AKI is defined by a change from baseline,</strong> so without an earlier result, a high creatinine could be CKD, AKI, or both.</p>
+<p>CKD also weakens Na+ conservation and concentration, so the FENa, urine Na+, and urine osmolality become less reliable at separating prerenal AKI from ATN. CKD is a risk factor for AKI, so the two often occur together.</p>`,
+        notes: {
+            1: "Creatinine rises further in AKI on CKD.",
+            2: "CKD increases the risk of ATN.",
+            3: "Ultrasound is useful in CKD and shows small kidneys.",
+            4: "CKD tends to raise K+, not lower it.",
+        },
+    },
+    {
+        id: "akiw-light-chains",
+        condition: "aki-workup",
+        kind: "reasoning",
+        stem: "A 76-year-old has AKI. The dipstick shows only trace protein, but the urine protein-to-creatinine ratio is very high. Why?",
+        options: ["The dipstick detects albumin and misses light chains", "The dipstick overestimates protein in dilute urine", "The ratio is falsely high when creatinine is high", "The sample was taken after exercise, raising the ratio", "Trace protein on the dipstick rules out myeloma"],
+        answer: 0,
+        explanation: `<p><strong>The dipstick detects albumin and misses light chains,</strong> so a large gap between a low dipstick and a high protein measurement suggests a protein other than albumin, such as the light chains of myeloma.</p>
+<p>That is why SPEP and UPEP are part of the workup in older patients with AKI, alongside Ca2+ and the FBC.</p>`,
+        notes: {
+            1: "The dipstick underestimates protein in dilute urine, but here the ratio corrects for concentration.",
+            2: "The ratio uses urine creatinine, not serum creatinine.",
+            3: "Exercise can cause transient proteinuria, but the dipstick would show it too.",
+            4: "Trace protein on the dipstick does not rule out myeloma, because it misses light chains.",
+        },
+    },
+    {
+        id: "akiw-furosemide",
+        condition: "aki-workup",
+        kind: "reasoning",
+        stem: "How does IV furosemide help in AKI?",
+        options: ["It treats fluid overload, without improving recovery", "It protects the tubules by lowering their O2 demand", "Turning oliguric into non-oliguric AKI improves survival", "It speeds the regrowth of injured tubular cells", "It reduces the need for dialysis in ATN"],
+        answer: 0,
+        explanation: `<p><strong>IV loop diuretics, often at high doses, treat fluid overload in AKI.</strong> They may increase urine output, but turning oliguric into non-oliguric AKI does not improve recovery, the need for dialysis, or survival.</p>
+<p>Overload that does not respond to diuretics is one of the AEIOU indications for dialysis.</p>`,
+        notes: {
+            1: "Lowering tubular O2 demand was the theory, but it has not improved outcomes.",
+            2: "Urine output may rise, but survival does not improve.",
+            3: "Furosemide does not speed tubular recovery.",
+            4: "It does not reduce the need for dialysis.",
+        },
+    },
+    {
+        id: "akiw-isosthenuria",
+        condition: "aki-workup",
+        kind: "reasoning",
+        stem: "Why is the urine specific gravity fixed near 1.010 in ATN?",
+        options: ["Injured tubules can neither concentrate nor dilute the filtrate", "ADH is absent in ATN, so water cannot be reabsorbed in the collecting duct", "Muddy brown casts dilute the urine", "The glomerulus stops filtering Na+", "The kidney retains all the urea"],
+        answer: 0,
+        explanation: `<p><strong>In ATN, the tubules cannot concentrate or dilute the filtrate,</strong> so urine leaves at about the osmolality of plasma: near 1.010, about 300 mOsm/kg. This is isosthenuria.</p>
+<p>In prerenal AKI, the working tubules respond to ADH and aldosterone, so the specific gravity is high and urine osmolality is above 500 mOsm/kg.</p>`,
+        notes: {
+            1: "ADH is present, often high; the injured tubules cannot respond to it.",
+            2: "Casts do not change the urine's concentration.",
+            3: "Na+ is still filtered; the injured tubules fail to reabsorb it, so the FENa is high.",
+            4: "Urea is not retained; the UCR stays below 100 in ATN.",
+        },
+    },
+    {
+        id: "akiw-extension",
+        condition: "aki-workup",
+        kind: "reasoning",
+        stem: "After a period of shock, blood pressure is restored, yet creatinine keeps rising for several days. Why?",
+        options: ["Hypoxia and inflammation keep killing tubular cells after the insult", "The restored blood pressure overloads the glomerulus", "Creatinine is produced faster once perfusion returns", "Recovery always starts with a rise in creatinine", "Fluid given during resuscitation is directly toxic to the tubular cells of the medulla"],
+        answer: 0,
+        explanation: `<p><strong>In the extension phase, ongoing hypoxia and inflammation keep killing cells in the outer medulla after the insult has passed.</strong> The outer medulla has little O2 to spare, and injured endothelium and inflammatory cells keep its blood flow low.</p>
+<p>Creatinine also lags behind the injury, so it keeps rising for days even once GFR has stopped falling.</p>`,
+        notes: {
+            1: "Restoring perfusion does not overload the glomerulus.",
+            2: "Creatinine production depends on muscle mass, not perfusion.",
+            3: "Recovery comes with a falling creatinine, in the diuretic phase and after.",
+            4: "Isotonic fluid is not toxic to the tubules, though too much causes overload.",
+        },
+    },
+    {
+        id: "akiw-cr-lag",
+        condition: "aki-workup",
+        kind: "reasoning",
+        stem: "Why can creatinine be normal on the day of a kidney insult, although GFR has already fallen?",
+        options: ["Creatinine takes time to build up once its excretion falls", "Creatinine is destroyed in the blood faster during AKI", "The liver makes less creatinine during the insult", "Creatinine is still cleared normally by tubular secretion for the first day", "A normal creatinine always means the GFR is normal"],
+        answer: 0,
+        explanation: `<p><strong>Creatinine is made at a steady rate, so when GFR falls, it takes time to accumulate in the blood.</strong> The insult usually lies in the 24–48 hours before creatinine rises.</p>
+<p>That is why a fall in urine output can be the only early sign, why cystatin C rises sooner, and why recent drugs and contrast are asked about over the last 24–48 hours.</p>`,
+        notes: {
+            1: "Creatinine is not destroyed in the blood; it is excreted by the kidney.",
+            2: "Creatinine comes from muscle, not the liver.",
+            3: "Tubular secretion is only a small share of creatinine clearance and cannot keep creatinine normal when GFR falls.",
+            4: "A normal creatinine can hide a low GFR early in AKI, or in a patient with little muscle.",
+        },
+    },
+    {
+        id: "akiw-oliguria-mortality",
+        condition: "aki-workup",
+        kind: "reasoning",
+        stem: "Why does oliguric ATN carry a higher mortality than non-oliguric ATN?",
+        options: ["Oliguria reflects more severe injury and brings overload and hyperkalemia", "Oliguria is caused by the drugs used to treat ATN", "Non-oliguric ATN never needs dialysis, so its complications are always managed medically", "Oliguric patients lose more Na+ and K+", "Oliguria occurs only in patients with CKD"],
+        answer: 0,
+        explanation: `<p><strong>Oliguria marks more extensive tubular injury,</strong> and with little urine the kidney cannot excrete fluid, K+, or acid, so overload, hyperkalemia, and acidosis follow.</p>
+<p>Non-oliguric ATN, as from aminoglycosides, is often milder. Making the urine flow with diuretics does not change the underlying injury, which is why it does not improve survival.</p>`,
+        notes: {
+            1: "Oliguria comes from the injury, not its treatment.",
+            2: "Non-oliguric ATN can still need dialysis, though less often.",
+            3: "Large Na+ and K+ losses are a feature of the diuretic phase, not oliguria.",
+            4: "Oliguria occurs in AKI without CKD, and it favors AKI over CKD.",
+        },
+    },
+    {
+        id: "akiw-danger-first",
+        condition: "aki-workup",
+        kind: "reasoning",
+        stem: "In the AKI workup, why are K+, an ECG, and a blood gas checked before looking for the cause?",
+        options: ["Hyperkalemia, acidosis, and overload can kill before the cause is found", "The cause cannot be found until the K+ is known", "An ECG shows whether the cause is prerenal or intrarenal, which directs the rest of the workup", "A blood gas gives the FENa", "They decide the KDIGO stage"],
+        answer: 0,
+        explanation: `<p><strong>The complications of AKI, especially hyperkalemia, can cause arrhythmias and death within hours,</strong> while finding the cause can take days.</p>
+<p>So after confirming and staging the AKI, the second step is immediate danger: K+, ECG, blood gas, and signs of fluid overload. Then come volume and drugs, obstruction, the urine, the blood, and biopsy.</p>`,
+        notes: {
+            1: "The cause can be sought at any K+; K+ is checked first because of its danger.",
+            2: "An ECG shows the effects of K+, not the cause of AKI.",
+            3: "The FENa comes from urine and serum Na+ and creatinine, not a blood gas.",
+            4: "KDIGO staging uses creatinine and urine output.",
+        },
+    },
+    {
+        id: "akiw-fluid-challenge",
+        condition: "aki-workup",
+        kind: "reasoning",
+        stem: "A patient with AKI who is likely hypovolemic is given a monitored fluid challenge, and creatinine falls over the next 48 hours. What does this show?",
+        options: ["There was a prerenal component, with working tubules", "The cause was ATN, and the tubules are now recovering after the insult", "Obstruction has been ruled out", "The patient has CKD", "The patient will need dialysis"],
+        answer: 0,
+        explanation: `<p><strong>Improvement after fluid supports a prerenal component:</strong> once perfusion is restored, working tubules let GFR return, and creatinine falls within 24–72 hours.</p>
+<p>In ATN, the injured tubules do not respond to fluid, and in postrenal AKI, nothing improves until the obstruction is relieved. The challenge is monitored because too much fluid causes overload when the kidney cannot excrete it.</p>`,
+        notes: {
+            1: "ATN does not respond to fluid; recovery takes weeks.",
+            2: "Fluid does not test for obstruction; a bladder scan and ultrasound do.",
+            3: "A quick response to fluid fits prerenal AKI, not CKD.",
+            4: "A falling creatinine is reassuring and makes dialysis less likely.",
+        },
+    },
+    {
+        id: "akiw-biopsy",
+        condition: "aki-workup",
+        kind: "reasoning",
+        stem: "Why is a kidney biopsy done in AKI with suspected glomerulonephritis?",
+        options: ["The type of glomerulonephritis decides the treatment, and only biopsy shows it", "Biopsy is needed to stage AKI by KDIGO", "Biopsy treats the inflammation by draining the kidney", "Biopsy is the first test in every AKI", "Serology cannot be done once AKI has started"],
+        answer: 0,
+        explanation: `<p><strong>Biopsy shows the type of glomerulonephritis, and the type decides treatment,</strong> such as immunosuppression for ANCA vasculitis or plasma exchange for anti-GBM disease.</p>
+<p>It is the last step in the workup, after the urine, bloods, serology, and complement, and is used for unexplained or rapidly falling function or suspected glomerulonephritis.</p>`,
+        notes: {
+            1: "KDIGO staging uses creatinine and urine output.",
+            2: "Biopsy is diagnostic, not a treatment.",
+            3: "Most AKI is prerenal or ATN and is diagnosed without a biopsy.",
+            4: "Serology is done before biopsy and guides it.",
+        },
+    },
+    {
+        id: "akiw-catabolic",
+        condition: "aki-workup",
+        kind: "reasoning",
+        stem: "Why is protein not restricted in AKI, as it may be in stable CKD?",
+        options: ["AKI is catabolic, so restriction would worsen muscle wasting", "Protein protects the tubules from further injury", "Urea cannot build up in AKI", "Protein lowers K+ and phosphate", "Restricting protein causes hyperkalemia"],
+        answer: 0,
+        explanation: `<p><strong>AKI is catabolic: the illness behind it breaks down muscle,</strong> so restricting protein would worsen wasting and slow recovery. Protein of 1.2–1.5 g/kg a day, preferably enteral, is recommended.</p>
+<p>Potassium and phosphate are limited instead, and dialysis handles the urea when it becomes a problem.</p>`,
+        notes: {
+            1: "Protein does not protect the tubules; it prevents wasting.",
+            2: "Urea does build up in AKI; dialysis removes it when needed.",
+            3: "Protein foods often contain K+ and phosphate, so they do not lower them.",
+            4: "Restricting protein does not cause hyperkalemia.",
+        },
+    },
+    {
+        id: "akiw-dose-adjust",
+        condition: "aki-workup",
+        kind: "reasoning",
+        stem: "A patient with AKI is taking gentamicin and morphine. Why are their doses adjusted for GFR?",
+        options: ["Renally cleared drugs build up, and nephrotoxic ones worsen the injury", "AKI speeds the liver's metabolism of drugs", "Drugs become less effective in AKI, so doses are increased", "Adjusting doses lowers creatinine directly", "Only drugs given by mouth need adjusting"],
+        answer: 0,
+        explanation: `<p><strong>Drugs cleared by the kidney build up when GFR falls,</strong> causing toxicity, such as sedation from morphine's metabolites.</p>
+<p>Nephrotoxic drugs such as gentamicin also add to the injury, so they are stopped or their doses adjusted with level monitoring. Preventing further injury means stopping NSAIDs and nephrotoxins, holding ACEi and ARBs, and avoiding contrast.</p>`,
+        notes: {
+            1: "AKI does not speed hepatic metabolism.",
+            2: "Doses are reduced, because the drugs accumulate.",
+            3: "Adjusting doses prevents toxicity; it does not lower creatinine.",
+            4: "IV drugs such as gentamicin need adjusting too.",
+        },
+    },
+
+    /* --- Analysis --- */
+    {
+        id: "akiw-uremic",
+        condition: "aki-workup",
+        kind: "analysis",
+        stem: "A man in hospital with severe ATN develops chest pain. His ECG shows peaked T waves, and a friction rub is heard over the heart. Which pair of substances best explains these findings?",
+        options: ["K+ and uremic toxins (urea as their marker)", "Na+ and Ca2+", "HCO3− and phosphate", "Creatinine and Mg2+", "Glucose and albumin"],
+        answer: 0,
+        explanation: `<p><strong>Peaked T waves are hyperkalemia, and a friction rub with chest pain is uremic pericarditis.</strong> Both follow from what the failing kidney cannot excrete:</p>
+<ul>
+<li><strong>K+:</strong> builds up, with ECG changes an emergency treated with calcium gluconate, insulin with dextrose, and salbutamol.</li>
+<li><strong>Uremic toxins:</strong> inflame the pericardium; urea is measured as their marker.</li>
+</ul>
+<p>Refractory hyperkalemia and uremic pericarditis are both AEIOU indications for dialysis.</p>`,
+        notes: {
+            1: "Na+ and Ca2+ changes do not cause peaked T waves or pericarditis.",
+            2: "Acidosis and a high phosphate occur in AKI but do not explain these findings.",
+            3: "Creatinine is a marker, not a toxin, and Mg2+ does not explain the rub.",
+            4: "Glucose and albumin do not cause these changes.",
+        },
+    },
+    {
+        id: "akiw-set-hf-1",
+        condition: "aki-workup",
+        kind: "analysis",
+        set: "akiw-hf",
+        passage: `<p>A 68-year-old woman with HF takes furosemide 80 mg a day. She had a cardiac arrest 4 days ago and needed adrenaline for 2 hours to keep her blood pressure up. She now has pitting edema to the knees, a high JVP, and bibasal crackles. Her urine output is 300 mL a day.</p>
+<table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody>
+<tr><td>Creatinine</td><td>Baseline 95 µmol/L; day 2 190; day 4 320 µmol/L</td></tr>
+<tr><td>FENa</td><td>3%</td></tr>
+<tr><td>FEUrea</td><td>60%</td></tr>
+<tr><td>Urine osmolality</td><td>320 mOsm/kg</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p>`,
+        stem: "How should her FENa and FEUrea be read?",
+        options: ["The FENa cannot be read on furosemide, but the high FEUrea points to ATN", "The high FENa confirms ATN, and the FEUrea adds nothing", "The FENa is high from furosemide, so this is prerenal AKI from HF", "Both indices point to prerenal AKI from poor cardiac output", "Neither index is useful, so only a biopsy can decide"],
+        answer: 0,
+        explanation: `<p><strong>Furosemide blocks Na+ reabsorption, so a high FENa may reflect the drug rather than injured tubules.</strong> Urea is handled in the proximal tubule, before diuretics act, so the FEUrea stays useful.</p>
+<ul>
+<li><strong>FEUrea 60%:</strong> above 50%, pointing to ATN.</li>
+<li><strong>Urine osmolality 320 mOsm/kg:</strong> below 450, so the tubules cannot concentrate.</li>
+<li><strong>The story:</strong> 2 hours of shock 4 days ago, and a creatinine rising by about 65 µmol/L a day, with no fall once perfusion returned.</li>
+</ul>
+<p>Her edema and crackles are overload from oliguria, not evidence that the AKI is prerenal.</p>`,
+        notes: {
+            1: "On furosemide, the FENa cannot confirm ATN by itself; the FEUrea is the index that can be read.",
+            2: "Furosemide does make the FENa unreliable, but the FEUrea above 50% and dilute urine do not fit prerenal AKI.",
+            3: "A prerenal FEUrea would be below 35%, and the urine would be concentrated.",
+            4: "The FEUrea answers the question without a biopsy.",
+        },
+    },
+    {
+        id: "akiw-set-hf-2",
+        condition: "aki-workup",
+        kind: "analysis",
+        set: "akiw-hf",
+        stem: "Which urine microscopy finding would best support your reading of her indices?",
+        options: ["Muddy brown granular casts and tubular cells", "Hyaline casts in otherwise bland urine", "Fatty casts and oval fat bodies", "Calcium oxalate crystals", "A high specific gravity"],
+        answer: 0,
+        explanation: `<p><strong>Muddy brown granular casts and tubular cells are the sediment of ATN:</strong> dead tubular cells shed into the lumen and form casts.</p>
+<p>With a FEUrea above 50%, dilute urine, and no response once perfusion returned, they would confirm ischemic ATN after her cardiac arrest. She then needs her overload treated with high-dose IV loop diuretics, close watch on K+ and acid, and dialysis if they fail.</p>`,
+        notes: {
+            1: "Hyaline casts in bland urine fit prerenal AKI.",
+            2: "Fatty casts and oval fat bodies point to nephrotic syndrome.",
+            3: "Calcium oxalate crystals point to ethylene glycol poisoning.",
+            4: "A high specific gravity means concentrated urine, which fits prerenal AKI; ATN gives isosthenuria near 1.010.",
+        },
+    },
+    {
+        id: "akiw-nsaid",
+        condition: "aki-workup",
+        kind: "analysis",
+        stem: `<p>A frail 85-year-old woman with CKD (baseline creatinine 140 µmol/L) was started on naproxen daily for osteoarthritis 12 days ago. She now has 3 days of passing little urine, and her creatinine is 310 µmol/L. Her blood pressure and volume status are normal.</p>
+<p><em>Illustrative data.</em></p>
+<p>Which urine finding would suggest that the NSAID has caused AIN, rather than AKI from afferent constriction?</p>`,
+        options: ["White cell casts and white cells with a negative culture", "Hyaline casts in otherwise bland urine", "A urine osmolality of 650 mOsm/kg", "A FENa of 0.4%", "A urine Na+ of 10 mmol/L"],
+        answer: 0,
+        explanation: `<p><strong>NSAIDs cause AKI in two ways,</strong> and the urine separates them:</p>
+<ul>
+<li><strong>Afferent constriction:</strong> blocking prostaglandins removes the afferent dilation that holds GFR up, especially in older patients with CKD. The tubules work, so the urine looks prerenal: bland, concentrated, with a low FENa and urine Na+.</li>
+<li><strong>AIN:</strong> an immune reaction, often 1–2 weeks after starting the drug, with white cell casts and sterile pyuria.</li>
+</ul>
+<p>Either way, the NSAID is stopped. In AIN, corticosteroids are added if there is no improvement in 3–7 days.</p>`,
+        notes: {
+            1: "Hyaline casts in bland urine fit the hemodynamic, prerenal-like effect.",
+            2: "Concentrated urine shows working tubules, which fits afferent constriction.",
+            3: "A low FENa shows working tubules, which fits afferent constriction.",
+            4: "A low urine Na+ shows Na+ conservation, which fits afferent constriction.",
+        },
+    },
+    {
+        id: "akiw-dialysis-now",
+        condition: "aki-workup",
+        kind: "analysis",
+        stem: "Five patients in hospital have AKI. Which one has an indication for dialysis now?",
+        options: ["A man with lithium toxicity, confusion, and a tremor", "A woman with K+ 5.6 mmol/L and a normal ECG", "A man with creatinine 420 µmol/L, no symptoms, and normal K+", "A woman with mild ankle edema who responds to furosemide", "A man with pH 7.31 and HCO3− 18 mmol/L"],
+        answer: 0,
+        explanation: `<p><strong>Dialysis follows the AEIOU indications,</strong> not a creatinine number:</p>
+<ul>
+<li><strong>A:</strong> severe acidosis that does not respond to treatment.</li>
+<li><strong>E:</strong> hyperkalemia that does not respond to treatment.</li>
+<li><strong>I:</strong> a dialyzable poison, such as methanol, ethylene glycol, or lithium.</li>
+<li><strong>O:</strong> overload that does not respond to diuretics.</li>
+<li><strong>U:</strong> uremia with encephalopathy, pericarditis, neuropathy, seizures, or bleeding.</li>
+</ul>
+<p>Lithium toxicity with neurological signs is an "I" indication, especially when the kidney cannot excrete it.</p>`,
+        notes: {
+            1: "K+ of 5.6 mmol/L with a normal ECG is treated medically first.",
+            2: "A high creatinine alone, without symptoms or complications, is not an indication.",
+            3: "Overload that responds to diuretics is not an indication.",
+            4: "A mild acidosis is treated first; it is an indication only when severe and refractory.",
+        },
+    },
+    {
+        id: "akiw-stage",
+        condition: "aki-workup",
+        kind: "analysis",
+        stem: `<p>A 70 kg man has sepsis from pneumonia. His creatinine was 90 µmol/L a month ago.</p>
+<table><thead><tr><th>Time</th><th>Creatinine</th><th>Urine output</th></tr></thead><tbody>
+<tr><td>Day 1</td><td>130 µmol/L</td><td>40 mL/h</td></tr>
+<tr><td>Day 2</td><td>210 µmol/L</td><td>25 mL/h for the last 14 hours</td></tr>
+<tr><td>Day 3</td><td>250 µmol/L</td><td>25 mL/h</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p>
+<p>What is his KDIGO stage on day 3?</p>`,
+        options: ["Stage 2", "Stage 1", "Stage 3", "No AKI, since he still passes urine", "AKD, since it has lasted over 48 hours"],
+        answer: 0,
+        explanation: `<p><strong>KDIGO stages by whichever of creatinine or urine output is worse.</strong></p>
+<ul>
+<li><strong>Creatinine:</strong> 250 ÷ 90 is about 2.8 times baseline, which is stage 2 (2.0–2.9 times).</li>
+<li><strong>Urine output:</strong> 25 mL/h in a 70 kg man is about 0.36 mL/kg/h, below 0.5 for 12 hours or more, which is also stage 2.</li>
+</ul>
+<p>Stage 3 would need 3 times baseline, 354 µmol/L or more, dialysis, or below 0.3 mL/kg/h for 24 hours.</p>`,
+        notes: {
+            1: "Stage 1 is 1.5–1.9 times baseline; he is at about 2.8 times.",
+            2: "He has not reached 3 times baseline, 354 µmol/L, or output below 0.3 mL/kg/h for 24 hours.",
+            3: "AKI is defined by the creatinine rise as well as the urine output; he meets both.",
+            4: "AKD applies when function has not recovered by 7–90 days, not after 48 hours.",
+        },
+    },
+    {
+        id: "akiw-ckd-case",
+        condition: "aki-workup",
+        kind: "analysis",
+        stem: `<p>A 58-year-old man who has not seen a doctor for years presents with tiredness and itch. His creatinine is 520 µmol/L, with no earlier result. He passes urine normally and gets up three times a night to void.</p>
+<table><thead><tr><th>Test</th><th>Result</th></tr></thead><tbody>
+<tr><td>Hemoglobin</td><td>92 g/L</td></tr>
+<tr><td>Phosphate</td><td>2.1 mmol/L</td></tr>
+<tr><td>PTH</td><td>High</td></tr>
+<tr><td>Ultrasound</td><td>Both kidneys 8 cm, with thin cortices</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p>
+<p>What do these findings most suggest?</p>`,
+        options: ["CKD, from small kidneys with anemia and a high PTH", "Prerenal AKI, because urine output is normal", "ATN, because creatinine is very high", "Postrenal AKI, because he voids at night", "AKI, because the phosphate is high"],
+        answer: 0,
+        explanation: `<p><strong>Several clues point to CKD, each taking months to develop:</strong></p>
+<ul>
+<li><strong>History:</strong> fatigue, pruritus, and nocturia, with urine output kept.</li>
+<li><strong>Ultrasound:</strong> small kidneys with thin cortices, from scarring.</li>
+<li><strong>Blood:</strong> anemia from low erythropoietin, and a high phosphate and PTH from long-standing failure to excrete phosphate and make calcitriol.</li>
+</ul>
+<p>AKI can still occur on top of CKD, so a recent insult is worth asking about.</p>`,
+        notes: {
+            1: "Normal urine output is common in CKD, and prerenal AKI would not shrink the kidneys.",
+            2: "A very high creatinine does not separate ATN from CKD; the small kidneys do.",
+            3: "Nocturia is a concentrating defect of CKD; obstruction would show hydronephrosis.",
+            4: "A high phosphate occurs in both, but with a high PTH and small kidneys it favors CKD.",
+        },
+    },
+    {
+        id: "akiw-urinalysis",
+        condition: "aki-workup",
+        kind: "analysis",
+        stem: `<p>Two patients have AKI, and both have 3+ blood on the dipstick.</p>
+<table><thead><tr><th>Finding</th><th>Patient A</th><th>Patient B</th></tr></thead><tbody>
+<tr><td>Red cells on microscopy</td><td>Few</td><td>Many, dysmorphic</td></tr>
+<tr><td>Casts</td><td>Pigmented granular casts</td><td>Red cell casts</td></tr>
+<tr><td>Protein on the dipstick</td><td>Trace</td><td>2+</td></tr>
+<tr><td>CK</td><td>48000 U/L</td><td>Normal</td></tr>
+</tbody></table>
+<p><em>Illustrative data.</em></p>
+<p>What best explains each patient's urine?</p>`,
+        options: ["A rhabdomyolysis; B glomerulonephritis", "A glomerulonephritis; B rhabdomyolysis", "A a kidney stone; B rhabdomyolysis", "A glomerulonephritis; B a bladder tumor", "A intravascular hemolysis; B a kidney stone"],
+        answer: 0,
+        explanation: `<p><strong>The dipstick detects heme, so blood with few red cells means a pigment.</strong></p>
+<ul>
+<li><strong>Patient A:</strong> few red cells, pigmented casts, and a very high CK mean myoglobin from rhabdomyolysis.</li>
+<li><strong>Patient B:</strong> many dysmorphic red cells and red cell casts mean the blood comes through the glomerulus, so glomerulonephritis. Serology and complement come next.</li>
+</ul>
+<p>Stones or a tumor bleed with many normal-shaped red cells and no red cell casts.</p>`,
+        notes: {
+            1: "The patients are reversed; dysmorphic cells and red cell casts belong to B.",
+            2: "A stone gives many normal-shaped red cells, not few, and B has red cell casts.",
+            3: "A has few red cells and a high CK, and a bladder tumor would give normal-shaped cells.",
+            4: "Hemolysis also gives blood with few red cells, but the very high CK points to muscle, and B's red cell casts are glomerular.",
+        },
+    },
+
 ];

@@ -13,7 +13,7 @@ Over target: a kind with more kept questions than its target; move the extras to
 
 Pages marked done have been rewritten to the new style; their ids are in `DONE` in the script. The kinds on the other pages were proposed from each question's length, data, and what it asks, so check them when rewriting.
 
-Across the 5 banks: 1532 questions now, against a target of 3050. 916 keep, 608 keep with a fuller explanation, 8 rewrite, and 0 drop; about 1588 new questions are still to write.
+Across the 5 banks: 1677 questions now, against a target of 3525. 1061 keep, 608 keep with a fuller explanation, 8 rewrite, and 0 drop; about 1918 new questions are still to write.
 
 ## GI conditions (`gi/questions.js`)
 
@@ -27,7 +27,8 @@ Across the 5 banks: 1532 questions now, against a target of 3050. 916 keep, 608 
 | Diverticular Diseases (done) | 6/6 | 6/6 | 3/3 | 15 | 0 |  | 0 |
 | Inflammatory Bowel Disease (IBD) (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
 | Irritable Bowel Syndrome (IBS) (done) | 4/4 | 4/4 | 2/2 | 10 | 0 |  | 0 |
-| Diarrhea (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
+| Acute Diarrhea (done) | 16/16 | 16/16 | 8/8 | 40 | 0 |  | 0 |
+| Chronic Diarrhea (done) | 12/12 | 12/12 | 6/6 | 30 | 0 |  | 0 |
 | Intestinal Ischemia (done) | 6/6 | 6/6 | 3/3 | 15 | 0 |  | 0 |
 | Hepatocellular Injury: Vascular Causes (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
 | Hepatocellular Injury: Infectious Causes (done) | 16/16 | 16/16 | 8/8 | 40 | 0 |  | 0 |
@@ -60,7 +61,7 @@ Across the 5 banks: 1532 questions now, against a target of 3050. 916 keep, 608 
 | Enteric Nervous System | 5/10 | 4/10 | 0/5 | 25 | 16 |  | 9 |
 | Acid-Suppressing and Protective Drugs | 1/10 | 4/10 | 0/5 | 25 | 20 |  | 5 |
 | GI Antibacterials | 2/14 | 4/14 | 0/7 | 35 | 29 |  | 6 |
-| Antifungals, Antivirals, and Antiparasitics | 0/10 | 2/10 | 0/5 | 25 | 23 |  | 2 |
+| Antifungals, Antivirals, and Antiparasitics | 0/12 | 2/12 | 0/6 | 30 | 28 |  | 2 |
 | Hepatitis and Bile Salt Drugs | 1/10 | 4/10 | 0/5 | 25 | 20 |  | 5 |
 | Antiemetics | 1/6 | 3/6 | 0/3 | 15 | 11 |  | 4 |
 | Motility Drugs | 2/10 | 0/10 | 0/5 | 25 | 23 |  | 2 |
@@ -225,7 +226,7 @@ Across the 5 banks: 1532 questions now, against a target of 3050. 916 keep, 608 
 | Subarachnoid Hemorrhage | 7/8 | 5/8 | 0/4 | 20 | 8 |  | 12 |
 | Primary Headaches | 8/16 | 8/16 | 0/8 | 40 | 24 |  | 16 |
 | Epidural and Subdural Hematoma | 6/10 | 3/10 | 0/5 | 25 | 16 |  | 9 |
-| Raised Intracranial Pressure and Herniation | 4/16 | 2/16 | 0/8 | 40 | 34 |  | 6 |
+| Increased Intracranial Pressure and Herniation | 4/16 | 2/16 | 0/8 | 40 | 34 |  | 6 |
 | Seizures | 4/16 | 10/16 | 0/8 | 40 | 26 |  | 14 |
 | Multiple Sclerosis | 8/12 | 6/12 | 0/6 | 30 | 16 |  | 14 |
 | Neuromyelitis Optica Spectrum Disorder (NMOSD) | 9/16 | 3/16 | 0/8 | 40 | 28 |  | 12 |
@@ -239,7 +240,7 @@ Across the 5 banks: 1532 questions now, against a target of 3050. 916 keep, 608 
 | Frontotemporal Dementia | 8/8 | 1/8 | 0/4 | 20 | 11 |  | 9 |
 | Dementia with Lewy Bodies | 5/10 | 5/10 | 0/5 | 25 | 15 |  | 10 |
 | Motor Signs and Syndromes | 11/16 | 3/16 | 0/8 | 40 | 26 |  | 14 |
-| Typical Parkinson Disease | 4/12 | 8/12 | 0/6 | 30 | 18 |  | 12 |
+| Parkinson Disease | 4/12 | 8/12 | 0/6 | 30 | 18 |  | 12 |
 | Atypical Parkinsonism | 9/10 | 1/10 | 0/5 | 25 | 15 |  | 10 |
 | Huntington Disease | 5/10 | 5/10 | 0/5 | 25 | 15 |  | 10 |
 | Localizing a Lesion | 29/16 | 3/16 | 0/8 | 40 | 21 | 13 memory | 32 |
@@ -341,7 +342,7 @@ Across the 5 banks: 1532 questions now, against a target of 3050. 916 keep, 608 
 - `sdh-infant`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 181 characters; needs the why and how)
 - `sdh-burr`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 156 characters; needs the why and how)
 
-### Raised Intracranial Pressure and Herniation
+### Increased Intracranial Pressure and Herniation
 
 - `hern-uncal`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 162 characters; needs the why and how)
 - `hern-kernohan`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 162 characters; needs the why and how)
@@ -539,7 +540,7 @@ Across the 5 banks: 1532 questions now, against a target of 3050. 916 keep, 608 
 - `ms2-klumpke`: reasoning, **keep, expand** (notes on 3 of 4 wrong options; explanation 216 characters; needs the why and how)
 - `ms2-rubral`: memory, **keep, expand** (notes on 3 of 4 wrong options)
 
-### Typical Parkinson Disease
+### Parkinson Disease
 
 - `pd-prodrome`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 236 characters; needs the why and how)
 - `pd-drug-induced`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 222 characters; needs the why and how)
@@ -679,7 +680,7 @@ Across the 5 banks: 1532 questions now, against a target of 3050. 916 keep, 608 
 |---|---|---|---|---|---|---|---|
 | Nervous System Embryology and Defects | 8/8 | 2/8 | 0/4 | 20 | 10 |  | 9 |
 | Neurons and Action Potentials | 5/8 | 5/8 | 0/4 | 20 | 10 |  | 10 |
-| Synapses and Neurotransmitters | 5/8 | 5/8 | 0/4 | 20 | 10 |  | 10 |
+| Synapses and Neurotransmitters | 5/6 | 5/6 | 0/3 | 15 | 5 |  | 10 |
 | Ascending Tracts | 7/4 | 2/4 | 0/2 | 10 | 4 | 3 memory | 9 |
 | Descending Tracts | 6/6 | 3/6 | 0/3 | 15 | 6 |  | 9 |
 | Basal Ganglia Pathways | 5/4 | 4/4 | 0/2 | 10 | 2 | 1 memory | 9 |
@@ -951,19 +952,22 @@ Across the 5 banks: 1532 questions now, against a target of 3050. 916 keep, 608 
 
 | Page | Memory | Reasoning | Analysis | Target | Still to write | Over target | Needs work |
 |---|---|---|---|---|---|---|---|
-| Prerenal Acute Kidney Injury | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
-| Intrarenal AKI | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
-| Acute Tubular Necrosis | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
-| Acute Interstitial Nephritis | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
-| Minimal Change Disease, FSGS, and Membranous Nephropathy | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
-| Diabetic Kidney Disease and Amyloid Nephropathy | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
-| Anti-GBM Disease, ANCA-Associated Vasculitis, and Alport Syndrome | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
-| IgA Nephropathy, PSGN, Lupus Nephritis, and MPGN | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
-| Thrombotic Microangiopathy | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
-| Nephrotic vs Nephritic Syndrome | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
-| Postrenal Acute Kidney Injury | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Prerenal AKI (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
+| Intrarenal AKI (done) | 8/8 | 8/8 | 4/4 | 20 | 0 |  | 0 |
+| Acute Tubular Necrosis | 0/16 | 0/16 | 0/8 | 40 | 40 |  | 0 |
+| Acute Interstitial Nephritis | 0/12 | 0/12 | 0/6 | 30 | 30 |  | 0 |
+| Minimal Change Disease, FSGS, and Membranous Nephropathy | 0/12 | 0/12 | 0/6 | 30 | 30 |  | 0 |
+| Diabetic Kidney Disease and Amyloid Nephropathy | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Anti-GBM Disease, ANCA-Associated Vasculitis, and Alport Syndrome | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| IgA Nephropathy, PSGN, and MPGN | 0/12 | 0/12 | 0/6 | 30 | 30 |  | 0 |
+| Glomerular Disease: Comparison and Workup | 0/16 | 0/16 | 0/8 | 40 | 40 |  | 0 |
+| Thrombotic Microangiopathy | 0/14 | 0/14 | 0/7 | 35 | 35 |  | 0 |
+| Renal Artery Disease | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Renal Vein Thrombosis | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Postrenal AKI (done) | 6/6 | 6/6 | 3/3 | 15 | 0 |  | 0 |
+| AKI: Comparison and Workup (done) | 16/16 | 16/16 | 8/8 | 40 | 0 |  | 0 |
 | Diabetes Insipidus | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
-| Syndrome of Inappropriate Antidiuretic Hormone (SIADH) | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Syndrome of Inappropriate ADH Secretion (SIADH) | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
 | Urinary Tract Infection | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
 | Chronic Kidney Disease | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
 | Polycystic Kidney Disease | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
@@ -980,6 +984,11 @@ Across the 5 banks: 1532 questions now, against a target of 3050. 916 keep, 608 
 | Hyperkalemia | 0/14 | 0/14 | 0/7 | 35 | 35 |  | 0 |
 | Potassium Disorders: Comparison and Workup | 0/16 | 0/16 | 0/8 | 40 | 40 |  | 0 |
 | Hypoaldosteronism and Hyperaldosteronism | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Hypocalcemia | 0/14 | 0/14 | 0/7 | 35 | 35 |  | 0 |
+| Hypercalcemia | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Hypomagnesemia | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Hypermagnesemia | 0/8 | 0/8 | 0/4 | 20 | 20 |  | 0 |
+| Calcium and Magnesium Disorders: Comparison and Workup | 0/12 | 0/12 | 0/6 | 30 | 30 |  | 0 |
 
 ### Acid-base Disorders: Comparison and Workup
 

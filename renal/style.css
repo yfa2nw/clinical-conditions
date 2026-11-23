@@ -271,3 +271,108 @@ body {
 .rn-gap {
     fill: var(--color-surface);
 }
+
+/* Schematic biopsy panels: one capillary loop with an immunofluorescence strip */
+.bx-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+    gap: 12px;
+    margin: 12px 0;
+}
+
+.bx-panel {
+    margin: 0;
+    padding: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    background: var(--color-surface);
+}
+
+.bx-panel svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.bx-panel figcaption {
+    margin-top: 4px;
+    color: var(--color-text);
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.bx-gbm {
+    color: var(--color-accent-line);
+    stroke-width: 3;
+}
+
+.bx-gbm.is-thin {
+    stroke-width: 1.5;
+}
+
+.bx-gbm.is-thick {
+    stroke-width: 6;
+}
+
+.bx-spike,
+.bx-fibril {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-linecap: round;
+    stroke-width: 2;
+}
+
+.bx-fibril {
+    stroke-width: 1.5;
+}
+
+.bx-scar {
+    fill: var(--color-border-strong);
+    opacity: 0.55;
+}
+
+.bx-strip {
+    fill: var(--color-surface-muted);
+    stroke: var(--color-border-strong);
+    stroke-width: 1;
+}
+
+.bx-if {
+    fill: var(--color-up);
+}
+
+.bx-effaced {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-linecap: round;
+    stroke-opacity: 0.6;
+    stroke-width: 5;
+}
+
+.bx-if-label {
+    fill: var(--color-text);
+}
+
+/* AKI phases: phase boundaries, baselines, and urine output bars */
+.rn-phase-line {
+    stroke: var(--color-border);
+    stroke-dasharray: 3 4;
+    stroke-width: 1;
+}
+
+.rn-baseline {
+    stroke: var(--color-text-muted);
+    stroke-dasharray: 6 4;
+    stroke-width: 1.5;
+}
+
+.rn-axis {
+    stroke: var(--color-text-muted);
+    stroke-width: 1.5;
+}
+
+.rn-urine {
+    fill: var(--color-accent);
+    opacity: 0.45;
+}

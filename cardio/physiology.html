@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardiovascular Physiology · Clinical Conditions</title>
+
+    <script src="../shared/theme.js"></script>
+
+    <link rel="stylesheet" href="../shared/style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="../shared/app.js" defer></script>
+    <script src="physiology-questions.js" defer></script>
+    <script src="../shared/quiz.js" defer></script>
+    <script src="map.js" defer></script>
+    <script src="../shared/map.js" defer></script>
+</head>
+
+<body data-specialty="cardio-physiology" data-page="physiology">
+    <a class="skip-link" href="#content-panel">Skip to content</a>
+
+    <main class="app-container">
+
+        <!-- Left sidebar -->
+        <aside class="sidebar">
+            <a class="home-link" href="../index.html">← Clinical Conditions</a>
+
+            <div class="sidebar-header">
+                <h1>
+                    <span class="brand-mark" aria-hidden="true"></span>
+                    Cardiovascular Physiology
+                </h1>
+                <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark theme">
+                    <span class="theme-icon" aria-hidden="true"></span>
+                </button>
+            </div>
+
+            <nav class="section-switch" aria-label="Section">
+                <a href="index.html">Clinical</a>
+                <a href="physiology.html" aria-current="page">Physiology</a>
+            </nav>
+
+            <div class="search" role="search">
+                <label class="visually-hidden" for="condition-search">Search conditions and content</label>
+                <input type="search" id="condition-search" class="search-input" placeholder="Search…" autocomplete="off" aria-describedby="search-hint">
+                <kbd class="search-key" aria-hidden="true">/</kbd>
+            </div>
+            <p class="search-hint" id="search-hint" aria-live="polite"></p>
+
+            <nav class="condition-list map-nav" aria-label="Cardiovascular physiology topics">
+                <!-- The blood vessels are drawn here by map.js and shared/map.js, lined up with the stations below -->
+                <svg class="map-svg" aria-hidden="true" focusable="false"></svg>
+
+                <div class="station" data-organ="mechanical">
+                <p class="group-label" id="group-mechanical">The mechanical heart</p>
+                <div class="condition-group" role="group" aria-labelledby="group-mechanical">
+                    <button type="button" class="condition-item active" data-condition="cardiac-cycle" aria-current="true">Cardiac cycle</button>
+                    <button type="button" class="condition-item" data-condition="heart-valves">Heart valves and sounds</button>
+                    <button type="button" class="condition-item" data-condition="pv-loops">PV loops and the Wiggers diagram</button>
+                    <button type="button" class="condition-item" data-condition="excitation-contraction">Excitation-contraction coupling</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="electrical">
+                <p class="group-label" id="group-electrical">The electrical heart</p>
+                <div class="condition-group" role="group" aria-labelledby="group-electrical">
+                    <button type="button" class="condition-item" data-condition="cardiac-action-potentials">Action potentials and pacemaking</button>
+                    <button type="button" class="condition-item" data-condition="ecg-theory">ECG theory</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="circulation">
+                <p class="group-label" id="group-circulation">Output and pressure</p>
+                <div class="condition-group" role="group" aria-labelledby="group-circulation">
+                    <button type="button" class="condition-item" data-condition="cardiac-output">Determinants of cardiac output</button>
+                    <button type="button" class="condition-item" data-condition="preload-afterload">Preload, afterload, and contractility</button>
+                    <button type="button" class="condition-item" data-condition="autonomic-circulation">Autonomic influence on circulation</button>
+                    <button type="button" class="condition-item" data-condition="circulatory-compensation">Compensatory mechanisms</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="pharmacology">
+                <p class="group-label" id="group-pharmacology">Pharmacology</p>
+                <div class="condition-group" role="group" aria-labelledby="group-pharmacology">
+                    <button type="button" class="condition-item" data-condition="cardio-pharm-autonomic">Adrenergic and muscarinic drugs</button>
+                    <button type="button" class="condition-item" data-condition="cardio-pharm-pressure">Antihypertensives</button>
+                    <button type="button" class="condition-item" data-condition="cardio-pharm-angina">Antianginal drugs</button>
+                    <button type="button" class="condition-item" data-condition="cardio-pharm-lipids">Lipid-lowering drugs</button>
+                    <button type="button" class="condition-item" data-condition="cardio-pharm-clots">Antithrombotics</button>
+                    <button type="button" class="condition-item" data-condition="cardio-pharm-rhythm">Antiarrhythmics</button>
+                    <button type="button" class="condition-item" data-condition="cardio-pharm-failure">Heart failure drugs</button>
+                    <button type="button" class="condition-item" data-condition="cardio-pharm-causes">Drugs that cause heart disease</button>
+                </div>
+                </div>
+
+                <p class="no-results" id="no-results" hidden>No matches</p>
+            </nav>
+
+        </aside>
+
+        <!-- Announces the newly opened condition to screen readers -->
+        <p class="visually-hidden" id="view-status" role="status"></p>
+
+        <!-- Right content panel -->
+        <section class="content-panel" id="content-panel" tabindex="0" aria-label="Topic details">
+
+            <article class="condition-content active" id="cardiac-cycle">
+                <h2>Cardiac Cycle</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="heart-valves">
+                <h2>Heart Valves and Sounds</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="pv-loops">
+                <h2>PV Loops and the Wiggers Diagram</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="excitation-contraction">
+                <h2>Excitation-contraction Coupling</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="cardiac-action-potentials">
+                <h2>Cardiac Action Potentials and Pacemaking</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="ecg-theory">
+                <h2>ECG Theory</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="cardiac-output">
+                <h2>Determinants of Cardiac Output</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="preload-afterload">
+                <h2>Preload, Afterload, and Contractility</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="autonomic-circulation">
+                <h2>Autonomic Influence on Circulation</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="circulatory-compensation">
+                <h2>Compensatory Mechanisms of Circulation</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="cardio-pharm-autonomic">
+                <h2>Adrenergic and Muscarinic Drugs</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="cardio-pharm-pressure">
+                <h2>Antihypertensives</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="cardio-pharm-angina">
+                <h2>Antianginal Drugs</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="cardio-pharm-lipids">
+                <h2>Lipid-lowering Drugs</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="cardio-pharm-clots">
+                <h2>Antithrombotics</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="cardio-pharm-rhythm">
+                <h2>Antiarrhythmics</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="cardio-pharm-failure">
+                <h2>Heart Failure Drugs</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="cardio-pharm-causes">
+                <h2>When Drugs Cause Disease</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <!-- Page quiz (filled in by quiz.js) -->
+            <section class="quiz-view" id="quiz" aria-labelledby="quiz-title"></section>
+
+        </section>
+    </main>
+</body>
+</html>

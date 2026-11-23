@@ -1,0 +1,242 @@
+/* Foundations theme: a DNA helix whose rungs carry the colors of the seven organ systems.
+   Restyles the shared components in shared/style.css; the markup is unchanged. */
+
+/* =========================
+   Tokens
+========================= */
+
+:root {
+    --color-text: #1d2730;
+    --color-text-muted: #566470;
+    --color-page: #eef1f4;
+    --color-surface: #ffffff;
+    --color-surface-muted: #f6f8fa;
+    --color-surface-sunken: #e7ecf0;
+    --color-border: #d7dee4;
+    --color-border-strong: #b9c4cd;
+    --color-divider: #e2e8ed;
+    --color-accent: #3f5566;
+    --color-accent-hover: #2c3f4e;
+    --color-accent-soft: #e4eaef;
+    --color-accent-line: #a3b4c1;
+    --color-on-accent: #ffffff;
+    --color-focus: #3f5566;
+    --color-note: #f2f4e9;
+    --color-note-line: #a9ae84;
+    --sys-msk: #7d3486;
+    --sys-resp: #4c7419;
+    --sys-cardio: #b01c3a;
+    --sys-renal: #1c6db0;
+    --sys-endocrine: #b35c0e;
+    --sys-gi: #0f766e;
+    --sys-neuro: #4f46c8;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --color-text: #e8eef3;
+        --color-text-muted: #a2b1bd;
+        --color-page: #0b1014;
+        --color-surface: #141b21;
+        --color-surface-muted: #1a232a;
+        --color-surface-sunken: #10161b;
+        --color-border: #2b3842;
+        --color-border-strong: #41525f;
+        --color-divider: #222d35;
+        --color-accent: #b4c8d7;
+        --color-accent-hover: #d0deea;
+        --color-accent-soft: #24323d;
+        --color-accent-line: #536b7d;
+        --color-on-accent: #0f171d;
+        --color-focus: #d0deea;
+        --color-note: #1d242a;
+        --color-note-line: #7d93a4;
+        --sys-msk: #dca2e2;
+        --sys-resp: #a9d66d;
+        --sys-cardio: #f5798d;
+        --sys-renal: #63b3ee;
+        --sys-endocrine: #f2a65a;
+        --sys-gi: #3cc7b5;
+        --sys-neuro: #8f8aff;
+    }
+}
+
+:root[data-theme="dark"] {
+    --color-text: #e8eef3;
+    --color-text-muted: #a2b1bd;
+    --color-page: #0b1014;
+    --color-surface: #141b21;
+    --color-surface-muted: #1a232a;
+    --color-surface-sunken: #10161b;
+    --color-border: #2b3842;
+    --color-border-strong: #41525f;
+    --color-divider: #222d35;
+    --color-accent: #b4c8d7;
+    --color-accent-hover: #d0deea;
+    --color-accent-soft: #24323d;
+    --color-accent-line: #536b7d;
+    --color-on-accent: #0f171d;
+    --color-focus: #d0deea;
+    --color-note: #1d242a;
+    --color-note-line: #7d93a4;
+    --sys-msk: #dca2e2;
+    --sys-resp: #a9d66d;
+    --sys-cardio: #f5798d;
+    --sys-renal: #63b3ee;
+    --sys-endocrine: #f2a65a;
+    --sys-gi: #3cc7b5;
+    --sys-neuro: #8f8aff;
+}
+
+/* =========================
+   Page and brand
+========================= */
+
+body {
+    background-image:
+        radial-gradient(ellipse at 4% 4%, var(--color-accent-soft), transparent 44%),
+        radial-gradient(ellipse at 98% 96%, var(--color-accent-soft), transparent 42%);
+    background-attachment: fixed;
+}
+
+/* A cell and its nucleus */
+.brand-mark {
+    border-radius: 50%;
+    background: radial-gradient(circle at 58% 46%, var(--color-accent) 27%, var(--color-accent-line) 29%);
+}
+
+.brand-mark::after {
+    display: none;
+}
+
+/* =========================
+   Sidebar: a DNA helix
+========================= */
+
+.station {
+    min-height: 104px;
+    padding-top: 20px;
+}
+
+.map-part.map-strand,
+.map-part.map-strand:is(.is-active, .is-hover, .is-match) {
+    stroke-width: 4;
+}
+
+.map-part.map-rung,
+.map-part.map-rung:is(.is-active, .is-hover, .is-match) {
+    stroke: var(--rung);
+    stroke-width: 3;
+    opacity: 0.4;
+}
+
+.map-part.map-rung:is(.is-active, .is-hover, .is-match) {
+    opacity: 1;
+}
+
+.map-rung.is-0 {
+    --rung: var(--sys-msk);
+}
+
+.map-rung.is-1 {
+    --rung: var(--sys-resp);
+}
+
+.map-rung.is-2 {
+    --rung: var(--sys-cardio);
+}
+
+.map-rung.is-3 {
+    --rung: var(--sys-renal);
+}
+
+.map-rung.is-4 {
+    --rung: var(--sys-endocrine);
+}
+
+.map-rung.is-5 {
+    --rung: var(--sys-gi);
+}
+
+.map-rung.is-6 {
+    --rung: var(--sys-neuro);
+}
+
+.map-part.map-rung.is-dim {
+    opacity: 0.15;
+}
+
+/* =========================
+   Article: the helix unwound into a ladder down the page
+========================= */
+
+.content-section {
+    position: relative;
+    padding-left: 46px;
+}
+
+.content-section::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    bottom: -18px;
+    left: 4px;
+    width: 14px;
+    border-right: 3px solid var(--color-accent-line);
+    border-left: 3px solid var(--color-accent-line);
+    background-color: var(--color-surface);
+    background-image: repeating-linear-gradient(180deg, color-mix(in srgb, var(--sys-msk) 60%, var(--color-surface)) 0px 4px, transparent 4px 12px, color-mix(in srgb, var(--sys-resp) 60%, var(--color-surface)) 12px 16px, transparent 16px 24px, color-mix(in srgb, var(--sys-cardio) 60%, var(--color-surface)) 24px 28px, transparent 28px 36px, color-mix(in srgb, var(--sys-renal) 60%, var(--color-surface)) 36px 40px, transparent 40px 48px, color-mix(in srgb, var(--sys-endocrine) 60%, var(--color-surface)) 48px 52px, transparent 52px 60px, color-mix(in srgb, var(--sys-gi) 60%, var(--color-surface)) 60px 64px, transparent 64px 72px, color-mix(in srgb, var(--sys-neuro) 60%, var(--color-surface)) 72px 76px, transparent 76px 84px);
+}
+
+.content-section + .content-section {
+    margin-top: 0;
+    padding-top: 40px;
+    border-top: 0;
+}
+
+.content-section + .content-section::before {
+    top: 0;
+}
+
+.content-section:last-of-type::before {
+    bottom: 0;
+}
+
+.content-section > h3 {
+    position: relative;
+    z-index: 1;
+}
+
+.content-section > h3::before {
+    position: absolute;
+    top: -1px;
+    left: -47px;
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    box-shadow: 0 0 0 3px var(--color-surface);
+    color: var(--color-on-accent);
+    font-size: 11px;
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        padding-left: 36px;
+    }
+
+    .content-section::before {
+        left: -1px;
+    }
+
+    .content-section > h3::before {
+        left: -42px;
+    }
+}
+
+.map-part.map-hair:is(.is-active, .is-hover, .is-match) {
+    stroke-width: 2.5;
+}
