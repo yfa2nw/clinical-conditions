@@ -1046,7 +1046,6 @@ body {
     margin-top: 4px;
 }
 
-
 /* =========================
    Bordered columns (etiology, symptoms, complications)
 ========================= */
@@ -2144,105 +2143,8 @@ body {
    Mnemonic strip (e.g. VITAMIN D)
 ========================= */
 
-.mnemonic {
-    margin-bottom: 36px;
-    padding: 16px;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    background-color: var(--color-surface-muted);
-}
-
-.mnemonic-title {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 4px 10px;
-    margin: 0 0 12px;
-    color: var(--color-text-muted);
-    font-size: 13px;
-    font-weight: 600;
-}
-
-.mnemonic-word {
-    color: var(--color-accent-hover);
-    font-family: var(--font-display);
-    font-size: 15px;
-    font-weight: 800;
-    letter-spacing: 0.12em;
-}
-
-.mnemonic-list {
-    display: grid;
-    grid-template-columns: repeat(8, minmax(0, 1fr));
-    gap: 6px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.mnemonic-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 4px;
-    width: 100%;
-    height: 100%;
-    padding: 10px 4px;
-
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-sm);
-    background-color: var(--color-surface);
-    color: var(--color-text);
-
-    font: inherit;
-    font-size: 12px;
-    font-weight: 600;
-    line-height: 1.3;
-    text-align: center;
-    overflow-wrap: anywhere;
-    transition: border-color 0.2s ease, background-color 0.2s ease;
-}
-
-button.mnemonic-item {
-    cursor: pointer;
-}
-
-button.mnemonic-item:hover:not(:disabled) {
-    border-color: var(--color-accent-line);
-    background-color: var(--color-accent-soft);
-}
-
-.mnemonic-letter {
-    font-family: var(--font-display);
-    font-size: 22px;
-    font-weight: 800;
-    line-height: 1;
-    color: var(--color-accent);
-}
-
 /* The cause on this page */
-.mnemonic-item[aria-current] {
-    border-color: var(--color-accent);
-    background-color: var(--color-accent);
-    color: var(--color-on-accent);
-}
-
-.mnemonic-item[aria-current] .mnemonic-letter {
-    color: var(--color-on-accent);
-}
-
 /* Pages not written yet */
-.mnemonic-item.is-pending {
-    border-style: dashed;
-    background-color: transparent;
-    color: var(--color-text-muted);
-    cursor: not-allowed;
-}
-
-.mnemonic-item.is-pending .mnemonic-letter {
-    color: var(--color-text-muted);
-}
-
 .link-button.is-pending,
 .link-button.is-pending:hover {
     border-style: dashed;
@@ -2255,28 +2157,6 @@ button.mnemonic-item:hover:not(:disabled) {
     transform: none;
 }
 
-.mnemonic-hint {
-    color: var(--color-text-muted);
-    font-weight: 500;
-}
-
-.mnemonic-list.cols-6 {
-    grid-template-columns: repeat(6, minmax(0, 1fr));
-}
-
-.mnemonic-list.cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-@media (max-width: 900px) {
-    .mnemonic-list {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-
-    .mnemonic-list.cols-6 {
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-}
 
 /* =========================
    Wide comparison tables (hepatitis viruses, HBV serology)
@@ -2445,8 +2325,9 @@ button.mnemonic-item:hover:not(:disabled) {
     padding: 6px 10px;
     border-radius: var(--radius-sm);
     background-color: var(--color-surface-sunken);
-    font-family: Consolas, "Cascadia Mono", ui-monospace, monospace;
-    font-size: 12.5px;
+    font-family: Cambria, "STIX Two Text", Georgia, serif;
+    font-size: 1.1em;
+    line-height: 1.5;
 }
 
 .etiology-column > .sc-note:last-child {
@@ -2456,17 +2337,6 @@ button.mnemonic-item:hover:not(:disabled) {
 }
 
 /* Mnemonic tables (e.g. I GET SMASHED): the letter column reads down as the word */
-.data-table.mnemonic-table tbody th {
-    width: 56px;
-    min-width: 0;
-    color: var(--color-accent);
-    font-family: var(--font-display);
-    font-size: 20px;
-    font-weight: 800;
-    text-align: center;
-    vertical-align: middle;
-}
-
 /* =========================
    Child-Pugh calculator
 ========================= */
@@ -3918,6 +3788,13 @@ a.link-button {
     margin: 0;
 }
 
+/* A diagram above its list scrolls with the page */
+.cause-map.is-wide {
+    position: static;
+    max-width: 760px;
+    margin: 0 auto 22px;
+}
+
 .cause-map svg {
     overflow: visible;
     display: block;
@@ -3979,6 +3856,7 @@ a.link-button {
 }
 
 .cause-group {
+    grid-column: 1 / -1;
     margin: 6px 0 -4px;
     color: var(--color-accent);
     font-family: var(--font-display);
@@ -4198,6 +4076,91 @@ a.link-button {
 
     .pair-from {
         text-align: left;
+    }
+}
+
+/* =========================
+   Symptom cards: one condition or syndrome each, with a small diagram and its facts
+========================= */
+
+.syndrome-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.syndrome-card {
+    min-width: 0;
+    padding: 14px 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    background-color: var(--color-surface-muted);
+}
+
+.syndrome-grid:not(:last-child) {
+    margin-bottom: 28px;
+}
+
+.syndrome-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.syndrome-title {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.lesion-map {
+    flex: 0 0 74px;
+    margin: 0;
+    text-align: center;
+}
+
+.lesion-map.is-lateral {
+    flex-basis: 110px;
+}
+
+.lesion-map svg {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.lesion-map figcaption {
+    color: var(--color-text-muted);
+    font-size: 10.5px;
+    line-height: 1.3;
+}
+
+.syndrome-facts {
+    display: grid;
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 5px 12px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.45;
+}
+
+.syndrome-facts dt {
+    color: var(--color-text-muted);
+    font-size: 12.5px;
+    font-weight: 650;
+    line-height: 1.6;
+}
+
+.syndrome-facts dd {
+    margin: 0;
+}
+
+@media (max-width: 1000px) {
+    .syndrome-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -4439,5 +4402,132 @@ a.link-button {
     *::after {
         animation: none !important;
         transition: none !important;
+    }
+}
+
+/* Formulas with a fraction (MathML) */
+.formula-inline:has(> math) {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.formula-math {
+    font-size: 1.12em;
+    math-style: normal;
+}
+
+.formula-math mtext {
+    white-space: nowrap;
+}
+
+.formula-math mfrac {
+    margin: 0 4px;
+}
+
+.formula-note {
+    display: block;
+    margin-top: 4px;
+    font-size: 0.9em;
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .formula-inline:has(> math) {
+        overflow-x: auto;
+    }
+
+    .formula-math {
+        font-size: 1em;
+    }
+}
+
+/* Worked cases on special topics: one clue at a time down a line, each opening to its reasoning */
+.case-steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    max-width: 46rem;
+}
+
+.case-steps > li {
+    position: relative;
+    padding: 0 0 18px 30px;
+}
+
+.case-steps > li::before {
+    content: "";
+    position: absolute;
+    top: 7px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    border: 2px solid var(--color-accent);
+    border-radius: 50%;
+    background: var(--color-surface);
+}
+
+.case-steps > li:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 23px;
+    bottom: -5px;
+    left: 10px;
+    width: 2px;
+    background: var(--color-accent-line);
+}
+
+.case-steps > li:last-child {
+    padding-bottom: 0;
+}
+
+.case-steps > li:last-child::before {
+    background: var(--color-accent);
+}
+
+.case-clue {
+    margin: 0 0 4px;
+    font-weight: 600;
+}
+
+.case-think > summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    min-height: 28px;
+    color: var(--color-accent);
+    font-size: 0.9rem;
+    cursor: pointer;
+    list-style: none;
+}
+
+.case-think > summary::-webkit-details-marker {
+    display: none;
+}
+
+.case-think > summary::before {
+    content: "+";
+    width: 1em;
+    font-weight: 700;
+    text-align: center;
+}
+
+.case-think[open] > summary::before {
+    content: "−";
+}
+
+.case-think > p {
+    margin: 2px 0 0;
+    padding: 2px 0 2px 14px;
+    border-left: 3px solid var(--color-accent-line);
+}
+
+@media print {
+    .case-think > summary {
+        display: none;
+    }
+
+    .case-think::details-content {
+        content-visibility: visible;
+        display: block;
     }
 }

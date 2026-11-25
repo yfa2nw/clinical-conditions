@@ -8,7 +8,7 @@ import { articleWords, quizGoal } from "./quiz-target.mjs";
 
 const [SYSTEM, ID, flag] = process.argv.slice(2);
 if (!SYSTEM || !ID) throw new Error("Usage: node tools/check-quiz-block.mjs <system> <page id> [--merged]");
-// The page's quiz length follows its size (tools/quiz-target.mjs): one question per 30 page words, from 10 to 40
+// The page's quiz length follows its size (tools/quiz-target.mjs): one question per 40 page words, from 10 to 50
 const words = articleWords(SYSTEM, ID);
 
 const bankFile = existsSync(`${SYSTEM}/physiology.html`) && readFileSync(`${SYSTEM}/physiology.html`, "utf8").includes(`id="${ID}"`) ? `${SYSTEM}/physiology-questions.js` : `${SYSTEM}/questions.js`;

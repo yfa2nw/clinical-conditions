@@ -1,0 +1,252 @@
+/* Review theme: the seven systems' threads braided into one cord, in gold.
+   Restyles the shared components in shared/style.css; the markup is unchanged. */
+
+/* =========================
+   Tokens
+========================= */
+
+:root {
+    --color-text: #2a2614;
+    --color-text-muted: #6a6246;
+    --color-page: #f6f2e4;
+    --color-surface: #ffffff;
+    --color-surface-muted: #fbf8ef;
+    --color-surface-sunken: #efe9d5;
+    --color-border: #e3dabd;
+    --color-border-strong: #cbbe94;
+    --color-divider: #ece5ce;
+    --color-accent: #80640c;
+    --color-accent-hover: #634c05;
+    --color-accent-soft: #f4ebca;
+    --color-accent-line: #d8c27a;
+    --color-on-accent: #ffffff;
+    --color-focus: #80640c;
+    --color-note: #f2f0e6;
+    --color-note-line: #b3a77c;
+    --sys-msk: #7d3486;
+    --sys-resp: #4c7419;
+    --sys-cardio: #b01c3a;
+    --sys-renal: #1c6db0;
+    --sys-endocrine: #b35c0e;
+    --sys-gi: #0f766e;
+    --sys-neuro: #4f46c8;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --color-text: #f3eeda;
+        --color-text-muted: #bdb391;
+        --color-page: #0f0e0a;
+        --color-surface: #1a1812;
+        --color-surface-muted: #221f17;
+        --color-surface-sunken: #14120d;
+        --color-border: #3a3524;
+        --color-border-strong: #575036;
+        --color-divider: #2e2a1d;
+        --color-accent: #e6c457;
+        --color-accent-hover: #f2d985;
+        --color-accent-soft: #39300f;
+        --color-accent-line: #7d6820;
+        --color-on-accent: #1b1604;
+        --color-focus: #f2d985;
+        --color-note: #25231a;
+        --color-note-line: #94875a;
+        --sys-msk: #dca2e2;
+        --sys-resp: #a9d66d;
+        --sys-cardio: #f5798d;
+        --sys-renal: #63b3ee;
+        --sys-endocrine: #f2a65a;
+        --sys-gi: #3cc7b5;
+        --sys-neuro: #8f8aff;
+    }
+}
+
+:root[data-theme="dark"] {
+    --color-text: #f3eeda;
+    --color-text-muted: #bdb391;
+    --color-page: #0f0e0a;
+    --color-surface: #1a1812;
+    --color-surface-muted: #221f17;
+    --color-surface-sunken: #14120d;
+    --color-border: #3a3524;
+    --color-border-strong: #575036;
+    --color-divider: #2e2a1d;
+    --color-accent: #e6c457;
+    --color-accent-hover: #f2d985;
+    --color-accent-soft: #39300f;
+    --color-accent-line: #7d6820;
+    --color-on-accent: #1b1604;
+    --color-focus: #f2d985;
+    --color-note: #25231a;
+    --color-note-line: #94875a;
+    --sys-msk: #dca2e2;
+    --sys-resp: #a9d66d;
+    --sys-cardio: #f5798d;
+    --sys-renal: #63b3ee;
+    --sys-endocrine: #f2a65a;
+    --sys-gi: #3cc7b5;
+    --sys-neuro: #8f8aff;
+}
+
+/* =========================
+   Page and brand
+========================= */
+
+body {
+    background-image:
+        radial-gradient(ellipse at 6% 4%, var(--color-accent-soft), transparent 44%),
+        radial-gradient(ellipse at 97% 97%, var(--color-accent-soft), transparent 42%);
+    background-attachment: fixed;
+}
+
+/* A knot of the seven colors */
+.brand-mark {
+    border-radius: 50%;
+    background: conic-gradient(var(--sys-msk) 0% 14.29%, var(--sys-resp) 14.29% 28.57%, var(--sys-cardio) 28.57% 42.86%, var(--sys-renal) 42.86% 57.14%, var(--sys-endocrine) 57.14% 71.43%, var(--sys-gi) 71.43% 85.71%, var(--sys-neuro) 85.71% 100%);
+}
+
+.brand-mark::after {
+    inset: 7px;
+    border: 0;
+    border-radius: 50%;
+    background-color: var(--color-surface);
+}
+
+/* =========================
+   Sidebar: a braid, with the three parts of the review
+========================= */
+
+.part-label {
+    margin: 22px 0 0 calc(var(--map-width) + 8px);
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: var(--color-accent);
+    color: var(--color-on-accent);
+    font-family: var(--font-display);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.part-label:first-of-type {
+    margin-top: 4px;
+}
+
+.station {
+    min-height: 100px;
+    padding-top: 20px;
+}
+
+.map-part.map-strand {
+    stroke: color-mix(in srgb, var(--strand) 42%, var(--color-surface));
+    stroke-width: 2.5;
+}
+
+.map-part.map-strand:is(.is-active, .is-hover, .is-match) {
+    stroke: var(--strand);
+    stroke-width: 3;
+}
+
+.map-part.map-hair:is(.is-active, .is-hover, .is-match) {
+    stroke-width: 2.5;
+}
+
+.map-strand.is-0 {
+    --strand: var(--sys-msk);
+}
+
+.map-strand.is-1 {
+    --strand: var(--sys-resp);
+}
+
+.map-strand.is-2 {
+    --strand: var(--sys-cardio);
+}
+
+.map-strand.is-3 {
+    --strand: var(--sys-renal);
+}
+
+.map-strand.is-4 {
+    --strand: var(--sys-endocrine);
+}
+
+.map-strand.is-5 {
+    --strand: var(--sys-gi);
+}
+
+.map-strand.is-6 {
+    --strand: var(--sys-neuro);
+}
+
+/* =========================
+   Article: the cord down the page
+========================= */
+
+.content-section {
+    position: relative;
+    padding-left: 46px;
+}
+
+.content-section::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    bottom: -22px;
+    left: 6px;
+    width: 11px;
+    background: repeating-linear-gradient(135deg, color-mix(in srgb, var(--sys-msk) 62%, var(--color-surface)) 0px 7px, color-mix(in srgb, var(--sys-resp) 62%, var(--color-surface)) 7px 14px, color-mix(in srgb, var(--sys-cardio) 62%, var(--color-surface)) 14px 21px, color-mix(in srgb, var(--sys-renal) 62%, var(--color-surface)) 21px 28px, color-mix(in srgb, var(--sys-endocrine) 62%, var(--color-surface)) 28px 35px, color-mix(in srgb, var(--sys-gi) 62%, var(--color-surface)) 35px 42px, color-mix(in srgb, var(--sys-neuro) 62%, var(--color-surface)) 42px 49px);
+}
+
+.content-section + .content-section {
+    margin-top: 0;
+    padding-top: 40px;
+    border-top: 0;
+}
+
+.content-section + .content-section::before {
+    top: 0;
+}
+
+.content-section:last-of-type::before {
+    bottom: 0;
+    border-radius: 0 0 6px 6px;
+}
+
+.content-section > h3 {
+    position: relative;
+    z-index: 1;
+}
+
+.content-section > h3::before {
+    position: absolute;
+    top: -1px;
+    left: -48px;
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    box-shadow: 0 0 0 3px var(--color-surface);
+    color: var(--color-on-accent);
+    font-size: 11px;
+}
+
+@media (max-width: 768px) {
+    .part-label {
+        display: none;
+    }
+
+    .content-section {
+        padding-left: 36px;
+    }
+
+    .content-section::before {
+        left: 2px;
+    }
+
+    .content-section > h3::before {
+        left: -42px;
+    }
+}

@@ -328,63 +328,8 @@ body {
 }
 
 /* =========================
-   Stroke syndrome cards
+   Stroke diagrams
 ========================= */
-
-.syndrome-grid {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 12px;
-}
-
-.syndrome-card {
-    min-width: 0;
-    padding: 14px 16px;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    background-color: var(--color-surface-muted);
-}
-
-.syndrome-grid:not(:last-child) {
-    margin-bottom: 28px;
-}
-
-.syndrome-head {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 12px;
-    margin-bottom: 10px;
-}
-
-.syndrome-title {
-    margin: 0;
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 1.35;
-}
-
-.lesion-map {
-    flex: 0 0 74px;
-    margin: 0;
-    text-align: center;
-}
-
-.lesion-map.is-lateral {
-    flex-basis: 110px;
-}
-
-.lesion-map svg {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.lesion-map figcaption {
-    color: var(--color-text-muted);
-    font-size: 10.5px;
-    line-height: 1.3;
-}
 
 .lesion-outline {
     fill: var(--color-surface);
@@ -396,36 +341,6 @@ body {
     fill: var(--color-wrong);
     opacity: 0.6;
 }
-
-.syndrome-facts {
-    display: grid;
-    grid-template-columns: max-content minmax(0, 1fr);
-    gap: 5px 12px;
-    margin: 0;
-    font-size: 14px;
-    line-height: 1.45;
-}
-
-.syndrome-facts dt {
-    color: var(--color-text-muted);
-    font-size: 12.5px;
-    font-weight: 650;
-    line-height: 1.6;
-}
-
-.syndrome-facts dd {
-    margin: 0;
-}
-
-@media (max-width: 1000px) {
-    .syndrome-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* =========================
-   Stroke diagrams
-========================= */
 
 .brain-cerebrum,
 .brain-cerebellum,
@@ -2006,3 +1921,31 @@ body {
 .window-bar.at-2::before { grid-column: 2 / 3; }
 .window-bar.at-3::before { grid-column: 3 / 4; }
 .window-bar.at-4::before { grid-column: 4 / 5; }
+
+/* Stroke: arteries, veins, and scans (scans stay dark in either theme) */
+.st-lumen { fill: var(--color-wrong-soft); stroke: var(--color-wrong); stroke-width: 2.5; }
+.st-wall { fill: var(--color-surface-muted); stroke: var(--color-border-strong); stroke-width: 2; }
+.st-plaque { fill: #e0b64a; stroke: #a97a1c; stroke-width: 1.5; }
+.st-eye { fill: var(--color-surface); stroke: var(--color-border-strong); stroke-width: 2.5; }
+.nerve-line { fill: none; stroke: var(--color-accent); stroke-dasharray: 7 5; stroke-width: 3; }
+.st-vein { fill: none; stroke: #5a78c4; stroke-linecap: round; stroke-width: 6; }
+.st-vein.is-big { stroke-width: 14; }
+.st-vein-dot { fill: #5a78c4; }
+.st-art { fill: none; stroke: var(--color-wrong); stroke-linecap: round; stroke-width: 10; }
+.st-art.is-small { stroke-width: 4; }
+.st-ct-bg { fill: #0c0f14; }
+.st-ct-skull { fill: none; stroke: #f2f2ee; stroke-width: 7; }
+.st-ct-bone { fill: none; stroke: #f2f2ee; stroke-width: 7; }
+.st-ct-brain { fill: #7c8087; }
+.st-ct-fold { fill: none; stroke: #565a62; stroke-linecap: round; stroke-width: 2.5; }
+.st-ct-csf { fill: #2b2f37; }
+.st-ct-dark { fill: #3f434b; }
+.st-ct-faint { fill: #666a72; }
+.st-ct-mid { fill: #8b9098; }
+.st-ct-blood,
+.st-ct-clot { fill: #e9e7df; }
+.st-ct-bright { fill: #ffffff; }
+.st-ct-hole { fill: #4a4e57; }
+.st-ct-line,
+.st-ct-cord { fill: none; stroke: #f4f1e6; stroke-linecap: round; stroke-width: 5; }
+.st-ct-edge { fill: #a7abb3; }

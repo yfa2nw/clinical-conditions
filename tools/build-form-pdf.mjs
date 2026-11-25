@@ -1,7 +1,8 @@
 // Builds an organ system's practice exam in one of two forms, as a PDF.
 // Run from the project root: node tools/build-form-pdf.mjs <gi|neuro> <a|b>
 // Form A is the classic paper: 100 multiple choice questions in 120 minutes.
-// Form B is the reasoning paper: four timed parts in 180 minutes, with new data, unseen mechanisms, and one extended answer.
+// Form B is the reasoning paper, with new data and unseen mechanisms. A content file with PARTS (gi) has five timed parts;
+// one with PART1 to PART4 (neuro) has four.
 // Content is in tools/exam-<system>-form-<a|b>.mjs. The PDF goes to <system>/<system>-exam-form-<a|b>.pdf, linked from the landing page.
 // The covers signal the difference: Form A is light and calm, with two bars of the gauge filled; Form B is dark,
 // with every bar filled and a warm accent.
@@ -21,6 +22,8 @@ const { EXAM, EXTRA_TERMS = {} } = content;
 const OUTPUT = `${SYSTEM}/${SYSTEM}-exam-form-${FORM}.pdf`;
 const isA = FORM === "a";
 const HOT = "#e8836f";
+const FIVE = !isA && content.PARTS ? content.PARTS : null;
+const setQuestions = (set) => (set.stages ? set.stages.flatMap((st) => st.questions) : set.questions);
 
 /* ---------- Abbreviations, from the system's pages ---------- */
 const sitePages = readFileSync(`${SYSTEM}/index.html`, "utf8") + readFileSync(`${SYSTEM}/physiology.html`, "utf8");
@@ -36,7 +39,7 @@ for (const [term, definition] of Object.entries(EXTRA_TERMS)) if (!glossary.has(
 // A definition that only extends another, such as "X, the toxic metabolite of Y" after "X", is dropped
 for (const [term, list] of glossary) glossary.set(term, list.filter((d) => !list.some((other) => other !== d && d.toLowerCase().startsWith(other.toLowerCase()))));
 // Once questions are written, only the abbreviations they use are listed; until then, every abbreviation on the pages
-const questionData = isA ? [content.MEMORY, content.REASONING, content.ANALYSIS] : [content.PART1, content.PART2, content.PART3?.questions, content.PART4?.questions];
+const questionData = FIVE ? [...FIVE.map((p) => p.sets), content.EQUATIONS] : isA ? [content.MEMORY, content.REASONING, content.ANALYSIS] : [content.PART1, content.PART2, content.PART3?.questions, content.PART4?.questions];
 const examText = JSON.stringify(questionData).replace(/<[^>]+>/g, " ");
 const hasQuestions = questionData.some((list) => list && list.length);
 const uses = (term) => new RegExp(`(^|[^A-Za-z0-9-])${term.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}([^A-Za-z0-9-]|$)`).test(examText);
@@ -53,11 +56,11 @@ const coverArt = landing.slice(landing.indexOf("<svg", panelStart), landing.inde
     .replace(/<text class="art-label[^"]*"[\s\S]*?<\/text>/g, "")
     .replace(/<path class="(?:gi-bolus|neuro-pulse)[^"]*"[^>]*\/>/g, "");
 const totalMinutes = isA ? EXAM.minutes : EXAM.parts.reduce((t, p) => t + p.minutes, 0);
-const totalQuestions = isA ? 100 : (content.PART1 || []).reduce((t, p) => t + p.questions.length, 0)
+const totalQuestions = isA ? 100 : FIVE ? FIVE.reduce((t, p) => t + p.sets.reduce((u, x) => u + setQuestions(x).length, 0), 0) : (content.PART1 || []).reduce((t, p) => t + p.questions.length, 0)
     + (content.PART2 || []).reduce((t, c) => t + c.stages.reduce((u, st) => u + st.questions.length, 0), 0)
     + (content.PART3?.questions?.length || 0) + (content.PART4?.questions?.length || 0);
 const totalPoints = isA ? 100 : EXAM.parts.reduce((t, p) => t + p.points, 0);
-const coverLine = isA ? `100 questions · ${totalMinutes} minutes · Multiple choice` : `Four parts · ${totalMinutes} minutes · ${totalPoints} points`;
+const coverLine = isA ? `100 questions · ${totalMinutes} minutes · Multiple choice` : `${FIVE ? "Five" : "Four"} parts · ${totalMinutes} minutes · ${totalPoints} points`;
 
 /* ---------- Instructions ---------- */
 const formA = `
@@ -87,9 +90,15 @@ const formA = `
         </ul>
         <p class="good-luck">Keep a steady pace, and leave time for the cases at the end. Good luck.</p>`;
 
+// The coverage matrix: which page groups each part reaches, by group only
+function matrixHtml() {
+    const groups = content.GROUPS, names = FIVE.map((p, i) => i + 1);
+    const hit = (g, i) => FIVE[i].sets.some((x) => (x.groups || []).includes(g));
+    return `<p class="kicker">What each part draws on</p><table class="matrix"><thead><tr><th>Page group</th>${names.map((n) => `<th>Part ${n}</th>`).join("")}</tr></thead><tbody>${groups.map((g) => `<tr><th>${g}</th>${names.map((_, i) => `<td>${hit(g, i) ? "●" : ""}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
+}
 const formB = isA ? "" : `
         <div class="facts">
-            <div><strong>${totalMinutes} minutes</strong><span>in four timed parts</span></div>
+            <div><strong>${totalMinutes} minutes</strong><span>in ${FIVE ? "five" : "four"} timed parts</span></div>
             <div><strong>${totalQuestions} questions</strong><span>mostly short written answers</span></div>
             <div><strong>${totalPoints} points</strong><span>marked by reasoning step</span></div>
         </div>
@@ -97,15 +106,15 @@ const formB = isA ? "" : `
             ${EXAM.parts.map((part, i) => `<tr><td>Part ${i + 1}</td><td><strong>${part.name}.</strong> ${part.focus}</td><td>${part.questions}</td><td>${part.points}</td><td>${part.minutes} min</td></tr>`).join("")}
             <tr class="total"><td></td><td>Total</td><td></td><td>${totalPoints}</td><td>${totalMinutes} min</td></tr>
         </tbody></table>
-        <p class="formats-note">The question formats, and how each is marked, are on the next page.</p>
+        ${FIVE ? matrixHtml() : '<p class="formats-note">The question formats, and how each is marked, are on the next page.</p>'}
         <p class="kicker">Taking the exam</p>
         <ul>
             <li>Take one part at a time and time each part separately. Do not return to a part once its time is up. A short break between parts is allowed.</li>
             <li><strong>Some questions describe a disease or drug you have not studied.</strong> Everything you need is in the passage or its supplementary material; the task is to apply what you know to it.</li>
-            <li><strong>In Part 2, each stage of a case starts on a new page.</strong> Answer the questions on a page before turning it, and <strong>do not turn back</strong>: later stages can reveal earlier answers. The opening of each case is repeated at the top of its later pages.</li>
+            <li><strong>In Part ${FIVE ? 3 : 2}, each stage of a ${FIVE ? "scenario" : "case"} starts on a new page.</strong> Answer the questions on a page before turning it, and <strong>do not turn back</strong>: later stages can reveal earlier answers. The opening is repeated at the top of its later pages.</li>${FIVE ? "<li>All patients and their data are invented, except in Part 5.</li>" : ""}
             <li>Answers are marked by step, such as the mechanism, the finding it predicts, and the next step, so show your reasoning even when you are unsure of the final answer. Words beyond a limit are not marked.</li>
             <li>Use only the abbreviations on the next pages, or those defined in a passage. Write any other term in full the first time you use it.</li>
-            <li>No notes, website, or other references. A basic calculator is allowed in Parts 1 and 3.</li>
+            <li>No notes, website, or other references. A basic calculator is allowed${FIVE ? ". The equation sheet can be used throughout" : " in Parts 1 and 3"}.</li>
         </ul>
         <p class="kicker">About the exam</p>
         <ul>
@@ -148,7 +157,12 @@ const FORMAT_GROUPS = [
         ["Concept map", "Link the terms with labeled arrows; each correct link earns credit."],
     ]],
 ];
-const formatsPage = isA ? "" : `
+const equationPage = FIVE && content.EQUATIONS ? `
+    <section class="equations">
+        <header class="page-head"><h1>Equation sheet</h1><p>Allowed throughout<span>Nothing here needs to be memorized</span></p></header>
+        ${content.EQUATIONS.map(([g, rows]) => `<p class="kicker">${g}</p><table class="eq-table"><tbody>${rows.map(([n, f, note]) => `<tr><th>${n}</th><td class="eq">${f}</td><td class="eq-note">${note || ""}</td></tr>`).join("")}</tbody></table>`).join("\n        ")}
+    </section>` : "";
+const formatsPage = isA || FIVE ? "" : `
     <section class="formats-page">
         <header class="page-head"><h1>Question formats</h1><p>${EXAM.title}<span>How each is answered and marked</span></p></header>
         <p class="intro">Each question names its format. Answers are marked by step, so sound reasoning earns credit even when the final answer is wrong.</p>
@@ -171,6 +185,7 @@ function seeded(text) {
         return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
     };
 }
+const number = (q) => ({ ...q, number: ++questionNumber, shown: q.type === "mc" ? shuffle(q) : null });
 const shuffle = (q) => {
     const rand = seeded(q.id), list = q.options.map((text, original) => ({ text, original }));
     for (let i = list.length - 1; i > 0; i--) { const j = Math.floor(rand() * (i + 1)); [list[i], list[j]] = [list[j], list[i]]; }
@@ -220,7 +235,10 @@ const gridTable = (q, filled) => {
 };
 const JUDGMENTS = ["supported", "overstated", "unsupported"];
 const supportTable = (q, filled) => `<table class="support"><thead><tr><th>Statement</th><th>Supported</th><th>Overstated</th><th>Unsupported</th></tr></thead><tbody>${q.rows.map((r, i) => `<tr><th>${r}</th>${JUDGMENTS.map((j) => `<td><span class="choice${filled && q.answer[i][0] === j ? " is-on" : ""}"></span></td>`).join("")}</tr><tr class="evidence"><td colspan="4">${filled ? `<em>Evidence:</em> ${q.answer[i][1]}` : `<span class="evidence-label">Evidence</span>${lines(1)}`}</td></tr>`).join("")}</tbody></table>`;
+// Labeled answer lines, for formats with named parts
+const fieldsHtml = (q, filled) => `<table class="fields"><tbody>${q.fields.map((f, i) => `<tr><th>${f}</th><td>${filled ? q.answer[i] : lines(q.fields.length > 3 ? 1 : 2)}</td></tr>`).join("")}</tbody></table>`;
 function body(q) {
+    if (q.type === "fields") return fieldsHtml(q, false);
     if (q.type === "support") return supportTable(q, false);
     if (q.type === "map") return `<div class="map-terms">${q.terms.map((t) => `<span>${t}</span>`).join("")}</div><div class="map-canvas"><span>Draw your map here. Copy each term once, and label every arrow.</span></div>`;
     if (q.type === "grid") return gridTable(q, false);
@@ -232,7 +250,28 @@ function body(q) {
     return (q.work ? `<div class="work"><span>Show your working</span></div>` : "") + lines(q.lines || (q.words > 30 ? 3 : q.words > 15 ? 2 : 1)) + (q.words ? `<p class="limit">${q.words} words or fewer</p>` : "");
 }
 const qHead = (q) => `<header><span class="q-num">${q.number}</span><span class="q-format">${q.format}</span><span class="q-pts">${pts(q.points)}</span></header>`;
-const questionHtml = (q) => `<section class="question">${qHead(q)}<p class="stem">${q.stem}</p>${body(q)}</section>`;
+// A one-line explanation of a format, printed where it first appears (five-part exams only)
+const FORMAT_HINTS = {
+    "Prediction grid": "Circle ↑, ↓, or ↔ for each row; each row is marked on its own.",
+    "Unseen mechanism": "Use what you know, with the information given, to predict the effects.",
+    "Read the graph": "Say what the graph shows, then what it cannot tell you.",
+    "Sketch the trend": "Marked on direction, shape, and timing.",
+    "Account for every result": "Explain each result on its own.",
+    "Two patients": "Say why the same thing differs between the two.",
+    "Pathway completion": "Fill the missing step.",
+    "What changed?": "Say how the new data overturn an earlier conclusion or plan, and what follows.",
+    "Mislead me": "Name the finding that points the wrong way, and explain why it does.",
+    "Split the pair": "Give a test that distinguishes the two possibilities, and the result expected in each.",
+    "Defend or refute": "Agree or disagree with the statement, and support your view from the data.",
+    "Prioritize": "Give the order, with reasons.",
+    "Concept map": "Join the terms with labeled arrows; each correct link earns credit.",
+    "Teach it": "Explain as a chain of causes a patient could follow, within the limit.",
+    "Supported or not": "Mark each statement and give the evidence.",
+    "Apply to a patient": "Say what the study supports for this person, and what it does not.",
+};
+const hinted = new Set();
+const hintOf = (q) => { if (!FIVE || !FORMAT_HINTS[q.format] || hinted.has(q.format)) return ""; hinted.add(q.format); return `<p class="format-hint">${FORMAT_HINTS[q.format]}</p>`; };
+const questionHtml = (q) => `<section class="question">${qHead(q)}${hintOf(q)}<p class="stem">${q.stem}</p>${body(q)}</section>`;
 const part1Html = isA || !problems.length ? "" : `
     <section class="part">
         <header class="page-head"><h1>Part 1</h1><p>Mechanisms and data<span>${EXAM.parts[0].minutes} minutes · ${part1Points} points</span></p></header>
@@ -241,6 +280,7 @@ const part1Html = isA || !problems.length ? "" : `
         <p class="finished">You have finished Part 1. Stop the timer; take a short break if you need one before starting Part 2.</p>
     </section>`;
 function answerBody(q) {
+    if (q.type === "fields") return fieldsHtml(q, true);
     if (q.type === "map") return `<p>${q.answer}</p><table class="map-links"><thead><tr><th>From</th><th>To</th><th>Label</th></tr></thead><tbody>${q.links.map(([a, b, l]) => `<tr><td>${a}</td><td>${b}</td><td>${l}</td></tr>`).join("")}</tbody></table>`;
     if (q.type === "support") return supportTable(q, true);
     if (q.type === "grid") return gridTable(q, true);
@@ -307,6 +347,31 @@ const answersHtml = isA || !problems.length ? "" : `
         ${paper ? `<h2 class="answer-part is-new">Part 3 · Reading the research</h2>${paper.questions.map(answerHtml).join("")}` : ""}
         ${synthesis ? `<h2 class="answer-part is-new">Part 4 · Synthesis</h2>${synthesis.questions.map((q) => answerHtml(q).replace('<p class="marking-label">Marking</p>', '<p class="marking-label">Rubric</p>')).join("")}` : ""}
     </section>`;
+
+/* ---------- Five-part exams ---------- */
+let fiveHtml = "", fiveAnswers = "", fiveRefs = "";
+if (FIVE) {
+    const numbered = FIVE.map((p) => ({ ...p, sets: p.sets.map((set) => ({ ...set, ...(set.stages ? { stages: set.stages.map((st) => ({ ...st, questions: st.questions.map(number) })) } : { questions: set.questions.map(number) }) })) }));
+    const partPoints = (p) => p.sets.reduce((t, x) => t + setQuestions(x).reduce((u, q) => u + q.points, 0), 0);
+    numbered.forEach((p, i) => { if (partPoints(p) !== EXAM.parts[i].points) console.log(`Part ${i + 1} has ${partPoints(p)} points, not ${EXAM.parts[i].points}`); });
+    for (const g of content.GROUPS) if (!FIVE.some((p) => p.sets.some((x) => (x.groups || []).includes(g)))) console.log("No question set covers: " + g);
+    for (const p of numbered) for (const x of p.sets) for (const q of setQuestions(x)) {
+        if (q.words && wordCount(String(q.answer).replace(/<[^>]+>/g, "")) > q.words) console.log("Over the word limit: " + q.id + " (" + wordCount(String(q.answer)) + " of " + q.words + ")");
+        if (q.type === "mc") { const right = q.options[q.answer].length; if (q.options.every((o, k) => k === q.answer || o.length <= right)) console.log("Longest option is correct: " + q.id); }
+    }
+    fiveHtml = numbered.map((p, i) => {
+        const part = EXAM.parts[i], last = i === numbered.length - 1;
+        const head = (set, j) => p.sets.length > 1 || p.paper ? `<p class="kicker">${p.paper ? "The study" : `${p.unit} ${j + 1}`}${set.discipline ? `<span class="discipline">${set.discipline}</span>` : ""}</p>` : "";
+        const sets = p.sets.map((set, j) => set.stages
+            ? `<article class="case${j ? " is-new" : ""}">${head(set, j)}<div class="passage">${set.opening}${set.stages[0].passage}</div>${set.stages[0].questions.map(questionHtml).join("")}${set.stages.slice(1).map((st, k) => `<div class="stage"><p class="turn">Do not turn back · ${p.unit} ${j + 1}, stage ${k + 2} of ${set.stages.length}</p><p class="recap">${set.recap}</p><div class="passage">${st.passage}</div>${st.questions.map(questionHtml).join("")}</div>`).join("")}</article>`
+            : p.paper ? `<article class="paper">${head(set, j)}<div class="passage paper-text">${set.passage}</div></article><div class="paper-questions">${set.questions.map(questionHtml).join("")}</div>`
+            : `<article class="problem">${head(set, j)}<div class="passage">${set.passage}</div>${set.questions.map(questionHtml).join("")}</article>`).join("");
+        return `<section class="part"><header class="page-head"><h1>Part ${i + 1}</h1><p>${part.name}<span>${part.minutes} minutes · ${part.points} points</span></p></header><p class="part-intro">${p.intro}</p>${sets}<p class="finished">${last ? "You have finished the exam. The answers and explanations follow." : `You have finished Part ${i + 1}. Stop the timer; take a short break if you need one before starting Part ${i + 2}.`}</p></section>`;
+    }).join("");
+    fiveAnswers = `<section class="answers"><header class="page-head"><h1>Answers</h1><p>Parts 1 to 5<span>${totalPoints} points</span></p></header>${numbered.map((p, i) => `<h2 class="answer-part${i ? " is-new" : ""}">Part ${i + 1} · ${EXAM.parts[i].name}</h2>${p.sets.map((set, j) => `${p.paper ? "" : `<p class="kicker">${p.unit} ${j + 1}</p>`}${set.recap ? `<p class="recap">${set.recap}</p>` : ""}${setQuestions(set).map(answerHtml).join("")}${set.keyPoints ? `<div class="key-points"><p class="marking-label">Key points</p><ul>${set.keyPoints.map((k) => `<li>${k}</li>`).join("")}</ul></div>` : ""}`).join("")}`).join("")}</section>`;
+    const refs = numbered.flatMap((p) => p.sets.flatMap((x) => x.references || []));
+    fiveRefs = refs.length ? `<section class="references-page"><header class="page-head"><h1>References</h1><p>Part 5<span>Sources read and used</span></p></header><ol class="references">${refs.map((r) => `<li>${r}</li>`).join("")}</ol></section>` : "";
+}
 
 /* ---------- Page ---------- */
 const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>${EXAM.title}</title><style>
@@ -418,6 +483,24 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
     .abbreviations .intro { margin: 0 0 3mm; color: var(--muted); }
     .terms { column-count: 3; column-gap: 6mm; }
     .terms p { margin: 0 0 1mm; font-size: 8pt; line-height: 1.3; break-inside: avoid; }
+
+    .matrix { width: 100%; border-collapse: collapse; font: 8pt/1.3 "Segoe UI", system-ui, sans-serif; }
+    .matrix th, .matrix td { padding: 0.75mm 2mm; border-bottom: 0.4pt solid var(--line); text-align: center; }
+    .matrix th:first-child { text-align: left; font-weight: 500; }
+    .matrix thead th { color: var(--muted); font-size: 7.2pt; letter-spacing: 0.05em; text-transform: uppercase; }
+    .matrix td { color: var(--accent); }
+    .equations { break-before: page; font-size: 10pt; }
+    .eq-table { width: 100%; table-layout: fixed; border-collapse: collapse; margin-bottom: 3mm; }
+    .eq-table th { width: 38mm; padding: 1.7mm 2mm 1.7mm 0; color: var(--dark); font: 600 8.8pt "Segoe UI", system-ui, sans-serif; text-align: left; vertical-align: middle; }
+    .eq-table td { padding: 1.7mm 2mm; border-bottom: 0.4pt solid var(--line); }
+    .eq-table th { border-bottom: 0.4pt solid var(--line); }
+    .eq-note { width: 44mm; color: var(--muted); font-size: 8.5pt; }
+    .eq math { font-size: 10pt; math-style: normal; }
+    .fields { width: 100%; border-collapse: collapse; font: 8.5pt/1.35 "Segoe UI", system-ui, sans-serif; }
+    .fields th { width: 40mm; padding: 1.2mm 2.5mm 1.2mm 0; border-bottom: 0.4pt solid var(--line); color: var(--dark); font-weight: 600; text-align: left; vertical-align: top; }
+    .fields td { padding: 1mm 0; border-bottom: 0.4pt solid var(--line); vertical-align: top; }
+    .answer .fields td { padding: 1.2mm 0; }
+    .format-hint { margin: 0 0 1.5mm; color: var(--muted); font: italic 8pt "Segoe UI", system-ui, sans-serif; }
 
     /* Part 1 and answers */
     .part, .answers { break-before: page; }
@@ -546,6 +629,7 @@ const html = `<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>
         ${isA ? formA : formB}
     </section>
 ${formatsPage}
+${equationPage}
 
     <section class="abbreviations">
         <header class="page-head"><h1>Abbreviations</h1><p>Allowed during the exam</p></header>
@@ -558,8 +642,12 @@ ${part3Html}
 ${part4Html}
 ${answersHtml}
 ${referencesHtml}
+${fiveHtml}
+${fiveAnswers}
+${fiveRefs}
 </body></html>`;
 
 await printPdf(html, OUTPUT, `Clinical Conditions · ${EXAM.title}`);
+if (FIVE) { console.log(`${OUTPUT}: Form B, ${FIVE.map((p, i) => `Part ${i + 1}: ${p.sets.reduce((t, x) => t + setQuestions(x).length, 0)} questions`).join(", ")}; ${totalQuestions} questions, ${totalPoints} points, ${totalMinutes} minutes`); process.exit(0); }
 console.log(`${OUTPUT}: Form ${EXAM.form}${isA ? "" : `, Part 1: ${problems.length} problems, ${problems.reduce((t, p) => t + p.questions.length, 0)} questions, ${part1Points} points; Part 2: ${cases.length} cases, ${cases.reduce((t, c) => t + caseQuestions(c).length, 0)} questions, ${part2Points} points; Part 3: ${paper ? paper.questions.length : 0} questions, ${part3Points} points; Part 4: ${part4Points} points${overLimit.length ? `; over the word limit: ${overLimit.join(", ")}` : ""}`}, ${totalMinutes} minutes, ${totalPoints} points, ${terms.length} abbreviations${hasQuestions ? "" : " (no questions yet, so every abbreviation on the pages)"}`);
 process.exit(0);

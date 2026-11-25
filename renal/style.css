@@ -267,6 +267,79 @@ body {
     text-anchor: middle;
 }
 
+.rn-frame {
+    fill: none;
+    stroke: var(--color-text-muted);
+    stroke-width: 1.5;
+}
+
+/* Arterioles whose width shows their tone, and the urinary tract */
+.rn-art {
+    fill: none;
+    stroke: var(--color-wrong);
+    stroke-opacity: 0.55;
+}
+
+.rn-auto {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-linecap: round;
+    stroke-width: 3.5;
+}
+
+.rn-auto.is-ill {
+    stroke: var(--color-wrong);
+}
+
+.rn-organ {
+    fill: var(--color-wrong-soft);
+    stroke: var(--color-wrong);
+    stroke-opacity: 0.6;
+    stroke-width: 2.5;
+}
+
+.rn-pelvis,
+.rn-ureter {
+    fill: none;
+    stroke: var(--color-accent-line);
+    stroke-linecap: round;
+    stroke-width: 7;
+}
+
+.rn-pelvis.is-wide {
+    stroke-width: 20;
+}
+
+.rn-ureter.is-wide {
+    stroke-width: 14;
+}
+
+.rn-bladder {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 4;
+}
+
+.rn-prostate {
+    fill: var(--color-up-soft);
+    stroke: var(--color-up);
+    stroke-width: 2.5;
+}
+
+.rn-stone {
+    fill: var(--color-text-muted);
+}
+
+.rn-mass {
+    fill: var(--color-up-soft);
+    stroke: var(--color-up);
+    stroke-width: 2.5;
+}
+
+.rn-mass.is-soft {
+    stroke-dasharray: 5 5;
+}
+
 /* A gap in a capillary wall, drawn over its outline */
 .rn-gap {
     fill: var(--color-surface);
@@ -375,4 +448,90 @@ body {
 .rn-urine {
     fill: var(--color-accent);
     opacity: 0.45;
+}
+
+/* =========================
+   Article: one tubule down the page, with water flowing from section to section
+========================= */
+
+.content-section {
+    position: relative;
+    padding-left: 46px;
+}
+
+.content-section::before {
+    content: "";
+    position: absolute;
+    top: 14px;
+    bottom: -26px;
+    left: 6px;
+    width: 12px;
+    background:
+        radial-gradient(circle 2.5px at 50% 50%, var(--color-accent) 94%, transparent) 0 0 / 12px 12px,
+        var(--color-accent-soft);
+    box-shadow: inset 2px 0 var(--color-accent-line), inset -2px 0 var(--color-accent-line);
+    animation: section-flow 1.4s linear infinite;
+}
+
+.content-section + .content-section {
+    margin-top: 0;
+    padding-top: 40px;
+    border-top: 0;
+}
+
+.content-section + .content-section::before {
+    top: 0;
+}
+
+.content-section:last-of-type::before {
+    bottom: 0;
+    border-radius: 0 0 6px 6px;
+}
+
+.content-section > h3 {
+    position: relative;
+    z-index: 1;
+}
+
+/* Each section number is a glomerulus on the tubule */
+.content-section > h3::before {
+    position: absolute;
+    top: -1px;
+    left: -48px;
+    display: grid;
+    place-items: center;
+    box-sizing: border-box;
+    width: 28px;
+    height: 28px;
+    border: 3px solid var(--color-accent);
+    border-radius: 50%;
+    background-color: var(--color-surface);
+    color: var(--color-accent-hover);
+    font-size: 11px;
+}
+
+@keyframes section-flow {
+    to {
+        background-position: 0 12px, 0 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .content-section::before {
+        animation: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .content-section {
+        padding-left: 36px;
+    }
+
+    .content-section::before {
+        left: 2px;
+    }
+
+    .content-section > h3::before {
+        left: -42px;
+    }
 }

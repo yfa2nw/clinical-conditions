@@ -8,6 +8,7 @@ import { printPdf } from "./print-pdf.mjs";
 const THEMES = {
     gi: { name: "Gastrointestinal", accent: "#0f766e", soft: "#e2f1ee", dark: "#0a3a35" },
     neuro: { name: "Neurology", accent: "#4f46c8", soft: "#e9e8fb", dark: "#1b1a47" },
+    review: { name: "Basic Clinical Sciences", accent: "#80640c", soft: "#f4ebca", dark: "#2a2614" },
     foundations: { name: "Foundations", accent: "#3f5566", soft: "#e4eaef", dark: "#1d2730" },
     msk: { name: "Musculoskeletal", accent: "#7d3486", soft: "#f3e3f4", dark: "#2e1a32" },
     resp: { name: "Respiratory", accent: "#4c7419", soft: "#e8f2d8", dark: "#1d2a14" },
@@ -16,7 +17,7 @@ const THEMES = {
     renal: { name: "Renal", accent: "#1c6db0", soft: "#e1eff9", dark: "#13283a" },
 };
 const [SYSTEM, ID] = process.argv.slice(2);
-if (!THEMES[SYSTEM] || !ID) throw new Error("Usage: node tools/build-worksheet-pdf.mjs <gi|neuro|foundations|msk|resp|cardio|endocrine|renal> <page id>");
+if (!THEMES[SYSTEM] || !ID) throw new Error("Usage: node tools/build-worksheet-pdf.mjs <gi|neuro|foundations|msk|resp|cardio|endocrine|renal|review> <page id>");
 const THEME = THEMES[SYSTEM];
 const { WORKSHEET } = await import(`./worksheets/${SYSTEM}/${ID}.mjs`);
 mkdirSync(`${SYSTEM}/worksheets`, { recursive: true });

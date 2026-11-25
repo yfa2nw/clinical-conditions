@@ -4,42 +4,20 @@
    Body map: room for each organ's drawing
 ========================= */
 
-.station[data-organ="esophagus"] {
-    min-height: 120px;
-    padding-top: 34px;
+.station {
+    min-height: 96px;
+    padding-top: 20px;
 }
 
-.station[data-organ="stomach"] {
-    min-height: 150px;
-    padding-top: 30px;
+/* The colon's haustra */
+.map-part.gi-colon,
+.map-part.gi-colon:is(.is-active, .is-hover, .is-match) {
+    stroke-width: 11;
+    stroke-dasharray: 11 3;
+    stroke-linecap: butt;
 }
 
-.station[data-organ="biliary"] {
-    min-height: 220px;
-    padding-top: 40px;
-}
-
-.station[data-organ="pancreas"] {
-    min-height: 120px;
-    padding-top: 30px;
-}
-
-.station[data-organ="appendix"] {
-    min-height: 90px;
-    padding-top: 22px;
-}
-
-.station[data-organ="small-intestine"] {
-    min-height: 200px;
-    padding-top: 34px;
-}
-
-.station[data-organ="colon"] {
-    min-height: 230px;
-    padding-top: 24px;
-}
-
-.map-organ.gi-pancreas {
+.map-organ.is-pancreas {
     fill: var(--color-up-soft);
 }
 
@@ -159,18 +137,6 @@
     }
 }
 
-@media (max-width: 480px) {
-    .mnemonic {
-        padding: 12px;
-    }
-
-    .mnemonic-item {
-        padding: 8px 2px;
-        font-size: 10.5px;
-        overflow-wrap: normal;
-        hyphens: auto;
-    }
-}
 
 /* =========================
    Food's journey (gi/journey.js)
@@ -182,69 +148,6 @@
     --color-on-bolus: #3a1f05;
     --tube-width: 16px;
     --tube-left: 6px;
-}
-
-.journey-strip {
-    margin: 0 0 30px;
-}
-
-.journey-strip svg {
-    display: block;
-    width: 100%;
-    height: auto;
-}
-
-.journey-strip figcaption {
-    display: none;
-    margin-top: 6px;
-    color: var(--color-accent);
-    font-size: 13px;
-    font-weight: 700;
-    text-align: center;
-}
-
-.journey-organ > * {
-    fill: none;
-    stroke: var(--color-border-strong);
-    stroke-linecap: round;
-    stroke-width: 9;
-}
-
-.journey-organ[data-organ="stomach"] > * {
-    stroke-width: 15;
-}
-
-.journey-organ[data-organ="colon"] > * {
-    stroke-dasharray: 20 3;
-    stroke-linecap: butt;
-    stroke-width: 15;
-}
-
-.journey-organ[data-organ="mouth"] > * {
-    stroke-width: 4;
-}
-
-.journey-organ.is-here > * {
-    stroke: var(--color-accent);
-}
-
-.journey-name {
-    fill: var(--color-text-muted);
-    font-size: 13px;
-    font-weight: 600;
-    text-anchor: middle;
-}
-
-.journey-name.is-here {
-    fill: var(--color-accent);
-    font-size: 14px;
-    font-weight: 800;
-}
-
-.journey-food {
-    fill: var(--color-bolus);
-    stroke: var(--color-surface);
-    stroke-width: 2;
 }
 
 /* The tube */
@@ -435,14 +338,6 @@
 }
 
 @media (max-width: 700px) {
-    .journey-strip svg text {
-        display: none;
-    }
-
-    .journey-strip figcaption {
-        display: block;
-    }
-
     .journey-page .content-section {
         padding-left: 38px;
     }
@@ -616,20 +511,6 @@
 }
 
 /* Side branch pages */
-.journey-branch {
-    fill: var(--branch-color);
-    fill-opacity: 0.35;
-    stroke: var(--branch-color);
-    stroke-width: 4;
-}
-
-.journey-link {
-    fill: none;
-    stroke: var(--branch-color);
-    stroke-dasharray: 7 5;
-    stroke-width: 5;
-}
-
 /* The tube becomes the portal vein: what food leaves behind, carried to the liver */
 .journey-page.is-branch .content-section::before {
     border-inline-color: var(--branch-color);
@@ -804,13 +685,6 @@
     --branch-color: #a07fc0;
 }
 
-.journey-worm {
-    fill: none;
-    stroke: var(--branch-color);
-    stroke-linecap: round;
-    stroke-width: 10;
-}
-
 .bile-stone {
     fill: var(--color-bolus);
     stroke: var(--color-text-muted);
@@ -900,16 +774,6 @@
 /* =========================
    Physiology pages
 ========================= */
-
-/* Stations with no topic keep their part of the drawing, without a label */
-.station:not(:has(.condition-item)) .group-label {
-    visibility: hidden;
-}
-
-[data-page="physiology"] .station[data-organ="liver"] {
-    min-height: 190px;
-    padding-top: 30px;
-}
 
 .cause-map.is-wide svg[aria-label^="A parietal cell"] {
     max-width: 560px;
@@ -1254,3 +1118,118 @@
     stroke: var(--color-accent-line);
     stroke-width: 2;
 }
+
+/* Esophagus: manometry, nerves, biopsies, and varices */
+.hrm-bg { fill: #16305c; }
+
+.hrm-band,
+.hrm-wave {
+    fill: none;
+    stroke: #5fc27a;
+    stroke-linecap: round;
+    stroke-width: 12;
+}
+
+.hrm-wave { stroke: #f2c14e; stroke-width: 14; }
+.hrm-band.is-hot { stroke: #e2613a; }
+.hrm-wave.is-hot { stroke: #e2613a; stroke-width: 22; }
+.hrm-wave.is-huge { stroke: #d8405a; stroke-width: 34; }
+.hrm-pan { fill: #8fd46a; opacity: 0.8; }
+.nrv-on { fill: var(--color-accent); }
+.nrv-off { fill: #4f8fc4; }
+.nrv-lost { fill: none; stroke: var(--color-border-strong); stroke-dasharray: 5 4; stroke-width: 2.5; }
+.bx-low { fill: #d9a0b0; }
+.bx-high { fill: #c06a86; }
+.bx-ca { fill: #93405f; }
+.bx-nuc { fill: #4a2740; }
+.bx-goblet { fill: #cfe3f2; }
+.vx { fill: #5a6fc0; }
+
+.vx-line,
+.vx-main {
+    fill: none;
+    stroke: #5a6fc0;
+    stroke-linecap: round;
+    stroke-width: 9;
+}
+
+.vx-main { stroke-width: 18; }
+.vx-main.is-thin { stroke-width: 8; }
+.org-liver { fill: #a8654a; opacity: 0.75; }
+
+/* Stomach: endoscopic views, H. pylori patterns, and emptying */
+.fr-frame { fill: #14100f; }
+.fr-mucosa { fill: #d98a7c; }
+.fr-pale { fill: #e8c3b0; }
+.fr-edge { fill: #b9574f; }
+.fr-base { fill: #f0e3bf; }
+.fr-heap { fill: #9a3f45; }
+.fr-bulge { fill: #e3a394; stroke: #b9695e; stroke-width: 2; }
+.fr-erosion { fill: #a8262b; }
+.fr-blood { fill: #a3131b; }
+.fr-vessel { fill: #c81e2a; stroke: #7a0d14; stroke-width: 2; }
+.fr-clot { fill: #5a1216; }
+.fr-spot { fill: #241214; }
+
+.fr-fold,
+.fr-vein { fill: none; stroke: #b4685d; stroke-linecap: round; stroke-width: 5; }
+.fr-vein { stroke: #6f7fb8; stroke-width: 2.5; }
+.st-inflame { fill: var(--color-wrong); opacity: 0.4; }
+.st-relax { fill: var(--color-accent); opacity: 0.25; }
+.st-pace { fill: #e0a92e; }
+
+.st-grind,
+.st-gate { fill: none; stroke: var(--color-wrong); stroke-linecap: round; stroke-width: 4; }
+.gp-line { fill: none; stroke: #4f9d63; stroke-linecap: round; stroke-linejoin: round; stroke-width: 4; }
+.gp-line.is-slow { stroke: #c9463d; }
+.gp-line.is-fast { stroke: #4f7fc4; }
+
+/* Liver: lobule, portal tract, HBV phases, and nomogram */
+.lv-portal { fill: #e6d3a8; stroke: #b08e4e; stroke-width: 2; }
+.lv-duct { fill: #8fae4c; }
+.lv-vein { fill: #6f8fcf; }
+.lv-art { fill: #c9463d; }
+.lv-plasma { fill: #7b4b9e; }
+.lv-hep { fill: var(--color-surface); stroke: var(--color-border-strong); stroke-width: 2; }
+.site-label.lv-text { fill: #2b1d14; }
+.lv-scar { fill: none; stroke: #b08e4e; stroke-width: 9; stroke-linecap: round; }
+.lv-z1 { fill: #e9c9a0; }
+.lv-z2 { fill: #dba77a; }
+.lv-z3 { fill: #c47d60; }
+.lv-fat { fill: #fbf0c8; stroke: #c9a94a; stroke-width: 1.5; }
+
+.lv-z1 + .lv-z2,
+.lv-z3 { stroke: none; }
+
+.hb-dna,
+.hb-alt,
+.nom-line { fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 4; }
+.hb-dna { stroke: #4f7fc4; }
+.hb-alt { stroke: #c9463d; }
+.nom-line { stroke: #c9463d; }
+.nom-line.is-double { stroke: #8a2f7a; stroke-dasharray: 8 6; }
+
+/* Other liver disease: fibrosis stages, iron and copper, abscesses, and masses */
+.lv-fib { fill: none; stroke: #a8743d; stroke-width: 5; stroke-linecap: round; }
+.lv-fib.is-thick { stroke-width: 9; }
+.iron-dot { fill: #b5532a; }
+.cu-dot { fill: #2f8a6e; }
+.fpn { fill: #7b4b9e; }
+.ab-pus { fill: #d7c46b; stroke: #a8923a; stroke-width: 2; }
+.ab-cyst { fill: var(--color-surface); stroke: #4f7fc4; stroke-width: 3; }
+.ab-cyst.is-in { fill: #cfe0f5; }
+.ab-pipe { fill: none; stroke: #8a5a3a; stroke-width: 7; stroke-linecap: round; }
+.st-ct-bg { fill: #0c0f14; }
+.im-liver { fill: #7a7e85; }
+.im-liver2 { fill: #868a91; }
+.im-base { fill: #4c5058; }
+.im-dark { fill: #3a3d44; }
+.im-br { fill: #f1efe6; }
+.im-br2 { fill: #d8d6cc; }
+.im-rim { fill: none; stroke: #9a9ea6; stroke-width: 3; }
+.im-rim.is-br { stroke: #f1efe6; }
+.im-scar { fill: none; stroke: #3a3d44; stroke-width: 3; }
+
+/* Portal hypertension and hepatorenal diagrams */
+.st-vein { fill: none; stroke: #5a78c4; stroke-linecap: round; stroke-width: 7; }
+.st-vein.is-big { stroke-width: 16; }

@@ -144,6 +144,62 @@
     --sys-neuro: #8f8aff;
 }
 
+.is-review {
+    --color-accent: #80640c;
+    --color-accent-hover: #634c05;
+    --color-accent-soft: #f4ebca;
+    --color-accent-line: #d8c27a;
+    --art-page: #faf6e8;
+    --art-cell: #ffffff;
+    --art-wall: #80640c;
+    --art-label: #634c05;
+    --sys-msk: #7d3486;
+    --sys-resp: #4c7419;
+    --sys-cardio: #b01c3a;
+    --sys-renal: #1c6db0;
+    --sys-endocrine: #b35c0e;
+    --sys-gi: #0f766e;
+    --sys-neuro: #4f46c8;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .is-review {
+        --color-accent: #e6c457;
+        --color-accent-hover: #f2d985;
+        --color-accent-soft: #39300f;
+        --color-accent-line: #7d6820;
+        --art-page: #1a1710;
+        --art-cell: #262217;
+        --art-wall: #d9b94f;
+        --art-label: #f2d985;
+        --sys-msk: #dca2e2;
+        --sys-resp: #a9d66d;
+        --sys-cardio: #f5798d;
+        --sys-renal: #63b3ee;
+        --sys-endocrine: #f2a65a;
+        --sys-gi: #3cc7b5;
+        --sys-neuro: #8f8aff;
+    }
+}
+
+:root[data-theme="dark"] .is-review {
+    --color-accent: #e6c457;
+    --color-accent-hover: #f2d985;
+    --color-accent-soft: #39300f;
+    --color-accent-line: #7d6820;
+    --art-page: #1a1710;
+    --art-cell: #262217;
+    --art-wall: #d9b94f;
+    --art-label: #f2d985;
+    --sys-msk: #dca2e2;
+    --sys-resp: #a9d66d;
+    --sys-cardio: #f5798d;
+    --sys-renal: #63b3ee;
+    --sys-endocrine: #f2a65a;
+    --sys-gi: #3cc7b5;
+    --sys-neuro: #8f8aff;
+}
+
 .is-msk {
     --color-accent: #7d3486;
     --color-accent-hover: #612468;
@@ -802,7 +858,11 @@
     background-color: var(--color-surface);
 }
 
-.shelf-files .shelf-progress p {
+.shelf-files .shelf-progress.is-wide {
+    grid-column: 1 / -1;
+}
+
+.shelf-progress p {
     font-size: 13px;
 }
 
@@ -856,7 +916,7 @@
 }
 
 .renal-tubule {
-    stroke-width: 18;
+    stroke-width: 15;
     opacity: 0.35;
 }
 
@@ -880,8 +940,190 @@
 
 .renal-water.is-filtrate {
     stroke-dasharray: 0.01 2.5;
-    stroke-width: 8;
+    stroke-width: 6.5;
     animation-duration: 6s;
+}
+
+.is-renal .art-label.is-small {
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+.renal-axis {
+    fill: none;
+    stroke: var(--art-wall);
+    stroke-dasharray: 2 6;
+    stroke-width: 1.5;
+    opacity: 0.45;
+}
+
+.renal-graph {
+    fill: none;
+    stroke: var(--art-wall);
+    stroke-linejoin: round;
+    stroke-width: 3.5;
+}
+
+/* The same drop of filtrate on the tubule and on the graph; both are sampled from the
+   tubule's path, so change them together */
+.renal-dot {
+    fill: var(--art-page);
+    stroke: var(--art-wall);
+    stroke-width: 3.5;
+}
+
+.renal-dot.is-tubule {
+    animation: renal-drop 9s linear infinite;
+}
+
+.renal-dot.is-graph {
+    animation: renal-level 9s linear infinite;
+}
+
+@keyframes renal-drop {
+    0%, 1% { opacity: 0; transform: translate(139px, 47.8px); }
+    3.47% { opacity: 1; transform: translate(139px, 47.8px); }
+    5.07% { opacity: 1; transform: translate(151px, 44.2px); }
+    6.61% { opacity: 1; transform: translate(163px, 46.5px); }
+    8.24% { opacity: 1; transform: translate(175px, 51.2px); }
+    9.83% { opacity: 1; transform: translate(187px, 55.2px); }
+    11.36% { opacity: 1; transform: translate(199px, 54.9px); }
+    13.13% { opacity: 1; transform: translate(211px, 47.8px); }
+    14.72% { opacity: 1; transform: translate(223px, 44.2px); }
+    16.27% { opacity: 1; transform: translate(235px, 46.5px); }
+    17.89% { opacity: 1; transform: translate(247px, 51.2px); }
+    19.49% { opacity: 1; transform: translate(259px, 55.2px); }
+    21.01% { opacity: 1; transform: translate(271px, 54.9px); }
+    22.65% { opacity: 1; transform: translate(282.3px, 48.6px); }
+    23.95% { opacity: 1; transform: translate(291.6px, 44.1px); }
+    25.14% { opacity: 1; transform: translate(300.7px, 41.9px); }
+    26.18% { opacity: 1; transform: translate(309px, 42px); }
+    27.11% { opacity: 1; transform: translate(315.7px, 44.7px); }
+    28.01% { opacity: 1; transform: translate(320.4px, 50.1px); }
+    29.15% { opacity: 1; transform: translate(322px, 58.8px); }
+    30.57% { opacity: 1; transform: translate(322px, 70.2px); }
+    32% { opacity: 1; transform: translate(322px, 81.5px); }
+    33.43% { opacity: 1; transform: translate(322px, 92.8px); }
+    34.86% { opacity: 1; transform: translate(322px, 104.2px); }
+    36.28% { opacity: 1; transform: translate(322px, 115.5px); }
+    37.78% { opacity: 1; transform: translate(324px, 126.7px); }
+    39.25% { opacity: 1; transform: translate(332px, 135.2px); }
+    40.43% { opacity: 1; transform: translate(340px, 139.9px); }
+    41.45% { opacity: 1; transform: translate(348px, 140.9px); }
+    42.53% { opacity: 1; transform: translate(356px, 138px); }
+    43.84% { opacity: 1; transform: translate(364px, 131.4px); }
+    45.33% { opacity: 1; transform: translate(370px, 121.8px); }
+    46.46% { opacity: 1; transform: translate(370px, 112.8px); }
+    47.6% { opacity: 1; transform: translate(370px, 103.8px); }
+    48.73% { opacity: 1; transform: translate(370px, 94.8px); }
+    49.86% { opacity: 1; transform: translate(370px, 85.8px); }
+    51% { opacity: 1; transform: translate(370px, 76.8px); }
+    52.17% { opacity: 1; transform: translate(371.1px, 67.7px); }
+    53.23% { opacity: 1; transform: translate(377.6px, 62.7px); }
+    54.38% { opacity: 1; transform: translate(386.7px, 62.3px); }
+    55.77% { opacity: 1; transform: translate(397.6px, 64px); }
+    57.28% { opacity: 1; transform: translate(409.5px, 65.5px); }
+    58.8% { opacity: 1; transform: translate(421.4px, 64.2px); }
+    60.42% { opacity: 1; transform: translate(432.8px, 58.2px); }
+    61.91% { opacity: 1; transform: translate(444px, 54.9px); }
+    63.35% { opacity: 1; transform: translate(455.4px, 55.9px); }
+    64.84% { opacity: 1; transform: translate(466.9px, 58.7px); }
+    66.32% { opacity: 1; transform: translate(478.3px, 61px); }
+    67.75% { opacity: 1; transform: translate(489.7px, 60.1px); }
+    69.2% { opacity: 1; transform: translate(499.8px, 54.8px); }
+    70.27% { opacity: 1; transform: translate(507.2px, 50.7px); }
+    71.34% { opacity: 1; transform: translate(515.2px, 47.8px); }
+    72.43% { opacity: 1; transform: translate(523.6px, 45.8px); }
+    73.54% { opacity: 1; transform: translate(532.3px, 44.7px); }
+    74.67% { opacity: 1; transform: translate(541.3px, 44.1px); }
+    75.7% { opacity: 1; transform: translate(549.5px, 44px); }
+    76.37% { opacity: 1; transform: translate(554.7px, 44.9px); }
+    76.96% { opacity: 1; transform: translate(559px, 46.8px); }
+    77.53% { opacity: 1; transform: translate(562.2px, 49.9px); }
+    78.13% { opacity: 1; transform: translate(564.5px, 54px); }
+    78.81% { opacity: 1; transform: translate(565.7px, 59.3px); }
+    79.93% { opacity: 1; transform: translate(566px, 68.2px); }
+    82.03% { opacity: 1; transform: translate(566px, 84.8px); }
+    84.13% { opacity: 1; transform: translate(566px, 101.5px); }
+    86.23% { opacity: 1; transform: translate(566px, 118.2px); }
+    88.33% { opacity: 1; transform: translate(566px, 134.8px); }
+    90.43% { opacity: 1; transform: translate(566px, 151.5px); }
+    92% { opacity: 1; transform: translate(566px, 164px); }
+    96%, 98% { opacity: 0; transform: translate(566px, 164px); }
+    98.1%, 100% { opacity: 0; transform: translate(139px, 47.8px); }
+}
+
+@keyframes renal-level {
+    0%, 1% { opacity: 0; transform: translate(136px, 224.5px); }
+    3.47% { opacity: 1; transform: translate(136px, 224.5px); }
+    5.07% { opacity: 1; transform: translate(146.1px, 224.5px); }
+    6.61% { opacity: 1; transform: translate(155.9px, 224.5px); }
+    8.24% { opacity: 1; transform: translate(166.1px, 224.5px); }
+    9.83% { opacity: 1; transform: translate(176.2px, 224.5px); }
+    11.36% { opacity: 1; transform: translate(185.8px, 224.5px); }
+    13.13% { opacity: 1; transform: translate(197px, 224.5px); }
+    14.72% { opacity: 1; transform: translate(207.1px, 224.5px); }
+    16.27% { opacity: 1; transform: translate(216.9px, 224.5px); }
+    17.89% { opacity: 1; transform: translate(227.2px, 224.5px); }
+    19.49% { opacity: 1; transform: translate(237.2px, 224.5px); }
+    21.01% { opacity: 1; transform: translate(246.9px, 224.5px); }
+    22.65% { opacity: 1; transform: translate(257.2px, 224.5px); }
+    23.95% { opacity: 1; transform: translate(265.4px, 224.5px); }
+    25.14% { opacity: 1; transform: translate(272.9px, 224.5px); }
+    26.18% { opacity: 1; transform: translate(279.5px, 224.5px); }
+    27.11% { opacity: 1; transform: translate(285.4px, 224.5px); }
+    28.01% { opacity: 1; transform: translate(291.1px, 224.5px); }
+    29.15% { opacity: 1; transform: translate(296px, 224.5px); }
+    30.57% { opacity: 1; transform: translate(302.6px, 219px); }
+    32% { opacity: 1; transform: translate(309.3px, 213.5px); }
+    33.43% { opacity: 1; transform: translate(315.9px, 208px); }
+    34.86% { opacity: 1; transform: translate(322.5px, 202.5px); }
+    36.28% { opacity: 1; transform: translate(329.2px, 197px); }
+    37.78% { opacity: 1; transform: translate(336.1px, 191.2px); }
+    39.25% { opacity: 1; transform: translate(343px, 185.5px); }
+    40.43% { opacity: 1; transform: translate(348.4px, 181px); }
+    41.45% { opacity: 1; transform: translate(352px, 178px); }
+    42.53% { opacity: 1; transform: translate(357.8px, 183.9px); }
+    43.84% { opacity: 1; transform: translate(364.9px, 191.1px); }
+    45.33% { opacity: 1; transform: translate(372.9px, 199.2px); }
+    46.46% { opacity: 1; transform: translate(379px, 205.4px); }
+    47.6% { opacity: 1; transform: translate(385.1px, 211.6px); }
+    48.73% { opacity: 1; transform: translate(391.2px, 217.8px); }
+    49.86% { opacity: 1; transform: translate(397.3px, 224px); }
+    51% { opacity: 1; transform: translate(403.4px, 230.2px); }
+    52.17% { opacity: 1; transform: translate(408px, 234.8px); }
+    53.23% { opacity: 1; transform: translate(414.3px, 234.8px); }
+    54.38% { opacity: 1; transform: translate(421.3px, 234.7px); }
+    55.77% { opacity: 1; transform: translate(429.6px, 234.7px); }
+    57.28% { opacity: 1; transform: translate(438.6px, 234.6px); }
+    58.8% { opacity: 1; transform: translate(447.8px, 234.5px); }
+    60.42% { opacity: 1; transform: translate(457.5px, 234.5px); }
+    61.91% { opacity: 1; transform: translate(466.4px, 234.4px); }
+    63.35% { opacity: 1; transform: translate(475.1px, 234.3px); }
+    64.84% { opacity: 1; transform: translate(484px, 234.3px); }
+    66.32% { opacity: 1; transform: translate(492.8px, 234.2px); }
+    67.75% { opacity: 1; transform: translate(501.5px, 234.1px); }
+    69.2% { opacity: 1; transform: translate(510.1px, 234.1px); }
+    70.27% { opacity: 1; transform: translate(516.6px, 234px); }
+    71.34% { opacity: 1; transform: translate(523px, 234px); }
+    72.43% { opacity: 1; transform: translate(529.5px, 233.9px); }
+    73.54% { opacity: 1; transform: translate(536.2px, 233.9px); }
+    74.67% { opacity: 1; transform: translate(542.9px, 233.8px); }
+    75.7% { opacity: 1; transform: translate(548px, 233.8px); }
+    76.37% { opacity: 1; transform: translate(550.8px, 231.5px); }
+    76.96% { opacity: 1; transform: translate(553.3px, 229.5px); }
+    77.53% { opacity: 1; transform: translate(555.6px, 227.5px); }
+    78.13% { opacity: 1; transform: translate(558.1px, 225.5px); }
+    78.81% { opacity: 1; transform: translate(561px, 223.2px); }
+    79.93% { opacity: 1; transform: translate(565.6px, 219.3px); }
+    82.03% { opacity: 1; transform: translate(574.4px, 212.1px); }
+    84.13% { opacity: 1; transform: translate(583.2px, 205px); }
+    86.23% { opacity: 1; transform: translate(591.9px, 197.8px); }
+    88.33% { opacity: 1; transform: translate(600.7px, 190.6px); }
+    90.43% { opacity: 1; transform: translate(609.4px, 183.4px); }
+    92% { opacity: 1; transform: translate(616px, 178px); }
+    96%, 98% { opacity: 0; transform: translate(616px, 178px); }
+    98.1%, 100% { opacity: 0; transform: translate(136px, 224.5px); }
 }
 
 @keyframes water-flow {
@@ -1533,6 +1775,125 @@
 @keyframes cell-icon {
     0%, 65%, 94%, 100% { stroke: var(--line); }
     71%, 86% { stroke: var(--art-cell); }
+}
+
+/* =========================
+   Seven threads, one cord
+   Pulses leave the system icons (4–60%), weave along the cord, and fill the lines of the
+   book (58–90%). The pulses are hidden while they reset.
+========================= */
+
+.is-review {
+    --weave: 8s;
+}
+
+.is-review .world-art {
+    background: radial-gradient(ellipse at 62% 50%, var(--color-accent-soft), var(--art-page) 70%);
+}
+
+.is-review .art-label {
+    fill: var(--art-label);
+}
+
+.art-label.is-end {
+    text-anchor: end;
+}
+
+.is-review svg .is-msk {
+    --line: var(--sys-msk);
+}
+
+.is-review svg .is-resp {
+    --line: var(--sys-resp);
+}
+
+.is-review svg .is-cardio {
+    --line: var(--sys-cardio);
+}
+
+.is-review svg .is-renal {
+    --line: var(--sys-renal);
+}
+
+.is-review svg .is-endocrine {
+    --line: var(--sys-endocrine);
+}
+
+.is-review svg .is-gi {
+    --line: var(--sys-gi);
+}
+
+.is-review svg .is-neuro {
+    --line: var(--sys-neuro);
+}
+
+.braid-thread {
+    fill: none;
+    stroke: var(--line);
+    stroke-linejoin: round;
+    stroke-width: 3;
+    opacity: 0.6;
+}
+
+.braid-pulse {
+    fill: none;
+    stroke: var(--line);
+    stroke-dasharray: 6 220;
+    stroke-dashoffset: 6;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 7;
+    opacity: 0;
+    animation: braid-pulse var(--weave) linear infinite;
+}
+
+.braid-book {
+    fill: var(--art-cell);
+    stroke: var(--art-wall);
+    stroke-linejoin: round;
+    stroke-width: 4;
+}
+
+.braid-spine {
+    fill: none;
+    stroke: var(--art-wall);
+    stroke-width: 3;
+}
+
+.braid-line {
+    fill: none;
+    stroke: var(--line);
+    stroke-linecap: round;
+    stroke-width: 5;
+    opacity: 0.25;
+    animation: braid-line var(--weave) ease-in-out infinite;
+}
+
+.braid-ring {
+    fill: var(--art-cell);
+    stroke: var(--line);
+    stroke-width: 2.5;
+}
+
+.braid-icon {
+    fill: none;
+    stroke: var(--line);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+
+@keyframes braid-pulse {
+    0%, 3% { opacity: 0; stroke-dashoffset: 6; }
+    6% { opacity: 1; stroke-dashoffset: 0; }
+    57% { opacity: 1; stroke-dashoffset: -94; }
+    60%, 80% { opacity: 0; stroke-dashoffset: -100; }
+    81%, 100% { opacity: 0; stroke-dashoffset: 6; }
+}
+
+@keyframes braid-line {
+    0%, 56%, 96%, 100% { opacity: 0.25; }
+    64%, 88% { opacity: 1; }
 }
 
 /* =========================
@@ -3035,22 +3396,22 @@
     98.1%, 100% { transform: translate(372.0px, 160px); opacity: 0; }
 }
 
-/* Foundations spans the first row, so an even number of panels leaves the last one alone, and it spans its row */
+/* Foundations opens the page and the review closes it, each spanning its row */
 @media (min-width: 961px) {
-    :is(.world.is-foundations, .world:last-child:nth-child(even)) {
+    :is(.world.is-foundations, .world.is-review) {
         grid-column: 1 / -1;
     }
 
-    :is(.world.is-foundations, .world:last-child:nth-child(even)) .world-link {
+    :is(.world.is-foundations, .world.is-review) .world-link {
         flex-direction: row;
         align-items: stretch;
     }
 
-    :is(.world.is-foundations, .world:last-child:nth-child(even)) .world-art {
+    :is(.world.is-foundations, .world.is-review) .world-art {
         flex: 0 0 56%;
     }
 
-    :is(.world.is-foundations, .world:last-child:nth-child(even)) .world-intro {
+    :is(.world.is-foundations, .world.is-review) .world-intro {
         align-self: center;
     }
 }
@@ -3125,6 +3486,10 @@
         font-size: 17px;
     }
 
+    .is-review .art-label {
+        font-size: 20px;
+    }
+
     .is-foundations .art-label {
         font-size: 20px;
     }
@@ -3157,8 +3522,19 @@
         animation: none;
     }
 
+    .renal-dot[class],
     .endo-point {
         display: none;
+    }
+
+    /* The threads rest with the book filled */
+    .braid-pulse[class],
+    .braid-line[class] {
+        animation: none;
+    }
+
+    .braid-line {
+        opacity: 1;
     }
 
     /* The cell rests with its signal docked */

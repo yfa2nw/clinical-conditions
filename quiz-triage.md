@@ -13,7 +13,7 @@ Over target: a kind with more kept questions than its target; move the extras to
 
 Pages marked done have been rewritten to the new style; their ids are in `DONE` in the script. The kinds on the other pages were proposed from each question's length, data, and what it asks, so check them when rewriting.
 
-Across the 5 banks: 1677 questions now, against a target of 3525. 1061 keep, 608 keep with a fuller explanation, 8 rewrite, and 0 drop; about 1918 new questions are still to write.
+Across the 5 banks: 1589 questions now, against a target of 4955. 1011 keep, 571 keep with a fuller explanation, 7 rewrite, and 0 drop; about 3481 new questions are still to write.
 
 ## GI conditions (`gi/questions.js`)
 
@@ -23,30 +23,61 @@ Across the 5 banks: 1677 questions now, against a target of 3525. 1061 keep, 608
 | Esophageal Motility Disorders (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
 | Gastritis and Peptic Ulcer Disease (done) | 16/16 | 16/16 | 8/8 | 40 | 0 |  | 0 |
 | Gastric Tumors (done) | 16/16 | 16/16 | 8/8 | 40 | 0 |  | 0 |
-| Malabsorption (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
-| Diverticular Diseases (done) | 6/6 | 6/6 | 3/3 | 15 | 0 |  | 0 |
-| Inflammatory Bowel Disease (IBD) (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
-| Irritable Bowel Syndrome (IBS) (done) | 4/4 | 4/4 | 2/2 | 10 | 0 |  | 0 |
-| Acute Diarrhea (done) | 16/16 | 16/16 | 8/8 | 40 | 0 |  | 0 |
+| Malabsorption (done) | 10/14 | 10/14 | 5/7 | 35 | 10 |  | 0 |
+| Diverticular Diseases (done) | 6/12 | 6/12 | 3/6 | 30 | 15 |  | 0 |
+| Inflammatory Bowel Disease: Comparison and Workup (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
+| Irritable Bowel Syndrome (IBS) (done) | 4/10 | 4/10 | 2/5 | 25 | 15 |  | 0 |
+| Acute Diarrhea (done) | 16/20 | 16/20 | 8/10 | 50 | 10 |  | 0 |
 | Chronic Diarrhea (done) | 12/12 | 12/12 | 6/6 | 30 | 0 |  | 0 |
-| Intestinal Ischemia (done) | 6/6 | 6/6 | 3/3 | 15 | 0 |  | 0 |
-| Hepatocellular Injury: Vascular Causes (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
-| Hepatocellular Injury: Infectious Causes (done) | 16/16 | 16/16 | 8/8 | 40 | 0 |  | 0 |
-| Hepatocellular Injury: Traumatic Causes (done) | 4/4 | 3/4 | 3/2 | 10 | 1 | 1 analysis | 0 |
-| Hepatocellular Injury: Autoimmune Causes (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
-| Hepatocellular Injury: Metabolic Causes (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
-| Hepatocellular Injury: Iatrogenic and Toxic Causes (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
-| Hepatocellular Injury: Neoplastic Causes (done) | 6/6 | 6/6 | 3/3 | 15 | 0 |  | 0 |
-| Liver Disease in Pregnancy (done) | 16/16 | 16/16 | 8/8 | 40 | 0 |  | 0 |
-| Acute Liver Failure and Cirrhosis (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
-| Gallstones, Cholecystitis, and Biliary Fistulas (done) | 16/16 | 16/16 | 8/8 | 40 | 0 |  | 0 |
+| Intestinal Ischemia (done) | 6/12 | 6/12 | 3/6 | 30 | 15 |  | 0 |
+| Vascular Disorders of the Liver (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
+| Viral Hepatitis (done) | 16/16 | 16/16 | 8/8 | 40 | 0 |  | 0 |
+| Primary Biliary Cholangitis and Primary Sclerosing Cholangitis (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
+| Hemochromatosis, Wilson Disease, and Alpha-1 Antitrypsin Deficiency (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
+| Drug-Induced Liver Injury and Paracetamol Overdose (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
+| Liver Masses and Cancer (done) | 6/10 | 6/10 | 3/5 | 25 | 10 |  | 0 |
+| Acute Liver Failure (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
+| Gallstones, Cholecystitis, and Biliary Fistulas (done) | 16/12 | 16/12 | 8/6 | 30 | 0 | 4 memory, 4 reasoning, 2 analysis | 0 |
 | Choledocholithiasis and Ascending Cholangitis (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
 | Biliary Tract and Periampullary Malignancies (done) | 6/6 | 6/6 | 3/3 | 15 | 0 |  | 0 |
 | Acute Pancreatitis (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
-| Appendicitis (done) | 4/4 | 4/4 | 2/2 | 10 | 0 |  | 0 |
-| GI Bleeding and Obstruction (done) | 16/16 | 16/16 | 8/8 | 40 | 0 |  | 0 |
-| Localizing Abdominal Pain (done) | 15/16 | 15/16 | 10/8 | 40 | 2 | 2 analysis | 0 |
-| Reading Liver Function Tests (done) | 15/16 | 15/16 | 10/8 | 40 | 2 | 2 analysis | 0 |
+| Appendicitis (done) | 4/12 | 4/12 | 2/6 | 30 | 20 |  | 0 |
+| Localizing GI Bleeding (done) | 16/20 | 16/20 | 8/10 | 50 | 10 |  | 0 |
+| Localizing Abdominal Pain (done) | 15/20 | 15/20 | 10/10 | 50 | 10 |  | 0 |
+| Reading Liver Function Tests (done) | 15/20 | 15/20 | 10/10 | 50 | 10 |  | 0 |
+| Barrett Esophagus and Esophageal Cancer | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Esophageal Tears and Varices | 0/12 | 0/12 | 0/6 | 30 | 30 |  | 0 |
+| Esophageal Disease: Comparison and Workup | 0/8 | 0/8 | 0/4 | 20 | 20 |  | 0 |
+| Functional Dyspepsia and Gastroparesis | 0/12 | 0/12 | 0/6 | 30 | 30 |  | 0 |
+| Stomach Disease: Comparison and Workup | 0/8 | 0/8 | 0/4 | 20 | 20 |  | 0 |
+| Alcohol-Associated Liver Disease | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Metabolic Dysfunction-Associated Steatotic Liver Disease (MASLD) | 0/8 | 0/8 | 0/4 | 20 | 20 |  | 0 |
+| Liver Abscess and Trauma | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Cirrhosis | 0/12 | 0/12 | 0/6 | 30 | 30 |  | 0 |
+| Portal Hypertension and Ascites | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Hepatic Encephalopathy and Hepatorenal Syndrome | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Liver Disease: Comparison and Workup | 0/8 | 0/8 | 0/4 | 20 | 20 |  | 0 |
+| Biliary Disease: Comparison and Workup | 0/6 | 0/6 | 0/3 | 15 | 15 |  | 0 |
+| Chronic Pancreatitis | 0/8 | 0/8 | 0/4 | 20 | 20 |  | 0 |
+| Pancreatic Cancer | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Neuroendocrine Tumors and Carcinoid Syndrome | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Pancreatic Disease: Comparison and Workup | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Celiac Disease | 0/14 | 0/14 | 0/7 | 35 | 35 |  | 0 |
+| Diarrhea and Malabsorption: Comparison and Workup | 0/8 | 0/8 | 0/4 | 20 | 20 |  | 0 |
+| Crohn Disease | 0/14 | 0/14 | 0/7 | 35 | 35 |  | 0 |
+| Ulcerative Colitis | 0/14 | 0/14 | 0/7 | 35 | 35 |  | 0 |
+| Small and Large Bowel Obstruction | 0/12 | 0/12 | 0/6 | 30 | 30 |  | 0 |
+| Volvulus and Intussusception | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Hernias | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Polyps and Colorectal Cancer | 0/14 | 0/14 | 0/7 | 35 | 35 |  | 0 |
+| Constipation | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Anorectal Conditions | 0/12 | 0/12 | 0/6 | 30 | 30 |  | 0 |
+| Localizing Dysphagia | 0/18 | 0/18 | 0/9 | 45 | 45 |  | 0 |
+| Localizing Jaundice | 0/20 | 0/20 | 0/10 | 50 | 50 |  | 0 |
+| Localizing Nausea and Vomiting | 0/20 | 0/20 | 0/10 | 50 | 50 |  | 0 |
+| Reading Abdominal Imaging | 0/20 | 0/20 | 0/10 | 50 | 50 |  | 0 |
+| Reading Endoscopy | 0/20 | 0/20 | 0/10 | 50 | 50 |  | 0 |
+| Autoimmune Hepatitis | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
 
 ## GI physiology and pharmacology (`gi/physiology-questions.js`)
 
@@ -56,22 +87,21 @@ Across the 5 banks: 1677 questions now, against a target of 3525. 1061 keep, 608
 | Gastric Secretion (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
 | Emetic Center (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
 | Liver Function (done) | 16/16 | 16/16 | 8/8 | 40 | 0 |  | 0 |
-| Digestion and Absorption | 17/8 | 16/8 | 0/4 | 20 | 4 | 9 memory, 8 reasoning | 33 |
-| Immune System of the Gut | 7/14 | 2/14 | 0/7 | 35 | 26 |  | 9 |
-| Enteric Nervous System | 5/10 | 4/10 | 0/5 | 25 | 16 |  | 9 |
+| Digestion and Absorption | 17/10 | 16/10 | 0/5 | 25 | 5 | 7 memory, 6 reasoning | 33 |
+| Immune System of the Gut | 7/12 | 2/12 | 0/6 | 30 | 21 |  | 9 |
+| Enteric Nervous System | 5/8 | 4/8 | 0/4 | 20 | 11 |  | 9 |
 | Acid-Suppressing and Protective Drugs | 1/10 | 4/10 | 0/5 | 25 | 20 |  | 5 |
-| GI Antibacterials | 2/14 | 4/14 | 0/7 | 35 | 29 |  | 6 |
-| Antifungals, Antivirals, and Antiparasitics | 0/12 | 2/12 | 0/6 | 30 | 28 |  | 2 |
-| Hepatitis and Bile Salt Drugs | 1/10 | 4/10 | 0/5 | 25 | 20 |  | 5 |
-| Antiemetics | 1/6 | 3/6 | 0/3 | 15 | 11 |  | 4 |
-| Motility Drugs | 2/10 | 0/10 | 0/5 | 25 | 23 |  | 2 |
-| Laxatives and Antidiarrheals | 1/8 | 2/8 | 0/4 | 20 | 17 |  | 3 |
-| IBD and Immune Drugs | 2/12 | 3/12 | 0/6 | 30 | 25 |  | 5 |
-| Antidotes, Chelators, and Fatty Liver Drugs | 1/10 | 2/10 | 0/5 | 25 | 22 |  | 3 |
-| Cirrhosis and Vascular Drugs | 0/6 | 3/6 | 0/3 | 15 | 12 |  | 3 |
-| Replacement Therapy | 0/6 | 2/6 | 0/3 | 15 | 13 |  | 2 |
-| Analgesics and Smooth Muscle Relaxants | 1/8 | 1/8 | 0/4 | 20 | 18 |  | 2 |
+| Anti-Infectives | 0/20 | 2/20 | 0/10 | 50 | 48 |  | 2 |
+| Antiemetics, Motility, and Pain Drugs | 2/20 | 0/20 | 0/10 | 50 | 48 |  | 2 |
+| Laxatives and Antidiarrheals | 1/12 | 2/12 | 0/6 | 30 | 27 |  | 3 |
+| IBD and Immune Drugs | 2/14 | 3/14 | 0/7 | 35 | 30 |  | 5 |
+| Liver Drugs | 1/20 | 2/20 | 0/10 | 50 | 47 |  | 3 |
+| Replacement Therapy | 0/8 | 2/8 | 0/4 | 20 | 18 |  | 2 |
+| GI Cancer Drugs | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
 | Drugs That Cause GI Disease | 2/4 | 0/4 | 0/2 | 10 | 8 |  | 2 |
+| GI Hormones | 0/8 | 0/8 | 0/4 | 20 | 20 |  | 0 |
+| Biliary and Pancreatic Secretion | 0/8 | 0/8 | 0/4 | 20 | 20 |  | 0 |
+| Motility by Region | 0/16 | 0/16 | 0/8 | 40 | 40 |  | 0 |
 
 ### Digestion and Absorption
 
@@ -141,36 +171,12 @@ Across the 5 banks: 1677 questions now, against a target of 3525. 1061 keep, 608
 - `gp-misoprostol-pregnancy`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 134 characters; needs the why and how)
 - `gp-sucralfate-acid`: reasoning, **keep, expand** (notes on 1 of 4 wrong options; explanation 219 characters; needs the why and how)
 
-### GI Antibacterials
-
-- `gp-clarithromycin-statin`: reasoning, **keep, expand** (notes on 0 of 4 wrong options)
-- `gp-metronidazole-alcohol`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 242 characters; needs the why and how)
-- `gp-fluoroquinolone-tendon`: memory, **keep, expand** (notes on 3 of 4 wrong options; explanation 169 characters; needs the why and how)
-- `gp-tetracycline-chelation`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 193 characters; needs the why and how)
-- `gp-vancomycin-oral`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 202 characters; needs the why and how)
-- `gp-rifaximin-he`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 192 characters; needs the why and how)
-
-### Antifungals, Antivirals, and Antiparasitics
+### Anti-Infectives
 
 - `gp-fluconazole-warfarin`: reasoning, **keep, expand** (notes on 1 of 4 wrong options; explanation 242 characters; needs the why and how)
 - `gp-acyclovir-hydration`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 227 characters; needs the why and how)
 
-### Hepatitis and Bile Salt Drugs
-
-- `gp-sofosbuvir-amiodarone`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 176 characters; needs the why and how)
-- `gp-ns3-decompensated`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 202 characters; needs the why and how)
-- `gp-tenofovir-monitor`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 222 characters; needs the why and how)
-- `gp-cholestyramine-spacing`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 186 characters; needs the why and how)
-- `gp-obeticholic-mechanism`: reasoning, **keep, expand** (notes on 3 of 4 wrong options; explanation 230 characters; needs the why and how)
-
-### Antiemetics
-
-- `gp-metoclopramide-td`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 210 characters; needs the why and how)
-- `gp-ondansetron-qt`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 210 characters; needs the why and how)
-- `gp-aprepitant-dexamethasone`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 189 characters; needs the why and how)
-- `gp-scopolamine-pupil`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 187 characters; needs the why and how)
-
-### Motility Drugs
+### Antiemetics, Motility, and Pain Drugs
 
 - `gp-neostigmine-ogilvie`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 222 characters; needs the why and how)
 - `gp-loperamide-contra`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 215 characters; needs the why and how)
@@ -189,27 +195,16 @@ Across the 5 banks: 1677 questions now, against a target of 3525. 1061 keep, 608
 - `gp-budesonide-firstpass`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 198 characters; needs the why and how)
 - `gp-sulfasalazine-sperm`: reasoning, **keep, expand** (notes on 1 of 4 wrong options; explanation 221 characters; needs the why and how)
 
-### Antidotes, Chelators, and Fatty Liver Drugs
+### Liver Drugs
 
 - `gp-nac-mechanism`: reasoning, **keep, expand** (notes on 1 of 4 wrong options; explanation 200 characters; needs the why and how)
 - `gp-penicillamine-switch`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 244 characters; needs the why and how)
 - `gp-deferoxamine-yersinia`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 185 characters; needs the why and how)
 
-### Cirrhosis and Vascular Drugs
-
-- `gp-nsbb-varices`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 241 characters; needs the why and how)
-- `gp-spironolactone-gynecomastia`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 198 characters; needs the why and how)
-- `gp-terlipressin-hrs`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 218 characters; needs the why and how)
-
 ### Replacement Therapy
 
 - `gp-b12-oral`: reasoning, **keep, expand** (notes on 0 of 4 wrong options)
 - `gp-folate-b12`: reasoning, **keep, expand** (notes on 1 of 4 wrong options; explanation 192 characters; needs the why and how)
-
-### Analgesics and Smooth Muscle Relaxants
-
-- `gp-paracetamol-diverticulitis`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 201 characters; needs the why and how)
-- `gp-pancreatitis-pain`: reasoning, **keep, expand** (notes on 1 of 4 wrong options)
 
 ### Drugs That Cause GI Disease
 
@@ -220,34 +215,81 @@ Across the 5 banks: 1677 questions now, against a target of 3525. 1061 keep, 608
 
 | Page | Memory | Reasoning | Analysis | Target | Still to write | Over target | Needs work |
 |---|---|---|---|---|---|---|---|
-| Stroke Symptoms and Complications | 14/14 | 0/14 | 0/7 | 35 | 21 |  | 14 |
-| Acute Ischemic Stroke | 7/12 | 7/12 | 0/6 | 30 | 16 |  | 14 |
-| Intracerebral Hemorrhage | 7/10 | 5/10 | 0/5 | 25 | 13 |  | 12 |
-| Subarachnoid Hemorrhage | 7/8 | 5/8 | 0/4 | 20 | 8 |  | 12 |
-| Primary Headaches | 8/16 | 8/16 | 0/8 | 40 | 24 |  | 16 |
-| Epidural and Subdural Hematoma | 6/10 | 3/10 | 0/5 | 25 | 16 |  | 9 |
-| Increased Intracranial Pressure and Herniation | 4/16 | 2/16 | 0/8 | 40 | 34 |  | 6 |
-| Seizures | 4/16 | 10/16 | 0/8 | 40 | 26 |  | 14 |
-| Multiple Sclerosis | 8/12 | 6/12 | 0/6 | 30 | 16 |  | 14 |
-| Neuromyelitis Optica Spectrum Disorder (NMOSD) | 9/16 | 3/16 | 0/8 | 40 | 28 |  | 12 |
-| MOG Antibody-Associated Disease (MOGAD) | 6/8 | 3/8 | 0/4 | 20 | 11 |  | 9 |
-| Glaucoma | 5/10 | 5/10 | 0/5 | 25 | 15 |  | 10 |
-| Cataract | 3/6 | 7/6 | 0/3 | 15 | 6 | 1 reasoning | 10 |
-| Vision Loss and Red Eye | 3/14 | 9/14 | 0/7 | 35 | 23 |  | 12 |
-| Hearing Loss | 8/12 | 4/12 | 0/6 | 30 | 18 |  | 12 |
-| Vertigo | 4/14 | 6/14 | 0/7 | 35 | 25 |  | 10 |
-| Alzheimer Disease | 8/10 | 6/10 | 0/5 | 25 | 11 |  | 14 |
-| Frontotemporal Dementia | 8/8 | 1/8 | 0/4 | 20 | 11 |  | 9 |
-| Dementia with Lewy Bodies | 5/10 | 5/10 | 0/5 | 25 | 15 |  | 10 |
-| Motor Signs and Syndromes | 11/16 | 3/16 | 0/8 | 40 | 26 |  | 14 |
-| Parkinson Disease | 4/12 | 8/12 | 0/6 | 30 | 18 |  | 12 |
-| Atypical Parkinsonism | 9/10 | 1/10 | 0/5 | 25 | 15 |  | 10 |
-| Huntington Disease | 5/10 | 5/10 | 0/5 | 25 | 15 |  | 10 |
-| Localizing a Lesion | 29/16 | 3/16 | 0/8 | 40 | 21 | 13 memory | 32 |
-| Ruling Out Mimics | 26/10 | 2/10 | 0/5 | 25 | 13 | 16 memory | 28 |
-| Choosing Imaging and EEG | 21/16 | 3/16 | 0/8 | 40 | 21 | 5 memory | 24 |
+| Stroke Syndromes by Location | 14/12 | 0/12 | 0/6 | 30 | 18 | 2 memory | 14 |
+| Transient Ischemic Attack and Carotid Disease | 0/12 | 0/12 | 0/6 | 30 | 30 |  | 0 |
+| Acute Ischemic Stroke | 7/16 | 7/16 | 0/8 | 40 | 26 |  | 14 |
+| Intracerebral Hemorrhage | 7/12 | 5/12 | 0/6 | 30 | 18 |  | 12 |
+| Subarachnoid Hemorrhage | 7/12 | 5/12 | 0/6 | 30 | 18 |  | 12 |
+| Cerebral Venous Thrombosis | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Stroke: Comparison and Workup | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Migraine | 0/6 | 0/6 | 0/3 | 15 | 15 |  | 0 |
+| Tension-Type and Cluster Headache | 0/8 | 0/8 | 0/4 | 20 | 20 |  | 0 |
+| Trigeminal Neuralgia | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Secondary Headache | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Headache: Comparison and Workup | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Epidural and Subdural Hematoma | 6/6 | 3/6 | 0/3 | 15 | 6 |  | 9 |
+| Concussion and Diffuse Axonal Injury | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Increased Intracranial Pressure and Herniation | 4/12 | 2/12 | 0/6 | 30 | 24 |  | 6 |
+| Hydrocephalus and Normal Pressure Hydrocephalus | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Idiopathic Intracranial Hypertension | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Seizures | 4/14 | 10/14 | 0/7 | 35 | 21 |  | 14 |
+| Status Epilepticus | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Epilepsy Syndromes | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Bacterial Meningitis | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Viral Meningitis and Encephalitis | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Brain Abscess and Other Infections | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Prion Disease and Progressive Multifocal Leukoencephalopathy | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| CNS Infection: Comparison and Workup | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Multiple Sclerosis | 8/10 | 6/10 | 0/5 | 25 | 11 |  | 14 |
+| Neuromyelitis Optica Spectrum Disorder (NMOSD) | 9/12 | 3/12 | 0/6 | 30 | 18 |  | 12 |
+| MOG Antibody-Associated Disease (MOGAD) | 6/6 | 3/6 | 0/3 | 15 | 6 |  | 9 |
+| Autoimmune Encephalitis | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Demyelinating and Autoimmune Disease: Comparison and Workup | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Spinal Cord Syndromes | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Spinal Cord Compression | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Transverse Myelitis | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Spinal Cord Degeneration and Syringomyelia | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Nerve Palsies | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Facial Palsy | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Polyneuropathy | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Guillain-Barré Syndrome and CIDP | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Myasthenia Gravis and Lambert-Eaton Syndrome | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Amyotrophic Lateral Sclerosis and Spinal Muscular Atrophy | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Muscular Dystrophies | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Neuromuscular Disease: Comparison and Workup | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Adult Brain Tumors | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Pediatric Brain Tumors | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Neurocutaneous Syndromes | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Alzheimer Disease | 8/8 | 6/8 | 0/4 | 20 | 6 |  | 14 |
+| Frontotemporal Dementia | 8/6 | 1/6 | 0/3 | 15 | 8 | 2 memory | 9 |
+| Dementia with Lewy Bodies | 5/8 | 5/8 | 0/4 | 20 | 10 |  | 10 |
+| Vascular Dementia | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Delirium | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Coma and Brain Death | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Wernicke-Korsakoff Syndrome | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Cognition and Consciousness: Comparison and Workup | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Motor Signs and Syndromes | 11/10 | 3/10 | 0/5 | 25 | 12 | 1 memory | 14 |
+| Parkinson Disease | 4/10 | 8/10 | 0/5 | 25 | 13 |  | 12 |
+| Atypical Parkinsonism | 9/8 | 1/8 | 0/4 | 20 | 11 | 1 memory | 10 |
+| Huntington Disease | 5/8 | 5/8 | 0/4 | 20 | 10 |  | 10 |
+| Tremor, Dystonia, and Tics | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Ataxias | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Glaucoma | 5/8 | 5/8 | 0/4 | 20 | 10 |  | 10 |
+| Cataract | 3/4 | 7/4 | 0/2 | 10 | 3 | 3 reasoning | 10 |
+| Red Eye | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Retinal Disease | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Optic Nerve and Pupils | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Vision Loss and Red Eye | 3/4 | 9/4 | 0/2 | 10 | 3 | 5 reasoning | 12 |
+| Hearing Loss | 8/10 | 4/10 | 0/5 | 25 | 13 |  | 12 |
+| Vertigo | 4/10 | 6/10 | 0/5 | 25 | 15 |  | 10 |
+| Narcolepsy, Restless Legs, and Parasomnias | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Localizing a Lesion | 29/14 | 3/14 | 0/7 | 35 | 18 | 15 memory | 32 |
+| Localizing Weakness | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Ruling Out Mimics | 26/8 | 2/8 | 0/4 | 20 | 10 | 18 memory | 28 |
+| Choosing Imaging and EEG | 21/12 | 3/12 | 0/6 | 30 | 15 | 9 memory | 24 |
+| Reading CSF | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
 
-### Stroke Symptoms and Complications
+### Stroke Syndromes by Location
 
 - `ss-wallenberg`: memory, **rewrite** (long for a memory question; shorten to a direct what or which; notes on 3 of 4 wrong options)
 - `ss-aca`: memory, **keep, expand** (notes on 3 of 4 wrong options; explanation 197 characters; needs the why and how)
@@ -310,25 +352,6 @@ Across the 5 banks: 1677 questions now, against a target of 3525. 1061 keep, 608
 - `sah-hunt-hess`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 153 characters; needs the why and how)
 - `sah-bp`: memory, **keep, expand** (notes on 3 of 4 wrong options; explanation 108 characters; needs the why and how)
 - `sah-antifibrinolytic`: memory, **keep, expand** (notes on 3 of 4 wrong options; explanation 161 characters; needs the why and how)
-
-### Primary Headaches
-
-- `mig-criteria`: memory, **rewrite** (long for a memory question; shorten to a direct what or which; notes on 2 of 4 wrong options; explanation 186 characters; needs the why and how)
-- `mig-aura`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 201 characters; needs the why and how)
-- `mig-cgrp`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 202 characters; needs the why and how)
-- `mig-triptan-contra`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 240 characters; needs the why and how)
-- `mig-prevention`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 204 characters; needs the why and how)
-- `mig-red-flag`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 138 characters; needs the why and how)
-- `mig-ocp`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 157 characters; needs the why and how)
-- `mig-moh`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 147 characters; needs the why and how)
-- `tth-features`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 197 characters; needs the why and how)
-- `tth-trigger`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 102 characters; needs the why and how)
-- `tth-prevention`: reasoning, **keep, expand** (notes on 1 of 4 wrong options; explanation 115 characters; needs the why and how)
-- `tth-vs-mig`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 178 characters; needs the why and how)
-- `clu-features`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 209 characters; needs the why and how)
-- `clu-oxygen`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 172 characters; needs the why and how)
-- `clu-verapamil`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 151 characters; needs the why and how)
-- `clu-horner`: reasoning, **keep, expand** (notes on 1 of 4 wrong options; explanation 194 characters; needs the why and how)
 
 ### Epidural and Subdural Hematoma
 
@@ -411,75 +434,6 @@ Across the 5 banks: 1677 questions now, against a target of 3525. 1061 keep, 608
 - `mog-low-titer`: memory, **keep, expand** (notes on 3 of 4 wrong options; explanation 163 characters; needs the why and how)
 - `mog-testing-all`: reasoning, **keep, expand** (notes on 3 of 4 wrong options; explanation 102 characters; needs the why and how)
 - `mog-acute`: reasoning, **keep, expand** (notes on 3 of 4 wrong options; explanation 193 characters; needs the why and how)
-
-### Glaucoma
-
-- `gl-acute-closure`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 247 characters; needs the why and how)
-- `gl-open-angle`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 151 characters; needs the why and how)
-- `gl-timolol-asthma`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 146 characters; needs the why and how)
-- `gl-latanoprost`: reasoning, **keep, expand** (notes on 3 of 4 wrong options; explanation 135 characters; needs the why and how)
-- `gl-decongestant`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 212 characters; needs the why and how)
-- `gl-gonioscopy`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 186 characters; needs the why and how)
-- `gl-pilocarpine-timing`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 185 characters; needs the why and how)
-- `gl-iridotomy`: reasoning, **keep, expand** (notes on 3 of 4 wrong options; explanation 138 characters; needs the why and how)
-- `gl-brimonidine-child`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 110 characters; needs the why and how)
-- `gl-ntg`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 139 characters; needs the why and how)
-
-### Cataract
-
-- `cat-nuclear`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 148 characters; needs the why and how)
-- `cat-steroid`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 171 characters; needs the why and how)
-- `cat-rapd`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 109 characters; needs the why and how)
-- `cat-phacomorphic`: reasoning, **keep, expand** (notes on 1 of 4 wrong options)
-- `cat-tamsulosin`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 85 characters; needs the why and how)
-- `cat-congenital`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 188 characters; needs the why and how)
-- `cat-diabetes`: reasoning, **keep, expand** (notes on 3 of 4 wrong options; explanation 105 characters; needs the why and how)
-- `cat-phacolytic`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 167 characters; needs the why and how)
-- `cat-monocular-diplopia`: memory, **keep, expand** (notes on 3 of 4 wrong options; explanation 84 characters; needs the why and how)
-- `cat-surgery-indication`: reasoning, **keep, expand** (notes on 3 of 4 wrong options; explanation 185 characters; needs the why and how)
-
-### Vision Loss and Red Eye
-
-- `eye-keratitis`: reasoning, **keep, expand** (notes on 1 of 4 wrong options)
-- `eye-viral-conj`: reasoning, **keep, expand** (notes on 1 of 4 wrong options; explanation 241 characters; needs the why and how)
-- `eye-optic-neuritis`: reasoning, **keep, expand** (notes on 1 of 4 wrong options; explanation 237 characters; needs the why and how)
-- `eye-detachment`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 178 characters; needs the why and how)
-- `eye-wet-amd`: memory, **keep, expand** (notes on 1 of 4 wrong options; explanation 196 characters; needs the why and how)
-- `eye-rp`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 146 characters; needs the why and how)
-- `eye-crao`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 183 characters; needs the why and how)
-- `eye-bacterial-conj`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 181 characters; needs the why and how)
-- `eye-gonococcal`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 168 characters; needs the why and how)
-- `eye-uveitis`: reasoning, **keep, expand** (notes on 3 of 4 wrong options; explanation 192 characters; needs the why and how)
-- `eye-dry-amd`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 177 characters; needs the why and how)
-- `eye-crvo`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 177 characters; needs the why and how)
-
-### Hearing Loss
-
-- `hl-tuning-fork`: memory, **keep, expand** (notes on 1 of 4 wrong options; explanation 192 characters; needs the why and how)
-- `hl-otosclerosis`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 184 characters; needs the why and how)
-- `hl-schwannoma`: memory, **keep, expand** (notes on 1 of 4 wrong options; explanation 143 characters; needs the why and how)
-- `hl-sudden`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 245 characters; needs the why and how)
-- `hl-noise`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 206 characters; needs the why and how)
-- `hl-gjb2`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 236 characters; needs the why and how)
-- `hl-waardenburg`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 199 characters; needs the why and how)
-- `hl-presbycusis`: memory, **keep, expand** (notes on 3 of 4 wrong options; explanation 128 characters; needs the why and how)
-- `hl-ototoxic`: reasoning, **keep, expand** (notes on 1 of 4 wrong options; explanation 127 characters; needs the why and how)
-- `hl-aspirin-tinnitus`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 152 characters; needs the why and how)
-- `hl-nf2`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 146 characters; needs the why and how)
-- `hl-effusion-child`: reasoning, **keep, expand** (explanation 138 characters; needs the why and how)
-
-### Vertigo
-
-- `vt-bppv`: reasoning, **keep, expand** (notes on 1 of 4 wrong options; explanation 209 characters; needs the why and how)
-- `vt-hints`: reasoning, **keep, expand** (notes on 0 of 4 wrong options)
-- `vt-neuritis`: memory, **rewrite** (long for a memory question; shorten to a direct what or which; notes on 0 of 4 wrong options; explanation 213 characters; needs the why and how)
-- `vt-meniere`: reasoning, **keep, expand** (notes on 0 of 4 wrong options)
-- `vt-nystagmus`: reasoning, **keep, expand** (notes on 0 of 4 wrong options)
-- `vt-suppressants`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 238 characters; needs the why and how)
-- `vt-labyrinthitis`: memory, **keep, expand** (notes on 3 of 4 wrong options; explanation 100 characters; needs the why and how)
-- `vt-epley`: reasoning, **keep, expand** (notes on 3 of 4 wrong options; explanation 179 characters; needs the why and how)
-- `vt-head-roll`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 189 characters; needs the why and how)
-- `vt-saccule`: memory, **keep, expand** (notes on 3 of 4 wrong options; explanation 157 characters; needs the why and how)
 
 ### Alzheimer Disease
 
@@ -581,6 +535,75 @@ Across the 5 banks: 1677 questions now, against a target of 3525. 1061 keep, 608
 - `hd-prenatal`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 95 characters; needs the why and how)
 - `hd-cognition`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 144 characters; needs the why and how)
 
+### Glaucoma
+
+- `gl-acute-closure`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 247 characters; needs the why and how)
+- `gl-open-angle`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 151 characters; needs the why and how)
+- `gl-timolol-asthma`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 146 characters; needs the why and how)
+- `gl-latanoprost`: reasoning, **keep, expand** (notes on 3 of 4 wrong options; explanation 135 characters; needs the why and how)
+- `gl-decongestant`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 212 characters; needs the why and how)
+- `gl-gonioscopy`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 186 characters; needs the why and how)
+- `gl-pilocarpine-timing`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 185 characters; needs the why and how)
+- `gl-iridotomy`: reasoning, **keep, expand** (notes on 3 of 4 wrong options; explanation 138 characters; needs the why and how)
+- `gl-brimonidine-child`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 110 characters; needs the why and how)
+- `gl-ntg`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 139 characters; needs the why and how)
+
+### Cataract
+
+- `cat-nuclear`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 148 characters; needs the why and how)
+- `cat-steroid`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 171 characters; needs the why and how)
+- `cat-rapd`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 109 characters; needs the why and how)
+- `cat-phacomorphic`: reasoning, **keep, expand** (notes on 1 of 4 wrong options)
+- `cat-tamsulosin`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 85 characters; needs the why and how)
+- `cat-congenital`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 188 characters; needs the why and how)
+- `cat-diabetes`: reasoning, **keep, expand** (notes on 3 of 4 wrong options; explanation 105 characters; needs the why and how)
+- `cat-phacolytic`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 167 characters; needs the why and how)
+- `cat-monocular-diplopia`: memory, **keep, expand** (notes on 3 of 4 wrong options; explanation 84 characters; needs the why and how)
+- `cat-surgery-indication`: reasoning, **keep, expand** (notes on 3 of 4 wrong options; explanation 185 characters; needs the why and how)
+
+### Vision Loss and Red Eye
+
+- `eye-keratitis`: reasoning, **keep, expand** (notes on 1 of 4 wrong options)
+- `eye-viral-conj`: reasoning, **keep, expand** (notes on 1 of 4 wrong options; explanation 241 characters; needs the why and how)
+- `eye-optic-neuritis`: reasoning, **keep, expand** (notes on 1 of 4 wrong options; explanation 237 characters; needs the why and how)
+- `eye-detachment`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 178 characters; needs the why and how)
+- `eye-wet-amd`: memory, **keep, expand** (notes on 1 of 4 wrong options; explanation 196 characters; needs the why and how)
+- `eye-rp`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 146 characters; needs the why and how)
+- `eye-crao`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 183 characters; needs the why and how)
+- `eye-bacterial-conj`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 181 characters; needs the why and how)
+- `eye-gonococcal`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 168 characters; needs the why and how)
+- `eye-uveitis`: reasoning, **keep, expand** (notes on 3 of 4 wrong options; explanation 192 characters; needs the why and how)
+- `eye-dry-amd`: reasoning, **keep, expand** (notes on 2 of 4 wrong options; explanation 177 characters; needs the why and how)
+- `eye-crvo`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 177 characters; needs the why and how)
+
+### Hearing Loss
+
+- `hl-tuning-fork`: memory, **keep, expand** (notes on 1 of 4 wrong options; explanation 192 characters; needs the why and how)
+- `hl-otosclerosis`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 184 characters; needs the why and how)
+- `hl-schwannoma`: memory, **keep, expand** (notes on 1 of 4 wrong options; explanation 143 characters; needs the why and how)
+- `hl-sudden`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 245 characters; needs the why and how)
+- `hl-noise`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 206 characters; needs the why and how)
+- `hl-gjb2`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 236 characters; needs the why and how)
+- `hl-waardenburg`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 199 characters; needs the why and how)
+- `hl-presbycusis`: memory, **keep, expand** (notes on 3 of 4 wrong options; explanation 128 characters; needs the why and how)
+- `hl-ototoxic`: reasoning, **keep, expand** (notes on 1 of 4 wrong options; explanation 127 characters; needs the why and how)
+- `hl-aspirin-tinnitus`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 152 characters; needs the why and how)
+- `hl-nf2`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 146 characters; needs the why and how)
+- `hl-effusion-child`: reasoning, **keep, expand** (explanation 138 characters; needs the why and how)
+
+### Vertigo
+
+- `vt-bppv`: reasoning, **keep, expand** (notes on 1 of 4 wrong options; explanation 209 characters; needs the why and how)
+- `vt-hints`: reasoning, **keep, expand** (notes on 0 of 4 wrong options)
+- `vt-neuritis`: memory, **rewrite** (long for a memory question; shorten to a direct what or which; notes on 0 of 4 wrong options; explanation 213 characters; needs the why and how)
+- `vt-meniere`: reasoning, **keep, expand** (notes on 0 of 4 wrong options)
+- `vt-nystagmus`: reasoning, **keep, expand** (notes on 0 of 4 wrong options)
+- `vt-suppressants`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 238 characters; needs the why and how)
+- `vt-labyrinthitis`: memory, **keep, expand** (notes on 3 of 4 wrong options; explanation 100 characters; needs the why and how)
+- `vt-epley`: reasoning, **keep, expand** (notes on 3 of 4 wrong options; explanation 179 characters; needs the why and how)
+- `vt-head-roll`: memory, **keep, expand** (notes on 2 of 4 wrong options; explanation 189 characters; needs the why and how)
+- `vt-saccule`: memory, **keep, expand** (notes on 3 of 4 wrong options; explanation 157 characters; needs the why and how)
+
 ### Localizing a Lesion
 
 - `loc-crossed`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 145 characters; needs the why and how)
@@ -678,29 +701,34 @@ Across the 5 banks: 1677 questions now, against a target of 3525. 1061 keep, 608
 
 | Page | Memory | Reasoning | Analysis | Target | Still to write | Over target | Needs work |
 |---|---|---|---|---|---|---|---|
-| Nervous System Embryology and Defects | 8/8 | 2/8 | 0/4 | 20 | 10 |  | 9 |
-| Neurons and Action Potentials | 5/8 | 5/8 | 0/4 | 20 | 10 |  | 10 |
+| Nervous System Embryology and Defects | 8/6 | 2/6 | 0/3 | 15 | 7 | 2 memory | 9 |
+| Neurons and Action Potentials | 5/6 | 5/6 | 0/3 | 15 | 5 |  | 10 |
 | Synapses and Neurotransmitters | 5/6 | 5/6 | 0/3 | 15 | 5 |  | 10 |
+| Cortex and Limbic System | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| CSF, Ventricles, and Cerebral Blood Flow | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
 | Ascending Tracts | 7/4 | 2/4 | 0/2 | 10 | 4 | 3 memory | 9 |
-| Descending Tracts | 6/6 | 3/6 | 0/3 | 15 | 6 |  | 9 |
+| Descending Tracts | 6/4 | 3/4 | 0/2 | 10 | 3 | 2 memory | 9 |
 | Basal Ganglia Pathways | 5/4 | 4/4 | 0/2 | 10 | 2 | 1 memory | 9 |
-| Pain Pathways and Descending Modulation | 9/12 | 3/12 | 0/6 | 30 | 18 |  | 12 |
-| Olfactory, Optic, and Vestibulocochlear Nerves | 6/6 | 3/6 | 0/3 | 15 | 6 |  | 9 |
-| Oculomotor, Trochlear, and Abducens Nerves | 7/6 | 2/6 | 0/3 | 15 | 7 | 1 memory | 9 |
-| Trigeminal and Facial Nerves | 5/6 | 4/6 | 0/3 | 15 | 6 |  | 9 |
+| Cerebellum | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Pain Pathways and Descending Modulation | 9/8 | 3/8 | 0/4 | 20 | 9 | 1 memory | 12 |
+| Vision | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Hearing and Balance | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Olfactory, Optic, and Vestibulocochlear Nerves | 6/4 | 3/4 | 0/2 | 10 | 3 | 2 memory | 9 |
+| Oculomotor, Trochlear, and Abducens Nerves | 7/4 | 2/4 | 0/2 | 10 | 4 | 3 memory | 9 |
+| Trigeminal and Facial Nerves | 5/4 | 4/4 | 0/2 | 10 | 2 | 1 memory | 9 |
 | Glossopharyngeal, Vagus, Accessory, and Hypoglossal Nerves | 7/4 | 2/4 | 0/2 | 10 | 4 | 3 memory | 9 |
-| Respiratory Center | 9/8 | 3/8 | 0/4 | 20 | 9 | 1 memory | 12 |
-| Cardiovascular Center | 8/8 | 4/8 | 0/4 | 20 | 8 |  | 12 |
-| Antithrombotics and Their Reversal | 7/16 | 4/16 | 0/8 | 40 | 29 |  | 11 |
-| Blood Pressure and Brain Pressure Drugs | 1/6 | 1/6 | 0/3 | 15 | 13 |  | 2 |
-| Antiseizure Drugs | 4/16 | 5/16 | 0/8 | 40 | 31 |  | 9 |
-| MS, NMOSD, and MOGAD Drugs | 3/14 | 2/14 | 0/7 | 35 | 30 |  | 5 |
-| Spasticity, Bladder, and Autonomic Drugs | 0/6 | 2/6 | 0/3 | 15 | 13 |  | 2 |
-| Dementia and Mood Drugs | 1/6 | 2/6 | 0/3 | 15 | 12 |  | 3 |
-| Movement Disorder Drugs | 1/10 | 3/10 | 0/5 | 25 | 21 |  | 4 |
-| Analgesics and Anesthetics | 1/8 | 1/8 | 0/4 | 20 | 18 |  | 2 |
-| Eye Drugs | 1/8 | 1/8 | 0/4 | 20 | 18 |  | 2 |
-| Vertigo and Ear Drugs | 0/4 | 2/4 | 0/2 | 10 | 8 |  | 2 |
+| Autonomic Nervous System | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Respiratory Center | 9/6 | 3/6 | 0/3 | 15 | 6 | 3 memory | 12 |
+| Cardiovascular Center | 8/6 | 4/6 | 0/3 | 15 | 5 | 2 memory | 12 |
+| Antithrombotics and Their Reversal | 7/12 | 4/12 | 0/6 | 30 | 19 |  | 11 |
+| Blood Pressure and Brain Pressure Drugs | 1/4 | 1/4 | 0/2 | 10 | 8 |  | 2 |
+| Antiseizure Drugs | 4/12 | 5/12 | 0/6 | 30 | 21 |  | 9 |
+| MS, NMOSD, and MOGAD Drugs | 3/10 | 2/10 | 0/5 | 25 | 20 |  | 5 |
+| Spasticity, Bladder, Autonomic, and Vertigo Drugs | 0/12 | 2/12 | 0/6 | 30 | 28 |  | 2 |
+| Dementia and Mood Drugs | 1/4 | 2/4 | 0/2 | 10 | 7 |  | 3 |
+| Movement Disorder Drugs | 1/8 | 3/8 | 0/4 | 20 | 16 |  | 4 |
+| Analgesics and Anesthetics | 1/6 | 1/6 | 0/3 | 15 | 13 |  | 2 |
+| Eye Drugs | 1/6 | 1/6 | 0/3 | 15 | 13 |  | 2 |
 | Drugs That Cause Neurological Disease | 0/4 | 2/4 | 0/2 | 10 | 8 |  | 2 |
 
 ### Nervous System Embryology and Defects
@@ -910,7 +938,7 @@ Across the 5 banks: 1677 questions now, against a target of 3525. 1061 keep, 608
 - `np-eculizumab-vaccine`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 154 characters; needs the why and how)
 - `np-nmosd-wrong-drug`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 171 characters; needs the why and how)
 
-### Spasticity, Bladder, and Autonomic Drugs
+### Spasticity, Bladder, Autonomic, and Vertigo Drugs
 
 - `np-baclofen-withdrawal`: reasoning, **keep, expand** (notes on 1 of 4 wrong options; explanation 228 characters; needs the why and how)
 - `np-midodrine-supine`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 211 characters; needs the why and how)
@@ -938,11 +966,6 @@ Across the 5 banks: 1677 questions now, against a target of 3525. 1061 keep, 608
 - `np-timolol-asthma`: memory, **keep, expand** (notes on 0 of 4 wrong options; explanation 176 characters; needs the why and how)
 - `np-latanoprost-iris`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 159 characters; needs the why and how)
 
-### Vertigo and Ear Drugs
-
-- `np-vestibular-suppressant`: reasoning, **keep, expand** (notes on 1 of 4 wrong options; explanation 221 characters; needs the why and how)
-- `np-meniere-gentamicin`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 218 characters; needs the why and how)
-
 ### Drugs That Cause Neurological Disease
 
 - `np-cause-seizure-drug`: reasoning, **keep, expand** (notes on 0 of 4 wrong options; explanation 202 characters; needs the why and how)
@@ -952,43 +975,59 @@ Across the 5 banks: 1677 questions now, against a target of 3525. 1061 keep, 608
 
 | Page | Memory | Reasoning | Analysis | Target | Still to write | Over target | Needs work |
 |---|---|---|---|---|---|---|---|
-| Prerenal AKI (done) | 10/10 | 10/10 | 5/5 | 25 | 0 |  | 0 |
+| Prerenal AKI (done) | 10/14 | 10/14 | 5/7 | 35 | 10 |  | 0 |
 | Intrarenal AKI (done) | 8/8 | 8/8 | 4/4 | 20 | 0 |  | 0 |
-| Acute Tubular Necrosis | 0/16 | 0/16 | 0/8 | 40 | 40 |  | 0 |
-| Acute Interstitial Nephritis | 0/12 | 0/12 | 0/6 | 30 | 30 |  | 0 |
-| Minimal Change Disease, FSGS, and Membranous Nephropathy | 0/12 | 0/12 | 0/6 | 30 | 30 |  | 0 |
-| Diabetic Kidney Disease and Amyloid Nephropathy | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
-| Anti-GBM Disease, ANCA-Associated Vasculitis, and Alport Syndrome | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
-| IgA Nephropathy, PSGN, and MPGN | 0/12 | 0/12 | 0/6 | 30 | 30 |  | 0 |
-| Glomerular Disease: Comparison and Workup | 0/16 | 0/16 | 0/8 | 40 | 40 |  | 0 |
-| Thrombotic Microangiopathy | 0/14 | 0/14 | 0/7 | 35 | 35 |  | 0 |
-| Renal Artery Disease | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
-| Renal Vein Thrombosis | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
-| Postrenal AKI (done) | 6/6 | 6/6 | 3/3 | 15 | 0 |  | 0 |
+| Acute Tubular Necrosis | 0/14 | 0/14 | 0/7 | 35 | 35 |  | 0 |
+| Acute Interstitial Nephritis | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Minimal Change Disease, FSGS, and Membranous Nephropathy | 0/8 | 0/8 | 0/4 | 20 | 20 |  | 0 |
+| Diabetic Kidney Disease and Amyloid Nephropathy | 0/8 | 0/8 | 0/4 | 20 | 20 |  | 0 |
+| Anti-GBM Disease, ANCA-Associated Vasculitis, and Alport Syndrome | 0/8 | 0/8 | 0/4 | 20 | 20 |  | 0 |
+| IgA Nephropathy, PSGN, and MPGN | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Glomerular Disease: Comparison and Workup | 0/18 | 0/18 | 0/9 | 45 | 45 |  | 0 |
+| Thrombotic Microangiopathy | 0/12 | 0/12 | 0/6 | 30 | 30 |  | 0 |
+| Renal Artery Disease | 0/8 | 0/8 | 0/4 | 20 | 20 |  | 0 |
+| Renal Vein Thrombosis | 0/6 | 0/6 | 0/3 | 15 | 15 |  | 0 |
+| Postrenal AKI (done) | 6/10 | 6/10 | 3/5 | 25 | 10 |  | 0 |
 | AKI: Comparison and Workup (done) | 16/16 | 16/16 | 8/8 | 40 | 0 |  | 0 |
 | Diabetes Insipidus | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
 | Syndrome of Inappropriate ADH Secretion (SIADH) | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
-| Urinary Tract Infection | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
 | Chronic Kidney Disease | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
 | Polycystic Kidney Disease | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
 | Metabolic Acidosis (done) | 9/16 | 12/16 | 7/8 | 40 | 12 |  | 0 |
-| Metabolic Alkalosis (done) | 13/14 | 15/14 | 10/7 | 35 | 1 | 1 reasoning, 3 analysis | 0 |
-| Acid-base Disorders: Comparison and Workup | 8/14 | 3/14 | 3/7 | 35 | 21 |  | 0 |
-| Hypovolemia | 0/14 | 0/14 | 0/7 | 35 | 35 |  | 0 |
-| Hypervolemia | 0/16 | 0/16 | 0/8 | 40 | 40 |  | 0 |
-| Fluid Volume: Comparison and Workup | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Metabolic Alkalosis (done) | 13/10 | 15/10 | 10/5 | 25 | 0 | 3 memory, 5 reasoning, 5 analysis | 0 |
+| Acid-base Disorders: Comparison and Workup | 8/10 | 3/10 | 3/5 | 25 | 11 |  | 0 |
+| Hypovolemia | 0/12 | 0/12 | 0/6 | 30 | 30 |  | 0 |
+| Hypervolemia | 0/12 | 0/12 | 0/6 | 30 | 30 |  | 0 |
+| Fluid Volume: Comparison and Workup | 0/8 | 0/8 | 0/4 | 20 | 20 |  | 0 |
 | Hyponatremia | 0/16 | 0/16 | 0/8 | 40 | 40 |  | 0 |
-| Hypernatremia | 0/14 | 0/14 | 0/7 | 35 | 35 |  | 0 |
-| Sodium Disorders: Comparison and Workup | 0/14 | 0/14 | 0/7 | 35 | 35 |  | 0 |
-| Hypokalemia | 0/16 | 0/16 | 0/8 | 40 | 40 |  | 0 |
-| Hyperkalemia | 0/14 | 0/14 | 0/7 | 35 | 35 |  | 0 |
-| Potassium Disorders: Comparison and Workup | 0/16 | 0/16 | 0/8 | 40 | 40 |  | 0 |
+| Hypernatremia | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Sodium Disorders: Comparison and Workup | 0/12 | 0/12 | 0/6 | 30 | 30 |  | 0 |
+| Hypokalemia | 0/14 | 0/14 | 0/7 | 35 | 35 |  | 0 |
+| Hyperkalemia | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Potassium Disorders: Comparison and Workup | 0/12 | 0/12 | 0/6 | 30 | 30 |  | 0 |
 | Hypoaldosteronism and Hyperaldosteronism | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
-| Hypocalcemia | 0/14 | 0/14 | 0/7 | 35 | 35 |  | 0 |
-| Hypercalcemia | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
-| Hypomagnesemia | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
-| Hypermagnesemia | 0/8 | 0/8 | 0/4 | 20 | 20 |  | 0 |
-| Calcium and Magnesium Disorders: Comparison and Workup | 0/12 | 0/12 | 0/6 | 30 | 30 |  | 0 |
+| Hypocalcemia | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Hypercalcemia | 0/8 | 0/8 | 0/4 | 20 | 20 |  | 0 |
+| Hypomagnesemia | 0/8 | 0/8 | 0/4 | 20 | 20 |  | 0 |
+| Hypermagnesemia | 0/6 | 0/6 | 0/3 | 15 | 15 |  | 0 |
+| Calcium and Magnesium Disorders: Comparison and Workup | 0/10 | 0/10 | 0/5 | 25 | 25 |  | 0 |
+| Complications of Chronic Kidney Disease | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Dialysis and Transplant | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Chronic Kidney Disease: Comparison and Workup | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Other Cystic and Inherited Kidney Disease | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Cystitis | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Pyelonephritis | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Kidney Stones | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Urinary Tract Obstruction | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Renal Cell Carcinoma and Wilms Tumor | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Bladder Cancer | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Hypophosphatemia and Hyperphosphatemia | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Respiratory Acidosis and Alkalosis | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Reading a Urinalysis | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Reading UECs and Urine Electrolytes | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Reading a Blood Gas | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Hematuria and Proteinuria | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
+| Localizing Edema | 0/4 | 0/4 | 0/2 | 10 | 10 |  | 0 |
 
 ### Acid-base Disorders: Comparison and Workup
 

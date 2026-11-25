@@ -250,3 +250,249 @@ body {
         left: -41px;
     }
 }
+
+/* =========================
+   Diagrams: the left heart, its pressures, and its valves
+========================= */
+
+:root {
+    --cv-muscle: #b9616c;
+    --cv-atrium: #e8b4bb;
+    --cv-lung: #f3d9de;
+    --cv-calc: #f2e3b0;
+    --cv-calc-line: #a58a3c;
+    --cv-gap: #fbe4e8;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --cv-muscle: #9a4450;
+        --cv-atrium: #6a3842;
+        --cv-lung: #43262c;
+        --cv-calc: #f0dc98;
+        --cv-calc-line: #c8ac58;
+        --cv-gap: #4b1c27;
+    }
+}
+
+:root[data-theme="dark"] {
+    --cv-muscle: #9a4450;
+    --cv-atrium: #6a3842;
+    --cv-lung: #43262c;
+    --cv-calc: #f0dc98;
+    --cv-calc-line: #c8ac58;
+    --cv-gap: #4b1c27;
+}
+
+.cv-muscle {
+    fill: var(--cv-muscle);
+}
+
+.cv-blood {
+    fill: var(--artery);
+}
+
+.cv-atrium {
+    fill: var(--cv-atrium);
+    stroke: var(--cv-muscle);
+    stroke-width: 4;
+}
+
+.cv-lung {
+    fill: var(--cv-lung);
+    stroke: var(--color-border-strong);
+    stroke-width: 2;
+}
+
+.cv-vein {
+    fill: none;
+    stroke: var(--cv-atrium);
+    stroke-width: 11;
+}
+
+.cv-aorta {
+    stroke: var(--cv-muscle);
+    stroke-linecap: round;
+    stroke-width: 44;
+}
+
+.cv-aorta.is-in {
+    stroke: color-mix(in srgb, var(--artery) 45%, var(--color-surface));
+    stroke-width: 34;
+}
+
+.cv-coronary {
+    fill: none;
+    stroke: var(--color-note-line);
+    stroke-linecap: round;
+    stroke-width: 4;
+}
+
+.cv-calc {
+    fill: var(--cv-calc);
+    stroke: var(--cv-calc-line);
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+
+.cv-jet {
+    fill: none;
+    stroke: var(--color-text);
+    stroke-linecap: round;
+    stroke-width: 3;
+}
+
+.cv-go {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2.5;
+}
+
+.cv-axis {
+    fill: none;
+    stroke: var(--color-text-muted);
+    stroke-width: 1.5;
+}
+
+.cv-curve {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3.5;
+}
+
+.cv-curve.is-lv {
+    stroke: var(--artery);
+}
+
+.cv-curve.is-ao {
+    stroke: var(--vein);
+}
+
+.cv-curve.is-calm {
+    stroke: var(--color-text-muted);
+}
+
+.cv-gap {
+    fill: var(--cv-gap);
+}
+
+.cv-sound {
+    stroke: var(--color-text);
+    stroke-linecap: round;
+    stroke-width: 5;
+}
+
+.cv-sound.is-click {
+    stroke-width: 2.5;
+}
+
+.cv-murmur {
+    fill: var(--color-accent-line);
+}
+
+.cv-ring {
+    fill: var(--cv-atrium);
+    stroke: var(--cv-muscle);
+    stroke-width: 5;
+}
+
+.cv-leaf {
+    fill: none;
+    stroke: var(--cv-muscle);
+    stroke-linecap: round;
+    stroke-width: 3.5;
+}
+
+.cv-leaf.is-raphe {
+    stroke-dasharray: 5 6;
+}
+
+.cv-leaf.is-fused {
+    stroke-width: 8;
+}
+
+.cv-hole {
+    fill: var(--color-surface);
+    stroke: var(--cv-muscle);
+    stroke-linejoin: round;
+    stroke-width: 3;
+}
+
+.cv-curve.is-la {
+    stroke: var(--capillary);
+}
+
+.cv-wet {
+    fill: none;
+    stroke: var(--vein);
+    stroke-linecap: round;
+    stroke-width: 4;
+}
+
+.cv-clot {
+    fill: var(--color-text);
+}
+
+.cv-leafline {
+    fill: none;
+    stroke: var(--cv-calc);
+    stroke-linecap: round;
+    stroke-width: 5;
+}
+
+.cv-rootwall {
+    fill: none;
+    stroke: var(--cv-muscle);
+    stroke-linecap: round;
+    stroke-width: 7;
+}
+
+.cv-flap {
+    fill: none;
+    stroke: var(--vein);
+    stroke-linecap: round;
+    stroke-width: 4;
+}
+
+.cv-pa {
+    fill: none;
+    stroke: var(--vein);
+    stroke-linecap: round;
+    stroke-width: 34;
+    opacity: 0.55;
+}
+
+.cv-vein-blood {
+    fill: var(--vein);
+    opacity: 0.6;
+}
+
+.cv-organ {
+    fill: var(--cv-muscle);
+    opacity: 0.55;
+}
+
+.cv-torso,
+.cv-rib {
+    fill: none;
+    stroke: var(--color-border);
+    stroke-linecap: round;
+    stroke-width: 3;
+}
+
+.cv-rib {
+    stroke-width: 7;
+}
+
+.cv-sternum {
+    fill: var(--color-border);
+}
+
+.cv-small {
+    fill: var(--color-text);
+    font-size: 13px;
+    font-weight: 600;
+}

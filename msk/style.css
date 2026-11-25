@@ -24,6 +24,10 @@
     --color-note: #f8f1e2;
     --color-note-line: #cbb07a;
     --bone: #e3d3b5;
+    --ms-cartilage: #6fb3c9;
+    --ms-meniscus: #4f8f7a;
+    --ms-red: #c8434f;
+    --ms-spur: #c9973f;
     --bone-line: #b79c6c;
 }
 
@@ -47,6 +51,10 @@
         --color-note: #2c2417;
         --color-note-line: #a58a55;
         --bone: #7c6c50;
+        --ms-cartilage: #79c4db;
+        --ms-meniscus: #6db79d;
+        --ms-red: #f0808a;
+        --ms-spur: #e0b264;
         --bone-line: #b8a37a;
     }
 }
@@ -70,6 +78,10 @@
     --color-note: #2c2417;
     --color-note-line: #a58a55;
     --bone: #7c6c50;
+    --ms-cartilage: #79c4db;
+    --ms-meniscus: #6db79d;
+    --ms-red: #f0808a;
+    --ms-spur: #e0b264;
     --bone-line: #b8a37a;
 }
 
@@ -206,4 +218,302 @@ body {
     .content-section > h3::before {
         left: -41px;
     }
+}
+
+/* =========================
+   Diagrams: bone, cartilage, and the joint around them
+========================= */
+
+.ms-bone {
+    fill: color-mix(in srgb, var(--bone) 70%, var(--color-surface));
+    stroke: var(--bone-line);
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+
+.ms-limb {
+    fill: none;
+    stroke: color-mix(in srgb, var(--bone) 85%, var(--color-surface));
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 12;
+}
+
+.ms-cartilage {
+    fill: none;
+    stroke: var(--ms-cartilage);
+    stroke-linecap: round;
+    stroke-width: 9;
+}
+
+.ms-cartilage.is-worn {
+    stroke-dasharray: 10 7 4 9;
+    stroke-linecap: butt;
+    stroke-width: 4;
+}
+
+.ms-meniscus {
+    fill: var(--ms-meniscus);
+    stroke: var(--color-surface);
+    stroke-width: 1;
+}
+
+.ms-capsule {
+    fill: none;
+    stroke: var(--color-text-muted);
+    stroke-width: 2.5;
+}
+
+.ms-capsule.is-thick {
+    stroke-width: 6;
+}
+
+.ms-synovium {
+    fill: none;
+    stroke: var(--ms-red);
+    stroke-linecap: round;
+    stroke-width: 2.5;
+}
+
+.ms-synovium.is-thick {
+    stroke-width: 7;
+}
+
+.ms-sclerosis {
+    fill: none;
+    stroke: var(--bone-line);
+    stroke-linecap: round;
+    stroke-width: 8;
+}
+
+.ms-cyst {
+    fill: var(--color-surface);
+    stroke: var(--bone-line);
+    stroke-width: 2.5;
+}
+
+.ms-osteophyte {
+    fill: var(--ms-spur);
+    stroke: var(--bone-line);
+    stroke-linejoin: round;
+    stroke-width: 1.5;
+}
+
+.ms-nerve {
+    fill: none;
+    stroke: var(--ms-red);
+    stroke-linecap: round;
+    stroke-width: 2.5;
+}
+
+.ms-go {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 3;
+}
+
+.ms-range rect {
+    fill: var(--color-accent);
+}
+
+.ms-range text {
+    fill: var(--color-on-accent);
+    font-size: 13px;
+    font-weight: 700;
+    text-anchor: middle;
+}
+
+.ms-hit {
+    fill: var(--ms-red);
+    stroke: var(--color-surface);
+    stroke-width: 1.5;
+}
+
+.ms-spared {
+    fill: var(--color-surface);
+    stroke: var(--bone-line);
+    stroke-width: 2;
+}
+
+.ms-pannus {
+    fill: color-mix(in srgb, var(--ms-red) 55%, var(--color-surface));
+    stroke: var(--ms-red);
+    stroke-width: 2;
+}
+
+.ms-cell,
+.ms-bug {
+    fill: var(--color-accent);
+}
+
+.ms-bug {
+    fill: var(--ms-meniscus);
+}
+
+.ms-pus {
+    fill: color-mix(in srgb, var(--ms-spur) 45%, var(--color-surface));
+}
+
+.ms-nodule {
+    fill: var(--ms-spur);
+    stroke: var(--bone-line);
+    stroke-width: 2;
+}
+
+.ms-tendon {
+    fill: none;
+    stroke: var(--ms-cartilage);
+    stroke-linecap: round;
+    stroke-width: 9;
+}
+
+.ms-fire {
+    fill: var(--ms-red);
+    opacity: 0.6;
+}
+
+.ms-xbone.is-thin {
+    fill: #6b6671;
+}
+
+.ms-xtoph {
+    fill: #b9b4bf;
+    opacity: 0.45;
+}
+
+.ms-tube {
+    fill: none;
+    stroke: var(--color-text-muted);
+    stroke-width: 3;
+}
+
+.ms-fluid.is-a { fill: #eef1e2; }
+.ms-fluid.is-b { fill: #ecdf9a; }
+.ms-fluid.is-c { fill: #d8bf4e; }
+.ms-fluid.is-d { fill: #a9a25a; }
+.ms-fluid.is-e { fill: #a82d38; }
+
+.ms-small {
+    fill: var(--color-text);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.ms-box {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}
+
+.ms-box.is-soft {
+    fill: var(--color-surface-sunken);
+    stroke: var(--color-border-strong);
+}
+
+.ms-box.is-main {
+    stroke: var(--color-accent);
+    stroke-width: 3;
+}
+
+.ms-go.is-dash {
+    stroke: var(--color-text-muted);
+    stroke-dasharray: 6 6;
+}
+
+.ms-msu {
+    fill: none;
+    stroke: var(--ms-spur);
+    stroke-linecap: round;
+    stroke-width: 3;
+}
+
+.ms-cpp {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-dasharray: 5 5;
+    stroke-linecap: round;
+    stroke-width: 3.5;
+}
+
+.ms-tophus {
+    fill: var(--ms-spur);
+    fill-opacity: 0.55;
+    stroke: var(--ms-spur);
+    stroke-width: 2;
+}
+
+.ms-hole {
+    fill: var(--color-surface);
+    stroke: var(--bone-line);
+    stroke-width: 2;
+}
+
+/* Polarized light is drawn on magenta in either theme */
+.ms-scope {
+    fill: #7a2f66;
+}
+
+.ms-scope-text {
+    fill: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.ms-axis {
+    fill: none;
+    stroke: #ffffff;
+    stroke-width: 2;
+}
+
+.ms-needle {
+    fill: none;
+    stroke-linecap: round;
+    stroke-width: 5;
+}
+
+.ms-needle.is-yellow {
+    stroke: #ffd84d;
+}
+
+.ms-needle.is-blue {
+    stroke: #59c2ff;
+}
+
+.ms-crystal.is-yellow {
+    fill: #e9c96b;
+}
+
+.ms-crystal.is-blue {
+    fill: #6fb4dd;
+}
+
+/* X-ray films are dark in either theme */
+.ms-film {
+    fill: #15101a;
+}
+
+.ms-xbone {
+    fill: #8f8a95;
+    stroke: #b9b4bf;
+    stroke-linejoin: round;
+    stroke-width: 2;
+}
+
+.ms-xwhite {
+    fill: none;
+    stroke: #f6f3f8;
+    stroke-linecap: round;
+    stroke-width: 10;
+}
+
+.ms-xhole {
+    fill: #2b2431;
+    stroke: #f6f3f8;
+    stroke-width: 3;
+}
+
+.site-leader.is-film {
+    stroke: #f6f3f8;
 }

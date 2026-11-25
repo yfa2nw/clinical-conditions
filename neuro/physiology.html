@@ -66,19 +66,30 @@
                 </div>
                 </div>
 
-                <div class="station" data-organ="tracts">
-                <p class="group-label" id="group-tracts">Tracts</p>
-                <div class="condition-group" role="group" aria-labelledby="group-tracts">
-                    <button type="button" class="condition-item" data-condition="ascending">Ascending tracts</button>
-                    <button type="button" class="condition-item" data-condition="descending">Descending tracts</button>
+                <div class="station" data-organ="brain">
+                <p class="group-label" id="group-brain">Brain and CSF</p>
+                <div class="condition-group" role="group" aria-labelledby="group-brain">
+                    <button type="button" class="condition-item" data-condition="cortex-limbic">Cortex and limbic system</button>
+                    <button type="button" class="condition-item" data-condition="csf-blood-flow">CSF, ventricles, and cerebral blood flow</button>
                 </div>
                 </div>
 
-                <div class="station" data-organ="pathways">
-                <p class="group-label" id="group-pathways">Pathways</p>
-                <div class="condition-group" role="group" aria-labelledby="group-pathways">
+                <div class="station" data-organ="tracts">
+                <p class="group-label" id="group-tracts">Motor and sensory systems</p>
+                <div class="condition-group" role="group" aria-labelledby="group-tracts">
+                    <button type="button" class="condition-item" data-condition="ascending">Ascending tracts</button>
+                    <button type="button" class="condition-item" data-condition="descending">Descending tracts</button>
                     <button type="button" class="condition-item" data-condition="basal-ganglia">Basal ganglia pathways</button>
+                    <button type="button" class="condition-item" data-condition="cerebellum">Cerebellum</button>
                     <button type="button" class="condition-item" data-condition="pain-pathways">Pain pathways and descending modulation</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="senses">
+                <p class="group-label" id="group-senses">Special senses</p>
+                <div class="condition-group" role="group" aria-labelledby="group-senses">
+                    <button type="button" class="condition-item" data-condition="vision">Vision</button>
+                    <button type="button" class="condition-item" data-condition="hearing-balance">Hearing and balance</button>
                 </div>
                 </div>
 
@@ -93,8 +104,9 @@
                 </div>
 
                 <div class="station" data-organ="centers">
-                <p class="group-label" id="group-centers">Brainstem centers</p>
+                <p class="group-label" id="group-centers">Autonomic and brainstem</p>
                 <div class="condition-group" role="group" aria-labelledby="group-centers">
+                    <button type="button" class="condition-item" data-condition="autonomic">Autonomic nervous system</button>
                     <button type="button" class="condition-item" data-condition="respiratory-center">Respiratory center</button>
                     <button type="button" class="condition-item" data-condition="cardiovascular-center">Cardiovascular center</button>
                 </div>
@@ -107,12 +119,11 @@
                     <button type="button" class="condition-item" data-condition="neuro-pharm-pressure">Blood pressure and brain pressure drugs</button>
                     <button type="button" class="condition-item" data-condition="neuro-pharm-seizures">Antiseizure drugs</button>
                     <button type="button" class="condition-item" data-condition="neuro-pharm-immune">MS, NMOSD, and MOGAD drugs</button>
-                    <button type="button" class="condition-item" data-condition="neuro-pharm-symptoms">Spasticity, bladder, and autonomic drugs</button>
+                    <button type="button" class="condition-item" data-condition="neuro-pharm-symptoms">Spasticity, bladder, autonomic, and vertigo drugs</button>
                     <button type="button" class="condition-item" data-condition="neuro-pharm-dementia">Dementia and mood drugs</button>
                     <button type="button" class="condition-item" data-condition="neuro-pharm-movement">Movement disorder drugs</button>
                     <button type="button" class="condition-item" data-condition="neuro-pharm-pain">Analgesics and anesthetics</button>
                     <button type="button" class="condition-item" data-condition="neuro-pharm-eye">Eye drugs</button>
-                    <button type="button" class="condition-item" data-condition="neuro-pharm-ear">Vertigo and ear drugs</button>
                     <button type="button" class="condition-item" data-condition="neuro-pharm-causes">Drugs that cause neurological disease</button>
                 </div>
                 </div>
@@ -687,6 +698,34 @@
                 </dialog>
             </article>
 
+            <article class="condition-content" id="cortex-limbic">
+                <h2>Cortex and Limbic System</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="csf-blood-flow">
+                <h2>CSF, Ventricles, and Cerebral Blood Flow</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
             <article class="condition-content" id="ascending">
                 <h2>Ascending Tracts</h2>
 
@@ -763,8 +802,8 @@
 <div class="subsection">
 <h4 class="sc-heading">Cord lesions</h4>
 <ul class="pair-list">
-<li><span class="pair-from"><a class="pair-link" href="index.html#stroke-symptoms">Brown-Séquard syndrome</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Hemisection → same-side dorsal column loss and weakness, opposite-side pain and temperature loss</span></li>
-<li><span class="pair-from"><a class="pair-link" href="index.html#stroke-symptoms">Posterior cord syndrome</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Dorsal columns → vibration and position loss</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#cord-syndromes">Brown-Séquard syndrome</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Hemisection → same-side dorsal column loss and weakness, opposite-side pain and temperature loss</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#cord-syndromes">Posterior cord syndrome</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Dorsal columns → vibration and position loss</span></li>
 <li><span class="pair-from"><a class="pair-link" href="index.html#motor-signs">Sensory ataxia</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Dorsal column loss, as in <abbr class="term" tabindex="0" data-definition="Vitamin B12 (cobalamin)">B12</abbr> deficiency and tabes dorsalis → positive Romberg test</span></li>
 <li><span class="pair-from">Syringomyelia</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Crossing spinothalamic fibers → cape-like pain and temperature loss</span></li>
 </ul>
@@ -780,9 +819,10 @@
 
                 <p class="see-also">
                     Related:
-                    <a class="link-button" href="index.html#stroke-symptoms">Stroke Symptoms and Complications</a>
+                    <a class="link-button" href="index.html#stroke-symptoms">Stroke Syndromes by Location</a>
                     <a class="link-button" href="index.html#motor-signs">Motor Signs and Syndromes</a>
                     <button type="button" class="link-button" data-goto="pain-pathways">Pain Pathways and Descending Modulation</button>
+                    <a class="link-button" href="index.html#cord-syndromes">Spinal Cord Syndromes</a>
                 </p>
                 <section class="references" aria-label="References">
                     <h3>References</h3>
@@ -891,14 +931,14 @@
 <h4 class="sc-heading">Corticospinal</h4>
 <ul class="pair-list">
 <li><span class="pair-from"><a class="pair-link" href="index.html#motor-signs">Hemiparesis</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Capsular or brainstem lesion above the decussation → opposite-side spastic weakness</span></li>
-<li><span class="pair-from"><a class="pair-link" href="index.html#stroke-symptoms">Spinal cord lesions</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Below the decussation → same-side spasticity, hyperreflexia, and Babinski sign</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#cord-syndromes">Spinal cord lesions</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Below the decussation → same-side spasticity, hyperreflexia, and Babinski sign</span></li>
 </ul>
 </div>
 <div class="subsection">
 <h4 class="sc-heading">Corticobulbar</h4>
 <ul class="pair-list">
-<li><span class="pair-from"><a class="pair-link" href="index.html#motor-signs">Supranuclear facial palsy</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Lower face weak, forehead spared</span></li>
-<li><span class="pair-from"><a class="pair-link" href="index.html#motor-signs">Pseudobulbar palsy</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Bilateral lesions → dysarthria, dysphagia, and brisk jaw jerk</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#facial-palsy">Supranuclear facial palsy</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Lower face weak, forehead spared</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#facial-palsy">Pseudobulbar palsy</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Bilateral lesions → dysarthria, dysphagia, and brisk jaw jerk</span></li>
 </ul>
 </div>
                 </section>
@@ -906,7 +946,9 @@
                 <p class="see-also">
                     Related:
                     <a class="link-button" href="index.html#motor-signs">Motor Signs and Syndromes</a>
-                    <a class="link-button" href="index.html#stroke-symptoms">Stroke Symptoms and Complications</a>
+                    <a class="link-button" href="index.html#stroke-symptoms">Stroke Syndromes by Location</a>
+                    <a class="link-button" href="index.html#cord-syndromes">Spinal Cord Syndromes</a>
+                    <a class="link-button" href="index.html#facial-palsy">Facial Palsy</a>
                 </p>
                 <section class="references" aria-label="References">
                     <h3>References</h3>
@@ -1103,6 +1145,20 @@
                 </dialog>
             </article>
 
+            <article class="condition-content" id="cerebellum">
+                <h2>Cerebellum</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
             <article class="condition-content" id="pain-pathways">
                 <h2>Pain Pathways and Descending Modulation</h2>
 
@@ -1277,7 +1333,7 @@
                     Related:
                     <button type="button" class="link-button" data-goto="ascending">Ascending Tracts</button>
                     <button type="button" class="link-button" data-goto="synapses">Synapses and Neurotransmitters</button>
-                    <a class="link-button" href="index.html#stroke-symptoms">Stroke Symptoms and Complications</a>
+                    <a class="link-button" href="index.html#stroke-symptoms">Stroke Syndromes by Location</a>
                     <a class="link-button" href="index.html#localizing-lesions">Localizing a Lesion</a>
                     <a class="link-button" href="index.html#multiple-sclerosis">Multiple Sclerosis</a>
                     <a class="link-button" href="index.html#nmosd">Neuromyelitis Optica Spectrum Disorder (NMOSD)</a>
@@ -1345,7 +1401,113 @@
                 </dialog>
             </article>
 
-            <article class="condition-content" id="cn-special">
+            <article class="condition-content" id="vision">
+                <h2>Vision</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Focusing and contrast</h3>
+<ul class="pair-list">
+<li><span class="pair-from">Cornea</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">About two-thirds of the eye's refractive power, about 43 diopters; the lens adjusts focus for near objects (accommodation)</span></li>
+<li><span class="pair-from">Center-surround</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Ganglion cells compare light in the center of their receptive field with the surround, through lateral inhibition from horizontal cells, so edges and contrast are enhanced rather than absolute light reported</span></li>
+</ul>
+                </section>
+
+                <section class="content-section">
+                    <h3>Where the field is lost</h3>
+<div class="etiology-map">
+<figure class="cause-map"><svg viewBox="0 0 420 380" role="img" aria-label="The visual pathway from above, with lesions on the left side and the field each one leaves, left and right eye: 1, the left optic nerve blinds the left eye; 2, the chiasm causes bitemporal hemianopia; 3, the left optic tract causes right homonymous hemianopia; 4, the left Meyer loop causes right upper quadrantanopia; 5, the left parietal radiation causes right lower quadrantanopia; 6, the left occipital cortex causes right homonymous hemianopia, with the macula spared"><path class="tr-mid" d="M140 110V372"/><circle class="eye-white" cx="90" cy="48" r="24"/><circle class="eye-white" cx="190" cy="48" r="24"/><text class="site-label" x="90" y="14" text-anchor="middle">Left eye</text><text class="site-label" x="190" y="14" text-anchor="middle">Right eye</text><path class="vf-path" d="M98 70L140 128L100 196M182 70L140 128L180 196"/><path class="vf-path" d="M100 196C60 210 40 250 72 286C88 304 104 318 120 338M100 196C104 240 110 290 120 338"/><path class="vf-path" d="M180 196C220 210 240 250 208 286C192 304 176 318 160 338M180 196C176 240 170 290 160 338"/><circle class="tr-node" cx="100" cy="196" r="6"/><circle class="tr-node" cx="180" cy="196" r="6"/><ellipse class="tr-box" cx="122" cy="348" rx="17" ry="11"/><ellipse class="tr-box" cx="158" cy="348" rx="17" ry="11"/><g class="site-marker"><circle cx="112" cy="94" r="11"/><text x="112" y="98.5">1</text></g><g class="site-marker"><circle cx="140" cy="128" r="11"/><text x="140" y="132.5">2</text></g><g class="site-marker"><circle cx="118" cy="164" r="11"/><text x="118" y="168.5">3</text></g><g class="site-marker"><circle cx="50" cy="250" r="11"/><text x="50" y="254.5">4</text></g><g class="site-marker"><circle cx="106" cy="266" r="11"/><text x="106" y="270.5">5</text></g><g class="site-marker"><circle cx="122" cy="348" r="11"/><text x="122" y="352.5">6</text></g><text class="site-label" x="340" y="14" text-anchor="middle">L</text><text class="site-label" x="382" y="14" text-anchor="middle">R</text><g class="site-marker"><circle cx="300" cy="48" r="11"/><text x="300" y="52.5">1</text></g><circle class="vf-field" cx="340" cy="48" r="16"/><circle class="vf-loss" cx="340" cy="48" r="16"/><circle class="vf-field" cx="382" cy="48" r="16"/><g class="site-marker"><circle cx="300" cy="106" r="11"/><text x="300" y="110.5">2</text></g><circle class="vf-field" cx="340" cy="106" r="16"/><path class="vf-loss" d="M340 90A16 16 0 0 0 340 122Z"/><circle class="vf-field" cx="382" cy="106" r="16"/><path class="vf-loss" d="M382 90A16 16 0 0 1 382 122Z"/><g class="site-marker"><circle cx="300" cy="164" r="11"/><text x="300" y="168.5">3</text></g><circle class="vf-field" cx="340" cy="164" r="16"/><path class="vf-loss" d="M340 148A16 16 0 0 1 340 180Z"/><circle class="vf-field" cx="382" cy="164" r="16"/><path class="vf-loss" d="M382 148A16 16 0 0 1 382 180Z"/><g class="site-marker"><circle cx="300" cy="222" r="11"/><text x="300" y="226.5">4</text></g><circle class="vf-field" cx="340" cy="222" r="16"/><path class="vf-loss" d="M340 222L340 206A16 16 0 0 1 356 222Z"/><circle class="vf-field" cx="382" cy="222" r="16"/><path class="vf-loss" d="M382 222L382 206A16 16 0 0 1 398 222Z"/><g class="site-marker"><circle cx="300" cy="280" r="11"/><text x="300" y="284.5">5</text></g><circle class="vf-field" cx="340" cy="280" r="16"/><path class="vf-loss" d="M340 280L356 280A16 16 0 0 1 340 296Z"/><circle class="vf-field" cx="382" cy="280" r="16"/><path class="vf-loss" d="M382 280L398 280A16 16 0 0 1 382 296Z"/><g class="site-marker"><circle cx="300" cy="338" r="11"/><text x="300" y="342.5">6</text></g><circle class="vf-field" cx="340" cy="338" r="16"/><path class="vf-loss" d="M340 322A16 16 0 0 1 340 354Z"/><circle class="vf-spare" cx="340" cy="338" r="5"/><circle class="vf-field" cx="382" cy="338" r="16"/><path class="vf-loss" d="M382 322A16 16 0 0 1 382 354Z"/><circle class="vf-spare" cx="382" cy="338" r="5"/></svg></figure>
+<ul class="cause-list">
+<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Optic nerve</span><span class="cause-detail">Blindness in that eye</span></span></li>
+<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Optic chiasm</span><span class="cause-detail">Bitemporal hemianopia</span></span></li>
+<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Optic tract</span><span class="cause-detail">Opposite homonymous hemianopia</span></span></li>
+<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Meyer loop (temporal)</span><span class="cause-detail">Opposite upper quadrantanopia: pie in the sky</span></span></li>
+<li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">Parietal radiation</span><span class="cause-detail">Opposite lower quadrantanopia</span></span></li>
+<li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name"><abbr class="term" tabindex="0" data-definition="Primary visual cortex">V1</abbr></span><span class="cause-detail">Opposite homonymous hemianopia</span></span></li>
+</ul>
+</div>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pupillary light reflex</h3>
+<ul class="pair-list">
+<li><span class="pair-from">Afferent</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> II; pupil fibers leave before the <abbr class="term" tabindex="0" data-definition="Lateral geniculate nucleus">LGN</abbr> for the pretectum</span></li>
+<li><span class="pair-from">Efferent</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Cranial nerve III (oculomotor)">CN III</abbr>, through the Edinger-Westphal nucleus and ciliary ganglion, constricts both pupils</span></li>
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Relative afferent pupillary defect">RAPD</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Light in a damaged eye constricts both pupils less than light in the good eye</span></li>
+<li><span class="pair-from">Argyll Robertson pupil</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Small pupils that constrict to a near target but not to light; neurosyphilis</span></li>
+</ul>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <p class="see-also">
+                    Related:
+                    <button type="button" class="link-button" data-goto="cn-special">Olfactory, Optic, and Vestibulocochlear Nerves</button>
+                    <button type="button" class="link-button" data-goto="cn-eye">Oculomotor, Trochlear, and Abducens Nerves</button>
+                    <a class="link-button" href="index.html#eye-conditions">Vision Loss and Red Eye</a>
+                    <a class="link-button" href="index.html#optic-nerve-pupils">Optic Nerve and Pupils</a>
+                </p>
+
+                <section class="references" aria-label="References">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Smith AM, Czyz CN. Neuroanatomy, Cranial Nerve 2 (Optic). 2022. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK507907/" target="_blank" rel="noopener">NBK507907</a></li>
+                        <li>Ireland AC, Carter IB. Neuroanatomy, Optic Chiasm. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK542287/" target="_blank" rel="noopener">NBK542287</a></li>
+                        <li>Dichter SL, Khan Suheb MZ, Shubert GS. Argyll Robertson Pupil. 2024. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK537179/" target="_blank" rel="noopener">NBK537179</a></li>
+                        <li>Gurnani B, Patel BC. Photorefractive Keratectomy. 2025. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK549887/" target="_blank" rel="noopener">NBK549887</a></li>
+                        <li>Jozsa F, Hall WA. Neuroanatomy, Retina. 2026. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK545310/" target="_blank" rel="noopener">NBK545310</a></li>
+                        <li>Fukazawa H, Okada-Shudo Y. Photosynthetic protein-based retinal ganglion cell receptive fields for detecting edges and brightness illusions. <em>Nano Lett</em>. 2023;23(23):10983–10990. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10723062/" target="_blank" rel="noopener">PMC10723062</a></li>
+                    </ol>
+                </section>
+            </article>
+
+            <article class="condition-content" id="hearing-balance">
+                <h2>Hearing and Balance</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Hearing and balance pathways</h3>
+<ul class="pair-list">
+<li><span class="pair-from">Hearing</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Cochlear nuclei → trapezoid body, where hearing becomes bilateral → lateral lemniscus → inferior colliculus → <abbr class="term" tabindex="0" data-definition="Medial geniculate nucleus">MGN</abbr> → Heschl gyrus</span></li>
+<li><span class="pair-from">Pitch</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">The cochlea is tonotopic: each frequency vibrates its own region most, high frequencies at the base, so presbycusis, from loss of basal hair cells, takes high frequencies first</span></li>
+<li><span class="pair-from">Balance</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Vestibular nuclei → <abbr class="term" tabindex="0" data-definition="Medial longitudinal fasciculus">MLF</abbr> for the <abbr class="term" tabindex="0" data-definition="Vestibulo-ocular reflex">VOR</abbr>, vestibulospinal tracts, and cerebellum</span></li>
+</ul>
+<p class="note"><strong>Note:</strong> Hearing is bilateral above the cochlear nuclei, so one-sided deafness points to the ear, nerve, or cochlear nucleus.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <p class="see-also">
+                    Related:
+                    <button type="button" class="link-button" data-goto="cn-special">Olfactory, Optic, and Vestibulocochlear Nerves</button>
+                    <a class="link-button" href="index.html#hearing-loss">Hearing Loss</a>
+                    <a class="link-button" href="index.html#vertigo">Vertigo</a>
+                </p>
+
+                <section class="references" aria-label="References">
+                    <h3>References</h3>
+                    <ol>
+                        <li>Bordoni B, Omole AE, Daly DT. Neuroanatomy, Cranial Nerve 8 (Vestibulocochlear). 2026. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK537359/" target="_blank" rel="noopener">NBK537359</a></li>
+                        <li>Cheslock M, De Jesus O. Presbycusis. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK559220/" target="_blank" rel="noopener">NBK559220</a></li>
+                    </ol>
+                </section>
+            </article>
+
+            <article class="condition-content" id="cn-special" data-on-hold>
                 <h2>Olfactory, Optic, and Vestibulocochlear Nerves</h2>
 
                 <section class="content-section">
@@ -1385,36 +1547,6 @@
 <li><span class="pathway-title"><abbr class="term" tabindex="0" data-definition="Lateral geniculate nucleus">LGN</abbr></span><span class="pathway-detail">Thalamic relay</span></li>
 <li><span class="pathway-title"><abbr class="term" tabindex="0" data-definition="Primary visual cortex">V1</abbr></span><span class="pathway-detail">Calcarine cortex; macula at the occipital pole</span></li>
 </ol>
-<div class="subsection">
-<h4 class="sc-heading">Focusing and contrast</h4>
-<ul class="pair-list">
-<li><span class="pair-from">Cornea</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">About two-thirds of the eye's refractive power, about 43 diopters; the lens adjusts focus for near objects (accommodation)</span></li>
-<li><span class="pair-from">Center-surround</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Ganglion cells compare light in the center of their receptive field with the surround, through lateral inhibition from horizontal cells, so edges and contrast are enhanced rather than absolute light reported</span></li>
-</ul>
-</div>
-<div class="subsection">
-<h4 class="sc-heading">Where the field is lost</h4>
-<div class="etiology-map">
-<figure class="cause-map"><svg viewBox="0 0 420 380" role="img" aria-label="The visual pathway from above, with lesions on the left side and the field each one leaves, left and right eye: 1, the left optic nerve blinds the left eye; 2, the chiasm causes bitemporal hemianopia; 3, the left optic tract causes right homonymous hemianopia; 4, the left Meyer loop causes right upper quadrantanopia; 5, the left parietal radiation causes right lower quadrantanopia; 6, the left occipital cortex causes right homonymous hemianopia, with the macula spared"><path class="tr-mid" d="M140 110V372"/><circle class="eye-white" cx="90" cy="48" r="24"/><circle class="eye-white" cx="190" cy="48" r="24"/><text class="site-label" x="90" y="14" text-anchor="middle">Left eye</text><text class="site-label" x="190" y="14" text-anchor="middle">Right eye</text><path class="vf-path" d="M98 70L140 128L100 196M182 70L140 128L180 196"/><path class="vf-path" d="M100 196C60 210 40 250 72 286C88 304 104 318 120 338M100 196C104 240 110 290 120 338"/><path class="vf-path" d="M180 196C220 210 240 250 208 286C192 304 176 318 160 338M180 196C176 240 170 290 160 338"/><circle class="tr-node" cx="100" cy="196" r="6"/><circle class="tr-node" cx="180" cy="196" r="6"/><ellipse class="tr-box" cx="122" cy="348" rx="17" ry="11"/><ellipse class="tr-box" cx="158" cy="348" rx="17" ry="11"/><g class="site-marker"><circle cx="112" cy="94" r="11"/><text x="112" y="98.5">1</text></g><g class="site-marker"><circle cx="140" cy="128" r="11"/><text x="140" y="132.5">2</text></g><g class="site-marker"><circle cx="118" cy="164" r="11"/><text x="118" y="168.5">3</text></g><g class="site-marker"><circle cx="50" cy="250" r="11"/><text x="50" y="254.5">4</text></g><g class="site-marker"><circle cx="106" cy="266" r="11"/><text x="106" y="270.5">5</text></g><g class="site-marker"><circle cx="122" cy="348" r="11"/><text x="122" y="352.5">6</text></g><text class="site-label" x="340" y="14" text-anchor="middle">L</text><text class="site-label" x="382" y="14" text-anchor="middle">R</text><g class="site-marker"><circle cx="300" cy="48" r="11"/><text x="300" y="52.5">1</text></g><circle class="vf-field" cx="340" cy="48" r="16"/><circle class="vf-loss" cx="340" cy="48" r="16"/><circle class="vf-field" cx="382" cy="48" r="16"/><g class="site-marker"><circle cx="300" cy="106" r="11"/><text x="300" y="110.5">2</text></g><circle class="vf-field" cx="340" cy="106" r="16"/><path class="vf-loss" d="M340 90A16 16 0 0 0 340 122Z"/><circle class="vf-field" cx="382" cy="106" r="16"/><path class="vf-loss" d="M382 90A16 16 0 0 1 382 122Z"/><g class="site-marker"><circle cx="300" cy="164" r="11"/><text x="300" y="168.5">3</text></g><circle class="vf-field" cx="340" cy="164" r="16"/><path class="vf-loss" d="M340 148A16 16 0 0 1 340 180Z"/><circle class="vf-field" cx="382" cy="164" r="16"/><path class="vf-loss" d="M382 148A16 16 0 0 1 382 180Z"/><g class="site-marker"><circle cx="300" cy="222" r="11"/><text x="300" y="226.5">4</text></g><circle class="vf-field" cx="340" cy="222" r="16"/><path class="vf-loss" d="M340 222L340 206A16 16 0 0 1 356 222Z"/><circle class="vf-field" cx="382" cy="222" r="16"/><path class="vf-loss" d="M382 222L382 206A16 16 0 0 1 398 222Z"/><g class="site-marker"><circle cx="300" cy="280" r="11"/><text x="300" y="284.5">5</text></g><circle class="vf-field" cx="340" cy="280" r="16"/><path class="vf-loss" d="M340 280L356 280A16 16 0 0 1 340 296Z"/><circle class="vf-field" cx="382" cy="280" r="16"/><path class="vf-loss" d="M382 280L398 280A16 16 0 0 1 382 296Z"/><g class="site-marker"><circle cx="300" cy="338" r="11"/><text x="300" y="342.5">6</text></g><circle class="vf-field" cx="340" cy="338" r="16"/><path class="vf-loss" d="M340 322A16 16 0 0 1 340 354Z"/><circle class="vf-spare" cx="340" cy="338" r="5"/><circle class="vf-field" cx="382" cy="338" r="16"/><path class="vf-loss" d="M382 322A16 16 0 0 1 382 354Z"/><circle class="vf-spare" cx="382" cy="338" r="5"/></svg></figure>
-<ul class="cause-list">
-<li><span class="cause-number" aria-hidden="true">1</span><span class="cause-text"><span class="cause-name">Optic nerve</span><span class="cause-detail">Blindness in that eye</span></span></li>
-<li><span class="cause-number" aria-hidden="true">2</span><span class="cause-text"><span class="cause-name">Optic chiasm</span><span class="cause-detail">Bitemporal hemianopia</span></span></li>
-<li><span class="cause-number" aria-hidden="true">3</span><span class="cause-text"><span class="cause-name">Optic tract</span><span class="cause-detail">Opposite homonymous hemianopia</span></span></li>
-<li><span class="cause-number" aria-hidden="true">4</span><span class="cause-text"><span class="cause-name">Meyer loop (temporal)</span><span class="cause-detail">Opposite upper quadrantanopia: pie in the sky</span></span></li>
-<li><span class="cause-number" aria-hidden="true">5</span><span class="cause-text"><span class="cause-name">Parietal radiation</span><span class="cause-detail">Opposite lower quadrantanopia</span></span></li>
-<li><span class="cause-number" aria-hidden="true">6</span><span class="cause-text"><span class="cause-name"><abbr class="term" tabindex="0" data-definition="Primary visual cortex">V1</abbr></span><span class="cause-detail">Opposite homonymous hemianopia</span></span></li>
-</ul>
-</div>
-</div>
-<div class="subsection">
-<h4 class="sc-heading">Pupillary light reflex</h4>
-<ul class="pair-list">
-<li><span class="pair-from">Afferent</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> II; pupil fibers leave before the <abbr class="term" tabindex="0" data-definition="Lateral geniculate nucleus">LGN</abbr> for the pretectum</span></li>
-<li><span class="pair-from">Efferent</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Cranial nerve III (oculomotor)">CN III</abbr>, through the Edinger-Westphal nucleus and ciliary ganglion, constricts both pupils</span></li>
-<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Relative afferent pupillary defect">RAPD</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Light in a damaged eye constricts both pupils less than light in the good eye</span></li>
-<li><span class="pair-from">Argyll Robertson pupil</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Small pupils that constrict to a near target but not to light; neurosyphilis</span></li>
-</ul>
-</div>
                 </section>
 
                 <section class="content-section">
@@ -1425,22 +1557,13 @@
 <li><span class="pathway-title">Internal acoustic meatus</span><span class="pathway-detail">With <abbr class="term" tabindex="0" data-definition="Cranial nerve VII (facial)">CN VII</abbr></span></li>
 <li><span class="pathway-title">Cochlear and vestibular nuclei</span><span class="pathway-detail">First synapse</span></li>
 </ol>
-<div class="subsection">
-<h4 class="sc-heading">Two pathways</h4>
-<ul class="pair-list">
-<li><span class="pair-from">Hearing</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Cochlear nuclei → trapezoid body, where hearing becomes bilateral → lateral lemniscus → inferior colliculus → <abbr class="term" tabindex="0" data-definition="Medial geniculate nucleus">MGN</abbr> → Heschl gyrus</span></li>
-<li><span class="pair-from">Pitch</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">The cochlea is tonotopic: each frequency vibrates its own region most, high frequencies at the base, so presbycusis, from loss of basal hair cells, takes high frequencies first</span></li>
-<li><span class="pair-from">Balance</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Vestibular nuclei → <abbr class="term" tabindex="0" data-definition="Medial longitudinal fasciculus">MLF</abbr> for the <abbr class="term" tabindex="0" data-definition="Vestibulo-ocular reflex">VOR</abbr>, vestibulospinal tracts, and cerebellum</span></li>
-</ul>
-</div>
-<p class="note"><strong>Note:</strong> Hearing is bilateral above the cochlear nuclei, so one-sided deafness points to the ear, nerve, or cochlear nucleus.</p>
                 </section>
 
                 <section class="content-section">
                     <h3>When it fails</h3>
 <ul class="pair-list">
 <li><span class="pair-from"><a class="pair-link" href="index.html#parkinsons">Anosmia</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Smell is lost early in Parkinson disease, and after head injury</span></li>
-<li><span class="pair-from"><a class="pair-link" href="index.html#eye-conditions">Optic neuritis</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Demyelination of <abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> II → painful vision loss with an <abbr class="term" tabindex="0" data-definition="Relative afferent pupillary defect">RAPD</abbr></span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#optic-nerve-pupils">Optic neuritis</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Demyelination of <abbr class="term" tabindex="0" data-definition="Cranial nerve">CN</abbr> II → painful vision loss with an <abbr class="term" tabindex="0" data-definition="Relative afferent pupillary defect">RAPD</abbr></span></li>
 <li><span class="pair-from"><a class="pair-link" href="index.html#stroke-symptoms">Homonymous hemianopia</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Stroke behind the chiasm, as in <abbr class="term" tabindex="0" data-definition="Posterior cerebral artery">PCA</abbr> strokes</span></li>
 <li><span class="pair-from"><a class="pair-link" href="index.html#hearing-loss">Vestibular schwannoma</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Tumor of <abbr class="term" tabindex="0" data-definition="Cranial nerve VIII (vestibulocochlear)">CN VIII</abbr> → one-sided hearing loss and tinnitus</span></li>
 <li><span class="pair-from"><a class="pair-link" href="index.html#vertigo">Vestibular neuritis</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Vestibular nerve inflammation → vertigo with an abnormal head impulse</span></li>
@@ -1449,6 +1572,8 @@
 
                 <p class="see-also">
                     Related:
+                    <button type="button" class="link-button" data-goto="vision">Vision</button>
+                    <button type="button" class="link-button" data-goto="hearing-balance">Hearing and Balance</button>
                     <a class="link-button" href="index.html#eye-conditions">Vision Loss and Red Eye</a>
                     <a class="link-button" href="index.html#hearing-loss">Hearing Loss</a>
                     <a class="link-button" href="index.html#vertigo">Vertigo</a>
@@ -1459,13 +1584,7 @@
                         <li>Sonne J, Omole AE, Lopez-Ojeda W. Neuroanatomy, Cranial Nerve. 2025. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK470353/" target="_blank" rel="noopener">NBK470353</a></li>
                         <li>Helwany M, Bordoni B. Neuroanatomy, Cranial Nerve 1 (Olfactory). 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK556051/" target="_blank" rel="noopener">NBK556051</a></li>
                         <li>Smith AM, Czyz CN. Neuroanatomy, Cranial Nerve 2 (Optic). 2022. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK507907/" target="_blank" rel="noopener">NBK507907</a></li>
-                        <li>Ireland AC, Carter IB. Neuroanatomy, Optic Chiasm. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK542287/" target="_blank" rel="noopener">NBK542287</a></li>
                         <li>Bordoni B, Omole AE, Daly DT. Neuroanatomy, Cranial Nerve 8 (Vestibulocochlear). 2026. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK537359/" target="_blank" rel="noopener">NBK537359</a></li>
-                        <li>Dichter SL, Khan Suheb MZ, Shubert GS. Argyll Robertson Pupil. 2024. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK537179/" target="_blank" rel="noopener">NBK537179</a></li>
-                    <li>Gurnani B, Patel BC. Photorefractive Keratectomy. 2025. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK549887/" target="_blank" rel="noopener">NBK549887</a></li>
-                        <li>Cheslock M, De Jesus O. Presbycusis. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK559220/" target="_blank" rel="noopener">NBK559220</a></li>
-                        <li>Jozsa F, Hall WA. Neuroanatomy, Retina. 2026. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK545310/" target="_blank" rel="noopener">NBK545310</a></li>
-                        <li>Fukazawa H, Okada-Shudo Y. Photosynthetic protein-based retinal ganglion cell receptive fields for detecting edges and brightness illusions. <em>Nano Lett</em>. 2023;23(23):10983–10990. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10723062/" target="_blank" rel="noopener">PMC10723062</a></li>
                     </ol>
                 </section>
                 <dialog class="quick-review" aria-labelledby="cn-special-review-title">
@@ -1587,7 +1706,7 @@
 
                 <p class="see-also">
                     Related:
-                    <a class="link-button" href="index.html#stroke-symptoms">Stroke Symptoms and Complications</a>
+                    <a class="link-button" href="index.html#stroke-symptoms">Stroke Syndromes by Location</a>
                     <a class="link-button" href="index.html#multiple-sclerosis">Multiple Sclerosis</a>
                     <a class="link-button" href="index.html#subarachnoid-hemorrhage">Subarachnoid Hemorrhage</a>
                 </p>
@@ -1715,8 +1834,8 @@
                 <section class="content-section">
                     <h3>When it fails</h3>
 <ul class="pair-list">
-<li><span class="pair-from"><a class="pair-link" href="index.html#motor-signs">Supranuclear facial palsy</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Upper motor neuron">UMN</abbr> lesion → lower face weak, forehead spared</span></li>
-<li><span class="pair-from"><a class="pair-link" href="index.html#motor-signs">Bell palsy</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Lower motor neuron">LMN</abbr> lesion of VII → whole half of the face, with hyperacusis and taste loss</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#facial-palsy">Supranuclear facial palsy</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Upper motor neuron">UMN</abbr> lesion → lower face weak, forehead spared</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#facial-palsy">Bell palsy</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><abbr class="term" tabindex="0" data-definition="Lower motor neuron">LMN</abbr> lesion of VII → whole half of the face, with hyperacusis and taste loss</span></li>
 <li><span class="pair-from"><a class="pair-link" href="index.html#stroke-symptoms">Lateral medullary syndrome</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Spinal trigeminal nucleus → same-side facial pain and temperature loss</span></li>
 <li><span class="pair-from"><a class="pair-link" href="index.html#hearing-loss">Vestibular schwannoma</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Can stretch VII at the cerebellopontine angle</span></li>
 </ul>
@@ -1725,7 +1844,8 @@
                 <p class="see-also">
                     Related:
                     <a class="link-button" href="index.html#motor-signs">Motor Signs and Syndromes</a>
-                    <a class="link-button" href="index.html#stroke-symptoms">Stroke Symptoms and Complications</a>
+                    <a class="link-button" href="index.html#stroke-symptoms">Stroke Syndromes by Location</a>
+                    <a class="link-button" href="index.html#facial-palsy">Facial Palsy</a>
                 </p>
                 <section class="references" aria-label="References">
                     <h3>References</h3>
@@ -1829,17 +1949,18 @@
 <ul class="pair-list">
 <li><span class="pair-from"><a class="pair-link" href="index.html#stroke-symptoms">Lateral medullary syndrome</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Nucleus ambiguus (IX, X) → dysphagia, hoarseness, and a decreased gag</span></li>
 <li><span class="pair-from"><a class="pair-link" href="index.html#stroke-symptoms">Medial medullary syndrome</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">XII → tongue deviates toward the lesion, with opposite hemiparesis</span></li>
-<li><span class="pair-from"><a class="pair-link" href="index.html#motor-signs">Pseudobulbar palsy</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Bilateral <abbr class="term" tabindex="0" data-definition="Upper motor neuron">UMN</abbr> lesions → dysarthria and dysphagia without wasting</span></li>
+<li><span class="pair-from"><a class="pair-link" href="index.html#facial-palsy">Pseudobulbar palsy</a></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Bilateral <abbr class="term" tabindex="0" data-definition="Upper motor neuron">UMN</abbr> lesions → dysarthria and dysphagia without wasting</span></li>
 <li><span class="pair-from">Recurrent laryngeal nerve injury</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Hoarseness</span></li>
 </ul>
                 </section>
 
                 <p class="see-also">
                     Related:
-                    <a class="link-button" href="index.html#stroke-symptoms">Stroke Symptoms and Complications</a>
+                    <a class="link-button" href="index.html#stroke-symptoms">Stroke Syndromes by Location</a>
                     <a class="link-button" href="index.html#motor-signs">Motor Signs and Syndromes</a>
                     <button type="button" class="link-button" data-goto="respiratory-center">Respiratory Center</button>
                     <button type="button" class="link-button" data-goto="cardiovascular-center">Cardiovascular Center</button>
+                    <a class="link-button" href="index.html#facial-palsy">Facial Palsy</a>
                 </p>
                 <section class="references" aria-label="References">
                     <h3>References</h3>
@@ -1880,6 +2001,20 @@
                         <p><em><button type="button" class="review-link" data-goto="descending">Descending tracts</button>.</em> Corticobulbar fibers reach these motor nuclei, so bilateral <abbr class="term" tabindex="0" data-definition="Upper motor neuron">UMN</abbr> lesions cause pseudobulbar palsy.</p>
                     </div>
                 </dialog>
+            </article>
+
+            <article class="condition-content" id="autonomic">
+                <h2>Autonomic Nervous System</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
             </article>
 
             <article class="condition-content" id="respiratory-center">
@@ -1994,7 +2129,7 @@
                     Related:
                     <button type="button" class="link-button" data-goto="cardiovascular-center">Cardiovascular Center</button>
                     <button type="button" class="link-button" data-goto="cn-lower">Glossopharyngeal, Vagus, Accessory, and Hypoglossal Nerves</button>
-                    <a class="link-button" href="index.html#stroke-symptoms">Stroke Symptoms and Complications</a>
+                    <a class="link-button" href="index.html#stroke-symptoms">Stroke Syndromes by Location</a>
                     <a class="link-button" href="index.html#intracerebral-hemorrhage">Intracerebral Hemorrhage</a>
                     <a class="link-button" href="index.html#subarachnoid-hemorrhage">Subarachnoid Hemorrhage</a>
                 </p>
@@ -2210,7 +2345,6 @@
                 </dialog>
             </article>
 
-            <!-- Antithrombotics and Their Reversal -->
             <article class="condition-content" id="neuro-pharm-clots">
                 <h2>Antithrombotics and Their Reversal</h2>
 
@@ -2288,7 +2422,7 @@
 <dt>Key properties</dt><dd>Monitored by <abbr class="term" tabindex="0" data-definition="International normalized ratio">INR</abbr>, with a target of 2–3; onset takes days, as existing factors must clear; metabolized by <abbr class="term" tabindex="0" data-definition="Cytochrome P450 2C9">CYP2C9</abbr></dd>
 <dt class="is-caution">Contraindications</dt><dd>Pregnancy (teratogenic); active bleeding</dd>
 <dt class="is-caution">Adverse effects</dt><dd>Bleeding; skin necrosis from early protein C loss, so heparin bridges at the start</dd>
-<dt>Interactions</dt><dd>Many: <abbr class="term" tabindex="0" data-definition="Cytochrome P450 2C9">CYP2C9</abbr> inhibitors (metronidazole, <abbr class="term" tabindex="0" data-definition="Trimethoprim-sulfamethoxazole">TMP-SMX</abbr>, fluconazole, and amiodarone) raise <abbr class="term" tabindex="0" data-definition="International normalized ratio">INR</abbr>; inducers such as rifampin, carbamazepine, and phenytoin lower it; dietary vitamin K lowers it</dd>
+<dt>Interactions</dt><dd>Many: <abbr class="term" tabindex="0" data-definition="Cytochrome P450 2C9">CYP2C9</abbr> inhibitors (metronidazole, <abbr class="term" tabindex="0" data-definition="Trimethoprim-sulfamethoxazole">TMP-SMX</abbr>, fluconazole, and amiodarone) raise <abbr class="term" tabindex="0" data-definition="International normalized ratio">INR</abbr>; inducers such as rifampicin, carbamazepine, and phenytoin lower it; dietary vitamin K lowers it</dd>
 </dl>
 <h5 class="drug-name"><span class="cause-number" aria-hidden="true">6</span><span>Factor Xa inhibitors</span> <span class="drug-examples">Apixaban and rivaroxaban</span></h5>
 <ol class="pathway">
@@ -2301,7 +2435,7 @@
 <dt>Key properties</dt><dd>Fixed doses with no routine monitoring; metabolized by <abbr class="term" tabindex="0" data-definition="Cytochrome P450 3A4">CYP3A4</abbr> and carried by <abbr class="term" tabindex="0" data-definition="P-glycoprotein, an efflux pump">P-gp</abbr>; partly renally cleared</dd>
 <dt class="is-caution">Contraindications</dt><dd>Mechanical heart valves; active bleeding; severe renal impairment</dd>
 <dt class="is-caution">Adverse effects</dt><dd>Bleeding, with less <abbr class="term" tabindex="0" data-definition="Intracerebral hemorrhage">ICH</abbr> than warfarin</dd>
-<dt>Interactions</dt><dd>Strong <abbr class="term" tabindex="0" data-definition="Cytochrome P450 3A4">CYP3A4</abbr> and <abbr class="term" tabindex="0" data-definition="P-glycoprotein, an efflux pump">P-gp</abbr> inhibitors raise levels; rifampin, carbamazepine, and phenytoin lower them</dd>
+<dt>Interactions</dt><dd>Strong <abbr class="term" tabindex="0" data-definition="Cytochrome P450 3A4">CYP3A4</abbr> and <abbr class="term" tabindex="0" data-definition="P-glycoprotein, an efflux pump">P-gp</abbr> inhibitors raise levels; rifampicin, carbamazepine, and phenytoin lower them</dd>
 </dl>
 <h5 class="drug-name"><span class="cause-number" aria-hidden="true">7</span><span>Dabigatran</span></h5>
 <ol class="pathway">
@@ -2314,7 +2448,7 @@
 <dt>Key properties</dt><dd>Prodrug; mostly renally cleared; <abbr class="term" tabindex="0" data-definition="P-glycoprotein, an efflux pump">P-gp</abbr> substrate</dd>
 <dt class="is-caution">Contraindications</dt><dd>Mechanical heart valves; severe renal impairment</dd>
 <dt class="is-caution">Adverse effects</dt><dd>Bleeding and dyspepsia</dd>
-<dt>Interactions</dt><dd><abbr class="term" tabindex="0" data-definition="P-glycoprotein, an efflux pump">P-gp</abbr> inhibitors such as verapamil and amiodarone raise levels; rifampin lowers them</dd>
+<dt>Interactions</dt><dd><abbr class="term" tabindex="0" data-definition="P-glycoprotein, an efflux pump">P-gp</abbr> inhibitors such as verapamil and amiodarone raise levels; rifampicin lowers them</dd>
 </dl>
                 </section>
 
@@ -2480,7 +2614,6 @@
                 </dialog>
             </article>
 
-            <!-- Blood Pressure and Brain Pressure Drugs -->
             <article class="condition-content" id="neuro-pharm-pressure">
                 <h2>Blood Pressure and Brain Pressure Drugs</h2>
 
@@ -2600,7 +2733,6 @@
                 </dialog>
             </article>
 
-            <!-- Antiseizure Drugs -->
             <article class="condition-content" id="neuro-pharm-seizures">
                 <h2>Antiseizure Drugs</h2>
 
@@ -2899,7 +3031,6 @@
                 </dialog>
             </article>
 
-            <!-- MS, NMOSD, and MOGAD Drugs -->
             <article class="condition-content" id="neuro-pharm-immune">
                 <h2>MS, NMOSD, and MOGAD Drugs</h2>
 
@@ -3193,9 +3324,8 @@
                 </dialog>
             </article>
 
-            <!-- Spasticity, Bladder, and Autonomic Drugs -->
-            <article class="condition-content" id="neuro-pharm-symptoms">
-                <h2>Spasticity, Bladder, and Autonomic Drugs</h2>
+            <article class="condition-content" id="neuro-pharm-symptoms" data-on-hold data-aliases="neuro-pharm-ear">
+                <h2>Spasticity, Bladder, Autonomic, and Vertigo Drugs</h2>
 
                 <section class="content-section">
                     <h3>Overview</h3>
@@ -3203,6 +3333,10 @@
 <div class="subsection">
 <h4 class="sc-heading">Where each drug acts</h4>
 <figure class="cause-map is-wide"><svg viewBox="0 0 500 416" role="img" aria-label="Eight numbered drug sites. 1, baclofen acts on GABA-B receptors in the spinal cord, and 2, botulinum toxin blocks acetylcholine release at nerve terminals. In the bladder, 3, antimuscarinics block M3-AChR and 4, mirabegron stimulates β3-AdR on the detrusor, and 5, alpha-blockers block α1-AdR in the bladder neck. 6, midodrine stimulates α1-AdR on vessels, 7, fludrocortisone acts on mineralocorticoid receptors in the kidney, and 8, melatonin acts on MT1 and MT2 receptors"><text class="site-label" x="10" y="76" text-anchor="start">Muscle tone</text><rect class="tr-box" x="132" y="40" width="100" height="58" rx="14"/><text class="site-label" x="182" y="68" text-anchor="middle"><tspan x="182" dy="0">GABA-B</tspan><tspan x="182" dy="16">receptors</tspan></text><g class="site-marker"><circle cx="220" cy="40" r="11"/><text x="220" y="44.5">1</text></g><rect class="tr-box" x="254" y="40" width="116" height="58" rx="14"/><text class="site-label" x="312" y="76" text-anchor="middle">ACh release</text><g class="site-marker"><circle cx="358" cy="40" r="11"/><text x="358" y="44.5">2</text></g><text class="site-label" x="10" y="176" text-anchor="start">Bladder</text><rect class="tr-box" x="132" y="140" width="92" height="58" rx="14"/><text class="site-label" x="178" y="168" text-anchor="middle"><tspan x="178" dy="0">M3-AChR,</tspan><tspan x="178" dy="16">detrusor</tspan></text><g class="site-marker"><circle cx="212" cy="140" r="11"/><text x="212" y="144.5">3</text></g><rect class="tr-box" x="246" y="140" width="92" height="58" rx="14"/><text class="site-label" x="292" y="168" text-anchor="middle"><tspan x="292" dy="0">β3-AdR,</tspan><tspan x="292" dy="16">detrusor</tspan></text><g class="site-marker"><circle cx="326" cy="140" r="11"/><text x="326" y="144.5">4</text></g><rect class="tr-box" x="360" y="140" width="124" height="58" rx="14"/><text class="site-label" x="422" y="168" text-anchor="middle"><tspan x="422" dy="0">α1-AdR,</tspan><tspan x="422" dy="16">bladder neck</tspan></text><g class="site-marker"><circle cx="472" cy="140" r="11"/><text x="472" y="144.5">5</text></g><text class="site-label" x="10" y="276" text-anchor="start">Blood pressure</text><rect class="tr-box" x="132" y="240" width="84" height="58" rx="14"/><text class="site-label" x="174" y="268" text-anchor="middle"><tspan x="174" dy="0">α1-AdR,</tspan><tspan x="174" dy="16">vessels</tspan></text><g class="site-marker"><circle cx="204" cy="240" r="11"/><text x="204" y="244.5">6</text></g><rect class="tr-box" x="238" y="240" width="100" height="58" rx="14"/><text class="site-label" x="288" y="276" text-anchor="middle">Kidney MR</text><g class="site-marker"><circle cx="326" cy="240" r="11"/><text x="326" y="244.5">7</text></g><text class="site-label" x="10" y="376" text-anchor="start">Sleep</text><rect class="tr-box" x="132" y="340" width="116" height="58" rx="14"/><text class="site-label" x="190" y="376" text-anchor="middle">MT1 and MT2</text><g class="site-marker"><circle cx="236" cy="340" r="11"/><text x="236" y="344.5">8</text></g></svg></figure>
+</div>
+<div class="subsection">
+<h4 class="sc-heading">Vertigo and ear drugs</h4>
+<figure class="cause-map is-wide"><svg viewBox="0 0 412 316" role="img" aria-label="Four numbered drug sites. 9, vestibular suppressants block histamine H1 and muscarinic receptors in the vestibular nuclei. 10, betahistine acts on H1 and H3 receptors. 11, thiazides block NCC in the kidney, lowering endolymphatic hydrops. 12, intratympanic gentamicin destroys vestibular hair cells"><text class="site-label" x="10" y="76" text-anchor="start">Brainstem</text><rect class="tr-box" x="132" y="40" width="108" height="58" rx="14"/><text class="site-label" x="186" y="68" text-anchor="middle"><tspan x="186" dy="0">Vestibular</tspan><tspan x="186" dy="16">nuclei</tspan></text><g class="site-marker"><circle cx="228" cy="40" r="11"/><text x="228" y="44.5">9</text></g><rect class="tr-box" x="262" y="40" width="100" height="58" rx="14"/><text class="site-label" x="312" y="68" text-anchor="middle"><tspan x="312" dy="0">H1 and H3</tspan><tspan x="312" dy="16">receptors</tspan></text><g class="site-marker"><circle cx="350" cy="40" r="11"/><text x="350" y="44.5">10</text></g><text class="site-label" x="10" y="176" text-anchor="start">Fluid</text><rect class="tr-box" x="132" y="140" width="108" height="58" rx="14"/><text class="site-label" x="186" y="176" text-anchor="middle">Kidney NCC</text><g class="site-marker"><circle cx="228" cy="140" r="11"/><text x="228" y="144.5">11</text></g><path class="sah-press" d="M244 169L292 169M292 169L282.1 164.2M292 169L282.1 173.8"/><rect class="tr-box" x="296" y="140" width="100" height="58" rx="14"/><text class="site-label" x="346" y="176" text-anchor="middle">Endolymph</text><text class="site-label" x="10" y="276" text-anchor="start">Inner ear</text><rect class="tr-box" x="132" y="240" width="108" height="58" rx="14"/><text class="site-label" x="186" y="268" text-anchor="middle"><tspan x="186" dy="0">Vestibular</tspan><tspan x="186" dy="16">hair cells</tspan></text><g class="site-marker"><circle cx="228" cy="240" r="11"/><text x="228" y="244.5">12</text></g></svg></figure>
 </div>
                 </section>
 
@@ -3322,11 +3456,70 @@
 </dl>
                 </section>
 
+                <section class="content-section">
+                    <h3>Vertigo and Ménière disease</h3>
+<h5 class="drug-name"><span class="cause-number" aria-hidden="true">9</span><span>Vestibular suppressants</span> <span class="drug-examples">Meclizine; also benzodiazepines and antiemetics</span></h5>
+<ol class="pathway">
+<li><span class="pathway-title">Target</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Histamine receptor 1">H1</abbr> and muscarinic receptors in the vestibular nuclei</span></li>
+<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Block histamine and <abbr class="term" tabindex="0" data-definition="Acetylcholine">ACh</abbr>, reducing vestibular signaling</span></li>
+<li><span class="pathway-title">Response</span><span class="pathway-detail">Less vertigo and nausea</span></li>
+</ol>
+<dl class="drug-facts">
+<dt>Used for</dt><dd>Vestibular neuritis and labyrinthitis for about 3 days; little role in <abbr class="term" tabindex="0" data-definition="Benign paroxysmal positional vertigo">BPPV</abbr></dd>
+<dt>Key properties</dt><dd>Beyond a few days, they delay central compensation</dd>
+<dt class="is-caution">Contraindications</dt><dd>Angle-closure glaucoma and urinary retention</dd>
+<dt class="is-caution">Adverse effects</dt><dd>Sedation, dry mouth, and confusion in older adults</dd>
+<dt>Interactions</dt><dd>Additive sedation with alcohol and other <abbr class="term" tabindex="0" data-definition="Central nervous system">CNS</abbr> depressants</dd>
+</dl>
+<h5 class="drug-name"><span class="cause-number" aria-hidden="true">10</span><span>Betahistine</span></h5>
+<ol class="pathway">
+<li><span class="pathway-title">Target</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Histamine receptor 1">H1</abbr> receptors (weak agonist) and <abbr class="term" tabindex="0" data-definition="Histamine receptor 3">H3</abbr> receptors (antagonist)</span></li>
+<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Improve inner ear microcirculation, while reducing vestibular nucleus firing</span></li>
+<li><span class="pathway-title">Response</span><span class="pathway-detail">Fewer attacks of vertigo</span></li>
+</ol>
+<dl class="drug-facts">
+<dt>Used for</dt><dd>Ménière disease</dd>
+<dt>Key properties</dt><dd>Short half-life; several doses a day</dd>
+<dt class="is-caution">Contraindications</dt><dd>Pheochromocytoma</dd>
+<dt class="is-caution">Adverse effects</dt><dd>Headache and <abbr class="term" tabindex="0" data-definition="Gastrointestinal">GI</abbr> upset</dd>
+<dt>Interactions</dt><dd>Antihistamines oppose it</dd>
+</dl>
+<h5 class="drug-name"><span class="cause-number" aria-hidden="true">11</span><span>Thiazides</span> <span class="drug-examples">Hydrochlorothiazide</span></h5>
+<ol class="pathway">
+<li><span class="pathway-title">Target</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Sodium-chloride cotransporter">NCC</abbr> in the distal convoluted tubule</span></li>
+<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Block sodium chloride reabsorption, lowering body fluid</span></li>
+<li><span class="pathway-title">Response</span><span class="pathway-detail">Less endolymphatic hydrops</span></li>
+</ol>
+<dl class="drug-facts">
+<dt>Used for</dt><dd>Ménière disease, with less salt, caffeine, and alcohol</dd>
+<dt>Key properties</dt><dd>Once daily by mouth</dd>
+<dt class="is-caution">Contraindications</dt><dd>Sulfa allergy (caution) and gout</dd>
+<dt class="is-caution">Adverse effects</dt><dd>Hypokalemia, hyponatremia, hypercalcemia, hyperuricemia, and hyperglycemia</dd>
+<dt>Interactions</dt><dd>Raise lithium levels; hypokalemia adds to digoxin toxicity</dd>
+</dl>
+<h5 class="drug-name"><span class="cause-number" aria-hidden="true">12</span><span>Intratympanic gentamicin</span></h5>
+<ol class="pathway">
+<li><span class="pathway-title">Target</span><span class="pathway-detail">Vestibular hair cells</span></li>
+<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Destroy hair cells, as an aminoglycoside toxic to the vestibular organ</span></li>
+<li><span class="pathway-title">Response</span><span class="pathway-detail">Chemical labyrinthectomy</span></li>
+</ol>
+<dl class="drug-facts">
+<dt>Used for</dt><dd>Ménière disease not controlled otherwise</dd>
+<dt>Key properties</dt><dd>Injected through the eardrum for a local effect</dd>
+<dt class="is-caution">Contraindications</dt><dd>Bilateral disease</dd>
+<dt class="is-caution">Adverse effects</dt><dd>Hearing loss and imbalance</dd>
+<dt>Interactions</dt><dd>None of note</dd>
+</dl>
+<p class="note"><strong>Note:</strong> Aminoglycosides, loop diuretics, and cisplatin are ototoxic, and high-dose aspirin causes reversible tinnitus.</p>
+                </section>
+
                 <p class="see-also">
                     Related:
                     <a class="link-button" href="index.html#multiple-sclerosis">Multiple Sclerosis</a>
                     <a class="link-button" href="index.html#atypical-parkinsonism">Atypical Parkinsonism</a>
                     <a class="link-button" href="index.html#lewy-body">Dementia with Lewy Bodies</a>
+                    <a class="link-button" href="index.html#vertigo">Vertigo</a>
+                    <a class="link-button" href="index.html#hearing-loss">Hearing Loss</a>
                 </p>
                 <section class="references" aria-label="References">
                     <h3>References</h3>
@@ -3335,6 +3528,7 @@
                         <li>Padda IS, Tadi P. Botulinum Toxin. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK557387/" target="_blank" rel="noopener">NBK557387</a></li>
                         <li>Dwyer J, Tafuri SM, LaGrange CA. Oxybutynin. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK499985/" target="_blank" rel="noopener">NBK499985</a></li>
                         <li>Rahman M, Anjum F. Fludrocortisone. 2024. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK564331/" target="_blank" rel="noopener">NBK564331</a></li>
+                        <li>Houston BT, Patel P, Chowdhury YS. Meclizine. 2024. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK560645/" target="_blank" rel="noopener">NBK560645</a></li>
                     </ol>
                 </section>
                 <dialog class="quick-review" aria-labelledby="neuro-pharm-symptoms-review-title">
@@ -3373,9 +3567,37 @@
                         <p><em><a class="review-link" href="index.html#atypical-parkinsonism">Atypical parkinsonism</a> and <a class="review-link" href="index.html#lewy-body">DLB</a>.</em> No treatment slows <abbr class="term" tabindex="0" data-definition="Multiple system atrophy">MSA</abbr>, <abbr class="term" tabindex="0" data-definition="Progressive supranuclear palsy">PSP</abbr>, or <abbr class="term" tabindex="0" data-definition="Corticobasal degeneration">CBD</abbr>, so autonomic and other symptoms are treated directly: midodrine or fludrocortisone for orthostatic hypotension, α-blockers, mirabegron, or selective antimuscarinics for urinary dysfunction, botulinum toxin for dystonia and sialorrhea, and melatonin and then low-dose clonazepam for <abbr class="term" tabindex="0" data-definition="REM sleep behavior disorder">RBD</abbr>, as in <abbr class="term" tabindex="0" data-definition="Dementia with Lewy bodies">DLB</abbr>.</p>
                     </div>
                 </dialog>
+
+                <dialog class="quick-review" aria-labelledby="neuro-pharm-ear-review-title">
+                    <div class="quick-review-body">
+                        <p class="review-kicker">Review article</p>
+                        <h3 id="neuro-pharm-ear-review-title">Drugs for vertigo and Ménière disease</h3>
+
+                        <p class="review-abstract">Vestibular suppressants relieve acute vertigo but delay central compensation, so they are used only briefly, while Ménière disease is treated by reducing endolymphatic hydrops and, when refractory, by destroying vestibular hair cells. Here, we review meclizine and other suppressants, betahistine, thiazides, and intratympanic gentamicin by target, mechanism, use, properties, contraindications, adverse effects, and interactions.</p>
+
+                        <aside class="review-key-points">
+                            <h4>Key points</h4>
+                            <ul>
+                                <li>Vestibular suppressants are given for about 3 days in vestibular neuritis and labyrinthitis, because longer use delays central compensation.</li>
+                                <li>Ménière disease is treated with less salt, caffeine, and alcohol, thiazides or betahistine, and intratympanic gentamicin if refractory.</li>
+                                <li>Aminoglycosides, loop diuretics, and cisplatin are ototoxic, and high-dose aspirin causes reversible tinnitus.</li>
+                            </ul>
+                        </aside>
+
+                        <h4>Vertigo and Ménière disease</h4>
+                        <p>Vestibular suppressants, such as meclizine, as well as benzodiazepines and antiemetics, block histamine and <abbr class="term" tabindex="0" data-definition="Acetylcholine">ACh</abbr> at <abbr class="term" tabindex="0" data-definition="Histamine receptor 1">H1</abbr> and muscarinic receptors in the vestibular nuclei, reducing vestibular signaling and so vertigo and nausea. They are given for about 3 days in vestibular neuritis and labyrinthitis and have little role in <abbr class="term" tabindex="0" data-definition="Benign paroxysmal positional vertigo">BPPV</abbr>, because beyond a few days they delay central compensation. Angle-closure glaucoma and urinary retention are contraindications. They cause sedation, which alcohol and other <abbr class="term" tabindex="0" data-definition="Central nervous system">CNS</abbr> depressants worsen, dry mouth, and confusion in older adults.</p>
+                        <p>Betahistine is a weak agonist at <abbr class="term" tabindex="0" data-definition="Histamine receptor 1">H1</abbr> receptors and an antagonist at <abbr class="term" tabindex="0" data-definition="Histamine receptor 3">H3</abbr> receptors; it improves inner ear microcirculation and reduces vestibular nucleus firing, so attacks of vertigo are fewer, and it treats Ménière disease. Its short half-life means several doses a day, and antihistamines oppose it. Pheochromocytoma is a contraindication, and it causes headache and <abbr class="term" tabindex="0" data-definition="Gastrointestinal">GI</abbr> upset.</p>
+                        <p>Thiazides such as hydrochlorothiazide block <abbr class="term" tabindex="0" data-definition="Sodium-chloride cotransporter">NCC</abbr> in the distal convoluted tubule, lowering body fluid and endolymphatic hydrops, and treat Ménière disease alongside less salt, caffeine, and alcohol. They are taken once daily. Sulfa allergy calls for caution, and gout is a contraindication. They cause hypokalemia, hyponatremia, hypercalcemia, hyperuricemia, and hyperglycemia, raise lithium levels, and their hypokalemia adds to digoxin toxicity.</p>
+                        <p>Intratympanic gentamicin is an aminoglycoside injected through the eardrum that destroys vestibular hair cells, a chemical labyrinthectomy, for Ménière disease not controlled otherwise. Bilateral disease is a contraindication, and it causes hearing loss and imbalance.</p>
+                        <p>Aminoglycosides, loop diuretics, and cisplatin are ototoxic, and high-dose aspirin causes reversible tinnitus.</p>
+
+                        <h4>Relationships to other topics</h4>
+                        <p><em><a class="review-link" href="index.html#vertigo">Vertigo</a>.</em> Treatment targets the cause: the Epley maneuver for <abbr class="term" tabindex="0" data-definition="Benign paroxysmal positional vertigo">BPPV</abbr>, brief suppressants and then vestibular rehabilitation for vestibular neuritis and labyrinthitis, and the measures above for Ménière disease; suppressants only relieve acute symptoms.</p>
+                        <p><em><a class="review-link" href="index.html#hearing-loss">Hearing loss</a>.</em> Drugs both treat and cause it: oral prednisone treats sudden <abbr class="term" tabindex="0" data-definition="Sensorineural hearing loss">SNHL</abbr>, an emergency, whereas aminoglycosides, loop diuretics, and cisplatin cause sensorineural loss that may be permanent, and intratympanic gentamicin deliberately destroys vestibular function at the risk of hearing loss.</p>
+                    </div>
+                </dialog>
             </article>
 
-            <!-- Dementia and Mood Drugs -->
             <article class="condition-content" id="neuro-pharm-dementia">
                 <h2>Dementia and Mood Drugs</h2>
 
@@ -3522,7 +3744,6 @@
                 </dialog>
             </article>
 
-            <!-- Movement Disorder Drugs -->
             <article class="condition-content" id="neuro-pharm-movement">
                 <h2>Movement Disorder Drugs</h2>
 
@@ -3735,7 +3956,6 @@
                 </dialog>
             </article>
 
-            <!-- Analgesics and Anesthetics -->
             <article class="condition-content" id="neuro-pharm-pain">
                 <h2>Analgesics and Anesthetics</h2>
 
@@ -3914,7 +4134,6 @@
                 </dialog>
             </article>
 
-            <!-- Eye Drugs -->
             <article class="condition-content" id="neuro-pharm-eye">
                 <h2>Eye Drugs</h2>
 
@@ -4119,118 +4338,6 @@
                 </dialog>
             </article>
 
-            <!-- Vertigo and Ear Drugs -->
-            <article class="condition-content" id="neuro-pharm-ear">
-                <h2>Vertigo and Ear Drugs</h2>
-
-                <section class="content-section">
-                    <h3>Overview</h3>
-<p>Numbers match the drawing of where each drug acts.</p>
-<div class="subsection">
-<h4 class="sc-heading">Where each drug acts</h4>
-<figure class="cause-map is-wide"><svg viewBox="0 0 412 316" role="img" aria-label="Four numbered drug sites. 1, vestibular suppressants block histamine H1 and muscarinic receptors in the vestibular nuclei. 2, betahistine acts on H1 and H3 receptors. 3, thiazides block NCC in the kidney, lowering endolymphatic hydrops. 4, intratympanic gentamicin destroys vestibular hair cells"><text class="site-label" x="10" y="76" text-anchor="start">Brainstem</text><rect class="tr-box" x="132" y="40" width="108" height="58" rx="14"/><text class="site-label" x="186" y="68" text-anchor="middle"><tspan x="186" dy="0">Vestibular</tspan><tspan x="186" dy="16">nuclei</tspan></text><g class="site-marker"><circle cx="228" cy="40" r="11"/><text x="228" y="44.5">1</text></g><rect class="tr-box" x="262" y="40" width="100" height="58" rx="14"/><text class="site-label" x="312" y="68" text-anchor="middle"><tspan x="312" dy="0">H1 and H3</tspan><tspan x="312" dy="16">receptors</tspan></text><g class="site-marker"><circle cx="350" cy="40" r="11"/><text x="350" y="44.5">2</text></g><text class="site-label" x="10" y="176" text-anchor="start">Fluid</text><rect class="tr-box" x="132" y="140" width="108" height="58" rx="14"/><text class="site-label" x="186" y="176" text-anchor="middle">Kidney NCC</text><g class="site-marker"><circle cx="228" cy="140" r="11"/><text x="228" y="144.5">3</text></g><path class="sah-press" d="M244 169L292 169M292 169L282.1 164.2M292 169L282.1 173.8"/><rect class="tr-box" x="296" y="140" width="100" height="58" rx="14"/><text class="site-label" x="346" y="176" text-anchor="middle">Endolymph</text><text class="site-label" x="10" y="276" text-anchor="start">Inner ear</text><rect class="tr-box" x="132" y="240" width="108" height="58" rx="14"/><text class="site-label" x="186" y="268" text-anchor="middle"><tspan x="186" dy="0">Vestibular</tspan><tspan x="186" dy="16">hair cells</tspan></text><g class="site-marker"><circle cx="228" cy="240" r="11"/><text x="228" y="244.5">4</text></g></svg></figure>
-</div>
-                </section>
-
-                <section class="content-section">
-                    <h3>Vertigo and Ménière disease</h3>
-<h5 class="drug-name"><span class="cause-number" aria-hidden="true">1</span><span>Vestibular suppressants</span> <span class="drug-examples">Meclizine; also benzodiazepines and antiemetics</span></h5>
-<ol class="pathway">
-<li><span class="pathway-title">Target</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Histamine receptor 1">H1</abbr> and muscarinic receptors in the vestibular nuclei</span></li>
-<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Block histamine and <abbr class="term" tabindex="0" data-definition="Acetylcholine">ACh</abbr>, reducing vestibular signaling</span></li>
-<li><span class="pathway-title">Response</span><span class="pathway-detail">Less vertigo and nausea</span></li>
-</ol>
-<dl class="drug-facts">
-<dt>Used for</dt><dd>Vestibular neuritis and labyrinthitis for about 3 days; little role in <abbr class="term" tabindex="0" data-definition="Benign paroxysmal positional vertigo">BPPV</abbr></dd>
-<dt>Key properties</dt><dd>Beyond a few days, they delay central compensation</dd>
-<dt class="is-caution">Contraindications</dt><dd>Angle-closure glaucoma and urinary retention</dd>
-<dt class="is-caution">Adverse effects</dt><dd>Sedation, dry mouth, and confusion in older adults</dd>
-<dt>Interactions</dt><dd>Additive sedation with alcohol and other <abbr class="term" tabindex="0" data-definition="Central nervous system">CNS</abbr> depressants</dd>
-</dl>
-<h5 class="drug-name"><span class="cause-number" aria-hidden="true">2</span><span>Betahistine</span></h5>
-<ol class="pathway">
-<li><span class="pathway-title">Target</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Histamine receptor 1">H1</abbr> receptors (weak agonist) and <abbr class="term" tabindex="0" data-definition="Histamine receptor 3">H3</abbr> receptors (antagonist)</span></li>
-<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Improve inner ear microcirculation, while reducing vestibular nucleus firing</span></li>
-<li><span class="pathway-title">Response</span><span class="pathway-detail">Fewer attacks of vertigo</span></li>
-</ol>
-<dl class="drug-facts">
-<dt>Used for</dt><dd>Ménière disease</dd>
-<dt>Key properties</dt><dd>Short half-life; several doses a day</dd>
-<dt class="is-caution">Contraindications</dt><dd>Pheochromocytoma</dd>
-<dt class="is-caution">Adverse effects</dt><dd>Headache and <abbr class="term" tabindex="0" data-definition="Gastrointestinal">GI</abbr> upset</dd>
-<dt>Interactions</dt><dd>Antihistamines oppose it</dd>
-</dl>
-<h5 class="drug-name"><span class="cause-number" aria-hidden="true">3</span><span>Thiazides</span> <span class="drug-examples">Hydrochlorothiazide</span></h5>
-<ol class="pathway">
-<li><span class="pathway-title">Target</span><span class="pathway-detail"><abbr class="term" tabindex="0" data-definition="Sodium-chloride cotransporter">NCC</abbr> in the distal convoluted tubule</span></li>
-<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Block sodium chloride reabsorption, lowering body fluid</span></li>
-<li><span class="pathway-title">Response</span><span class="pathway-detail">Less endolymphatic hydrops</span></li>
-</ol>
-<dl class="drug-facts">
-<dt>Used for</dt><dd>Ménière disease, with less salt, caffeine, and alcohol</dd>
-<dt>Key properties</dt><dd>Once daily by mouth</dd>
-<dt class="is-caution">Contraindications</dt><dd>Sulfa allergy (caution) and gout</dd>
-<dt class="is-caution">Adverse effects</dt><dd>Hypokalemia, hyponatremia, hypercalcemia, hyperuricemia, and hyperglycemia</dd>
-<dt>Interactions</dt><dd>Raise lithium levels; hypokalemia adds to digoxin toxicity</dd>
-</dl>
-<h5 class="drug-name"><span class="cause-number" aria-hidden="true">4</span><span>Intratympanic gentamicin</span></h5>
-<ol class="pathway">
-<li><span class="pathway-title">Target</span><span class="pathway-detail">Vestibular hair cells</span></li>
-<li><span class="pathway-title">Mechanism</span><span class="pathway-detail">Destroy hair cells, as an aminoglycoside toxic to the vestibular organ</span></li>
-<li><span class="pathway-title">Response</span><span class="pathway-detail">Chemical labyrinthectomy</span></li>
-</ol>
-<dl class="drug-facts">
-<dt>Used for</dt><dd>Ménière disease not controlled otherwise</dd>
-<dt>Key properties</dt><dd>Injected through the eardrum for a local effect</dd>
-<dt class="is-caution">Contraindications</dt><dd>Bilateral disease</dd>
-<dt class="is-caution">Adverse effects</dt><dd>Hearing loss and imbalance</dd>
-<dt>Interactions</dt><dd>None of note</dd>
-</dl>
-<p class="note"><strong>Note:</strong> Aminoglycosides, loop diuretics, and cisplatin are ototoxic, and high-dose aspirin causes reversible tinnitus.</p>
-                </section>
-
-                <p class="see-also">
-                    Related:
-                    <a class="link-button" href="index.html#vertigo">Vertigo</a>
-                    <a class="link-button" href="index.html#hearing-loss">Hearing Loss</a>
-                </p>
-                <section class="references" aria-label="References">
-                    <h3>References</h3>
-                    <ol>
-                        <li>Houston BT, Patel P, Chowdhury YS. Meclizine. 2024. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK560645/" target="_blank" rel="noopener">NBK560645</a></li>
-                    </ol>
-                </section>
-                <dialog class="quick-review" aria-labelledby="neuro-pharm-ear-review-title">
-                    <div class="quick-review-body">
-                        <p class="review-kicker">Review article</p>
-                        <h3 id="neuro-pharm-ear-review-title">Drugs for vertigo and Ménière disease</h3>
-
-                        <p class="review-abstract">Vestibular suppressants relieve acute vertigo but delay central compensation, so they are used only briefly, while Ménière disease is treated by reducing endolymphatic hydrops and, when refractory, by destroying vestibular hair cells. Here, we review meclizine and other suppressants, betahistine, thiazides, and intratympanic gentamicin by target, mechanism, use, properties, contraindications, adverse effects, and interactions.</p>
-
-                        <aside class="review-key-points">
-                            <h4>Key points</h4>
-                            <ul>
-                                <li>Vestibular suppressants are given for about 3 days in vestibular neuritis and labyrinthitis, because longer use delays central compensation.</li>
-                                <li>Ménière disease is treated with less salt, caffeine, and alcohol, thiazides or betahistine, and intratympanic gentamicin if refractory.</li>
-                                <li>Aminoglycosides, loop diuretics, and cisplatin are ototoxic, and high-dose aspirin causes reversible tinnitus.</li>
-                            </ul>
-                        </aside>
-
-                        <h4>Vertigo and Ménière disease</h4>
-                        <p>Vestibular suppressants, such as meclizine, as well as benzodiazepines and antiemetics, block histamine and <abbr class="term" tabindex="0" data-definition="Acetylcholine">ACh</abbr> at <abbr class="term" tabindex="0" data-definition="Histamine receptor 1">H1</abbr> and muscarinic receptors in the vestibular nuclei, reducing vestibular signaling and so vertigo and nausea. They are given for about 3 days in vestibular neuritis and labyrinthitis and have little role in <abbr class="term" tabindex="0" data-definition="Benign paroxysmal positional vertigo">BPPV</abbr>, because beyond a few days they delay central compensation. Angle-closure glaucoma and urinary retention are contraindications. They cause sedation, which alcohol and other <abbr class="term" tabindex="0" data-definition="Central nervous system">CNS</abbr> depressants worsen, dry mouth, and confusion in older adults.</p>
-                        <p>Betahistine is a weak agonist at <abbr class="term" tabindex="0" data-definition="Histamine receptor 1">H1</abbr> receptors and an antagonist at <abbr class="term" tabindex="0" data-definition="Histamine receptor 3">H3</abbr> receptors; it improves inner ear microcirculation and reduces vestibular nucleus firing, so attacks of vertigo are fewer, and it treats Ménière disease. Its short half-life means several doses a day, and antihistamines oppose it. Pheochromocytoma is a contraindication, and it causes headache and <abbr class="term" tabindex="0" data-definition="Gastrointestinal">GI</abbr> upset.</p>
-                        <p>Thiazides such as hydrochlorothiazide block <abbr class="term" tabindex="0" data-definition="Sodium-chloride cotransporter">NCC</abbr> in the distal convoluted tubule, lowering body fluid and endolymphatic hydrops, and treat Ménière disease alongside less salt, caffeine, and alcohol. They are taken once daily. Sulfa allergy calls for caution, and gout is a contraindication. They cause hypokalemia, hyponatremia, hypercalcemia, hyperuricemia, and hyperglycemia, raise lithium levels, and their hypokalemia adds to digoxin toxicity.</p>
-                        <p>Intratympanic gentamicin is an aminoglycoside injected through the eardrum that destroys vestibular hair cells, a chemical labyrinthectomy, for Ménière disease not controlled otherwise. Bilateral disease is a contraindication, and it causes hearing loss and imbalance.</p>
-                        <p>Aminoglycosides, loop diuretics, and cisplatin are ototoxic, and high-dose aspirin causes reversible tinnitus.</p>
-
-                        <h4>Relationships to other topics</h4>
-                        <p><em><a class="review-link" href="index.html#vertigo">Vertigo</a>.</em> Treatment targets the cause: the Epley maneuver for <abbr class="term" tabindex="0" data-definition="Benign paroxysmal positional vertigo">BPPV</abbr>, brief suppressants and then vestibular rehabilitation for vestibular neuritis and labyrinthitis, and the measures above for Ménière disease; suppressants only relieve acute symptoms.</p>
-                        <p><em><a class="review-link" href="index.html#hearing-loss">Hearing loss</a>.</em> Drugs both treat and cause it: oral prednisone treats sudden <abbr class="term" tabindex="0" data-definition="Sensorineural hearing loss">SNHL</abbr>, an emergency, whereas aminoglycosides, loop diuretics, and cisplatin cause sensorineural loss that may be permanent, and intratympanic gentamicin deliberately destroys vestibular function at the risk of hearing loss.</p>
-                    </div>
-                </dialog>
-            </article>
-
-            <!-- Drugs That Cause Neurological Disease -->
             <article class="condition-content" id="neuro-pharm-causes">
                 <h2>Drugs That Cause Neurological Disease</h2>
 

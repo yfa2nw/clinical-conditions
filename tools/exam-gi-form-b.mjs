@@ -1,741 +1,360 @@
 // Content of the GI practice exam, Form B, read by tools/build-form-pdf.mjs gi b.
-// Form B rewards inference: every piece of data in a passage should be needed by a question, and most questions
-// need two or more of them. New diseases and drugs may appear, with supplementary material in the passage.
-// Part 1, Mechanisms and data (45 minutes): 8 short problems, each a compact stimulus (lab panel, trend, graph, or an
-//   unseen drug or mutation) with 2–3 linked questions: prediction grids, calculations, and interpretation.
-// Part 2, Unfolding cases (75 minutes): 3 patients, each with 10–12 questions over 4–5 stages of new data, ending in a
-//   complication or follow-up; formats include ranking a differential, "what would change your mind",
-//   most and least useful test, and short justified answers.
-// Part 3, Reading the research (45 minutes): one open-access paper with 8–10 questions, from two easy anchors to design,
-//   absolute risk and NNT, the limits of the data, and applying the result to a patient.
-// Part 4, Synthesis (15 minutes): one structured extended answer, marked by a rubric.
-// Answers are marked by step (mechanism, finding, next step), so partial reasoning earns partial credit.
-// Formats, listed for students on the builder's "Question formats" page (FORMAT_GROUPS in tools/build-form-pdf.mjs):
-//   Any part: prediction grid, ranking, justify, calculation.
-//   Part 1: account for every result (each abnormal value to the leading diagnosis, a second process, or expected or
-//     incidental; there may be no second process), sketch the trend, two patients with one difference, unseen mechanism
-//     (a failed gene, transporter, or enzyme, or a new drug from its target), pathway completion.
-//   Part 2: before and after (pre-test and post-test), defend or refute, prioritize, discharge criteria (an easier format).
-//   Part 3: supported or not (statements marked supported, overstated, or unsupported), apply to the case from Part 2.
-//   Part 4: teach it (a causal chain within a word limit) or concept map (labeled arrows, a point per correct link).
-// Sketch the trend, concept map, and supported or not will need new layouts in the builder when their questions are written.
+// Five timed parts, 200 minutes, 160 points: 1 Foundations (8 problems of 5), 2 Reasoning (6 stations of 5),
+// 3 Clinical Scenarios (3 patients of 15), 4 Pharmacology (5 patients, 15 multiple-choice questions of 1), 5 Research Analysis (1 paper of 30).
+// The previous four-part exam is kept, unlinked, in exam-gi-form-b-old.mjs.
+// Form B rewards inference: every piece of data in a passage is needed, most questions need two or more of them, and
+// answers are marked by step. Headings are only "Problem 1", "Station 1", "Scenario 1", and "Decision 1".
+// Question types: grid, sa (words, lines, work), account, sketch, pathway, mc (options, answer, notes; justify), fields
+// (labeled lines), support, and map. Formats with a one-line hint where they first appear are in FORMAT_HINTS (builder).
+// Each set lists the page groups it tests in `groups`; the builder prints the coverage matrix and warns of any gap.
+// All patient data are invented. Part 5 uses a CC BY paper.
+
+import { frac, math, txt } from "./page-kit.mjs";
 
 export const EXAM = {
     form: "B",
     title: "Gastrointestinal Practice Exam, Form B",
     system: "Gastrointestinal",
-    deck: "Four parts that ask you to reason past what you have memorized: mechanisms and data, three unfolding patients, a research paper, and one extended answer.",
+    deck: "Five parts that ask you to reason past what you have memorized: problems, stations, unfolding patients, drug choices, and a research paper.",
     parts: [
-        { name: "Mechanisms and data", focus: "Ten basic-science problems across anatomy, histology, physiology, pharmacology, embryology, and pathophysiology", questions: "10 problems", points: 50, minutes: 60 },
-        { name: "Unfolding cases", focus: "Three patients, followed over three or four stages of new data to a complication or follow-up", questions: "3 patients", points: 45, minutes: 60 },
-        { name: "Reading the research", focus: "One published trial: its design, its numbers, and what it can and cannot show", questions: "1 paper", points: 30, minutes: 45 },
-        { name: "Synthesis", focus: "One structured extended answer that connects ideas across the course", questions: "1 answer", points: 15, minutes: 15 },
+        { name: "Foundations", focus: "How the gut is built and how it works, from new data", questions: "8 problems", points: 40, minutes: 45 },
+        { name: "Reasoning", focus: "Where is the fault, and what could mislead?", questions: "6 stations", points: 30, minutes: 40 },
+        { name: "Clinical Scenarios", focus: "Three patients, followed over stages of new data", questions: "3 scenarios", points: 45, minutes: 60 },
+        { name: "Pharmacology", focus: "Multiple choice: the right drug, the reason for it, and its risk", questions: "15 questions", points: 15, minutes: 20 },
+        { name: "Research Analysis", focus: "One published trial: what it shows and what it cannot", questions: "1 paper", points: 30, minutes: 35 },
     ],
 };
 
-// Abbreviations used in the exam but not defined on the GI pages
+// Page groups for the coverage matrix, and those each must reach
+export const GROUPS = ["Foundations and physiology", "Esophagus", "Stomach", "Hepatitis", "Other liver disease", "Liver failure", "Gallbladder and biliary tree", "Pancreas", "Malabsorption and diarrhea", "Inflammation and ischemia", "Obstruction", "Special topics", "Pharmacology"];
+
+const eq = (l, r) => math(`<mrow>${txt(l + "\u00a0=\u00a0")}${r}</mrow>`);
+const t = (s) => `<mtext>${s}</mtext>`;
+export const EQUATIONS = [
+    ["Blood and urine", [
+        ["Anion gap", eq("AG", t("Na+ − (Cl− + HCO3−)")), "mmol/L; normal about 8–12"],
+        ["Delta gap", eq("Δ/Δ", frac(t("AG − 12"), t("24 − HCO3−"))), "Compares the gained acid with the lost HCO3−"],
+        ["Winter formula", eq("Expected PaCO2", t("1.5 × HCO3− + 8 (± 2) mmHg")), "Metabolic acidosis"],
+        ["Corrected calcium", eq("Corrected Ca2+", t("measured + 0.02 × (40 − albumin)")), "mmol/L; albumin in g/L"],
+        ["Fractional excretion of sodium", eq("FENa", `<mrow>${frac(t("urine Na+ × plasma creatinine"), t("plasma Na+ × urine creatinine"))}${t(" × 100")}</mrow>`), "Same units above and below; %"],
+        ["Urea-to-creatinine ratio", eq("UCR", frac(t("urea (mmol/L)"), t("creatinine (mmol/L)"))), "Creatinine in µmol/L ÷ 1000"],
+    ]],
+    ["Gut and liver", [
+        ["Stool osmotic gap", eq("Gap", t("290 − 2 × (stool Na+ + stool K+)")), "mOsm/kg"],
+        ["R factor", eq("R", frac(t("ALT ÷ its upper limit"), t("ALP ÷ its upper limit"))), "5 or more hepatocellular, 2 or less cholestatic"],
+        ["Serum-ascites albumin gradient", eq("SAAG", t("serum albumin − ascites albumin")), "g/L; 11 or more means portal hypertension"],
+        ["Hepatic venous pressure gradient", eq("HVPG", t("wedged − free hepatic venous pressure")), "mmHg"],
+    ]],
+    ["Research", [
+        ["Absolute risk difference", eq("ARD", t("risk in one group − risk in the other")), "NNT or NNH = 1 ÷ ARD"],
+        ["Relative risk", eq("RR", frac(t("risk with the treatment"), t("risk without it"))), "No difference = 1"],
+        ["Sensitivity, specificity", eq("Sens", frac(t("TP"), t("TP + FN"))) + " &nbsp; " + eq("Spec", frac(t("TN"), t("TN + FP"))), ""],
+        ["Predictive values", eq("PPV", frac(t("TP"), t("TP + FP"))) + " &nbsp; " + eq("NPV", frac(t("TN"), t("TN + FN"))), ""],
+        ["Likelihood ratios", eq("LR+", frac(t("sens"), t("1 − spec"))) + " &nbsp; " + eq("LR−", frac(t("1 − sens"), t("spec"))), ""],
+        ["Post-test odds", eq("Post-test odds", t("pre-test odds × LR")), "Odds = p ÷ (1 − p)"],
+    ]],
+];
+
 export const EXTRA_TERMS = {
-    AE2: "Anion exchanger 2, the basolateral Cl−/HCO3− exchanger",
-    BMI: "Body mass index",
-    BP: "Blood pressure",
-    GP: "General practitioner",
-    MCV: "Mean corpuscular volume",
-    NNT: "Number needed to treat",
-    NNH: "Number needed to harm",
-    DVT: "Deep vein thrombosis",
-    PE: "Pulmonary embolism",
-    MI: "Myocardial infarction",
-    VTE: "Venous thromboembolism",
-    RR: "Risk ratio",
-    CI: "Confidence interval",
+    A1c: "Glycated hemoglobin", ASBT: "Apical sodium-dependent bile salt transporter", BMI: "Body mass index", BP: "Blood pressure", CI: "Confidence interval",
+    CSQ: "Condition-specific questionnaire for gallstones", ARD: "Absolute risk difference", NNH: "Number needed to harm", NNT: "Number needed to treat", RR: "Relative risk", SD: "Standard deviation",
+    "SF-36": "Short form 36, a general quality-of-life questionnaire", AUC: "Area under the curve", ITT: "Intention to treat", UCR: "Urea-to-creatinine ratio", MRE: "Magnetic resonance enterography",
+    LES: "Lower esophageal sphincter", "H+/K+": "Proton-potassium", KCNQ1: "The potassium channel of the parietal cell canaliculus", FGF19: "Fibroblast growth factor 19", CYP7A1: "Cholesterol 7-alpha-hydroxylase",
+    "A-fib": "Atrial fibrillation", "MSI-high": "High microsatellite instability", eGFR: "Estimated glomerular filtration rate", ACTH: "Adrenocorticotropic hormone", QTc: "QT interval corrected for rate", AG: "Anion gap", TP: "True positive", TN: "True negative", FP: "False positive", FN: "False negative", PPV: "Positive predictive value", NPV: "Negative predictive value", LR: "Likelihood ratio", PaCO2: "Partial pressure of carbon dioxide in arterial blood", FENa: "Fractional excretion of sodium", HVPG: "Hepatic venous pressure gradient",
+    nNOS: "Neuronal nitric oxide synthase", "IFN-γ": "Interferon gamma",
 };
 
-// A lab table for passages: rows of [test, result, reference]
 const labs = (rows, head = ["Test", "Result", "Reference"]) => `<table><thead><tr>${head.map((h) => `<th>${h}</th>`).join("")}</tr></thead><tbody>${rows.map((r) => `<tr>${r.map((c) => `<td>${c}</td>`).join("")}</tr>`).join("")}</tbody></table>`;
 const supplement = (html) => `<div class="supplement"><p class="supplement-label">Supplementary information</p>${html}</div>`;
+const fig = (w, h, inner) => `<svg class="exam-fig" viewBox="0 0 ${w} ${h}" style="display:block;width:${Math.min(160, w / 4)}mm;height:auto;margin:1mm 0" font-family="Segoe UI, sans-serif">${inner}</svg>`;
+const T = (x, y, s, a = "middle", sz = 13) => `<text x="${x}" y="${y}" text-anchor="${a}" font-size="${sz}" fill="#333b44">${s}</text>`;
 
 /* =========================================================
-   Part 1: Mechanisms and data. Eight problems of 5 points each.
-   Question types: grid (rows, optional columns, answer as "up", "down", or "flat" per cell), sa (lines, words, work),
-   account (rows of results to attribute), sketch (axes, and curves for the answer), pathway (steps with one blank),
-   order (items and the correct order of their indexes), and mc (options, answer, and notes on every wrong option; select: 2 for two answers). Multiple choice is a follow-up, not a main type. Every question has a format (as named on the formats page),
-   points, answer, marking (one line per credit), and explanation.
+   Part 1: Foundations. Eight problems of 5 points.
    ========================================================= */
-export const PART1 = [
-    {
-        id: "p1-gland",
-        discipline: "Histology",
-        title: "Inside a gastric gland",
-        passage: `<p>A gastric gland from the body of the stomach is lined, from the surface down, by foveolar and mucous neck cells, then parietal cells, with chief cells at its base and scattered ECL cells. A parietal cell carries receptors for ACh (M3), gastrin (CCK-2), histamine (H2), somatostatin (SSTR2), and PGE2 (EP3).</p>`,
+const manometry = (() => {
+    const rows = [["Upper", 46], ["Middle", 92], ["Lower", 138], ["LES", 184]];
+    const pat = (x0, kind) => rows.map(([l, y], i) => {
+        const base = y, up = kind === "x" && i < 3 ? [x0 + 60 + i * 34] : [];
+        let d = `M${x0} ${base}`;
+        if (i < 3) { const at = kind === "x" ? x0 + 70 + i * 36 : x0 + 92; const hgt = kind === "x" ? 30 : 22; d += `H${at}Q${at + 12} ${base - hgt * 2} ${at + 26} ${base}H${x0 + 230}`; } else { d += kind === "x" ? `H${x0 + 60}Q${x0 + 70} ${base + 18} ${x0 + 84} ${base + 18}H${x0 + 160}Q${x0 + 176} ${base + 18} ${x0 + 184} ${base - 8}H${x0 + 230}` : `M${x0} ${base - 14}H${x0 + 60}Q${x0 + 74} ${base - 14} ${x0 + 84} ${base - 10}H${x0 + 160}Q${x0 + 176} ${base - 10} ${x0 + 190} ${base - 14}H${x0 + 230}`; }
+        return `<path d="${d}" fill="none" stroke="#0f766e" stroke-width="2"/>${kind === "x" ? T(x0 - 8, y + 4, l, "end") : ""}<line x1="${x0 + 56}" x2="${x0 + 56}" y1="16" y2="206" stroke="#b4513d" stroke-dasharray="3 3"/>`;
+    }).join("");
+    return fig(640, 240, `${pat(70, "x")}${pat(370, "y")}${T(184, 232, "Tracing A")}${T(484, 232, "Tracing B")}${T(126, 12, "swallow", "middle", 11)}${T(426, 12, "swallow", "middle", 11)}`);
+})();
+
+const part1 = [
+    { groups: ["Foundations and physiology", "Stomach"], discipline: "Histology",
+        passage: `<p>A 6-month-old has a homozygous loss of <em>KCNQ1</em>. Parietal cells are present in normal number and look swollen, with few canaliculi open. The oxyntic glands show no inflammation.</p><p>An adult has a small tumor in the duodenal wall that releases gastrin all day.</p>${supplement("<p>KCNQ1 is the K+ channel in the canaliculus. It lets K+ leak back into the lumen, where the H+/K+ ATPase needs it to swap for H+. The channel is also the one that repolarizes the heart.</p>")}`,
         questions: [
-            { id: "gland-grid", type: "grid", format: "Prediction grid", points: 2,
-                stem: "Predict the effect of each drug on acid secretion by the parietal cell.",
-                rows: ["A drug that blocks H2 receptors", "A drug that blocks M3 receptors", "A drug that activates EP3 receptors", "A drug that blocks SSTR2 receptors"],
-                answer: ["down", "down", "down", "up"],
-                marking: ["0.5 for each correct row"],
-                explanation: `<p>ACh (M3, Gq), gastrin (CCK-2, Gq), and histamine (H2, Gs) stimulate the parietal cell; somatostatin (SSTR2) and PGE2 (EP3) inhibit it through Gi. Blocking a stimulus lowers acid; activating EP3, as misoprostol does, lowers acid; blocking the somatostatin brake raises it.</p>` },
-            { id: "gland-tide", type: "sa", format: "Short answer", points: 2, words: 25,
-                stem: "Blood HCO3− rises briefly after a meal. Explain how the parietal cell causes this.",
-                answer: "Carbonic anhydrase makes H+ and HCO3− inside the cell; H+ goes to the lumen, while HCO3− leaves into the blood through the basolateral Cl−/HCO3− exchanger.",
-                marking: ["1 for carbonic anhydrase making H+ and HCO3−", "1 for HCO3− leaving into the blood in exchange for Cl−"],
-                explanation: `<p>This is the alkaline tide: for every H+ secreted into the lumen by the H+/K+ ATPase, one HCO3− enters the blood through AE2.</p>` },
-            { id: "gland-antrum", type: "mc", format: "Multiple choice", points: 1,
-                stem: "A biopsy is taken from the antrum rather than the body. Which cell would you expect to find there but not in the body?",
-                options: ["G cells", "Parietal cells", "Chief cells", "ECL cells", "D cells"],
-                answer: 0,
-                notes: { 1: "Parietal cells sit in the body and fundus.", 2: "Chief cells sit at the gland base in the body and fundus.", 3: "ECL cells are in the body and fundus.", 4: "D cells are found in the body, fundus, and antrum alike." },
-                marking: ["1 for G cells"],
-                explanation: `<p>G cells, which secrete gastrin, are in the antrum; parietal, chief, and ECL cells are in the body and fundus, and D cells throughout.</p>` },
-        ],
-    },
-    {
-        id: "p1-acid",
-        discipline: "Pharmacology",
-        title: "A new acid blocker",
-        passage: supplement(`<p>Drug Z is a new acid blocker. It binds the H+/K+ ATPase of parietal cells reversibly, competing with K+. Unlike a PPI, it is active as given, needs no activation by acid, and blocks the pump whether or not the parietal cell is secreting.</p>`),
+            { id: "p1-grid", type: "grid", format: "Prediction grid", points: 3, columns: ["Infant", "Adult"], stem: "Predict each value in each patient, compared with normal.", rows: ["Gastric acid", "Serum gastrin", "Antral somatostatin release"], answer: [["down", "up"], ["up", "up"], ["down", "up"]],
+                marking: ["0.5 for each correct cell"], explanation: "<p>Both have high gastrin. In the infant the pump cannot turn over without luminal K+, so acid is low, D cells are quiet, and gastrin is unrestrained. In the adult the tumor ignores acid, so acid is high, D cells release more somatostatin, and gastrin stays high anyway: Zollinger-Ellison syndrome. The acid, or gastric pH, separates them.</p>" },
+            { id: "p1-chain", type: "sa", format: "Unseen mechanism", points: 1, words: 15, stem: "Years later, the ECL cells in the body of the stomach are hyperplastic in both patients. Explain why.", answer: "Gastrin reaches CCK-2 receptors on ECL cells through blood and makes them grow.",
+                marking: ["1 for gastrin as a growth signal to ECL cells"], explanation: "<p>The signal is the same whether acid is low or high, because ECL cells respond to gastrin.</p>" },
+            { id: "p1-drug", type: "mc", format: "Multiple choice", points: 1, stem: "The adult takes a drug that lowers acid best. How does it work?", options: ["It binds the H+/K+ ATPase irreversibly", "It competes with histamine at H2 receptors on parietal cells", "It neutralizes the H+ already in the stomach lumen", "It activates EP3 receptors to lower cAMP", "It coats ulcers and needs acid to polymerize"], answer: 0,
+                notes: { 1: "An H2R antagonist, which blocks one signal of three.", 2: "An antacid, which is short-lived.", 3: "Misoprostol, which is weaker and protects the mucosa.", 4: "Sucralfate, which does not lower acid." }, marking: ["1 for the PPI mechanism"], explanation: "<p>A PPI stops the final step whatever the signal, which is why it is used at high dose in Zollinger-Ellison syndrome.</p>" },
+        ] },
+    { groups: ["Foundations and physiology", "Esophagus"], discipline: "Physiology",
+        passage: `<p>Two people swallow water during manometry. Tracing A is normal.</p>${manometry}<p>A third, healthy person eats a solid egg meal and drinks water. Each is labeled separately and followed for 4 hours.</p>`,
         questions: [
-            { id: "acid-grid", type: "grid", format: "Unseen mechanism", points: 2,
-                stem: "A patient takes drug Z daily for 4 weeks. Predict the change in each value compared with before treatment.",
-                rows: ["Gastric pH", "Serum gastrin", "Conversion of pepsinogen to pepsin", "Absorption of dietary iron"],
-                answer: ["up", "up", "down", "down"],
-                marking: ["0.5 for each correct row"],
-                explanation: `<p>Blocking the pump lowers HCl, so gastric pH rises. Excess protons normally make D cells release somatostatin, which inhibits G cells; with less acid there is less somatostatin, so gastrin rises. HCl converts pepsinogen to pepsin and helps reduce Fe3+ to Fe2+ for absorption, so both fall.</p>` },
-            { id: "acid-timing", type: "sa", format: "Unseen mechanism", points: 2, words: 25,
-                stem: "A PPI is taken before the first meal of the day, but drug Z can be taken at any time. Explain why, from how each drug reaches its target.",
-                answer: "PPI: a prodrug activated by acid in secreting parietal cells, so timed to a meal. Drug Z: active as given, blocks resting pumps.",
-                marking: ["1 for the PPI needing activation by acid in actively secreting parietal cells, so it is timed to a meal", "1 for drug Z needing no activation and blocking pumps at rest"],
-                explanation: `<p>PPIs are prodrugs activated in parietal cell canaliculi, which happens only when the cell is secreting acid, so they work best when taken before the meal that stimulates secretion.</p>` },
-            { id: "acid-offset", type: "sa", format: "Unseen mechanism", points: 1, words: 15,
-                stem: "After the last dose, would you expect acid secretion to recover sooner after drug Z or after a PPI? Explain.",
-                answer: "Drug Z: its block reverses as it clears; a PPI's lasts until new pumps form.",
-                marking: ["1 for sooner after drug Z, with reversible versus irreversible binding as the reason"],
-                explanation: `<p>A PPI binds the H+/K+ ATPase irreversibly, so its effect outlasts the drug in the blood; a reversible blocker's effect follows its level.</p>` },
-        ],
-    },
-    {
-        id: "p1-foregut",
-        discipline: "Embryology",
-        title: "Two vomiting babies",
-        passage: `<ul><li><strong>Baby A</strong> vomits within a day of the first feed. The vomit is green, and an x-ray shows a double bubble.</li><li><strong>Baby B</strong>, aged 4 weeks, has projectile vomiting after feeds. The vomit is not green, and an olive-shaped mass is felt in the epigastrium.</li></ul>`,
+            { id: "p2-film", type: "fields", format: "Read the graph", points: 2, stem: "Describe what is abnormal in tracing B, and name one thing the tracing cannot tell you.", fields: ["What B shows", "What it cannot tell you"], answer: ["Pressure rises at every level at once, and the LES never relaxes: no wave travels.", "Why the LES is shut; a tumor at the junction gives the same picture."],
+                marking: ["1 for simultaneous pressures with failed LES relaxation", "1 for the cause, such as a tumor at the junction, not being shown"], explanation: "<p>Both the gradient of inhibition and the opening of the LES are lost, as when inhibitory (nitric oxide) neurons are missing. A manometry pattern names a mechanism, not a cause.</p>" },
+            { id: "p2-sketch", type: "sketch", format: "Sketch the trend", points: 2, stem: "For the third person, draw how much of the solid and how much of the liquid is left in the stomach over time. Label each curve.", axes: { x: "Hours after the meal", y: "% still in the stomach", xTicks: [0, 1, 2, 3, 4], yTicks: [0, 25, 50, 75, 100], start: [0, 100] },
+                curves: [{ label: "Liquid", points: [[0, 100], [0.3, 72], [0.7, 45], [1.2, 24], [2, 8], [3, 2]] }, { label: "Solid", points: [[0, 100], [0.6, 98], [1.2, 84], [2, 55], [3, 24], [4, 6]] }],
+                answer: "Liquid falls at once along a curve; solid stays for a lag while it is ground, then falls in a straighter line, with 10% or less left at 4 hours.", marking: ["1 for liquid falling immediately and faster", "1 for a lag before the solid falls, nearly empty by 4 hours"], explanation: "<p>The pylorus lets liquid through but returns pieces over 2 mm to be ground.</p>" },
+            { id: "p2-dm", type: "sa", format: "Short answer", points: 1, words: 20, stem: "A person with long-standing type 1 diabetes has slow emptying of solids and no blockage. Name two structures whose damage explains it.", answer: "The vagus nerve (with enteric neurons) and the interstitial cells of Cajal.", marking: ["0.5 for vagal or enteric nerves", "0.5 for ICC"], explanation: "<p>High glucose and neuropathy weaken relaxation, antral grinding, and the pacemaker.</p>" },
+        ] },
+    { groups: ["Foundations and physiology", "Malabsorption and diarrhea", "Pharmacology"], discipline: "Physiology",
+        passage: `<p>A new drug blocks ASBT and nothing else. It is tested in 20 people with severe cholestatic itch. Within a week their itch is better, but a third have watery stool. One has stool Na+ 88 mmol/L and stool K+ 38 mmol/L.</p>${supplement("<p>ASBT is the transporter that takes bile salts back in the terminal ileum. In the ileum, returning bile salts make the enterocyte release FGF19, which travels to the liver and suppresses CYP7A1.</p>")}`,
         questions: [
-            { id: "fg-bile", type: "sa", format: "Two patients", points: 2, words: 25,
-                stem: "Explain why one vomit is green and the other is not, from where each obstruction lies.",
-                answer: "A: the atresia usually lies below the ampulla, so bile enters above it. B: the pylorus lies above the ampulla, so there is no bile.",
-                marking: ["1 for Baby A's block lying below the ampulla", "1 for Baby B's block lying above it, at the pylorus"],
-                explanation: `<p>Duodenal atresia comes from failed recanalization, usually below the ampulla; pyloric stenosis is an acquired narrowing of the pylorus, causing nonbilious vomiting at 3–6 weeks.</p>` },
-            { id: "fg-grid", type: "grid", format: "Prediction grid", points: 2,
-                stem: "Predict each value in Baby B after a week of vomiting.",
-                rows: ["Plasma Cl−", "Plasma K+", "Plasma HCO3−", "Blood pH"],
-                answer: ["down", "down", "up", "up"],
-                marking: ["0.5 for each correct row"],
-                explanation: `<p>Vomiting gastric contents loses HCl, leaving a hypochloremic, hypokalemic metabolic alkalosis.</p>` },
-            { id: "fg-poly", type: "mc", format: "Multiple choice", points: 1,
-                stem: "Baby A's mother had polyhydramnios. What best explains it?",
-                options: ["The fetus could not swallow amniotic fluid past the obstruction", "The fetal kidneys made too much urine", "The placenta leaked fluid into the amniotic sac through a small tear", "Maternal diabetes raised amniotic fluid volume", "Bile from the fetus collected in the amniotic sac"],
-                answer: 0,
-                notes: { 1: "Fetal urine output is not the problem in a GI obstruction.", 2: "The placenta does not explain an excess of amniotic fluid here.", 3: "Nothing in the case suggests maternal diabetes; the obstruction explains the excess.", 4: "Bile does not collect in the amniotic sac." },
-                marking: ["1 for the fetus being unable to swallow past the obstruction"],
-                explanation: `<p>In esophageal or duodenal atresia, the fetus cannot swallow amniotic fluid past the obstruction, so it accumulates.</p>` },
-        ],
-    },
-    {
-        id: "p1-transporter",
-        discipline: "Physiology",
-        title: "A missing transporter",
-        passage: supplement(`<p>In the apical membrane of enterocytes, transporter S carries glucose and galactose into the cell together with Na+. Fructose enters by a different transporter. An infant is born with no working transporter S. His brush border enzymes are normal.</p>`),
+            { id: "p3-grid", type: "grid", format: "Prediction grid", points: 2, stem: "Predict each value on the drug, compared with before.", rows: ["Bile salts in stool", "Serum FGF19", "Hepatic CYP7A1", "LDL in blood"], answer: ["up", "down", "up", "down"], marking: ["0.5 for each correct row"], explanation: "<p>Bile salts are lost in stool, so less reaches the ileal cell and FGF19 falls. CYP7A1 is released from its brake and turns cholesterol into new bile salts, so the liver takes up more LDL and blood LDL falls.</p>" },
+            { id: "p3-gap", type: "sa", format: "Calculation", points: 2, work: true, lines: 1, stem: "Calculate the stool osmotic gap, and say which kind of diarrhea it suggests and why bile salts would cause it.", answer: "Gap = 290 − 2 × (88 + 38) = 38 mOsm/kg (under 50): secretory, because bile salts in the colon stimulate water and Cl− secretion.", marking: ["1 for 38 mOsm/kg, secretory", "1 for bile salts stimulating colonic secretion"], explanation: "<p>Most of the osmolality is Na+ and K+, so the water is secreted rather than held by an unabsorbed solute.</p>" },
+            { id: "p3-dose", type: "sa", format: "Short answer", points: 1, words: 20, stem: "At a much higher dose, the stool becomes greasy as well. Explain why.", answer: "Synthesis cannot keep up, so the pool falls below the level needed for micelles, and fat is not absorbed.", marking: ["1 for a depleted pool below the micellar level"], explanation: "<p>The liver can replace moderate losses, not large ones, which is why a long ileal resection causes fat malabsorption.</p>" },
+        ] },
+    { groups: ["Foundations and physiology", "Other liver disease"], discipline: "Physiology",
+        passage: `<p>Three people have abnormal liver tests.</p>${labs([["A", "Took 18 g of paracetamol 36 hours ago", "ALT 6400"], ["B", "Swallowed an iron tablet overdose", "ALT 1900"], ["C", "Stone in the bile duct for 3 weeks", "ALT 110"]], ["Person", "History", "ALT (normal under 40 U/L)"])}<p>Person C: INR 2.1 (0.8–1.2), albumin 37 g/L (35–50).</p>`,
         questions: [
-            { id: "sglt-grid", type: "grid", format: "Unseen mechanism", points: 2,
-                stem: "Predict each finding compared with a healthy infant.",
-                rows: ["Watery diarrhea after breast milk", "Watery diarrhea after a formula whose only sugar is fructose", "Breath hydrogen after a glucose drink", "Lactase activity in a small bowel biopsy"],
-                answer: ["up", "flat", "up", "flat"],
-                marking: ["0.5 for each correct row"],
-                explanation: `<p>Lactase splits lactose into glucose and galactose, which transporter S would carry, so breast milk causes diarrhea while fructose is absorbed normally. Unabsorbed glucose reaches the colon, where bacteria ferment it and produce hydrogen. The enzymes themselves are normal.</p>` },
-            { id: "sglt-ors", type: "sa", format: "Unseen mechanism", points: 2, words: 25,
-                stem: "Oral rehydration solution rehydrates patients with cholera but would worsen this infant's diarrhea. Explain both.",
-                answer: "In cholera, sodium-glucose cotransport is intact, so salt and water follow glucose in. Here, glucose stays in the lumen, holding water.",
-                marking: ["1 for cholera: intact sodium-glucose cotransport carries salt and water in", "1 for the infant: unabsorbed glucose holds water in the gut"],
-                explanation: `<p>Transporter S is the sodium-glucose cotransporter that ORS relies on, so its absence turns ORS into an osmotic load.</p>` },
-            { id: "sglt-gap", type: "sa", format: "Unseen mechanism", points: 1, words: 15,
-                stem: "Would the infant's stool osmotic gap be high or low? Explain.",
-                answer: "High: unabsorbed sugars are osmotically active, so electrolytes account for little of the stool osmolality.",
-                marking: ["1 for high, with the reason"],
-                explanation: `<p>This is an osmotic diarrhea, with a gap over 75 mOsm/kg.</p>` },
-        ],
-    },
-    {
-        id: "p1-diarrhea",
-        discipline: "Physiology",
-        title: "Two kinds of watery diarrhea",
-        passage: `<p>Two patients have chronic watery diarrhea.</p>
-<ul><li><strong>Patient A</strong>, aged 30, has bloating and diarrhea after drinking milk.</li><li><strong>Patient B</strong>, aged 50, passes about 3 L of watery stool a day and has a low plasma K+.</li></ul>
-${labs([["Stool Na+", "25 mmol/L", "95 mmol/L"], ["Stool K+", "30 mmol/L", "45 mmol/L"]], ["Test", "Patient A", "Patient B"])}
-<p class="illustrative">Illustrative data.</p>
-${supplement(`<p>Stool osmotic gap = 290 − 2 × (stool Na+ + stool K+), in mOsm/kg. A gap under 50 suggests secretory diarrhea; over 75, osmotic diarrhea.</p>`)}`,
+            { id: "p4-zones", type: "sa", format: "Two patients", points: 2, words: 25, stem: "A biopsy of A would show dead cells around the central vein, and of B around the portal tract. Explain both.", answer: "A: zone 3 CYP enzymes make NAPQI and have the least oxygen and glutathione. B: iron arrives in portal blood and meets zone 1 first.", marking: ["1 for zone 3 activating the toxin, with little oxygen or glutathione", "1 for zone 1 meeting a direct portal toxin first"], explanation: "<p>The order in which cells meet the blood, and what they can do to it, decides which zone dies.</p>" },
+            { id: "p4-grid", type: "grid", format: "Prediction grid", points: 2, stem: "Predict each value in A at 36 hours if liver function is failing, compared with the day before.", rows: ["Factor VII", "Albumin", "Glucose", "Ammonia"], answer: ["down", "flat", "down", "up"], marking: ["0.5 for each correct row"], explanation: "<p>Factor VII lasts hours and albumin about 3 weeks, so a normal albumin says little on day 2. Gluconeogenesis and the urea cycle fail early.</p>" },
+            { id: "p4-vitk", type: "sa", format: "Short answer", points: 1, words: 20, stem: "C's INR is normal 24 hours after IV vitamin K. What does that show?", answer: "Vitamin K was not absorbed without bile, and the liver can still make clotting factors.", marking: ["1 for vitamin K deficiency rather than failed synthesis"], explanation: "<p>Correction with IV vitamin K separates cholestasis from a failing liver.</p>" },
+        ] },
+    { groups: ["Foundations and physiology", "Pancreas"], discipline: "Physiology",
+        passage: `<p>Pancreatic juice is collected through a catheter before and after an infusion.</p>${labs([["Flow (mL/min)", "0.3", "4.0"], ["HCO3− (mmol/L)", "40", "130"], ["Cl− (mmol/L)", "110", "30"], ["Na+ (mmol/L)", "142", "142"], ["Amylase", "Very little", "Very little"]], ["Measure", "Before", "After the infusion"])}<p>When a second hormone is added, the juice carries far more enzyme, and more HCO3− than either hormone gave alone.</p>`,
         questions: [
-            { id: "dia-calc", type: "sa", format: "Calculation", points: 2, work: true, lines: 4,
-                stem: "Calculate the stool osmotic gap for each patient, and classify each diarrhea.",
-                answer: "A: 290 − 2 × (25 + 30) = 180 mOsm/kg, osmotic. B: 290 − 2 × (95 + 45) = 10 mOsm/kg, secretory.",
-                marking: ["1 for Patient A: 180, osmotic", "1 for Patient B: 10, secretory"],
-                explanation: `<p>In osmotic diarrhea, an unabsorbed solute holds water in the lumen, so electrolytes account for little of the stool osmolality and the gap is large. In secretory diarrhea, the gut actively secretes electrolytes, which account for nearly all of it.</p>` },
-            { id: "dia-fast", type: "sa", format: "Two patients", points: 2, words: 25,
-                stem: "Each patient fasts for 48 hours in hospital. Predict what happens to each patient's diarrhea, and explain.",
-                answer: "A stops: without milk there is no unabsorbed solute. B continues: the gut keeps secreting electrolytes and water whether or not she eats.",
-                marking: ["1 for Patient A stopping, with the reason", "1 for Patient B continuing, with the reason"],
-                explanation: `<p>Osmotic diarrhea depends on what is eaten, so it settles with fasting; secretory diarrhea, as from a vipoma, does not.</p>` },
-            { id: "dia-test", type: "mc", format: "Multiple choice", points: 1,
-                stem: "Which test would confirm the cause in Patient A?",
-                options: ["Hydrogen breath test after a lactose load", "Fecal elastase", "tTG-IgA with total IgA, for celiac disease", "Serum VIP level", "Stool culture for bacteria and parasites"],
-                answer: 0,
-                notes: { 1: "Fecal elastase tests pancreatic function, which would not depend on milk.", 2: "tTG-IgA tests for celiac disease, which is triggered by gluten, not milk.", 3: "VIP is a cause of secretory diarrhea, which Patient B's gap suggests.", 4: "Infection would not cause diarrhea only after milk." },
-                marking: ["1 for the hydrogen breath test"],
-                explanation: `<p>Undigested lactose reaches the colon, where bacteria ferment it and produce hydrogen, which is breathed out.</p>` },
-        ],
-    },
-    {
-        id: "p1-malabsorption",
-        discipline: "Pathophysiology",
-        title: "Two patients with greasy stools",
-        passage: `<p>Two adults have had 6 months of pale, greasy, floating stools and weight loss.</p>
-<ul><li><strong>Patient A</strong> has type 1 diabetes and an itchy, blistering rash on her elbows.</li><li><strong>Patient B</strong> has chronic pancreatitis after years of heavy drinking.</li></ul>
-${supplement(`<p>D-xylose is a sugar absorbed by the small intestinal mucosa without needing to be digested. After an oral dose, the amount that appears in the urine reflects how well the mucosa absorbs.</p>`)}`,
+            { id: "p5-account", type: "account", format: "Account for every result", points: 3, stem: "Explain each result of the infusion.", rows: ["HCO3− increases to 130", "Cl− decreases to 30", "Na+ stays at 142"], answer: ["Secretin increases cAMP in duct cells, opening CFTR, and HCO3− leaves by exchange for Cl−.", "Each HCO3− leaving the duct cell takes the place of a Cl−; at high flow little is exchanged back.", "Na+ follows between the cells to balance the charge, so juice stays isotonic with plasma."], marking: ["1 for each correct explanation"], explanation: "<p>The first hormone is secretin: water and HCO3−, little enzyme.</p>" },
+            { id: "p5-second", type: "mc", format: "Multiple choice", points: 1, stem: "Which pair of signals explains why the two hormones together do more than either alone?", options: ["cAMP from secretin and Ca2+ from CCK", "cAMP from secretin and cAMP from VIP", "Ca2+ from CCK and Ca2+ from ACh", "cAMP from somatostatin and Ca2+ from CCK", "cGMP from guanylin and Ca2+ from CCK"], answer: 0,
+                notes: { 1: "The same messenger adds, but does not potentiate.", 2: "Both use Ca2+.", 3: "Somatostatin lowers cAMP and secretion.", 4: "Guanylin acts on the bowel, not the pancreatic duct." }, marking: ["1 for secretin and CCK through different messengers"], explanation: "<p>Different second messengers give more than their sum.</p>" },
+            { id: "p5-cf", type: "sa", format: "Short answer", points: 1, words: 20, stem: "In cystic fibrosis, the duct juice stays thick even after secretin is given. Explain why.", answer: "CFTR does not open, so HCO3− and water do not enter the duct, and protein plugs it.", marking: ["1 for no CFTR-driven HCO3− and water"], explanation: "<p>Plugged ducts lead to fibrosis and enzyme loss.</p>" },
+        ] },
+    { groups: ["Foundations and physiology", "Inflammation and ischemia"], discipline: "Embryology and anatomy",
+        passage: `<p>Two people have dead bowel supplied by the same artery. <strong>Newborn:</strong> green vomiting on day 3, then blood in the stool. <strong>Adult of 74:</strong> in A-fib, off anticoagulant, with sudden severe pain. At operation the adult's first 40 cm of jejunum is alive; the newborn's is not.</p>`,
         questions: [
-            { id: "mal-grid", type: "grid", format: "Two patients", points: 3,
-                stem: "Predict each result in each patient compared with normal.",
-                columns: ["Patient A", "Patient B"],
-                rows: ["Urine D-xylose after an oral dose", "Fecal elastase", "tTG-IgA"],
-                answer: [["down", "flat"], ["flat", "down"], ["up", "flat"]],
-                marking: ["0.5 for each correct cell"],
-                explanation: `<p>Patient A has celiac disease, suggested by type 1 diabetes and dermatitis herpetiformis: the damaged mucosa absorbs D-xylose poorly, and tTG-IgA is raised. Patient B has maldigestion from pancreatic insufficiency: the mucosa is healthy, so D-xylose is absorbed normally, but fecal elastase is low. This is why the D-xylose test comes first, to separate malabsorption from maldigestion.</p>` },
-            { id: "mal-vitamins", type: "sa", format: "Two patients", points: 2, words: 25,
-                stem: "Both patients have low vitamins A, D, E, and K. Explain why, separately for each patient.",
-                answer: "A: the damaged mucosa cannot absorb micelles. B: without lipase, fat is undigested, so the micelles that carry the vitamins do not form.",
-                marking: ["1 for Patient A: mucosal damage prevents uptake from micelles", "1 for Patient B: no lipase, so fat is undigested and micelles do not carry the vitamins"],
-                explanation: `<p>Fat-soluble vitamins travel in micelles with the products of fat digestion and leave enterocytes in chylomicrons, so they fail when either digestion (lipase) or absorption (mucosa) fails.</p>` },
-        ],
-    },
-    {
-        id: "p1-ileum",
-        discipline: "Physiology",
-        title: "After an ileal resection",
-        passage: `<p>A 34-year-old woman with Crohn disease had 100 cm of her terminal ileum resected 2 years ago.</p>`,
+            { id: "p6-two", type: "sa", format: "Two patients", points: 2, words: 25, stem: "Explain how flow through this artery was blocked in each person.", answer: "Newborn: malrotation leaves a narrow mesentery, which twists around the SMA. Adult: a clot from the heart lodges in the SMA.", marking: ["1 for midgut volvulus after failed rotation", "1 for an embolus from atrial fibrillation"], explanation: "<p>Both starve the midgut; only the newborn's veins are twisted too.</p>" },
+            { id: "p6-spare", type: "sa", format: "Short answer", points: 2, words: 25, stem: "Why is the adult's proximal jejunum alive, when a thrombus at the SMA origin would usually kill it?", answer: "An embolus lodges past the first branches, so proximal jejunum still gets blood from them; a thrombus at the origin blocks every branch.", marking: ["1 for an embolus lodging beyond the first jejunal branches", "1 for an origin thrombus blocking all of them"], explanation: "<p>The sparing is a clue to the mechanism, and to an embolus.</p>" },
+            { id: "p6-mc", type: "mc", format: "Multiple choice", points: 1, stem: "Which part of the gut does this artery supply?", options: ["The duodenum past the ampulla to two-thirds along the transverse colon", "The stomach to the first part of the duodenum", "The jejunum and ileum only", "The terminal ileum to the rectum", "The splenic flexure to the upper rectum"], answer: 0, notes: { 1: "Celiac territory.", 2: "Leaves out the right colon.", 3: "Includes hindgut.", 4: "Inferior mesenteric territory." }, marking: ["1 for the midgut range"], explanation: "<p>The edges of the territory are where watersheds lie.</p>" },
+        ] },
+    { groups: ["Foundations and physiology", "Esophagus"], discipline: "Pathophysiology",
+        passage: `<p>A toxin destroys only the neurons in the gut wall that make nNOS. Muscle, ICC, and excitatory neurons are normal.</p>`,
         questions: [
-            { id: "ileum-order", type: "order", format: "Ordering", points: 1,
-                stem: "Number the steps of vitamin B12 absorption in order.",
-                items: ["The B12 and IF complex is absorbed", "B12 binds haptocorrin from saliva", "Proteases free B12, and it binds IF", "Transcobalamin carries B12 in the blood"],
-                order: [1, 2, 0, 3],
-                answer: "B12 binds haptocorrin in the stomach; proteases free it in the duodenum, where it binds IF; the complex is absorbed in the terminal ileum; transcobalamin carries it in the blood.",
-                marking: ["1 for all four in order"],
-                explanation: `<p>Each step depends on a different site: saliva and the stomach, the pancreas and duodenum, and the terminal ileum.</p>` },
-            { id: "ileum-grid", type: "grid", format: "Prediction grid", points: 2,
-                stem: "Compared with before her surgery, predict each of the following.",
-                rows: ["B12 absorption", "Bile salts returning to the liver", "Folate absorption", "Risk of cholesterol gallstones"],
-                answer: ["down", "down", "flat", "up"],
-                marking: ["0.5 for each correct row"],
-                explanation: `<p>The terminal ileum absorbs the B12 and IF complex and reabsorbs most bile salts; folate is absorbed in the jejunum. With fewer bile salts returning, bile is more saturated with cholesterol, so ileal resection is a risk factor for gallstones.</p>` },
-            { id: "ileum-b12", type: "sa", format: "Short answer", points: 2, words: 25,
-                stem: "She now has a macrocytic anemia with a low B12. Her IF antibodies are negative. Why would normal oral doses of B12 fail, and which route gets around the problem?",
-                answer: "The terminal ileum, where the B12 and IF complex is absorbed, is gone; IM B12 bypasses the gut.",
-                marking: ["1 for the loss of the absorption site in the terminal ileum", "1 for IM B12"],
-                explanation: `<p>Negative IF antibodies point away from autoimmune gastritis: IF is still made, but its partner site is gone.</p>` },
-        ],
-    },
-    {
-        id: "p1-watershed",
-        discipline: "Anatomy",
-        title: "Where the blood supply thins",
-        passage: `<p>A 74-year-old man needs high-dose vasopressors for septic shock. On day 2 he has crampy left-sided abdominal pain and passes blood per rectum.</p>`,
+            { id: "p7-path", type: "pathway", format: "Pathway completion", points: 2, stem: "Complete the missing step of the normal reflex, ahead of a bolus.", steps: ["A bolus stretches the wall", "A sensory neuron fires, and interneurons carry the signal toward the anus", "", "cGMP increases in the muscle, and it relaxes ahead of the bolus"], answer: "An inhibitory motor neuron releases nitric oxide (with VIP and ATP) onto the muscle.", marking: ["1 for an inhibitory motor neuron", "1 for nitric oxide (VIP or ATP accepted with it)"], explanation: "<p>Behind the bolus, excitatory neurons release ACh and substance P; those are intact in this patient.</p>" },
+            { id: "p7-three", type: "fields", format: "Unseen mechanism", points: 2, stem: "Predict the effect of the toxin at each site, then state the principle the three share.", fields: ["Lower esophageal sphincter", "Rectosigmoid", "Pylorus", "Shared principle"], answer: ["Does not relax: achalasia", "A segment that stays contracted, as in Hirschsprung disease", "Stays contracted, as in infantile hypertrophic pyloric stenosis", "Where inhibitory tone is lost, muscle and sphincters cannot relax."], marking: ["0.5 for each"], explanation: "<p>Nitric oxide loss is part of the mechanism of all three, so a spastic segment in different places can share one cause.</p>" },
+            { id: "p7-icc", type: "sa", format: "Short answer", points: 1, words: 15, stem: "Slow waves recorded from the bowel are normal. Explain why.", answer: "ICC make them, and the toxin spares ICC; inhibitory neurons do not set the rhythm.", marking: ["1 for ICC being intact"], explanation: "<p>Rhythm and nerve control are separate layers.</p>" },
+        ] },
+    { groups: ["Foundations and physiology", "Inflammation and ischemia", "Pharmacology"], discipline: "Immunology",
+        passage: `<p>A 33-year-old man with ulcerative colitis is treated with infliximab alone. He is well at week 14 and has a flare at week 46. Two other drugs are being considered: one binds p40, and the other binds α4β7.</p>${labs([["Infliximab trough", "Week 14: 9.1 µg/mL", "Week 46: undetectable"], ["Antidrug antibodies", "Week 14: none", "Week 46: high"]], ["Test", "Week 14", "Week 46"]).replace(/Week 14: /g, "").replace(/Week 46: /g, "")}${supplement("<p>p40 is shared by IL-12 and IL-23. IL-12 drives Th1 cells, and IL-23 sustains Th17 cells. α4β7 is the integrin that lets T cells leave the blood for the gut wall.</p>")}`,
         questions: [
-            { id: "ws-site", type: "mc", format: "Multiple choice", points: 1,
-                stem: "Which two sites are most at risk in this setting?",
-                options: ["The splenic flexure and the rectosigmoid junction", "The cecum and the hepatic flexure", "The duodenum and the jejunum", "The terminal ileum and the appendix", "The esophagus and the fundus at the top of the stomach"],
-                answer: 0,
-                notes: { 1: "These lie within single arterial territories, not at the watershed junctions.", 2: "The duodenum and jejunum are not the classic watershed areas.", 3: "The terminal ileum and appendix are not where low-flow ischemia concentrates.", 4: "The upper GI tract has a rich, overlapping supply." },
-                marking: ["1 for the splenic flexure and rectosigmoid junction"],
-                explanation: `<p>The splenic flexure (Griffiths point) and the rectosigmoid junction (Sudeck point) are watershed areas, which account for about 70% of ischemic colitis.</p>` },
-            { id: "ws-why", type: "sa", format: "Short answer", points: 2, words: 25,
-                stem: "Explain why these sites suffer first when BP falls.",
-                answer: "They lie at the edge of two arterial territories, where perfusion is lowest, so a fall in pressure leaves them least oxygen.",
-                marking: ["1 for lying at the junction of two arterial territories", "1 for the lowest perfusion there when pressure falls"],
-                explanation: `<p>Hypoperfusion of the IMA, from shock or vasopressors, decreases oxygen supply most where territories meet, causing LLQ pain and hematochezia.</p>` },
-            { id: "ws-grid", type: "grid", format: "Prediction grid", points: 2,
-                stem: "If the ischemia progresses to infarction, predict each value.",
-                rows: ["Serum lactate", "Anion gap", "Plasma HCO3−", "Blood pH"],
-                answer: ["up", "up", "down", "down"],
-                marking: ["0.5 for each correct row"],
-                explanation: `<p>Anaerobic respiration in ischemic bowel produces lactic acid, an AGMA: lactate and the anion gap rise as HCO3− and pH fall.</p>` },
-        ],
-    },
-    {
-        id: "p1-stone",
-        discipline: "Pathophysiology",
-        title: "A stone in the duct",
-        passage: `<p>A 47-year-old woman develops RUQ pain at time 0 as a gallstone lodges in her CBD and completely blocks it. It stays there until ERCP on day 4. She has no fever, and her lipase is normal at first.</p>`,
-        questions: [
-            { id: "stone-sketch", type: "sketch", format: "Sketch the trend", points: 2,
-                stem: "Sketch the expected course of ALT and of ALP from time 0 to day 4, as multiples of the upper limit of normal. Label each line. Both start at the dot.",
-                axes: { x: "Days", xTicks: [0, 1, 2, 3, 4], y: "× upper limit of normal", yTicks: [0, 2, 4, 6, 8, 10], start: [0, 1] },
-                curves: [
-                    { label: "ALT", points: [[0, 1], [0.5, 6], [1, 8], [1.5, 6.5], [2, 4.5], [3, 3], [4, 2.2]] },
-                    { label: "ALP", points: [[0, 1], [1, 1.6], [2, 2.4], [3, 3.1], [4, 3.6]] },
-                ],
-                answer: "ALT spikes early, within the first day or so, then falls despite the ongoing block. ALP rises more slowly and keeps rising over the days the duct stays blocked.",
-                marking: ["1 for an early ALT spike that then falls", "1 for a slower, steady ALP rise over the days"],
-                explanation: `<p>In choledocholithiasis, a cholestatic pattern rises over days, while AST and ALT can spike early and then fall. The early ALT rise reflects acute hepatocyte stress from the sudden rise in pressure; ALP reflects ongoing obstruction of bile flow. Values are illustrative.</p>` },
-            { id: "stone-grid", type: "grid", format: "Prediction grid", points: 2,
-                stem: "On day 3, predict each value compared with normal.",
-                rows: ["Conjugated bilirubin", "Bilirubin in urine", "Urobilinogen in urine", "GGT"],
-                answer: ["up", "up", "down", "up"],
-                marking: ["0.5 for each correct row"],
-                explanation: `<p>Conjugated bilirubin backs up into blood, and only conjugated bilirubin is water soluble, so it appears in urine. Urobilinogen is made by gut bacteria from bilirubin that reaches the gut; with a complete block, none does, so urine urobilinogen disappears. GGT rises with ALP in cholestasis.</p>` },
-            { id: "stone-lipase", type: "sa", format: "Short answer", points: 1, words: 15,
-                stem: "On day 4, before ERCP, her lipase is 6 times normal and she has severe epigastric pain radiating to her back. What has happened?",
-                answer: "The stone moved to the ampulla, blocking the pancreatic duct: gallstone pancreatitis.",
-                marking: ["1 for the stone at the ampulla causing gallstone pancreatitis"],
-                explanation: `<p>A stone in the CBD leaves lipase normal; at the ampulla, it blocks the bile and pancreatic ducts together, and lipase rises 3 or more times.</p>` },
-        ],
-    },
-    {
-        id: "p1-ammonia",
-        discipline: "Pathophysiology",
-        title: "From the gut to the brain",
-        passage: supplement(`<p>Colonic bacteria break down protein that reaches the colon, including blood, into ammonia, which is absorbed into portal blood. A healthy liver removes it by converting it to urea.</p>`),
-        questions: [
-            { id: "nh3-pathway", type: "pathway", format: "Pathway completion", points: 2,
-                stem: "Complete the missing step in this pathway in a patient with cirrhosis.",
-                steps: ["Colonic bacteria make ammonia from protein", "Ammonia is absorbed into portal blood", null, "Ammonia reaches the brain", "Hepatic encephalopathy"],
-                answer: "The failing liver converts little ammonia to urea, and portal blood bypasses the liver through portosystemic collaterals, so ammonia reaches the systemic circulation.",
-                marking: ["1 for reduced conversion to urea by failing hepatocytes", "1 for blood bypassing the liver through portosystemic collaterals"],
-                explanation: `<p>Cirrhosis decreases ammonia clearance. Portal hypertension opens collaterals, such as varices, through which portal blood reaches the systemic circulation without passing the hepatocytes.</p>` },
-            { id: "nh3-drugs", type: "sa", format: "Short answer", points: 2, words: 25,
-                stem: "Lactulose and rifaximin are both used to treat hepatic encephalopathy. For each, name the step of the pathway it acts on, and how.",
-                answer: "Rifaximin reduces the bacteria that make ammonia (first step). Lactulose is fermented to acids that trap ammonia as NH4+, so less is absorbed.",
-                marking: ["1 for rifaximin reducing ammonia-producing bacteria", "1 for lactulose trapping ammonia as NH4+ so less is absorbed"],
-                explanation: `<p>Rifaximin is under 1% absorbed, so it acts on gut bacteria; colonic bacteria ferment lactulose to acids, trapping ammonia as NH4+, and its osmotic effect clears the colon.</p>` },
-            { id: "nh3-bleed", type: "mc", format: "Multiple choice", points: 1,
-                stem: "A man with cirrhosis, previously well, becomes confused 2 days after a variceal bleed. Which explanation fits the pathway best?",
-                options: ["Blood in the gut is a protein load that colonic bacteria turn into ammonia", "Blood loss lowers cerebral perfusion until the brain becomes ischemic", "Bleeding stimulates the liver to convert more ammonia into urea", "Clotted blood blocks the collaterals, so ammonia is trapped in the brain", "Iron released from digested blood crosses into the brain and causes cerebral edema"],
-                answer: 0,
-                notes: { 1: "Hypoperfusion can confuse, but the pathway explains a rise in ammonia two days later.", 2: "More conversion to urea would lower ammonia, not raise it.", 3: "Collaterals carry portal blood around the liver; blocking them would reduce, not increase, the ammonia reaching the brain.", 4: "Iron does not cause hepatic encephalopathy; ammonia does." },
-                marking: ["1 for the protein load turned into ammonia"],
-                explanation: `<p>Upper GI bleeding delivers protein to the colon, raising ammonia production at the first step while clearance stays impaired.</p>` },
-        ],
-    },
-];
-/* =========================================================
-   Part 2: Unfolding cases. Three patients of 15 points each, in 60 minutes.
-   Each case has an opening, a short recap repeated at the top of its later pages, stages of new data (each after the
-   first starts a new page with "do not turn back"), and key points printed with its answers. Headings name no condition.
-   Question types are those of Part 1, plus mc with justify (words, justifyAnswer).
-   ========================================================= */
-export const PART2 = [
-    {
-        id: "c1",
-        opening: `<p>A 68-year-old man has had black, sticky stools for 2 days and feels lightheaded when he stands. He takes naproxen daily for knee osteoarthritis and has no known liver disease. His pulse is 112 and his BP 98/60.</p>`,
-        recap: "A 68-year-old man on daily naproxen with 2 days of black stools.",
-        keyPoints: [
-            "Melena and a BUN:creatinine ratio over 30 place the bleeding above the ligament of Treitz, because blood is digested and absorbed on its way down.",
-            "Resuscitate first, then score the risk, then give an IV PPI before EGD within 24 hours; transfuse below an Hb of 70 g/L.",
-            "A posterior duodenal ulcer can erode the gastroduodenal artery.",
-            "H. pylori tests taken on a PPI can be falsely negative, so a negative result during the admission does not end the search.",
-            "Stop the NSAID or lower the dose, with misoprostol if it must continue; treat H. pylori with triple therapy and confirm cure 4–6 weeks later.",
-        ],
-        stages: [
-            { passage: `${labs([["Hemoglobin", "84 g/L", "130–175"], ["MCV", "89 fL", "80–100"], ["BUN", "64 mg/dL", "7–20"], ["Creatinine", "1.1 mg/dL", "0.7–1.3"], ["Platelets", "260 × 10⁹/L", "150–400"], ["INR", "1.0", "0.9–1.2"]])}<p class="illustrative">Illustrative data.</p>`,
-                questions: [
-                    { id: "c1-site", type: "sa", format: "Short answer", points: 2, words: 25,
-                        stem: "Give two findings that place the source of bleeding above the ligament of Treitz, and explain each.",
-                        answer: "Melena: blood digested on a long passage. BUN:creatinine of about 58, over 30: digested blood proteins are absorbed as urea.",
-                        marking: ["1 for melena, with the reason", "1 for the BUN:creatinine ratio over 30, with the reason"],
-                        explanation: `<p>Melena is black, tarry stool from blood that has been digested. A BUN:creatinine ratio over 30 points to an upper source, because blood is digested and absorbed in the small bowel. The normal MCV fits an acute bleed.</p>` },
-                    { id: "c1-order", type: "order", format: "Ordering", points: 2,
-                        stem: "Number these steps in the order they should start.",
-                        items: ["EGD with endoscopic hemostasis", "Two large-bore IV lines and fluids", "IV PPI", "Glasgow-Blatchford score"],
-                        order: [1, 3, 2, 0],
-                        answer: "Two large-bore IV lines and fluids, then the Glasgow-Blatchford score, then an IV PPI, then EGD.",
-                        marking: ["2 for all four in order; 1 if only two adjacent steps are swapped"],
-                        explanation: `<p>Upper GI bleeding is managed by resuscitating, scoring the risk, giving drugs before endoscopy (an IV PPI, or octreotide or terlipressin with ABX if varices are suspected), then EGD within 24 hours.</p>` },
-                    { id: "c1-transfuse", type: "sa", format: "Defend or refute", points: 2, words: 25,
-                        stem: "A resident wants to transfuse 2 units of red cells now because his hemoglobin is 84 g/L. Give one point for and one against, and what should decide it.",
-                        answer: "For: he is tachycardic and hypotensive. Against: the threshold is an Hb under 70 g/L. Decide on his response to fluids and a repeat Hb.",
-                        marking: ["1 for a point on each side (instability; the threshold of 70 g/L)", "1 for deciding on the response to resuscitation and the Hb trend"],
-                        explanation: `<p>Red cells are transfused when the Hb is under 70 g/L. His Hb is above that, but he is still unstable, so the decision rests on how he responds to fluids and on a repeat Hb, which can fall further as the blood is diluted.</p>` },
-                ] },
-            { passage: `<p>After resuscitation, EGD finds a 1.5 cm ulcer on the posterior wall of the duodenal bulb with a visible vessel, which is treated endoscopically. A rapid urease test on a gastric biopsy is negative; he has been on an IV PPI since admission.</p>`,
-                questions: [
-                    { id: "c1-artery", type: "mc", format: "Multiple choice", points: 1,
-                        stem: "Which artery is this ulcer most likely to erode if it bleeds again?",
-                        options: ["Gastroduodenal artery", "Left gastric artery", "Splenic artery", "Superior mesenteric artery", "Right gastroepiploic artery"],
-                        answer: 0,
-                        notes: { 1: "The left gastric artery is at risk from ulcers on the lesser curvature of the stomach.", 2: "The splenic artery runs behind the stomach, away from the duodenal bulb.", 3: "The superior mesenteric artery lies below the duodenal bulb and is not the classic vessel at risk.", 4: "The right gastroepiploic artery runs along the greater curvature, not behind the duodenal bulb." },
-                        marking: ["1 for the gastroduodenal artery"],
-                        explanation: `<p>A posterior duodenal ulcer can erode the gastroduodenal artery, which runs behind the first part of the duodenum.</p>` },
-                    { id: "c1-urease", type: "sa", format: "Short answer", points: 2, words: 25,
-                        stem: "Does the negative rapid urease test rule out H. pylori? Explain, and say how he should be tested.",
-                        answer: "No: the PPI suppresses H. pylori and urease, causing false negatives. Test later by urea breath or stool antigen, off PPIs for 2 weeks.",
-                        marking: ["1 for no, because the PPI can make the test falsely negative", "1 for retesting by urea breath test or stool antigen after stopping the PPI for 2 weeks"],
-                        explanation: `<p>PPIs are stopped 2 weeks, and ABX and bismuth 4 weeks, before H. pylori testing, because they suppress the organism. H. pylori is still checked when an NSAID explains the ulcer, since both commonly coexist.</p>` },
-                ] },
-            { passage: `<p>On day 3 he is eating, his pulse is 84, his BP 128/76, and his hemoglobin is stable at 92 g/L. He is keen to go home and asks whether he can keep taking naproxen for his knees.</p>`,
-                questions: [
-                    { id: "c1-discharge", type: "sa", format: "Discharge criteria", points: 2, words: 25,
-                        stem: "Give four things that should be true or arranged before he goes home.",
-                        answer: "Stable observations; stable Hb with no further bleeding; eating; oral PPI; naproxen stopped; H. pylori testing arranged.",
-                        marking: ["0.5 for each of four: stable observations, stable Hb and no rebleeding, eating, oral PPI, NSAID stopped or changed, H. pylori testing arranged"],
-                        explanation: `<p>Discharge follows stability and a plan that removes the causes: acid suppression, the NSAID, and H. pylori.</p>` },
-                    { id: "c1-nsaid", type: "mc", select: 2, format: "Multiple choice", points: 2,
-                        stem: "Which two measures lower his risk of another NSAID ulcer?",
-                        options: ["Stop naproxen, or lower the dose", "Add misoprostol if an NSAID must continue", "Switch to piroxicam, which is gentler on the stomach", "Take naproxen with milk instead of water", "Switch to sucralfate alone and continue naproxen at the same dose"],
-                        answer: [0, 1],
-                        notes: { 2: "Piroxicam carries one of the highest ulcer risks, with ketorolac.", 3: "Milk does not protect against the COX inhibition that causes NSAID ulcers.", 4: "Continuing the same dose leaves the cause in place; misoprostol is the protective agent when an NSAID must continue." },
-                        marking: ["2 for both correct options; no partial credit"],
-                        explanation: `<p>NSAIDs inhibit COX, decreasing PG, so HCl rises and mucus falls. The NSAID is stopped or its dose lowered, with misoprostol, a PG analog, if it must continue.</p>` },
-                ] },
-            { passage: `<p>Eight weeks later, off his PPI for 2 weeks, his urea breath test is positive. He reports a rash with amoxicillin as a child.</p>`,
-                questions: [
-                    { id: "c1-hp", type: "sa", format: "Short answer", points: 2, words: 25,
-                        stem: "Which regimen should he receive, and how and when should cure be confirmed?",
-                        answer: "PPI, metronidazole, and clarithromycin, bd for 7–14 days; confirm cure with a urea breath test 4–6 weeks after treatment.",
-                        marking: ["1 for a PPI, clarithromycin, and metronidazole in place of amoxicillin", "1 for a urea breath test 4–6 weeks after treatment"],
-                        explanation: `<p>First-line eradication is triple therapy, bd for 7–14 days: a PPI, amoxicillin (metronidazole if allergic), and clarithromycin. Cure is confirmed by urea breath test 4–6 weeks after treatment, because eradication can fail.</p>` },
-                ] },
-        ],
-    },
-    {
-        id: "c2",
-        opening: `<p>A 29-year-old woman weighing 55 kg has had a toothache for a week. Over the last 3 days she took paracetamol "whenever it hurt", about 10 g a day, while drinking heavily. On day 4 she has nausea, vomiting, and RUQ pain.</p>`,
-        recap: "A 29-year-old woman who took about 10 g of paracetamol a day for 3 days while drinking heavily.",
-        keyPoints: [
-            "AST and ALT far above ALP is a hepatocellular pattern; rises over 15 times normal point to acute viral hepatitis, toxins such as paracetamol, or ischemia.",
-            "The toxic dose of paracetamol is over 150 mg/kg; chronic alcohol use and malnutrition raise the risk.",
-            "In overdose, glucuronidation and sulfation saturate, CYP2E1 makes more NAPQI, glutathione runs out, and zone 3 necrosis follows; NAC replenishes glutathione.",
-            "Falling AST and ALT with a rising INR and bilirubin mean a failing liver, not recovery.",
-            "Acute liver failure is managed in ICU, treating the cause and the big 4, with early transplant referral.",
-        ],
-        stages: [
-            { passage: `${labs([["ALT", "6900 IU/L", "4–36"], ["AST", "7600 IU/L", "5–30"], ["ALP", "145 IU/L", "30–120"], ["Bilirubin", "58 µmol/L", "2–17"], ["INR", "2.4", "0.9–1.2"], ["Glucose", "3.4 mmol/L", "3.5–6.0"], ["Creatinine", "105 µmol/L", "45–90"]])}<p class="illustrative">Illustrative data.</p>`,
-                questions: [
-                    { id: "c2-pattern", type: "sa", format: "Short answer", points: 2, words: 25,
-                        stem: "Describe the pattern and degree of her LFT abnormality, and the causes that degree suggests.",
-                        answer: "Hepatocellular: AST and ALT far above ALP. Over 15 times normal: acute viral hepatitis, toxins such as paracetamol, or ischemic hepatitis.",
-                        marking: ["1 for a hepatocellular pattern, with the reason", "1 for a severe rise with its causes"],
-                        explanation: `<p>Most of the panel measures injury or cholestasis: AST and ALT reflect hepatocyte injury, and ALP bile flow. A rise over 15 times normal suggests acute hepatitis A, B, or E, severe drug injury, toxins, or ischemic hepatitis; over 10 000 IU/L is typical of paracetamol toxicity.</p>` },
-                    { id: "c2-dose", type: "sa", format: "Calculation", points: 2, work: true, lines: 1,
-                        stem: "Was her daily intake above the toxic dose? Show your working, and name what else in her history raised her risk.",
-                        answer: "10 000 mg ÷ 55 kg ≈ 182 mg/kg a day, above the toxic 150 mg/kg; her heavy drinking raised the risk.",
-                        marking: ["1 for about 182 mg/kg, above 150", "1 for chronic alcohol use (or malnutrition) raising the risk"],
-                        explanation: `<p>The toxic dose is over 150 mg/kg, with a higher risk in chronic alcohol use and malnutrition.</p>` },
-                    { id: "c2-napqi", type: "sa", format: "Short answer", points: 3, words: 25,
-                        stem: "Explain how an overdose injures hepatocytes.",
-                        answer: "Glucuronidation and sulfation saturate, so CYP2E1 makes more NAPQI; glutathione runs out, and NAPQI binds hepatocytes, causing zone 3 necrosis.",
-                        marking: ["1 for glucuronidation and sulfation saturating", "1 for CYP2E1 making more NAPQI", "1 for glutathione running out, so NAPQI causes zone 3 necrosis"],
-                        explanation: `<p>At normal doses about 90% is glucuronidated or sulfated, and the 5–10% made into NAPQI by CYP2E1 is neutralized by glutathione. In overdose, more NAPQI forms than glutathione can neutralize.</p>` },
-                ] },
-            { passage: `<p>She is admitted. A senior doctor starts NAC, although she is well beyond 8 hours from her last dose.</p>`,
-                questions: [
-                    { id: "c2-nac", type: "mc", justify: 15, format: "Justify", points: 2,
-                        stem: "Is starting NAC now appropriate? Briefly justify your choice.",
-                        options: ["Yes: NAC is still part of treating the cause of liver failure", "No: NAC works only within 8 hours of ingestion", "No: activated charcoal should be given instead", "Yes, but only if her paracetamol level is above the nomogram line", "No: NAC is unsafe once the INR is raised"],
-                        answer: 0,
-                        justifyAnswer: "It replenishes glutathione; best within 8 hours, but still used to treat the cause.",
-                        notes: { 1: "NAC works best within 8 hours, but it is still given in acute liver failure, as treatment of the cause.", 2: "Charcoal helps only within 1–2 hours of ingestion.", 3: "The nomogram uses a 4-hour level after a single ingestion; she took repeated doses over days and already has liver injury.", 4: "A raised INR is a sign of the injury NAC is treating, not a reason to withhold it." },
-                        marking: ["1 for yes", "1 for the justification: it replenishes glutathione and treats the cause"],
-                        explanation: `<p>NAC is the antidote: it replenishes glutathione, works best within 8 hours, and is part of treating the cause in acute liver failure. Activated charcoal helps only within 1–2 hours of ingestion.</p>` },
-                ] },
-            { passage: `<p>On day 2 she is drowsy, with asterixis.</p>${labs([["ALT", "3200 IU/L", "6900"], ["AST", "2500 IU/L", "7600"], ["INR", "4.2", "2.4"], ["Bilirubin", "110 µmol/L", "58"], ["Glucose", "2.8 mmol/L", "3.4"]], ["Test", "Day 2", "Day 1"])}<p class="illustrative">Illustrative data.</p>`,
-                questions: [
-                    { id: "c2-falling", type: "sa", format: "Defend or refute", points: 2, words: 25,
-                        stem: "A colleague says her falling ALT and AST show she is recovering. Defend or refute this.",
-                        answer: "Refute: with INR, bilirubin rising and glucose falling, the enzymes fall because few hepatocytes remain; the liver is failing.",
-                        marking: ["1 for refuting it, citing the rising INR and bilirubin (or falling glucose)", "1 for explaining that few hepatocytes remain to release enzymes"],
-                        explanation: `<p>Falling AST and ALT with rising bilirubin and INR mean a failing liver, not recovery: synthetic failure shows as a high INR and rising bilirubin, and AST and ALT may already be falling.</p>` },
-                    { id: "c2-define", type: "mc", format: "Multiple choice", points: 1,
-                        stem: "Which pair of findings now defines acute liver failure in her?",
-                        options: ["Encephalopathy and an INR of 1.5 or more", "ALT over 1000 IU/L and jaundice", "Ascites and splenomegaly", "Hypoglycemia and a raised creatinine", "Asterixis and a bilirubin over 100 µmol/L"],
-                        answer: 0,
-                        notes: { 1: "Very high enzymes show injury, not failure of function.", 2: "Ascites and splenomegaly come from portal hypertension in cirrhosis.", 3: "Hypoglycemia is one of the big 4, but the definition rests on encephalopathy and coagulopathy.", 4: "Asterixis is a sign of encephalopathy, but bilirubin is not part of the definition." },
-                        marking: ["1 for encephalopathy and INR 1.5 or more"],
-                        explanation: `<p>Acute liver failure is a sudden loss of function in a previously healthy liver: encephalopathy and an INR of 1.5 or more within 26 weeks.</p>` },
-                    { id: "c2-priority", type: "sa", format: "Prioritize", points: 3, words: 30,
-                        stem: "What are the priorities now?",
-                        answer: "ICU care; IV glucose for hypoglycemia and management of the big 4; continue NAC; and early referral to a transplant center.",
-                        marking: ["1 for ICU care", "1 for treating the big 4, including her hypoglycemia", "1 for early transplant referral"],
-                        explanation: `<p>Acute liver failure is managed in ICU, treating the cause (NAC) and the big 4: encephalopathy with raised ICP, coagulopathy, hypoglycemia, and infection, with early transplant referral.</p>` },
-                ] },
-        ],
-    },
-    {
-        id: "c3",
-        opening: `<p>A 26-year-old woman with ulcerative colitis, diagnosed 3 years ago and controlled on mesalazine, has had 10 days of 8–10 bloody stools a day with cramping lower abdominal pain. She stopped smoking 6 months ago. Her temperature is 38.4 °C, pulse 112, and BP 108/70.</p>`,
-        recap: "A 26-year-old woman with ulcerative colitis and 10 days of frequent bloody stools.",
-        keyPoints: [
-            "Infection, including C. difficile, is excluded before a flare is treated as ulcerative colitis.",
-            "Opioids, anticholinergics, and antimotility drugs can precipitate toxic megacolon in severe colitis.",
-            "Toxic megacolon is a colon over 6 cm, with at least 3 of fever, tachycardia, neutrophilia, or anemia, and 1 of dehydration, confusion, electrolyte disturbance, or hypotension.",
-            "IV corticosteroid for 3 days, then infliximab or cyclosporine for 3 days, then subtotal colectomy if this fails.",
-            "Ulcerative colitis needs colonoscopy every 1–2 years for colorectal cancer, and a cholestatic pattern raises PSC.",
-        ],
-        stages: [
-            { passage: `${labs([["Hemoglobin", "98 g/L", "115–155"], ["White cells", "13.4 × 10⁹/L (neutrophilia)", "4–11"], ["CRP", "95 mg/L", "under 5"], ["Albumin", "28 g/L", "35–50"], ["K+", "3.1 mmol/L", "3.5–5.0"], ["Stool culture, ova and parasites", "Negative", ""], ["C. difficile toxin", "Negative", ""]])}<p class="illustrative">Illustrative data.</p>`,
-                questions: [
-                    { id: "c3-before-after", type: "sa", format: "Before and after", points: 2, words: 25,
-                        stem: "From the opening alone, name two leading diagnoses. After these results, which leads, and which result would have reversed your answer?",
-                        answer: "Before: a flare or infectious colitis, including C. difficile. After: a flare. A positive stool culture or C. difficile toxin would reverse it.",
-                        marking: ["1 for a flare and infectious colitis before", "1 for a flare after, reversed by a positive stool test"],
-                        explanation: `<p>Infectious diarrhea is excluded by stool culture, ova and parasites, and C. difficile before a flare is treated with escalating immunosuppression. Stopping smoking raises the risk of ulcerative colitis activity.</p>` },
-                    { id: "c3-loperamide", type: "sa", format: "Short answer", points: 2, words: 25,
-                        stem: "She asks for loperamide to reduce how often she needs the toilet. What do you advise, and why?",
-                        answer: "Avoid it: antimotility drugs can precipitate toxic megacolon in severe colitis.",
-                        marking: ["1 for avoiding loperamide", "1 for the risk of toxic megacolon"],
-                        explanation: `<p>Opioids, anticholinergics, and antimotility drugs reduce colonic motility and can precipitate toxic megacolon, the leading cause of death in ulcerative colitis.</p>` },
-                    { id: "c3-steroid", type: "mc", format: "Multiple choice", points: 1,
-                        stem: "Which treatment should start now?",
-                        options: ["IV corticosteroid", "Oral budesonide", "A higher dose of mesalazine alone", "Vedolizumab as the first step", "Urgent colectomy"],
-                        answer: 0,
-                        notes: { 1: "Budesonide is milder; a severe flare with fever and tachycardia needs IV corticosteroid.", 2: "5-ASA is for maintenance; a severe flare needs induction with a corticosteroid.", 3: "Biologics follow failed corticosteroids; they are not the first step in an acute severe flare.", 4: "Colectomy is for failed medical therapy, toxic megacolon that does not respond, perforation, or uncontrolled bleeding." },
-                        marking: ["1 for IV corticosteroid"],
-                        explanation: `<p>Corticosteroids induce remission in flares, given IV when the flare is severe, while 5-ASA maintains remission in ulcerative colitis.</p>` },
-                ] },
-            { passage: `<p>She is given IV hydrocortisone and IV morphine for pain. On day 3 her abdomen is distended and tender, and she is drowsy.</p>${labs([["Temperature", "38.6 °C", ""], ["Pulse", "124", ""], ["BP", "96/58", ""], ["Hemoglobin", "92 g/L", "115–155"], ["White cells", "16.8 × 10⁹/L (neutrophilia)", "4–11"], ["K+", "2.9 mmol/L", "3.5–5.0"]])}<p>Abdominal x-ray: transverse colon 7.5 cm across, with no free air.</p><p class="illustrative">Illustrative data.</p>`,
-                questions: [
-                    { id: "c3-criteria", type: "sa", format: "Short answer", points: 2, words: 30,
-                        stem: "Does she meet the criteria for toxic megacolon? Show which criteria she meets.",
-                        answer: "Yes: colon 7.5 cm (over 6); fever, pulse over 120, neutrophilia, and anemia (at least 3); and hypotension, confusion, and low K+ (at least 1).",
-                        marking: ["0.5 for the colon over 6 cm", "1 for at least three of fever over 38 °C, pulse over 120, neutrophilia, and anemia", "0.5 for at least one of dehydration, confusion, electrolyte disturbance, or hypotension"],
-                        explanation: `<p>The criteria are a colon over 6 cm on x-ray, plus at least 3 of fever over 38 °C, heart rate over 120, neutrophilia, or anemia, plus 1 of dehydration, confusion, electrolyte disturbance, or hypotension.</p>` },
-                    { id: "c3-morphine", type: "sa", format: "Short answer", points: 2, words: 25,
-                        stem: "Name one part of her hospital treatment that may have contributed, and explain how.",
-                        answer: "IV morphine: opioids reduce colonic motility, which can precipitate toxic megacolon in severe colitis.",
-                        marking: ["1 for morphine", "1 for reduced motility precipitating toxic megacolon"],
-                        explanation: `<p>Opioids join anticholinergics and antimotility drugs as precipitants of toxic megacolon; her low K+ can also worsen colonic dilation.</p>` },
-                    { id: "c3-priority", type: "sa", format: "Prioritize", points: 3, words: 30,
-                        stem: "The surgical registrar suggests colectomy today; the gastroenterologist suggests rescue medical therapy. Which is appropriate now, and what would change your answer?",
-                        answer: "Rescue therapy now (infliximab or cyclosporine), after 3 days of IV corticosteroid; subtotal colectomy if no response within 3 days, or perforation.",
-                        marking: ["1 for rescue therapy with infliximab or cyclosporine", "1 for the timing after 3 days of IV corticosteroid", "1 for colectomy if rescue fails within 3 days, or with perforation or uncontrolled bleeding"],
-                        explanation: `<p>Toxic megacolon is treated with IV corticosteroid for 3 days, then infliximab or cyclosporine for 3 days, with subtotal colectomy and end ileostomy if this fails. Perforation or uncontrolled bleeding are indications for surgery.</p>` },
-                ] },
-            { passage: `<p>She responds to infliximab and is discharged on maintenance treatment. Three months later she is well, but a routine panel shows ALP 280 IU/L (30–120) and GGT 190 IU/L (6–50) with a normal bilirubin and ALT.</p>`,
-                questions: [
-                    { id: "c3-surveillance", type: "sa", format: "Short answer", points: 2, words: 15,
-                        stem: "Why does she need regular colonoscopy, and how often?",
-                        answer: "Colorectal cancer risk from chronic inflammation; every 1–2 years.",
-                        marking: ["1 for colorectal cancer from chronic inflammation", "1 for every 1–2 years"],
-                        explanation: `<p>Chronic inflammation in ulcerative colitis leads to dysplasia and colorectal cancer, at least 5% over time, so colonoscopy is done every 1–2 years.</p>` },
-                    { id: "c3-psc", type: "mc", format: "Multiple choice", points: 1,
-                        stem: "Which investigation is most appropriate next for her liver results?",
-                        options: ["MRCP", "Liver biopsy", "Urgent ERCP", "Serum ceruloplasmin", "Repeat LFTs in 5 years"],
-                        answer: 0,
-                        notes: { 1: "Biopsy is not the first test for a cholestatic pattern suggesting PSC; MRCP shows the strictures without instrumenting the ducts.", 2: "ERCP instruments the ducts and is kept for treatment, not first-line diagnosis.", 3: "Ceruloplasmin tests for Wilson disease, which gives a hepatocellular pattern in a young patient, not this cholestatic one.", 4: "A cholestatic pattern with ulcerative colitis needs investigation now." },
-                        marking: ["1 for MRCP"],
-                        explanation: `<p>A cholestatic pattern (high ALP and GGT) in a patient with ulcerative colitis suggests primary sclerosing cholangitis, which MRCP shows as multiple strictures with dilated segments between them.</p>` },
-                ] },
-        ],
-    },
+            { id: "p8-grid", type: "grid", format: "Prediction grid", points: 2, columns: ["Anti-p40", "Anti-α4β7"], stem: "Predict the direct effect of each drug.", rows: ["IL-12 and IL-23 signaling", "T cells entering the gut wall"], answer: [["down", "flat"], ["flat", "down"]], marking: ["0.5 for each correct cell"], explanation: "<p>Ustekinumab blocks the cytokines; vedolizumab blocks the door. Only the second is selective for the gut.</p>" },
+            { id: "p8-changed", type: "fields", format: "What changed?", points: 2, stem: "His response at week 14 suggested that TNF was driving his disease. Why has he relapsed, and is TNF still a suitable target?", fields: ["Why he relapsed", "Next treatment, and why"], answer: ["Antibodies cleared the drug (low level), so TNF is no longer blocked: the drug failed, not the target.", "Another TNF inhibitor with an immunomodulator can work, since TNF still drives the disease; a new mechanism is for a good level."], marking: ["1 for immune clearance of the drug", "1 for staying with the target, since the level is low"], explanation: "<p>Low level with antibodies: change the drug, keep the class. A good level with active disease: change the class.</p>" },
+            { id: "p8-vedo", type: "sa", format: "Short answer", points: 1, words: 20, stem: "He has ankylosing spondylitis as well. Why would vedolizumab not help his back?", answer: "It blocks α4β7 homing to the gut only, so cells still reach the joints.", marking: ["1 for gut-selective homing"], explanation: "<p>Selectivity lowers infections and leaves disease elsewhere.</p>" },
+        ] },
 ];
 
-// Cases written for Part 2 but replaced to widen coverage; kept for a later exam. Not printed.
-export const SPARE_CASES = [
-    {
-        id: "c2-pancreatitis",
-        opening: `<p>A 54-year-old woman with a BMI of 33 has had 8 hours of severe epigastric pain radiating to her back, with repeated vomiting. She drinks 1–2 glasses of wine a week. Her pulse is 118, BP 104/68, temperature 37.9 °C, and oxygen saturation 95% on room air. Her epigastrium is tender, with guarding.</p>`,
-        recap: "A 54-year-old woman with 8 hours of severe epigastric pain radiating to her back and vomiting.",
-        keyPoints: [
-            "Two of pain, lipase at least 3 times normal, and typical imaging make the diagnosis; ALT over 150 with gallstones on ultrasound points to a gallstone cause.",
-            "CT is not needed when the diagnosis is clear, and too early it can miss necrosis; it is for an unclear diagnosis or a patient not improving after 48–72 hours.",
-            "Cytokines make capillaries leak, so third spacing causes hypovolemia, AKI, and fluid in the lungs; fat saponification lowers calcium.",
-            "Goal-directed IV fluids come first; ERCP is for cholangitis or ongoing obstruction, not routine.",
-            "Organ failure that resolves within 48 hours is moderately severe pancreatitis; cholecystectomy follows during the same admission.",
-        ],
-        stages: [
-            { passage: `${labs([["Lipase", "1450 U/L", "13–60"], ["ALT", "310 IU/L", "4–36"], ["ALP", "180 IU/L", "30–120"], ["Bilirubin", "38 µmol/L", "2–17"], ["White cells", "15.2 × 10⁹/L", "4–11"], ["Calcium", "2.15 mmol/L", "2.10–2.60"], ["Triglycerides", "1.9 mmol/L", "under 2.0"], ["Creatinine", "88 µmol/L", "45–90"]])}<p>RUQ ultrasound: several gallstones in the gallbladder; CBD 6 mm with no stone seen.</p><p class="illustrative">Illustrative data.</p>`,
-                questions: [
-                    { id: "c2-before-after", type: "sa", format: "Before and after", points: 2, words: 25,
-                        stem: "From the opening alone, name two leading diagnoses. After these results, which leads, and which single finding would reverse your answer?",
-                        answer: "Before: acute pancreatitis or a perforated peptic ulcer. After: gallstone pancreatitis. Reversal: free air under the diaphragm on an upright CXR.",
-                        marking: ["1 for two reasonable leading diagnoses before, including acute pancreatitis", "1 for gallstone pancreatitis after, with a finding that would reverse it (such as free air, or a normal lipase)"],
-                        explanation: `<p>Severe epigastric pain radiating to the back with vomiting fits acute pancreatitis, but perforation, cholecystitis, and MI are also considered. Lipase at 24 times normal meets the enzyme criterion; an upright CXR showing pneumoperitoneum would point to perforation instead.</p>` },
-                    { id: "c2-cause", type: "mc", justify: 12, format: "Justify", points: 2,
-                        stem: "What is the most likely cause? Briefly justify your choice.",
-                        options: ["Gallstones", "Alcohol", "Hypertriglyceridemia", "A drug reaction", "Idiopathic"],
-                        answer: 0,
-                        justifyAnswer: "ALT over 150 and gallstones on ultrasound; little alcohol, normal triglycerides.",
-                        notes: { 1: "One or two glasses of wine a week is not the heavy drinking that causes pancreatitis.", 2: "Triglycerides cause pancreatitis when usually over 1000 mg/dL; hers are normal.", 3: "No culprit drug is listed.", 4: "Idiopathic is a diagnosis made only when no cause is found; here gallstones explain it." },
-                        marking: ["1 for gallstones", "1 for a justification naming the ALT or the gallstones"],
-                        explanation: `<p>Gallstones are the most common cause, and an ALT over 150 suggests them. Every patient has a RUQ ultrasound for gallstones, with triglycerides, calcium, alcohol history, and medications checked.</p>` },
-                    { id: "c2-ct", type: "sa", format: "Defend or refute", points: 2, words: 25,
-                        stem: "A colleague orders a contrast CT now \"to stage the pancreatitis\". Defend or refute this, and say when CT is useful.",
-                        answer: "Refute: the diagnosis is already made, and early CT can miss necrosis. CT is for an unclear diagnosis, or no improvement after 48–72 hours.",
-                        marking: ["1 for refuting it with a reason (diagnosis made; early CT misses necrosis)", "1 for the indications: unclear diagnosis, or not improving after 48–72 hours"],
-                        explanation: `<p>Two of the three criteria (pain, lipase at least 3 times normal, typical imaging) make the diagnosis, so she does not need CT to confirm it. Severity is judged from organ failure and local complications, not from an early scan.</p>` },
-                ] },
-            { passage: `<p>She receives goal-directed Hartmann solution and analgesia. At 24 hours:</p>${labs([["Pulse", "106", ""], ["Urine output", "20 mL/h over 6 hours", "over 0.5 mL/kg/h"], ["Oxygen saturation", "91% on room air", ""], ["Creatinine", "168 µmol/L", "45–90"], ["Calcium", "1.92 mmol/L", "2.10–2.60"], ["Bilirubin", "29 µmol/L", "2–17"], ["Temperature", "37.7 °C", ""]])}<p>Chest x-ray: small bilateral effusions and patchy bibasal shadowing.</p><p class="illustrative">Illustrative data.</p>`,
-                questions: [
-                    { id: "c2-mechanism", type: "sa", format: "Short answer", points: 3, words: 30,
-                        stem: "Explain her rising creatinine and falling oxygen saturation with one mechanism.",
-                        answer: "Cytokines (IL-1, IL-6, TNF-α) make capillaries leak; third spacing causes hypovolemia and prerenal AKI, and fluid in the lungs lowers oxygen saturation.",
-                        marking: ["1 for cytokines causing leaky capillaries", "1 for hypovolemia causing AKI", "1 for fluid in the lungs causing hypoxemia"],
-                        explanation: `<p>Autodigestion releases IL-1, IL-6, and TNF-α, and the resulting SIRS increases capillary permeability. Third spacing then causes hypovolemia, AKI, fluid in the lungs (and ARDS), and fluid in the abdomen.</p>` },
-                    { id: "c2-calcium", type: "mc", format: "Multiple choice", points: 1,
-                        stem: "What best explains her falling calcium?",
-                        options: ["Fatty acids from digested fat bind calcium", "Calcium is lost in the vomit", "Hartmann solution dilutes the calcium", "Parathyroid hormone release is suppressed", "Calcium is lost through the leaking capillaries into the urine"],
-                        answer: 0,
-                        notes: { 1: "Vomit is not a major route of calcium loss.", 2: "Hartmann solution contains calcium and does not explain the fall.", 3: "PTH suppression is not the mechanism described in pancreatitis.", 4: "Leaking capillaries move fluid into tissues, not calcium into urine." },
-                        marking: ["1 for fat saponification"],
-                        explanation: `<p>Lipase digests the fat around the pancreas, and the fatty acids bind calcium (fat saponification).</p>` },
-                    { id: "c2-priority", type: "sa", format: "Prioritize", points: 2, words: 25,
-                        stem: "One team member suggests urgent ERCP; another suggests continuing goal-directed fluids with close monitoring. Which comes first, and why?",
-                        answer: "Fluids: she is hypovolemic with AKI. ERCP is only for cholangitis or ongoing obstruction, and her bilirubin is falling without signs of cholangitis.",
-                        marking: ["1 for fluids first, because she is hypovolemic", "1 for the ERCP indications not being met (falling bilirubin, no cholangitis)"],
-                        explanation: `<p>Gallstone pancreatitis is treated with IV fluids, pain relief, and early feeding; ERCP is not routine. A rising bilirubin or fever would mean ongoing obstruction or cholangitis, the two reasons for ERCP.</p>` },
-                ] },
-            { passage: `<p>With fluids and oxygen, her creatinine falls to 92 µmol/L by 36 hours, and she needs no oxygen by 40 hours. A CT at 72 hours, done because her pain persists, shows peripancreatic fluid without necrosis. By day 6 she is eating and pain-free.</p>`,
-                questions: [
-                    { id: "c2-severity", type: "mc", format: "Multiple choice", points: 1,
-                        stem: "How is this episode classified?",
-                        options: ["Moderately severe", "Mild", "Severe", "Chronic pancreatitis", "Necrotizing pancreatitis"],
-                        answer: 0,
-                        notes: { 1: "Mild pancreatitis has no organ failure; she had AKI and hypoxemia.", 2: "Severe pancreatitis has organ failure lasting over 48 hours; hers resolved within 48.", 3: "This is a first acute attack, not chronic pancreatitis.", 4: "The CT showed no necrosis." },
-                        marking: ["1 for moderately severe"],
-                        explanation: `<p>In the revised Atlanta classification, organ failure lasting under 48 hours, or local complications, is moderately severe; organ failure over 48 hours is severe.</p>` },
-                    { id: "c2-surgery", type: "sa", format: "Short answer", points: 2, words: 25,
-                        stem: "When should she have a cholecystectomy, and why not wait months for an elective list?",
-                        answer: "During this admission: the gallstones that caused it remain, so another attack can occur while she waits.",
-                        marking: ["1 for during the same admission", "1 for the remaining stones risking another attack"],
-                        explanation: `<p>For gallstone pancreatitis, cholecystectomy is done during the same admission, removing the source of the stones.</p>` },
-                ] },
-        ],
-    },
-];
 /* =========================================================
-   Part 3: Reading the research. One open-access (CC BY 4.0) trial, read through PubMed Central, with short quoted
-   excerpts, abridged tables, and supplementary information from StatPearls. Listed at 45 minutes, designed for 40.
-   Question types are those of Parts 1 and 2, plus support (statements marked supported, overstated, or unsupported,
-   with the evidence). Its sources are in PART3.references.
+   Part 2: Reasoning. Six stations of 5 points.
    ========================================================= */
-const quote = (text) => `<blockquote>“${text}”</blockquote>`;
-export const PART3 = {
-    title: "Tranexamic acid for gastrointestinal bleeding",
-    passage: `<p class="source">The HALT-IT Trial Collaborators. Effects of a high-dose 24-h infusion of tranexamic acid on death and thromboembolic events in patients with acute gastrointestinal bleeding (HALT-IT): an international randomised, double-blind, placebo-controlled trial. <em>Lancet</em>. 2020;395:1927–1936. Open access under CC BY 4.0; excerpts are quoted, and tables are abridged.</p>
-<h3>Background</h3>
-<p>Tranexamic acid reduces death due to bleeding in trauma and after childbirth. Before this trial, a meta-analysis of seven small randomized trials of upper GI bleeding, with 1654 patients in total, had suggested a large reduction in mortality (RR 0.61, 95% CI 0.42–0.89).</p>
-<h3>Methods</h3>
-<p>An international, multicenter, randomized, double-blind, placebo-controlled trial in 164 hospitals in 15 countries. Adults with significant upper or lower GI bleeding were enrolled if the responsible clinician was uncertain whether to use tranexamic acid. Significant bleeding was a clinical judgment: a risk of bleeding to death, including hypotension, tachycardia, signs of shock, or a likely need for transfusion, urgent endoscopy, or surgery.</p>
-${quote("Patients received either a loading dose of 1 g tranexamic acid […] infused by slow intravenous injection over 10 min, followed by a maintenance dose of 3 g tranexamic acid […] infused at 125 mg/h for 24 h, or placebo (sodium chloride 0·9%). Patients, caregivers, and those assessing outcomes were masked to allocation.")}
-<p>The primary outcome was first all-cause mortality. While the trial was under way, more than half of all deaths proved to be from causes other than bleeding, so the primary outcome was changed to <strong>death due to bleeding within 5 days</strong>. The authors state that the change was made before the data were unblinded, and they published the statistical analysis plan, with their reasons, before unblinding.</p>
-<h3>Results</h3>
-<p>12 009 patients were randomized; 11 952 (99.5%) received the first dose. The median time to death was 55 hours after randomization.</p>
-${labs([["Mean age, years", "58.1", "58.1"], ["Upper GI bleeding", "89%", "89%"], ["Suspected variceal bleeding", "45%", "46%"], ["Liver disease", "41%", "42%"], ["Signs of shock", "43%", "44%"], ["More than 8 hours from onset to randomization", "57%", "58%"]], ["Baseline (abridged)", "Tranexamic acid (n = 5994)", "Placebo (n = 6015)"])}
-${labs([["Death due to bleeding within 5 days (primary)", "222/5956 (3.7%)", "226/5981 (3.8%)", "0.99 (0.82–1.18)"], ["Death from any cause within 28 days", "564/5956 (9.5%)", "548/5981 (9.2%)", "1.03 (0.92–1.16)"], ["Rebleeding within 5 days", "287/5956 (4.8%)", "315/5981 (5.3%)", "0.91 (0.78–1.07)"], ["Venous thromboembolism (DVT or PE)", "48/5952 (0.8%)", "26/5977 (0.4%)", "1.85 (1.15–2.98)"], ["Arterial events (MI or stroke)", "42/5952 (0.7%)", "46/5977 (0.8%)", "0.92 (0.60–1.39)"], ["Seizures", "38/5952 (0.6%)", "22/5977 (0.4%)", "1.73 (1.03–2.93)"], ["Death from malignancy within 28 days", "65/5956 (1.1%)", "40/5981 (0.7%)", "1.63 (1.10–2.42)"]], ["Outcome (abridged)", "Tranexamic acid", "Placebo", "RR (95% CI)"])}
-<p>Prespecified subgroups, by time to treatment, site of bleeding, suspected variceal bleeding or liver disease, and baseline risk, showed no evidence that the effect on the primary outcome differed (heterogeneity p = 0.32 to 0.94). In an exploratory analysis, the excess of venous thromboembolism was larger in patients with suspected variceal bleeding or liver disease (14 vs 2 events; RR 7.26, 95% CI 1.65–31.90) than in other patients (34 vs 24; RR 1.38, 0.82–2.32). The table of causes of death compared seven causes.</p>
-<h3>Discussion (excerpts)</h3>
-${quote("Although this is one of the largest randomised trials in gastrointestinal bleeding, we cannot rule out a modest increase or decrease in death due to bleeding with tranexamic acid. That said, we can rule out the large mortality reduction suggested by the Cochrane systematic review and meta-analysis of previous small trials.")}
-${quote("In gastrointestinal bleeding it is difficult to determine the time of bleeding onset, presentation is often delayed (over 80% of patients presented more than 3 h after bleeding onset), and the contribution of increased fibrinolysis to bleeding is less clear.")}
-${quote("Almost half of the patients included in our trial had suspected variceal bleeding due to liver disease and because these patients had a greater risk of death, they accounted for nearly three-quarters of deaths.")}
-<p>The authors add that acutely ill patients with cirrhosis can have reduced rather than increased fibrinolysis, and that the dose here (4 g over 24 hours) was higher and longer than in the trauma (2 g over 8 hours) and childbirth trials, which found no excess of adverse events.</p>
-${supplement(`<p>Tranexamic acid blocks the lysine-binding sites on plasminogen, so plasmin, its activated form, cannot break down the fibrin of a formed clot. It is an antifibrinolytic: it stabilizes clots rather than forming them. After IV dosing, its half-life is about 2 hours. In trauma, it improves survival when given within 3 hours of injury.</p>`)}
-<p class="illustrative">Absolute risk difference = risk in the treated group − risk in the control group. Number needed to harm (or treat) = 1 ÷ the absolute risk difference.</p>`,
+const part2 = [
+    { groups: ["Special topics", "Inflammation and ischemia"], discipline: "",
+        passage: `<p>A 68-year-old man in A-fib, off anticoagulant, has had severe pain around the umbilicus for 4 hours; it has now eased and moved to the right iliac fossa. He vomited twice. His abdomen is soft, with little guarding.</p>${labs([["Pulse, BP", "118 irregular, 128/80", ""], ["WBC", "16 ×10⁹/L", "4–11"], ["CRP", "12 mg/L", "Under 5"], ["Lactate", "1.6 mmol/L", "0.5–2.0"], ["Lipase", "96 U/L", "Under 60"]])}`,
+        questions: [
+            { id: "s1-mislead", type: "sa", format: "Mislead me", points: 2, words: 30, stem: "Name two findings that could suggest this is not an emergency, and explain why each could be misleading.", answer: "The eased pain can mean bowel has died, and the normal lactate and soft abdomen come early in ischemia, before infarction or peritonitis.", marking: ["1 for easing pain not excluding infarction", "1 for a normal early lactate or soft abdomen not excluding ischemia"], explanation: "<p>Pain out of proportion in A-fib is ischemia until imaging says otherwise.</p>" },
+            { id: "s1-split", type: "fields", format: "Split the pair", points: 2, stem: "Appendicitis and a mesenteric embolus are both still possible. Name one test that would distinguish them, and the result you would expect in each.", fields: ["Test", "If appendicitis", "If embolus"], answer: ["CT angiography of the abdomen", "An appendix over 6 mm with fat stranding, and open arteries", "A filling defect in the SMA, with poorly enhancing bowel"], marking: ["1 for CT angiography", "0.5 for each result"], explanation: "<p>Contrast CT without an arterial phase could miss the clot. Lipase and CRP do not split them.</p>" },
+            { id: "s1-first", type: "mc", format: "Multiple choice", points: 1, stem: "Which step would most dangerously delay the diagnosis?", options: ["Waiting for a second lactate", "IV fluid resuscitation started now", "Calling the surgeons now", "Sending blood for crossmatch", "Starting broad ABX now"], answer: 0, notes: { 1: "Runs while the scan is arranged.", 2: "Done early, in parallel.", 3: "Takes no time from the scan.", 4: "Given in parallel when ischemia is suspected." }, marking: ["1 for the repeat lactate"], explanation: "<p>Time kills bowel; a normal lactate must not delay CT angiography.</p>" },
+        ] },
+    { groups: ["Special topics", "Esophagus", "Stomach"], discipline: "",
+        passage: `<p>A 44-year-old man drank heavily last night and retched six times, then vomited bright red blood. He takes naproxen for his back. He has spider nevi on his chest.</p>${labs([["Pulse, BP", "104, 122/80 mmHg", ""], ["Hb", "138 g/L", "130–170"], ["Platelets", "92 ×10⁹/L", "150–400"], ["INR", "1.4", "0.8–1.2"]])}`,
+        questions: [
+            { id: "s2-mislead", type: "sa", format: "Mislead me", points: 2, words: 35, stem: "A colleague says this is a Mallory-Weiss tear with little blood lost. Name one finding that could mislead about the amount of blood lost, and two that suggest a more dangerous cause.", answer: "Hb stays normal until fluid shifts in, so it hides acute loss. Low platelets and spider nevi suggest portal hypertension and varices.", marking: ["1 for a normal early Hb", "1 for two signs of portal hypertension (low platelets, spider nevi, or the INR)"], explanation: "<p>The history fits a tear, but the body shows chronic liver disease; naproxen adds an ulcer as a third possibility.</p>" },
+            { id: "s2-split", type: "fields", format: "Split the pair", points: 2, stem: "A Mallory-Weiss tear and bleeding varices are both possible. Name one test that would distinguish them, and the result you would expect in each.", fields: ["Test", "If a tear", "If varices"], answer: ["EGD within 12–24 hours", "A linear tear in the mucosa at the junction", "Swollen veins in the lower esophagus, with a bleeding point"], marking: ["1 for EGD", "0.5 for each result"], explanation: "<p>Until EGD, treat as variceal if cirrhosis is suspected: a vasoconstrictor and ABX.</p>" },
+            { id: "s2-barrett", type: "sa", format: "Short answer", points: 1, words: 20, stem: "EGD also finds salmon-colored mucosa above the junction, with goblet cells on biopsy. Name it, and the cancer it can lead to.", answer: "Barrett esophagus, from chronic acid reflux; it can lead to adenocarcinoma.", marking: ["1 for Barrett esophagus and adenocarcinoma"], explanation: "<p>Squamous epithelium is replaced by intestinal-type columnar epithelium.</p>" },
+        ] },
+    { groups: ["Special topics", "Gallbladder and biliary tree", "Other liver disease"], discipline: "",
+        passage: `<p>Three people have jaundice or itch.</p>${labs([["A, 34, long-standing bloody diarrhea", "96", "480", "62", "Intrahepatic and extrahepatic ducts alternately narrowed and widened"], ["B, 56, itch and dry eyes", "70", "390", "22", "Ducts normal"], ["C, 48, pain in the right upper abdomen after meals", "210", "300", "78", "Duct 11 mm, with a filling defect"]], ["Person", "ALT (under 40)", "ALP (30–110)", "Bilirubin (under 20)", "MRCP"])}<p>B has antimitochondrial antibodies.</p>`,
+        questions: [
+            { id: "s3-r", type: "sa", format: "Calculation", points: 1, work: true, lines: 1, stem: "Calculate the R factor in person A and name the pattern.", answer: "(96 ÷ 40) ÷ (480 ÷ 110) = 2.4 ÷ 4.4 = 0.55: cholestatic.", marking: ["1 for about 0.55, cholestatic"], explanation: "<p>Under 2 is cholestatic, as in all three.</p>" },
+            { id: "s3-match", type: "fields", format: "Short answer", points: 3, stem: "Give the diagnosis in each person and the single finding that supports it most.", fields: ["Person A", "Person B", "Person C"], answer: ["PSC: ducts with alternating strictures and dilations, in someone with bloody diarrhea", "PBC: antimitochondrial antibodies with normal large ducts", "Choledocholithiasis: a wide duct with a filling defect and pain"], marking: ["1 for each diagnosis with its finding"], explanation: "<p>Cholestatic LFTs do not say where the problem is; antibodies and the duct image do.</p>" },
+            { id: "s3-mislead", type: "sa", format: "Mislead me", points: 1, words: 20, stem: "C's pain settles and the bilirubin decreases by the next day. Why might the stone still be in the duct?", answer: "A stone can float and block on and off, so relief means it moved, not that it passed.", marking: ["1 for intermittent blockage"], explanation: "<p>MRCP or EUS shows whether it has passed.</p>" },
+        ] },
+    { groups: ["Special topics", "Other liver disease", "Hepatitis"], discipline: "",
+        passage: `<p>Four people have abnormal liver tests. Hepatitis B and C tests are negative in all.</p>${labs([["A, 19, tremor, dark urine", "ALT 88, ALP 24 (30–110), Hb 92 g/L (120–150), bilirubin mostly unconjugated"], ["B, 27, tired for months", "ALT 640, IgG 26 g/L (7–16)"], ["C, 31, never smoked, has emphysema", "ALT 74"], ["D, 45, new diabetes, stiff fingers", "ALT 92, ferritin 1450 µg/L (30–300), transferrin saturation 78% (20–45)"]], ["Person", "Findings (ALT normal under 40 U/L)"])}`,
+        questions: [
+            { id: "s4-match", type: "fields", format: "Short answer", points: 2, stem: "For each person, give the most likely disease and the one test that would confirm or support it best.", fields: ["Person A", "Person B", "Person C", "Person D"], answer: ["Wilson disease: low ceruloplasmin with high 24-hour urine copper", "Autoimmune hepatitis: ANA or smooth muscle antibodies, with biopsy", "A1AT deficiency: low A1AT level and its phenotype", "Hemochromatosis: HFE gene test"], marking: ["0.5 for each disease with its test"], explanation: "<p>Age, a second organ, and one abnormal marker point to each.</p>" },
+            { id: "s4-account", type: "account", format: "Account for every result", points: 2, stem: "For person A, explain each result.", rows: ["Low Hb with unconjugated bilirubin", "Low ALP despite liver injury"], answer: ["Copper released from liver cells damages red cells: hemolysis.", "Zinc-dependent enzyme activity falls with copper excess, so ALP is low for the liver injury."], marking: ["1 for hemolysis from copper", "1 for a low ALP as a pointer to Wilson disease (copper or zinc effect accepted)"], explanation: "<p>A low ALP with hemolysis in a young person with liver failure is a warning sign.</p>" },
+            { id: "s4-hcc", type: "sa", format: "Short answer", points: 1, words: 12, stem: "All four diseases can reach the same cancer. Name it and the stage it passes through.", answer: "Hepatocellular carcinoma, usually through cirrhosis.", marking: ["1 for HCC through cirrhosis"], explanation: "<p>Chronic injury and regeneration are the shared path.</p>" },
+        ] },
+    { groups: ["Special topics"], discipline: "",
+        passage: `<p>A 34-year-old woman has vomited for 5 weeks and lost 8 kg. CT abdomen and EGD are normal. She has been told it is cyclic vomiting. Today she is weak and dizzy. Her skin creases and gums are darker than in old photographs.</p>${labs([["BP lying, standing", "96/58, 78/46 mmHg", ""], ["Na+", "126 mmol/L", "135–145"], ["K+", "5.8 mmol/L", "3.5–5.0"], ["HCO3−", "18 mmol/L", "22–28"], ["Glucose", "3.4 mmol/L", "4–6"]])}`,
+        questions: [
+            { id: "s5-account", type: "account", format: "Account for every result", points: 2, stem: "For each result, say why vomiting alone cannot explain it.", rows: ["K+ 5.8", "HCO3− 18"], answer: ["Vomiting loses acid and volume, which lowers K+ through aldosterone; a high K+ means aldosterone is missing.", "Losing HCl leaves HCO3− behind, so HCO3− should be high; low means acid is kept, as without aldosterone."], marking: ["1 for expected low K+ in vomiting", "1 for expected alkalosis"], explanation: "<p>Two values point the wrong way for vomiting: adrenal failure is the cause.</p>" },
+            { id: "s5-mislead", type: "sa", format: "Mislead me", points: 2, words: 25, stem: "Which earlier results seemed to exclude a serious cause, and what did they fail to exclude? Why was the label of cyclic vomiting premature?", answer: "A normal CT and EGD only exclude gut disease; metabolic causes are not seen. Cyclic vomiting needs normal tests and health between attacks.", marking: ["1 for imaging not seeing endocrine or metabolic causes", "1 for a functional label needing normal bloods and intervals of health"], explanation: "<p>The cause of vomiting can be outside the gut.</p>" },
+            { id: "s5-move", type: "sa", format: "Short answer", points: 1, words: 15, stem: "What should be done immediately, before any results return?", answer: "Bloods for cortisol and ACTH, then IV hydrocortisone and saline without waiting for results.", marking: ["1 for hydrocortisone with fluid at once"], explanation: "<p>Delay risks collapse; a saved sample keeps the diagnosis.</p>" },
+        ] },
+    { groups: ["Special topics", "Malabsorption and diarrhea", "Inflammation and ischemia"], discipline: "",
+        passage: `<p>A 29-year-old woman has had loose stools, cramps that ease after a bowel movement, and tiredness for 5 months. She has lost 4 kg. She has no blood in the stool.</p>${labs([["Hb, MCV", "104 g/L, 74 fL", "120–150, 80–100"], ["Ferritin", "6 µg/L", "30–300"], ["CRP", "2 mg/L", "Under 5"], ["Fecal calprotectin", "38 µg/g", "Under 50"], ["tTG-IgA", "0.4 U/mL", "Under 10"], ["Total IgA", "0.05 g/L", "0.7–4.0"]])}`,
+        questions: [
+            { id: "s6-mislead", type: "sa", format: "Mislead me", points: 2, words: 30, stem: "A colleague says the negative tTG excludes celiac disease, and that this is IBS. Give one reason the antibody could be wrong, and one finding IBS does not explain.", answer: "She makes almost no IgA, so an IgA antibody is falsely negative; IBS does not explain weight loss or iron deficiency.", marking: ["1 for IgA deficiency making tTG-IgA unreliable", "1 for iron deficiency or weight loss"], explanation: "<p>An IgG-based test is needed, and the alarm features need biopsy.</p>" },
+            { id: "s6-split", type: "fields", format: "Split the pair", points: 2, stem: "Celiac disease and IBS are both still possible. Name one test that would distinguish them, and the result you would expect in each.", fields: ["Test", "If celiac disease", "If IBS"], answer: ["EGD with duodenal biopsies, while eating gluten", "Flat or blunted villi, deep crypts, and more intraepithelial lymphocytes", "Normal mucosa"], marking: ["1 for duodenal biopsy on gluten", "0.5 for each result"], explanation: "<p>Biopsy is needed because the antibody cannot be trusted.</p>" },
+            { id: "s6-against", type: "sa", format: "Short answer", points: 1, words: 15, stem: "Which two results argue against Crohn disease?", answer: "A normal fecal calprotectin and a normal CRP.", marking: ["1 for both results"], explanation: "<p>Calprotectin near normal makes active intestinal inflammation unlikely.</p>" },
+        ] },
+];
+
+/* =========================================================
+   Part 3: Clinical Scenarios. Three patients of 15 points.
+   ========================================================= */
+const part3 = [
+    { groups: ["Liver failure", "Esophagus"], recap: "A 54-year-old man with alcohol-associated cirrhosis who vomited blood.",
+        opening: `<p>A 54-year-old man with known alcohol-associated cirrhosis vomits a bowl of fresh blood. He has moderate ascites and is drowsy but rousable.</p>`,
+        keyPoints: ["Antibiotics and a vasoconstrictor come before the scope; FFP and tranexamic acid do not help variceal bleeding.", "SAAG separates portal hypertension from other ascites; 250 neutrophils make SBP even if the culture is negative.", "Hepatorenal AKI needs 24 hours without improvement after volume, with no other explanation.", "Beta-blockers protect later but are held for low BP, AKI, or infection."],
+        stages: [
+            { passage: labs([["BP, pulse", "92/54, 118", ""], ["Hb", "78 g/L", "130–170"], ["Platelets", "68 ×10⁹/L", "150–400"], ["INR", "1.7", "0.8–1.2"], ["Urea", "13 mmol/L", "3–8"]]),
+                questions: [
+                    { id: "a-drugs", type: "sa", format: "Prioritize", points: 2, words: 30, stem: "Which two drugs should be given before EGD, and what does each achieve?", answer: "Terlipressin lowers portal pressure by splanchnic constriction; ceftriaxone, because infection triggers rebleeding and death.", marking: ["1 for a splanchnic vasoconstrictor (terlipressin or octreotide)", "1 for prophylactic ABX against infection and rebleeding"], explanation: "<p>Resuscitate, transfuse to about 70 g/L, then EGD within 12 hours.</p>" },
+                    { id: "a-ffp", type: "sa", format: "Defend or refute", points: 2, words: 30, stem: "A colleague orders fresh frozen plasma to bring the INR to 1.2. Defend or refute this.", answer: "Refute: a high INR in cirrhosis does not measure bleeding, plasma increases portal pressure by volume, and the cause is a varix, not a clotting gap.", marking: ["1 for the INR not predicting bleeding in cirrhosis", "1 for the harm of volume on portal pressure"], explanation: "<p>The INR reads only procoagulants; anticoagulants fall too.</p>" },
+                ] },
+            { passage: `<p><strong>Day 3.</strong> He is banded and stable. He is confused, with a temperature of 37.9 °C.</p>${labs([["Serum albumin", "24 g/L", "35–50"], ["Ascites albumin, protein", "9, 10 g/L", ""], ["Ascites neutrophils", "410 ×10⁶/L", "Under 250"], ["Ascites culture", "No growth", ""], ["Creatinine", "180 µmol/L (was 88)", "60–110"], ["Urine Na+", "8 mmol/L", ""], ["Urine sediment", "Bland; no protein", ""]])}`,
+                questions: [
+                    { id: "a-saag", type: "sa", format: "Calculation", points: 1, work: true, lines: 1, stem: "Calculate the SAAG and say what it means.", answer: "24 − 9 = 15 g/L (11 or more): portal hypertension.", marking: ["1 for 15 g/L, portal hypertension"], explanation: "<p>The low protein also marks a high risk of SBP.</p>" },
+                    { id: "a-mislead", type: "sa", format: "Mislead me", points: 1, words: 20, stem: "The culture grew nothing. Why does this not rule out infection?", answer: "The neutrophil count makes the diagnosis: over 250 is SBP whatever grows.", marking: ["1 for neutrophils over 250 being enough"], explanation: "<p>Culture is negative in many; treat on the count, and give albumin.</p>" },
+                    { id: "a-changed", type: "fields", format: "What changed?", points: 2, stem: "The kidney injury was first called prerenal. After 36 hours of albumin and fluid, his creatinine is 205 µmol/L. What is the diagnosis now, and how is it treated?", fields: ["New diagnosis, and why", "Treatment, and why"], answer: ["No improvement after volume, with bland urine: hepatorenal AKI from the kidney's own vasoconstriction, set off by SBP.", "Albumin with terlipressin, after checking oxygen and volume, because it reverses splanchnic dilation."], marking: ["1 for hepatorenal AKI by failure of volume and a bland urine", "1 for a vasoconstrictor with albumin, and its check"], explanation: "<p>Low urine Na+ fits both; only the response to volume separates them.</p>" },
+                ] },
+            { passage: `<p><strong>Day 10.</strong> He has recovered from the infection. His BP is 86/50, creatinine 168 µmol/L, and he has had no more bleeding.</p>`,
+                questions: [
+                    { id: "a-beta", type: "sa", format: "Defend or refute", points: 1, words: 30, stem: "The plan is to start carvedilol today to prevent another bleed. Defend or refute this.", answer: "Refute for now: a systolic BP under 90 and unresolved AKI make it unsafe; band again and start when both recover.", marking: ["1 for BP or AKI as a reason to wait"], explanation: "<p>It is the right drug at the wrong time.</p>" },
+                    { id: "a-hcc", type: "sa", format: "Short answer", points: 1, words: 15, stem: "Name the cancer his cirrhosis puts him at risk of, and one other cause of cirrhosis that shares the risk.", answer: "Hepatocellular carcinoma; another is hepatitis B, hepatitis C, or MASLD.", marking: ["1 for HCC with one other cause"], explanation: "<p>The risk follows the cirrhosis more than the cause, and hepatitis B can skip it.</p>" },
+                    { id: "a-map", type: "map", format: "Concept map", points: 5, stem: "Draw a concept map that links his portal pressure to every complication, using each term below once. Join terms with labeled arrows.",
+                        terms: ["Cirrhosis", "Portal hypertension", "Splanchnic vasodilation", "Low effective volume", "RAAS and SNS", "Na+ and water retention", "Ascites", "Renal vasoconstriction", "Varices", "Bacterial translocation", "Portosystemic shunt"],
+                        links: [["Cirrhosis", "Portal hypertension", "Resistance to flow through the liver"], ["Portal hypertension", "Varices", "Blood detours through small veins that can burst"], ["Portal hypertension", "Splanchnic vasodilation", "Nitric oxide widens gut arteries"], ["Splanchnic vasodilation", "Low effective volume", "Blood pools in the gut"], ["Low effective volume", "RAAS and SNS", "The body senses underfilling"], ["RAAS and SNS", "Na+ and water retention", "Aldosterone and ADH"], ["RAAS and SNS", "Renal vasoconstriction", "Hepatorenal AKI"], ["Na+ and water retention", "Ascites", "Fluid leaks from sinusoids and gut"], ["Ascites", "Bacterial translocation", "Gut bacteria reach ascites of low protein: SBP"], ["Portal hypertension", "Portosystemic shunt", "Ammonia bypasses the liver: encephalopathy"]],
+                        answer: "Ten expected links, half a point each.", marking: ["0.5 for each correct, labeled link, to 5 points"], explanation: "<p>The kidney, the belly, the gullet, and the brain are one circuit. Albumin, a vasoconstrictor, diuretics, banding, and lactulose each cut a different link.</p>" },
+                ] },
+        ] },
+    { groups: ["Inflammation and ischemia", "Obstruction", "Malabsorption and diarrhea"], recap: "A 29-year-old woman with ileal Crohn disease and abdominal swelling.",
+        opening: `<p>A 29-year-old woman with ileal Crohn disease for 6 years has cramping pain, swelling, and vomiting after meals for 3 days. She still passes some loose stool and gas.</p>`,
+        keyPoints: ["Passing stool does not exclude a partial obstruction.", "Enhancement and activity help to separate an inflamed from a scarred narrowing; drain an abscess before a biological.", "Under 100 cm of ileum lost gives bile acid diarrhea; over 100 cm gives fat malabsorption, and a sequestrant then makes it worse.", "Fat binds calcium, so oxalate is free to be absorbed and form stones."],
+        stages: [
+            { passage: `<p>CT shows 8 cm of thick terminal ileum with bowel 4 cm wide above it, and a 3 cm rim-enhancing collection beside it. MR enterography reports a bright wall on T2, strong enhancement, and swollen vessels at the narrowing. CRP is 64 mg/L (under 5) and calprotectin 1800 µg/g (under 50).</p>`,
+                questions: [
+                    { id: "b-mislead", type: "sa", format: "Mislead me", points: 1, words: 20, stem: "She is passing loose stool. Why does that not exclude obstruction?", answer: "A partial obstruction lets liquid through, and fluid secreted above the block can leak past.", marking: ["1 for partial obstruction passing liquid"], explanation: "<p>The widened bowel above the narrowing is the proof.</p>" },
+                    { id: "b-split", type: "sa", format: "Short answer", points: 2, words: 25, stem: "Is the narrowing mainly inflamed or scarred? Give two findings from the MR report that support your answer.", answer: "Inflamed: the wall is bright on T2 and enhances strongly, with swollen vessels; a scar is dark and enhances late.", marking: ["1 for inflamed", "1 for two supporting findings"], explanation: "<p>Inflammation is treated with drugs; scar needs dilation or surgery.</p>" },
+                    { id: "b-abscess", type: "sa", format: "Defend or refute", points: 2, words: 25, stem: "A colleague wants to start infliximab tonight. Defend or refute this.", answer: "Refute: there is an abscess, so drain it and give ABX first; a TNF inhibitor before control of infection risks sepsis.", marking: ["1 for the abscess", "1 for drain and ABX before a biological"], explanation: "<p>Infection, then immune suppression.</p>" },
+                ] },
+            { passage: `<p><strong>Six months later.</strong> The abscess is drained, and 70 cm of ileum with the valve is removed. She now has watery diarrhea, with fecal calprotectin 60 µg/g (under 50) and stool fat 4 g a day (under 7).</p>`,
+                questions: [
+                    { id: "b-grid", type: "grid", format: "Prediction grid", points: 2, stem: "Predict each value, compared with before surgery.", rows: ["Bile salts reaching the colon", "Serum C4 (a marker of bile salt synthesis)", "B12 absorption", "Fat absorption"], answer: ["up", "up", "down", "flat"], marking: ["0.5 for each correct row"], explanation: "<p>The ileum cannot take back bile salts; the liver makes more (C4 rises), so micelles stay adequate and fat is absorbed. B12 is lost with the ileum.</p>".replace("rises", "increases") },
+                    { id: "b-treat", type: "sa", format: "Short answer", points: 1, words: 15, stem: "Name the drug treatment for her diarrhea, and say how it works.", answer: "A bile acid sequestrant, which binds bile salts before they reach the colon.", marking: ["1 for a sequestrant binding bile salts"], explanation: "<p>Calprotectin close to normal argues against active disease.</p>" },
+                ] },
+            { passage: `<p><strong>Three years later.</strong> A second resection leaves 120 cm of ileum lost in all. She takes cholestyramine. Her stool is greasy, stool fat is 28 g a day (under 7), and she has had a kidney stone made of calcium oxalate.</p>`,
+                questions: [
+                    { id: "b-changed", type: "fields", format: "What changed?", points: 2, stem: "Cholestyramine helped after the first resection. Why is it now unsuitable, and what should be done instead?", fields: ["Why it is now unsuitable", "What to do instead"], answer: ["Over 100 cm lost: the liver cannot replace the bile salts, so there are too few for micelles.", "Stop it: it binds the few that remain, and worsens the fat loss. Use antidiarrheals and a low-fat diet."], marking: ["1 for the pool exhausted over 100 cm", "1 for stopping the sequestrant"], explanation: "<p>The same drug helps and harms the same disease, depending on length.</p>" },
+                    { id: "b-teach", type: "sa", format: "Teach it", points: 5, words: 100, lines: 8, stem: "She asks why she needs B12 injections, a low-fat diet, calcium with meals, and water through the day. Explain as chains of causes she could follow.",
+                        answer: "The last part of your small bowel takes up B12, and it is gone, so you need it by injection. It also takes back bile, which dissolves fat; without it, fat stays in your gut. Fat grabs calcium, which would normally hold oxalate from food, so the oxalate is absorbed and forms stones. Calcium with meals gives the oxalate something to hold on to. Less fat means less diarrhea and less calcium lost. Water keeps your urine dilute. Regular checks of vitamins A, D, E, and K matter too, because they travel with fat.",
+                        marking: ["1 for ileum and B12", "1 for lost bile salts and fat malabsorption", "1 for fat binding calcium and freeing oxalate", "1 for calcium with meals and dilute urine", "1 for clear, connected plain language within the limit"], explanation: "<p>The chain is: lost ileum → lost bile salts → fat in the lumen → calcium bound → oxalate free → stone.</p>" },
+                ] },
+        ] },
+    { groups: ["Pancreas", "Gallbladder and biliary tree"], recap: "A 46-year-old woman with upper abdominal pain after meals.",
+        opening: `<p>A 46-year-old woman has had attacks of upper abdominal pain after meals for 3 months. Yesterday's lasted 5 hours and has now settled. Her temperature is 37.1 °C.</p>`,
+        keyPoints: ["A settled pain does not mean the stone has passed: confirm with MRCP or EUS before ERCP.", "Cholangitis with shock needs ABX and fluid at once, and drainage urgently.", "After ERCP, pain with a lipase of 3 times normal is pancreatitis; give moderate fluid, early feeding, and no prophylactic ABX.", "Necrosis can destroy enough pancreas to need enzymes."],
+        stages: [
+            { passage: `${labs([["ALT", "310 U/L", "Under 40"], ["ALP", "220 U/L", "30–110"], ["Bilirubin", "58 µmol/L", "Under 20"], ["Lipase", "48 U/L", "Under 60"]])}<p>Ultrasound: stones in the gallbladder, and a bile duct 11 mm wide (under 6).</p>`,
+                questions: [
+                    { id: "c-account", type: "account", format: "Account for every result", points: 2, stem: "Explain each result.", rows: ["ALT high early, in an obstruction", "Bile duct 11 mm, lipase normal"], answer: ["Sudden pressure injures liver cells, so ALT increases first; ALP takes time to be made.", "Blockage below widens the duct; the pancreatic duct was not blocked, so lipase is normal."], marking: ["1 for ALT before ALP in acute obstruction", "1 for a duct blockage sparing the pancreatic duct"], explanation: "<p>The pattern moves from hepatocellular to cholestatic over days.</p>" },
+                    { id: "c-defend", type: "sa", format: "Defend or refute", points: 2, words: 30, stem: "A colleague says \"The pain has settled and she can go home\". Defend or refute this.", answer: "Refute: a wide duct and high bilirubin suggest a stone is or was in the duct; a stone can block on and off, so confirm with MRCP or EUS.", marking: ["1 for the duct and bilirubin as signs of a stone", "1 for confirming before discharge"], explanation: "<p>She then needs the stone and the gallbladder dealt with.</p>" },
+                    { id: "c-split", type: "fields", format: "Split the pair", points: 2, stem: "The stone may have passed, or may still be in the duct. Name one test that would distinguish them, and the result you would expect in each.", fields: ["Test", "If still there", "If passed"], answer: ["MRCP (or EUS)", "A filling defect in a wide duct", "No defect, and a duct narrowing back toward normal"], marking: ["1 for MRCP or EUS", "0.5 for each result"], explanation: "<p>ERCP has risk, so it is for treating a stone that is proved, or infection.</p>" },
+                ] },
+            { passage: `<p><strong>That night.</strong> She has rigors, is confused, and her temperature is 39.2 °C, BP 88/52 mmHg, and pulse 128. Bilirubin is 140 µmol/L and WBC 21 ×10⁹/L (4–11).</p>`,
+                questions: [
+                    { id: "c-priority", type: "sa", format: "Prioritize", points: 2, words: 30, stem: "What are the first two treatments, in order, and why?", answer: "IV fluid and broad ABX at once for septic shock, then urgent ERCP to drain the duct, because pressure drives bacteria into blood.", marking: ["1 for resuscitation with ABX first", "1 for urgent drainage next"], explanation: "<p>Fever, jaundice, pain, shock, and confusion mark severe cholangitis.</p>" },
+                    { id: "c-changed", type: "fields", format: "What changed?", points: 2, stem: "Yesterday the plan was to confirm the stone before ERCP. Why has that changed, and why are ABX not enough alone?", fields: ["Why the plan changed", "Why ABX are not enough"], answer: ["Fever, shock, and confusion mean infected bile under pressure: drainage is urgent, so it no longer waits for MRCP.", "ABX do not enter a blocked, infected duct well, and pressure keeps pushing bacteria into blood."], marking: ["1 for severe cholangitis making drainage urgent", "1 for drainage needed as well as ABX"], explanation: "<p>New data turn an elective sequence into an emergency.</p>" },
+                ] },
+            { passage: `<p><strong>Six hours after ERCP.</strong> She has severe pain through to her back. Lipase is 2100 U/L (under 60), calcium 1.9 mmol/L (2.1–2.6), and hematocrit 0.49 (0.36–0.46). Later she develops necrosis of much of the gland. <strong>Four months on,</strong> her stool is greasy, and fecal elastase is 70 µg/g (over 200).</p>`,
+                questions: [
+                    { id: "c-account2", type: "account", format: "Account for every result", points: 2, stem: "Explain each result.", rows: ["Calcium 1.9", "Hematocrit 0.49"], answer: ["Released lipase breaks down fat, and the fatty acids bind calcium as soap.", "Leaky capillaries lose fluid to tissue, so blood is concentrated."], marking: ["1 for fat saponification", "1 for capillary leak and hemoconcentration"], explanation: "<p>Both are markers of a severe attack.</p>" },
+                    { id: "c-defend2", type: "sa", format: "Defend or refute", points: 2, words: 35, stem: "A colleague orders prophylactic ABX, large fast fluids, and nothing by mouth for a week. Defend or refute this.", answer: "Refute: ABX only for proven or suspected infection, moderate goal-directed Hartmann solution, and oral feeding as soon as tolerated, because overload and gut rest add harm.", marking: ["1 for no prophylactic ABX", "1 for moderate fluid and early feeding"], explanation: "<p>Early feeding protects the gut barrier.</p>" },
+                    { id: "c-enzyme", type: "sa", format: "Short answer", points: 1, words: 20, stem: "Explain her greasy stool, and name its treatment.", answer: "Necrosis left too little enzyme to digest fat: give pancreatic enzymes with meals.", marking: ["1 for exocrine insufficiency treated with enzymes"], explanation: "<p>A low elastase supports exocrine failure.</p>" },
+                ] },
+        ] },
+];
+
+/* =========================================================
+   Part 4: Pharmacology. Five decisions of 3 points.
+   ========================================================= */
+const mcq = (id, stem, options, notes, explanation) => ({ id, type: "mc", format: "Multiple choice", points: 1, stem, options, answer: 0, notes, marking: ["1 for the correct option"], explanation: `<p>${explanation}</p>` });
+const part4 = [
+    { groups: ["Pharmacology", "Inflammation and ischemia"], discipline: "",
+        passage: `<p>A 41-year-old man has a complex perianal fistula from Crohn disease. It is drained, with a seton in place. Six years ago he had a lymphoma while taking azathioprine and infliximab, and has been free of it since.</p>`,
+        questions: [
+            mcq("d1-pick", "After advice from his oncologist, which is the best choice for the fistula?", ["Infliximab, without a thiopurine", "Azathioprine, with infliximab added later", "Azathioprine alone, for maintenance", "Prednisolone, tapered over a year", "Mesalazine, by mouth and rectally"], { 1: "Reuses the combination linked to his lymphoma.", 2: "Thiopurines have weak fistula evidence and add lymphoma risk.", 3: "Corticosteroids do not heal fistulas or maintain remission.", 4: "5-ASA does little in Crohn disease." }, "TNF inhibitors have the best fistula evidence. The thiopurine is left out because it adds to the lymphoma risk, and the oncologist weighs the rest."),
+            mcq("d1-check", "Which must be checked before the first dose of this drug?", ["Latent TB and HBV", "TPMT and NUDT15 activity", "G6PD activity", "HLA-B*57:01", "Fecal elastase"], { 1: "Needed before a thiopurine.", 2: "Needed before dapsone.", 3: "Linked to flucloxacillin injury.", 4: "Tests pancreatic function." }, "Blocking TNF releases latent TB and HBV, because TNF holds granulomas together and helps control the virus."),
+            mcq("d1-contra", "Which condition would be a reason not to use this drug?", ["Severe heart failure", "Well-controlled asthma", "Latent TB, treated for 3 months", "Hypothyroidism on levothyroxine", "Mild migraine"], { 1: "Not a contraindication.", 2: "Treated latent infection allows it.", 3: "Not a contraindication.", 4: "Not a contraindication." }, "TNF inhibitors can worsen heart failure, demyelinating disease, and active infection."),
+        ] },
+    { groups: ["Pharmacology", "Hepatitis", "Liver failure"], discipline: "",
+        passage: `<p>A 58-year-old woman has HCV genotype 1 and decompensated cirrhosis (Child-Pugh C), with ascites. She takes amiodarone for ventricular tachycardia.</p>`,
+        questions: [
+            mcq("d2-pick", "Which plan is safest?", ["Sofosbuvir-velpatasvir, after amiodarone is replaced", "Glecaprevir-pibrentasvir, with amiodarone continued unchanged", "Sofosbuvir-velpatasvir, continuing amiodarone", "Peginterferon-α, continuing amiodarone", "Grazoprevir, after cardiology replaces amiodarone"], { 1: "A protease inhibitor is unsafe in decompensation.", 2: "Sofosbuvir with amiodarone can cause severe slow heart rate.", 3: "Interferon is contraindicated in decompensation.", 4: "A protease inhibitor is unsafe in decompensation." }, "Sofosbuvir-velpatasvir works in all genotypes and in decompensated cirrhosis. The amiodarone has to change first because of bradycardia."),
+            mcq("d2-mech", "Why are the protease inhibitors avoided in her?", ["Their levels increase and can injure the liver", "They cause heart block when given with amiodarone", "They cannot act on genotype 1", "They depend on gastric acid to be absorbed", "They need the kidneys to convert them to active drug"], { 1: "This is a sofosbuvir interaction.", 2: "They act on several genotypes.", 3: "Acid matters for velpatasvir and ledipasvir.", 4: "Not a feature of these drugs." }, "Glecaprevir and grazoprevir are cleared by the liver, so they accumulate when it fails."),
+            mcq("d2-check", "Which test must be done before any direct-acting antiviral?", ["HBsAg", "HLA-B*57:01", "Serum ceruloplasmin", "Fecal calprotectin", "Antimitochondrial antibody"], { 1: "Linked to flucloxacillin injury.", 2: "Tests for Wilson disease.", 3: "Tests for bowel inflammation.", 4: "Tests for PBC." }, "Clearing HCV can reactivate HBV, so HBV is looked for and treated first."),
+        ] },
+    { groups: ["Pharmacology", "Stomach"], discipline: "",
+        passage: `<p>A 52-year-old man with a duodenal ulcer has <em>H. pylori</em>. He has had anaphylaxis to amoxicillin, has never been treated before, and takes warfarin for A-fib. The local clarithromycin resistance rate is low.</p>`,
+        questions: [
+            mcq("d3-pick", "Which is the right first-line regimen for him?", ["PPI, clarithromycin, and metronidazole", "PPI, amoxicillin-clavulanate, and clarithromycin", "PPI, amoxicillin, and metronidazole", "PPI, rifabutin, and amoxicillin", "PPI, ciprofloxacin, and oral vancomycin"], { 1: "Contains amoxicillin.", 2: "Contains amoxicillin.", 3: "Contains amoxicillin, and rifabutin is rescue.", 4: "Vancomycin is not absorbed and does not treat this." }, "Metronidazole replaces amoxicillin in triple therapy for a penicillin allergy; the PPI makes the ABX work better at a higher pH."),
+            mcq("d3-warfarin", "What should be expected with warfarin during this treatment?", ["INR increases, because both ABX slow its clearance", "INR decreases, because clarithromycin speeds its clearance", "INR does not change", "INR decreases, because the PPI blocks its absorption", "INR increases, because the PPI blocks clotting factors"], { 1: "Clarithromycin inhibits CYP3A4.", 2: "Metronidazole and clarithromycin both interact.", 3: "PPIs do not reduce warfarin absorption.", 4: "PPIs do not act on clotting factors." }, "Metronidazole slows warfarin clearance and clarithromycin inhibits CYP enzymes, so the INR is checked early."),
+            mcq("d3-mech", "How does clarithromycin act?", ["Binds the 50S ribosomal subunit", "Binds the 30S ribosomal subunit", "Binds penicillin-binding proteins", "Forms free radicals that damage DNA", "Blocks DNA gyrase and topoisomerase IV"], { 1: "Tetracyclines.", 2: "Amoxicillin and other β-lactams.", 3: "Metronidazole.", 4: "Fluoroquinolones." }, "Macrolides act on the 50S subunit, and resistance to them is the main reason triple therapy fails."),
+        ] },
+    { groups: ["Pharmacology", "Malabsorption and diarrhea"], discipline: "",
+        passage: `<p>A 72-year-old woman has 8 loose stools a day after a course of clindamycin. <em>C. difficile</em> toxin is positive. It is her first attack. She has heart failure and normal kidneys.</p>`,
+        questions: [
+            mcq("d4-why", "Fidaxomicin is chosen over oral vancomycin. What is the main reason?", ["It spares most of the colonic flora", "It is absorbed and reaches the colon from the blood", "It also treats Candida", "It is needed IV for a first attack", "It binds the toxin directly"], { 1: "It is barely absorbed.", 2: "It treats only C. difficile.", 3: "It is oral.", 4: "It stops RNA polymerase; it does not bind toxin." }, "Its narrow spectrum keeps the normal bacteria that stop C. difficile from coming back."),
+            mcq("d4-ful", "She becomes hypotensive with ileus and no stool. What is added to oral and rectal vancomycin?", ["IV metronidazole", "IV vancomycin", "Oral loperamide", "IV ceftriaxone", "Oral rifaximin"], { 1: "IV vancomycin does not reach the colon lumen.", 2: "It can cause toxic megacolon.", 3: "It does not cover C. difficile and is a common cause.", 4: "It needs to travel through the gut, which has stopped." }, "With ileus, oral drug may not reach the colon; IV metronidazole reaches the inflamed wall from the blood."),
+            mcq("d4-iv", "Why does IV vancomycin not treat colitis?", ["It does not enter the colon lumen", "It is destroyed by colonic bacteria", "It is cleared into bile as an inactive form", "It works only against gram-negative bacteria", "It is neutralized by bile salts"], { 1: "Not a reason it fails.", 2: "It is cleared by the kidneys.", 3: "It acts on gram-positive bacteria.", 4: "Not relevant." }, "The drug has to be in the lumen, where the bacteria are, so it is given by mouth or rectum."),
+        ] },
+    { groups: ["Pharmacology"], discipline: "",
+        passage: `<p>A 61-year-old woman starts cisplatin. Last cycle she vomited on days 2–5 although she took ondansetron. Her QTc is 500 ms (under 460), and she is constipated. She takes warfarin.</p>`,
+        questions: [
+            mcq("d5-pick", "Which drug is best added to prevent the delayed vomiting?", ["Aprepitant", "Metoclopramide, at full dose", "Hyoscine hydrobromide", "Promethazine at night", "Peppermint oil"], { 1: "Acts on D2; not the delayed pathway.", 2: "For motion sickness.", 3: "For motion; it causes sedation.", 4: "For bowel spasm." }, "Delayed vomiting depends on substance P at NK1 receptors, which aprepitant blocks."),
+            mcq("d5-cons", "Which effect of ondansetron is most likely to be a problem for her?", ["It slows the bowel and lengthens the QT interval", "It causes severe diarrhea and low potassium", "It blocks dopamine and causes Parkinson-like stiffness", "It causes sedation and dry mouth through H1 receptors", "It increases gastric acid and ulcers"], { 1: "It tends to constipate.", 2: "This is a D2 blocker effect.", 3: "This is an H1 blocker effect.", 4: "It does not act on acid." }, "5-HT3 blockade reduces gut movement and can lengthen QT, so both worsen her problems."),
+            mcq("d5-warf", "What should be expected with warfarin on aprepitant?", ["The INR may decrease", "The INR doubles within hours", "Warfarin is inactivated in the stomach", "The INR is unaffected", "Bleeding from vitamin K epoxide reductase block"], { 1: "Not expected.", 2: "It does not act in the stomach.", 3: "There is an interaction.", 4: "This is how warfarin works." }, "Aprepitant induces CYP2C9, which weakens warfarin."),
+        ] },
+];
+
+/* =========================================================
+   Part 5: Research Analysis (C-GALL, BMJ 2023; CC BY 4.0).
+   Quotations are the authors' words; tables are abridged.
+   ========================================================= */
+const paper = {
+    groups: ["Gallbladder and biliary tree"],
+    passage: `<p class="source">Abridged from the C-GALL trial (BMJ 2023), licensed CC BY 4.0. Numbers are as published.</p>
+<h3>Question and design</h3><p>In 20 UK hospitals, adults with symptomatic uncomplicated gallstone disease (biliary pain or acute cholecystitis) were randomized 1:1 to a strategy of laparoscopic cholecystectomy or conservative management (pain relief and advice, with surgery if needed). People with a duct stone, past pancreatitis, jaundice, cancer suspicion, pregnancy, or unfit for surgery were excluded. Participants were not blinded. The trial tested "superiority", not non-inferiority.</p>
+<blockquote>"A sample size of 194 in each group was needed to detect a mean difference in area under the curve of 0.33 standard deviations … a difference of 0.33 standard deviations in generic health status is considered clinically relevant."</blockquote>
+<p>The primary outcome was the SF-36 bodily pain area under the curve (AUC) over 18 months (0–100, higher is better). Analysis was by intention to treat. Missing values were imputed.</p>
+<h3>Who got what</h3><p>434 were analyzed, 217 in each group, of 2667 assessed.</p>
+${labs([["Had surgery by 18 months", "54 (25%)", "146 (67%)"], ["Median time to surgery", "8.1 months", "4.5 months"], ["Had surgery by 24 months", "64 (29%)", "153 (71%)"]], ["", "Conservative", "Surgery"])}
+<h3>Outcomes</h3>
+${labs([["SF-36 bodily pain AUC, 18 months (SD)", "46.8 (8.8)", "46.8 (8.7)", "0.0 (−1.7 to 1.7)"], ["SF-36 bodily pain AUC, 24 months", "47.2", "46.8", "−0.1 (−1.8 to 1.6)"], ["CSQ total, baseline (SD)", "33.2 (19.9)", "35.4 (20.6)", ""], ["CSQ total, 18 months", "21.3 (n = 113)", "15.8 (n = 101)", "6.6 (1.9 to 11.3)"], ["CSQ total, 24 months", "20.7 (n = 98)", "14.0 (n = 91)", "9.0 (4.1 to 14.0)"], ["Persistent symptoms, 24 months", "23.1", "15.1", "10.1 (4.2 to 16.0)"]], ["Outcome", "Conservative", "Surgery", "Difference (95% CI)"])}
+<p>The CSQ is a gallstone-specific questionnaire; a higher score is worse. Differences are adjusted, and positive favors surgery for the CSQ.</p>
+${labs([["Any complication by 18 months", "32 (15%)", "44 (20%)"], ["Before surgery: cholecystitis, pancreatitis, colic", "25 (12%)", "11 (5%)"], ["During surgery, mostly bile or stone spillage", "9 (4%)", "24 (11%)"]], ["Complications", "Conservative", "Surgery"])}
+<p>Relative risk of any complication, conservative against surgery: 0.72 (95% CI 0.46 to 1.14). Cost and quality-adjusted life years: conservative care cost £1033 less, with a small non-significant loss in quality of life.</p>
+${supplement("<p><strong>SF-36 bodily pain</strong> is a generic measure of pain from any cause. <strong>Intention to treat</strong> compares people by the group they were assigned to, not by the treatment they received.</p>")}`,
     questions: [
-        { id: "r-design", type: "sa", format: "Short answer", points: 2, words: 15,
-            stem: "What kind of study is this, and what was its final primary outcome?",
-            answer: "A double-blind, placebo-controlled randomized trial; death due to bleeding within 5 days.",
-            marking: ["1 for a double-blind (or placebo-controlled) randomized trial", "1 for death due to bleeding within 5 days"],
-            explanation: `<p>Randomization balances known and unknown prognostic factors between groups, and masking patients, caregivers, and assessors prevents knowledge of the allocation from influencing care or outcome assessment.</p>` },
-        { id: "r-baseline", type: "sa", format: "Short answer", points: 2, words: 25,
-            stem: "Were the two groups comparable at baseline? Give evidence from the table, and say why this matters.",
-            answer: "Yes: age, shock, variceal bleeding, and delay are nearly identical; so differences in outcome can be attributed to the drug, not the patients.",
-            marking: ["1 for yes, with evidence from the baseline table", "1 for why: outcome differences can then be attributed to the treatment"],
-            explanation: `<p>With over 12 000 patients, randomization produced groups that match closely on prognostic factors, so confounding is unlikely to explain any difference.</p>` },
-        { id: "r-nnh", type: "sa", format: "Calculation", points: 4, work: true, lines: 2,
-            stem: "Calculate the risk of venous thromboembolism in each group, the absolute risk difference, and the number needed to harm. State what the result means in words.",
-            answer: "48/5952 = 0.81%; 26/5977 = 0.43%; difference 0.37 percentage points; NNH = 1 ÷ 0.0037 ≈ 270: about one extra VTE for every 270 patients treated.",
-            marking: ["1 for both risks (0.81% and 0.43%)", "1 for the absolute risk difference (about 0.37 percentage points)", "1 for an NNH of about 270 (accept 250–280)", "1 for the meaning: one extra VTE per about 270 treated"],
-            explanation: `<p>Relative risks sound large (RR 1.85, nearly double), but absolute risks show the scale: both risks are under 1%, so the harm is real but uncommon.</p>` },
-        { id: "r-nnt", type: "sa", format: "Short answer", points: 2, words: 25,
-            stem: "A colleague calculates an NNT of about 2000 for the primary outcome. Why is this number misleading?",
-            answer: "The CI (0.82–1.18) crosses 1, so benefit is not shown; the effect could be harm, so an NNT implies a benefit that is not there.",
-            marking: ["1 for the CI crossing 1 (no significant difference)", "1 for an NNT implying a benefit the data do not show (the effect could be harm)"],
-            explanation: `<p>An NNT is meaningful only when there is evidence of an effect. Here the risk difference, about 0.05 percentage points, is well within chance.</p>` },
-        { id: "r-support", type: "support", format: "Supported or not", points: 6,
-            stem: "Mark each statement as supported, overstated, or unsupported by the trial's data, and give the evidence.",
-            rows: [
-                "Tranexamic acid has no effect at all on death from GI bleeding.",
-                "Tranexamic acid increases the risk of venous thromboembolism.",
-                "Tranexamic acid did not significantly reduce rebleeding within 5 days.",
-                "Patients with liver disease have a much higher risk of thrombosis from tranexamic acid than other patients.",
-                "Tranexamic acid increases death from cancer.",
-                "Given within 3 hours of onset, tranexamic acid would have reduced death from bleeding.",
-            ],
-            answer: [
-                ["overstated", "The CI (0.82–1.18) cannot rule out a modest benefit or harm; the authors say so."],
-                ["supported", "RR 1.85, 95% CI 1.15–2.98, which excludes 1."],
-                ["supported", "RR 0.91, 95% CI 0.78–1.07, which includes 1."],
-                ["overstated", "An exploratory subgroup with few events (14 vs 2) and a very wide CI; it raises the question but does not establish it."],
-                ["unsupported", "One of seven causes compared, so a chance finding is likely; a 24-hour drug causing cancer deaths within 28 days is implausible."],
-                ["unsupported", "The prespecified subgroup by time to treatment showed no difference in effect."],
-            ],
-            marking: ["1 for each row with the correct judgment and evidence (0.5 for the judgment alone)"],
-            explanation: `<p>A confidence interval that crosses 1 means no evidence of an effect, not evidence of no effect. Exploratory subgroups and one-off comparisons among many outcomes generate hypotheses; they do not prove them.</p>` },
-        { id: "r-outcome", type: "sa", format: "Defend or refute", points: 3, words: 30,
-            stem: "Changing a trial's primary outcome partway through can be a warning sign. Why, and which features of this trial reduce the concern?",
-            answer: "Changing outcomes can let authors pick a favorable result. Here it was decided blind to the data, published before unblinding, and all-cause death also showed no difference.",
-            marking: ["1 for the risk of choosing an outcome that favors the result", "1 for the change made blind to the data, with the plan published before unblinding", "1 for the all-cause result agreeing, so the change does not alter the conclusion"],
-            explanation: `<p>The authors also explain the reason: most deaths were not from bleeding, and a short-acting drug given for 24 hours was not expected to affect deaths weeks later.</p>` },
-        { id: "r-meta", type: "sa", format: "Short answer", points: 2, words: 25,
-            stem: "The earlier meta-analysis suggested a 39% reduction in deaths. Give two reasons why this trial's result is more trustworthy.",
-            answer: "Small trials are prone to publication and selection bias and imprecision; this trial is large, masked, and nearly complete in follow-up.",
-            marking: ["1 for a weakness of the small trials (publication or selection bias, imprecision)", "1 for a strength of this trial (size, masking, complete follow-up)"],
-            explanation: `<p>Seven small trials with 1654 patients in total can produce a large apparent effect if positive trials are more likely to be published; 12 009 patients give a precise estimate.</p>` },
-        { id: "r-mechanism", type: "sa", format: "Unseen mechanism", points: 4, words: 40,
-            stem: "Using the supplementary information and the discussion, give two reasons why tranexamic acid works in trauma but failed here.",
-            answer: "It blocks fibrinolysis, which matters early, but most GI patients presented after 3 hours with uncertain onset; many had cirrhosis, where fibrinolysis may be reduced, leaving little to block.",
-            marking: ["1 for the mechanism: blocking plasminogen activation, so clots are not broken down", "1 for late or uncertain onset (over 80% presented after 3 hours)", "1 for reduced fibrinolysis in cirrhosis, so little to block", "1 for linking either reason to when fibrinolysis drives bleeding, or to the excess of venous clots"],
-            explanation: `<p>An antifibrinolytic helps only when fibrinolysis is driving bleeding. In trauma that happens early and is easy to time; in GI bleeding, onset is hard to date, patients arrive late, and in cirrhosis fibrinolysis can be low, which could also explain the excess of venous clots.</p>` },
-        { id: "r-dose", type: "mc", format: "Multiple choice", points: 1,
-            stem: "Which feature of the regimen do the authors suggest may explain the excess of venous thromboembolism?",
-            options: ["The longer duration of treatment", "The use of placebo in the control group", "Enrolling patients from 15 countries", "The loading dose given over 10 minutes", "Masking the outcome assessors"],
-            answer: 0,
-            notes: { 1: "Placebo controls for expectation; it cannot cause clots in the treated group.", 2: "The number of countries affects generalizability, not the drug's effect on clotting.", 3: "The loading dose was part of the regimen, but the authors point to the 24-hour duration for clots and the higher dose for seizures.", 4: "Masking prevents biased assessment; it does not change the risk of thrombosis." },
-            marking: ["1 for the longer duration"],
-            explanation: `<p>The 24-hour infusion (4 g in total) was longer and higher than in trauma and childbirth; the authors suggest the duration may explain the venous clots and the dose the seizures.</p>` },
-        { id: "r-apply", type: "sa", format: "Apply to the case", points: 4, words: 40,
-            stem: "Should tranexamic acid be given to the man in Case 1 of Part 2 (a bleeding duodenal ulcer, no liver disease)? Give one reason the trial applies to him, one reason it may not, and your conclusion.",
-            answer: "Applies: adults with significant upper GI bleeding, no subgroup difference by cause. May not: nearly half had variceal bleeding, causing most deaths. Conclusion: do not give it routinely.",
-            marking: ["1 for a reason it applies (his kind of bleed was included; no difference by cause or site)", "1 for a reason it may not (dominated by variceal bleeding and liver disease)", "1 for concluding not to give it outside a trial", "1 for weighing the VTE harm against no shown benefit"],
-            explanation: `<p>The trial included many non-variceal upper GI bleeds and found no difference in effect by cause, so its result applies to him; the possible harm, venous thromboembolism, applies too. The authors conclude that tranexamic acid should not be used for GI bleeding outside a randomized trial.</p>` },
+        { id: "r-design", type: "sa", format: "Short answer", points: 2, words: 25, stem: "Why does intention to treat compare the assigned groups even when many did not have the treatment, and what does it protect?", answer: "It keeps the groups made by chance, so they stay balanced; comparing by treatment received would mix in why some avoided or sought surgery.", marking: ["1 for preserving randomization", "1 for avoiding confounding by the reasons for crossing over"], explanation: "<p>The answer is about offering a strategy, not about the operation itself.</p>" },
+        { id: "r-cross", type: "sa", format: "Calculation", points: 3, work: true, lines: 2, stem: "By 18 months, what is the gap between the groups in the proportion who had surgery? How does this compare with the gap expected if everyone had received their assigned treatment, and how does it affect the primary result?", answer: "67% − 25% = 42 percentage points, against nearly 100 if each group had followed its assignment; dilution pulls the groups together, making a difference harder to find.", marking: ["1 for 42 points", "1 for a much larger planned gap", "1 for dilution toward no difference"], explanation: "<p>Crossover makes the groups look alike even if surgery works.</p>" },
+        { id: "r-null", type: "sa", format: "Defend or refute", points: 3, words: 40, stem: "The authors write that surgery is \"no more effective\". Using the CI and the 0.33 SD, defend or refute the claim \"The two strategies are equivalent for pain\".", answer: "Partly defend: 0.33 SD of 8.8 is about 2.9, and the CI (−1.7 to 1.7) excludes it, so a relevant gap between the strategies is unlikely. Refute \"surgery does nothing\": with 67% operated, it tests the offer.", marking: ["1 for the 2.9 threshold (accept 2.8 to 3)", "1 for the CI excluding it", "1 for the limit: the offer, not the operation, was tested"], explanation: "<p>A narrow interval around no difference is stronger than a wide one, but the comparison is what was actually made.</p>" },
+        { id: "r-harm", type: "sa", format: "Calculation", points: 4, work: true, lines: 4, words: 60, stem: "Calculate the absolute difference in the risk of any complication, and the number needed to harm for surgery. Then say how the CI for the relative risk limits this finding, and how the types of complication differ between the groups.", answer: "20.3% − 14.7% = 5.5 points, so NNH is about 18. The CI (0.46 to 1.14) includes 1, so chance can explain it. Before surgery, conservative care had more cholecystitis and pancreatitis; during surgery, spillage dominates, and is usually minor.", marking: ["1 for about 5.5 points", "1 for NNH about 18", "1 for the CI including 1", "1 for the difference in kind of complication"], explanation: "<p>44 ÷ 217 = 20.3% and 32 ÷ 217 = 14.7%.</p>" },
+        { id: "r-support", type: "support", format: "Supported or not", points: 6, stem: "Mark each statement and give the evidence.", rows: ["At 18 months, offering surgery did not change generic bodily pain.", "Among those who replied, the group assigned surgery had fewer gallstone-specific symptoms.", "Surgery is ineffective for gallstones.", "Conservative care prevents cholecystitis.", "Conservative care cost less in this trial.", "The findings apply to people with past pancreatitis."],
+            answer: [["supported", "AUC difference 0.0 (−1.7 to 1.7)"], ["supported", "CSQ 6.6 better at 18 months, 9.0 at 24; both CIs exclude 0"], ["overstated", "Only 67% had it; gallstone symptoms improved"], ["unsupported", "More pre-surgery complications in conservative care (12% against 5%)"], ["supported", "£1033 less"], ["unsupported", "They were excluded"]], marking: ["1 for each correct judgment with evidence"], explanation: "<p>Choose the word that matches the evidence: \"overstated\" when the direction is right but the claim goes too far.</p>" },
+        { id: "r-mislead", type: "sa", format: "Mislead me", points: 3, words: 40, stem: "The primary outcome suggests that conservative care is enough. Which results challenge that, and why did the primary outcome not show them?", answer: "The CSQ and persistent symptoms favored surgery, with a difference of 9 at 24 months; about 0.45 SD. SF-36 pain is generic, so pain from anywhere blurs biliary pain, and crossover adds to the blur.", marking: ["1 for the gallstone-specific score favoring surgery", "1 for about 0.33–0.45 SD or a clinically relevant size", "1 for a generic, diluted outcome"], explanation: "<p>The measure nearest the disease showed a difference; the general one did not.</p>" },
+        { id: "r-missing", type: "sa", format: "Short answer", points: 2, words: 25, stem: "The 24-month CSQ difference rests on 98 and 91 people of 217 each. How could this bias the result?", answer: "More than half are missing, so it is biased if those who replied differ, such as people with symptoms replying more.", marking: ["1 for the size of the loss (about 55%)", "1 for bias if missing depends on outcome"], explanation: "<p>Randomization protects the group, not the part that replies.</p>" },
+        { id: "r-apply", type: "sa", format: "Apply to a patient", points: 3, words: 40, stem: "A 38-year-old with weekly biliary pain plans to fly overseas for work. She says the trial shows she does not need an operation. What would you tell her?", answer: "On average, waiting did not worsen general pain, and many never needed surgery; but it gave more cholecystitis before surgery and worse gallstone symptoms. Her weekly attacks and travel make elective surgery reasonable, by her preference.", marking: ["1 for what the trial does support", "1 for what it shows against waiting", "1 for fitting her frequency, risk, and choice"], explanation: "<p>The average does not decide for one person, especially one with frequent attacks and no access to care.</p>" },
+        { id: "r-blind", type: "mc", format: "Multiple choice", points: 1, stem: "Participants knew their group and reported their own symptoms. Which result is most likely to be biased by this?", options: ["Self-reported gallstone symptoms", "The number who had surgery", "Bile spillage recorded at operation", "The cost of care", "The number randomized"], answer: 0, notes: { 1: "Recorded from hospital data.", 2: "Recorded by the surgeon.", 3: "Costs come from records.", 4: "Fixed at the start." }, marking: ["1 for self-reported symptoms"], explanation: "<p>Expectation can color what people report.</p>" },
+        { id: "r-longer", type: "fields", format: "What changed?", points: 3, stem: "If ten-year follow-up showed that 60% of the conservative group had surgery, which of the trial's conclusions would this change, and which would it leave unaffected?", fields: ["Conclusions changed", "Conclusions unaffected"], answer: ["The cost advantage would shrink, and the two groups would look even more alike.", "What happened to pain and complications in the first 18 months, and that the groups were made by chance."], marking: ["1 for a lower cost advantage", "1 for more alike groups or diluted comparison", "1 for the early results and randomization being unchanged"], explanation: "<p>Longer follow-up tests whether surgery was avoided or only delayed.</p>" },
     ],
     references: [
-        `The HALT-IT Trial Collaborators. Effects of a high-dose 24-h infusion of tranexamic acid on death and thromboembolic events in patients with acute gastrointestinal bleeding (HALT-IT): an international randomised, double-blind, placebo-controlled trial. <em>Lancet</em>. 2020;395(10241):1927–1936. PMC7306161. CC BY 4.0.`,
-        `Chauncey JM, Patel P, Wardrop D, Estcourt LJ. Tranexamic Acid. 2025. In: <em>StatPearls</em>. StatPearls Publishing. NBK532909.`,
+        "Ahmed I, Hudson J, Innes K, et al. Effectiveness of conservative management versus laparoscopic cholecystectomy in the prevention of recurrent symptoms and complications in adults with uncomplicated symptomatic gallstone disease (C-GALL trial): pragmatic, multicentre randomised controlled trial. <em>BMJ</em>. 2023;383:e075383. PMC10698555. CC BY 4.0.",
     ],
 };
-/* =========================================================
-   Part 4: Synthesis. One structured extended answer, marked against a rubric. Listed at 15 minutes.
-   Formats alternate between exams: "Teach it" here, a concept map in the next.
-   ========================================================= */
-export const PART4 = {
-    title: "One disease, three consequences",
-    passage: `<p>A 58-year-old woman with Hashimoto thyroiditis is diagnosed with autoimmune gastritis. Over the next few years she develops anemia, numb feet, and several small polyps in her gastric body that prove to be a gastric NET. Her first blood count shows a normal MCV, although her B12 is low.</p>`,
-    questions: [
-        { id: "syn-teach", type: "sa", format: "Teach it", points: 15, words: 200, lines: 15,
-            stem: `A first-year student asks how one autoimmune disease of the stomach can cause all of this. Explain, as chains of causes rather than a list:
-<ol class="prompts"><li>how her anemia and numb feet arise;</li><li>why gastrin rises, and how this leads to the tumor;</li><li>why her MCV can be normal despite a low B12.</li></ol>`,
-            answer: `(a) Her antibodies destroy parietal cells, which make HCl and IF. Without IF, B12 cannot be absorbed, and over 2–5 years she becomes deficient. Red cell precursors cannot divide normally, so red cells are large (macrocytosis) and neutrophils hypersegmented: pernicious anemia. B12 deficiency also damages nerves: peripheral neuropathy, then subacute combined degeneration.<br>(b) Acid normally makes D cells release somatostatin, which restrains G cells. With little acid, that brake is lost, so gastrin rises. Gastrin makes ECL cells grow, and over time they can form a type 1 gastric NET (carcinoid).<br>(c) HCl helps reduce dietary Fe3+ to Fe2+ for absorption, so low acid also causes iron deficiency, which makes red cells small. Small and large cells can average to a normal MCV; one-third of patients with pernicious anemia have no macrocytosis, so a normal MCV does not exclude B12 deficiency.`,
-            marking: [
-                "(a) 1 for antibodies destroying parietal cells",
-                "(a) 1 for loss of IF",
-                "(a) 1 for B12 malabsorption",
-                "(a) 1 for the slow onset, over 2–5 years",
-                "(a) 1 for macrocytosis and hypersegmented neutrophils",
-                "(a) 1 for neuropathy, then subacute combined degeneration",
-                "(b) 1 for the loss of HCl",
-                "(b) 1 for the loss of the somatostatin brake, so G cells release more gastrin",
-                "(b) 1 for gastrin making ECL cells grow",
-                "(b) 1 for a type 1 gastric NET",
-                "(c) 1 for HCl helping reduce Fe3+ to Fe2+",
-                "(c) 1 for iron deficiency making red cells small",
-                "(c) 1 for small and large cells averaging to a normal MCV",
-                "(c) 1 for a normal MCV not excluding B12 deficiency (one-third have no macrocytosis)",
-                "1 for teaching: connected chains of cause and effect a first-year student could follow, within the word limit",
-            ],
-            explanation: `<p>One cause, parietal cell loss, removes two products, HCl and IF, and each loss starts its own chain. Low IF leads to B12 deficiency (anemia and nerves); low HCl removes the feedback that restrains gastrin (ECL growth and type 1 NETs) and impairs iron absorption, which can mask the macrocytosis. Treatment follows the chains: IM B12, then lifelong replacement; iron; and EGD every 3 years if atrophy is advanced.</p>` },
-    ],
-};
+
+export const PARTS = [
+    { unit: "Problem", sets: part1, intro: "Eight short problems on how the gut is built and works, each labeled with its discipline. Read each problem's information before its questions; supplementary information describes anything new." },
+    { unit: "Station", sets: part2, intro: "Six stations, each with one or more patients. Ask where the fault is and what could mislead. A question type is explained where it first appears." },
+    { unit: "Scenario", sets: part3, unfolding: true, intro: "Three patients, each followed over several stages. Each stage after the first starts on a new page: answer the questions on a page before turning it, and do not turn back. The opening is repeated at the top of its later pages." },
+    { unit: "Decision", sets: part4, intro: "Five patients, each with three questions worth 1 point: the right drug, the reason for it, and its risk. Choose the single best option." },
+    { unit: "Paper", sets: [paper], paper: true, intro: "Read the summary once, carefully, then answer the questions. Excerpts in quotation marks are the authors' words; tables are abridged. A basic calculator is allowed." },
+];

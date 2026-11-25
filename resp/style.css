@@ -242,3 +242,242 @@ body {
         left: -41px;
     }
 }
+
+/* =========================
+   Diagrams: the airway wall, its cells, and lung function curves
+========================= */
+
+:root {
+    --rs-muscle: #c77b5a;
+    --rs-epi: #e6b7a0;
+    --rs-mucus: #c9b84a;
+    --rs-eos: #d9486a;
+    --rs-vessel: #b3263f;
+    --rs-air: #f4f9ff;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+        --rs-muscle: #d58a68;
+        --rs-epi: #b98570;
+        --rs-mucus: #d8c95e;
+        --rs-eos: #f2718e;
+        --rs-vessel: #f06a80;
+        --rs-air: #0a1420;
+    }
+}
+
+:root[data-theme="dark"] {
+    --rs-muscle: #d58a68;
+    --rs-epi: #b98570;
+    --rs-mucus: #d8c95e;
+    --rs-eos: #f2718e;
+    --rs-vessel: #f06a80;
+    --rs-air: #0a1420;
+}
+
+.rs-wall {
+    fill: color-mix(in srgb, var(--rs-epi) 35%, var(--color-surface));
+    stroke: var(--color-border-strong);
+    stroke-width: 1.5;
+}
+
+.rs-muscle {
+    fill: none;
+    stroke: var(--rs-muscle);
+}
+
+.rs-gland {
+    fill: color-mix(in srgb, var(--rs-mucus) 60%, var(--color-surface));
+    stroke: var(--rs-mucus);
+    stroke-width: 1.5;
+}
+
+.rs-base {
+    fill: none;
+    stroke: var(--color-text-muted);
+}
+
+.rs-epi {
+    fill: var(--rs-epi);
+}
+
+.rs-epi.is-shed {
+    stroke: var(--rs-epi);
+    stroke-dasharray: 12 7;
+    stroke-width: 5;
+}
+
+.rs-lumen {
+    fill: var(--rs-air);
+}
+
+.rs-mucus {
+    fill: var(--rs-mucus);
+}
+
+.rs-eos {
+    fill: var(--rs-eos);
+}
+
+.rs-mast {
+    fill: var(--color-accent);
+}
+
+.rs-vessel {
+    fill: var(--color-surface);
+    stroke: var(--rs-vessel);
+    stroke-width: 2.5;
+}
+
+.rs-box {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 2;
+}
+
+.rs-box.is-soft {
+    fill: var(--color-surface-sunken);
+    stroke: var(--color-border-strong);
+}
+
+.rs-go {
+    fill: none;
+    stroke: var(--color-accent);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 2.5;
+}
+
+.rs-axis {
+    fill: none;
+    stroke: var(--color-text-muted);
+    stroke-width: 1.5;
+}
+
+.rs-axis.is-dash {
+    stroke-dasharray: 5 5;
+}
+
+.rs-curve {
+    fill: none;
+    stroke: var(--rs-eos);
+    stroke-linecap: round;
+    stroke-width: 3.5;
+}
+
+.rs-curve.is-calm {
+    stroke: var(--color-text-muted);
+}
+
+.rs-curve.is-after {
+    stroke: var(--color-accent);
+    stroke-dasharray: 8 6;
+}
+
+.rs-tube {
+    fill: none;
+    stroke: var(--rs-muscle);
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 18;
+}
+
+.rs-tube.is-in {
+    stroke: var(--rs-air);
+    stroke-width: 8;
+}
+
+.rs-range rect {
+    fill: var(--color-accent);
+}
+
+.rs-range text {
+    fill: var(--color-on-accent);
+    font-size: 13px;
+    font-weight: 700;
+    text-anchor: middle;
+}
+
+.rs-alv,
+.rs-bronch {
+    fill: var(--rs-air);
+    stroke: var(--rs-epi);
+    stroke-width: 3;
+}
+
+.rs-bronch {
+    fill: none;
+    stroke: var(--rs-muscle);
+    stroke-linecap: round;
+    stroke-width: 5;
+}
+
+.rs-duct {
+    fill: none;
+    stroke: var(--rs-air);
+    stroke-linecap: round;
+    stroke-width: 16;
+}
+
+.rs-pleura {
+    fill: none;
+    stroke: var(--color-border-strong);
+    stroke-width: 4;
+}
+
+.rs-cart {
+    fill: color-mix(in srgb, var(--color-accent) 35%, var(--color-surface));
+}
+
+.rs-curve.is-tidal {
+    stroke: var(--color-text);
+}
+
+.rs-vol {
+    stroke: var(--color-surface);
+    stroke-width: 2;
+}
+
+.rs-vol.is-rv { fill: color-mix(in srgb, var(--rs-eos) 55%, var(--color-surface)); }
+.rs-vol.is-erv { fill: color-mix(in srgb, var(--rs-mucus) 55%, var(--color-surface)); }
+.rs-vol.is-tv { fill: var(--color-accent); }
+.rs-vol.is-irv { fill: color-mix(in srgb, var(--color-accent) 30%, var(--color-surface)); }
+
+.rs-film { fill: #0d1216; }
+.rs-film-lung { fill: #2b343b; }
+.rs-film-white { fill: #b9c3ca; }
+.rs-film-bulla { fill: #12181d; stroke: #6f7b84; stroke-width: 1.5; }
+
+.rs-film-rib {
+    fill: none;
+    stroke: #5d6971;
+    stroke-linecap: round;
+    stroke-width: 5;
+    opacity: 0.6;
+}
+
+.rs-lungmap {
+    fill: var(--color-accent-soft);
+    stroke: var(--color-accent-line);
+    stroke-width: 2.5;
+}
+
+.rs-cilia,
+.rs-torso {
+    fill: none;
+    stroke: var(--color-text-muted);
+    stroke-linecap: round;
+    stroke-width: 2.5;
+}
+
+.rs-chan { fill: var(--color-accent); }
+.rs-organ { fill: color-mix(in srgb, var(--rs-muscle) 60%, var(--color-surface)); }
+.rs-organ.is-b { fill: color-mix(in srgb, var(--rs-mucus) 70%, var(--color-surface)); }
+.rs-organ.is-c { fill: color-mix(in srgb, var(--rs-epi) 70%, var(--color-surface)); }
+
+.rs-small {
+    fill: var(--color-text);
+    font-size: 13px;
+    font-weight: 600;
+}

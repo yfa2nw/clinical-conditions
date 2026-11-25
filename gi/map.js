@@ -1,155 +1,92 @@
 /* =========================
    GI tract drawing
-   One continuous string from the mouth to the rectum, with the liver, biliary tree,
-   pancreas and appendix hanging off it. shared/map.js calls drawTract() and adds the
-   dots and leader lines.
+   One tube from the mouth to the rectum: straight in the esophagus, a bean for the stomach,
+   a gentle wave in the small bowel, and thick in the colon. The liver, gallbladder, pancreas,
+   and appendix are small shapes beside it, each joined by one line, and stations off the
+   tract are plain beads. shared/map.js calls drawTract() and adds the dots and leader lines.
 ========================= */
 
-// Small intestine: a looping coil (prolate trochoid) between two heights
-function coilPoints(cx, radius, yStart, yEnd) {
-    const loops = Math.max(2, Math.round((yEnd - yStart) / 38));
-    const turns = Math.PI * 2 * loops;
-    const step = (yEnd - yStart) / turns;
-    const points = [];
+// How each station is drawn; a station not listed here sits on the tract as a plain tube
+const SIDE_ORGANS = {
+    hepatitis: "liver",
+    liver: "liver",
+    cirrhosis: "liver",
+    biliary: "gallbladder",
+    pancreas: "pancreas",
+    appendix: "appendix",
+};
+const OFF_TRACT = ["special", "pharmacology"];
+const SMALL_BOWEL = ["small-intestine", "bowel", "obstruction"];
 
-    for (let t = 0; t <= turns + 0.001; t += 0.2) {
-        points.push([cx + radius * Math.cos(t), yStart + step * t + radius * 0.55 * Math.sin(t)]);
-    }
-    return points;
-}
+const SIDE_SHAPES = {
+    liver: (x, y) => `M ${x - 15} ${y - 8} C ${x - 8} ${y - 15}, ${x + 12} ${y - 14}, ${x + 16} ${y - 5} C ${x + 16} ${y + 2}, ${x + 2} ${y + 10}, ${x - 8} ${y + 12} C ${x - 18} ${y + 12}, ${x - 19} ${y}, ${x - 15} ${y - 8} Z`,
+    gallbladder: (x, y) => `M ${x + 3} ${y - 11} C ${x + 8} ${y - 3}, ${x + 10} ${y + 12}, ${x} ${y + 12} C ${x - 10} ${y + 12}, ${x - 8} ${y - 3}, ${x - 3} ${y - 11} Z`,
+    pancreas: (x, y) => `M ${x - 17} ${y + 4} C ${x - 12} ${y - 8}, ${x + 8} ${y - 10}, ${x + 16} ${y - 6} C ${x + 18} ${y + 2}, ${x + 8} ${y + 7}, ${x - 4} ${y + 6} C ${x - 10} ${y + 8}, ${x - 18} ${y + 10}, ${x - 17} ${y + 4} Z`,
+    appendix: (x, y) => `M ${x + 10} ${y - 8} C ${x - 2} ${y - 10}, ${x - 10} ${y - 2}, ${x - 9} ${y + 8} C ${x - 8} ${y + 13}, ${x - 2} ${y + 12}, ${x - 2} ${y + 7} C ${x - 3} ${y + 1}, ${x + 4} ${y - 2}, ${x + 10} ${y - 1} Z`,
+};
 
 // Draws the tract and returns { organ: [x, y] }, the point each leader line starts from
-function drawTract({ stations: s, width, add, part, note }) {
-    const { esophagus: eso, stomach: sto, liver, biliary: bil, pancreas: pan, "small-intestine": si, colon, appendix: app } = s;
-    const x = width * 0.7; // main line
+function drawTract({ stations, width, add, part, note }) {
+    const order = Object.keys(stations);
     const organs = {};
+    const x = width * 0.66; // the tube
+    const sideX = width * 0.26; // the organs beside it
+    const pointY = (spot) => spot.labelY + 16;
+    const onTract = order.filter((organ) => !OFF_TRACT.includes(organ));
+    const lastTube = onTract.filter((organ) => !SIDE_ORGANS[organ]).pop();
 
-    /* ----- Mouth and esophagus ----- */
-    const mouthY = eso.top + 14;
-    add(svgEl("ellipse", { cx: x, cy: mouthY, rx: 9, ry: 5, class: "map-organ", "data-organ": "esophagus" }));
-    note("mouth", x - 14, mouthY + 4, "end");
+    /* ----- Mouth ----- */
+    let y = stations[order[0]].top + 14;
+    add(svgEl("ellipse", { cx: x, cy: y, rx: 9, ry: 5, class: "map-organ", "data-organ": order[0] }));
+    note("mouth", x - 14, y + 4, "end");
+    y += 5;
 
-    const stoTop = sto.top + 4;
-    part("esophagus", `M ${x} ${mouthY + 5} L ${x} ${stoTop}`);
-    organs.esophagus = [x, (mouthY + stoTop) / 2 + 8];
+    /* ----- The tube, one stretch per station ----- */
+    onTract.forEach((organ) => {
+        const spot = stations[organ];
+        const next = stations[onTract[onTract.indexOf(organ) + 1]];
+        const end = next ? next.top + 10 : spot.bottom - 6;
+        const cy = pointY(spot);
 
-    /* ----- Stomach: a twist ----- */
-    const stoMid = (sto.top + sto.bottom) / 2;
-    const stoEnd = sto.bottom - 4;
-    part("stomach", [
-        `M ${x} ${stoTop}`,
-        `C ${x + 28} ${stoTop + 6}, ${x + 30} ${stoMid + 8}, ${x + 4} ${stoMid + 16}`,
-        `C ${x - 26} ${stoMid + 24}, ${x - 30} ${stoMid - 16}, ${x - 8} ${stoMid - 10}`,
-        `C ${x + 10} ${stoMid - 4}, ${x + 6} ${stoEnd - 10}, ${x} ${stoEnd}`,
-    ].join(" "), "map-thick");
-    organs.stomach = [x + 23, stoMid - 2];
+        if (SMALL_BOWEL.includes(organ)) {
+            const waves = Math.max(1, Math.round((end - y) / 34));
+            const step = (end - y) / waves;
+            let d = `M ${x} ${y}`;
+            for (let i = 0; i < waves; i += 1) {
+                const side = i % 2 === 0 ? 11 : -11;
+                d += ` C ${x + side} ${y + step * (i + 0.25)}, ${x + side} ${y + step * (i + 0.75)}, ${x} ${y + step * (i + 1)}`;
+            }
+            part(organ, d);
+        } else if (organ === "stomach") {
+            part(organ, `M ${x} ${y} V ${end}`);
+            add(svgEl("path", {
+                d: `M ${x - 6} ${cy - 18} C ${x + 18} ${cy - 22}, ${x + 22} ${cy + 18}, ${x - 2} ${cy + 22} C ${x - 14} ${cy + 22}, ${x - 12} ${cy + 8}, ${x - 2} ${cy + 4} C ${x + 4} ${cy - 2}, ${x - 8} ${cy - 8}, ${x - 6} ${cy - 18} Z`,
+                class: "map-organ",
+                "data-organ": organ,
+            }));
+        } else {
+            // Beside a side organ the tube passes by; it belongs to no station there
+            part(SIDE_ORGANS[organ] ? "passing" : organ, `M ${x} ${y} V ${end}`, organ === "colon" ? "map-thick gi-colon" : "");
+        }
 
-    /* ----- Duodenum: a C-curve down past the liver to the ampulla, around the pancreatic head ----- */
-    const ampulla = [x + 14, pan.top + 16];
-    const djFlexure = [x - 12, si.top + 10];
-    part("duodenum", [
-        `M ${x} ${stoEnd}`,
-        `C ${x + 4} ${stoEnd + 70}, ${x + 18} ${ampulla[1] - 90}, ${ampulla[0]} ${ampulla[1]}`,
-        `C ${x + 12} ${ampulla[1] + 60}, ${x} ${djFlexure[1] - 40}, ${djFlexure[0]} ${djFlexure[1]}`,
-    ].join(" "));
+        if (SIDE_ORGANS[organ]) {
+            part(organ, `M ${sideX + 14} ${cy} C ${x - 20} ${cy}, ${x - 6} ${cy + 6}, ${x} ${cy + 22}`, "map-thin");
+            add(svgEl("path", { d: SIDE_SHAPES[SIDE_ORGANS[organ]](sideX, cy), class: `map-organ is-${organ}`, "data-organ": organ }));
+        }
+        organs[organ] = SIDE_ORGANS[organ] ? [x, cy + 22] : [x, cy];
+        y = end;
+    });
 
-    /* ----- Liver: a softened wedge, wide at the top and tapering down ----- */
-    const lTop = liver.top + 8;
-    const lH = Math.min(130, liver.bottom - liver.top - 30);
-    add(svgEl("path", {
-        class: "map-organ",
-        "data-organ": "liver",
-        d: [
-            `M 10 ${lTop + 8}`,
-            `C 20 ${lTop}, 48 ${lTop}, 57 ${lTop + 10}`,
-            `C 63 ${lTop + 22}, 54 ${lTop + lH * 0.5}, 36 ${lTop + lH * 0.84}`,
-            `C 27 ${lTop + lH}, 14 ${lTop + lH}, 10 ${lTop + lH * 0.8}`,
-            `C 3 ${lTop + lH * 0.55}, 3 ${lTop + 26}, 10 ${lTop + 8} Z`,
-        ].join(" "),
-    }));
-    organs.liver = [50, lTop + lH * 0.3];
+    /* ----- Rectum ----- */
+    add(svgEl("path", { d: `M ${x - 7} ${y} H ${x + 7}`, class: "map-part", "data-organ": lastTube }));
+    note("rectum", x - 12, y + 3, "end");
 
-    /* ----- Biliary tree, gallbladder and pancreas ----- */
-    const junction = [34, bil.top + 26];
-    const hepaticDuctTop = [24, lTop + lH * 0.9];
-    part("biliary", `M ${hepaticDuctTop[0]} ${hepaticDuctTop[1]} C 26 ${hepaticDuctTop[1] + 60}, 34 ${junction[1] - 40}, ${junction[0]} ${junction[1]}`, "map-thin");
-    part("biliary", `M ${junction[0]} ${junction[1]} C 34 ${ampulla[1] - 30}, ${ampulla[0] - 30} ${ampulla[1] - 4}, ${ampulla[0]} ${ampulla[1]}`, "map-thin");
-    part("biliary", `M ${junction[0]} ${junction[1]} C 26 ${junction[1] + 2}, 20 ${junction[1] + 6}, 18 ${junction[1] + 12}`, "map-thin");
-    add(svgEl("ellipse", {
-        cx: 15, cy: junction[1] + 26, rx: 8, ry: 15,
-        transform: `rotate(-14 15 ${junction[1] + 26})`,
-        class: "map-organ", "data-organ": "biliary",
-    }));
-    organs.biliary = [23, junction[1] + 26];
-
-    // Pancreas: head tucked into the duodenal C-loop, tail sweeping to the left
-    const pTop = pan.top + 22;
-    add(svgEl("path", {
-        class: "map-organ gi-pancreas",
-        "data-organ": "pancreas",
-        d: [
-            `M 8 ${pTop + 46}`,
-            `C 14 ${pTop + 24}, 46 ${pTop + 8}, ${x + 4} ${pTop + 4}`,
-            `C ${x + 12} ${pTop + 12}, ${x + 8} ${pTop + 30}, ${x - 6} ${pTop + 34}`,
-            `C 44 ${pTop + 40}, 24 ${pTop + 56}, 8 ${pTop + 46} Z`,
-        ].join(" "),
-    }));
-    part("pancreas", `M 14 ${pTop + 42} C 34 ${pTop + 26}, ${ampulla[0] - 24} ${ampulla[1] + 10}, ${ampulla[0]} ${ampulla[1]}`, "map-hair");
-    organs.pancreas = [32, pTop + 32];
-
-    /* ----- Small intestine: jejunum and ileum coil ----- */
-    const coilCx = 42;
-    const coilR = 20;
-    const coilTop = si.top + 24;
-    const coilBot = si.bottom - 28;
-    const coil = coilPoints(coilCx, coilR, coilTop, coilBot);
-    part("small-intestine", `M ${djFlexure[0]} ${djFlexure[1]} C ${djFlexure[0]} ${coilTop - 6}, ${coil[0][0] + 6} ${coilTop - 8}, ${coil[0][0]} ${coil[0][1]}` +
-        coil.map(([px, py]) => ` L ${px.toFixed(1)} ${py.toFixed(1)}`).join(""));
-    organs["small-intestine"] = [coilCx + coilR, (coilTop + coilBot) / 2];
-
-    /* ----- Colon frame, appendix and rectum ----- */
-    const left = 12;
-    const right = width - 12;
-    const top = colon.top + 22;
-    const cecum = colon.bottom - 22;
-    const coilEnd = coil[coil.length - 1];
-
-    // Ileum crosses down into the cecum
-    part("small-intestine", `M ${coilEnd[0]} ${coilEnd[1]} C ${coilEnd[0]} ${coilEnd[1] + 40}, ${left + 24} ${cecum - 20}, ${left + 3} ${cecum - 2}`);
-
-    part("colon", [
-        `M ${left} ${cecum + 8}`,
-        `L ${left} ${top + 14} Q ${left} ${top} ${left + 14} ${top}`,
-        `L ${right - 14} ${top} Q ${right} ${top} ${right} ${top + 14}`,
-        `L ${right} ${cecum - 4}`,
-        `C ${right} ${cecum + 18}, ${x} ${cecum + 6}, ${x} ${cecum + 24}`,
-        `L ${x} ${app.bottom - 6}`,
-    ].join(" "), "map-thick");
-    add(svgEl("path", { d: `M ${x - 6} ${app.bottom - 6} L ${x + 6} ${app.bottom - 6}`, class: "map-part", "data-organ": "colon" }));
-    organs.colon = [right, (top + cecum) / 2];
-    note("rectum", x, app.bottom + 10, "middle");
-
-    // Appendix hangs from the cecum down into its own station
-    const appTip = [left + 12, app.top + 34];
-    part("appendix", `M ${left} ${cecum + 10} C ${left} ${cecum + 34}, ${appTip[0] - 10} ${appTip[1] - 24}, ${appTip[0]} ${appTip[1]}`, "map-thin");
-    organs.appendix = appTip;
-
-    /* ----- Special topics: a magnifying glass below the rectum, off the tract, for working back from a finding ----- */
-    if (s.special) {
-        const cy = s.special.top + 34;
-        add(svgEl("circle", { cx: x, cy, r: 10, class: "map-organ", "data-organ": "special" }));
-        part("special", `M ${x + 7} ${cy + 7} L ${x + 16} ${cy + 16}`, "map-thick");
-        organs.special = [x + 10, cy];
-    }
-
-    /* ----- Pharmacology: a capsule below the rectum, off the tract, on the physiology page ----- */
-    if (s.pharmacology) {
-        const cy = s.pharmacology.top + 34;
-        const tilt = `rotate(-35 ${x} ${cy})`;
-        add(svgEl("rect", { x: x - 16, y: cy - 7, width: 32, height: 14, rx: 7, transform: tilt, class: "map-organ", "data-organ": "pharmacology" }));
-        part("pharmacology", `M ${x - 4} ${cy - 5.7} L ${x + 4} ${cy + 5.7}`, "map-thin"); // the seam, turned with the capsule
-        organs.pharmacology = [x + 14, cy - 8];
-    }
+    /* ----- Off the tract ----- */
+    order.filter((organ) => OFF_TRACT.includes(organ)).forEach((organ) => {
+        const cy = pointY(stations[organ]);
+        add(svgEl("circle", { cx: x, cy, r: 9, class: "map-organ", "data-organ": organ }));
+        organs[organ] = [x, cy];
+    });
 
     return organs;
 }

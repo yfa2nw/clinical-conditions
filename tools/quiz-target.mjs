@@ -1,12 +1,12 @@
 // Quiz length from page size, shared by check-quiz-block, triage-quiz, and page-sizes.
-// Every page gets one question per 30 page words, rounded to the nearest 5 and kept between 10 and 40,
+// Every page gets one question per 40 page words, rounded to the nearest 5 and kept between 10 and 50,
 // split 2:2:1 into memory, reasoning, and analysis. A page is changed only when its count is 10 or more
 // away from its target, so small edits to a page do not add or remove a group of questions.
 import { readFileSync, existsSync } from "node:fs";
 
-export const WORDS_PER_QUESTION = 30;
+export const WORDS_PER_QUESTION = 40;
 export const MIN_QUESTIONS = 10;
-export const MAX_QUESTIONS = 40;
+export const MAX_QUESTIONS = 50;
 export const CHANGE_AT = 10;
 
 // The article's visible text, without its diagrams, Related line, references, title, or review article
@@ -31,7 +31,7 @@ export function quizTarget(words) {
 }
 
 // What a page should hold now: its target, or its current count when that is within CHANGE_AT of the target
-// and inside the 10–40 range; a page below the floor or above the ceiling always moves to its target
+// and inside the 10–50 range; a page below the floor or above the ceiling always moves to its target
 export function quizGoal(words, current) {
     const target = quizTarget(words);
     const keep = current >= MIN_QUESTIONS && current <= MAX_QUESTIONS && current % 5 === 0 && Math.abs(current - target.total) < CHANGE_AT;

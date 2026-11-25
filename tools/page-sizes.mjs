@@ -3,7 +3,7 @@
 //
 // Page words count the article's visible text, leaving out its diagrams, Related line, references, and review article.
 // Review words count the review article. Diagrams count the inline SVGs on the page.
-// Targets follow tools/quiz-target.mjs: one question per 30 page words, rounded to the nearest 5, from 10 to 40, split 2:2:1.
+// Targets follow tools/quiz-target.mjs: one question per 40 page words, rounded to the nearest 5, from 10 to 50, split 2:2:1.
 // Change shows the questions to add or remove, only when a page is 10 or more away from its target.
 
 import { readFileSync, existsSync, writeFileSync } from "node:fs";
@@ -19,6 +19,7 @@ const SYSTEMS = [
     { name: "Cardiovascular", folder: "cardio", pages: [["index.html", "questions.js"], ["physiology.html", "physiology-questions.js"]] },
     { name: "Renal", folder: "renal", pages: [["index.html", "questions.js"], ["physiology.html", "physiology-questions.js"]] },
     { name: "Endocrine", folder: "endocrine", pages: [["index.html", "questions.js"], ["physiology.html", "physiology-questions.js"]] },
+    { name: "Review", folder: "review", pages: [["index.html", "questions.js"]] },
 ];
 
 const words = (html) => {

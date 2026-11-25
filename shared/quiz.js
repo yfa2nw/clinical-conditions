@@ -43,7 +43,7 @@ const topicTerms = new Map(conditionContents.map((article) => {
 }));
 
 const quizTermPattern = quizTerms.size
-    ? new RegExp(`(?<![\\w+-]|type )(${[...quizTerms.keys()]
+    ? new RegExp(`(?<![\\w+-]|(?:[Tt]ypes?|[Cc]lass|[Gg]rade|[Ss]tage|Rome|Borrmann|[Aa]ngiotensin|[Tt]opoisomerase|[Ff]actor) )(${[...quizTerms.keys()]
         .sort((a, b) => b.length - a.length)
         .map((text) => text.replace(/[.*+?^${}()|[\]\\/]/g, "\\$&"))
         .join("|")})(?!\\w)`, "g")
@@ -114,7 +114,8 @@ function shuffle(list) {
 const conditionName = (id) => labelFor(id);
 const isCorrect = (item) => item.chosen !== null && item.order[item.chosen] === item.question.answer;
 const correctDisplayIndex = (item) => item.order.indexOf(item.question.answer);
-const questionsFor = (id) => QUIZ_QUESTIONS.filter((question) => question.condition === id);
+// A page with data-on-hold is being restructured, so its quiz is hidden until it matches the page again
+const questionsFor = (id) => document.getElementById(id)?.hasAttribute("data-on-hold") ? [] : QUIZ_QUESTIONS.filter((question) => question.condition === id);
 
 // The passage of a set is written once, on its first question
 function passageFor(question) {

@@ -1678,7 +1678,7 @@ const QUIZ_QUESTIONS = [
         options: ["D2, 5-HT3, NK1, and μ-opioid", "H1 and muscarinic", "5-HT4 and M3", "H2 and CCK-2", "β2 and α1 adrenergic receptors only"],
         answer: 0,
         explanation: `<p><strong>The CTZ carries D2, 5-HT3, NK1, and μ-opioid receptors,</strong> which is why chemotherapy, opioids, and antiparkinsonian drugs trigger vomiting there, and why D2, 5-HT3, and NK1 antagonists act there.</p>
-<p>The vestibular input uses H1 and muscarinic receptors instead, so antihistamines and scopolamine are the drugs for motion sickness.</p>`,
+<p>The vestibular input uses H1 and muscarinic receptors instead, so antihistamines and hyoscine (scopolamine) are the drugs for motion sickness.</p>`,
         notes: {
             1: "H1 and muscarinic receptors carry the vestibular input.",
             2: "5-HT4 receptors in the gut are stimulated by metoclopramide to speed emptying; M3 receptors are on gastric cells.",
@@ -1693,7 +1693,7 @@ const QUIZ_QUESTIONS = [
         stem: "Which receptors carry the vestibular input to vomiting?",
         options: ["H1 and muscarinic", "D2 and 5-HT3", "NK1 and μ-opioid", "5-HT3 alone", "D2 and μ-opioid together"],
         answer: 0,
-        explanation: `<p><strong>The vestibular system signals through H1 and muscarinic receptors,</strong> so motion sickness responds to H1 antagonists such as promethazine and dimenhydrinate and to the antimuscarinic scopolamine.</p>
+        explanation: `<p><strong>The vestibular system signals through H1 and muscarinic receptors,</strong> so motion sickness responds to H1 antagonists such as promethazine and dimenhydrinate and to the antimuscarinic hyoscine (scopolamine).</p>
 <p>D2 and 5-HT3 antagonists act mainly in the CTZ and on vagal afferents, and do little for motion sickness.</p>`,
         notes: {
             1: "D2 and 5-HT3 receptors are in the CTZ, with 5-HT3 also on vagal afferents.",
@@ -1755,7 +1755,7 @@ const QUIZ_QUESTIONS = [
         condition: "emetic-center",
         kind: "memory",
         stem: "Which antiemetic blocks substance P?",
-        options: ["Aprepitant", "Ondansetron", "Metoclopramide", "Promethazine", "Scopolamine"],
+        options: ["Aprepitant", "Ondansetron", "Metoclopramide", "Promethazine", "Hyoscine (scopolamine)"],
         answer: 0,
         explanation: `<p><strong>Aprepitant and netupitant are NK1 antagonists,</strong> blocking substance P at NK1 receptors in the area postrema and NTS.</p>
 <p>Substance P drives delayed CINV on days 2–5, which is why NK1 antagonists prevent it, whereas 5-HT3 antagonists mainly prevent the acute phase.</p>`,
@@ -1763,7 +1763,7 @@ const QUIZ_QUESTIONS = [
             1: "Ondansetron blocks 5-HT3 receptors.",
             2: "Metoclopramide blocks D2 receptors and stimulates 5-HT4 receptors.",
             3: "Promethazine blocks H1 and muscarinic receptors.",
-            4: "Scopolamine blocks muscarinic receptors.",
+            4: "Hyoscine (scopolamine) blocks muscarinic receptors.",
         },
     },
     {
@@ -1840,7 +1840,7 @@ const QUIZ_QUESTIONS = [
         options: ["Motion sickness needs vestibular input to conflict with vision and proprioception", "They cannot feel nausea because the NTS was damaged along with the labyrinths", "Their CTZ is no longer exposed to toxins", "They lack 5-HT3 receptors on vagal afferents", "Their eyes compensate for all motion"],
         answer: 0,
         explanation: `<p><strong>Motion sickness comes from a mismatch: the vestibular, visual, and proprioceptive systems report motion differently.</strong> Without vestibular input, there is nothing to conflict, so the trigger is gone.</p>
-<p>The vestibular input uses H1 and muscarinic receptors, which is why antihistamines and scopolamine prevent motion sickness.</p>`,
+<p>The vestibular input uses H1 and muscarinic receptors, which is why antihistamines and hyoscine (scopolamine) prevent motion sickness.</p>`,
         notes: {
             1: "The NTS is intact; it is the vestibular input that is missing.",
             2: "The CTZ senses chemicals; motion sickness does not depend on it.",
@@ -1901,14 +1901,14 @@ const QUIZ_QUESTIONS = [
         condition: "emetic-center",
         kind: "reasoning",
         stem: "A 26-year-old man who has used cannabis daily for years has his third bout of cyclical vomiting this year, relieved only by long hot showers. What will resolve it?",
-        options: ["Stopping cannabis", "A daily 5-HT3 antagonist", "Increasing his cannabis use", "A scopolamine patch", "Long-term metoclopramide"],
+        options: ["Stopping cannabis", "A daily 5-HT3 antagonist", "Increasing his cannabis use", "A hyoscine (scopolamine) patch", "Long-term metoclopramide"],
         answer: 0,
         explanation: `<p><strong>Cannabinoid hyperemesis syndrome follows years of cannabis use and causes cyclical vomiting relieved by hot showers; it resolves after stopping cannabis.</strong></p>
 <p>It differs from cyclic vomiting syndrome, whose stereotyped episodes are linked with migraine and diagnosed on Rome criteria after mimics such as cannabis use are excluded.</p>`,
         notes: {
             1: "Antiemetics may ease an episode, but they do not prevent the next while cannabis use continues.",
             2: "More cannabis sustains the syndrome.",
-            3: "Scopolamine prevents motion sickness, a vestibular problem.",
+            3: "Hyoscine (scopolamine) prevents motion sickness, a vestibular problem.",
             4: "Metoclopramide does not treat the cause, and long-term use is not appropriate here.",
         },
     },
@@ -1949,9 +1949,9 @@ const QUIZ_QUESTIONS = [
         condition: "emetic-center",
         kind: "reasoning",
         stem: "A woman who becomes seasick on every boat trip wants something for a 3-day cruise. Which is the best choice, and why?",
-        options: ["A scopolamine patch, blocking muscarinic input to the vestibular nuclei", "Ondansetron, blocking 5-HT3 receptors on vagal afferents and in the CTZ for the whole cruise", "Aprepitant, blocking substance P", "Cetirizine, blocking peripheral H1 receptors", "Metoclopramide, speeding gastric emptying"],
+        options: ["A hyoscine (scopolamine) patch, blocking muscarinic input to the vestibular nuclei", "Ondansetron, blocking 5-HT3 receptors on vagal afferents and in the CTZ for the whole cruise", "Aprepitant, blocking substance P", "Cetirizine, blocking peripheral H1 receptors", "Metoclopramide, speeding gastric emptying"],
         answer: 0,
-        explanation: `<p><strong>Motion sickness comes through the vestibular input, which uses muscarinic and H1 receptors.</strong> Scopolamine blocks acetylcholine and inhibits input to the vestibular nuclei, and as a transdermal patch it lasts for several days of travel.</p>
+        explanation: `<p><strong>Motion sickness comes through the vestibular input, which uses muscarinic and H1 receptors.</strong> Hyoscine (scopolamine) blocks acetylcholine and inhibits input to the vestibular nuclei, and as a transdermal patch it lasts for several days of travel.</p>
 <p>First-generation H1 antagonists such as dimenhydrinate are an alternative.</p>`,
         notes: {
             1: "Ondansetron works on gut and CTZ triggers, not vestibular ones.",
@@ -1988,13 +1988,13 @@ const QUIZ_QUESTIONS = [
         kind: "analysis",
         set: "em-cinv-case",
         stem: "Which drug should be added for her next cycle?",
-        options: ["Aprepitant", "A higher dose of ondansetron", "Scopolamine", "Promethazine", "Cetirizine"],
+        options: ["Aprepitant", "A higher dose of ondansetron", "Hyoscine (scopolamine)", "Promethazine", "Cetirizine"],
         answer: 0,
         explanation: `<p><strong>Delayed CINV is driven by substance P at NK1 receptors in the area postrema and NTS, so an NK1 antagonist such as aprepitant or netupitant prevents it.</strong></p>
 <p>Ondansetron already controls the acute phase; raising its dose does little for a phase it does not drive.</p>`,
         notes: {
             1: "5-HT3 blockade mainly prevents acute CINV.",
-            2: "Scopolamine prevents motion sickness.",
+            2: "Hyoscine (scopolamine) prevents motion sickness.",
             3: "Promethazine acts on the vestibular input.",
             4: "Cetirizine acts peripherally and has no role in CINV.",
         },
@@ -3141,7 +3141,7 @@ const QUIZ_QUESTIONS = [
             "NK1 receptors",
         ],
         answer: 1,
-        explanation: "Scopolamine blocks muscarinic receptors, inhibiting input to the vestibular nuclei. Touching the patch then the eye dilates the pupil, and it is contraindicated in angle-closure glaucoma.",
+        explanation: "Hyoscine (scopolamine) blocks muscarinic receptors, inhibiting input to the vestibular nuclei. Touching the patch then the eye dilates the pupil, and it is contraindicated in angle-closure glaucoma.",
     },
     {
         id: "gp-neostigmine-ogilvie",

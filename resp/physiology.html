@@ -54,7 +54,8 @@
                 <div class="station" data-organ="mechanics">
                 <p class="group-label" id="group-mechanics">Mechanics of breathing</p>
                 <div class="condition-group" role="group" aria-labelledby="group-mechanics">
-                    <button type="button" class="condition-item active" data-condition="lung-volumes" aria-current="true">Lung volumes and ventilation</button>
+                    <button type="button" class="condition-item active" data-condition="lung-development" aria-current="true">Lung development and surfactant</button>
+                    <button type="button" class="condition-item" data-condition="lung-volumes">Lung volumes and ventilation</button>
                     <button type="button" class="condition-item" data-condition="resistance-compliance">Resistance and compliance</button>
                     <button type="button" class="condition-item" data-condition="spirometry">Spirometry and flow-volume loops</button>
                 </div>
@@ -64,7 +65,9 @@
                 <p class="group-label" id="group-exchange">Gas exchange</p>
                 <div class="condition-group" role="group" aria-labelledby="group-exchange">
                     <button type="button" class="condition-item" data-condition="gas-transport">Gas movement and transport</button>
+                    <button type="button" class="condition-item" data-condition="pulmonary-circulation">Pulmonary circulation</button>
                     <button type="button" class="condition-item" data-condition="vq-matching">V/Q matching</button>
+                    <button type="button" class="condition-item" data-condition="hypoxemia-gradient">Hypoxemia and the A–a gradient</button>
                 </div>
                 </div>
 
@@ -72,8 +75,7 @@
                 <p class="group-label" id="group-control">Airway and control</p>
                 <div class="condition-group" role="group" aria-labelledby="group-control">
                     <button type="button" class="condition-item" data-condition="airway-smooth-muscle">Airway smooth muscle</button>
-                    <button type="button" class="condition-item" data-condition="control-of-breathing">Control of breathing</button>
-                    <button type="button" class="condition-item" data-condition="respiratory-acid-base">Acid-base and the lungs</button>
+                    <button type="button" class="condition-item" data-condition="control-of-breathing">Control of breathing and pH</button>
                 </div>
                 </div>
 
@@ -108,7 +110,26 @@
         <!-- Right content panel -->
         <section class="content-panel" id="content-panel" tabindex="0" aria-label="Topic details">
 
-            <article class="condition-content active" id="lung-volumes">
+            <article class="condition-content active" id="lung-development">
+                <h2>Lung Development and Surfactant</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="lung-volumes">
                 <h2>Lung Volumes and Ventilation</h2>
 
                 <section class="content-section">
@@ -184,8 +205,46 @@
                 </section>
             </article>
 
+            <article class="condition-content" id="pulmonary-circulation">
+                <h2>Pulmonary Circulation</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
             <article class="condition-content" id="vq-matching">
                 <h2>V/Q Matching</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="hypoxemia-gradient">
+                <h2>Hypoxemia and the A–a Gradient</h2>
 
                 <section class="content-section">
                     <h3>Overview</h3>
@@ -222,27 +281,8 @@
                 </section>
             </article>
 
-            <article class="condition-content" id="control-of-breathing">
-                <h2>Control of Breathing</h2>
-
-                <section class="content-section">
-                    <h3>Overview</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>When it fails</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-
-                <section class="content-section">
-                    <h3>Pharmacology</h3>
-                    <p class="pending-content">To be added.</p>
-                </section>
-            </article>
-
-            <article class="condition-content" id="respiratory-acid-base">
-                <h2>Acid-base and the Lungs</h2>
+            <article class="condition-content" id="control-of-breathing" data-aliases="respiratory-acid-base">
+                <h2>Control of Breathing and pH</h2>
 
                 <section class="content-section">
                     <h3>Overview</h3>

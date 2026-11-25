@@ -58,6 +58,7 @@
                     <button type="button" class="condition-item" data-condition="glomerular-filtration">Glomerular filtration</button>
                     <button type="button" class="condition-item" data-condition="tubular-transport">Tubular transport</button>
                     <button type="button" class="condition-item" data-condition="urine-concentration">Urine concentration and dilution</button>
+                    <button type="button" class="condition-item" data-condition="transport-defects">Tubular acidosis and transport defects</button>
                 </div>
                 </div>
 
@@ -72,6 +73,18 @@
                     <button type="button" class="condition-item" data-condition="potassium-balance">Potassium balance</button>
                     <button type="button" class="condition-item" data-condition="calcium-balance">Calcium, phosphate, and magnesium</button>
                     <button type="button" class="condition-item" data-condition="acid-base-balance">Acid-base balance</button>
+                    <button type="button" class="condition-item" data-condition="kidney-endocrine">Kidney endocrine function</button>
+                </div>
+                </div>
+
+                <div class="station" data-organ="pharmacology">
+                <p class="group-label" id="group-pharmacology">Pharmacology</p>
+                <div class="condition-group" role="group" aria-labelledby="group-pharmacology">
+                    <button type="button" class="condition-item" data-condition="renal-pharm-diuretics">Diuretics</button>
+                    <button type="button" class="condition-item" data-condition="renal-pharm-raas">RAAS and SGLT2 drugs</button>
+                    <button type="button" class="condition-item" data-condition="renal-pharm-electrolytes">Electrolyte and binder drugs</button>
+                    <button type="button" class="condition-item" data-condition="renal-pharm-dosing">Drug dosing and dialysis</button>
+                    <button type="button" class="condition-item" data-condition="renal-pharm-causes">Drugs that cause kidney disease</button>
                 </div>
                 </div>
 
@@ -179,7 +192,7 @@
                     <h3>References</h3>
                     <ol>
                         <li>Madrazo-Ibarra A, Vaitla P. Histology, Nephron. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK554411/" target="_blank" rel="noopener">NBK554411</a></li>
-                        <li>Murray <abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr>, Paolini MA. Histology, Kidney and Glomerulus. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK554544/" target="_blank" rel="noopener">NBK554544</a></li>
+                        <li>Murray IV, Paolini MA. Histology, Kidney and Glomerulus. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK554544/" target="_blank" rel="noopener">NBK554544</a></li>
                         <li>Ogobuiro I, Tuma F. Physiology, Renal. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK538339/" target="_blank" rel="noopener">NBK538339</a></li>
                         <li>McMahon RS, Penfold D, Bashir K. Anatomy, Abdomen and Pelvis: Kidney Collecting Ducts. 2024. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK549766/" target="_blank" rel="noopener">NBK549766</a></li>
                         <li>Dalal R, Bruss ZS, Sehdev JS. Physiology, Renal Blood Flow and Filtration. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK482248/" target="_blank" rel="noopener">NBK482248</a></li>
@@ -281,14 +294,14 @@
                     <h3>Clearance and its formulas</h3>
 <p>Clearance is the volume of plasma cleared of a substance each minute; a substance that is freely filtered and neither reabsorbed nor secreted has a clearance equal to <abbr class="term" tabindex="0" data-definition="Glomerular filtration rate">GFR</abbr>.</p>
 <ul class="pair-list">
-<li><span class="pair-from">Clearance</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline">C = (U × V) ÷ P</span>U, urine concentration; V, urine flow; P, plasma concentration</span></li>
+<li><span class="pair-from">Clearance</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline"><math class="formula-math"><mi>C</mi><mo>=</mo><mfrac><mrow><mi>U</mi><mo>×</mo><mi>V</mi></mrow><mrow><mi>P</mi></mrow></mfrac></math></span>U, urine concentration; V, urine flow; P, plasma concentration</span></li>
 <li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Glomerular filtration rate">GFR</abbr> from inulin</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Inulin is filtered and neither reabsorbed nor secreted, so its clearance equals <abbr class="term" tabindex="0" data-definition="Glomerular filtration rate">GFR</abbr>; accurate but impractical</span></li>
 <li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Glomerular filtration rate">GFR</abbr> from creatinine</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Creatinine is made at a steady rate by muscle and filtered, but also slightly secreted, so creatinine clearance overestimates <abbr class="term" tabindex="0" data-definition="Glomerular filtration rate">GFR</abbr> by about 10–20%; <abbr class="term" tabindex="0" data-definition="Estimated glomerular filtration rate">eGFR</abbr> (<abbr class="term" tabindex="0" data-definition="Chronic Kidney Disease Epidemiology Collaboration equation">CKD-EPI</abbr>) and the Cockcroft-Gault estimate of creatinine clearance avoid a urine collection</span></li>
-<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Renal plasma flow">RPF</abbr> from <abbr class="term" tabindex="0" data-definition="Para-aminohippuric acid">PAH</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline"><abbr class="term" tabindex="0" data-definition="Renal plasma flow">RPF</abbr> = (UPAH × V) ÷ PPAH</span><abbr class="term" tabindex="0" data-definition="Para-aminohippuric acid">PAH</abbr> is filtered and secreted so completely that one pass clears it</span></li>
-<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Renal blood flow">RBF</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline"><abbr class="term" tabindex="0" data-definition="Renal blood flow">RBF</abbr> = <abbr class="term" tabindex="0" data-definition="Renal plasma flow">RPF</abbr> ÷ (1 − hematocrit)</span></span></li>
-<li><span class="pair-from">Filtration fraction</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline"><abbr class="term" tabindex="0" data-definition="Filtration fraction">FF</abbr> = <abbr class="term" tabindex="0" data-definition="Glomerular filtration rate">GFR</abbr> ÷ <abbr class="term" tabindex="0" data-definition="Renal plasma flow">RPF</abbr></span>About 20%</span></li>
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Renal plasma flow">RPF</abbr> from <abbr class="term" tabindex="0" data-definition="Para-aminohippuric acid">PAH</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline"><math class="formula-math"><mtext><abbr class="term" tabindex="0" data-definition="Renal plasma flow">RPF</abbr></mtext><mo>=</mo><mfrac><mrow><msub><mi>U</mi><mtext>PAH</mtext></msub><mo>×</mo><mi>V</mi></mrow><mrow><msub><mi>P</mi><mtext>PAH</mtext></msub></mrow></mfrac></math></span><abbr class="term" tabindex="0" data-definition="Para-aminohippuric acid">PAH</abbr> is filtered and secreted so completely that one pass clears it</span></li>
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Renal blood flow">RBF</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline"><math class="formula-math"><mtext><abbr class="term" tabindex="0" data-definition="Renal blood flow">RBF</abbr></mtext><mo>=</mo><mfrac><mrow><mtext><abbr class="term" tabindex="0" data-definition="Renal plasma flow">RPF</abbr></mtext></mrow><mrow><mn>1</mn><mo>−</mo><mtext>hematocrit</mtext></mrow></mfrac></math></span></span></li>
+<li><span class="pair-from">Filtration fraction</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline"><math class="formula-math"><mtext><abbr class="term" tabindex="0" data-definition="Filtration fraction">FF</abbr></mtext><mo>=</mo><mfrac><mrow><mtext><abbr class="term" tabindex="0" data-definition="Glomerular filtration rate">GFR</abbr></mtext></mrow><mrow><mtext><abbr class="term" tabindex="0" data-definition="Renal plasma flow">RPF</abbr></mtext></mrow></mfrac></math></span>About 20%</span></li>
 <li><span class="pair-from">Filtered load, excretion, and reabsorption</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline">Filtered load = <abbr class="term" tabindex="0" data-definition="Glomerular filtration rate">GFR</abbr> × P; excretion = U × V; reabsorbed = filtered load − excretion</span>A clearance below the inulin clearance means net reabsorption, above it net secretion</span></li>
-<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Fractional excretion of sodium">FENa</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline"><abbr class="term" tabindex="0" data-definition="Fractional excretion of sodium">FENa</abbr> = (UNa × plasma <abbr class="term" tabindex="0" data-definition="Creatinine">Cr</abbr>) ÷ (PNa × urine <abbr class="term" tabindex="0" data-definition="Creatinine">Cr</abbr>) × 100</span>The share of filtered Na+ excreted; below 1% means the tubules are holding Na+, as in prerenal <abbr class="term" tabindex="0" data-definition="Acute kidney injury">AKI</abbr></span></li>
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Fractional excretion of sodium">FENa</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline"><math class="formula-math"><mtext><abbr class="term" tabindex="0" data-definition="Fractional excretion of sodium">FENa</abbr></mtext><mo>=</mo><mfrac><mrow><msub><mi>U</mi><mtext>Na</mtext></msub><mo>×</mo><msub><mi>P</mi><mtext>Cr</mtext></msub></mrow><mrow><msub><mi>P</mi><mtext>Na</mtext></msub><mo>×</mo><msub><mi>U</mi><mtext>Cr</mtext></msub></mrow></mfrac><mo>×</mo><mn>100</mn></math><span class="formula-note">U, urine; P, plasma; Cr, creatinine</span></span>The share of filtered Na+ excreted; below 1% means the tubules are holding Na+, as in prerenal <abbr class="term" tabindex="0" data-definition="Acute kidney injury">AKI</abbr></span></li>
 </ul>
                 </section>
 
@@ -300,7 +313,7 @@
 <h4 class="sc-heading">How it is calculated</h4>
 <ul class="pair-list">
 <li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Chronic Kidney Disease Epidemiology Collaboration equation">CKD-EPI</abbr> (2021)</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Uses serum creatinine, age, and sex, without race; a version adds cystatin C, and using both gives the most accurate estimate. Reported in mL/min/1.73 m², indexed to an average body surface area</span></li>
-<li><span class="pair-from">Cockcroft-Gault</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline"><abbr class="term" tabindex="0" data-definition="Creatinine clearance">CrCl</abbr> = (140 − age) × weight in kg × 1.23 ÷ creatinine in µmol/L, × 0.85 for women</span>Estimates creatinine clearance in mL/min, not indexed to body size; still used for drug dosing</span></li>
+<li><span class="pair-from">Cockcroft-Gault</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline"><math class="formula-math"><mtext><abbr class="term" tabindex="0" data-definition="Creatinine clearance">CrCl</abbr></mtext><mo>=</mo><mfrac><mrow><mrow><mo>(</mo><mn>140</mn><mo>−</mo><mtext>age</mtext><mo>)</mo></mrow><mo>×</mo><mtext>weight (kg)</mtext><mo>×</mo><mn>1.23</mn></mrow><mrow><mtext>creatinine (µmol/L)</mtext></mrow></mfrac></math><span class="formula-note">× 0.85 for women</span></span>Estimates creatinine clearance in mL/min, not indexed to body size; still used for drug dosing</span></li>
 <li><span class="pair-from">Cystatin C</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Made by all nucleated cells at a steady rate and not tied to muscle mass, so it helps when creatinine misleads</span></li>
 </ul>
 </div>
@@ -366,7 +379,7 @@
                         <li>Kaufman DP, Basit H, Knohl SJ. Physiology, Glomerular Filtration Rate. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK500032/" target="_blank" rel="noopener">NBK500032</a></li>
                         <li>Dalal R, Bruss ZS, Sehdev JS. Physiology, Renal Blood Flow and Filtration. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK482248/" target="_blank" rel="noopener">NBK482248</a></li>
                         <li>Ogobuiro I, Tuma F. Physiology, Renal. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK538339/" target="_blank" rel="noopener">NBK538339</a></li>
-                        <li>Murray <abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr>, Paolini MA. Histology, Kidney and Glomerulus. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK554544/" target="_blank" rel="noopener">NBK554544</a></li>
+                        <li>Murray IV, Paolini MA. Histology, Kidney and Glomerulus. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK554544/" target="_blank" rel="noopener">NBK554544</a></li>
                         <li>Madrazo-Ibarra A, Vaitla P. Histology, Nephron. 2023. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK554411/" target="_blank" rel="noopener">NBK554411</a></li>
                         <li>Shahbaz H, Rout P, Gupta M. Creatinine Clearance. 2024. In: <em>StatPearls</em>. StatPearls Publishing. <a href="https://www.ncbi.nlm.nih.gov/books/NBK544228/" target="_blank" rel="noopener">NBK544228</a></li>
                     </ol>
@@ -636,9 +649,9 @@
                 <section class="content-section">
                     <h3>Free water clearance</h3>
 <ul class="pair-list">
-<li><span class="pair-from">Osmolar clearance</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline">Cosm = (Uosm × V) ÷ Posm</span>The plasma volume cleared of solute each minute</span></li>
+<li><span class="pair-from">Osmolar clearance</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline"><math class="formula-math"><msub><mi>C</mi><mtext>osm</mtext></msub><mo>=</mo><mfrac><mrow><msub><mi>U</mi><mtext>osm</mtext></msub><mo>×</mo><mi>V</mi></mrow><mrow><msub><mi>P</mi><mtext>osm</mtext></msub></mrow></mfrac></math></span>The plasma volume cleared of solute each minute</span></li>
 <li><span class="pair-from">Free water clearance</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline">CH2O = V − Cosm</span>Positive when urine is dilute and water is being excreted; negative when urine is concentrated and water is being kept</span></li>
-<li><span class="pair-from">Electrolyte-free water clearance</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline">V × (1 − (UNa + UK) ÷ PNa)</span>Predicts whether the urine will raise or lower plasma Na+</span></li>
+<li><span class="pair-from">Electrolyte-free water clearance</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline"><math class="formula-math"><mi>V</mi><mo>×</mo><mrow><mo>(</mo><mn>1</mn><mo>−</mo><mfrac><mrow><msub><mi>U</mi><mtext>Na</mtext></msub><mo>+</mo><msub><mi>U</mi><mtext>K</mtext></msub></mrow><mrow><msub><mi>P</mi><mtext>Na</mtext></msub></mrow></mfrac><mo>)</mo></mrow></math></span>Predicts whether the urine will raise or lower plasma Na+</span></li>
 </ul>
 <p class="note"><strong>Note:</strong> The kidney's maximum water excretion depends on solute: at 50 mOsm/kg, each 100 mOsm of solute carries only 2 L of water, which is why low solute intake can cause hyponatremia.</p>
                 </section>
@@ -836,14 +849,14 @@
 </tbody></table></div>
 <p><strong>Light criteria for a pleural effusion:</strong> the fluid is an exudate if any one of these is met, and a transudate if none is.</p>
 <ul class="pair-list">
-<li><span class="pair-from">Protein ratio</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline">Pleural fluid protein ÷ serum protein above 0.5</span></span></li>
-<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Lactate dehydrogenase">LDH</abbr> ratio</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline">Pleural fluid <abbr class="term" tabindex="0" data-definition="Lactate dehydrogenase">LDH</abbr> ÷ serum <abbr class="term" tabindex="0" data-definition="Lactate dehydrogenase">LDH</abbr> above 0.6</span></span></li>
+<li><span class="pair-from">Protein ratio</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline"><math class="formula-math"><mfrac><mrow><mtext>pleural fluid protein</mtext></mrow><mrow><mtext>serum protein</mtext></mrow></mfrac><mo>></mo><mn>0.5</mn></math></span></span></li>
+<li><span class="pair-from"><abbr class="term" tabindex="0" data-definition="Lactate dehydrogenase">LDH</abbr> ratio</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline"><math class="formula-math"><mfrac><mrow><mtext>pleural fluid&nbsp;</mtext><mtext><abbr class="term" tabindex="0" data-definition="Lactate dehydrogenase">LDH</abbr></mtext></mrow><mrow><mtext>serum&nbsp;</mtext><mtext><abbr class="term" tabindex="0" data-definition="Lactate dehydrogenase">LDH</abbr></mtext></mrow></mfrac><mo>></mo><mn>0.6</mn></math></span></span></li>
 <li><span class="pair-from">Pleural <abbr class="term" tabindex="0" data-definition="Lactate dehydrogenase">LDH</abbr></span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline">Pleural fluid <abbr class="term" tabindex="0" data-definition="Lactate dehydrogenase">LDH</abbr> above 2/3 of the upper limit of normal serum <abbr class="term" tabindex="0" data-definition="Lactate dehydrogenase">LDH</abbr></span></span></li>
 </ul>
 <p><strong>Serum-ascites albumin gradient (<abbr class="term" tabindex="0" data-definition="Serum-ascites albumin gradient">SAAG</abbr>) for ascites:</strong> protein alone classifies ascites poorly, so the gradient is used instead; it reflects the hydrostatic pressure in the portal system.</p>
 <ul class="pair-list">
 <li><span class="pair-from">Calculation</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to"><span class="formula-inline"><abbr class="term" tabindex="0" data-definition="Serum-ascites albumin gradient">SAAG</abbr> = serum albumin − ascitic fluid albumin</span></span></li>
-<li><span class="pair-from">11 g/L or more</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Portal hypertension: cirrhosis, alcoholic hepatitis, Budd-Chiari syndrome, portal vein thrombosis, <abbr class="term" tabindex="0" data-definition="Heart failure">HF</abbr></span></li>
+<li><span class="pair-from">11 g/L or more</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">Portal hypertension: cirrhosis, alcohol-associated hepatitis, Budd-Chiari syndrome, portal vein thrombosis, <abbr class="term" tabindex="0" data-definition="Heart failure">HF</abbr></span></li>
 <li><span class="pair-from">Below 11 g/L</span><span class="pair-arrow" aria-hidden="true"></span><span class="pair-to">No portal hypertension: peritoneal carcinomatosis, pancreatitis, <abbr class="term" tabindex="0" data-definition="Tuberculosis">TB</abbr> peritonitis, nephrotic syndrome</span></li>
 </ul>
 </div>
@@ -855,7 +868,7 @@
                     <a class="link-button" href="index.html#hypervolemia">Hypervolemia</a>
                     <a class="link-button" href="index.html#hyponatremia">Hyponatremia</a>
                     <a class="link-button" href="index.html#hypernatremia">Hypernatremia</a>
-                    <a class="link-button" href="../gi/index.html#liver-failure">Acute Liver Failure and Cirrhosis</a>
+                    <a class="link-button" href="../gi/index.html#cirrhosis">Cirrhosis</a>
                     <a class="link-button" href="../endocrine/index.html#hypothyroidism">Hypothyroidism</a>
                 </p>
                 <section class="references" aria-label="References">
@@ -1078,7 +1091,7 @@
 <li><span class="cause-number" aria-hidden="true">A</span><span class="cause-text"><span class="cause-name">Renin</span><span class="cause-detail">Stored as granules in the juxtaglomerular cells of the afferent arteriole, made from prorenin; half-life 10–15 minutes</span></span></li>
 <li><span class="cause-number" aria-hidden="true">B</span><span class="cause-text"><span class="cause-name">Angiotensinogen</span><span class="cause-detail">Made and secreted steadily by the liver; renin cleaves it to angiotensin I, which has no known action of its own</span></span></li>
 <li><span class="cause-number" aria-hidden="true">C</span><span class="cause-text"><span class="cause-name"><abbr class="term" tabindex="0" data-definition="Angiotensin-converting enzyme">ACE</abbr></span><span class="cause-detail">On vascular endothelium, mostly in the lung; removes 2 amino acids to make angiotensin II, and also breaks down bradykinin</span></span></li>
-<li><span class="cause-number" aria-hidden="true">D</span><span class="cause-text"><span class="cause-name">Angiotensin II</span><span class="cause-detail">Acts on <abbr class="term" tabindex="0" data-definition="Angiotensin II type 1 receptor">AT1</abbr> receptors; half-life under 60 seconds, broken down to angiotensin III (full aldosterone effect, about 40% of the pressor effect) and <abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr></span></span></li>
+<li><span class="cause-number" aria-hidden="true">D</span><span class="cause-text"><span class="cause-name">Angiotensin II</span><span class="cause-detail">Acts on <abbr class="term" tabindex="0" data-definition="Angiotensin II type 1 receptor">AT1</abbr> receptors; half-life under 60 seconds, broken down to angiotensin III (full aldosterone effect, about 40% of the pressor effect) and IV</span></span></li>
 <li><span class="cause-number" aria-hidden="true">E</span><span class="cause-text"><span class="cause-name">Arterioles</span><span class="cause-detail">Vasoconstriction, more at the efferent than the afferent arteriole, holding <abbr class="term" tabindex="0" data-definition="Glomerular filtration rate">GFR</abbr> up</span></span></li>
 <li><span class="cause-number" aria-hidden="true">F</span><span class="cause-text"><span class="cause-name">Adrenal cortex</span><span class="cause-detail">Aldosterone from the zona glomerulosa, through aldosterone synthase (<abbr class="term" tabindex="0" data-definition="Aldosterone synthase">CYP11B2</abbr>)</span></span></li>
 <li><span class="cause-number" aria-hidden="true">G</span><span class="cause-text"><span class="cause-name">Proximal tubule</span><span class="cause-detail">More Na+ reabsorbed through <abbr class="term" tabindex="0" data-definition="Na+/H+ exchanger 3">NHE3</abbr></span></span></li>
@@ -1189,7 +1202,7 @@
                         </aside>
 
                         <h4>The cascade</h4>
-                        <p>Renin is stored in the juxtaglomerular cells of the afferent arteriole, made from prorenin, and has a half-life of 10–15 minutes; it cleaves angiotensinogen, made steadily by the liver, to angiotensin I, which has no known action. <abbr class="term" tabindex="0" data-definition="Angiotensin-converting enzyme">ACE</abbr> on vascular endothelium, mostly in the lung, removes 2 amino acids to make angiotensin II and also breaks down bradykinin. Angiotensin II has a half-life under 60 seconds and is broken down to angiotensin III, with full aldosterone-releasing activity and about 40% of the pressor effect, and angiotensin <abbr class="term" tabindex="0" data-definition="Intravenous">IV</abbr>. It constricts arterioles, more at the efferent arteriole, releases aldosterone from the zona glomerulosa through <abbr class="term" tabindex="0" data-definition="Aldosterone synthase">CYP11B2</abbr>, increases proximal Na+ reabsorption through <abbr class="term" tabindex="0" data-definition="Na+/H+ exchanger 3">NHE3</abbr>, and drives thirst, <abbr class="term" tabindex="0" data-definition="Antidiuretic hormone (vasopressin)">ADH</abbr> release, and sympathetic outflow.</p>
+                        <p>Renin is stored in the juxtaglomerular cells of the afferent arteriole, made from prorenin, and has a half-life of 10–15 minutes; it cleaves angiotensinogen, made steadily by the liver, to angiotensin I, which has no known action. <abbr class="term" tabindex="0" data-definition="Angiotensin-converting enzyme">ACE</abbr> on vascular endothelium, mostly in the lung, removes 2 amino acids to make angiotensin II and also breaks down bradykinin. Angiotensin II has a half-life under 60 seconds and is broken down to angiotensin III, with full aldosterone-releasing activity and about 40% of the pressor effect, and angiotensin IV. It constricts arterioles, more at the efferent arteriole, releases aldosterone from the zona glomerulosa through <abbr class="term" tabindex="0" data-definition="Aldosterone synthase">CYP11B2</abbr>, increases proximal Na+ reabsorption through <abbr class="term" tabindex="0" data-definition="Na+/H+ exchanger 3">NHE3</abbr>, and drives thirst, <abbr class="term" tabindex="0" data-definition="Antidiuretic hormone (vasopressin)">ADH</abbr> release, and sympathetic outflow.</p>
 
                         <h4>Control and signaling</h4>
                         <p>Renin rises with low renal perfusion, sensed by stretch receptors in the afferent arteriole, low NaCl at the macula densa, sympathetic <abbr class="term" tabindex="0" data-definition="β1 adrenergic receptor">β1-AdR</abbr> input, especially when upright, and hypokalemia, and falls with angiotensin II, hyperkalemia, and <abbr class="term" tabindex="0" data-definition="Atrial natriuretic peptide">ANP</abbr>. <abbr class="term" tabindex="0" data-definition="Angiotensin II type 1 receptor">AT1</abbr> receptors, G protein-coupled and raising Ca2+, mediate vasoconstriction, Na+ and water retention, and aldosterone release and, when overactive, inflammation, fibrosis, and remodeling; <abbr class="term" tabindex="0" data-definition="Angiotensin II type 2 receptor">AT2</abbr> receptors, mostly fetal, oppose them. The mineralocorticoid receptor is a cytoplasmic receptor that moves to the nucleus and changes transcription.</p>
@@ -1767,7 +1780,7 @@
                     <h3>Acids and buffers</h3>
 <p>Plasma pH is set by the ratio of <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr>, which the kidney regulates, to CO2, which the lungs regulate, rather than by either value alone; this is why a change in one is compensated by a change in the other in the same direction.</p>
 <span class="formula-inline">H+ + <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> ⇌ H2CO3 ⇌ CO2 + H2O</span>
-<span class="formula-inline">pH = 6.1 + log (<abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> ÷ (0.03 × <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr>)), the Henderson-Hasselbalch equation</span>
+<span class="formula-inline"><math class="formula-math"><mtext>pH</mtext><mo>=</mo><mn>6.1</mn><mo>+</mo><mtext>log</mtext><mrow><mo>(</mo><mfrac><mrow><mtext><abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr></mtext></mrow><mrow><mn>0.03</mn><mo>×</mo><mtext><abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr></mtext></mrow></mfrac><mo>)</mo></mrow></math><span class="formula-note">The Henderson-Hasselbalch equation</span></span>
 <ul class="chip-list"><li>pH 7.35–7.45</li><li><abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> 35–45 mmHg</li><li><abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> 22–26 mmol/L</li></ul>
 <div class="subsection">
 <h4 class="sc-heading">Where the acid comes from</h4>
@@ -2007,6 +2020,89 @@
                         <p>The pH defines acidemia, below 7.35, or alkalemia, above 7.45; the value that explains it identifies the primary disorder, metabolic when <abbr class="term" tabindex="0" data-definition="Bicarbonate">HCO3−</abbr> moves with the pH and respiratory when <abbr class="term" tabindex="0" data-definition="Partial pressure of carbon dioxide">pCO2</abbr> moves against it; the compensation is compared with the expected value to detect a second disorder; and a metabolic acidosis is then characterized by its anion gap and a metabolic alkalosis by its urine Cl−, as set out in the reviews of <a class="review-link" href="index.html#metabolic-acidosis">metabolic acidosis</a>, <a class="review-link" href="index.html#metabolic-alkalosis">metabolic alkalosis</a>, and the <a class="review-link" href="index.html#acid-base-workup">acid-base workup</a>.</p>
                     </div>
                 </dialog>
+            </article>
+
+            <article class="condition-content" id="transport-defects">
+                <h2>Tubular Acidosis and Transport Defects</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="kidney-endocrine">
+                <h2>Kidney Endocrine Function</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>When it fails</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+
+                <section class="content-section">
+                    <h3>Pharmacology</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="renal-pharm-diuretics">
+                <h2>Diuretics</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="renal-pharm-raas">
+                <h2>RAAS and SGLT2 Drugs</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="renal-pharm-electrolytes">
+                <h2>Electrolyte and Binder Drugs</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="renal-pharm-dosing">
+                <h2>Drug Dosing and Dialysis</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
+            </article>
+
+            <article class="condition-content" id="renal-pharm-causes">
+                <h2>When Drugs Cause Disease</h2>
+
+                <section class="content-section">
+                    <h3>Overview</h3>
+                    <p class="pending-content">To be added.</p>
+                </section>
             </article>
 
             <!-- Page quiz (filled in by quiz.js) -->

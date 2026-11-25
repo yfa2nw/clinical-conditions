@@ -266,7 +266,7 @@ contentPanel.addEventListener("scroll", () => {
 
 const searchIndex = conditionButtons.map((button) => ({
     button,
-    name: button.textContent.toLowerCase(),
+    name: `${button.textContent} ${button.dataset.keywords || ""}`.toLowerCase(),
     // Sections only: the Previous/Next buttons would match the neighbouring conditions
     text: [...document.getElementById(button.dataset.condition).querySelectorAll(".content-section")]
         .map((section) => section.textContent).join(" ").toLowerCase(),
@@ -562,7 +562,7 @@ document.addEventListener("keydown", (event) => {
    A <dialog class="quick-review"> inside an article gets a button among the header actions, beside "Quiz me".
 ========================= */
 
-document.querySelectorAll("dialog.quick-review").forEach((dialog) => {
+document.querySelectorAll(".condition-content:not([data-on-hold]) > dialog.quick-review").forEach((dialog) => {
     const opener = document.createElement("button");
     opener.type = "button";
     opener.className = "quick-review-open header-action";
@@ -601,7 +601,7 @@ document.querySelectorAll("dialog.quick-review").forEach((dialog) => {
    An article with data-worksheet="worksheets/<id>.pdf" gets a link to it among the header actions, after the review article.
 ========================= */
 
-document.querySelectorAll(".condition-content[data-worksheet]").forEach((article) => {
+document.querySelectorAll(".condition-content[data-worksheet]:not([data-on-hold])").forEach((article) => {
     const link = document.createElement("a");
     link.className = "worksheet-open header-action";
     link.href = article.dataset.worksheet;
